@@ -22,12 +22,12 @@ import '../types.dart';
 ///   with Message
 ///   Feedback](https://www.twilio.com/docs/messaging/guides/send-message-feedback
 ///   -to-twilio).
-Future<ApiV2010AccountMessageMessageFeedback>
-    createMessagesFeedback(ClientConfig config,
-        {required String accountSid,
-        required String messageSid,
-        SdkOptional<MessageFeedbackEnumOutcome> outcome = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountMessageMessageFeedback> createMessagesFeedback(
+    ClientConfig config,
+    {required String accountSid,
+    required String messageSid,
+    SdkOptional<MessageFeedbackEnumOutcome> outcome = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('MessageSid', messageSid, min: 34, max: 34);
@@ -40,7 +40,9 @@ Future<ApiV2010AccountMessageMessageFeedback>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createMessagesFeedback',
-          fromJsonRaw: (value) => ApiV2010AccountMessageMessageFeedback.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountMessageMessageFeedback.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

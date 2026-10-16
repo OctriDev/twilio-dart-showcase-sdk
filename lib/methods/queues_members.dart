@@ -32,11 +32,11 @@ Future<ApiV2010AccountQueueMember> fetchQueuesMembers(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchQueuesMembers',
-          fromJsonRaw: (value) => ApiV2010AccountQueueMember.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountQueueMember.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Dequeues a specific member and starts the call's execution at the supplied URL. Provide `Url` as the destination, and use `Method` to choose whether request data is sent as form data or query parameters.
 ///
@@ -57,7 +57,8 @@ Future<ApiV2010AccountQueueMember> updateQueuesMembers(ClientConfig config,
     required String queueSid,
     required String callSid,
     required String url,
-    SdkOptional<UpdateQueuesMembersRequestBodyMethod> method = const SdkOmitted(),
+    SdkOptional<UpdateQueuesMembersRequestBodyMethod> method =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -72,11 +73,11 @@ Future<ApiV2010AccountQueueMember> updateQueuesMembers(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateQueuesMembers',
-          fromJsonRaw: (value) => ApiV2010AccountQueueMember.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountQueueMember.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists members of a specific queue. Use the page parameters to navigate the results and review each member's call, position, and wait time.
 ///
@@ -112,13 +113,17 @@ Future<ListQueuesMembersResponse> listQueuesMembers(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Queues/${Uri.encodeComponent(queueSid.toString())}/Members.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listQueuesMembers',
-          fromJsonRaw: (value) => ListQueuesMembersResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListQueuesMembersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

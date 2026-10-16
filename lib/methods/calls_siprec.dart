@@ -230,7 +230,8 @@ Future<ApiV2010AccountCallSiprec> createCallsSiprec(ClientConfig config,
     SdkOptional<String> connectorName = const SdkOmitted(),
     SdkOptional<SiprecEnumTrack> track = const SdkOmitted(),
     SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<CreateCallsSiprecRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateCallsSiprecRequestBodyStatusCallbackMethod>
+        statusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> parameter1Name = const SdkOmitted(),
     SdkOptional<String> parameter1Value = const SdkOmitted(),
     SdkOptional<String> parameter2Name = const SdkOmitted(),
@@ -446,7 +447,8 @@ Future<ApiV2010AccountCallSiprec> createCallsSiprec(ClientConfig config,
             'ConnectorName': SdkUtils.unwrapOptional(connectorName),
             'Track': SdkUtils.unwrapOptional(track),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod':
+                SdkUtils.unwrapOptional(statusCallbackMethod),
             'Parameter1.Name': SdkUtils.unwrapOptional(parameter1Name),
             'Parameter1.Value': SdkUtils.unwrapOptional(parameter1Value),
             'Parameter2.Name': SdkUtils.unwrapOptional(parameter2Name),
@@ -649,11 +651,11 @@ Future<ApiV2010AccountCallSiprec> createCallsSiprec(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsSiprec',
-          fromJsonRaw: (value) => ApiV2010AccountCallSiprec.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallSiprec.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Stops a SIPREC resource associated with a call. Set `Status` to `stopped`, and identify the resource by its SID or the name used when it was created.
 ///
@@ -685,7 +687,8 @@ Future<ApiV2010AccountCallSiprec> updateCallsSiprec(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateCallsSiprec',
-          fromJsonRaw: (value) => ApiV2010AccountCallSiprec.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallSiprec.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

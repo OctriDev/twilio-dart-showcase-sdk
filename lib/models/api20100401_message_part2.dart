@@ -6,56 +6,62 @@ part of 'api20100401_message.dart';
 // api20100401_message domain models (part 2)
 /// Determines if the address can be stored or obfuscated based on privacy settings
 final class MessageEnumAddressRetention {
-
   final String value;
 
   const MessageEnumAddressRetention._(this.value);
 
-  factory MessageEnumAddressRetention.fromJson(String value) => MessageEnumAddressRetention._(value);
+  factory MessageEnumAddressRetention.fromJson(String value) =>
+      MessageEnumAddressRetention._(value);
 
   static const retain = MessageEnumAddressRetention._('retain');
   static const obfuscate = MessageEnumAddressRetention._('obfuscate');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumAddressRetention && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumAddressRetention && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Determines if the message content can be stored or redacted based on privacy settings
 final class MessageEnumContentRetention {
-
   final String value;
 
   const MessageEnumContentRetention._(this.value);
 
-  factory MessageEnumContentRetention.fromJson(String value) => MessageEnumContentRetention._(value);
+  factory MessageEnumContentRetention.fromJson(String value) =>
+      MessageEnumContentRetention._(value);
 
   static const retain = MessageEnumContentRetention._('retain');
   static const discard = MessageEnumContentRetention._('discard');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumContentRetention && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumContentRetention && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The direction of the message. Can be: `inbound` for incoming messages, `outbound-api` for messages created by the REST API, `outbound-call` for messages created during a call, or `outbound-reply` for messages created in response to an incoming message.
 final class MessageEnumDirection {
-
   final String value;
 
   const MessageEnumDirection._(this.value);
 
-  factory MessageEnumDirection.fromJson(String value) => MessageEnumDirection._(value);
+  factory MessageEnumDirection.fromJson(String value) =>
+      MessageEnumDirection._(value);
 
   static const inbound = MessageEnumDirection._('inbound');
   static const outboundApi = MessageEnumDirection._('outbound-api');
@@ -64,65 +70,74 @@ final class MessageEnumDirection {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumDirection && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumDirection && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
 final class MessageEnumRiskCheck {
-
   final String value;
 
   const MessageEnumRiskCheck._(this.value);
 
-  factory MessageEnumRiskCheck.fromJson(String value) => MessageEnumRiskCheck._(value);
+  factory MessageEnumRiskCheck.fromJson(String value) =>
+      MessageEnumRiskCheck._(value);
 
   static const enable = MessageEnumRiskCheck._('enable');
   static const disable = MessageEnumRiskCheck._('disable');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumRiskCheck && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumRiskCheck && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
 final class MessageEnumScheduleType {
-
   final String value;
 
   const MessageEnumScheduleType._(this.value);
 
-  factory MessageEnumScheduleType.fromJson(String value) => MessageEnumScheduleType._(value);
+  factory MessageEnumScheduleType.fromJson(String value) =>
+      MessageEnumScheduleType._(value);
 
   static const fixed = MessageEnumScheduleType._('fixed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumScheduleType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumScheduleType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The status of the Message. Possible values: `accepted`, `scheduled`, `canceled`, `queued`, `sending`, `sent`, `failed`, `delivered`, `undelivered`, `receiving`, `received`, or `read` (WhatsApp only). For more information, See [detailed descriptions](https://www.twilio.com/docs/sms/api/message-resource#message-status-values).
 final class MessageEnumStatus {
-
   final String value;
 
   const MessageEnumStatus._(this.value);
 
-  factory MessageEnumStatus.fromJson(String value) => MessageEnumStatus._(value);
+  factory MessageEnumStatus.fromJson(String value) =>
+      MessageEnumStatus._(value);
 
   static const queued = MessageEnumStatus._('queued');
   static const sending = MessageEnumStatus._('sending');
@@ -140,52 +155,61 @@ final class MessageEnumStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `MessageEnumTrafficType` API schema.
 final class MessageEnumTrafficType {
-
   final String value;
 
   const MessageEnumTrafficType._(this.value);
 
-  factory MessageEnumTrafficType.fromJson(String value) => MessageEnumTrafficType._(value);
+  factory MessageEnumTrafficType.fromJson(String value) =>
+      MessageEnumTrafficType._(value);
 
   static const free = MessageEnumTrafficType._('free');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumTrafficType && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumTrafficType && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `MessageEnumUpdateStatus` API schema.
 final class MessageEnumUpdateStatus {
-
   final String value;
 
   const MessageEnumUpdateStatus._(this.value);
 
-  factory MessageEnumUpdateStatus.fromJson(String value) => MessageEnumUpdateStatus._(value);
+  factory MessageEnumUpdateStatus.fromJson(String value) =>
+      MessageEnumUpdateStatus._(value);
 
   static const canceled = MessageEnumUpdateStatus._('canceled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumUpdateStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumUpdateStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
