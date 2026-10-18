@@ -8,155 +8,87 @@ part of 'api20100401_feedback.dart';
 class ApiV2010AccountMessageMessageFeedback {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) associated with this MessageFeedback resource.
   final SdkOptional<String?> accountSid;
-
   /// The SID of the Message resource associated with this MessageFeedback resource.
   final SdkOptional<String?> messageSid;
-
   /// Reported outcome indicating whether there is confirmation that the Message recipient performed a tracked user action. Can be: `unconfirmed` or `confirmed`. For more details see [How to Optimize Message Deliverability with Message Feedback](https://www.twilio.com/docs/messaging/guides/send-message-feedback-to-twilio).
   final SdkOptional<MessageFeedbackEnumOutcome> outcome;
-
   /// The date and time in GMT when this MessageFeedback resource was created, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCreated;
-
   /// The date and time in GMT when this MessageFeedback resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
-
   /// The URI of the resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
 
-  const ApiV2010AccountMessageMessageFeedback(
-      {this.accountSid = const SdkOmitted(),
-      this.messageSid = const SdkOmitted(),
-      this.outcome = const SdkOmitted(),
-      this.dateCreated = const SdkOmitted(),
-      this.dateUpdated = const SdkOmitted(),
-      this.uri = const SdkOmitted()});
+  const ApiV2010AccountMessageMessageFeedback({this.accountSid = const SdkOmitted(), this.messageSid = const SdkOmitted(), this.outcome = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.dateUpdated = const SdkOmitted(), this.uri = const SdkOmitted()});
 
-  ApiV2010AccountMessageMessageFeedback Function(
-      {SdkOptional<String?> accountSid,
-      SdkOptional<String?> messageSid,
-      SdkOptional<MessageFeedbackEnumOutcome> outcome,
-      SdkOptional<String?> dateCreated,
-      SdkOptional<String?> dateUpdated,
-      SdkOptional<String?> uri}) get copyWith => _copyWith;
+  ApiV2010AccountMessageMessageFeedback Function({SdkOptional<String?> accountSid, SdkOptional<String?> messageSid, SdkOptional<MessageFeedbackEnumOutcome> outcome, SdkOptional<String?> dateCreated, SdkOptional<String?> dateUpdated, SdkOptional<String?> uri}) get copyWith => _copyWith;
 
-  ApiV2010AccountMessageMessageFeedback _copyWith(
-          {Object? accountSid = sdkOmittedValue,
-          Object? messageSid = sdkOmittedValue,
-          Object? outcome = sdkOmittedValue,
-          Object? dateCreated = sdkOmittedValue,
-          Object? dateUpdated = sdkOmittedValue,
-          Object? uri = sdkOmittedValue}) =>
-      ApiV2010AccountMessageMessageFeedback(
-        accountSid: identical(accountSid, sdkOmittedValue)
-            ? this.accountSid
-            : accountSid as SdkOptional<String?>,
-        messageSid: identical(messageSid, sdkOmittedValue)
-            ? this.messageSid
-            : messageSid as SdkOptional<String?>,
-        outcome: identical(outcome, sdkOmittedValue)
-            ? this.outcome
-            : outcome as SdkOptional<MessageFeedbackEnumOutcome>,
-        dateCreated: identical(dateCreated, sdkOmittedValue)
-            ? this.dateCreated
-            : dateCreated as SdkOptional<String?>,
-        dateUpdated: identical(dateUpdated, sdkOmittedValue)
-            ? this.dateUpdated
-            : dateUpdated as SdkOptional<String?>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String?>,
-      );
+  ApiV2010AccountMessageMessageFeedback _copyWith({Object? accountSid = sdkOmittedValue, Object? messageSid = sdkOmittedValue, Object? outcome = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue, Object? uri = sdkOmittedValue}) => ApiV2010AccountMessageMessageFeedback(
+    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
+    messageSid: identical(messageSid, sdkOmittedValue) ? this.messageSid : messageSid as SdkOptional<String?>,
+    outcome: identical(outcome, sdkOmittedValue) ? this.outcome : outcome as SdkOptional<MessageFeedbackEnumOutcome>,
+    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
+    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
+  );
 
-  factory ApiV2010AccountMessageMessageFeedback.fromJson(
-          Map<String, dynamic> json) =>
-      ApiV2010AccountMessageMessageFeedback(
-        accountSid: json.containsKey('account_sid')
-            ? SdkPresent(json['account_sid'] as String?)
-            : const SdkOmitted(),
-        messageSid: json.containsKey('message_sid')
-            ? SdkPresent(json['message_sid'] as String?)
-            : const SdkOmitted(),
-        outcome: json['outcome'] != null
-            ? SdkPresent((json['outcome'] != null
-                ? MessageFeedbackEnumOutcome.fromJson(json['outcome'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        dateCreated: json.containsKey('date_created')
-            ? SdkPresent(json['date_created'] as String?)
-            : const SdkOmitted(),
-        dateUpdated: json.containsKey('date_updated')
-            ? SdkPresent(json['date_updated'] as String?)
-            : const SdkOmitted(),
-        uri: json.containsKey('uri')
-            ? SdkPresent(json['uri'] as String?)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountMessageMessageFeedback.fromJson(Map<String, dynamic> json) => ApiV2010AccountMessageMessageFeedback(
+    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
+    messageSid: json.containsKey('message_sid') ? SdkPresent(json['message_sid'] as String?) : const SdkOmitted(),
+    outcome: json['outcome'] != null ? SdkPresent((json['outcome'] != null ? MessageFeedbackEnumOutcome.fromJson(json['outcome'] as String) : null)!) : const SdkOmitted(),
+    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
+    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
+    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (accountSid) {
-          SdkPresent<String?>(value: final value) => {
-              'account_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (messageSid) {
-          SdkPresent<String?>(value: final value) => {
-              'message_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (outcome) {
-          SdkPresent<MessageFeedbackEnumOutcome>(value: final value) => {
-              'outcome': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateCreated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_created': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateUpdated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_updated': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String?>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (accountSid) {
+      SdkPresent<String?>(value: final value) => {'account_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (messageSid) {
+      SdkPresent<String?>(value: final value) => {'message_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (outcome) {
+      SdkPresent<MessageFeedbackEnumOutcome>(value: final value) => {'outcome': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateCreated) {
+      SdkPresent<String?>(value: final value) => {'date_created': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateUpdated) {
+      SdkPresent<String?>(value: final value) => {'date_updated': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String?>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// Reported outcome indicating whether there is confirmation that the Message recipient performed a tracked user action. Can be: `unconfirmed` or `confirmed`. For more details see [How to Optimize Message Deliverability with Message Feedback](https://www.twilio.com/docs/messaging/guides/send-message-feedback-to-twilio).
 final class MessageFeedbackEnumOutcome {
+
   final String value;
 
   const MessageFeedbackEnumOutcome._(this.value);
 
-  factory MessageFeedbackEnumOutcome.fromJson(String value) =>
-      MessageFeedbackEnumOutcome._(value);
+  factory MessageFeedbackEnumOutcome.fromJson(String value) => MessageFeedbackEnumOutcome._(value);
 
   static const confirmed = MessageFeedbackEnumOutcome._('confirmed');
   static const unconfirmed = MessageFeedbackEnumOutcome._('unconfirmed');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is MessageFeedbackEnumOutcome && other.value == value;
+  @override bool operator ==(Object other) => other is MessageFeedbackEnumOutcome && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

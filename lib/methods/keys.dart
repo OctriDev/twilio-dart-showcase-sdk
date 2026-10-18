@@ -28,11 +28,11 @@ Future<ApiV2010AccountKey> fetchKeys(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchKeys',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the friendly name of a Key resource in an account. Supply `FriendlyName` to change the resource's descriptive name; the request body may be omitted when you have no field to update.
 ///
@@ -60,11 +60,11 @@ Future<ApiV2010AccountKey> updateKeys(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateKeys',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a specific API Key from an account. Supply the account SID and the SID of the key you want to remove.
 ///
@@ -90,6 +90,7 @@ Future<void> deleteKeys(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists API Keys created by a specific account. Use the page parameters to navigate the results, and set `PageSize` to control how many keys each page contains.
 ///
@@ -119,20 +120,17 @@ Future<ListKeysResponse> listKeys(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Keys.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listKeys',
-          fromJsonRaw: (value) =>
-              ListKeysResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListKeysResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a new API Key for an account. Optionally provide `FriendlyName` to label the key; the response includes its secret, which is returned only when the key is first created.
 ///
@@ -155,8 +153,7 @@ Future<ApiV2010AccountNewKey> createKeys(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createKeys',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountNewKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountNewKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

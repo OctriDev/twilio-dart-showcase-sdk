@@ -8,218 +8,109 @@ part of 'api20100401_add_on_result.dart';
 class ApiV2010AccountRecordingRecordingAddOnResult {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique string that that we created to identify the Recording AddOnResult resource.
   final SdkOptional<String?> sid;
-
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording AddOnResult resource.
   final SdkOptional<String?> accountSid;
-
   /// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
   final SdkOptional<RecordingAddOnResultEnumStatus> status;
-
   /// The SID of the Add-on to which the result belongs.
   final SdkOptional<String?> addOnSid;
-
   /// The SID of the Add-on configuration.
   final SdkOptional<String?> addOnConfigurationSid;
-
   /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCreated;
-
   /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
-
   /// The date and time in GMT that the result was completed specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCompleted;
-
   /// The SID of the recording to which the AddOnResult resource belongs.
   final SdkOptional<String?> referenceSid;
-
   /// A list of related resources identified by their relative URIs.
   final SdkOptional<Map<String, dynamic>?> subresourceUris;
 
-  const ApiV2010AccountRecordingRecordingAddOnResult(
-      {this.sid = const SdkOmitted(),
-      this.accountSid = const SdkOmitted(),
-      this.status = const SdkOmitted(),
-      this.addOnSid = const SdkOmitted(),
-      this.addOnConfigurationSid = const SdkOmitted(),
-      this.dateCreated = const SdkOmitted(),
-      this.dateUpdated = const SdkOmitted(),
-      this.dateCompleted = const SdkOmitted(),
-      this.referenceSid = const SdkOmitted(),
-      this.subresourceUris = const SdkOmitted()});
+  const ApiV2010AccountRecordingRecordingAddOnResult({this.sid = const SdkOmitted(), this.accountSid = const SdkOmitted(), this.status = const SdkOmitted(), this.addOnSid = const SdkOmitted(), this.addOnConfigurationSid = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.dateUpdated = const SdkOmitted(), this.dateCompleted = const SdkOmitted(), this.referenceSid = const SdkOmitted(), this.subresourceUris = const SdkOmitted()});
 
-  ApiV2010AccountRecordingRecordingAddOnResult Function(
-          {SdkOptional<String?> sid,
-          SdkOptional<String?> accountSid,
-          SdkOptional<RecordingAddOnResultEnumStatus> status,
-          SdkOptional<String?> addOnSid,
-          SdkOptional<String?> addOnConfigurationSid,
-          SdkOptional<String?> dateCreated,
-          SdkOptional<String?> dateUpdated,
-          SdkOptional<String?> dateCompleted,
-          SdkOptional<String?> referenceSid,
-          SdkOptional<Map<String, dynamic>?> subresourceUris})
-      get copyWith => _copyWith;
+  ApiV2010AccountRecordingRecordingAddOnResult Function({SdkOptional<String?> sid, SdkOptional<String?> accountSid, SdkOptional<RecordingAddOnResultEnumStatus> status, SdkOptional<String?> addOnSid, SdkOptional<String?> addOnConfigurationSid, SdkOptional<String?> dateCreated, SdkOptional<String?> dateUpdated, SdkOptional<String?> dateCompleted, SdkOptional<String?> referenceSid, SdkOptional<Map<String, dynamic>?> subresourceUris}) get copyWith => _copyWith;
 
-  ApiV2010AccountRecordingRecordingAddOnResult _copyWith(
-          {Object? sid = sdkOmittedValue,
-          Object? accountSid = sdkOmittedValue,
-          Object? status = sdkOmittedValue,
-          Object? addOnSid = sdkOmittedValue,
-          Object? addOnConfigurationSid = sdkOmittedValue,
-          Object? dateCreated = sdkOmittedValue,
-          Object? dateUpdated = sdkOmittedValue,
-          Object? dateCompleted = sdkOmittedValue,
-          Object? referenceSid = sdkOmittedValue,
-          Object? subresourceUris = sdkOmittedValue}) =>
-      ApiV2010AccountRecordingRecordingAddOnResult(
-        sid: identical(sid, sdkOmittedValue)
-            ? this.sid
-            : sid as SdkOptional<String?>,
-        accountSid: identical(accountSid, sdkOmittedValue)
-            ? this.accountSid
-            : accountSid as SdkOptional<String?>,
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as SdkOptional<RecordingAddOnResultEnumStatus>,
-        addOnSid: identical(addOnSid, sdkOmittedValue)
-            ? this.addOnSid
-            : addOnSid as SdkOptional<String?>,
-        addOnConfigurationSid: identical(addOnConfigurationSid, sdkOmittedValue)
-            ? this.addOnConfigurationSid
-            : addOnConfigurationSid as SdkOptional<String?>,
-        dateCreated: identical(dateCreated, sdkOmittedValue)
-            ? this.dateCreated
-            : dateCreated as SdkOptional<String?>,
-        dateUpdated: identical(dateUpdated, sdkOmittedValue)
-            ? this.dateUpdated
-            : dateUpdated as SdkOptional<String?>,
-        dateCompleted: identical(dateCompleted, sdkOmittedValue)
-            ? this.dateCompleted
-            : dateCompleted as SdkOptional<String?>,
-        referenceSid: identical(referenceSid, sdkOmittedValue)
-            ? this.referenceSid
-            : referenceSid as SdkOptional<String?>,
-        subresourceUris: identical(subresourceUris, sdkOmittedValue)
-            ? this.subresourceUris
-            : subresourceUris as SdkOptional<Map<String, dynamic>?>,
-      );
+  ApiV2010AccountRecordingRecordingAddOnResult _copyWith({Object? sid = sdkOmittedValue, Object? accountSid = sdkOmittedValue, Object? status = sdkOmittedValue, Object? addOnSid = sdkOmittedValue, Object? addOnConfigurationSid = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue, Object? dateCompleted = sdkOmittedValue, Object? referenceSid = sdkOmittedValue, Object? subresourceUris = sdkOmittedValue}) => ApiV2010AccountRecordingRecordingAddOnResult(
+    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
+    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
+    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<RecordingAddOnResultEnumStatus>,
+    addOnSid: identical(addOnSid, sdkOmittedValue) ? this.addOnSid : addOnSid as SdkOptional<String?>,
+    addOnConfigurationSid: identical(addOnConfigurationSid, sdkOmittedValue) ? this.addOnConfigurationSid : addOnConfigurationSid as SdkOptional<String?>,
+    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
+    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
+    dateCompleted: identical(dateCompleted, sdkOmittedValue) ? this.dateCompleted : dateCompleted as SdkOptional<String?>,
+    referenceSid: identical(referenceSid, sdkOmittedValue) ? this.referenceSid : referenceSid as SdkOptional<String?>,
+    subresourceUris: identical(subresourceUris, sdkOmittedValue) ? this.subresourceUris : subresourceUris as SdkOptional<Map<String, dynamic>?>,
+  );
 
-  factory ApiV2010AccountRecordingRecordingAddOnResult.fromJson(
-          Map<String, dynamic> json) =>
-      ApiV2010AccountRecordingRecordingAddOnResult(
-        sid: json.containsKey('sid')
-            ? SdkPresent(json['sid'] as String?)
-            : const SdkOmitted(),
-        accountSid: json.containsKey('account_sid')
-            ? SdkPresent(json['account_sid'] as String?)
-            : const SdkOmitted(),
-        status: json['status'] != null
-            ? SdkPresent((json['status'] != null
-                ? RecordingAddOnResultEnumStatus.fromJson(
-                    json['status'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        addOnSid: json.containsKey('add_on_sid')
-            ? SdkPresent(json['add_on_sid'] as String?)
-            : const SdkOmitted(),
-        addOnConfigurationSid: json.containsKey('add_on_configuration_sid')
-            ? SdkPresent(json['add_on_configuration_sid'] as String?)
-            : const SdkOmitted(),
-        dateCreated: json.containsKey('date_created')
-            ? SdkPresent(json['date_created'] as String?)
-            : const SdkOmitted(),
-        dateUpdated: json.containsKey('date_updated')
-            ? SdkPresent(json['date_updated'] as String?)
-            : const SdkOmitted(),
-        dateCompleted: json.containsKey('date_completed')
-            ? SdkPresent(json['date_completed'] as String?)
-            : const SdkOmitted(),
-        referenceSid: json.containsKey('reference_sid')
-            ? SdkPresent(json['reference_sid'] as String?)
-            : const SdkOmitted(),
-        subresourceUris: json.containsKey('subresource_uris')
-            ? SdkPresent(json['subresource_uris'] == null
-                ? null
-                : json['subresource_uris'] as Map<String, dynamic>)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountRecordingRecordingAddOnResult.fromJson(Map<String, dynamic> json) => ApiV2010AccountRecordingRecordingAddOnResult(
+    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
+    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
+    status: json['status'] != null ? SdkPresent((json['status'] != null ? RecordingAddOnResultEnumStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
+    addOnSid: json.containsKey('add_on_sid') ? SdkPresent(json['add_on_sid'] as String?) : const SdkOmitted(),
+    addOnConfigurationSid: json.containsKey('add_on_configuration_sid') ? SdkPresent(json['add_on_configuration_sid'] as String?) : const SdkOmitted(),
+    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
+    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
+    dateCompleted: json.containsKey('date_completed') ? SdkPresent(json['date_completed'] as String?) : const SdkOmitted(),
+    referenceSid: json.containsKey('reference_sid') ? SdkPresent(json['reference_sid'] as String?) : const SdkOmitted(),
+    subresourceUris: json.containsKey('subresource_uris') ? SdkPresent(json['subresource_uris'] == null ? null : json['subresource_uris'] as Map<String, dynamic>) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (sid) {
-          SdkPresent<String?>(value: final value) => {
-              'sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (accountSid) {
-          SdkPresent<String?>(value: final value) => {
-              'account_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (status) {
-          SdkPresent<RecordingAddOnResultEnumStatus>(value: final value) => {
-              'status': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (addOnSid) {
-          SdkPresent<String?>(value: final value) => {
-              'add_on_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (addOnConfigurationSid) {
-          SdkPresent<String?>(value: final value) => {
-              'add_on_configuration_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateCreated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_created': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateUpdated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_updated': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateCompleted) {
-          SdkPresent<String?>(value: final value) => {
-              'date_completed': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (referenceSid) {
-          SdkPresent<String?>(value: final value) => {
-              'reference_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subresourceUris) {
-          SdkPresent<Map<String, dynamic>?>(value: final value) => {
-              'subresource_uris': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (sid) {
+      SdkPresent<String?>(value: final value) => {'sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (accountSid) {
+      SdkPresent<String?>(value: final value) => {'account_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (status) {
+      SdkPresent<RecordingAddOnResultEnumStatus>(value: final value) => {'status': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (addOnSid) {
+      SdkPresent<String?>(value: final value) => {'add_on_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (addOnConfigurationSid) {
+      SdkPresent<String?>(value: final value) => {'add_on_configuration_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateCreated) {
+      SdkPresent<String?>(value: final value) => {'date_created': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateUpdated) {
+      SdkPresent<String?>(value: final value) => {'date_updated': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateCompleted) {
+      SdkPresent<String?>(value: final value) => {'date_completed': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (referenceSid) {
+      SdkPresent<String?>(value: final value) => {'reference_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subresourceUris) {
+      SdkPresent<Map<String, dynamic>?>(value: final value) => {'subresource_uris': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
 final class RecordingAddOnResultEnumStatus {
+
   final String value;
 
   const RecordingAddOnResultEnumStatus._(this.value);
 
-  factory RecordingAddOnResultEnumStatus.fromJson(String value) =>
-      RecordingAddOnResultEnumStatus._(value);
+  factory RecordingAddOnResultEnumStatus.fromJson(String value) => RecordingAddOnResultEnumStatus._(value);
 
   static const canceled = RecordingAddOnResultEnumStatus._('canceled');
   static const completed = RecordingAddOnResultEnumStatus._('completed');
@@ -232,13 +123,10 @@ final class RecordingAddOnResultEnumStatus {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is RecordingAddOnResultEnumStatus && other.value == value;
+  @override bool operator ==(Object other) => other is RecordingAddOnResultEnumStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

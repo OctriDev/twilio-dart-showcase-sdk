@@ -30,11 +30,11 @@ Future<ApiV2010AccountQueue> fetchQueues(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchQueues',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountQueue.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountQueue.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the name or maximum size of a queue. Use `AccountSid` and `Sid` to identify the queue, and supply `FriendlyName`, `MaxSize`, or both to change its settings. The response contains the updated queue object.
 ///
@@ -70,11 +70,11 @@ Future<ApiV2010AccountQueue> updateQueues(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateQueues',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountQueue.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountQueue.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes an empty queue from an account. Use `AccountSid` and `Sid` to identify the account and queue; the queue must be empty before you remove it.
 ///
@@ -102,6 +102,7 @@ Future<void> deleteQueues(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists queues belonging to an account. Use `PageSize` to control the number of queues per page and `Page` or `PageToken` to navigate the results.
 ///
@@ -133,20 +134,17 @@ Future<ListQueuesResponse> listQueues(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Queues.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listQueues',
-          fromJsonRaw: (value) =>
-              ListQueuesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListQueuesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a queue for an account. Supply `FriendlyName` to describe the queue; `MaxSize` controls the number of calls it can hold and defaults to 1000 when omitted. The response contains the created queue and its generated SID.
 ///
@@ -177,8 +175,7 @@ Future<ApiV2010AccountQueue> createQueues(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createQueues',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountQueue.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountQueue.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

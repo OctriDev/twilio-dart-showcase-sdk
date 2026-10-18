@@ -7,1197 +7,491 @@ part of 'inline.dart';
 class CreateConferencesParticipantsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The phone number, Client identifier, or username portion of SIP address that made this call. Phone numbers are in [E.164](https://www.twilio.com/docs/glossary/what-e164) format (e.g., +16175551212). Client identifiers are formatted `client:name`. If using a phone number, it must be a Twilio number or a Verified [outgoing caller id](https://www.twilio.com/docs/voice/api/outgoing-caller-ids) for your account. If the `to` parameter is a phone number, `from` must also be a phone number. If `to` is sip address, this value of `from` should be a username portion to be used to populate the P-Asserted-Identity header that is passed to the SIP endpoint.
   final String from;
-
   /// The phone number, SIP address, Client, TwiML App identifier that received this call. Phone numbers are in [E.164](https://www.twilio.com/docs/glossary/what-e164) format (e.g., +16175551212). SIP addresses are formatted as `sip:name@company.com`. Client identifiers are formatted `client:name`. TwiML App identifiers are formatted `app:&lt;APP_SID&gt;`. [Custom parameters](https://www.twilio.com/docs/voice/api/conference-participant-resource#custom-parameters) may also be specified.
   final String to;
-
   /// The URL we should call using the `status_callback_method` to send status information to your application.
   final SdkOptional<String> statusCallback;
-
   /// The HTTP method we should use to call `status_callback`. Can be: `GET` and `POST` and defaults to `POST`.
-  final SdkOptional<
-          CreateConferencesParticipantsRequestBodyStatusCallbackMethod>
-      statusCallbackMethod;
-
+  final SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod> statusCallbackMethod;
   /// The conference state changes that should generate a call to `status_callback`. Can be: `initiated`, `ringing`, `answered`, and `completed`. Separate multiple values with a space. The default value is `completed`.
   final SdkOptional<List<String>> statusCallbackEvent;
-
   /// A label for this participant. If one is supplied, it may subsequently be used to fetch, update or delete the participant.
   final SdkOptional<String> label;
-
   /// The number of seconds that we should allow the phone to ring before assuming there is no answer. Can be an integer between `5` and `600`, inclusive. The default value is `60`. We always add a 5-second timeout buffer to outgoing calls, so value of 10 would result in an actual timeout that was closer to 15 seconds.
   final SdkOptional<int> timeout;
-
   /// Whether to record the participant and their conferences, including the time between conferences. Can be `true` or `false` and the default is `false`.
   final SdkOptional<bool> record;
-
   /// Whether the agent is muted in the conference. Can be `true` or `false` and the default is `false`.
   final SdkOptional<bool> muted;
-
   /// Whether to play a notification beep to the conference when the participant joins. Can be: `true`, `false`, `onEnter`, or `onExit`. The default value is `true`.
   final SdkOptional<String> beep;
-
   /// Whether to start the conference when the participant joins, if it has not already started. Can be: `true` or `false` and the default is `true`. If `false` and the conference has not started, the participant is muted and hears background music until another participant starts the conference.
   final SdkOptional<bool> startConferenceOnEnter;
-
   /// Whether to end the conference when the participant leaves. Can be: `true` or `false` and defaults to `false`.
   final SdkOptional<bool> endConferenceOnExit;
-
   /// The URL that Twilio calls using the `wait_method` before the conference has started. The URL may return an MP3 file, a WAV file, or a TwiML document. The default value is the URL of our standard hold music. If you do not want anything to play while waiting for the conference to start, specify an empty string by setting `wait_url` to `''`. For more details on the allowable verbs within the `waitUrl`, see the `waitUrl` attribute in the [&lt;Conference&gt; TwiML instruction](https://www.twilio.com/docs/voice/twiml/conference#attributes-waiturl).
   final SdkOptional<String> waitUrl;
-
   /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-  final SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod>
-      waitMethod;
-
+  final SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod> waitMethod;
   /// Whether to allow an agent to hear the state of the outbound call, including ringing or disconnect messages. Can be: `true` or `false` and defaults to `true`.
   final SdkOptional<bool> earlyMedia;
-
   /// The maximum number of participants in the conference. Can be a positive integer from `2` to `250`. The default value is `250`.
   final SdkOptional<int> maxParticipants;
-
   /// Whether to record the conference the participant is joining. Can be: `true`, `false`, `record-from-start`, and `do-not-record`. The default value is `false`.
   final SdkOptional<String> conferenceRecord;
-
   /// Whether to trim leading and trailing silence from the conference recording. Can be: `trim-silence` or `do-not-trim` and defaults to `trim-silence`.
   final SdkOptional<String> conferenceTrim;
-
   /// The URL we should call using the `conference_status_callback_method` when the conference events in `conference_status_callback_event` occur. Only the value set by the first participant to join the conference is used. Subsequent `conference_status_callback` values are ignored.
   final SdkOptional<String> conferenceStatusCallback;
-
   /// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<
-          CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>
-      conferenceStatusCallbackMethod;
-
+  final SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod> conferenceStatusCallbackMethod;
   /// The conference state changes that should generate a call to `conference_status_callback`. Can be: `start`, `end`, `join`, `leave`, `mute`, `hold`, `modify`, `speaker`, and `announcement`. Separate multiple values with a space. Defaults to `start end`.
   final SdkOptional<List<String>> conferenceStatusCallbackEvent;
-
   /// The recording channels for the final recording. Can be: `mono` or `dual` and the default is `mono`.
   final SdkOptional<String> recordingChannels;
-
   /// The URL that we should call using the `recording_status_callback_method` when the recording status changes.
   final SdkOptional<String> recordingStatusCallback;
-
   /// The HTTP method we should use when we call `recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<
-          CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>
-      recordingStatusCallbackMethod;
-
+  final SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod;
   /// The SIP username used for authentication.
   final SdkOptional<String> sipAuthUsername;
-
   /// The SIP password for authentication.
   final SdkOptional<String> sipAuthPassword;
-
   /// The [region](https://support.twilio.com/hc/en-us/articles/223132167-How-global-low-latency-routing-and-region-selection-work-for-conferences-and-Client-calls) where we should mix the recorded audio. Can be:`us1`, `us2`, `ie1`, `de1`, `sg1`, `br1`, `au1`, or `jp1`.
   final SdkOptional<String> region;
-
   /// The URL we should call using the `conference_recording_status_callback_method` when the conference recording is available.
   final SdkOptional<String> conferenceRecordingStatusCallback;
-
   /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<
-          CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>
-      conferenceRecordingStatusCallbackMethod;
-
+  final SdkOptional<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod> conferenceRecordingStatusCallbackMethod;
   /// The recording state changes that should generate a call to `recording_status_callback`. Can be: `started`, `in-progress`, `paused`, `resumed`, `stopped`, `completed`, `failed`, and `absent`. Separate multiple values with a space, ex: `'in-progress completed failed'`.
   final SdkOptional<List<String>> recordingStatusCallbackEvent;
-
   /// The conference recording state changes that generate a call to `conference_recording_status_callback`. Can be: `in-progress`, `completed`, `failed`, and `absent`. Separate multiple values with a space, ex: `'in-progress completed failed'`
   final SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent;
-
   /// Whether the participant is coaching another call. Can be: `true` or `false`. If not present, defaults to `false` unless `call_sid_to_coach` is defined. If `true`, `call_sid_to_coach` must be defined.
   final SdkOptional<bool> coaching;
-
   /// The SID of the participant who is being `coached`. The participant being coached is the only participant who can hear the participant who is `coaching`.
   final SdkOptional<String> callSidToCoach;
-
   /// Jitter buffer size for the connecting participant. Twilio will use this setting to apply Jitter Buffer before participant's audio is mixed into the conference. Can be: `off`, `small`, `medium`, and `large`. Default to `large`.
   final SdkOptional<String> jitterBufferSize;
-
   /// The SID of a BYOC (Bring Your Own Carrier) trunk to route this call with. Note that `byoc` is only meaningful when `to` is a phone number; it will otherwise be ignored. (Beta)
   final SdkOptional<String> byoc;
-
   /// The phone number, Client identifier, or username portion of SIP address that made this call. Phone numbers are in [E.164](https://www.twilio.com/docs/glossary/what-e164) format (e.g., +16175551212). Client identifiers are formatted `client:name`. If using a phone number, it must be a Twilio number or a Verified [outgoing caller id](https://www.twilio.com/docs/voice/api/outgoing-caller-ids) for your account. If the `to` parameter is a phone number, `callerId` must also be a phone number. If `to` is sip address, this value of `callerId` should be a username portion to be used to populate the From header that is passed to the SIP endpoint.
   final SdkOptional<String> callerId;
-
   /// The Reason for the outgoing call. Use it to specify the purpose of the call that is presented on the called party's phone. (Branded Calls Beta)
   final SdkOptional<String> callReason;
-
   /// The audio track to record for the call. Can be: `inbound`, `outbound` or `both`. The default is `both`. `inbound` records the audio that is received by Twilio. `outbound` records the audio that is sent from Twilio. `both` records the audio that is received and sent by Twilio.
   final SdkOptional<String> recordingTrack;
-
   /// The identifier of the configuration to be used when creating and processing the recording
   final SdkOptional<String> recordingConfigurationId;
-
   /// The maximum duration of the call in seconds. Constraints depend on account and configuration.
   final SdkOptional<int> timeLimit;
-
   /// Whether to detect if a human, answering machine, or fax has picked up the call. Can be: `Enable` or `DetectMessageEnd`. Use `Enable` if you would like us to return `AnsweredBy` as soon as the called party is identified. Use `DetectMessageEnd`, if you would like to leave a message on an answering machine. For more information, see [Answering Machine Detection](https://www.twilio.com/docs/voice/answering-machine-detection).
   final SdkOptional<String> machineDetection;
-
   /// The number of seconds that we should attempt to detect an answering machine before timing out and sending a voice request with `AnsweredBy` of `unknown`. The default timeout is 30 seconds.
   final SdkOptional<int> machineDetectionTimeout;
-
   /// The number of milliseconds that is used as the measuring stick for the length of the speech activity, where durations lower than this value will be interpreted as a human and longer than this value as a machine. Possible Values: 1000-6000. Default: 2400.
   final SdkOptional<int> machineDetectionSpeechThreshold;
-
   /// The number of milliseconds of silence after speech activity at which point the speech activity is considered complete. Possible Values: 500-5000. Default: 1200.
   final SdkOptional<int> machineDetectionSpeechEndThreshold;
-
   /// The number of milliseconds of initial silence after which an `unknown` AnsweredBy result will be returned. Possible Values: 2000-10000. Default: 5000.
   final SdkOptional<int> machineDetectionSilenceTimeout;
-
   /// The URL that we should call using the `amd_status_callback_method` to notify customer application whether the call was answered by human, machine or fax.
   final SdkOptional<String> amdStatusCallback;
-
   /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-  final SdkOptional<
-          CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>
-      amdStatusCallbackMethod;
-
+  final SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod> amdStatusCallbackMethod;
   /// Whether to trim any leading and trailing silence from the participant recording. Can be: `trim-silence` or `do-not-trim` and the default is `trim-silence`.
   final SdkOptional<String> trim;
-
   /// A token string needed to invoke a forwarded call. A call_token is generated when an incoming call is received on a Twilio number. Pass an incoming call's call_token value to a forwarded call via the call_token parameter when creating a new call. A forwarded call should bear the same CallerID of the original incoming call.
   final SdkOptional<String> callToken;
-
   /// The STIR/SHAKEN passport for this call, provided as a base64 encoded string. Multiple passports (at max 5) are comma separated and provided as base64 encoded string
   final SdkOptional<String> passports;
-
   /// The URL that we should use to deliver `push call notification`.
   final SdkOptional<String> clientNotificationUrl;
-
   /// The name that populates the display name in the From header. Must be between 2 and 255 characters. Only applicable for calls to sip address.
   final SdkOptional<String> callerDisplayName;
-
   /// The emergency caller's GPS coordinates in decimal degrees format. Format: "latitude longitude" (space-separated) - Latitude: decimal degrees, range -90.0 to +90.0 (negative for South, positive for North) - Longitude: decimal degrees, range -180.0 to +180.0 (negative for West, positive for East) - Precision: up to 6 decimal places recommended for meter-level accuracy Note: If the value exceeds 150 characters, only the first 150 characters will be used.
   final SdkOptional<String> emergencyCallerPosition;
-
   /// The emergency caller's physical location description within a building or facility. Note: If the value exceeds 20 characters, only the first 20 characters will be used.
   final SdkOptional<String> emergencyCallerLocation;
-
   /// The emergency caller's organization or entity name. Note: If the value exceeds 20 characters, only the first 20 characters will be used.
   final SdkOptional<String> emergencyName;
-
   /// The emergency caller's street address including street number and street name. Note: If the value exceeds 60 characters, only the first 60 characters will be used.
   final SdkOptional<String> emergencyAddress;
-
   /// The emergency caller's postal code or ZIP code. Note: If the value exceeds 20 characters, only the first 20 characters will be used.
   final SdkOptional<String> emergencyZipCode;
-
   /// The emergency caller's city or municipality name. Should be the official city name as recognized by local authorities. Used in combination with state and country for emergency call routing. Note: If the value exceeds 20 characters, only the first 20 characters will be used.
   final SdkOptional<String> emergencyCity;
-
   /// The emergency caller's state or province. Note: If the value exceeds 20 characters, only the first 20 characters will be used.
   final SdkOptional<String> emergencyState;
-
   /// The emergency caller's country. Currently supported US and CA only. Note: If the value exceeds 20 characters, only the first 20 characters will be used.
   final SdkOptional<String> emergencyCountry;
 
-  const CreateConferencesParticipantsRequestBody(
-      {required this.from,
-      required this.to,
-      this.statusCallback = const SdkOmitted(),
-      this.statusCallbackMethod = const SdkOmitted(),
-      this.statusCallbackEvent = const SdkOmitted(),
-      this.label = const SdkOmitted(),
-      this.timeout = const SdkOmitted(),
-      this.record = const SdkOmitted(),
-      this.muted = const SdkOmitted(),
-      this.beep = const SdkOmitted(),
-      this.startConferenceOnEnter = const SdkOmitted(),
-      this.endConferenceOnExit = const SdkOmitted(),
-      this.waitUrl = const SdkOmitted(),
-      this.waitMethod = const SdkOmitted(),
-      this.earlyMedia = const SdkOmitted(),
-      this.maxParticipants = const SdkOmitted(),
-      this.conferenceRecord = const SdkOmitted(),
-      this.conferenceTrim = const SdkOmitted(),
-      this.conferenceStatusCallback = const SdkOmitted(),
-      this.conferenceStatusCallbackMethod = const SdkOmitted(),
-      this.conferenceStatusCallbackEvent = const SdkOmitted(),
-      this.recordingChannels = const SdkOmitted(),
-      this.recordingStatusCallback = const SdkOmitted(),
-      this.recordingStatusCallbackMethod = const SdkOmitted(),
-      this.sipAuthUsername = const SdkOmitted(),
-      this.sipAuthPassword = const SdkOmitted(),
-      this.region = const SdkOmitted(),
-      this.conferenceRecordingStatusCallback = const SdkOmitted(),
-      this.conferenceRecordingStatusCallbackMethod = const SdkOmitted(),
-      this.recordingStatusCallbackEvent = const SdkOmitted(),
-      this.conferenceRecordingStatusCallbackEvent = const SdkOmitted(),
-      this.coaching = const SdkOmitted(),
-      this.callSidToCoach = const SdkOmitted(),
-      this.jitterBufferSize = const SdkOmitted(),
-      this.byoc = const SdkOmitted(),
-      this.callerId = const SdkOmitted(),
-      this.callReason = const SdkOmitted(),
-      this.recordingTrack = const SdkOmitted(),
-      this.recordingConfigurationId = const SdkOmitted(),
-      this.timeLimit = const SdkOmitted(),
-      this.machineDetection = const SdkOmitted(),
-      this.machineDetectionTimeout = const SdkOmitted(),
-      this.machineDetectionSpeechThreshold = const SdkOmitted(),
-      this.machineDetectionSpeechEndThreshold = const SdkOmitted(),
-      this.machineDetectionSilenceTimeout = const SdkOmitted(),
-      this.amdStatusCallback = const SdkOmitted(),
-      this.amdStatusCallbackMethod = const SdkOmitted(),
-      this.trim = const SdkOmitted(),
-      this.callToken = const SdkOmitted(),
-      this.passports = const SdkOmitted(),
-      this.clientNotificationUrl = const SdkOmitted(),
-      this.callerDisplayName = const SdkOmitted(),
-      this.emergencyCallerPosition = const SdkOmitted(),
-      this.emergencyCallerLocation = const SdkOmitted(),
-      this.emergencyName = const SdkOmitted(),
-      this.emergencyAddress = const SdkOmitted(),
-      this.emergencyZipCode = const SdkOmitted(),
-      this.emergencyCity = const SdkOmitted(),
-      this.emergencyState = const SdkOmitted(),
-      this.emergencyCountry = const SdkOmitted()});
+  const CreateConferencesParticipantsRequestBody({required this.from, required this.to, this.statusCallback = const SdkOmitted(), this.statusCallbackMethod = const SdkOmitted(), this.statusCallbackEvent = const SdkOmitted(), this.label = const SdkOmitted(), this.timeout = const SdkOmitted(), this.record = const SdkOmitted(), this.muted = const SdkOmitted(), this.beep = const SdkOmitted(), this.startConferenceOnEnter = const SdkOmitted(), this.endConferenceOnExit = const SdkOmitted(), this.waitUrl = const SdkOmitted(), this.waitMethod = const SdkOmitted(), this.earlyMedia = const SdkOmitted(), this.maxParticipants = const SdkOmitted(), this.conferenceRecord = const SdkOmitted(), this.conferenceTrim = const SdkOmitted(), this.conferenceStatusCallback = const SdkOmitted(), this.conferenceStatusCallbackMethod = const SdkOmitted(), this.conferenceStatusCallbackEvent = const SdkOmitted(), this.recordingChannels = const SdkOmitted(), this.recordingStatusCallback = const SdkOmitted(), this.recordingStatusCallbackMethod = const SdkOmitted(), this.sipAuthUsername = const SdkOmitted(), this.sipAuthPassword = const SdkOmitted(), this.region = const SdkOmitted(), this.conferenceRecordingStatusCallback = const SdkOmitted(), this.conferenceRecordingStatusCallbackMethod = const SdkOmitted(), this.recordingStatusCallbackEvent = const SdkOmitted(), this.conferenceRecordingStatusCallbackEvent = const SdkOmitted(), this.coaching = const SdkOmitted(), this.callSidToCoach = const SdkOmitted(), this.jitterBufferSize = const SdkOmitted(), this.byoc = const SdkOmitted(), this.callerId = const SdkOmitted(), this.callReason = const SdkOmitted(), this.recordingTrack = const SdkOmitted(), this.recordingConfigurationId = const SdkOmitted(), this.timeLimit = const SdkOmitted(), this.machineDetection = const SdkOmitted(), this.machineDetectionTimeout = const SdkOmitted(), this.machineDetectionSpeechThreshold = const SdkOmitted(), this.machineDetectionSpeechEndThreshold = const SdkOmitted(), this.machineDetectionSilenceTimeout = const SdkOmitted(), this.amdStatusCallback = const SdkOmitted(), this.amdStatusCallbackMethod = const SdkOmitted(), this.trim = const SdkOmitted(), this.callToken = const SdkOmitted(), this.passports = const SdkOmitted(), this.clientNotificationUrl = const SdkOmitted(), this.callerDisplayName = const SdkOmitted(), this.emergencyCallerPosition = const SdkOmitted(), this.emergencyCallerLocation = const SdkOmitted(), this.emergencyName = const SdkOmitted(), this.emergencyAddress = const SdkOmitted(), this.emergencyZipCode = const SdkOmitted(), this.emergencyCity = const SdkOmitted(), this.emergencyState = const SdkOmitted(), this.emergencyCountry = const SdkOmitted()});
 
-  CreateConferencesParticipantsRequestBody Function(
-      {String from,
-      String to,
-      SdkOptional<String> statusCallback,
-      SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod,
-      SdkOptional<List<String>> statusCallbackEvent,
-      SdkOptional<String> label,
-      SdkOptional<int> timeout,
-      SdkOptional<bool> record,
-      SdkOptional<bool> muted,
-      SdkOptional<String> beep,
-      SdkOptional<bool> startConferenceOnEnter,
-      SdkOptional<bool> endConferenceOnExit,
-      SdkOptional<String> waitUrl,
-      SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod>
-          waitMethod,
-      SdkOptional<bool> earlyMedia,
-      SdkOptional<int> maxParticipants,
-      SdkOptional<String> conferenceRecord,
-      SdkOptional<String> conferenceTrim,
-      SdkOptional<String> conferenceStatusCallback,
-      SdkOptional<
-              CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>
-          conferenceStatusCallbackMethod,
-      SdkOptional<List<String>> conferenceStatusCallbackEvent,
-      SdkOptional<String> recordingChannels,
-      SdkOptional<String> recordingStatusCallback,
-      SdkOptional<
-              CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>
-          recordingStatusCallbackMethod,
-      SdkOptional<String> sipAuthUsername,
-      SdkOptional<String> sipAuthPassword,
-      SdkOptional<String> region,
-      SdkOptional<String> conferenceRecordingStatusCallback,
-      SdkOptional<
-              CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>
-          conferenceRecordingStatusCallbackMethod,
-      SdkOptional<List<String>> recordingStatusCallbackEvent,
-      SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent,
-      SdkOptional<bool> coaching,
-      SdkOptional<String> callSidToCoach,
-      SdkOptional<String> jitterBufferSize,
-      SdkOptional<String> byoc,
-      SdkOptional<String> callerId,
-      SdkOptional<String> callReason,
-      SdkOptional<String> recordingTrack,
-      SdkOptional<String> recordingConfigurationId,
-      SdkOptional<int> timeLimit,
-      SdkOptional<String> machineDetection,
-      SdkOptional<int> machineDetectionTimeout,
-      SdkOptional<int> machineDetectionSpeechThreshold,
-      SdkOptional<int> machineDetectionSpeechEndThreshold,
-      SdkOptional<int> machineDetectionSilenceTimeout,
-      SdkOptional<String> amdStatusCallback,
-      SdkOptional<
-              CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>
-          amdStatusCallbackMethod,
-      SdkOptional<String> trim,
-      SdkOptional<String> callToken,
-      SdkOptional<String> passports,
-      SdkOptional<String> clientNotificationUrl,
-      SdkOptional<String> callerDisplayName,
-      SdkOptional<String> emergencyCallerPosition,
-      SdkOptional<String> emergencyCallerLocation,
-      SdkOptional<String> emergencyName,
-      SdkOptional<String> emergencyAddress,
-      SdkOptional<String> emergencyZipCode,
-      SdkOptional<String> emergencyCity,
-      SdkOptional<String> emergencyState,
-      SdkOptional<String> emergencyCountry}) get copyWith => _copyWith;
+  CreateConferencesParticipantsRequestBody Function({String from, String to, SdkOptional<String> statusCallback, SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod> statusCallbackMethod, SdkOptional<List<String>> statusCallbackEvent, SdkOptional<String> label, SdkOptional<int> timeout, SdkOptional<bool> record, SdkOptional<bool> muted, SdkOptional<String> beep, SdkOptional<bool> startConferenceOnEnter, SdkOptional<bool> endConferenceOnExit, SdkOptional<String> waitUrl, SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod> waitMethod, SdkOptional<bool> earlyMedia, SdkOptional<int> maxParticipants, SdkOptional<String> conferenceRecord, SdkOptional<String> conferenceTrim, SdkOptional<String> conferenceStatusCallback, SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod> conferenceStatusCallbackMethod, SdkOptional<List<String>> conferenceStatusCallbackEvent, SdkOptional<String> recordingChannels, SdkOptional<String> recordingStatusCallback, SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod, SdkOptional<String> sipAuthUsername, SdkOptional<String> sipAuthPassword, SdkOptional<String> region, SdkOptional<String> conferenceRecordingStatusCallback, SdkOptional<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod> conferenceRecordingStatusCallbackMethod, SdkOptional<List<String>> recordingStatusCallbackEvent, SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent, SdkOptional<bool> coaching, SdkOptional<String> callSidToCoach, SdkOptional<String> jitterBufferSize, SdkOptional<String> byoc, SdkOptional<String> callerId, SdkOptional<String> callReason, SdkOptional<String> recordingTrack, SdkOptional<String> recordingConfigurationId, SdkOptional<int> timeLimit, SdkOptional<String> machineDetection, SdkOptional<int> machineDetectionTimeout, SdkOptional<int> machineDetectionSpeechThreshold, SdkOptional<int> machineDetectionSpeechEndThreshold, SdkOptional<int> machineDetectionSilenceTimeout, SdkOptional<String> amdStatusCallback, SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod> amdStatusCallbackMethod, SdkOptional<String> trim, SdkOptional<String> callToken, SdkOptional<String> passports, SdkOptional<String> clientNotificationUrl, SdkOptional<String> callerDisplayName, SdkOptional<String> emergencyCallerPosition, SdkOptional<String> emergencyCallerLocation, SdkOptional<String> emergencyName, SdkOptional<String> emergencyAddress, SdkOptional<String> emergencyZipCode, SdkOptional<String> emergencyCity, SdkOptional<String> emergencyState, SdkOptional<String> emergencyCountry}) get copyWith => _copyWith;
 
-  CreateConferencesParticipantsRequestBody _copyWith(
-          {Object? from = sdkOmittedValue,
-          Object? to = sdkOmittedValue,
-          Object? statusCallback = sdkOmittedValue,
-          Object? statusCallbackMethod = sdkOmittedValue,
-          Object? statusCallbackEvent = sdkOmittedValue,
-          Object? label = sdkOmittedValue,
-          Object? timeout = sdkOmittedValue,
-          Object? record = sdkOmittedValue,
-          Object? muted = sdkOmittedValue,
-          Object? beep = sdkOmittedValue,
-          Object? startConferenceOnEnter = sdkOmittedValue,
-          Object? endConferenceOnExit = sdkOmittedValue,
-          Object? waitUrl = sdkOmittedValue,
-          Object? waitMethod = sdkOmittedValue,
-          Object? earlyMedia = sdkOmittedValue,
-          Object? maxParticipants = sdkOmittedValue,
-          Object? conferenceRecord = sdkOmittedValue,
-          Object? conferenceTrim = sdkOmittedValue,
-          Object? conferenceStatusCallback = sdkOmittedValue,
-          Object? conferenceStatusCallbackMethod = sdkOmittedValue,
-          Object? conferenceStatusCallbackEvent = sdkOmittedValue,
-          Object? recordingChannels = sdkOmittedValue,
-          Object? recordingStatusCallback = sdkOmittedValue,
-          Object? recordingStatusCallbackMethod = sdkOmittedValue,
-          Object? sipAuthUsername = sdkOmittedValue,
-          Object? sipAuthPassword = sdkOmittedValue,
-          Object? region = sdkOmittedValue,
-          Object? conferenceRecordingStatusCallback = sdkOmittedValue,
-          Object? conferenceRecordingStatusCallbackMethod = sdkOmittedValue,
-          Object? recordingStatusCallbackEvent = sdkOmittedValue,
-          Object? conferenceRecordingStatusCallbackEvent = sdkOmittedValue,
-          Object? coaching = sdkOmittedValue,
-          Object? callSidToCoach = sdkOmittedValue,
-          Object? jitterBufferSize = sdkOmittedValue,
-          Object? byoc = sdkOmittedValue,
-          Object? callerId = sdkOmittedValue,
-          Object? callReason = sdkOmittedValue,
-          Object? recordingTrack = sdkOmittedValue,
-          Object? recordingConfigurationId = sdkOmittedValue,
-          Object? timeLimit = sdkOmittedValue,
-          Object? machineDetection = sdkOmittedValue,
-          Object? machineDetectionTimeout = sdkOmittedValue,
-          Object? machineDetectionSpeechThreshold = sdkOmittedValue,
-          Object? machineDetectionSpeechEndThreshold = sdkOmittedValue,
-          Object? machineDetectionSilenceTimeout = sdkOmittedValue,
-          Object? amdStatusCallback = sdkOmittedValue,
-          Object? amdStatusCallbackMethod = sdkOmittedValue,
-          Object? trim = sdkOmittedValue,
-          Object? callToken = sdkOmittedValue,
-          Object? passports = sdkOmittedValue,
-          Object? clientNotificationUrl = sdkOmittedValue,
-          Object? callerDisplayName = sdkOmittedValue,
-          Object? emergencyCallerPosition = sdkOmittedValue,
-          Object? emergencyCallerLocation = sdkOmittedValue,
-          Object? emergencyName = sdkOmittedValue,
-          Object? emergencyAddress = sdkOmittedValue,
-          Object? emergencyZipCode = sdkOmittedValue,
-          Object? emergencyCity = sdkOmittedValue,
-          Object? emergencyState = sdkOmittedValue,
-          Object? emergencyCountry = sdkOmittedValue}) =>
-      CreateConferencesParticipantsRequestBody(
-        from: identical(from, sdkOmittedValue) ? this.from : from as String,
-        to: identical(to, sdkOmittedValue) ? this.to : to as String,
-        statusCallback: identical(statusCallback, sdkOmittedValue)
-            ? this.statusCallback
-            : statusCallback as SdkOptional<String>,
-        statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue)
-            ? this.statusCallbackMethod
-            : statusCallbackMethod as SdkOptional<
-                CreateConferencesParticipantsRequestBodyStatusCallbackMethod>,
-        statusCallbackEvent: identical(statusCallbackEvent, sdkOmittedValue)
-            ? this.statusCallbackEvent
-            : statusCallbackEvent as SdkOptional<List<String>>,
-        label: identical(label, sdkOmittedValue)
-            ? this.label
-            : label as SdkOptional<String>,
-        timeout: identical(timeout, sdkOmittedValue)
-            ? this.timeout
-            : timeout as SdkOptional<int>,
-        record: identical(record, sdkOmittedValue)
-            ? this.record
-            : record as SdkOptional<bool>,
-        muted: identical(muted, sdkOmittedValue)
-            ? this.muted
-            : muted as SdkOptional<bool>,
-        beep: identical(beep, sdkOmittedValue)
-            ? this.beep
-            : beep as SdkOptional<String>,
-        startConferenceOnEnter:
-            identical(startConferenceOnEnter, sdkOmittedValue)
-                ? this.startConferenceOnEnter
-                : startConferenceOnEnter as SdkOptional<bool>,
-        endConferenceOnExit: identical(endConferenceOnExit, sdkOmittedValue)
-            ? this.endConferenceOnExit
-            : endConferenceOnExit as SdkOptional<bool>,
-        waitUrl: identical(waitUrl, sdkOmittedValue)
-            ? this.waitUrl
-            : waitUrl as SdkOptional<String>,
-        waitMethod: identical(waitMethod, sdkOmittedValue)
-            ? this.waitMethod
-            : waitMethod as SdkOptional<
-                CreateConferencesParticipantsRequestBodyWaitMethod>,
-        earlyMedia: identical(earlyMedia, sdkOmittedValue)
-            ? this.earlyMedia
-            : earlyMedia as SdkOptional<bool>,
-        maxParticipants: identical(maxParticipants, sdkOmittedValue)
-            ? this.maxParticipants
-            : maxParticipants as SdkOptional<int>,
-        conferenceRecord: identical(conferenceRecord, sdkOmittedValue)
-            ? this.conferenceRecord
-            : conferenceRecord as SdkOptional<String>,
-        conferenceTrim: identical(conferenceTrim, sdkOmittedValue)
-            ? this.conferenceTrim
-            : conferenceTrim as SdkOptional<String>,
-        conferenceStatusCallback:
-            identical(conferenceStatusCallback, sdkOmittedValue)
-                ? this.conferenceStatusCallback
-                : conferenceStatusCallback as SdkOptional<String>,
-        conferenceStatusCallbackMethod: identical(
-                conferenceStatusCallbackMethod, sdkOmittedValue)
-            ? this.conferenceStatusCallbackMethod
-            : conferenceStatusCallbackMethod as SdkOptional<
-                CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>,
-        conferenceStatusCallbackEvent:
-            identical(conferenceStatusCallbackEvent, sdkOmittedValue)
-                ? this.conferenceStatusCallbackEvent
-                : conferenceStatusCallbackEvent as SdkOptional<List<String>>,
-        recordingChannels: identical(recordingChannels, sdkOmittedValue)
-            ? this.recordingChannels
-            : recordingChannels as SdkOptional<String>,
-        recordingStatusCallback:
-            identical(recordingStatusCallback, sdkOmittedValue)
-                ? this.recordingStatusCallback
-                : recordingStatusCallback as SdkOptional<String>,
-        recordingStatusCallbackMethod: identical(
-                recordingStatusCallbackMethod, sdkOmittedValue)
-            ? this.recordingStatusCallbackMethod
-            : recordingStatusCallbackMethod as SdkOptional<
-                CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>,
-        sipAuthUsername: identical(sipAuthUsername, sdkOmittedValue)
-            ? this.sipAuthUsername
-            : sipAuthUsername as SdkOptional<String>,
-        sipAuthPassword: identical(sipAuthPassword, sdkOmittedValue)
-            ? this.sipAuthPassword
-            : sipAuthPassword as SdkOptional<String>,
-        region: identical(region, sdkOmittedValue)
-            ? this.region
-            : region as SdkOptional<String>,
-        conferenceRecordingStatusCallback:
-            identical(conferenceRecordingStatusCallback, sdkOmittedValue)
-                ? this.conferenceRecordingStatusCallback
-                : conferenceRecordingStatusCallback as SdkOptional<String>,
-        conferenceRecordingStatusCallbackMethod: identical(
-                conferenceRecordingStatusCallbackMethod, sdkOmittedValue)
-            ? this.conferenceRecordingStatusCallbackMethod
-            : conferenceRecordingStatusCallbackMethod as SdkOptional<
-                CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>,
-        recordingStatusCallbackEvent:
-            identical(recordingStatusCallbackEvent, sdkOmittedValue)
-                ? this.recordingStatusCallbackEvent
-                : recordingStatusCallbackEvent as SdkOptional<List<String>>,
-        conferenceRecordingStatusCallbackEvent:
-            identical(conferenceRecordingStatusCallbackEvent, sdkOmittedValue)
-                ? this.conferenceRecordingStatusCallbackEvent
-                : conferenceRecordingStatusCallbackEvent
-                    as SdkOptional<List<String>>,
-        coaching: identical(coaching, sdkOmittedValue)
-            ? this.coaching
-            : coaching as SdkOptional<bool>,
-        callSidToCoach: identical(callSidToCoach, sdkOmittedValue)
-            ? this.callSidToCoach
-            : callSidToCoach as SdkOptional<String>,
-        jitterBufferSize: identical(jitterBufferSize, sdkOmittedValue)
-            ? this.jitterBufferSize
-            : jitterBufferSize as SdkOptional<String>,
-        byoc: identical(byoc, sdkOmittedValue)
-            ? this.byoc
-            : byoc as SdkOptional<String>,
-        callerId: identical(callerId, sdkOmittedValue)
-            ? this.callerId
-            : callerId as SdkOptional<String>,
-        callReason: identical(callReason, sdkOmittedValue)
-            ? this.callReason
-            : callReason as SdkOptional<String>,
-        recordingTrack: identical(recordingTrack, sdkOmittedValue)
-            ? this.recordingTrack
-            : recordingTrack as SdkOptional<String>,
-        recordingConfigurationId:
-            identical(recordingConfigurationId, sdkOmittedValue)
-                ? this.recordingConfigurationId
-                : recordingConfigurationId as SdkOptional<String>,
-        timeLimit: identical(timeLimit, sdkOmittedValue)
-            ? this.timeLimit
-            : timeLimit as SdkOptional<int>,
-        machineDetection: identical(machineDetection, sdkOmittedValue)
-            ? this.machineDetection
-            : machineDetection as SdkOptional<String>,
-        machineDetectionTimeout:
-            identical(machineDetectionTimeout, sdkOmittedValue)
-                ? this.machineDetectionTimeout
-                : machineDetectionTimeout as SdkOptional<int>,
-        machineDetectionSpeechThreshold:
-            identical(machineDetectionSpeechThreshold, sdkOmittedValue)
-                ? this.machineDetectionSpeechThreshold
-                : machineDetectionSpeechThreshold as SdkOptional<int>,
-        machineDetectionSpeechEndThreshold:
-            identical(machineDetectionSpeechEndThreshold, sdkOmittedValue)
-                ? this.machineDetectionSpeechEndThreshold
-                : machineDetectionSpeechEndThreshold as SdkOptional<int>,
-        machineDetectionSilenceTimeout:
-            identical(machineDetectionSilenceTimeout, sdkOmittedValue)
-                ? this.machineDetectionSilenceTimeout
-                : machineDetectionSilenceTimeout as SdkOptional<int>,
-        amdStatusCallback: identical(amdStatusCallback, sdkOmittedValue)
-            ? this.amdStatusCallback
-            : amdStatusCallback as SdkOptional<String>,
-        amdStatusCallbackMethod: identical(
-                amdStatusCallbackMethod, sdkOmittedValue)
-            ? this.amdStatusCallbackMethod
-            : amdStatusCallbackMethod as SdkOptional<
-                CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>,
-        trim: identical(trim, sdkOmittedValue)
-            ? this.trim
-            : trim as SdkOptional<String>,
-        callToken: identical(callToken, sdkOmittedValue)
-            ? this.callToken
-            : callToken as SdkOptional<String>,
-        passports: identical(passports, sdkOmittedValue)
-            ? this.passports
-            : passports as SdkOptional<String>,
-        clientNotificationUrl: identical(clientNotificationUrl, sdkOmittedValue)
-            ? this.clientNotificationUrl
-            : clientNotificationUrl as SdkOptional<String>,
-        callerDisplayName: identical(callerDisplayName, sdkOmittedValue)
-            ? this.callerDisplayName
-            : callerDisplayName as SdkOptional<String>,
-        emergencyCallerPosition:
-            identical(emergencyCallerPosition, sdkOmittedValue)
-                ? this.emergencyCallerPosition
-                : emergencyCallerPosition as SdkOptional<String>,
-        emergencyCallerLocation:
-            identical(emergencyCallerLocation, sdkOmittedValue)
-                ? this.emergencyCallerLocation
-                : emergencyCallerLocation as SdkOptional<String>,
-        emergencyName: identical(emergencyName, sdkOmittedValue)
-            ? this.emergencyName
-            : emergencyName as SdkOptional<String>,
-        emergencyAddress: identical(emergencyAddress, sdkOmittedValue)
-            ? this.emergencyAddress
-            : emergencyAddress as SdkOptional<String>,
-        emergencyZipCode: identical(emergencyZipCode, sdkOmittedValue)
-            ? this.emergencyZipCode
-            : emergencyZipCode as SdkOptional<String>,
-        emergencyCity: identical(emergencyCity, sdkOmittedValue)
-            ? this.emergencyCity
-            : emergencyCity as SdkOptional<String>,
-        emergencyState: identical(emergencyState, sdkOmittedValue)
-            ? this.emergencyState
-            : emergencyState as SdkOptional<String>,
-        emergencyCountry: identical(emergencyCountry, sdkOmittedValue)
-            ? this.emergencyCountry
-            : emergencyCountry as SdkOptional<String>,
-      );
+  CreateConferencesParticipantsRequestBody _copyWith({Object? from = sdkOmittedValue, Object? to = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? statusCallbackMethod = sdkOmittedValue, Object? statusCallbackEvent = sdkOmittedValue, Object? label = sdkOmittedValue, Object? timeout = sdkOmittedValue, Object? record = sdkOmittedValue, Object? muted = sdkOmittedValue, Object? beep = sdkOmittedValue, Object? startConferenceOnEnter = sdkOmittedValue, Object? endConferenceOnExit = sdkOmittedValue, Object? waitUrl = sdkOmittedValue, Object? waitMethod = sdkOmittedValue, Object? earlyMedia = sdkOmittedValue, Object? maxParticipants = sdkOmittedValue, Object? conferenceRecord = sdkOmittedValue, Object? conferenceTrim = sdkOmittedValue, Object? conferenceStatusCallback = sdkOmittedValue, Object? conferenceStatusCallbackMethod = sdkOmittedValue, Object? conferenceStatusCallbackEvent = sdkOmittedValue, Object? recordingChannels = sdkOmittedValue, Object? recordingStatusCallback = sdkOmittedValue, Object? recordingStatusCallbackMethod = sdkOmittedValue, Object? sipAuthUsername = sdkOmittedValue, Object? sipAuthPassword = sdkOmittedValue, Object? region = sdkOmittedValue, Object? conferenceRecordingStatusCallback = sdkOmittedValue, Object? conferenceRecordingStatusCallbackMethod = sdkOmittedValue, Object? recordingStatusCallbackEvent = sdkOmittedValue, Object? conferenceRecordingStatusCallbackEvent = sdkOmittedValue, Object? coaching = sdkOmittedValue, Object? callSidToCoach = sdkOmittedValue, Object? jitterBufferSize = sdkOmittedValue, Object? byoc = sdkOmittedValue, Object? callerId = sdkOmittedValue, Object? callReason = sdkOmittedValue, Object? recordingTrack = sdkOmittedValue, Object? recordingConfigurationId = sdkOmittedValue, Object? timeLimit = sdkOmittedValue, Object? machineDetection = sdkOmittedValue, Object? machineDetectionTimeout = sdkOmittedValue, Object? machineDetectionSpeechThreshold = sdkOmittedValue, Object? machineDetectionSpeechEndThreshold = sdkOmittedValue, Object? machineDetectionSilenceTimeout = sdkOmittedValue, Object? amdStatusCallback = sdkOmittedValue, Object? amdStatusCallbackMethod = sdkOmittedValue, Object? trim = sdkOmittedValue, Object? callToken = sdkOmittedValue, Object? passports = sdkOmittedValue, Object? clientNotificationUrl = sdkOmittedValue, Object? callerDisplayName = sdkOmittedValue, Object? emergencyCallerPosition = sdkOmittedValue, Object? emergencyCallerLocation = sdkOmittedValue, Object? emergencyName = sdkOmittedValue, Object? emergencyAddress = sdkOmittedValue, Object? emergencyZipCode = sdkOmittedValue, Object? emergencyCity = sdkOmittedValue, Object? emergencyState = sdkOmittedValue, Object? emergencyCountry = sdkOmittedValue}) => CreateConferencesParticipantsRequestBody(
+    from: identical(from, sdkOmittedValue) ? this.from : from as String,
+    to: identical(to, sdkOmittedValue) ? this.to : to as String,
+    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as SdkOptional<String>,
+    statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue) ? this.statusCallbackMethod : statusCallbackMethod as SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod>,
+    statusCallbackEvent: identical(statusCallbackEvent, sdkOmittedValue) ? this.statusCallbackEvent : statusCallbackEvent as SdkOptional<List<String>>,
+    label: identical(label, sdkOmittedValue) ? this.label : label as SdkOptional<String>,
+    timeout: identical(timeout, sdkOmittedValue) ? this.timeout : timeout as SdkOptional<int>,
+    record: identical(record, sdkOmittedValue) ? this.record : record as SdkOptional<bool>,
+    muted: identical(muted, sdkOmittedValue) ? this.muted : muted as SdkOptional<bool>,
+    beep: identical(beep, sdkOmittedValue) ? this.beep : beep as SdkOptional<String>,
+    startConferenceOnEnter: identical(startConferenceOnEnter, sdkOmittedValue) ? this.startConferenceOnEnter : startConferenceOnEnter as SdkOptional<bool>,
+    endConferenceOnExit: identical(endConferenceOnExit, sdkOmittedValue) ? this.endConferenceOnExit : endConferenceOnExit as SdkOptional<bool>,
+    waitUrl: identical(waitUrl, sdkOmittedValue) ? this.waitUrl : waitUrl as SdkOptional<String>,
+    waitMethod: identical(waitMethod, sdkOmittedValue) ? this.waitMethod : waitMethod as SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod>,
+    earlyMedia: identical(earlyMedia, sdkOmittedValue) ? this.earlyMedia : earlyMedia as SdkOptional<bool>,
+    maxParticipants: identical(maxParticipants, sdkOmittedValue) ? this.maxParticipants : maxParticipants as SdkOptional<int>,
+    conferenceRecord: identical(conferenceRecord, sdkOmittedValue) ? this.conferenceRecord : conferenceRecord as SdkOptional<String>,
+    conferenceTrim: identical(conferenceTrim, sdkOmittedValue) ? this.conferenceTrim : conferenceTrim as SdkOptional<String>,
+    conferenceStatusCallback: identical(conferenceStatusCallback, sdkOmittedValue) ? this.conferenceStatusCallback : conferenceStatusCallback as SdkOptional<String>,
+    conferenceStatusCallbackMethod: identical(conferenceStatusCallbackMethod, sdkOmittedValue) ? this.conferenceStatusCallbackMethod : conferenceStatusCallbackMethod as SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>,
+    conferenceStatusCallbackEvent: identical(conferenceStatusCallbackEvent, sdkOmittedValue) ? this.conferenceStatusCallbackEvent : conferenceStatusCallbackEvent as SdkOptional<List<String>>,
+    recordingChannels: identical(recordingChannels, sdkOmittedValue) ? this.recordingChannels : recordingChannels as SdkOptional<String>,
+    recordingStatusCallback: identical(recordingStatusCallback, sdkOmittedValue) ? this.recordingStatusCallback : recordingStatusCallback as SdkOptional<String>,
+    recordingStatusCallbackMethod: identical(recordingStatusCallbackMethod, sdkOmittedValue) ? this.recordingStatusCallbackMethod : recordingStatusCallbackMethod as SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>,
+    sipAuthUsername: identical(sipAuthUsername, sdkOmittedValue) ? this.sipAuthUsername : sipAuthUsername as SdkOptional<String>,
+    sipAuthPassword: identical(sipAuthPassword, sdkOmittedValue) ? this.sipAuthPassword : sipAuthPassword as SdkOptional<String>,
+    region: identical(region, sdkOmittedValue) ? this.region : region as SdkOptional<String>,
+    conferenceRecordingStatusCallback: identical(conferenceRecordingStatusCallback, sdkOmittedValue) ? this.conferenceRecordingStatusCallback : conferenceRecordingStatusCallback as SdkOptional<String>,
+    conferenceRecordingStatusCallbackMethod: identical(conferenceRecordingStatusCallbackMethod, sdkOmittedValue) ? this.conferenceRecordingStatusCallbackMethod : conferenceRecordingStatusCallbackMethod as SdkOptional<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>,
+    recordingStatusCallbackEvent: identical(recordingStatusCallbackEvent, sdkOmittedValue) ? this.recordingStatusCallbackEvent : recordingStatusCallbackEvent as SdkOptional<List<String>>,
+    conferenceRecordingStatusCallbackEvent: identical(conferenceRecordingStatusCallbackEvent, sdkOmittedValue) ? this.conferenceRecordingStatusCallbackEvent : conferenceRecordingStatusCallbackEvent as SdkOptional<List<String>>,
+    coaching: identical(coaching, sdkOmittedValue) ? this.coaching : coaching as SdkOptional<bool>,
+    callSidToCoach: identical(callSidToCoach, sdkOmittedValue) ? this.callSidToCoach : callSidToCoach as SdkOptional<String>,
+    jitterBufferSize: identical(jitterBufferSize, sdkOmittedValue) ? this.jitterBufferSize : jitterBufferSize as SdkOptional<String>,
+    byoc: identical(byoc, sdkOmittedValue) ? this.byoc : byoc as SdkOptional<String>,
+    callerId: identical(callerId, sdkOmittedValue) ? this.callerId : callerId as SdkOptional<String>,
+    callReason: identical(callReason, sdkOmittedValue) ? this.callReason : callReason as SdkOptional<String>,
+    recordingTrack: identical(recordingTrack, sdkOmittedValue) ? this.recordingTrack : recordingTrack as SdkOptional<String>,
+    recordingConfigurationId: identical(recordingConfigurationId, sdkOmittedValue) ? this.recordingConfigurationId : recordingConfigurationId as SdkOptional<String>,
+    timeLimit: identical(timeLimit, sdkOmittedValue) ? this.timeLimit : timeLimit as SdkOptional<int>,
+    machineDetection: identical(machineDetection, sdkOmittedValue) ? this.machineDetection : machineDetection as SdkOptional<String>,
+    machineDetectionTimeout: identical(machineDetectionTimeout, sdkOmittedValue) ? this.machineDetectionTimeout : machineDetectionTimeout as SdkOptional<int>,
+    machineDetectionSpeechThreshold: identical(machineDetectionSpeechThreshold, sdkOmittedValue) ? this.machineDetectionSpeechThreshold : machineDetectionSpeechThreshold as SdkOptional<int>,
+    machineDetectionSpeechEndThreshold: identical(machineDetectionSpeechEndThreshold, sdkOmittedValue) ? this.machineDetectionSpeechEndThreshold : machineDetectionSpeechEndThreshold as SdkOptional<int>,
+    machineDetectionSilenceTimeout: identical(machineDetectionSilenceTimeout, sdkOmittedValue) ? this.machineDetectionSilenceTimeout : machineDetectionSilenceTimeout as SdkOptional<int>,
+    amdStatusCallback: identical(amdStatusCallback, sdkOmittedValue) ? this.amdStatusCallback : amdStatusCallback as SdkOptional<String>,
+    amdStatusCallbackMethod: identical(amdStatusCallbackMethod, sdkOmittedValue) ? this.amdStatusCallbackMethod : amdStatusCallbackMethod as SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>,
+    trim: identical(trim, sdkOmittedValue) ? this.trim : trim as SdkOptional<String>,
+    callToken: identical(callToken, sdkOmittedValue) ? this.callToken : callToken as SdkOptional<String>,
+    passports: identical(passports, sdkOmittedValue) ? this.passports : passports as SdkOptional<String>,
+    clientNotificationUrl: identical(clientNotificationUrl, sdkOmittedValue) ? this.clientNotificationUrl : clientNotificationUrl as SdkOptional<String>,
+    callerDisplayName: identical(callerDisplayName, sdkOmittedValue) ? this.callerDisplayName : callerDisplayName as SdkOptional<String>,
+    emergencyCallerPosition: identical(emergencyCallerPosition, sdkOmittedValue) ? this.emergencyCallerPosition : emergencyCallerPosition as SdkOptional<String>,
+    emergencyCallerLocation: identical(emergencyCallerLocation, sdkOmittedValue) ? this.emergencyCallerLocation : emergencyCallerLocation as SdkOptional<String>,
+    emergencyName: identical(emergencyName, sdkOmittedValue) ? this.emergencyName : emergencyName as SdkOptional<String>,
+    emergencyAddress: identical(emergencyAddress, sdkOmittedValue) ? this.emergencyAddress : emergencyAddress as SdkOptional<String>,
+    emergencyZipCode: identical(emergencyZipCode, sdkOmittedValue) ? this.emergencyZipCode : emergencyZipCode as SdkOptional<String>,
+    emergencyCity: identical(emergencyCity, sdkOmittedValue) ? this.emergencyCity : emergencyCity as SdkOptional<String>,
+    emergencyState: identical(emergencyState, sdkOmittedValue) ? this.emergencyState : emergencyState as SdkOptional<String>,
+    emergencyCountry: identical(emergencyCountry, sdkOmittedValue) ? this.emergencyCountry : emergencyCountry as SdkOptional<String>,
+  );
 
-  factory CreateConferencesParticipantsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CreateConferencesParticipantsRequestBody(
-        from: (json['From'] as String?)!,
-        to: (json['To'] as String?)!,
-        statusCallback: json['StatusCallback'] != null
-            ? SdkPresent((json['StatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        statusCallbackMethod: json['StatusCallbackMethod'] != null
-            ? SdkPresent((json['StatusCallbackMethod'] != null
-                ? CreateConferencesParticipantsRequestBodyStatusCallbackMethod
-                    .fromJson(json['StatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        statusCallbackEvent: json['StatusCallbackEvent'] != null
-            ? SdkPresent(((json['StatusCallbackEvent'] as List?)
-                ?.map((e) => e as String)
-                .toList())!)
-            : const SdkOmitted(),
-        label: json['Label'] != null
-            ? SdkPresent((json['Label'] as String?)!)
-            : const SdkOmitted(),
-        timeout: json['Timeout'] != null
-            ? SdkPresent(((json['Timeout'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        record: json['Record'] != null
-            ? SdkPresent((json['Record'] as bool?)!)
-            : const SdkOmitted(),
-        muted: json['Muted'] != null
-            ? SdkPresent((json['Muted'] as bool?)!)
-            : const SdkOmitted(),
-        beep: json['Beep'] != null
-            ? SdkPresent((json['Beep'] as String?)!)
-            : const SdkOmitted(),
-        startConferenceOnEnter: json['StartConferenceOnEnter'] != null
-            ? SdkPresent((json['StartConferenceOnEnter'] as bool?)!)
-            : const SdkOmitted(),
-        endConferenceOnExit: json['EndConferenceOnExit'] != null
-            ? SdkPresent((json['EndConferenceOnExit'] as bool?)!)
-            : const SdkOmitted(),
-        waitUrl: json['WaitUrl'] != null
-            ? SdkPresent((json['WaitUrl'] as String?)!)
-            : const SdkOmitted(),
-        waitMethod: json['WaitMethod'] != null
-            ? SdkPresent((json['WaitMethod'] != null
-                ? CreateConferencesParticipantsRequestBodyWaitMethod.fromJson(
-                    json['WaitMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        earlyMedia: json['EarlyMedia'] != null
-            ? SdkPresent((json['EarlyMedia'] as bool?)!)
-            : const SdkOmitted(),
-        maxParticipants: json['MaxParticipants'] != null
-            ? SdkPresent(((json['MaxParticipants'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        conferenceRecord: json['ConferenceRecord'] != null
-            ? SdkPresent((json['ConferenceRecord'] as String?)!)
-            : const SdkOmitted(),
-        conferenceTrim: json['ConferenceTrim'] != null
-            ? SdkPresent((json['ConferenceTrim'] as String?)!)
-            : const SdkOmitted(),
-        conferenceStatusCallback: json['ConferenceStatusCallback'] != null
-            ? SdkPresent((json['ConferenceStatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        conferenceStatusCallbackMethod: json[
-                    'ConferenceStatusCallbackMethod'] !=
-                null
-            ? SdkPresent((json['ConferenceStatusCallbackMethod'] != null
-                ? CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod
-                    .fromJson(json['ConferenceStatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        conferenceStatusCallbackEvent:
-            json['ConferenceStatusCallbackEvent'] != null
-                ? SdkPresent(((json['ConferenceStatusCallbackEvent'] as List?)
-                    ?.map((e) => e as String)
-                    .toList())!)
-                : const SdkOmitted(),
-        recordingChannels: json['RecordingChannels'] != null
-            ? SdkPresent((json['RecordingChannels'] as String?)!)
-            : const SdkOmitted(),
-        recordingStatusCallback: json['RecordingStatusCallback'] != null
-            ? SdkPresent((json['RecordingStatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        recordingStatusCallbackMethod: json['RecordingStatusCallbackMethod'] !=
-                null
-            ? SdkPresent((json['RecordingStatusCallbackMethod'] != null
-                ? CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod
-                    .fromJson(json['RecordingStatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        sipAuthUsername: json['SipAuthUsername'] != null
-            ? SdkPresent((json['SipAuthUsername'] as String?)!)
-            : const SdkOmitted(),
-        sipAuthPassword: json['SipAuthPassword'] != null
-            ? SdkPresent((json['SipAuthPassword'] as String?)!)
-            : const SdkOmitted(),
-        region: json['Region'] != null
-            ? SdkPresent((json['Region'] as String?)!)
-            : const SdkOmitted(),
-        conferenceRecordingStatusCallback:
-            json['ConferenceRecordingStatusCallback'] != null
-                ? SdkPresent(
-                    (json['ConferenceRecordingStatusCallback'] as String?)!)
-                : const SdkOmitted(),
-        conferenceRecordingStatusCallbackMethod: json[
-                    'ConferenceRecordingStatusCallbackMethod'] !=
-                null
-            ? SdkPresent((json['ConferenceRecordingStatusCallbackMethod'] !=
-                    null
-                ? CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod
-                    .fromJson(json['ConferenceRecordingStatusCallbackMethod']
-                        as String)
-                : null)!)
-            : const SdkOmitted(),
-        recordingStatusCallbackEvent:
-            json['RecordingStatusCallbackEvent'] != null
-                ? SdkPresent(((json['RecordingStatusCallbackEvent'] as List?)
-                    ?.map((e) => e as String)
-                    .toList())!)
-                : const SdkOmitted(),
-        conferenceRecordingStatusCallbackEvent:
-            json['ConferenceRecordingStatusCallbackEvent'] != null
-                ? SdkPresent(
-                    ((json['ConferenceRecordingStatusCallbackEvent'] as List?)
-                        ?.map((e) => e as String)
-                        .toList())!)
-                : const SdkOmitted(),
-        coaching: json['Coaching'] != null
-            ? SdkPresent((json['Coaching'] as bool?)!)
-            : const SdkOmitted(),
-        callSidToCoach: json['CallSidToCoach'] != null
-            ? SdkPresent((json['CallSidToCoach'] as String?)!)
-            : const SdkOmitted(),
-        jitterBufferSize: json['JitterBufferSize'] != null
-            ? SdkPresent((json['JitterBufferSize'] as String?)!)
-            : const SdkOmitted(),
-        byoc: json['Byoc'] != null
-            ? SdkPresent((json['Byoc'] as String?)!)
-            : const SdkOmitted(),
-        callerId: json['CallerId'] != null
-            ? SdkPresent((json['CallerId'] as String?)!)
-            : const SdkOmitted(),
-        callReason: json['CallReason'] != null
-            ? SdkPresent((json['CallReason'] as String?)!)
-            : const SdkOmitted(),
-        recordingTrack: json['RecordingTrack'] != null
-            ? SdkPresent((json['RecordingTrack'] as String?)!)
-            : const SdkOmitted(),
-        recordingConfigurationId: json['RecordingConfigurationId'] != null
-            ? SdkPresent((json['RecordingConfigurationId'] as String?)!)
-            : const SdkOmitted(),
-        timeLimit: json['TimeLimit'] != null
-            ? SdkPresent(((json['TimeLimit'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        machineDetection: json['MachineDetection'] != null
-            ? SdkPresent((json['MachineDetection'] as String?)!)
-            : const SdkOmitted(),
-        machineDetectionTimeout: json['MachineDetectionTimeout'] != null
-            ? SdkPresent(((json['MachineDetectionTimeout'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        machineDetectionSpeechThreshold:
-            json['MachineDetectionSpeechThreshold'] != null
-                ? SdkPresent(((json['MachineDetectionSpeechThreshold'] as num?)
-                    ?.toInt())!)
-                : const SdkOmitted(),
-        machineDetectionSpeechEndThreshold:
-            json['MachineDetectionSpeechEndThreshold'] != null
-                ? SdkPresent(
-                    ((json['MachineDetectionSpeechEndThreshold'] as num?)
-                        ?.toInt())!)
-                : const SdkOmitted(),
-        machineDetectionSilenceTimeout:
-            json['MachineDetectionSilenceTimeout'] != null
-                ? SdkPresent(((json['MachineDetectionSilenceTimeout'] as num?)
-                    ?.toInt())!)
-                : const SdkOmitted(),
-        amdStatusCallback: json['AmdStatusCallback'] != null
-            ? SdkPresent((json['AmdStatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        amdStatusCallbackMethod: json['AmdStatusCallbackMethod'] != null
-            ? SdkPresent((json['AmdStatusCallbackMethod'] != null
-                ? CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod
-                    .fromJson(json['AmdStatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        trim: json['Trim'] != null
-            ? SdkPresent((json['Trim'] as String?)!)
-            : const SdkOmitted(),
-        callToken: json['CallToken'] != null
-            ? SdkPresent((json['CallToken'] as String?)!)
-            : const SdkOmitted(),
-        passports: json['Passports'] != null
-            ? SdkPresent((json['Passports'] as String?)!)
-            : const SdkOmitted(),
-        clientNotificationUrl: json['ClientNotificationUrl'] != null
-            ? SdkPresent((json['ClientNotificationUrl'] as String?)!)
-            : const SdkOmitted(),
-        callerDisplayName: json['CallerDisplayName'] != null
-            ? SdkPresent((json['CallerDisplayName'] as String?)!)
-            : const SdkOmitted(),
-        emergencyCallerPosition: json['EmergencyCallerPosition'] != null
-            ? SdkPresent((json['EmergencyCallerPosition'] as String?)!)
-            : const SdkOmitted(),
-        emergencyCallerLocation: json['EmergencyCallerLocation'] != null
-            ? SdkPresent((json['EmergencyCallerLocation'] as String?)!)
-            : const SdkOmitted(),
-        emergencyName: json['EmergencyName'] != null
-            ? SdkPresent((json['EmergencyName'] as String?)!)
-            : const SdkOmitted(),
-        emergencyAddress: json['EmergencyAddress'] != null
-            ? SdkPresent((json['EmergencyAddress'] as String?)!)
-            : const SdkOmitted(),
-        emergencyZipCode: json['EmergencyZipCode'] != null
-            ? SdkPresent((json['EmergencyZipCode'] as String?)!)
-            : const SdkOmitted(),
-        emergencyCity: json['EmergencyCity'] != null
-            ? SdkPresent((json['EmergencyCity'] as String?)!)
-            : const SdkOmitted(),
-        emergencyState: json['EmergencyState'] != null
-            ? SdkPresent((json['EmergencyState'] as String?)!)
-            : const SdkOmitted(),
-        emergencyCountry: json['EmergencyCountry'] != null
-            ? SdkPresent((json['EmergencyCountry'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CreateConferencesParticipantsRequestBody.fromJson(Map<String, dynamic> json) => CreateConferencesParticipantsRequestBody(
+    from: (json['From'] as String?)!,
+    to: (json['To'] as String?)!,
+    statusCallback: json['StatusCallback'] != null ? SdkPresent((json['StatusCallback'] as String?)!) : const SdkOmitted(),
+    statusCallbackMethod: json['StatusCallbackMethod'] != null ? SdkPresent((json['StatusCallbackMethod'] != null ? CreateConferencesParticipantsRequestBodyStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    statusCallbackEvent: json['StatusCallbackEvent'] != null ? SdkPresent(((json['StatusCallbackEvent'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    label: json['Label'] != null ? SdkPresent((json['Label'] as String?)!) : const SdkOmitted(),
+    timeout: json['Timeout'] != null ? SdkPresent(((json['Timeout'] as num?)?.toInt())!) : const SdkOmitted(),
+    record: json['Record'] != null ? SdkPresent((json['Record'] as bool?)!) : const SdkOmitted(),
+    muted: json['Muted'] != null ? SdkPresent((json['Muted'] as bool?)!) : const SdkOmitted(),
+    beep: json['Beep'] != null ? SdkPresent((json['Beep'] as String?)!) : const SdkOmitted(),
+    startConferenceOnEnter: json['StartConferenceOnEnter'] != null ? SdkPresent((json['StartConferenceOnEnter'] as bool?)!) : const SdkOmitted(),
+    endConferenceOnExit: json['EndConferenceOnExit'] != null ? SdkPresent((json['EndConferenceOnExit'] as bool?)!) : const SdkOmitted(),
+    waitUrl: json['WaitUrl'] != null ? SdkPresent((json['WaitUrl'] as String?)!) : const SdkOmitted(),
+    waitMethod: json['WaitMethod'] != null ? SdkPresent((json['WaitMethod'] != null ? CreateConferencesParticipantsRequestBodyWaitMethod.fromJson(json['WaitMethod'] as String) : null)!) : const SdkOmitted(),
+    earlyMedia: json['EarlyMedia'] != null ? SdkPresent((json['EarlyMedia'] as bool?)!) : const SdkOmitted(),
+    maxParticipants: json['MaxParticipants'] != null ? SdkPresent(((json['MaxParticipants'] as num?)?.toInt())!) : const SdkOmitted(),
+    conferenceRecord: json['ConferenceRecord'] != null ? SdkPresent((json['ConferenceRecord'] as String?)!) : const SdkOmitted(),
+    conferenceTrim: json['ConferenceTrim'] != null ? SdkPresent((json['ConferenceTrim'] as String?)!) : const SdkOmitted(),
+    conferenceStatusCallback: json['ConferenceStatusCallback'] != null ? SdkPresent((json['ConferenceStatusCallback'] as String?)!) : const SdkOmitted(),
+    conferenceStatusCallbackMethod: json['ConferenceStatusCallbackMethod'] != null ? SdkPresent((json['ConferenceStatusCallbackMethod'] != null ? CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod.fromJson(json['ConferenceStatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    conferenceStatusCallbackEvent: json['ConferenceStatusCallbackEvent'] != null ? SdkPresent(((json['ConferenceStatusCallbackEvent'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    recordingChannels: json['RecordingChannels'] != null ? SdkPresent((json['RecordingChannels'] as String?)!) : const SdkOmitted(),
+    recordingStatusCallback: json['RecordingStatusCallback'] != null ? SdkPresent((json['RecordingStatusCallback'] as String?)!) : const SdkOmitted(),
+    recordingStatusCallbackMethod: json['RecordingStatusCallbackMethod'] != null ? SdkPresent((json['RecordingStatusCallbackMethod'] != null ? CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod.fromJson(json['RecordingStatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    sipAuthUsername: json['SipAuthUsername'] != null ? SdkPresent((json['SipAuthUsername'] as String?)!) : const SdkOmitted(),
+    sipAuthPassword: json['SipAuthPassword'] != null ? SdkPresent((json['SipAuthPassword'] as String?)!) : const SdkOmitted(),
+    region: json['Region'] != null ? SdkPresent((json['Region'] as String?)!) : const SdkOmitted(),
+    conferenceRecordingStatusCallback: json['ConferenceRecordingStatusCallback'] != null ? SdkPresent((json['ConferenceRecordingStatusCallback'] as String?)!) : const SdkOmitted(),
+    conferenceRecordingStatusCallbackMethod: json['ConferenceRecordingStatusCallbackMethod'] != null ? SdkPresent((json['ConferenceRecordingStatusCallbackMethod'] != null ? CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod.fromJson(json['ConferenceRecordingStatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    recordingStatusCallbackEvent: json['RecordingStatusCallbackEvent'] != null ? SdkPresent(((json['RecordingStatusCallbackEvent'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    conferenceRecordingStatusCallbackEvent: json['ConferenceRecordingStatusCallbackEvent'] != null ? SdkPresent(((json['ConferenceRecordingStatusCallbackEvent'] as List?)?.map((e) => e as String).toList())!) : const SdkOmitted(),
+    coaching: json['Coaching'] != null ? SdkPresent((json['Coaching'] as bool?)!) : const SdkOmitted(),
+    callSidToCoach: json['CallSidToCoach'] != null ? SdkPresent((json['CallSidToCoach'] as String?)!) : const SdkOmitted(),
+    jitterBufferSize: json['JitterBufferSize'] != null ? SdkPresent((json['JitterBufferSize'] as String?)!) : const SdkOmitted(),
+    byoc: json['Byoc'] != null ? SdkPresent((json['Byoc'] as String?)!) : const SdkOmitted(),
+    callerId: json['CallerId'] != null ? SdkPresent((json['CallerId'] as String?)!) : const SdkOmitted(),
+    callReason: json['CallReason'] != null ? SdkPresent((json['CallReason'] as String?)!) : const SdkOmitted(),
+    recordingTrack: json['RecordingTrack'] != null ? SdkPresent((json['RecordingTrack'] as String?)!) : const SdkOmitted(),
+    recordingConfigurationId: json['RecordingConfigurationId'] != null ? SdkPresent((json['RecordingConfigurationId'] as String?)!) : const SdkOmitted(),
+    timeLimit: json['TimeLimit'] != null ? SdkPresent(((json['TimeLimit'] as num?)?.toInt())!) : const SdkOmitted(),
+    machineDetection: json['MachineDetection'] != null ? SdkPresent((json['MachineDetection'] as String?)!) : const SdkOmitted(),
+    machineDetectionTimeout: json['MachineDetectionTimeout'] != null ? SdkPresent(((json['MachineDetectionTimeout'] as num?)?.toInt())!) : const SdkOmitted(),
+    machineDetectionSpeechThreshold: json['MachineDetectionSpeechThreshold'] != null ? SdkPresent(((json['MachineDetectionSpeechThreshold'] as num?)?.toInt())!) : const SdkOmitted(),
+    machineDetectionSpeechEndThreshold: json['MachineDetectionSpeechEndThreshold'] != null ? SdkPresent(((json['MachineDetectionSpeechEndThreshold'] as num?)?.toInt())!) : const SdkOmitted(),
+    machineDetectionSilenceTimeout: json['MachineDetectionSilenceTimeout'] != null ? SdkPresent(((json['MachineDetectionSilenceTimeout'] as num?)?.toInt())!) : const SdkOmitted(),
+    amdStatusCallback: json['AmdStatusCallback'] != null ? SdkPresent((json['AmdStatusCallback'] as String?)!) : const SdkOmitted(),
+    amdStatusCallbackMethod: json['AmdStatusCallbackMethod'] != null ? SdkPresent((json['AmdStatusCallbackMethod'] != null ? CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod.fromJson(json['AmdStatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    trim: json['Trim'] != null ? SdkPresent((json['Trim'] as String?)!) : const SdkOmitted(),
+    callToken: json['CallToken'] != null ? SdkPresent((json['CallToken'] as String?)!) : const SdkOmitted(),
+    passports: json['Passports'] != null ? SdkPresent((json['Passports'] as String?)!) : const SdkOmitted(),
+    clientNotificationUrl: json['ClientNotificationUrl'] != null ? SdkPresent((json['ClientNotificationUrl'] as String?)!) : const SdkOmitted(),
+    callerDisplayName: json['CallerDisplayName'] != null ? SdkPresent((json['CallerDisplayName'] as String?)!) : const SdkOmitted(),
+    emergencyCallerPosition: json['EmergencyCallerPosition'] != null ? SdkPresent((json['EmergencyCallerPosition'] as String?)!) : const SdkOmitted(),
+    emergencyCallerLocation: json['EmergencyCallerLocation'] != null ? SdkPresent((json['EmergencyCallerLocation'] as String?)!) : const SdkOmitted(),
+    emergencyName: json['EmergencyName'] != null ? SdkPresent((json['EmergencyName'] as String?)!) : const SdkOmitted(),
+    emergencyAddress: json['EmergencyAddress'] != null ? SdkPresent((json['EmergencyAddress'] as String?)!) : const SdkOmitted(),
+    emergencyZipCode: json['EmergencyZipCode'] != null ? SdkPresent((json['EmergencyZipCode'] as String?)!) : const SdkOmitted(),
+    emergencyCity: json['EmergencyCity'] != null ? SdkPresent((json['EmergencyCity'] as String?)!) : const SdkOmitted(),
+    emergencyState: json['EmergencyState'] != null ? SdkPresent((json['EmergencyState'] as String?)!) : const SdkOmitted(),
+    emergencyCountry: json['EmergencyCountry'] != null ? SdkPresent((json['EmergencyCountry'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'From': from,
-        'To': to,
-        ...switch (statusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'StatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusCallbackMethod) {
-          SdkPresent<
-                CreateConferencesParticipantsRequestBodyStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'StatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusCallbackEvent) {
-          SdkPresent<List<String>>(value: final value) => {
-              'StatusCallbackEvent': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (label) {
-          SdkPresent<String>(value: final value) => {
-              'Label': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (timeout) {
-          SdkPresent<int>(value: final value) => {
-              'Timeout': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (record) {
-          SdkPresent<bool>(value: final value) => {
-              'Record': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (muted) {
-          SdkPresent<bool>(value: final value) => {
-              'Muted': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (beep) {
-          SdkPresent<String>(value: final value) => {
-              'Beep': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (startConferenceOnEnter) {
-          SdkPresent<bool>(value: final value) => {
-              'StartConferenceOnEnter': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endConferenceOnExit) {
-          SdkPresent<bool>(value: final value) => {
-              'EndConferenceOnExit': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (waitUrl) {
-          SdkPresent<String>(value: final value) => {
-              'WaitUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (waitMethod) {
-          SdkPresent<CreateConferencesParticipantsRequestBodyWaitMethod>(
-            value: final value
-          ) =>
-            {
-              'WaitMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (earlyMedia) {
-          SdkPresent<bool>(value: final value) => {
-              'EarlyMedia': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (maxParticipants) {
-          SdkPresent<int>(value: final value) => {
-              'MaxParticipants': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceRecord) {
-          SdkPresent<String>(value: final value) => {
-              'ConferenceRecord': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceTrim) {
-          SdkPresent<String>(value: final value) => {
-              'ConferenceTrim': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceStatusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'ConferenceStatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceStatusCallbackMethod) {
-          SdkPresent<
-                CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'ConferenceStatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceStatusCallbackEvent) {
-          SdkPresent<List<String>>(value: final value) => {
-              'ConferenceStatusCallbackEvent': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recordingChannels) {
-          SdkPresent<String>(value: final value) => {
-              'RecordingChannels': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recordingStatusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'RecordingStatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recordingStatusCallbackMethod) {
-          SdkPresent<
-                CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'RecordingStatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sipAuthUsername) {
-          SdkPresent<String>(value: final value) => {
-              'SipAuthUsername': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sipAuthPassword) {
-          SdkPresent<String>(value: final value) => {
-              'SipAuthPassword': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (region) {
-          SdkPresent<String>(value: final value) => {
-              'Region': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceRecordingStatusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'ConferenceRecordingStatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceRecordingStatusCallbackMethod) {
-          SdkPresent<
-                CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'ConferenceRecordingStatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recordingStatusCallbackEvent) {
-          SdkPresent<List<String>>(value: final value) => {
-              'RecordingStatusCallbackEvent': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (conferenceRecordingStatusCallbackEvent) {
-          SdkPresent<List<String>>(value: final value) => {
-              'ConferenceRecordingStatusCallbackEvent': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (coaching) {
-          SdkPresent<bool>(value: final value) => {
-              'Coaching': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callSidToCoach) {
-          SdkPresent<String>(value: final value) => {
-              'CallSidToCoach': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (jitterBufferSize) {
-          SdkPresent<String>(value: final value) => {
-              'JitterBufferSize': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (byoc) {
-          SdkPresent<String>(value: final value) => {
-              'Byoc': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callerId) {
-          SdkPresent<String>(value: final value) => {
-              'CallerId': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callReason) {
-          SdkPresent<String>(value: final value) => {
-              'CallReason': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recordingTrack) {
-          SdkPresent<String>(value: final value) => {
-              'RecordingTrack': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (recordingConfigurationId) {
-          SdkPresent<String>(value: final value) => {
-              'RecordingConfigurationId': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (timeLimit) {
-          SdkPresent<int>(value: final value) => {
-              'TimeLimit': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machineDetection) {
-          SdkPresent<String>(value: final value) => {
-              'MachineDetection': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machineDetectionTimeout) {
-          SdkPresent<int>(value: final value) => {
-              'MachineDetectionTimeout': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machineDetectionSpeechThreshold) {
-          SdkPresent<int>(value: final value) => {
-              'MachineDetectionSpeechThreshold': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machineDetectionSpeechEndThreshold) {
-          SdkPresent<int>(value: final value) => {
-              'MachineDetectionSpeechEndThreshold': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (machineDetectionSilenceTimeout) {
-          SdkPresent<int>(value: final value) => {
-              'MachineDetectionSilenceTimeout': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (amdStatusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'AmdStatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (amdStatusCallbackMethod) {
-          SdkPresent<
-                CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'AmdStatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (trim) {
-          SdkPresent<String>(value: final value) => {
-              'Trim': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callToken) {
-          SdkPresent<String>(value: final value) => {
-              'CallToken': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (passports) {
-          SdkPresent<String>(value: final value) => {
-              'Passports': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (clientNotificationUrl) {
-          SdkPresent<String>(value: final value) => {
-              'ClientNotificationUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callerDisplayName) {
-          SdkPresent<String>(value: final value) => {
-              'CallerDisplayName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyCallerPosition) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyCallerPosition': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyCallerLocation) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyCallerLocation': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyName) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyAddress) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyAddress': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyZipCode) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyZipCode': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyCity) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyCity': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyState) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyState': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyCountry) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyCountry': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'From': from,
+    'To': to,
+    ...switch (statusCallback) {
+      SdkPresent<String>(value: final value) => {'StatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (statusCallbackMethod) {
+      SdkPresent<CreateConferencesParticipantsRequestBodyStatusCallbackMethod>(value: final value) => {'StatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (statusCallbackEvent) {
+      SdkPresent<List<String>>(value: final value) => {'StatusCallbackEvent': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (label) {
+      SdkPresent<String>(value: final value) => {'Label': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (timeout) {
+      SdkPresent<int>(value: final value) => {'Timeout': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (record) {
+      SdkPresent<bool>(value: final value) => {'Record': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (muted) {
+      SdkPresent<bool>(value: final value) => {'Muted': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (beep) {
+      SdkPresent<String>(value: final value) => {'Beep': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (startConferenceOnEnter) {
+      SdkPresent<bool>(value: final value) => {'StartConferenceOnEnter': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endConferenceOnExit) {
+      SdkPresent<bool>(value: final value) => {'EndConferenceOnExit': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (waitUrl) {
+      SdkPresent<String>(value: final value) => {'WaitUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (waitMethod) {
+      SdkPresent<CreateConferencesParticipantsRequestBodyWaitMethod>(value: final value) => {'WaitMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (earlyMedia) {
+      SdkPresent<bool>(value: final value) => {'EarlyMedia': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (maxParticipants) {
+      SdkPresent<int>(value: final value) => {'MaxParticipants': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceRecord) {
+      SdkPresent<String>(value: final value) => {'ConferenceRecord': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceTrim) {
+      SdkPresent<String>(value: final value) => {'ConferenceTrim': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceStatusCallback) {
+      SdkPresent<String>(value: final value) => {'ConferenceStatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceStatusCallbackMethod) {
+      SdkPresent<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>(value: final value) => {'ConferenceStatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceStatusCallbackEvent) {
+      SdkPresent<List<String>>(value: final value) => {'ConferenceStatusCallbackEvent': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (recordingChannels) {
+      SdkPresent<String>(value: final value) => {'RecordingChannels': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (recordingStatusCallback) {
+      SdkPresent<String>(value: final value) => {'RecordingStatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (recordingStatusCallbackMethod) {
+      SdkPresent<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>(value: final value) => {'RecordingStatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sipAuthUsername) {
+      SdkPresent<String>(value: final value) => {'SipAuthUsername': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sipAuthPassword) {
+      SdkPresent<String>(value: final value) => {'SipAuthPassword': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (region) {
+      SdkPresent<String>(value: final value) => {'Region': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceRecordingStatusCallback) {
+      SdkPresent<String>(value: final value) => {'ConferenceRecordingStatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceRecordingStatusCallbackMethod) {
+      SdkPresent<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>(value: final value) => {'ConferenceRecordingStatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (recordingStatusCallbackEvent) {
+      SdkPresent<List<String>>(value: final value) => {'RecordingStatusCallbackEvent': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (conferenceRecordingStatusCallbackEvent) {
+      SdkPresent<List<String>>(value: final value) => {'ConferenceRecordingStatusCallbackEvent': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (coaching) {
+      SdkPresent<bool>(value: final value) => {'Coaching': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callSidToCoach) {
+      SdkPresent<String>(value: final value) => {'CallSidToCoach': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (jitterBufferSize) {
+      SdkPresent<String>(value: final value) => {'JitterBufferSize': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (byoc) {
+      SdkPresent<String>(value: final value) => {'Byoc': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callerId) {
+      SdkPresent<String>(value: final value) => {'CallerId': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callReason) {
+      SdkPresent<String>(value: final value) => {'CallReason': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (recordingTrack) {
+      SdkPresent<String>(value: final value) => {'RecordingTrack': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (recordingConfigurationId) {
+      SdkPresent<String>(value: final value) => {'RecordingConfigurationId': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (timeLimit) {
+      SdkPresent<int>(value: final value) => {'TimeLimit': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (machineDetection) {
+      SdkPresent<String>(value: final value) => {'MachineDetection': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (machineDetectionTimeout) {
+      SdkPresent<int>(value: final value) => {'MachineDetectionTimeout': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (machineDetectionSpeechThreshold) {
+      SdkPresent<int>(value: final value) => {'MachineDetectionSpeechThreshold': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (machineDetectionSpeechEndThreshold) {
+      SdkPresent<int>(value: final value) => {'MachineDetectionSpeechEndThreshold': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (machineDetectionSilenceTimeout) {
+      SdkPresent<int>(value: final value) => {'MachineDetectionSilenceTimeout': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (amdStatusCallback) {
+      SdkPresent<String>(value: final value) => {'AmdStatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (amdStatusCallbackMethod) {
+      SdkPresent<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>(value: final value) => {'AmdStatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (trim) {
+      SdkPresent<String>(value: final value) => {'Trim': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callToken) {
+      SdkPresent<String>(value: final value) => {'CallToken': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (passports) {
+      SdkPresent<String>(value: final value) => {'Passports': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (clientNotificationUrl) {
+      SdkPresent<String>(value: final value) => {'ClientNotificationUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callerDisplayName) {
+      SdkPresent<String>(value: final value) => {'CallerDisplayName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyCallerPosition) {
+      SdkPresent<String>(value: final value) => {'EmergencyCallerPosition': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyCallerLocation) {
+      SdkPresent<String>(value: final value) => {'EmergencyCallerLocation': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyName) {
+      SdkPresent<String>(value: final value) => {'EmergencyName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyAddress) {
+      SdkPresent<String>(value: final value) => {'EmergencyAddress': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyZipCode) {
+      SdkPresent<String>(value: final value) => {'EmergencyZipCode': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyCity) {
+      SdkPresent<String>(value: final value) => {'EmergencyCity': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyState) {
+      SdkPresent<String>(value: final value) => {'EmergencyState': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyCountry) {
+      SdkPresent<String>(value: final value) => {'EmergencyCountry': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

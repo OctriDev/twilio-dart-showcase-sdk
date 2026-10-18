@@ -6,12 +6,12 @@ part of 'sms.dart';
 // sms domain models
 /// Typed representation of the `SmsFeedbackEnumOutcome` API schema.
 final class SmsFeedbackEnumOutcome {
+
   final String value;
 
   const SmsFeedbackEnumOutcome._(this.value);
 
-  factory SmsFeedbackEnumOutcome.fromJson(String value) =>
-      SmsFeedbackEnumOutcome._(value);
+  factory SmsFeedbackEnumOutcome.fromJson(String value) => SmsFeedbackEnumOutcome._(value);
 
   static const confirmed = SmsFeedbackEnumOutcome._('confirmed');
   static const unconfirmed = SmsFeedbackEnumOutcome._('unconfirmed');
@@ -21,13 +21,10 @@ final class SmsFeedbackEnumOutcome {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SmsFeedbackEnumOutcome && other.value == value;
+  @override bool operator ==(Object other) => other is SmsFeedbackEnumOutcome && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

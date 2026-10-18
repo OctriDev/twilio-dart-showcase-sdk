@@ -6,412 +6,286 @@ part of 'inline.dart';
 // Inline operation models (part 2)
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod {
+
   final String value;
 
   const ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._(value);
+  factory ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberSmsFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberSmsMethod {
+
   final String value;
 
   const ApiV2010AccountIncomingPhoneNumberSmsMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberSmsMethod.fromJson(String value) =>
-      ApiV2010AccountIncomingPhoneNumberSmsMethod._(value);
+  factory ApiV2010AccountIncomingPhoneNumberSmsMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberSmsMethod._(value);
 
   static const get_ = ApiV2010AccountIncomingPhoneNumberSmsMethod._('GET');
   static const post = ApiV2010AccountIncomingPhoneNumberSmsMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountIncomingPhoneNumberSmsMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberSmsMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod {
+
   final String value;
 
   const ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._(value);
+  factory ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod {
+
   final String value;
 
   const ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._(value);
+  factory ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberVoiceFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberVoiceMethod {
+
   final String value;
 
   const ApiV2010AccountIncomingPhoneNumberVoiceMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberVoiceMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberVoiceMethod._(value);
+  factory ApiV2010AccountIncomingPhoneNumberVoiceMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberVoiceMethod._(value);
 
   static const get_ = ApiV2010AccountIncomingPhoneNumberVoiceMethod._('GET');
   static const post = ApiV2010AccountIncomingPhoneNumberVoiceMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountIncomingPhoneNumberVoiceMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberVoiceMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod
-          ._(value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod
-          ._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod
-          ._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._(
-          value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._(
-          'GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._(
-          'POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalSmsMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod
-          ._(value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod
-          ._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod
-          ._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod
-          ._(value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod
-          ._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod
-          ._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._(
-          value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._(
-          'GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._(
-          'POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocalVoiceMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod
-          ._(value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod
-          ._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod
-          ._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `sms_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(
-          value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(
-          'GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._(
-          'POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileSmsMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `status_callback`. Can be: `GET` or `POST`.
 final class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod {
+
   final String value;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._(
-      this.value);
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._(this.value);
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod
-          ._(value);
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod.fromJson(String value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod
-          ._('GET');
-  static const post =
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod
-          ._('POST');
+  static const get_ = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._('GET');
+  static const post = ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other
-          is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobileStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

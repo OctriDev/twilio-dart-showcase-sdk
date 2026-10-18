@@ -79,55 +79,45 @@ import '../types.dart';
 ///   phone number. Some regions require addresses to meet local regulations.
 /// [bundleSid] The SID of the Bundle resource that you associate with the phone
 ///   number. Some regions require a Bundle to meet local Regulations.
-Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
-    ClientConfig config,
-    {required String accountSid,
-    required String sid,
-    SdkOptional<String> accountSid_2 = const SdkOmitted(),
-    SdkOptional<String> apiVersion = const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-    SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsFallbackMethod>
-        smsFallbackMethod = const SdkOmitted(),
-    SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod =
-        const SdkOmitted(),
-    SdkOptional<String> smsUrl = const SdkOmitted(),
-    SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<UpdateIncomingPhoneNumbersRequestBodyStatusCallbackMethod>
-        statusCallbackMethod = const SdkOmitted(),
-    SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
-    SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-    SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod>
-        voiceFallbackMethod = const SdkOmitted(),
-    SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceMethod> voiceMethod =
-        const SdkOmitted(),
-    SdkOptional<String> voiceUrl = const SdkOmitted(),
-    SdkOptional<IncomingPhoneNumberEnumEmergencyStatus> emergencyStatus =
-        const SdkOmitted(),
-    SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
-    SdkOptional<String> trunkSid = const SdkOmitted(),
-    SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode =
-        const SdkOmitted(),
-    SdkOptional<String> identitySid = const SdkOmitted(),
-    SdkOptional<String> addressSid = const SdkOmitted(),
-    SdkOptional<String> bundleSid = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountIncomingPhoneNumber>
+    updateIncomingPhoneNumbers(ClientConfig config,
+        {required String accountSid,
+        required String sid,
+        SdkOptional<String> accountSid_2 = const SdkOmitted(),
+        SdkOptional<String> apiVersion = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        SdkOptional<String> smsApplicationSid = const SdkOmitted(),
+        SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
+        SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
+        SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod = const SdkOmitted(),
+        SdkOptional<String> smsUrl = const SdkOmitted(),
+        SdkOptional<String> statusCallback = const SdkOmitted(),
+        SdkOptional<UpdateIncomingPhoneNumbersRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+        SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
+        SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
+        SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
+        SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
+        SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+        SdkOptional<String> voiceUrl = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
+        SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
+        SdkOptional<String> trunkSid = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
+        SdkOptional<String> identitySid = const SdkOmitted(),
+        SdkOptional<String> addressSid = const SdkOmitted(),
+        SdkOptional<String> bundleSid = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^PN[0-9a-fA-F]{32}\$');
   if (accountSid_2 is SdkPresent<String>) {
     validateLength('AccountSid', accountSid_2.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'AccountSid', accountSid_2.value, '^AC[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('AccountSid', accountSid_2.value, '^AC[0-9a-fA-F]{32}\$');
   }
   if (smsApplicationSid is SdkPresent<String>) {
-    validateLength('SmsApplicationSid', smsApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    validateLength('SmsApplicationSid', smsApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (smsFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('SmsFallbackUrl', smsFallbackUrl.value);
@@ -139,10 +129,8 @@ Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
     sdkValidateUri('StatusCallback', statusCallback.value);
   }
   if (voiceApplicationSid is SdkPresent<String>) {
-    validateLength('VoiceApplicationSid', voiceApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value,
-        '^AP[0-9a-fA-F]{32}\$');
+    validateLength('VoiceApplicationSid', voiceApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (voiceFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('VoiceFallbackUrl', voiceFallbackUrl.value);
@@ -151,10 +139,8 @@ Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
     sdkValidateUri('VoiceUrl', voiceUrl.value);
   }
   if (emergencyAddressSid is SdkPresent<String>) {
-    validateLength('EmergencyAddressSid', emergencyAddressSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value,
-        '^AD[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyAddressSid', emergencyAddressSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (trunkSid is SdkPresent<String>) {
     validateLength('TrunkSid', trunkSid.value, min: 34, max: 34);
@@ -162,8 +148,7 @@ Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
   }
   if (identitySid is SdkPresent<String>) {
     validateLength('IdentitySid', identitySid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
   }
   if (addressSid is SdkPresent<String>) {
     validateLength('AddressSid', addressSid.value, min: 34, max: 34);
@@ -187,8 +172,7 @@ Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceApplicationSid': SdkUtils.unwrapOptional(voiceApplicationSid),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
@@ -206,11 +190,11 @@ Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateIncomingPhoneNumbers',
-          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumber.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumber.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves an incoming phone number belonging to an account. Use the account SID and the phone number's SID to identify the resource.
 ///
@@ -221,11 +205,11 @@ Future<ApiV2010AccountIncomingPhoneNumber> updateIncomingPhoneNumbers(
 ///   IncomingPhoneNumber resource to fetch.
 /// [sid] The Twilio-provided string that uniquely identifies the
 ///   IncomingPhoneNumber resource to fetch.
-Future<ApiV2010AccountIncomingPhoneNumber> fetchIncomingPhoneNumbers(
-    ClientConfig config,
-    {required String accountSid,
-    required String sid,
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountIncomingPhoneNumber>
+    fetchIncomingPhoneNumbers(ClientConfig config,
+        {required String accountSid,
+        required String sid,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -236,11 +220,11 @@ Future<ApiV2010AccountIncomingPhoneNumber> fetchIncomingPhoneNumbers(
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchIncomingPhoneNumbers',
-          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumber.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumber.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete a phone-numbers belonging to the account used to make the request.
 ///
@@ -267,6 +251,7 @@ Future<void> deleteIncomingPhoneNumbers(ClientConfig config,
       .data;
 }
 
+
 /// Lists incoming phone numbers belonging to an account. Filter the results by beta status, friendly name, phone number, or origin, and use the page parameters to navigate the list.
 ///
 /// Retrieve a list of incoming-phone-numbers belonging to the account used to make the request.
@@ -287,17 +272,17 @@ Future<void> deleteIncomingPhoneNumbers(ClientConfig config,
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListIncomingPhoneNumbersResponse> listIncomingPhoneNumbers(
-    ClientConfig config,
-    {required String accountSid,
-    SdkOptional<bool> beta = const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<String> phoneNumber = const SdkOmitted(),
-    SdkOptional<String> origin = const SdkOmitted(),
-    SdkOptional<int> pageSize = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<String> pageToken = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ListIncomingPhoneNumbersResponse>
+    listIncomingPhoneNumbers(ClientConfig config,
+        {required String accountSid,
+        SdkOptional<bool> beta = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        SdkOptional<String> phoneNumber = const SdkOmitted(),
+        SdkOptional<String> origin = const SdkOmitted(),
+        SdkOptional<int> pageSize = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<String> pageToken = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -311,28 +296,21 @@ Future<ListIncomingPhoneNumbersResponse> listIncomingPhoneNumbers(
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers.json',
           config: config,
           query: {
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
-                style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber),
-                style: 'form', explode: true),
-            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber), style: 'form', explode: true),
+            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listIncomingPhoneNumbers',
-          fromJsonRaw: (value) => ListIncomingPhoneNumbersResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListIncomingPhoneNumbersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a new incoming phone number by purchasing it for an account. Configure optional SMS and voice handling settings in the form-encoded body. An application SID takes precedence over the corresponding URL settings.
 ///
@@ -404,48 +382,39 @@ Future<ListIncomingPhoneNumbersResponse> listIncomingPhoneNumbers(
 ///   any three-digit, US or Canada area code. We will provision an available
 ///   phone number within this area code for you. **You must provide an
 ///   `area_code` or a `phone_number`.** (US and Canada only).
-Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
-    ClientConfig config,
-    {required String accountSid,
-    SdkOptional<String> apiVersion = const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-    SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod>
-        smsFallbackMethod = const SdkOmitted(),
-    SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod =
-        const SdkOmitted(),
-    SdkOptional<String> smsUrl = const SdkOmitted(),
-    SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<CreateIncomingPhoneNumbersRequestBodyStatusCallbackMethod>
-        statusCallbackMethod = const SdkOmitted(),
-    SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
-    SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-    SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod>
-        voiceFallbackMethod = const SdkOmitted(),
-    SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceMethod> voiceMethod =
-        const SdkOmitted(),
-    SdkOptional<String> voiceUrl = const SdkOmitted(),
-    SdkOptional<IncomingPhoneNumberEnumEmergencyStatus> emergencyStatus =
-        const SdkOmitted(),
-    SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
-    SdkOptional<String> trunkSid = const SdkOmitted(),
-    SdkOptional<String> identitySid = const SdkOmitted(),
-    SdkOptional<String> addressSid = const SdkOmitted(),
-    SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode =
-        const SdkOmitted(),
-    SdkOptional<String> bundleSid = const SdkOmitted(),
-    SdkOptional<String> phoneNumber = const SdkOmitted(),
-    SdkOptional<String> areaCode = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountIncomingPhoneNumber>
+    createIncomingPhoneNumbers(ClientConfig config,
+        {required String accountSid,
+        SdkOptional<String> apiVersion = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        SdkOptional<String> smsApplicationSid = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
+        SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod = const SdkOmitted(),
+        SdkOptional<String> smsUrl = const SdkOmitted(),
+        SdkOptional<String> statusCallback = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+        SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
+        SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
+        SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+        SdkOptional<String> voiceUrl = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
+        SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
+        SdkOptional<String> trunkSid = const SdkOmitted(),
+        SdkOptional<String> identitySid = const SdkOmitted(),
+        SdkOptional<String> addressSid = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
+        SdkOptional<String> bundleSid = const SdkOmitted(),
+        SdkOptional<String> phoneNumber = const SdkOmitted(),
+        SdkOptional<String> areaCode = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (smsApplicationSid is SdkPresent<String>) {
-    validateLength('SmsApplicationSid', smsApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    validateLength('SmsApplicationSid', smsApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (smsFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('SmsFallbackUrl', smsFallbackUrl.value);
@@ -457,10 +426,8 @@ Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
     sdkValidateUri('StatusCallback', statusCallback.value);
   }
   if (voiceApplicationSid is SdkPresent<String>) {
-    validateLength('VoiceApplicationSid', voiceApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value,
-        '^AP[0-9a-fA-F]{32}\$');
+    validateLength('VoiceApplicationSid', voiceApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (voiceFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('VoiceFallbackUrl', voiceFallbackUrl.value);
@@ -469,10 +436,8 @@ Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
     sdkValidateUri('VoiceUrl', voiceUrl.value);
   }
   if (emergencyAddressSid is SdkPresent<String>) {
-    validateLength('EmergencyAddressSid', emergencyAddressSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value,
-        '^AD[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyAddressSid', emergencyAddressSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (trunkSid is SdkPresent<String>) {
     validateLength('TrunkSid', trunkSid.value, min: 34, max: 34);
@@ -480,8 +445,7 @@ Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
   }
   if (identitySid is SdkPresent<String>) {
     validateLength('IdentitySid', identitySid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
   }
   if (addressSid is SdkPresent<String>) {
     validateLength('AddressSid', addressSid.value, min: 34, max: 34);
@@ -504,8 +468,7 @@ Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceApplicationSid': SdkUtils.unwrapOptional(voiceApplicationSid),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
@@ -525,11 +488,11 @@ Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createIncomingPhoneNumbers',
-          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumber.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumber.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists local incoming phone numbers available to an account. Use the filters to narrow results by name, phone number, or origin, and the paging parameters to select a page of results.
 ///
@@ -548,17 +511,17 @@ Future<ApiV2010AccountIncomingPhoneNumber> createIncomingPhoneNumbers(
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListIncomingPhoneNumbersLocalResponse> listIncomingPhoneNumbersLocal(
-    ClientConfig config,
-    {required String accountSid,
-    SdkOptional<bool> beta = const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<String> phoneNumber = const SdkOmitted(),
-    SdkOptional<String> origin = const SdkOmitted(),
-    SdkOptional<int> pageSize = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<String> pageToken = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ListIncomingPhoneNumbersLocalResponse>
+    listIncomingPhoneNumbersLocal(ClientConfig config,
+        {required String accountSid,
+        SdkOptional<bool> beta = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        SdkOptional<String> phoneNumber = const SdkOmitted(),
+        SdkOptional<String> origin = const SdkOmitted(),
+        SdkOptional<int> pageSize = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<String> pageToken = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -572,29 +535,21 @@ Future<ListIncomingPhoneNumbersLocalResponse> listIncomingPhoneNumbersLocal(
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/Local.json',
           config: config,
           query: {
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
-                style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber),
-                style: 'form', explode: true),
-            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber), style: 'form', explode: true),
+            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listIncomingPhoneNumbersLocal',
-          fromJsonRaw: (value) =>
-              ListIncomingPhoneNumbersLocalResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListIncomingPhoneNumbersLocalResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a local incoming phone number for an account. Supply `PhoneNumber` in E.164 format and configure optional voice, SMS, and callback settings as needed. The response includes the created phone number resource and its SID.
 ///
@@ -667,42 +622,31 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
         SdkOptional<String> apiVersion = const SdkOmitted(),
         SdkOptional<String> friendlyName = const SdkOmitted(),
         SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>
-            smsFallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
         SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>
-            smsMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod> smsMethod = const SdkOmitted(),
         SdkOptional<String> smsUrl = const SdkOmitted(),
         SdkOptional<String> statusCallback = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>
-            statusCallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
         SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
         SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>
-            voiceFallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
         SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>
-            voiceMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
         SdkOptional<String> voiceUrl = const SdkOmitted(),
         SdkOptional<String> identitySid = const SdkOmitted(),
         SdkOptional<String> addressSid = const SdkOmitted(),
-        SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus>
-            emergencyStatus = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
         SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
         SdkOptional<String> trunkSid = const SdkOmitted(),
-        SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode>
-            voiceReceiveMode = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
         SdkOptional<String> bundleSid = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (smsApplicationSid is SdkPresent<String>) {
-    validateLength('SmsApplicationSid', smsApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    validateLength('SmsApplicationSid', smsApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (smsFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('SmsFallbackUrl', smsFallbackUrl.value);
@@ -714,10 +658,8 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
     sdkValidateUri('StatusCallback', statusCallback.value);
   }
   if (voiceApplicationSid is SdkPresent<String>) {
-    validateLength('VoiceApplicationSid', voiceApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value,
-        '^AP[0-9a-fA-F]{32}\$');
+    validateLength('VoiceApplicationSid', voiceApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (voiceFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('VoiceFallbackUrl', voiceFallbackUrl.value);
@@ -727,18 +669,15 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
   }
   if (identitySid is SdkPresent<String>) {
     validateLength('IdentitySid', identitySid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
   }
   if (addressSid is SdkPresent<String>) {
     validateLength('AddressSid', addressSid.value, min: 34, max: 34);
     sdkValidatePattern('AddressSid', addressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (emergencyAddressSid is SdkPresent<String>) {
-    validateLength('EmergencyAddressSid', emergencyAddressSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value,
-        '^AD[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyAddressSid', emergencyAddressSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (trunkSid is SdkPresent<String>) {
     validateLength('TrunkSid', trunkSid.value, min: 34, max: 34);
@@ -749,9 +688,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
     sdkValidatePattern('BundleSid', bundleSid.value, '^BU[0-9a-fA-F]{32}\$');
   }
 
-  return (await sdkRequest<
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/Local.json',
           config: config,
           body: {
@@ -764,8 +701,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceApplicationSid': SdkUtils.unwrapOptional(voiceApplicationSid),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
@@ -783,12 +719,11 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createIncomingPhoneNumbersLocal',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists mobile incoming phone numbers available to an account. Use the filters to narrow results by name, phone number, or origin, and the paging parameters to select a page of results.
 ///
@@ -807,17 +742,17 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListIncomingPhoneNumbersMobileResponse> listIncomingPhoneNumbersMobile(
-    ClientConfig config,
-    {required String accountSid,
-    SdkOptional<bool> beta = const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<String> phoneNumber = const SdkOmitted(),
-    SdkOptional<String> origin = const SdkOmitted(),
-    SdkOptional<int> pageSize = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<String> pageToken = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ListIncomingPhoneNumbersMobileResponse>
+    listIncomingPhoneNumbersMobile(ClientConfig config,
+        {required String accountSid,
+        SdkOptional<bool> beta = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        SdkOptional<String> phoneNumber = const SdkOmitted(),
+        SdkOptional<String> origin = const SdkOmitted(),
+        SdkOptional<int> pageSize = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<String> pageToken = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -831,29 +766,21 @@ Future<ListIncomingPhoneNumbersMobileResponse> listIncomingPhoneNumbersMobile(
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/Mobile.json',
           config: config,
           query: {
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
-                style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber),
-                style: 'form', explode: true),
-            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber), style: 'form', explode: true),
+            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listIncomingPhoneNumbersMobile',
-          fromJsonRaw: (value) =>
-              ListIncomingPhoneNumbersMobileResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListIncomingPhoneNumbersMobileResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a mobile incoming phone number for an account. Supply `PhoneNumber` in E.164 format and configure optional voice, SMS, and callback settings as needed. The response includes the created phone number resource and its SID.
 ///
@@ -926,43 +853,31 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
         SdkOptional<String> apiVersion = const SdkOmitted(),
         SdkOptional<String> friendlyName = const SdkOmitted(),
         SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersMobileRequestBodySmsFallbackMethod>
-            smsFallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
         SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsMethod>
-            smsMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsMethod> smsMethod = const SdkOmitted(),
         SdkOptional<String> smsUrl = const SdkOmitted(),
         SdkOptional<String> statusCallback = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersMobileRequestBodyStatusCallbackMethod>
-            statusCallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
         SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
         SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersMobileRequestBodyVoiceFallbackMethod>
-            voiceFallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
         SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyVoiceMethod>
-            voiceMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
         SdkOptional<String> voiceUrl = const SdkOmitted(),
         SdkOptional<String> identitySid = const SdkOmitted(),
         SdkOptional<String> addressSid = const SdkOmitted(),
-        SdkOptional<IncomingPhoneNumberMobileEnumEmergencyStatus>
-            emergencyStatus = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberMobileEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
         SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
         SdkOptional<String> trunkSid = const SdkOmitted(),
-        SdkOptional<IncomingPhoneNumberMobileEnumVoiceReceiveMode>
-            voiceReceiveMode = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberMobileEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
         SdkOptional<String> bundleSid = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (smsApplicationSid is SdkPresent<String>) {
-    validateLength('SmsApplicationSid', smsApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    validateLength('SmsApplicationSid', smsApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (smsFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('SmsFallbackUrl', smsFallbackUrl.value);
@@ -974,10 +889,8 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
     sdkValidateUri('StatusCallback', statusCallback.value);
   }
   if (voiceApplicationSid is SdkPresent<String>) {
-    validateLength('VoiceApplicationSid', voiceApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value,
-        '^AP[0-9a-fA-F]{32}\$');
+    validateLength('VoiceApplicationSid', voiceApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (voiceFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('VoiceFallbackUrl', voiceFallbackUrl.value);
@@ -987,18 +900,15 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
   }
   if (identitySid is SdkPresent<String>) {
     validateLength('IdentitySid', identitySid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
   }
   if (addressSid is SdkPresent<String>) {
     validateLength('AddressSid', addressSid.value, min: 34, max: 34);
     sdkValidatePattern('AddressSid', addressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (emergencyAddressSid is SdkPresent<String>) {
-    validateLength('EmergencyAddressSid', emergencyAddressSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value,
-        '^AD[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyAddressSid', emergencyAddressSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (trunkSid is SdkPresent<String>) {
     validateLength('TrunkSid', trunkSid.value, min: 34, max: 34);
@@ -1009,9 +919,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
     sdkValidatePattern('BundleSid', bundleSid.value, '^BU[0-9a-fA-F]{32}\$');
   }
 
-  return (await sdkRequest<
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/Mobile.json',
           config: config,
           body: {
@@ -1024,8 +932,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceApplicationSid': SdkUtils.unwrapOptional(voiceApplicationSid),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
@@ -1043,12 +950,11 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createIncomingPhoneNumbersMobile',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists toll-free incoming phone numbers available to an account. Use the filters to narrow results by name, phone number, or origin, and the paging parameters to select a page of results.
 ///
@@ -1091,29 +997,21 @@ Future<ListIncomingPhoneNumbersTollFreeResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/TollFree.json',
           config: config,
           query: {
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
-                style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber),
-                style: 'form', explode: true),
-            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber), style: 'form', explode: true),
+            'Origin': SdkQueryValue(SdkUtils.unwrapOptional(origin), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listIncomingPhoneNumbersTollFree',
-          fromJsonRaw: (value) =>
-              ListIncomingPhoneNumbersTollFreeResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListIncomingPhoneNumbersTollFreeResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a toll-free incoming phone number for an account. Supply `PhoneNumber` in E.164 format and configure optional voice, SMS, and callback settings as needed. The response includes the created phone number resource and its SID.
 ///
@@ -1185,42 +1083,31 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
         SdkOptional<String> apiVersion = const SdkOmitted(),
         SdkOptional<String> friendlyName = const SdkOmitted(),
         SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsFallbackMethod>
-            smsFallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
         SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsMethod>
-            smsMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsMethod> smsMethod = const SdkOmitted(),
         SdkOptional<String> smsUrl = const SdkOmitted(),
         SdkOptional<String> statusCallback = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersTollFreeRequestBodyStatusCallbackMethod>
-            statusCallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
         SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
         SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-        SdkOptional<
-                CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceFallbackMethod>
-            voiceFallbackMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
         SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceMethod>
-            voiceMethod = const SdkOmitted(),
+        SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
         SdkOptional<String> voiceUrl = const SdkOmitted(),
         SdkOptional<String> identitySid = const SdkOmitted(),
         SdkOptional<String> addressSid = const SdkOmitted(),
-        SdkOptional<IncomingPhoneNumberTollFreeEnumEmergencyStatus>
-            emergencyStatus = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberTollFreeEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
         SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
         SdkOptional<String> trunkSid = const SdkOmitted(),
-        SdkOptional<IncomingPhoneNumberTollFreeEnumVoiceReceiveMode>
-            voiceReceiveMode = const SdkOmitted(),
+        SdkOptional<IncomingPhoneNumberTollFreeEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
         SdkOptional<String> bundleSid = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (smsApplicationSid is SdkPresent<String>) {
-    validateLength('SmsApplicationSid', smsApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    validateLength('SmsApplicationSid', smsApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('SmsApplicationSid', smsApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (smsFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('SmsFallbackUrl', smsFallbackUrl.value);
@@ -1232,10 +1119,8 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
     sdkValidateUri('StatusCallback', statusCallback.value);
   }
   if (voiceApplicationSid is SdkPresent<String>) {
-    validateLength('VoiceApplicationSid', voiceApplicationSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value,
-        '^AP[0-9a-fA-F]{32}\$');
+    validateLength('VoiceApplicationSid', voiceApplicationSid.value, min: 34, max: 34);
+    sdkValidatePattern('VoiceApplicationSid', voiceApplicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (voiceFallbackUrl is SdkPresent<String>) {
     sdkValidateUri('VoiceFallbackUrl', voiceFallbackUrl.value);
@@ -1245,18 +1130,15 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
   }
   if (identitySid is SdkPresent<String>) {
     validateLength('IdentitySid', identitySid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('IdentitySid', identitySid.value, '^RI[0-9a-fA-F]{32}\$');
   }
   if (addressSid is SdkPresent<String>) {
     validateLength('AddressSid', addressSid.value, min: 34, max: 34);
     sdkValidatePattern('AddressSid', addressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (emergencyAddressSid is SdkPresent<String>) {
-    validateLength('EmergencyAddressSid', emergencyAddressSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value,
-        '^AD[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyAddressSid', emergencyAddressSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyAddressSid', emergencyAddressSid.value, '^AD[0-9a-fA-F]{32}\$');
   }
   if (trunkSid is SdkPresent<String>) {
     validateLength('TrunkSid', trunkSid.value, min: 34, max: 34);
@@ -1267,9 +1149,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
     sdkValidatePattern('BundleSid', bundleSid.value, '^BU[0-9a-fA-F]{32}\$');
   }
 
-  return (await sdkRequest<
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/TollFree.json',
           config: config,
           body: {
@@ -1282,8 +1162,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceApplicationSid': SdkUtils.unwrapOptional(voiceApplicationSid),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
@@ -1301,9 +1180,7 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createIncomingPhoneNumbersTollFree',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

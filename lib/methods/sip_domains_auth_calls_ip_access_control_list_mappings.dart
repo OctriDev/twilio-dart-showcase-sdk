@@ -27,26 +27,21 @@ Future<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControl
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('DomainSid', domainSid, min: 34, max: 34);
   sdkValidatePattern('DomainSid', domainSid, '^SD[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid,
-      min: 34, max: 34);
-  sdkValidatePattern(
-      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
+  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/Auth/Calls/IpAccessControlListMappings.json',
           config: config,
           body: {'IpAccessControlListSid': ipAccessControlListSid},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipDomainsAuthCallsIpAccessControlListMappings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists IP Access Control List mappings associated with a SIP domain. Use `PageSize`, `Page`, and `PageToken` to control pagination through the results.
 ///
@@ -79,26 +74,21 @@ Future<ListSipDomainsAuthCallsIpAccessControlListMappingsResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<
-              ListSipDomainsAuthCallsIpAccessControlListMappingsResponse>('GET',
+  return (await sdkRequest<ListSipDomainsAuthCallsIpAccessControlListMappingsResponse>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/Auth/Calls/IpAccessControlListMappings.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipDomainsAuthCallsIpAccessControlListMappings',
-          fromJsonRaw: (value) =>
-              ListSipDomainsAuthCallsIpAccessControlListMappingsResponse
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipDomainsAuthCallsIpAccessControlListMappingsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a specific IP Access Control List mapping from a SIP domain. Provide the account, domain, and mapping SIDs to identify the mapping to fetch.
 ///
@@ -123,19 +113,16 @@ Future<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControl
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^AL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/Auth/Calls/IpAccessControlListMappings/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipDomainsAuthCallsIpAccessControlListMappings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete an IP Access Control List mapping from the requested domain
 ///
@@ -145,12 +132,12 @@ Future<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControl
 /// [domainSid] The SID of the SIP domain that contains the resources to delete.
 /// [sid] The Twilio-provided string that uniquely identifies the
 ///   IpAccessControlListMapping resource to delete.
-Future<void> deleteSipDomainsAuthCallsIpAccessControlListMappings(
-    ClientConfig config,
-    {required String accountSid,
-    required String domainSid,
-    required String sid,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    deleteSipDomainsAuthCallsIpAccessControlListMappings(ClientConfig config,
+        {required String accountSid,
+        required String domainSid,
+        required String sid,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('DomainSid', domainSid, min: 34, max: 34);

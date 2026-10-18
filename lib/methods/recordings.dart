@@ -33,18 +33,15 @@ Future<ApiV2010AccountRecording> fetchRecordings(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           query: {
-            'IncludeSoftDeleted': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeSoftDeleted),
-                style: 'form',
-                explode: true)
+            'IncludeSoftDeleted': SdkQueryValue(SdkUtils.unwrapOptional(includeSoftDeleted), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchRecordings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountRecording.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountRecording.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a recording from an account. Use `AccountSid` and `Sid` to identify the account and recording to remove.
 ///
@@ -72,6 +69,7 @@ Future<void> deleteRecordings(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists recordings belonging to the account identified by `AccountSid`. Filter results by creation date, call, conference, or soft-deletion status, and use `PageSize` and `PageToken` to control pagination.
 ///
@@ -142,8 +140,7 @@ Future<ListRecordingsResponse> listRecordings(ClientConfig config,
   }
   if (conferenceSid is SdkPresent<String>) {
     validateLength('ConferenceSid', conferenceSid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'ConferenceSid', conferenceSid.value, '^CF[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('ConferenceSid', conferenceSid.value, '^CF[0-9a-fA-F]{32}\$');
   }
   if (pageSize is SdkPresent<int>) {
     validateRange('PageSize', pageSize.value, min: 1, max: 1000);
@@ -156,35 +153,19 @@ Future<ListRecordingsResponse> listRecordings(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings.json',
           config: config,
           query: {
-            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated),
-                style: 'form', explode: true),
-            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_),
-                style: 'form', explode: true),
-            'DateCreated>': SdkQueryValue(
-                SdkUtils.unwrapOptional(dateCreated_2),
-                style: 'form',
-                explode: true),
-            'CallSid': SdkQueryValue(SdkUtils.unwrapOptional(callSid),
-                style: 'form', explode: true),
-            'ConferenceSid': SdkQueryValue(
-                SdkUtils.unwrapOptional(conferenceSid),
-                style: 'form',
-                explode: true),
-            'IncludeSoftDeleted': SdkQueryValue(
-                SdkUtils.unwrapOptional(includeSoftDeleted),
-                style: 'form',
-                explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated), style: 'form', explode: true),
+            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_), style: 'form', explode: true),
+            'DateCreated>': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_2), style: 'form', explode: true),
+            'CallSid': SdkQueryValue(SdkUtils.unwrapOptional(callSid), style: 'form', explode: true),
+            'ConferenceSid': SdkQueryValue(SdkUtils.unwrapOptional(conferenceSid), style: 'form', explode: true),
+            'IncludeSoftDeleted': SdkQueryValue(SdkUtils.unwrapOptional(includeSoftDeleted), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listRecordings',
-          fromJsonRaw: (value) =>
-              ListRecordingsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListRecordingsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

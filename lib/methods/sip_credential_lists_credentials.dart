@@ -30,8 +30,7 @@ Future<ListSipCredentialListsCredentialsResponse>
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
     validateRange('PageSize', pageSize.value, min: 1, max: 1000);
   }
@@ -43,21 +42,17 @@ Future<ListSipCredentialListsCredentialsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/CredentialLists/${Uri.encodeComponent(credentialListSid.toString())}/Credentials.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipCredentialListsCredentials',
-          fromJsonRaw: (value) =>
-              ListSipCredentialListsCredentialsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipCredentialListsCredentialsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a SIP credential in the specified credential list. Supply `Username` and `Password`; the username can be up to 32 characters, and the password must meet the documented length and complexity requirements. The response includes the credential identifier and username, but not the password.
 ///
@@ -83,23 +78,20 @@ Future<ApiV2010AccountSipSipCredentialListSipCredential>
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipCredentialListSipCredential>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountSipSipCredentialListSipCredential>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/CredentialLists/${Uri.encodeComponent(credentialListSid.toString())}/Credentials.json',
           config: config,
           body: {'Username': username, 'Password': password},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipCredentialListsCredentials',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipCredentialListSipCredential.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialListSipCredential.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a SIP credential from a specified credential list. Provide the account, credential list, and credential identifiers to select the resource. The response includes the credential's username and resource metadata.
 ///
@@ -119,23 +111,20 @@ Future<ApiV2010AccountSipSipCredentialListSipCredential>
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^CR[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipCredentialListSipCredential>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountSipSipCredentialListSipCredential>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/CredentialLists/${Uri.encodeComponent(credentialListSid.toString())}/Credentials/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipCredentialListsCredentials',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipCredentialListSipCredential.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialListSipCredential.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the password for a credential in a specified credential list. Provide the account, credential list, and credential identifiers, then send the new password in the request body. The password must be at least 12 characters and contain at least one digit and mixed case.
 ///
@@ -159,25 +148,22 @@ Future<ApiV2010AccountSipSipCredentialListSipCredential>
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^CR[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipCredentialListSipCredential>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountSipSipCredentialListSipCredential>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/CredentialLists/${Uri.encodeComponent(credentialListSid.toString())}/Credentials/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           body: {'Password': SdkUtils.unwrapOptional(password)},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateSipCredentialListsCredentials',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipCredentialListSipCredential.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialListSipCredential.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a credential from a specified credential list. Provide the account, credential list, and credential identifiers to select the resource to remove. The response confirms deletion and contains no resource representation.
 ///
@@ -196,8 +182,7 @@ Future<void> deleteSipCredentialListsCredentials(ClientConfig config,
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^CR[0-9a-fA-F]{32}\$');
 

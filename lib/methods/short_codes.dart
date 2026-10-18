@@ -30,11 +30,11 @@ Future<ApiV2010AccountShortCode> fetchShortCodes(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchShortCodes',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountShortCode.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountShortCode.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates a short code's configuration for handling incoming SMS messages. Supply any fields you want to change; `SmsMethod` and `SmsFallbackMethod` accept GET or POST, and `ApiVersion` accepts either of the documented API versions.
 ///
@@ -64,11 +64,9 @@ Future<ApiV2010AccountShortCode> updateShortCodes(ClientConfig config,
     SdkOptional<String> friendlyName = const SdkOmitted(),
     SdkOptional<String> apiVersion = const SdkOmitted(),
     SdkOptional<String> smsUrl = const SdkOmitted(),
-    SdkOptional<UpdateShortCodesRequestBodySmsMethod> smsMethod =
-        const SdkOmitted(),
+    SdkOptional<UpdateShortCodesRequestBodySmsMethod> smsMethod = const SdkOmitted(),
     SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateShortCodesRequestBodySmsFallbackMethod>
-        smsFallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateShortCodesRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -95,11 +93,11 @@ Future<ApiV2010AccountShortCode> updateShortCodes(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateShortCodes',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountShortCode.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountShortCode.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists short codes belonging to an account. Filter the results by `FriendlyName` or match numbers with `ShortCode`, which supports partial numbers and `*` as a wildcard; use the pagination parameters to retrieve additional pages.
 ///
@@ -136,21 +134,15 @@ Future<ListShortCodesResponse> listShortCodes(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SMS/ShortCodes.json',
           config: config,
           query: {
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'ShortCode': SdkQueryValue(SdkUtils.unwrapOptional(shortCode),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'ShortCode': SdkQueryValue(SdkUtils.unwrapOptional(shortCode), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listShortCodes',
-          fromJsonRaw: (value) =>
-              ListShortCodesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListShortCodesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

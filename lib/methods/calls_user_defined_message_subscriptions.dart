@@ -29,8 +29,7 @@ Future<ApiV2010AccountCallUserDefinedMessageSubscription>
         required String callSid,
         required String callback,
         SdkOptional<String> idempotencyKey = const SdkOmitted(),
-        SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod>
-            method = const SdkOmitted(),
+        SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod> method = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -38,8 +37,7 @@ Future<ApiV2010AccountCallUserDefinedMessageSubscription>
   sdkValidatePattern('CallSid', callSid, '^CA[0-9a-fA-F]{32}\$');
   sdkValidateUri('Callback', callback);
 
-  return (await sdkRequest<ApiV2010AccountCallUserDefinedMessageSubscription>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountCallUserDefinedMessageSubscription>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Calls/${Uri.encodeComponent(callSid.toString())}/UserDefinedMessageSubscriptions.json',
           config: config,
           body: {
@@ -50,12 +48,11 @@ Future<ApiV2010AccountCallUserDefinedMessageSubscription>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsUserDefinedMessageSubscriptions',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountCallUserDefinedMessageSubscription.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallUserDefinedMessageSubscription.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete a specific User Defined Message Subscription.
 ///

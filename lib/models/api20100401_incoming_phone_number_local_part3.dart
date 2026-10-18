@@ -6,125 +6,94 @@ part of 'api20100401_incoming_phone_number_local.dart';
 // api20100401_incoming_phone_number_local domain models (part 3)
 /// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 final class IncomingPhoneNumberLocalEnumAddressRequirement {
+
   final String value;
 
   const IncomingPhoneNumberLocalEnumAddressRequirement._(this.value);
 
-  factory IncomingPhoneNumberLocalEnumAddressRequirement.fromJson(
-          String value) =>
-      IncomingPhoneNumberLocalEnumAddressRequirement._(value);
+  factory IncomingPhoneNumberLocalEnumAddressRequirement.fromJson(String value) => IncomingPhoneNumberLocalEnumAddressRequirement._(value);
 
   static const none = IncomingPhoneNumberLocalEnumAddressRequirement._('none');
   static const any = IncomingPhoneNumberLocalEnumAddressRequirement._('any');
-  static const local =
-      IncomingPhoneNumberLocalEnumAddressRequirement._('local');
-  static const foreign =
-      IncomingPhoneNumberLocalEnumAddressRequirement._('foreign');
+  static const local = IncomingPhoneNumberLocalEnumAddressRequirement._('local');
+  static const foreign = IncomingPhoneNumberLocalEnumAddressRequirement._('foreign');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberLocalEnumAddressRequirement &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberLocalEnumAddressRequirement && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The status of address registration with emergency services. A registered emergency address will be used during handling of emergency calls from this number.
 final class IncomingPhoneNumberLocalEnumEmergencyAddressStatus {
+
   final String value;
 
   const IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(this.value);
 
-  factory IncomingPhoneNumberLocalEnumEmergencyAddressStatus.fromJson(
-          String value) =>
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(value);
+  factory IncomingPhoneNumberLocalEnumEmergencyAddressStatus.fromJson(String value) => IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(value);
 
-  static const registered =
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('registered');
-  static const unregistered =
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('unregistered');
-  static const pendingRegistration =
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(
-          'pending-registration');
-  static const registrationFailure =
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(
-          'registration-failure');
-  static const pendingUnregistration =
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(
-          'pending-unregistration');
-  static const unregistrationFailure =
-      IncomingPhoneNumberLocalEnumEmergencyAddressStatus._(
-          'unregistration-failure');
+  static const registered = IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('registered');
+  static const unregistered = IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('unregistered');
+  static const pendingRegistration = IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('pending-registration');
+  static const registrationFailure = IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('registration-failure');
+  static const pendingUnregistration = IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('pending-unregistration');
+  static const unregistrationFailure = IncomingPhoneNumberLocalEnumEmergencyAddressStatus._('unregistration-failure');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberLocalEnumEmergencyAddressStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberLocalEnumEmergencyAddressStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 final class IncomingPhoneNumberLocalEnumEmergencyStatus {
+
   final String value;
 
   const IncomingPhoneNumberLocalEnumEmergencyStatus._(this.value);
 
-  factory IncomingPhoneNumberLocalEnumEmergencyStatus.fromJson(String value) =>
-      IncomingPhoneNumberLocalEnumEmergencyStatus._(value);
+  factory IncomingPhoneNumberLocalEnumEmergencyStatus.fromJson(String value) => IncomingPhoneNumberLocalEnumEmergencyStatus._(value);
 
   static const active = IncomingPhoneNumberLocalEnumEmergencyStatus._('Active');
-  static const inactive =
-      IncomingPhoneNumberLocalEnumEmergencyStatus._('Inactive');
+  static const inactive = IncomingPhoneNumberLocalEnumEmergencyStatus._('Inactive');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberLocalEnumEmergencyStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberLocalEnumEmergencyStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `IncomingPhoneNumberLocalEnumVoiceReceiveMode` API schema.
 final class IncomingPhoneNumberLocalEnumVoiceReceiveMode {
+
   final String value;
 
   const IncomingPhoneNumberLocalEnumVoiceReceiveMode._(this.value);
 
-  factory IncomingPhoneNumberLocalEnumVoiceReceiveMode.fromJson(String value) =>
-      IncomingPhoneNumberLocalEnumVoiceReceiveMode._(value);
+  factory IncomingPhoneNumberLocalEnumVoiceReceiveMode.fromJson(String value) => IncomingPhoneNumberLocalEnumVoiceReceiveMode._(value);
 
   static const voice = IncomingPhoneNumberLocalEnumVoiceReceiveMode._('voice');
   static const fax = IncomingPhoneNumberLocalEnumVoiceReceiveMode._('fax');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberLocalEnumVoiceReceiveMode &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberLocalEnumVoiceReceiveMode && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

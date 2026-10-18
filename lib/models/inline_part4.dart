@@ -6,353 +6,286 @@ part of 'inline.dart';
 // Inline operation models (part 4)
 /// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
 final class ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod {
+
   final String value;
 
   const ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._(this.value);
 
-  factory ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._(value);
+  factory ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(String value) => ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._(value);
 
-  static const get_ =
-      ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._('GET');
-  static const post =
-      ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._('POST');
+  static const get_ = ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._('GET');
+  static const post = ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountSipSipDomainVoiceStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
 final class ApiV2010AccountUsageUsageTriggerCallbackMethod {
+
   final String value;
 
   const ApiV2010AccountUsageUsageTriggerCallbackMethod._(this.value);
 
-  factory ApiV2010AccountUsageUsageTriggerCallbackMethod.fromJson(
-          String value) =>
-      ApiV2010AccountUsageUsageTriggerCallbackMethod._(value);
+  factory ApiV2010AccountUsageUsageTriggerCallbackMethod.fromJson(String value) => ApiV2010AccountUsageUsageTriggerCallbackMethod._(value);
 
   static const get_ = ApiV2010AccountUsageUsageTriggerCallbackMethod._('GET');
   static const post = ApiV2010AccountUsageUsageTriggerCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is ApiV2010AccountUsageUsageTriggerCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is ApiV2010AccountUsageUsageTriggerCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 final class CreateApplicationsRequestBodySmsFallbackMethod {
+
   final String value;
 
   const CreateApplicationsRequestBodySmsFallbackMethod._(this.value);
 
-  factory CreateApplicationsRequestBodySmsFallbackMethod.fromJson(
-          String value) =>
-      CreateApplicationsRequestBodySmsFallbackMethod._(value);
+  factory CreateApplicationsRequestBodySmsFallbackMethod.fromJson(String value) => CreateApplicationsRequestBodySmsFallbackMethod._(value);
 
   static const get_ = CreateApplicationsRequestBodySmsFallbackMethod._('GET');
   static const post = CreateApplicationsRequestBodySmsFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateApplicationsRequestBodySmsFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CreateApplicationsRequestBodySmsFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `sms_url`. Can be: `GET` or `POST`.
 final class CreateApplicationsRequestBodySmsMethod {
+
   final String value;
 
   const CreateApplicationsRequestBodySmsMethod._(this.value);
 
-  factory CreateApplicationsRequestBodySmsMethod.fromJson(String value) =>
-      CreateApplicationsRequestBodySmsMethod._(value);
+  factory CreateApplicationsRequestBodySmsMethod.fromJson(String value) => CreateApplicationsRequestBodySmsMethod._(value);
 
   static const get_ = CreateApplicationsRequestBodySmsMethod._('GET');
   static const post = CreateApplicationsRequestBodySmsMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateApplicationsRequestBodySmsMethod && other.value == value;
+  @override bool operator ==(Object other) => other is CreateApplicationsRequestBodySmsMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`.
 final class CreateApplicationsRequestBodyStatusCallbackMethod {
+
   final String value;
 
   const CreateApplicationsRequestBodyStatusCallbackMethod._(this.value);
 
-  factory CreateApplicationsRequestBodyStatusCallbackMethod.fromJson(
-          String value) =>
-      CreateApplicationsRequestBodyStatusCallbackMethod._(value);
+  factory CreateApplicationsRequestBodyStatusCallbackMethod.fromJson(String value) => CreateApplicationsRequestBodyStatusCallbackMethod._(value);
 
-  static const get_ =
-      CreateApplicationsRequestBodyStatusCallbackMethod._('GET');
-  static const post =
-      CreateApplicationsRequestBodyStatusCallbackMethod._('POST');
+  static const get_ = CreateApplicationsRequestBodyStatusCallbackMethod._('GET');
+  static const post = CreateApplicationsRequestBodyStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateApplicationsRequestBodyStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CreateApplicationsRequestBodyStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 final class CreateApplicationsRequestBodyVoiceFallbackMethod {
+
   final String value;
 
   const CreateApplicationsRequestBodyVoiceFallbackMethod._(this.value);
 
-  factory CreateApplicationsRequestBodyVoiceFallbackMethod.fromJson(
-          String value) =>
-      CreateApplicationsRequestBodyVoiceFallbackMethod._(value);
+  factory CreateApplicationsRequestBodyVoiceFallbackMethod.fromJson(String value) => CreateApplicationsRequestBodyVoiceFallbackMethod._(value);
 
   static const get_ = CreateApplicationsRequestBodyVoiceFallbackMethod._('GET');
-  static const post =
-      CreateApplicationsRequestBodyVoiceFallbackMethod._('POST');
+  static const post = CreateApplicationsRequestBodyVoiceFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateApplicationsRequestBodyVoiceFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CreateApplicationsRequestBodyVoiceFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
 final class CreateApplicationsRequestBodyVoiceMethod {
+
   final String value;
 
   const CreateApplicationsRequestBodyVoiceMethod._(this.value);
 
-  factory CreateApplicationsRequestBodyVoiceMethod.fromJson(String value) =>
-      CreateApplicationsRequestBodyVoiceMethod._(value);
+  factory CreateApplicationsRequestBodyVoiceMethod.fromJson(String value) => CreateApplicationsRequestBodyVoiceMethod._(value);
 
   static const get_ = CreateApplicationsRequestBodyVoiceMethod._('GET');
   static const post = CreateApplicationsRequestBodyVoiceMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateApplicationsRequestBodyVoiceMethod && other.value == value;
+  @override bool operator ==(Object other) => other is CreateApplicationsRequestBodyVoiceMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `sms_fallback_url`. Can be: `GET` or `POST`.
 final class UpdateApplicationsRequestBodySmsFallbackMethod {
+
   final String value;
 
   const UpdateApplicationsRequestBodySmsFallbackMethod._(this.value);
 
-  factory UpdateApplicationsRequestBodySmsFallbackMethod.fromJson(
-          String value) =>
-      UpdateApplicationsRequestBodySmsFallbackMethod._(value);
+  factory UpdateApplicationsRequestBodySmsFallbackMethod.fromJson(String value) => UpdateApplicationsRequestBodySmsFallbackMethod._(value);
 
   static const get_ = UpdateApplicationsRequestBodySmsFallbackMethod._('GET');
   static const post = UpdateApplicationsRequestBodySmsFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is UpdateApplicationsRequestBodySmsFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is UpdateApplicationsRequestBodySmsFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `sms_url`. Can be: `GET` or `POST`.
 final class UpdateApplicationsRequestBodySmsMethod {
+
   final String value;
 
   const UpdateApplicationsRequestBodySmsMethod._(this.value);
 
-  factory UpdateApplicationsRequestBodySmsMethod.fromJson(String value) =>
-      UpdateApplicationsRequestBodySmsMethod._(value);
+  factory UpdateApplicationsRequestBodySmsMethod.fromJson(String value) => UpdateApplicationsRequestBodySmsMethod._(value);
 
   static const get_ = UpdateApplicationsRequestBodySmsMethod._('GET');
   static const post = UpdateApplicationsRequestBodySmsMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is UpdateApplicationsRequestBodySmsMethod && other.value == value;
+  @override bool operator ==(Object other) => other is UpdateApplicationsRequestBodySmsMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`.
 final class UpdateApplicationsRequestBodyStatusCallbackMethod {
+
   final String value;
 
   const UpdateApplicationsRequestBodyStatusCallbackMethod._(this.value);
 
-  factory UpdateApplicationsRequestBodyStatusCallbackMethod.fromJson(
-          String value) =>
-      UpdateApplicationsRequestBodyStatusCallbackMethod._(value);
+  factory UpdateApplicationsRequestBodyStatusCallbackMethod.fromJson(String value) => UpdateApplicationsRequestBodyStatusCallbackMethod._(value);
 
-  static const get_ =
-      UpdateApplicationsRequestBodyStatusCallbackMethod._('GET');
-  static const post =
-      UpdateApplicationsRequestBodyStatusCallbackMethod._('POST');
+  static const get_ = UpdateApplicationsRequestBodyStatusCallbackMethod._('GET');
+  static const post = UpdateApplicationsRequestBodyStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is UpdateApplicationsRequestBodyStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is UpdateApplicationsRequestBodyStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
 final class UpdateApplicationsRequestBodyVoiceFallbackMethod {
+
   final String value;
 
   const UpdateApplicationsRequestBodyVoiceFallbackMethod._(this.value);
 
-  factory UpdateApplicationsRequestBodyVoiceFallbackMethod.fromJson(
-          String value) =>
-      UpdateApplicationsRequestBodyVoiceFallbackMethod._(value);
+  factory UpdateApplicationsRequestBodyVoiceFallbackMethod.fromJson(String value) => UpdateApplicationsRequestBodyVoiceFallbackMethod._(value);
 
   static const get_ = UpdateApplicationsRequestBodyVoiceFallbackMethod._('GET');
-  static const post =
-      UpdateApplicationsRequestBodyVoiceFallbackMethod._('POST');
+  static const post = UpdateApplicationsRequestBodyVoiceFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is UpdateApplicationsRequestBodyVoiceFallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is UpdateApplicationsRequestBodyVoiceFallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
 final class UpdateApplicationsRequestBodyVoiceMethod {
+
   final String value;
 
   const UpdateApplicationsRequestBodyVoiceMethod._(this.value);
 
-  factory UpdateApplicationsRequestBodyVoiceMethod.fromJson(String value) =>
-      UpdateApplicationsRequestBodyVoiceMethod._(value);
+  factory UpdateApplicationsRequestBodyVoiceMethod.fromJson(String value) => UpdateApplicationsRequestBodyVoiceMethod._(value);
 
   static const get_ = UpdateApplicationsRequestBodyVoiceMethod._('GET');
   static const post = UpdateApplicationsRequestBodyVoiceMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is UpdateApplicationsRequestBodyVoiceMethod && other.value == value;
+  @override bool operator ==(Object other) => other is UpdateApplicationsRequestBodyVoiceMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The HTTP method we should use when calling the `async_amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 final class CreateCallsRequestBodyAsyncAmdStatusCallbackMethod {
+
   final String value;
 
   const CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._(this.value);
 
-  factory CreateCallsRequestBodyAsyncAmdStatusCallbackMethod.fromJson(
-          String value) =>
-      CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._(value);
+  factory CreateCallsRequestBodyAsyncAmdStatusCallbackMethod.fromJson(String value) => CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._(value);
 
-  static const get_ =
-      CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._('GET');
-  static const post =
-      CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._('POST');
+  static const get_ = CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._('GET');
+  static const post = CreateCallsRequestBodyAsyncAmdStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CreateCallsRequestBodyAsyncAmdStatusCallbackMethod &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is CreateCallsRequestBodyAsyncAmdStatusCallbackMethod && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
