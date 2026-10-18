@@ -26,6 +26,13 @@ final class SdkPresent<T> extends SdkOptional<T> {
   T? get valueOrNull => value;
 }
 
+/// Whether [encoded], a decoded union branch written back to JSON, still holds
+/// every key of the [raw] payload: an untagged union takes such a branch first.
+bool sdkKeepsEveryKey(Map<String, dynamic> raw, Object? encoded) =>
+    encoded is Map &&
+    raw.entries.every(
+        (entry) => entry.value == null || encoded.containsKey(entry.key));
+
 const Object sdkOmittedValue = _SdkOmittedValue();
 
 final class _SdkOmittedValue {
