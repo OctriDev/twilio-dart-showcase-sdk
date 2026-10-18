@@ -30,14 +30,20 @@ const _errorEnvelopes = <String, (String, Object?, String?)>{};
 const _streamSelectors = <String, (String, Object?, bool)>{};
 
 /// [body] with its stream flag set for a stream call, or dropped for a plain one.
-Object? _withStreamSelector(Object? body, String operationId, String contentType) {
+Object? _withStreamSelector(
+    Object? body, String operationId, String contentType) {
   final selector = _streamSelectors[operationId];
-  if (selector == null || body == null || identical(body, sdkOmittedValue) || body is List<int>) {
+  if (selector == null ||
+      body == null ||
+      identical(body, sdkOmittedValue) ||
+      body is List<int>) {
     return body;
   }
   final (name, value, streaming) = selector;
   final wire = _formFields(body) ??
-      (contentType.contains('json') ? jsonDecode(SdkUtils.encodeJson(body)) : null);
+      (contentType.contains('json')
+          ? jsonDecode(SdkUtils.encodeJson(body))
+          : null);
   if (wire is! Map<String, Object?>) return body;
   final fields = Map<String, Object?>.of(wire);
   if (streaming) {
@@ -47,6 +53,7 @@ Object? _withStreamSelector(Object? body, String operationId, String contentType
   }
   return fields;
 }
+
 const _jsonSequenceMediaTypes = {
   'application/x-ndjson',
   'application/ndjson',
@@ -63,8 +70,9 @@ const _jsonSequenceMediaTypes = {
 String _encodeJsonBody(Object body, String contentType) {
   final mediaType = contentType.split(';').first.trim().toLowerCase();
   if (body is String && !mediaType.contains('json')) return body;
-  final fields =
-      mediaType == 'application/x-www-form-urlencoded' ? _formFields(body) : null;
+  final fields = mediaType == 'application/x-www-form-urlencoded'
+      ? _formFields(body)
+      : null;
   if (fields != null) return _encodeFormBody(fields);
   if (!_jsonSequenceMediaTypes.contains(mediaType)) {
     return SdkUtils.encodeJson(body);
@@ -149,24 +157,24 @@ Future<SdkResponse<T>> sdkRequest<T>(
   final cfg = config ?? SdkConfig.getConfig();
   final retry = options?.retry ?? cfg.retry ?? RetryConfig();
   final idem = cfg.idempotency ?? IdempotencyConfig();
-  final timeout = options?.timeout ?? cfg.timeout ?? const Duration(seconds: 30);
+  final timeout =
+      options?.timeout ?? cfg.timeout ?? const Duration(seconds: 30);
   final rng = Random();
   final upperMethod = method.toUpperCase();
 
   // Absolute URLs (url-style pagination follow links) bypass baseUrl.
   final isAbsolute = path.startsWith('http://') || path.startsWith('https://');
-  var url = isAbsolute ? path : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
+  var url = isAbsolute
+      ? path
+      : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
 
   // Pre-resolve auth (OAuth2 fetch happens here, once per request).
   final authResolved = await _resolveAuth(cfg, operationId);
-  final mergedQuery = authResolved.query.isEmpty
-      ? query
-      : {...?query, ...authResolved.query};
+  final mergedQuery =
+      authResolved.query.isEmpty ? query : {...?query, ...authResolved.query};
   if (mergedQuery != null && mergedQuery.isNotEmpty) {
     final queryString = SdkUtils.buildQueryString(mergedQuery);
-    url += url.contains('?')
-        ? '&${queryString.substring(1)}'
-        : queryString;
+    url += url.contains('?') ? '&${queryString.substring(1)}' : queryString;
   }
 
   // Raw binary bodies (e.g. application/octet-stream) are sent verbatim;
@@ -190,7 +198,8 @@ Future<SdkResponse<T>> sdkRequest<T>(
   }
 
   // One idempotency key per logical request — reused across retries.
-  final idempotencyKey = _resolveIdempotencyKey(options, idem, upperMethod, rng);
+  final idempotencyKey =
+      _resolveIdempotencyKey(options, idem, upperMethod, rng);
 
   // Compose middleware around the terminal HTTP handler.
   SdkNext dispatch = _composeMiddleware(cfg.middleware, (req) async {
@@ -289,7 +298,8 @@ Future<SdkResponse<T>> sdkRequest<T>(
   }
 
   if (lastError != null) {
-    throw _logError(cfg, upperMethod, path, operationId, SdkNetworkError(lastError));
+    throw _logError(
+        cfg, upperMethod, path, operationId, SdkNetworkError(lastError));
   }
   throw _logError(
     cfg,
@@ -338,7 +348,8 @@ T _decodeSdkResponse<T>(
   }
 }
 
-void _raiseErrorEnvelope(SdkRawResponse raw, Object? decoded, String operationId) {
+void _raiseErrorEnvelope(
+    SdkRawResponse raw, Object? decoded, String operationId) {
   final envelope = _errorEnvelopes[operationId];
   if (envelope == null || decoded is! Map) return;
   final (field, equals, code) = envelope;
@@ -358,7 +369,8 @@ T sdkDecode<T>(T Function() decode) {
   try {
     return decode();
   } on SdkValidationError catch (error) {
-    throw SdkResponseDecodeError(error.message, statusCode: 200, field: error.field);
+    throw SdkResponseDecodeError(error.message,
+        statusCode: 200, field: error.field);
   } on SdkError {
     rethrow;
   } catch (error) {
@@ -368,8 +380,6 @@ T sdkDecode<T>(T Function() decode) {
     );
   }
 }
-
-
 
 /// Fires the error logger (when configured) and returns the error unchanged so
 /// terminal failures can be wrapped inline at each throw site. Delivery is
@@ -550,7 +560,9 @@ List<int> _encodeMultipart(Map<String, Object?> fields, String boundary) {
     } else {
       final wireValue = SdkUtils.toJsonValue(value);
       payload = utf8.encode(
-        wireValue is bool ? (wireValue ? 'true' : 'false') : wireValue.toString(),
+        wireValue is bool
+            ? (wireValue ? 'true' : 'false')
+            : wireValue.toString(),
       );
     }
     out.addAll(utf8.encode('$disposition\r\n'));
@@ -561,6 +573,7 @@ List<int> _encodeMultipart(Map<String, Object?> fields, String boundary) {
     out.addAll(payload);
     out.addAll(utf8.encode('\r\n'));
   }
+
   fields.forEach(append);
   out.addAll(utf8.encode('--$boundary--\r\n'));
   return out;
@@ -574,13 +587,16 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
     var method = req.method;
     var url = Uri.parse(req.url);
     var headers = req.headers;
-    var body = req.bodyBytes ?? (req.body != null ? utf8.encode(req.body!) : null);
+    var body =
+        req.bodyBytes ?? (req.body != null ? utf8.encode(req.body!) : null);
     var resp = await _send(client, method, url, headers, body, timeout);
     // Redirects are followed by the rules browsers use. A 3xx without a
     // Location (GitHub declares its 301 with a BasicError body) is an answer.
     for (var hops = 0; hops < _maxRedirects; hops++) {
       final location = resp.headers.value(HttpHeaders.locationHeader);
-      if (!_redirectStatuses.contains(resp.statusCode) || location == null || location.isEmpty) {
+      if (!_redirectStatuses.contains(resp.statusCode) ||
+          location == null ||
+          location.isEmpty) {
         break;
       }
       final target = url.resolve(location);
@@ -588,13 +604,20 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
         break;
       }
       // A 303 asks for a GET; a 301 or 302 turns only a POST into one.
-      final dropsBody = (resp.statusCode == 303 && method != 'GET' && method != 'HEAD') ||
-          ((resp.statusCode == 301 || resp.statusCode == 302) && method == 'POST');
-      final sameOrigin = url.scheme == target.scheme && url.host == target.host && url.port == target.port;
+      final dropsBody =
+          (resp.statusCode == 303 && method != 'GET' && method != 'HEAD') ||
+              ((resp.statusCode == 301 || resp.statusCode == 302) &&
+                  method == 'POST');
+      final sameOrigin = url.scheme == target.scheme &&
+          url.host == target.host &&
+          url.port == target.port;
       headers = {
         for (final entry in headers.entries)
-          if ((sameOrigin || !_credentialHeaders.contains(entry.key.toLowerCase())) &&
-              !(dropsBody && const {'content-type', 'content-length'}.contains(entry.key.toLowerCase())))
+          if ((sameOrigin ||
+                  !_credentialHeaders.contains(entry.key.toLowerCase())) &&
+              !(dropsBody &&
+                  const {'content-type', 'content-length'}
+                      .contains(entry.key.toLowerCase())))
             entry.key: entry.value,
       };
       await resp.drain<void>();
@@ -603,7 +626,8 @@ Future<SdkRawResponse> _coreTransport(SdkRequest req, Duration timeout) async {
       url = target;
       resp = await _send(client, method, url, headers, body, timeout);
     }
-    final respBody = await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
+    final respBody =
+        await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
     stopwatch.stop();
     final respHeaders = _flatHeaders(resp);
     String? requestId;
@@ -651,7 +675,8 @@ Future<HttpClientResponse> _send(
     httpReq.headers.set(entry.key, entry.value);
   }
   if (body != null) {
-    httpReq.headers.set(HttpHeaders.contentLengthHeader, body.length.toString());
+    httpReq.headers
+        .set(HttpHeaders.contentLengthHeader, body.length.toString());
     httpReq.add(body);
   }
   return httpReq.close().timeout(timeout);
@@ -683,7 +708,8 @@ String? _resolveIdempotencyKey(
       : null;
 }
 
-Map<String, String> _authHeadersFor(ClientConfig cfg, Map<String, String> resolved) {
+Map<String, String> _authHeadersFor(
+    ClientConfig cfg, Map<String, String> resolved) {
   final headers = <String, String>{};
   cfg.auth?.headers?.forEach((k, v) => headers[k] = v);
   resolved.forEach((k, v) => headers[k] = v);
@@ -707,6 +733,7 @@ class _AuthResolved {
   final Map<String, dynamic> query;
   _AuthResolved(this.headers, this.query);
 }
+
 Future<_AuthResolved> _resolveAuth(ClientConfig cfg, String operationId) async {
   final headers = <String, String>{};
   final query = <String, dynamic>{};
@@ -714,18 +741,15 @@ Future<_AuthResolved> _resolveAuth(ClientConfig cfg, String operationId) async {
 
   if (auth == null) return _AuthResolved(headers, query);
 
-
   if (auth.accountSidAuthToken != null) {
-    final raw = "${auth.accountSidAuthToken!.username}:${auth.accountSidAuthToken!.password}";
+    final raw =
+        "${auth.accountSidAuthToken!.username}:${auth.accountSidAuthToken!.password}";
     final enc = base64Encode(utf8.encode(raw));
     headers["Authorization"] = "Basic $enc";
   }
 
-
   return _AuthResolved(headers, query);
 }
-
-
 
 bool _shouldRetry(String method, int statusCode, List<int> retryOn) {
   if (!retryOn.contains(statusCode)) return false;
@@ -768,8 +792,6 @@ Future<void> _sleepBackoff(
   await Future<void>.delayed(delay);
 }
 
-
-
 /// One Server-Sent Event yielded by [sdkStream]. [data] is JSON-decoded when
 /// the payload looks like JSON ({...} or [...]) and stays a raw string
 /// otherwise — sentinels like `[DONE]` arrive as strings so consumers can
@@ -780,7 +802,8 @@ class SdkStreamEvent {
   final String? id;
   final int? retry;
 
-  const SdkStreamEvent({required this.event, required this.data, this.id, this.retry});
+  const SdkStreamEvent(
+      {required this.event, required this.data, this.id, this.retry});
 }
 
 /// Opens an SSE connection and returns a Stream of parsed events. Bypasses
@@ -804,17 +827,16 @@ Stream<SdkStreamEvent> sdkStream(
   final cfg = config ?? SdkConfig.getConfig();
   final timeout = cfg.timeout ?? const Duration(seconds: 30);
   final isAbsolute = path.startsWith('http://') || path.startsWith('https://');
-  var url = isAbsolute ? path : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
+  var url = isAbsolute
+      ? path
+      : '${cfg.baseUrl ?? _operationServers[operationId] ?? SdkConfig.defaultBaseUrl}$path';
 
   final authResolved = await _resolveAuth(cfg, operationId);
-  final mergedQuery = authResolved.query.isEmpty
-      ? query
-      : {...?query, ...authResolved.query};
+  final mergedQuery =
+      authResolved.query.isEmpty ? query : {...?query, ...authResolved.query};
   if (mergedQuery != null && mergedQuery.isNotEmpty) {
     final queryString = SdkUtils.buildQueryString(mergedQuery);
-    url += url.contains('?')
-        ? '&${queryString.substring(1)}'
-        : queryString;
+    url += url.contains('?') ? '&${queryString.substring(1)}' : queryString;
   }
 
   // Use the same body encoder as unary requests so multipart streams receive a
@@ -853,13 +875,15 @@ Stream<SdkStreamEvent> sdkStream(
       req.headers.set(entry.key, entry.value);
     }
     if (outBytes != null) {
-      req.headers.set(HttpHeaders.contentLengthHeader, outBytes.length.toString());
+      req.headers
+          .set(HttpHeaders.contentLengthHeader, outBytes.length.toString());
       req.add(outBytes);
     }
 
     final resp = await req.close();
     if (resp.statusCode < 200 || resp.statusCode >= 300) {
-      final body = await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
+      final body = await resp
+          .fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
       final respHeaders = _flatHeaders(resp);
       throw SdkHttpError.forStatus(
         resp.statusCode,
@@ -873,8 +897,10 @@ Stream<SdkStreamEvent> sdkStream(
     // event parser would read as no events at all.
     final answerType = resp.headers.value(HttpHeaders.contentTypeHeader) ?? '';
     final mediaType = answerType.split(';').first.trim().toLowerCase();
-    if (streamFormat == 'sse' && (mediaType == 'application/json' || mediaType.endsWith('+json'))) {
-      final body = await resp.fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
+    if (streamFormat == 'sse' &&
+        (mediaType == 'application/json' || mediaType.endsWith('+json'))) {
+      final body = await resp
+          .fold<List<int>>(<int>[], (out, chunk) => out..addAll(chunk));
       final respHeaders = _flatHeaders(resp);
       throw SdkResponseDecodeError(
         'Expected an event stream, received $answerType',
@@ -896,7 +922,8 @@ Stream<SdkStreamEvent> sdkStream(
     }
 
     if (streamFormat == 'ndjson') {
-      await for (final line in resp.transform(utf8.decoder).transform(const LineSplitter())) {
+      await for (final line
+          in resp.transform(utf8.decoder).transform(const LineSplitter())) {
         if (line.trim().isNotEmpty) {
           // A JSON text sequence record also starts with RS.
           yield SdkStreamEvent(
@@ -921,7 +948,8 @@ Stream<SdkStreamEvent> sdkStream(
       return raw;
     }
 
-    await for (final line in resp.transform(utf8.decoder).transform(const LineSplitter())) {
+    await for (final line
+        in resp.transform(utf8.decoder).transform(const LineSplitter())) {
       if (line.isEmpty) {
         if (dataLines.isNotEmpty) {
           yield SdkStreamEvent(

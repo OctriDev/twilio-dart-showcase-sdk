@@ -17,70 +17,162 @@ class ListConferencesParticipantsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountConferenceParticipant>> participants;
 
-  const ListConferencesParticipantsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.participants = const SdkOmitted()});
+  const ListConferencesParticipantsResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.participants = const SdkOmitted()});
 
-  ListConferencesParticipantsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountConferenceParticipant>> participants}) get copyWith => _copyWith;
+  ListConferencesParticipantsResponse Function(
+          {SdkOptional<int> end,
+          SdkOptional<String> firstPageUri,
+          SdkOptional<String?> nextPageUri,
+          SdkOptional<int> page,
+          SdkOptional<int> pageSize,
+          SdkOptional<String?> previousPageUri,
+          SdkOptional<int> start,
+          SdkOptional<String> uri,
+          SdkOptional<List<ApiV2010AccountConferenceParticipant>> participants})
+      get copyWith => _copyWith;
 
-  ListConferencesParticipantsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? participants = sdkOmittedValue}) => ListConferencesParticipantsResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    participants: identical(participants, sdkOmittedValue) ? this.participants : participants as SdkOptional<List<ApiV2010AccountConferenceParticipant>>,
-  );
+  ListConferencesParticipantsResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? participants = sdkOmittedValue}) =>
+      ListConferencesParticipantsResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        participants: identical(participants, sdkOmittedValue)
+            ? this.participants
+            : participants
+                as SdkOptional<List<ApiV2010AccountConferenceParticipant>>,
+      );
 
-  factory ListConferencesParticipantsResponse.fromJson(Map<String, dynamic> json) => ListConferencesParticipantsResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    participants: json['participants'] != null ? SdkPresent(((json['participants'] as List?)?.map((e) => ApiV2010AccountConferenceParticipant.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListConferencesParticipantsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListConferencesParticipantsResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        participants: json['participants'] != null
+            ? SdkPresent(((json['participants'] as List?)
+                ?.map((e) => ApiV2010AccountConferenceParticipant.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (participants) {
-      SdkPresent<List<ApiV2010AccountConferenceParticipant>>(value: final value) => {'participants': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (participants) {
+          SdkPresent<List<ApiV2010AccountConferenceParticipant>>(
+            value: final value
+          ) =>
+            {
+              'participants': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

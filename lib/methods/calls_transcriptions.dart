@@ -51,29 +51,30 @@ import '../types.dart';
 /// [transcriptionConfigurationId] The ID of the RealTimeTranscription
 ///   Configuration for configuring all the non-default behaviors in one go.
 /// [enableProviderData] Whether the callback includes raw provider data.
-Future<ApiV2010AccountCallRealtimeTranscription>
-    createCallsTranscriptions(ClientConfig config,
-        {required String accountSid,
-        required String callSid,
-        SdkOptional<String> name = const SdkOmitted(),
-        SdkOptional<RealtimeTranscriptionEnumTrack> track = const SdkOmitted(),
-        SdkOptional<String> statusCallbackUrl = const SdkOmitted(),
-        SdkOptional<CreateCallsTranscriptionsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
-        SdkOptional<String> inboundTrackLabel = const SdkOmitted(),
-        SdkOptional<String> outboundTrackLabel = const SdkOmitted(),
-        SdkOptional<bool> partialResults = const SdkOmitted(),
-        SdkOptional<String> languageCode = const SdkOmitted(),
-        SdkOptional<String> transcriptionEngine = const SdkOmitted(),
-        SdkOptional<bool> profanityFilter = const SdkOmitted(),
-        SdkOptional<String> speechModel = const SdkOmitted(),
-        SdkOptional<String> hints = const SdkOmitted(),
-        SdkOptional<bool> enableAutomaticPunctuation = const SdkOmitted(),
-        SdkOptional<String> intelligenceService = const SdkOmitted(),
-        SdkOptional<String> conversationConfiguration = const SdkOmitted(),
-        SdkOptional<String> conversationId = const SdkOmitted(),
-        SdkOptional<String> transcriptionConfigurationId = const SdkOmitted(),
-        SdkOptional<bool> enableProviderData = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallRealtimeTranscription> createCallsTranscriptions(
+    ClientConfig config,
+    {required String accountSid,
+    required String callSid,
+    SdkOptional<String> name = const SdkOmitted(),
+    SdkOptional<RealtimeTranscriptionEnumTrack> track = const SdkOmitted(),
+    SdkOptional<String> statusCallbackUrl = const SdkOmitted(),
+    SdkOptional<CreateCallsTranscriptionsRequestBodyStatusCallbackMethod>
+        statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<String> inboundTrackLabel = const SdkOmitted(),
+    SdkOptional<String> outboundTrackLabel = const SdkOmitted(),
+    SdkOptional<bool> partialResults = const SdkOmitted(),
+    SdkOptional<String> languageCode = const SdkOmitted(),
+    SdkOptional<String> transcriptionEngine = const SdkOmitted(),
+    SdkOptional<bool> profanityFilter = const SdkOmitted(),
+    SdkOptional<String> speechModel = const SdkOmitted(),
+    SdkOptional<String> hints = const SdkOmitted(),
+    SdkOptional<bool> enableAutomaticPunctuation = const SdkOmitted(),
+    SdkOptional<String> intelligenceService = const SdkOmitted(),
+    SdkOptional<String> conversationConfiguration = const SdkOmitted(),
+    SdkOptional<String> conversationId = const SdkOmitted(),
+    SdkOptional<String> transcriptionConfigurationId = const SdkOmitted(),
+    SdkOptional<bool> enableProviderData = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -89,7 +90,8 @@ Future<ApiV2010AccountCallRealtimeTranscription>
             'Name': SdkUtils.unwrapOptional(name),
             'Track': SdkUtils.unwrapOptional(track),
             'StatusCallbackUrl': SdkUtils.unwrapOptional(statusCallbackUrl),
-            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod':
+                SdkUtils.unwrapOptional(statusCallbackMethod),
             'InboundTrackLabel': SdkUtils.unwrapOptional(inboundTrackLabel),
             'OutboundTrackLabel': SdkUtils.unwrapOptional(outboundTrackLabel),
             'PartialResults': SdkUtils.unwrapOptional(partialResults),
@@ -98,21 +100,25 @@ Future<ApiV2010AccountCallRealtimeTranscription>
             'ProfanityFilter': SdkUtils.unwrapOptional(profanityFilter),
             'SpeechModel': SdkUtils.unwrapOptional(speechModel),
             'Hints': SdkUtils.unwrapOptional(hints),
-            'EnableAutomaticPunctuation': SdkUtils.unwrapOptional(enableAutomaticPunctuation),
+            'EnableAutomaticPunctuation':
+                SdkUtils.unwrapOptional(enableAutomaticPunctuation),
             'IntelligenceService': SdkUtils.unwrapOptional(intelligenceService),
-            'ConversationConfiguration': SdkUtils.unwrapOptional(conversationConfiguration),
+            'ConversationConfiguration':
+                SdkUtils.unwrapOptional(conversationConfiguration),
             'ConversationId': SdkUtils.unwrapOptional(conversationId),
-            'TranscriptionConfigurationId': SdkUtils.unwrapOptional(transcriptionConfigurationId),
+            'TranscriptionConfigurationId':
+                SdkUtils.unwrapOptional(transcriptionConfigurationId),
             'EnableProviderData': SdkUtils.unwrapOptional(enableProviderData)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsTranscriptions',
-          fromJsonRaw: (value) => ApiV2010AccountCallRealtimeTranscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallRealtimeTranscription.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Stops a realtime transcription associated with a call. Identify it by its transcription SID or by the `name` supplied when it was created, and set `Status` to `stopped`. The response contains the transcription object with its updated status.
 ///
@@ -126,13 +132,13 @@ Future<ApiV2010AccountCallRealtimeTranscription>
 ///   Transcription resource is associated with.
 /// [sid] The SID of the Transcription resource, or the `name` used when
 ///   creating the resource
-Future<ApiV2010AccountCallRealtimeTranscription>
-    updateCallsTranscriptions(ClientConfig config,
-        {required String accountSid,
-        required String callSid,
-        required String sid,
-        required RealtimeTranscriptionEnumUpdateStatus status,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallRealtimeTranscription> updateCallsTranscriptions(
+    ClientConfig config,
+    {required String accountSid,
+    required String callSid,
+    required String sid,
+    required RealtimeTranscriptionEnumUpdateStatus status,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -145,7 +151,9 @@ Future<ApiV2010AccountCallRealtimeTranscription>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateCallsTranscriptions',
-          fromJsonRaw: (value) => ApiV2010AccountCallRealtimeTranscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallRealtimeTranscription.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

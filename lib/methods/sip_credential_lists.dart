@@ -17,13 +17,13 @@ import '../types.dart';
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListSipCredentialListsResponse>
-    listSipCredentialLists(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListSipCredentialListsResponse> listSipCredentialLists(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -37,17 +37,20 @@ Future<ListSipCredentialListsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/CredentialLists.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipCredentialLists',
-          fromJsonRaw: (value) => ListSipCredentialListsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipCredentialListsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a SIP credential list for the specified account. Provide a `FriendlyName` to describe the list; the schema requires this field and the documented description limits it to 64 characters. The response includes the created list's identifier and resource metadata.
 ///
@@ -57,11 +60,11 @@ Future<ListSipCredentialListsResponse>
 ///   resource.
 /// [friendlyName] A human readable descriptive text that describes the
 ///   CredentialList, up to 64 characters long.
-Future<ApiV2010AccountSipSipCredentialList>
-    createSipCredentialLists(ClientConfig config,
-        {required String accountSid,
-        required String friendlyName,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountSipSipCredentialList> createSipCredentialLists(
+    ClientConfig config,
+    {required String accountSid,
+    required String friendlyName,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
 
@@ -72,11 +75,11 @@ Future<ApiV2010AccountSipSipCredentialList>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipCredentialLists',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialList.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Retrieves a SIP credential list for the specified account. Provide the account identifier and credential list identifier to select the resource. The response includes the list's friendly name, subresource URIs, and other resource metadata.
 ///
@@ -85,11 +88,11 @@ Future<ApiV2010AccountSipSipCredentialList>
 /// [accountSid] The unique id of the Account that is responsible for this
 ///   resource.
 /// [sid] The credential list Sid that uniquely identifies this resource
-Future<ApiV2010AccountSipSipCredentialList>
-    fetchSipCredentialLists(ClientConfig config,
-        {required String accountSid,
-        required String sid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountSipSipCredentialList> fetchSipCredentialLists(
+    ClientConfig config,
+    {required String accountSid,
+    required String sid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -100,11 +103,11 @@ Future<ApiV2010AccountSipSipCredentialList>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipCredentialLists',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialList.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the friendly name of a SIP credential list for the specified account. Supply `FriendlyName` in the request body; the schema requires this field and the documented description limits it to 64 characters. The response contains the updated list and its resource metadata.
 ///
@@ -115,12 +118,12 @@ Future<ApiV2010AccountSipSipCredentialList>
 /// [sid] The credential list Sid that uniquely identifies this resource
 /// [friendlyName] A human readable descriptive text for a CredentialList, up to
 ///   64 characters long.
-Future<ApiV2010AccountSipSipCredentialList>
-    updateSipCredentialLists(ClientConfig config,
-        {required String accountSid,
-        required String sid,
-        required String friendlyName,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountSipSipCredentialList> updateSipCredentialLists(
+    ClientConfig config,
+    {required String accountSid,
+    required String sid,
+    required String friendlyName,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -133,11 +136,11 @@ Future<ApiV2010AccountSipSipCredentialList>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateSipCredentialLists',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialList.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipCredentialList.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a SIP credential list for the specified account. Provide the account identifier and credential list identifier to select the resource to remove. The response confirms deletion and contains no resource representation.
 ///

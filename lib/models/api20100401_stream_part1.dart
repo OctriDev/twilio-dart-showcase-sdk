@@ -8,80 +8,153 @@ part of 'api20100401_stream.dart';
 class ApiV2010AccountCallStream {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SID of the Stream resource.
   final SdkOptional<String?> sid;
+
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this Stream resource.
   final SdkOptional<String?> accountSid;
+
   /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Stream resource is associated with.
   final SdkOptional<String?> callSid;
+
   /// The user-specified name of this Stream, if one was given when the Stream was created. This can be used to stop the Stream.
   final SdkOptional<String?> name;
+
   /// The status of the Stream. Possible values are `stopped` and `in-progress`.
   final SdkOptional<StreamEnumStatus> status;
+
   /// The date and time in GMT that this resource was last updated, specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
+
   /// The URI of the resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
 
-  const ApiV2010AccountCallStream({this.sid = const SdkOmitted(), this.accountSid = const SdkOmitted(), this.callSid = const SdkOmitted(), this.name = const SdkOmitted(), this.status = const SdkOmitted(), this.dateUpdated = const SdkOmitted(), this.uri = const SdkOmitted()});
+  const ApiV2010AccountCallStream(
+      {this.sid = const SdkOmitted(),
+      this.accountSid = const SdkOmitted(),
+      this.callSid = const SdkOmitted(),
+      this.name = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      this.dateUpdated = const SdkOmitted(),
+      this.uri = const SdkOmitted()});
 
-  ApiV2010AccountCallStream Function({SdkOptional<String?> sid, SdkOptional<String?> accountSid, SdkOptional<String?> callSid, SdkOptional<String?> name, SdkOptional<StreamEnumStatus> status, SdkOptional<String?> dateUpdated, SdkOptional<String?> uri}) get copyWith => _copyWith;
+  ApiV2010AccountCallStream Function(
+      {SdkOptional<String?> sid,
+      SdkOptional<String?> accountSid,
+      SdkOptional<String?> callSid,
+      SdkOptional<String?> name,
+      SdkOptional<StreamEnumStatus> status,
+      SdkOptional<String?> dateUpdated,
+      SdkOptional<String?> uri}) get copyWith => _copyWith;
 
-  ApiV2010AccountCallStream _copyWith({Object? sid = sdkOmittedValue, Object? accountSid = sdkOmittedValue, Object? callSid = sdkOmittedValue, Object? name = sdkOmittedValue, Object? status = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue, Object? uri = sdkOmittedValue}) => ApiV2010AccountCallStream(
-    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
-    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
-    callSid: identical(callSid, sdkOmittedValue) ? this.callSid : callSid as SdkOptional<String?>,
-    name: identical(name, sdkOmittedValue) ? this.name : name as SdkOptional<String?>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<StreamEnumStatus>,
-    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
-  );
+  ApiV2010AccountCallStream _copyWith(
+          {Object? sid = sdkOmittedValue,
+          Object? accountSid = sdkOmittedValue,
+          Object? callSid = sdkOmittedValue,
+          Object? name = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? dateUpdated = sdkOmittedValue,
+          Object? uri = sdkOmittedValue}) =>
+      ApiV2010AccountCallStream(
+        sid: identical(sid, sdkOmittedValue)
+            ? this.sid
+            : sid as SdkOptional<String?>,
+        accountSid: identical(accountSid, sdkOmittedValue)
+            ? this.accountSid
+            : accountSid as SdkOptional<String?>,
+        callSid: identical(callSid, sdkOmittedValue)
+            ? this.callSid
+            : callSid as SdkOptional<String?>,
+        name: identical(name, sdkOmittedValue)
+            ? this.name
+            : name as SdkOptional<String?>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<StreamEnumStatus>,
+        dateUpdated: identical(dateUpdated, sdkOmittedValue)
+            ? this.dateUpdated
+            : dateUpdated as SdkOptional<String?>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String?>,
+      );
 
-  factory ApiV2010AccountCallStream.fromJson(Map<String, dynamic> json) => ApiV2010AccountCallStream(
-    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
-    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
-    callSid: json.containsKey('call_sid') ? SdkPresent(json['call_sid'] as String?) : const SdkOmitted(),
-    name: json.containsKey('name') ? SdkPresent(json['name'] as String?) : const SdkOmitted(),
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? StreamEnumStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
-    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
-  );
+  factory ApiV2010AccountCallStream.fromJson(Map<String, dynamic> json) =>
+      ApiV2010AccountCallStream(
+        sid: json.containsKey('sid')
+            ? SdkPresent(json['sid'] as String?)
+            : const SdkOmitted(),
+        accountSid: json.containsKey('account_sid')
+            ? SdkPresent(json['account_sid'] as String?)
+            : const SdkOmitted(),
+        callSid: json.containsKey('call_sid')
+            ? SdkPresent(json['call_sid'] as String?)
+            : const SdkOmitted(),
+        name: json.containsKey('name')
+            ? SdkPresent(json['name'] as String?)
+            : const SdkOmitted(),
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? StreamEnumStatus.fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        dateUpdated: json.containsKey('date_updated')
+            ? SdkPresent(json['date_updated'] as String?)
+            : const SdkOmitted(),
+        uri: json.containsKey('uri')
+            ? SdkPresent(json['uri'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (sid) {
-      SdkPresent<String?>(value: final value) => {'sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (accountSid) {
-      SdkPresent<String?>(value: final value) => {'account_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (callSid) {
-      SdkPresent<String?>(value: final value) => {'call_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (name) {
-      SdkPresent<String?>(value: final value) => {'name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (status) {
-      SdkPresent<StreamEnumStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateUpdated) {
-      SdkPresent<String?>(value: final value) => {'date_updated': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String?>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (sid) {
+          SdkPresent<String?>(value: final value) => {
+              'sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (accountSid) {
+          SdkPresent<String?>(value: final value) => {
+              'account_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (callSid) {
+          SdkPresent<String?>(value: final value) => {
+              'call_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (name) {
+          SdkPresent<String?>(value: final value) => {
+              'name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<StreamEnumStatus>(value: final value) => {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateUpdated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_updated': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String?>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The status of the Stream. Possible values are `stopped` and `in-progress`.
 final class StreamEnumStatus {
-
   final String value;
 
   const StreamEnumStatus._(this.value);
@@ -93,17 +166,19 @@ final class StreamEnumStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is StreamEnumStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is StreamEnumStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The tracks to be included in the Stream. Possible values are `inbound_track`, `outbound_track`, `both_tracks`. Default value is `inbound_track`.
 final class StreamEnumTrack {
-
   final String value;
 
   const StreamEnumTrack._(this.value);
@@ -116,31 +191,37 @@ final class StreamEnumTrack {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is StreamEnumTrack && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is StreamEnumTrack && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `StreamEnumUpdateStatus` API schema.
 final class StreamEnumUpdateStatus {
-
   final String value;
 
   const StreamEnumUpdateStatus._(this.value);
 
-  factory StreamEnumUpdateStatus.fromJson(String value) => StreamEnumUpdateStatus._(value);
+  factory StreamEnumUpdateStatus.fromJson(String value) =>
+      StreamEnumUpdateStatus._(value);
 
   static const stopped = StreamEnumUpdateStatus._('stopped');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is StreamEnumUpdateStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is StreamEnumUpdateStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

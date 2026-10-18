@@ -15,181 +15,389 @@ class ListUsageRecordsYesterdayResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>> usageRecords;
+  final SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>>
+      usageRecords;
 
-  const ListUsageRecordsYesterdayResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.usageRecords = const SdkOmitted()});
+  const ListUsageRecordsYesterdayResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.usageRecords = const SdkOmitted()});
 
-  ListUsageRecordsYesterdayResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>> usageRecords}) get copyWith => _copyWith;
+  ListUsageRecordsYesterdayResponse Function(
+      {SdkOptional<int> end,
+      SdkOptional<String> firstPageUri,
+      SdkOptional<String?> nextPageUri,
+      SdkOptional<int> page,
+      SdkOptional<int> pageSize,
+      SdkOptional<String?> previousPageUri,
+      SdkOptional<int> start,
+      SdkOptional<String> uri,
+      SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>>
+          usageRecords}) get copyWith => _copyWith;
 
-  ListUsageRecordsYesterdayResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? usageRecords = sdkOmittedValue}) => ListUsageRecordsYesterdayResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    usageRecords: identical(usageRecords, sdkOmittedValue) ? this.usageRecords : usageRecords as SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>>,
-  );
+  ListUsageRecordsYesterdayResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? usageRecords = sdkOmittedValue}) =>
+      ListUsageRecordsYesterdayResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        usageRecords: identical(usageRecords, sdkOmittedValue)
+            ? this.usageRecords
+            : usageRecords as SdkOptional<
+                List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>>,
+      );
 
-  factory ListUsageRecordsYesterdayResponse.fromJson(Map<String, dynamic> json) => ListUsageRecordsYesterdayResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    usageRecords: json['usage_records'] != null ? SdkPresent(((json['usage_records'] as List?)?.map((e) => ApiV2010AccountUsageUsageRecordUsageRecordYesterday.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListUsageRecordsYesterdayResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListUsageRecordsYesterdayResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        usageRecords: json['usage_records'] != null
+            ? SdkPresent(((json['usage_records'] as List?)
+                ?.map((e) => ApiV2010AccountUsageUsageRecordUsageRecordYesterday
+                    .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usageRecords) {
-      SdkPresent<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>>(value: final value) => {'usage_records': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usageRecords) {
+          SdkPresent<List<ApiV2010AccountUsageUsageRecordUsageRecordYesterday>>(
+            value: final value
+          ) =>
+            {
+              'usage_records': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UpdateUsageTriggersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
-  final SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod;
+  final SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod>
+      callbackMethod;
+
   /// The URL we should call using `callback_method` when the trigger fires.
   final SdkOptional<String> callbackUrl;
+
   /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
   final SdkOptional<String> friendlyName;
 
-  const UpdateUsageTriggersRequestBody({this.callbackMethod = const SdkOmitted(), this.callbackUrl = const SdkOmitted(), this.friendlyName = const SdkOmitted()});
+  const UpdateUsageTriggersRequestBody(
+      {this.callbackMethod = const SdkOmitted(),
+      this.callbackUrl = const SdkOmitted(),
+      this.friendlyName = const SdkOmitted()});
 
-  UpdateUsageTriggersRequestBody Function({SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod, SdkOptional<String> callbackUrl, SdkOptional<String> friendlyName}) get copyWith => _copyWith;
+  UpdateUsageTriggersRequestBody Function(
+      {SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod,
+      SdkOptional<String> callbackUrl,
+      SdkOptional<String> friendlyName}) get copyWith => _copyWith;
 
-  UpdateUsageTriggersRequestBody _copyWith({Object? callbackMethod = sdkOmittedValue, Object? callbackUrl = sdkOmittedValue, Object? friendlyName = sdkOmittedValue}) => UpdateUsageTriggersRequestBody(
-    callbackMethod: identical(callbackMethod, sdkOmittedValue) ? this.callbackMethod : callbackMethod as SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod>,
-    callbackUrl: identical(callbackUrl, sdkOmittedValue) ? this.callbackUrl : callbackUrl as SdkOptional<String>,
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
-  );
+  UpdateUsageTriggersRequestBody _copyWith(
+          {Object? callbackMethod = sdkOmittedValue,
+          Object? callbackUrl = sdkOmittedValue,
+          Object? friendlyName = sdkOmittedValue}) =>
+      UpdateUsageTriggersRequestBody(
+        callbackMethod: identical(callbackMethod, sdkOmittedValue)
+            ? this.callbackMethod
+            : callbackMethod
+                as SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod>,
+        callbackUrl: identical(callbackUrl, sdkOmittedValue)
+            ? this.callbackUrl
+            : callbackUrl as SdkOptional<String>,
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String>,
+      );
 
-  factory UpdateUsageTriggersRequestBody.fromJson(Map<String, dynamic> json) => UpdateUsageTriggersRequestBody(
-    callbackMethod: json['CallbackMethod'] != null ? SdkPresent((json['CallbackMethod'] != null ? UpdateUsageTriggersRequestBodyCallbackMethod.fromJson(json['CallbackMethod'] as String) : null)!) : const SdkOmitted(),
-    callbackUrl: json['CallbackUrl'] != null ? SdkPresent((json['CallbackUrl'] as String?)!) : const SdkOmitted(),
-    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
-  );
+  factory UpdateUsageTriggersRequestBody.fromJson(Map<String, dynamic> json) =>
+      UpdateUsageTriggersRequestBody(
+        callbackMethod: json['CallbackMethod'] != null
+            ? SdkPresent((json['CallbackMethod'] != null
+                ? UpdateUsageTriggersRequestBodyCallbackMethod.fromJson(
+                    json['CallbackMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        callbackUrl: json['CallbackUrl'] != null
+            ? SdkPresent((json['CallbackUrl'] as String?)!)
+            : const SdkOmitted(),
+        friendlyName: json['FriendlyName'] != null
+            ? SdkPresent((json['FriendlyName'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (callbackMethod) {
-      SdkPresent<UpdateUsageTriggersRequestBodyCallbackMethod>(value: final value) => {'CallbackMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (callbackUrl) {
-      SdkPresent<String>(value: final value) => {'CallbackUrl': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (friendlyName) {
-      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (callbackMethod) {
+          SdkPresent<UpdateUsageTriggersRequestBodyCallbackMethod>(
+            value: final value
+          ) =>
+            {
+              'CallbackMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (callbackUrl) {
+          SdkPresent<String>(value: final value) => {
+              'CallbackUrl': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (friendlyName) {
+          SdkPresent<String>(value: final value) => {
+              'FriendlyName': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CreateUsageTriggersRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The URL we should call using `callback_method` when the trigger fires.
   final String callbackUrl;
+
   /// The usage value at which the trigger should fire. For convenience, you can use an offset value such as `+30` to specify a trigger_value that is 30 units more than the current usage value. Be sure to urlencode a `+` as `%2B`.
   final String triggerValue;
+
   /// The usage category that the trigger should watch. Use one of the supported [usage categories](https://www.twilio.com/docs/usage/api/usage-record#usage-categories) for this value.
   final String usageCategory;
+
   /// The HTTP method we should use to call `callback_url`. Can be: `GET` or `POST` and the default is `POST`.
-  final SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod;
+  final SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod>
+      callbackMethod;
+
   /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
   final SdkOptional<String> friendlyName;
+
   /// The frequency of a recurring UsageTrigger. Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
   final SdkOptional<UsageTriggerEnumRecurring> recurring;
+
   /// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger. Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
   final SdkOptional<UsageTriggerEnumTriggerField> triggerBy;
 
-  const CreateUsageTriggersRequestBody({required this.callbackUrl, required this.triggerValue, required this.usageCategory, this.callbackMethod = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.recurring = const SdkOmitted(), this.triggerBy = const SdkOmitted()});
+  const CreateUsageTriggersRequestBody(
+      {required this.callbackUrl,
+      required this.triggerValue,
+      required this.usageCategory,
+      this.callbackMethod = const SdkOmitted(),
+      this.friendlyName = const SdkOmitted(),
+      this.recurring = const SdkOmitted(),
+      this.triggerBy = const SdkOmitted()});
 
-  CreateUsageTriggersRequestBody Function({String callbackUrl, String triggerValue, String usageCategory, SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod, SdkOptional<String> friendlyName, SdkOptional<UsageTriggerEnumRecurring> recurring, SdkOptional<UsageTriggerEnumTriggerField> triggerBy}) get copyWith => _copyWith;
+  CreateUsageTriggersRequestBody Function(
+      {String callbackUrl,
+      String triggerValue,
+      String usageCategory,
+      SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod,
+      SdkOptional<String> friendlyName,
+      SdkOptional<UsageTriggerEnumRecurring> recurring,
+      SdkOptional<UsageTriggerEnumTriggerField>
+          triggerBy}) get copyWith => _copyWith;
 
-  CreateUsageTriggersRequestBody _copyWith({Object? callbackUrl = sdkOmittedValue, Object? triggerValue = sdkOmittedValue, Object? usageCategory = sdkOmittedValue, Object? callbackMethod = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? recurring = sdkOmittedValue, Object? triggerBy = sdkOmittedValue}) => CreateUsageTriggersRequestBody(
-    callbackUrl: identical(callbackUrl, sdkOmittedValue) ? this.callbackUrl : callbackUrl as String,
-    triggerValue: identical(triggerValue, sdkOmittedValue) ? this.triggerValue : triggerValue as String,
-    usageCategory: identical(usageCategory, sdkOmittedValue) ? this.usageCategory : usageCategory as String,
-    callbackMethod: identical(callbackMethod, sdkOmittedValue) ? this.callbackMethod : callbackMethod as SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod>,
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
-    recurring: identical(recurring, sdkOmittedValue) ? this.recurring : recurring as SdkOptional<UsageTriggerEnumRecurring>,
-    triggerBy: identical(triggerBy, sdkOmittedValue) ? this.triggerBy : triggerBy as SdkOptional<UsageTriggerEnumTriggerField>,
-  );
+  CreateUsageTriggersRequestBody _copyWith(
+          {Object? callbackUrl = sdkOmittedValue,
+          Object? triggerValue = sdkOmittedValue,
+          Object? usageCategory = sdkOmittedValue,
+          Object? callbackMethod = sdkOmittedValue,
+          Object? friendlyName = sdkOmittedValue,
+          Object? recurring = sdkOmittedValue,
+          Object? triggerBy = sdkOmittedValue}) =>
+      CreateUsageTriggersRequestBody(
+        callbackUrl: identical(callbackUrl, sdkOmittedValue)
+            ? this.callbackUrl
+            : callbackUrl as String,
+        triggerValue: identical(triggerValue, sdkOmittedValue)
+            ? this.triggerValue
+            : triggerValue as String,
+        usageCategory: identical(usageCategory, sdkOmittedValue)
+            ? this.usageCategory
+            : usageCategory as String,
+        callbackMethod: identical(callbackMethod, sdkOmittedValue)
+            ? this.callbackMethod
+            : callbackMethod
+                as SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod>,
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String>,
+        recurring: identical(recurring, sdkOmittedValue)
+            ? this.recurring
+            : recurring as SdkOptional<UsageTriggerEnumRecurring>,
+        triggerBy: identical(triggerBy, sdkOmittedValue)
+            ? this.triggerBy
+            : triggerBy as SdkOptional<UsageTriggerEnumTriggerField>,
+      );
 
-  factory CreateUsageTriggersRequestBody.fromJson(Map<String, dynamic> json) => CreateUsageTriggersRequestBody(
-    callbackUrl: (json['CallbackUrl'] as String?)!,
-    triggerValue: (json['TriggerValue'] as String?)!,
-    usageCategory: (json['UsageCategory'] as String?)!,
-    callbackMethod: json['CallbackMethod'] != null ? SdkPresent((json['CallbackMethod'] != null ? CreateUsageTriggersRequestBodyCallbackMethod.fromJson(json['CallbackMethod'] as String) : null)!) : const SdkOmitted(),
-    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
-    recurring: json['Recurring'] != null ? SdkPresent((json['Recurring'] != null ? UsageTriggerEnumRecurring.fromJson(json['Recurring'] as String) : null)!) : const SdkOmitted(),
-    triggerBy: json['TriggerBy'] != null ? SdkPresent((json['TriggerBy'] != null ? UsageTriggerEnumTriggerField.fromJson(json['TriggerBy'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory CreateUsageTriggersRequestBody.fromJson(Map<String, dynamic> json) =>
+      CreateUsageTriggersRequestBody(
+        callbackUrl: (json['CallbackUrl'] as String?)!,
+        triggerValue: (json['TriggerValue'] as String?)!,
+        usageCategory: (json['UsageCategory'] as String?)!,
+        callbackMethod: json['CallbackMethod'] != null
+            ? SdkPresent((json['CallbackMethod'] != null
+                ? CreateUsageTriggersRequestBodyCallbackMethod.fromJson(
+                    json['CallbackMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        friendlyName: json['FriendlyName'] != null
+            ? SdkPresent((json['FriendlyName'] as String?)!)
+            : const SdkOmitted(),
+        recurring: json['Recurring'] != null
+            ? SdkPresent((json['Recurring'] != null
+                ? UsageTriggerEnumRecurring.fromJson(
+                    json['Recurring'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        triggerBy: json['TriggerBy'] != null
+            ? SdkPresent((json['TriggerBy'] != null
+                ? UsageTriggerEnumTriggerField.fromJson(
+                    json['TriggerBy'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'CallbackUrl': callbackUrl,
-    'TriggerValue': triggerValue,
-    'UsageCategory': usageCategory,
-    ...switch (callbackMethod) {
-      SdkPresent<CreateUsageTriggersRequestBodyCallbackMethod>(value: final value) => {'CallbackMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (friendlyName) {
-      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (recurring) {
-      SdkPresent<UsageTriggerEnumRecurring>(value: final value) => {'Recurring': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (triggerBy) {
-      SdkPresent<UsageTriggerEnumTriggerField>(value: final value) => {'TriggerBy': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'CallbackUrl': callbackUrl,
+        'TriggerValue': triggerValue,
+        'UsageCategory': usageCategory,
+        ...switch (callbackMethod) {
+          SdkPresent<CreateUsageTriggersRequestBodyCallbackMethod>(
+            value: final value
+          ) =>
+            {
+              'CallbackMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (friendlyName) {
+          SdkPresent<String>(value: final value) => {
+              'FriendlyName': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (recurring) {
+          SdkPresent<UsageTriggerEnumRecurring>(value: final value) => {
+              'Recurring': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (triggerBy) {
+          SdkPresent<UsageTriggerEnumTriggerField>(value: final value) => {
+              'TriggerBy': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ListUsageTriggersResponse {
@@ -205,70 +413,161 @@ class ListUsageTriggersResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountUsageUsageTrigger>> usageTriggers;
 
-  const ListUsageTriggersResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.usageTriggers = const SdkOmitted()});
+  const ListUsageTriggersResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.usageTriggers = const SdkOmitted()});
 
-  ListUsageTriggersResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountUsageUsageTrigger>> usageTriggers}) get copyWith => _copyWith;
+  ListUsageTriggersResponse Function(
+          {SdkOptional<int> end,
+          SdkOptional<String> firstPageUri,
+          SdkOptional<String?> nextPageUri,
+          SdkOptional<int> page,
+          SdkOptional<int> pageSize,
+          SdkOptional<String?> previousPageUri,
+          SdkOptional<int> start,
+          SdkOptional<String> uri,
+          SdkOptional<List<ApiV2010AccountUsageUsageTrigger>> usageTriggers})
+      get copyWith => _copyWith;
 
-  ListUsageTriggersResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? usageTriggers = sdkOmittedValue}) => ListUsageTriggersResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    usageTriggers: identical(usageTriggers, sdkOmittedValue) ? this.usageTriggers : usageTriggers as SdkOptional<List<ApiV2010AccountUsageUsageTrigger>>,
-  );
+  ListUsageTriggersResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? usageTriggers = sdkOmittedValue}) =>
+      ListUsageTriggersResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        usageTriggers: identical(usageTriggers, sdkOmittedValue)
+            ? this.usageTriggers
+            : usageTriggers
+                as SdkOptional<List<ApiV2010AccountUsageUsageTrigger>>,
+      );
 
-  factory ListUsageTriggersResponse.fromJson(Map<String, dynamic> json) => ListUsageTriggersResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    usageTriggers: json['usage_triggers'] != null ? SdkPresent(((json['usage_triggers'] as List?)?.map((e) => ApiV2010AccountUsageUsageTrigger.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListUsageTriggersResponse.fromJson(Map<String, dynamic> json) =>
+      ListUsageTriggersResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        usageTriggers: json['usage_triggers'] != null
+            ? SdkPresent(((json['usage_triggers'] as List?)
+                ?.map((e) => ApiV2010AccountUsageUsageTrigger.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usageTriggers) {
-      SdkPresent<List<ApiV2010AccountUsageUsageTrigger>>(value: final value) => {'usage_triggers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usageTriggers) {
+          SdkPresent<List<ApiV2010AccountUsageUsageTrigger>>(
+            value: final value
+          ) =>
+            {
+              'usage_triggers': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

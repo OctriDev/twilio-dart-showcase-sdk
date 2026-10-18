@@ -15,74 +15,176 @@ class ListAvailablePhoneNumbersTollFreeResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>> availablePhoneNumbers;
+  final SdkOptional<
+          List<
+              ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>>
+      availablePhoneNumbers;
 
-  const ListAvailablePhoneNumbersTollFreeResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.availablePhoneNumbers = const SdkOmitted()});
+  const ListAvailablePhoneNumbersTollFreeResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.availablePhoneNumbers = const SdkOmitted()});
 
-  ListAvailablePhoneNumbersTollFreeResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>> availablePhoneNumbers}) get copyWith => _copyWith;
+  ListAvailablePhoneNumbersTollFreeResponse Function(
+      {SdkOptional<int> end,
+      SdkOptional<String> firstPageUri,
+      SdkOptional<String?> nextPageUri,
+      SdkOptional<int> page,
+      SdkOptional<int> pageSize,
+      SdkOptional<String?> previousPageUri,
+      SdkOptional<int> start,
+      SdkOptional<String> uri,
+      SdkOptional<
+              List<
+                  ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>>
+          availablePhoneNumbers}) get copyWith => _copyWith;
 
-  ListAvailablePhoneNumbersTollFreeResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? availablePhoneNumbers = sdkOmittedValue}) => ListAvailablePhoneNumbersTollFreeResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    availablePhoneNumbers: identical(availablePhoneNumbers, sdkOmittedValue) ? this.availablePhoneNumbers : availablePhoneNumbers as SdkOptional<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>>,
-  );
+  ListAvailablePhoneNumbersTollFreeResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? availablePhoneNumbers = sdkOmittedValue}) =>
+      ListAvailablePhoneNumbersTollFreeResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        availablePhoneNumbers: identical(availablePhoneNumbers, sdkOmittedValue)
+            ? this.availablePhoneNumbers
+            : availablePhoneNumbers as SdkOptional<
+                List<
+                    ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>>,
+      );
 
-  factory ListAvailablePhoneNumbersTollFreeResponse.fromJson(Map<String, dynamic> json) => ListAvailablePhoneNumbersTollFreeResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    availablePhoneNumbers: json['available_phone_numbers'] != null ? SdkPresent(((json['available_phone_numbers'] as List?)?.map((e) => ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListAvailablePhoneNumbersTollFreeResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListAvailablePhoneNumbersTollFreeResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        availablePhoneNumbers: json['available_phone_numbers'] != null
+            ? SdkPresent(((json['available_phone_numbers'] as List?)
+                ?.map((e) =>
+                    ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (availablePhoneNumbers) {
-      SdkPresent<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>>(value: final value) => {'available_phone_numbers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (availablePhoneNumbers) {
+          SdkPresent<
+                List<
+                    ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberTollFree>>(
+            value: final value
+          ) =>
+            {
+              'available_phone_numbers':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ListAvailablePhoneNumbersVoipResponse {
@@ -96,72 +198,174 @@ class ListAvailablePhoneNumbersVoipResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>> availablePhoneNumbers;
+  final SdkOptional<
+          List<
+              ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>>
+      availablePhoneNumbers;
 
-  const ListAvailablePhoneNumbersVoipResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.availablePhoneNumbers = const SdkOmitted()});
+  const ListAvailablePhoneNumbersVoipResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.availablePhoneNumbers = const SdkOmitted()});
 
-  ListAvailablePhoneNumbersVoipResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>> availablePhoneNumbers}) get copyWith => _copyWith;
+  ListAvailablePhoneNumbersVoipResponse Function(
+      {SdkOptional<int> end,
+      SdkOptional<String> firstPageUri,
+      SdkOptional<String?> nextPageUri,
+      SdkOptional<int> page,
+      SdkOptional<int> pageSize,
+      SdkOptional<String?> previousPageUri,
+      SdkOptional<int> start,
+      SdkOptional<String> uri,
+      SdkOptional<
+              List<
+                  ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>>
+          availablePhoneNumbers}) get copyWith => _copyWith;
 
-  ListAvailablePhoneNumbersVoipResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? availablePhoneNumbers = sdkOmittedValue}) => ListAvailablePhoneNumbersVoipResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    availablePhoneNumbers: identical(availablePhoneNumbers, sdkOmittedValue) ? this.availablePhoneNumbers : availablePhoneNumbers as SdkOptional<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>>,
-  );
+  ListAvailablePhoneNumbersVoipResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? availablePhoneNumbers = sdkOmittedValue}) =>
+      ListAvailablePhoneNumbersVoipResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        availablePhoneNumbers: identical(availablePhoneNumbers, sdkOmittedValue)
+            ? this.availablePhoneNumbers
+            : availablePhoneNumbers as SdkOptional<
+                List<
+                    ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>>,
+      );
 
-  factory ListAvailablePhoneNumbersVoipResponse.fromJson(Map<String, dynamic> json) => ListAvailablePhoneNumbersVoipResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    availablePhoneNumbers: json['available_phone_numbers'] != null ? SdkPresent(((json['available_phone_numbers'] as List?)?.map((e) => ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListAvailablePhoneNumbersVoipResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListAvailablePhoneNumbersVoipResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        availablePhoneNumbers: json['available_phone_numbers'] != null
+            ? SdkPresent(((json['available_phone_numbers'] as List?)
+                ?.map((e) =>
+                    ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (availablePhoneNumbers) {
-      SdkPresent<List<ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>>(value: final value) => {'available_phone_numbers': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (availablePhoneNumbers) {
+          SdkPresent<
+                List<
+                    ApiV2010AccountAvailablePhoneNumberCountryAvailablePhoneNumberVoip>>(
+            value: final value
+          ) =>
+            {
+              'available_phone_numbers':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
