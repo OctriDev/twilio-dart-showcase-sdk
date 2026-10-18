@@ -81,7 +81,8 @@ Future<ApiV2010AccountCallPayments> createCallsPayments(ClientConfig config,
     required String callSid,
     required String idempotencyKey,
     required String statusCallback,
-    SdkOptional<PaymentsEnumBankAccountType> bankAccountType = const SdkOmitted(),
+    SdkOptional<PaymentsEnumBankAccountType> bankAccountType =
+        const SdkOmitted(),
     SdkOptional<double> chargeAmount = const SdkOmitted(),
     SdkOptional<String> currency = const SdkOmitted(),
     SdkOptional<String> description = const SdkOmitted(),
@@ -96,7 +97,8 @@ Future<ApiV2010AccountCallPayments> createCallsPayments(ClientConfig config,
     SdkOptional<PaymentsEnumTokenType> tokenType = const SdkOmitted(),
     SdkOptional<String> validCardTypes = const SdkOmitted(),
     SdkOptional<String> requireMatchingInputs = const SdkOmitted(),
-    SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation = const SdkOmitted(),
+    SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -124,17 +126,18 @@ Future<ApiV2010AccountCallPayments> createCallsPayments(ClientConfig config,
             'Timeout': SdkUtils.unwrapOptional(timeout),
             'TokenType': SdkUtils.unwrapOptional(tokenType),
             'ValidCardTypes': SdkUtils.unwrapOptional(validCardTypes),
-            'RequireMatchingInputs': SdkUtils.unwrapOptional(requireMatchingInputs),
+            'RequireMatchingInputs':
+                SdkUtils.unwrapOptional(requireMatchingInputs),
             'Confirmation': SdkUtils.unwrapOptional(confirmation)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsPayments',
-          fromJsonRaw: (value) => ApiV2010AccountCallPayments.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallPayments.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// update an instance of payments with different phases of payment flows.
 ///
@@ -192,7 +195,8 @@ Future<ApiV2010AccountCallPayments> updateCallsPayments(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateCallsPayments',
-          fromJsonRaw: (value) => ApiV2010AccountCallPayments.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallPayments.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

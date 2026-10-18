@@ -30,16 +30,18 @@ Future<ApiV2010AccountRecordingRecordingTranscription>
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^TR[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountRecordingRecordingTranscription>('GET',
+  return (await sdkRequest<ApiV2010AccountRecordingRecordingTranscription>(
+          'GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings/${Uri.encodeComponent(recordingSid.toString())}/Transcriptions/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchRecordingsTranscriptions',
-          fromJsonRaw: (value) => ApiV2010AccountRecordingRecordingTranscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountRecordingRecordingTranscription.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a transcription created from a recording. Identify the transcription using the account, recording, and transcription SIDs.
 ///
@@ -72,7 +74,6 @@ Future<void> deleteRecordingsTranscriptions(ClientConfig config,
       .data;
 }
 
-
 /// Lists transcriptions associated with a specific recording. Use `PageSize`, `Page`, and `PageToken` to control pagination; `PageSize` defaults to 50 when omitted.
 ///
 /// [accountSid] The SID of the
@@ -85,14 +86,14 @@ Future<void> deleteRecordingsTranscriptions(ClientConfig config,
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListRecordingsTranscriptionsResponse>
-    listRecordingsTranscriptions(ClientConfig config,
-        {required String accountSid,
-        required String recordingSid,
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListRecordingsTranscriptionsResponse> listRecordingsTranscriptions(
+    ClientConfig config,
+    {required String accountSid,
+    required String recordingSid,
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('RecordingSid', recordingSid, min: 34, max: 34);
@@ -108,13 +109,17 @@ Future<ListRecordingsTranscriptionsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings/${Uri.encodeComponent(recordingSid.toString())}/Transcriptions.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listRecordingsTranscriptions',
-          fromJsonRaw: (value) => ListRecordingsTranscriptionsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListRecordingsTranscriptionsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

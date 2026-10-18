@@ -16,13 +16,13 @@ import '../types.dart';
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListAvailablePhoneNumbersResponse>
-    listAvailablePhoneNumbers(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListAvailablePhoneNumbersResponse> listAvailablePhoneNumbers(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -36,17 +36,20 @@ Future<ListAvailablePhoneNumbersResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbers',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListAvailablePhoneNumbersResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Retrieves available phone number information for a specific country. Supply the account SID and an ISO 3166-1 country code to get the country name, beta status, and related available-number resources.
 ///
@@ -56,11 +59,11 @@ Future<ListAvailablePhoneNumbersResponse>
 /// [countryCode] The
 ///   [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code
 ///   of the country to fetch available phone number information about.
-Future<ApiV2010AccountAvailablePhoneNumberCountry>
-    fetchAvailablePhoneNumbers(ClientConfig config,
-        {required String accountSid,
-        required String countryCode,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountAvailablePhoneNumberCountry> fetchAvailablePhoneNumbers(
+    ClientConfig config,
+    {required String accountSid,
+    required String countryCode,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
 
@@ -69,11 +72,12 @@ Future<ApiV2010AccountAvailablePhoneNumberCountry>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchAvailablePhoneNumbers',
-          fromJsonRaw: (value) => ApiV2010AccountAvailablePhoneNumberCountry.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountAvailablePhoneNumberCountry.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available local phone numbers in a specified country. Filter results by capabilities, area code, location, or a matching number pattern, and use pagination parameters to browse the results.
 ///
@@ -144,32 +148,32 @@ Future<ApiV2010AccountAvailablePhoneNumberCountry>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListAvailablePhoneNumbersLocalResponse>
-    listAvailablePhoneNumbersLocal(ClientConfig config,
-        {required String accountSid,
-        required String countryCode,
-        SdkOptional<int> areaCode = const SdkOmitted(),
-        SdkOptional<String> contains = const SdkOmitted(),
-        SdkOptional<bool> smsEnabled = const SdkOmitted(),
-        SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-        SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-        SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> beta = const SdkOmitted(),
-        SdkOptional<String> nearNumber = const SdkOmitted(),
-        SdkOptional<String> nearLatLong = const SdkOmitted(),
-        SdkOptional<int> distance = const SdkOmitted(),
-        SdkOptional<String> inPostalCode = const SdkOmitted(),
-        SdkOptional<String> inRegion = const SdkOmitted(),
-        SdkOptional<String> inRateCenter = const SdkOmitted(),
-        SdkOptional<String> inLata = const SdkOmitted(),
-        SdkOptional<String> inLocality = const SdkOmitted(),
-        SdkOptional<bool> faxEnabled = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListAvailablePhoneNumbersLocalResponse> listAvailablePhoneNumbersLocal(
+    ClientConfig config,
+    {required String accountSid,
+    required String countryCode,
+    SdkOptional<int> areaCode = const SdkOmitted(),
+    SdkOptional<String> contains = const SdkOmitted(),
+    SdkOptional<bool> smsEnabled = const SdkOmitted(),
+    SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+    SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+    SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> beta = const SdkOmitted(),
+    SdkOptional<String> nearNumber = const SdkOmitted(),
+    SdkOptional<String> nearLatLong = const SdkOmitted(),
+    SdkOptional<int> distance = const SdkOmitted(),
+    SdkOptional<String> inPostalCode = const SdkOmitted(),
+    SdkOptional<String> inRegion = const SdkOmitted(),
+    SdkOptional<String> inRateCenter = const SdkOmitted(),
+    SdkOptional<String> inLata = const SdkOmitted(),
+    SdkOptional<String> inLocality = const SdkOmitted(),
+    SdkOptional<bool> faxEnabled = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -183,35 +187,63 @@ Future<ListAvailablePhoneNumbersLocalResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/Local.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersLocal',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersLocalResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersLocalResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available machine-to-machine phone numbers in a specified country. Filter results by capabilities, area code, location, or a matching number pattern, and use pagination parameters to browse the results.
 ///
@@ -317,39 +349,68 @@ Future<ListAvailablePhoneNumbersMachineToMachineResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<ListAvailablePhoneNumbersMachineToMachineResponse>('GET',
+  return (await sdkRequest<ListAvailablePhoneNumbersMachineToMachineResponse>(
+          'GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/MachineToMachine.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersMachineToMachine',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersMachineToMachineResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersMachineToMachineResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available mobile phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
 ///
@@ -420,32 +481,32 @@ Future<ListAvailablePhoneNumbersMachineToMachineResponse>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListAvailablePhoneNumbersMobileResponse>
-    listAvailablePhoneNumbersMobile(ClientConfig config,
-        {required String accountSid,
-        required String countryCode,
-        SdkOptional<int> areaCode = const SdkOmitted(),
-        SdkOptional<String> contains = const SdkOmitted(),
-        SdkOptional<bool> smsEnabled = const SdkOmitted(),
-        SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-        SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-        SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> beta = const SdkOmitted(),
-        SdkOptional<String> nearNumber = const SdkOmitted(),
-        SdkOptional<String> nearLatLong = const SdkOmitted(),
-        SdkOptional<int> distance = const SdkOmitted(),
-        SdkOptional<String> inPostalCode = const SdkOmitted(),
-        SdkOptional<String> inRegion = const SdkOmitted(),
-        SdkOptional<String> inRateCenter = const SdkOmitted(),
-        SdkOptional<String> inLata = const SdkOmitted(),
-        SdkOptional<String> inLocality = const SdkOmitted(),
-        SdkOptional<bool> faxEnabled = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListAvailablePhoneNumbersMobileResponse> listAvailablePhoneNumbersMobile(
+    ClientConfig config,
+    {required String accountSid,
+    required String countryCode,
+    SdkOptional<int> areaCode = const SdkOmitted(),
+    SdkOptional<String> contains = const SdkOmitted(),
+    SdkOptional<bool> smsEnabled = const SdkOmitted(),
+    SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+    SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+    SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> beta = const SdkOmitted(),
+    SdkOptional<String> nearNumber = const SdkOmitted(),
+    SdkOptional<String> nearLatLong = const SdkOmitted(),
+    SdkOptional<int> distance = const SdkOmitted(),
+    SdkOptional<String> inPostalCode = const SdkOmitted(),
+    SdkOptional<String> inRegion = const SdkOmitted(),
+    SdkOptional<String> inRateCenter = const SdkOmitted(),
+    SdkOptional<String> inLata = const SdkOmitted(),
+    SdkOptional<String> inLocality = const SdkOmitted(),
+    SdkOptional<bool> faxEnabled = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -459,35 +520,63 @@ Future<ListAvailablePhoneNumbersMobileResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/Mobile.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersMobile',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersMobileResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersMobileResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available national phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
 ///
@@ -597,35 +686,63 @@ Future<ListAvailablePhoneNumbersNationalResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/National.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersNational',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersNationalResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersNationalResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available shared-cost phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
 ///
@@ -735,35 +852,63 @@ Future<ListAvailablePhoneNumbersSharedCostResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/SharedCost.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersSharedCost',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersSharedCostResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersSharedCostResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available toll-free phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
 ///
@@ -873,35 +1018,63 @@ Future<ListAvailablePhoneNumbersTollFreeResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/TollFree.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersTollFree',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersTollFreeResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersTollFreeResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists available VoIP phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
 ///
@@ -972,32 +1145,32 @@ Future<ListAvailablePhoneNumbersTollFreeResponse>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListAvailablePhoneNumbersVoipResponse>
-    listAvailablePhoneNumbersVoip(ClientConfig config,
-        {required String accountSid,
-        required String countryCode,
-        SdkOptional<int> areaCode = const SdkOmitted(),
-        SdkOptional<String> contains = const SdkOmitted(),
-        SdkOptional<bool> smsEnabled = const SdkOmitted(),
-        SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-        SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-        SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-        SdkOptional<bool> beta = const SdkOmitted(),
-        SdkOptional<String> nearNumber = const SdkOmitted(),
-        SdkOptional<String> nearLatLong = const SdkOmitted(),
-        SdkOptional<int> distance = const SdkOmitted(),
-        SdkOptional<String> inPostalCode = const SdkOmitted(),
-        SdkOptional<String> inRegion = const SdkOmitted(),
-        SdkOptional<String> inRateCenter = const SdkOmitted(),
-        SdkOptional<String> inLata = const SdkOmitted(),
-        SdkOptional<String> inLocality = const SdkOmitted(),
-        SdkOptional<bool> faxEnabled = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListAvailablePhoneNumbersVoipResponse> listAvailablePhoneNumbersVoip(
+    ClientConfig config,
+    {required String accountSid,
+    required String countryCode,
+    SdkOptional<int> areaCode = const SdkOmitted(),
+    SdkOptional<String> contains = const SdkOmitted(),
+    SdkOptional<bool> smsEnabled = const SdkOmitted(),
+    SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+    SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+    SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+    SdkOptional<bool> beta = const SdkOmitted(),
+    SdkOptional<String> nearNumber = const SdkOmitted(),
+    SdkOptional<String> nearLatLong = const SdkOmitted(),
+    SdkOptional<int> distance = const SdkOmitted(),
+    SdkOptional<String> inPostalCode = const SdkOmitted(),
+    SdkOptional<String> inRegion = const SdkOmitted(),
+    SdkOptional<String> inRateCenter = const SdkOmitted(),
+    SdkOptional<String> inLata = const SdkOmitted(),
+    SdkOptional<String> inLocality = const SdkOmitted(),
+    SdkOptional<bool> faxEnabled = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -1011,31 +1184,60 @@ Future<ListAvailablePhoneNumbersVoipResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AvailablePhoneNumbers/${Uri.encodeComponent(countryCode.toString())}/Voip.json',
           config: config,
           query: {
-            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode), style: 'form', explode: true),
-            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains), style: 'form', explode: true),
-            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled), style: 'form', explode: true),
-            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled), style: 'form', explode: true),
-            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled), style: 'form', explode: true),
-            'ExcludeAllAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeAllAddressRequired), style: 'form', explode: true),
-            'ExcludeLocalAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeLocalAddressRequired), style: 'form', explode: true),
-            'ExcludeForeignAddressRequired': SdkQueryValue(SdkUtils.unwrapOptional(excludeForeignAddressRequired), style: 'form', explode: true),
-            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta), style: 'form', explode: true),
-            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber), style: 'form', explode: true),
-            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong), style: 'form', explode: true),
-            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance), style: 'form', explode: true),
-            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode), style: 'form', explode: true),
-            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion), style: 'form', explode: true),
-            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter), style: 'form', explode: true),
-            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata), style: 'form', explode: true),
-            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality), style: 'form', explode: true),
-            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'AreaCode': SdkQueryValue(SdkUtils.unwrapOptional(areaCode),
+                style: 'form', explode: true),
+            'Contains': SdkQueryValue(SdkUtils.unwrapOptional(contains),
+                style: 'form', explode: true),
+            'SmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(smsEnabled),
+                style: 'form', explode: true),
+            'MmsEnabled': SdkQueryValue(SdkUtils.unwrapOptional(mmsEnabled),
+                style: 'form', explode: true),
+            'VoiceEnabled': SdkQueryValue(SdkUtils.unwrapOptional(voiceEnabled),
+                style: 'form', explode: true),
+            'ExcludeAllAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeAllAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeLocalAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeLocalAddressRequired),
+                style: 'form',
+                explode: true),
+            'ExcludeForeignAddressRequired': SdkQueryValue(
+                SdkUtils.unwrapOptional(excludeForeignAddressRequired),
+                style: 'form',
+                explode: true),
+            'Beta': SdkQueryValue(SdkUtils.unwrapOptional(beta),
+                style: 'form', explode: true),
+            'NearNumber': SdkQueryValue(SdkUtils.unwrapOptional(nearNumber),
+                style: 'form', explode: true),
+            'NearLatLong': SdkQueryValue(SdkUtils.unwrapOptional(nearLatLong),
+                style: 'form', explode: true),
+            'Distance': SdkQueryValue(SdkUtils.unwrapOptional(distance),
+                style: 'form', explode: true),
+            'InPostalCode': SdkQueryValue(SdkUtils.unwrapOptional(inPostalCode),
+                style: 'form', explode: true),
+            'InRegion': SdkQueryValue(SdkUtils.unwrapOptional(inRegion),
+                style: 'form', explode: true),
+            'InRateCenter': SdkQueryValue(SdkUtils.unwrapOptional(inRateCenter),
+                style: 'form', explode: true),
+            'InLata': SdkQueryValue(SdkUtils.unwrapOptional(inLata),
+                style: 'form', explode: true),
+            'InLocality': SdkQueryValue(SdkUtils.unwrapOptional(inLocality),
+                style: 'form', explode: true),
+            'FaxEnabled': SdkQueryValue(SdkUtils.unwrapOptional(faxEnabled),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAvailablePhoneNumbersVoip',
-          fromJsonRaw: (value) => ListAvailablePhoneNumbersVoipResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAvailablePhoneNumbersVoipResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

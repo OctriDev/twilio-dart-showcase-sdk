@@ -17,98 +17,198 @@ class ListNotificationsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountNotification>> notifications;
 
-  const ListNotificationsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.notifications = const SdkOmitted()});
+  const ListNotificationsResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.notifications = const SdkOmitted()});
 
-  ListNotificationsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountNotification>> notifications}) get copyWith => _copyWith;
+  ListNotificationsResponse Function(
+          {SdkOptional<int> end,
+          SdkOptional<String> firstPageUri,
+          SdkOptional<String?> nextPageUri,
+          SdkOptional<int> page,
+          SdkOptional<int> pageSize,
+          SdkOptional<String?> previousPageUri,
+          SdkOptional<int> start,
+          SdkOptional<String> uri,
+          SdkOptional<List<ApiV2010AccountNotification>> notifications})
+      get copyWith => _copyWith;
 
-  ListNotificationsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? notifications = sdkOmittedValue}) => ListNotificationsResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    notifications: identical(notifications, sdkOmittedValue) ? this.notifications : notifications as SdkOptional<List<ApiV2010AccountNotification>>,
-  );
+  ListNotificationsResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? notifications = sdkOmittedValue}) =>
+      ListNotificationsResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        notifications: identical(notifications, sdkOmittedValue)
+            ? this.notifications
+            : notifications as SdkOptional<List<ApiV2010AccountNotification>>,
+      );
 
-  factory ListNotificationsResponse.fromJson(Map<String, dynamic> json) => ListNotificationsResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    notifications: json['notifications'] != null ? SdkPresent(((json['notifications'] as List?)?.map((e) => ApiV2010AccountNotification.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListNotificationsResponse.fromJson(Map<String, dynamic> json) =>
+      ListNotificationsResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        notifications: json['notifications'] != null
+            ? SdkPresent(((json['notifications'] as List?)
+                ?.map((e) => ApiV2010AccountNotification.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (notifications) {
-      SdkPresent<List<ApiV2010AccountNotification>>(value: final value) => {'notifications': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (notifications) {
+          SdkPresent<List<ApiV2010AccountNotification>>(value: final value) => {
+              'notifications': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UpdateOutgoingCallerIdsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
   final SdkOptional<String> friendlyName;
 
-  const UpdateOutgoingCallerIdsRequestBody({this.friendlyName = const SdkOmitted()});
+  const UpdateOutgoingCallerIdsRequestBody(
+      {this.friendlyName = const SdkOmitted()});
 
-  UpdateOutgoingCallerIdsRequestBody Function({SdkOptional<String> friendlyName}) get copyWith => _copyWith;
+  UpdateOutgoingCallerIdsRequestBody Function(
+      {SdkOptional<String> friendlyName}) get copyWith => _copyWith;
 
-  UpdateOutgoingCallerIdsRequestBody _copyWith({Object? friendlyName = sdkOmittedValue}) => UpdateOutgoingCallerIdsRequestBody(
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
-  );
+  UpdateOutgoingCallerIdsRequestBody _copyWith(
+          {Object? friendlyName = sdkOmittedValue}) =>
+      UpdateOutgoingCallerIdsRequestBody(
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String>,
+      );
 
-  factory UpdateOutgoingCallerIdsRequestBody.fromJson(Map<String, dynamic> json) => UpdateOutgoingCallerIdsRequestBody(
-    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
-  );
+  factory UpdateOutgoingCallerIdsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      UpdateOutgoingCallerIdsRequestBody(
+        friendlyName: json['FriendlyName'] != null
+            ? SdkPresent((json['FriendlyName'] as String?)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (friendlyName) {
-      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (friendlyName) {
+          SdkPresent<String>(value: final value) => {
+              'FriendlyName': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ListOutgoingCallerIdsResponse {
@@ -124,133 +224,293 @@ class ListOutgoingCallerIdsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountOutgoingCallerId>> outgoingCallerIds;
 
-  const ListOutgoingCallerIdsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.outgoingCallerIds = const SdkOmitted()});
+  const ListOutgoingCallerIdsResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.outgoingCallerIds = const SdkOmitted()});
 
-  ListOutgoingCallerIdsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountOutgoingCallerId>> outgoingCallerIds}) get copyWith => _copyWith;
+  ListOutgoingCallerIdsResponse Function(
+          {SdkOptional<int> end,
+          SdkOptional<String> firstPageUri,
+          SdkOptional<String?> nextPageUri,
+          SdkOptional<int> page,
+          SdkOptional<int> pageSize,
+          SdkOptional<String?> previousPageUri,
+          SdkOptional<int> start,
+          SdkOptional<String> uri,
+          SdkOptional<List<ApiV2010AccountOutgoingCallerId>> outgoingCallerIds})
+      get copyWith => _copyWith;
 
-  ListOutgoingCallerIdsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? outgoingCallerIds = sdkOmittedValue}) => ListOutgoingCallerIdsResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    outgoingCallerIds: identical(outgoingCallerIds, sdkOmittedValue) ? this.outgoingCallerIds : outgoingCallerIds as SdkOptional<List<ApiV2010AccountOutgoingCallerId>>,
-  );
+  ListOutgoingCallerIdsResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? outgoingCallerIds = sdkOmittedValue}) =>
+      ListOutgoingCallerIdsResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        outgoingCallerIds: identical(outgoingCallerIds, sdkOmittedValue)
+            ? this.outgoingCallerIds
+            : outgoingCallerIds
+                as SdkOptional<List<ApiV2010AccountOutgoingCallerId>>,
+      );
 
-  factory ListOutgoingCallerIdsResponse.fromJson(Map<String, dynamic> json) => ListOutgoingCallerIdsResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    outgoingCallerIds: json['outgoing_caller_ids'] != null ? SdkPresent(((json['outgoing_caller_ids'] as List?)?.map((e) => ApiV2010AccountOutgoingCallerId.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListOutgoingCallerIdsResponse.fromJson(Map<String, dynamic> json) =>
+      ListOutgoingCallerIdsResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        outgoingCallerIds: json['outgoing_caller_ids'] != null
+            ? SdkPresent(((json['outgoing_caller_ids'] as List?)
+                ?.map((e) => ApiV2010AccountOutgoingCallerId.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (outgoingCallerIds) {
-      SdkPresent<List<ApiV2010AccountOutgoingCallerId>>(value: final value) => {'outgoing_caller_ids': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (outgoingCallerIds) {
+          SdkPresent<List<ApiV2010AccountOutgoingCallerId>>(
+            value: final value
+          ) =>
+            {
+              'outgoing_caller_ids':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CreateValidationRequestsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The phone number to verify in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, which consists of a + followed by the country code and subscriber number.
   final String phoneNumber;
+
   /// A descriptive string that you create to describe the new caller ID resource. It can be up to 64 characters long. The default value is a formatted version of the phone number.
   final SdkOptional<String> friendlyName;
+
   /// The number of seconds to delay before initiating the verification call. Can be an integer between `0` and `60`, inclusive. The default is `0`.
   final SdkOptional<int> callDelay;
+
   /// The digits to dial after connecting the verification call.
   final SdkOptional<String> extension_;
+
   /// The URL we should call using the `status_callback_method` to send status information about the verification process to your application.
   final SdkOptional<String> statusCallback;
+
   /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`, and the default is `POST`.
-  final SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod> statusCallbackMethod;
+  final SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod>
+      statusCallbackMethod;
 
-  const CreateValidationRequestsRequestBody({required this.phoneNumber, this.friendlyName = const SdkOmitted(), this.callDelay = const SdkOmitted(), this.extension_ = const SdkOmitted(), this.statusCallback = const SdkOmitted(), this.statusCallbackMethod = const SdkOmitted()});
+  const CreateValidationRequestsRequestBody(
+      {required this.phoneNumber,
+      this.friendlyName = const SdkOmitted(),
+      this.callDelay = const SdkOmitted(),
+      this.extension_ = const SdkOmitted(),
+      this.statusCallback = const SdkOmitted(),
+      this.statusCallbackMethod = const SdkOmitted()});
 
-  CreateValidationRequestsRequestBody Function({String phoneNumber, SdkOptional<String> friendlyName, SdkOptional<int> callDelay, SdkOptional<String> extension_, SdkOptional<String> statusCallback, SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod> statusCallbackMethod}) get copyWith => _copyWith;
+  CreateValidationRequestsRequestBody Function(
+      {String phoneNumber,
+      SdkOptional<String> friendlyName,
+      SdkOptional<int> callDelay,
+      SdkOptional<String> extension_,
+      SdkOptional<String> statusCallback,
+      SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod>
+          statusCallbackMethod}) get copyWith => _copyWith;
 
-  CreateValidationRequestsRequestBody _copyWith({Object? phoneNumber = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? callDelay = sdkOmittedValue, Object? extension_ = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? statusCallbackMethod = sdkOmittedValue}) => CreateValidationRequestsRequestBody(
-    phoneNumber: identical(phoneNumber, sdkOmittedValue) ? this.phoneNumber : phoneNumber as String,
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
-    callDelay: identical(callDelay, sdkOmittedValue) ? this.callDelay : callDelay as SdkOptional<int>,
-    extension_: identical(extension_, sdkOmittedValue) ? this.extension_ : extension_ as SdkOptional<String>,
-    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as SdkOptional<String>,
-    statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue) ? this.statusCallbackMethod : statusCallbackMethod as SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod>,
-  );
+  CreateValidationRequestsRequestBody _copyWith(
+          {Object? phoneNumber = sdkOmittedValue,
+          Object? friendlyName = sdkOmittedValue,
+          Object? callDelay = sdkOmittedValue,
+          Object? extension_ = sdkOmittedValue,
+          Object? statusCallback = sdkOmittedValue,
+          Object? statusCallbackMethod = sdkOmittedValue}) =>
+      CreateValidationRequestsRequestBody(
+        phoneNumber: identical(phoneNumber, sdkOmittedValue)
+            ? this.phoneNumber
+            : phoneNumber as String,
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String>,
+        callDelay: identical(callDelay, sdkOmittedValue)
+            ? this.callDelay
+            : callDelay as SdkOptional<int>,
+        extension_: identical(extension_, sdkOmittedValue)
+            ? this.extension_
+            : extension_ as SdkOptional<String>,
+        statusCallback: identical(statusCallback, sdkOmittedValue)
+            ? this.statusCallback
+            : statusCallback as SdkOptional<String>,
+        statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue)
+            ? this.statusCallbackMethod
+            : statusCallbackMethod as SdkOptional<
+                CreateValidationRequestsRequestBodyStatusCallbackMethod>,
+      );
 
-  factory CreateValidationRequestsRequestBody.fromJson(Map<String, dynamic> json) => CreateValidationRequestsRequestBody(
-    phoneNumber: (json['PhoneNumber'] as String?)!,
-    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
-    callDelay: json['CallDelay'] != null ? SdkPresent(((json['CallDelay'] as num?)?.toInt())!) : const SdkOmitted(),
-    extension_: json['Extension'] != null ? SdkPresent((json['Extension'] as String?)!) : const SdkOmitted(),
-    statusCallback: json['StatusCallback'] != null ? SdkPresent((json['StatusCallback'] as String?)!) : const SdkOmitted(),
-    statusCallbackMethod: json['StatusCallbackMethod'] != null ? SdkPresent((json['StatusCallbackMethod'] != null ? CreateValidationRequestsRequestBodyStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory CreateValidationRequestsRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CreateValidationRequestsRequestBody(
+        phoneNumber: (json['PhoneNumber'] as String?)!,
+        friendlyName: json['FriendlyName'] != null
+            ? SdkPresent((json['FriendlyName'] as String?)!)
+            : const SdkOmitted(),
+        callDelay: json['CallDelay'] != null
+            ? SdkPresent(((json['CallDelay'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        extension_: json['Extension'] != null
+            ? SdkPresent((json['Extension'] as String?)!)
+            : const SdkOmitted(),
+        statusCallback: json['StatusCallback'] != null
+            ? SdkPresent((json['StatusCallback'] as String?)!)
+            : const SdkOmitted(),
+        statusCallbackMethod: json['StatusCallbackMethod'] != null
+            ? SdkPresent((json['StatusCallbackMethod'] != null
+                ? CreateValidationRequestsRequestBodyStatusCallbackMethod
+                    .fromJson(json['StatusCallbackMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'PhoneNumber': phoneNumber,
-    ...switch (friendlyName) {
-      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (callDelay) {
-      SdkPresent<int>(value: final value) => {'CallDelay': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (extension_) {
-      SdkPresent<String>(value: final value) => {'Extension': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statusCallback) {
-      SdkPresent<String>(value: final value) => {'StatusCallback': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statusCallbackMethod) {
-      SdkPresent<CreateValidationRequestsRequestBodyStatusCallbackMethod>(value: final value) => {'StatusCallbackMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'PhoneNumber': phoneNumber,
+        ...switch (friendlyName) {
+          SdkPresent<String>(value: final value) => {
+              'FriendlyName': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (callDelay) {
+          SdkPresent<int>(value: final value) => {
+              'CallDelay': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (extension_) {
+          SdkPresent<String>(value: final value) => {
+              'Extension': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (statusCallback) {
+          SdkPresent<String>(value: final value) => {
+              'StatusCallback': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (statusCallbackMethod) {
+          SdkPresent<CreateValidationRequestsRequestBodyStatusCallbackMethod>(
+            value: final value
+          ) =>
+            {
+              'StatusCallbackMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

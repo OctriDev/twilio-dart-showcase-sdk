@@ -27,16 +27,17 @@ import '../types.dart';
 ///   application.
 /// [statusCallbackMethod] The HTTP method we should use to call
 ///   `status_callback`. Can be: `GET` or `POST`, and the default is `POST`.
-Future<ApiV2010AccountValidationRequest>
-    createValidationRequests(ClientConfig config,
-        {required String accountSid,
-        required String phoneNumber,
-        SdkOptional<String> friendlyName = const SdkOmitted(),
-        SdkOptional<int> callDelay = const SdkOmitted(),
-        SdkOptional<String> extension_ = const SdkOmitted(),
-        SdkOptional<String> statusCallback = const SdkOmitted(),
-        SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountValidationRequest> createValidationRequests(
+    ClientConfig config,
+    {required String accountSid,
+    required String phoneNumber,
+    SdkOptional<String> friendlyName = const SdkOmitted(),
+    SdkOptional<int> callDelay = const SdkOmitted(),
+    SdkOptional<String> extension_ = const SdkOmitted(),
+    SdkOptional<String> statusCallback = const SdkOmitted(),
+    SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod>
+        statusCallbackMethod = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (statusCallback is SdkPresent<String>) {
@@ -52,12 +53,14 @@ Future<ApiV2010AccountValidationRequest>
             'CallDelay': SdkUtils.unwrapOptional(callDelay),
             'Extension': SdkUtils.unwrapOptional(extension_),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod)
+            'StatusCallbackMethod':
+                SdkUtils.unwrapOptional(statusCallbackMethod)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createValidationRequests',
-          fromJsonRaw: (value) => ApiV2010AccountValidationRequest.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountValidationRequest.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

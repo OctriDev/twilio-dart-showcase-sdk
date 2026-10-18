@@ -8,137 +8,292 @@ part of 'api20100401_daily.dart';
 class ApiV2010AccountUsageUsageRecordUsageRecordDaily {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that accrued the usage.
   final SdkOptional<String?> accountSid;
+
   /// The API version used to create the resource.
   final SdkOptional<String?> apiVersion;
+
   /// Usage records up to date as of this timestamp, formatted as YYYY-MM-DDTHH:MM:SS+00:00. All timestamps are in GMT
   final SdkOptional<String?> asOf;
+
   /// The category of usage. For more information, see [Usage Categories](https://www.twilio.com/docs/usage/api/usage-record#usage-categories).
   final SdkOptional<String?> category;
+
   /// The number of usage events, such as the number of calls.
   final SdkOptional<String?> count;
+
   /// The units in which `count` is measured, such as `calls` for calls or `messages` for SMS.
   final SdkOptional<String?> countUnit;
+
   /// A plain-language description of the usage category.
   final SdkOptional<String?> description;
+
   /// The last date for which usage is included in the UsageRecord. The date is specified in GMT and formatted as `YYYY-MM-DD`.
   final SdkOptional<String?> endDate;
+
   /// The total price of the usage in the currency specified in `price_unit` and associated with the account.
   final SdkOptional<double?> price;
+
   /// The currency in which `price` is measured, in [ISO 4127](https://www.iso.org/iso/home/standards/currency_codes.htm) format, such as `usd`, `eur`, and `jpy`.
   final SdkOptional<String?> priceUnit;
+
   /// The first date for which usage is included in this UsageRecord. The date is specified in GMT and formatted as `YYYY-MM-DD`.
   final SdkOptional<String?> startDate;
+
   /// A list of related resources identified by their URIs. For more information, see [List Subresources](https://www.twilio.com/docs/usage/api/usage-record#list-subresources).
   final SdkOptional<Map<String, dynamic>?> subresourceUris;
+
   /// The URI of the resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
+
   /// The amount used to bill usage and measured in units described in `usage_unit`.
   final SdkOptional<String?> usage;
+
   /// The units in which `usage` is measured, such as `minutes` for calls or `messages` for SMS.
   final SdkOptional<String?> usageUnit;
 
-  const ApiV2010AccountUsageUsageRecordUsageRecordDaily({this.accountSid = const SdkOmitted(), this.apiVersion = const SdkOmitted(), this.asOf = const SdkOmitted(), this.category = const SdkOmitted(), this.count = const SdkOmitted(), this.countUnit = const SdkOmitted(), this.description = const SdkOmitted(), this.endDate = const SdkOmitted(), this.price = const SdkOmitted(), this.priceUnit = const SdkOmitted(), this.startDate = const SdkOmitted(), this.subresourceUris = const SdkOmitted(), this.uri = const SdkOmitted(), this.usage = const SdkOmitted(), this.usageUnit = const SdkOmitted()});
+  const ApiV2010AccountUsageUsageRecordUsageRecordDaily(
+      {this.accountSid = const SdkOmitted(),
+      this.apiVersion = const SdkOmitted(),
+      this.asOf = const SdkOmitted(),
+      this.category = const SdkOmitted(),
+      this.count = const SdkOmitted(),
+      this.countUnit = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.endDate = const SdkOmitted(),
+      this.price = const SdkOmitted(),
+      this.priceUnit = const SdkOmitted(),
+      this.startDate = const SdkOmitted(),
+      this.subresourceUris = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.usage = const SdkOmitted(),
+      this.usageUnit = const SdkOmitted()});
 
-  ApiV2010AccountUsageUsageRecordUsageRecordDaily Function({SdkOptional<String?> accountSid, SdkOptional<String?> apiVersion, SdkOptional<String?> asOf, SdkOptional<String?> category, SdkOptional<String?> count, SdkOptional<String?> countUnit, SdkOptional<String?> description, SdkOptional<String?> endDate, SdkOptional<double?> price, SdkOptional<String?> priceUnit, SdkOptional<String?> startDate, SdkOptional<Map<String, dynamic>?> subresourceUris, SdkOptional<String?> uri, SdkOptional<String?> usage, SdkOptional<String?> usageUnit}) get copyWith => _copyWith;
+  ApiV2010AccountUsageUsageRecordUsageRecordDaily Function(
+      {SdkOptional<String?> accountSid,
+      SdkOptional<String?> apiVersion,
+      SdkOptional<String?> asOf,
+      SdkOptional<String?> category,
+      SdkOptional<String?> count,
+      SdkOptional<String?> countUnit,
+      SdkOptional<String?> description,
+      SdkOptional<String?> endDate,
+      SdkOptional<double?> price,
+      SdkOptional<String?> priceUnit,
+      SdkOptional<String?> startDate,
+      SdkOptional<Map<String, dynamic>?> subresourceUris,
+      SdkOptional<String?> uri,
+      SdkOptional<String?> usage,
+      SdkOptional<String?> usageUnit}) get copyWith => _copyWith;
 
-  ApiV2010AccountUsageUsageRecordUsageRecordDaily _copyWith({Object? accountSid = sdkOmittedValue, Object? apiVersion = sdkOmittedValue, Object? asOf = sdkOmittedValue, Object? category = sdkOmittedValue, Object? count = sdkOmittedValue, Object? countUnit = sdkOmittedValue, Object? description = sdkOmittedValue, Object? endDate = sdkOmittedValue, Object? price = sdkOmittedValue, Object? priceUnit = sdkOmittedValue, Object? startDate = sdkOmittedValue, Object? subresourceUris = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? usage = sdkOmittedValue, Object? usageUnit = sdkOmittedValue}) => ApiV2010AccountUsageUsageRecordUsageRecordDaily(
-    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
-    apiVersion: identical(apiVersion, sdkOmittedValue) ? this.apiVersion : apiVersion as SdkOptional<String?>,
-    asOf: identical(asOf, sdkOmittedValue) ? this.asOf : asOf as SdkOptional<String?>,
-    category: identical(category, sdkOmittedValue) ? this.category : category as SdkOptional<String?>,
-    count: identical(count, sdkOmittedValue) ? this.count : count as SdkOptional<String?>,
-    countUnit: identical(countUnit, sdkOmittedValue) ? this.countUnit : countUnit as SdkOptional<String?>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String?>,
-    endDate: identical(endDate, sdkOmittedValue) ? this.endDate : endDate as SdkOptional<String?>,
-    price: identical(price, sdkOmittedValue) ? this.price : price as SdkOptional<double?>,
-    priceUnit: identical(priceUnit, sdkOmittedValue) ? this.priceUnit : priceUnit as SdkOptional<String?>,
-    startDate: identical(startDate, sdkOmittedValue) ? this.startDate : startDate as SdkOptional<String?>,
-    subresourceUris: identical(subresourceUris, sdkOmittedValue) ? this.subresourceUris : subresourceUris as SdkOptional<Map<String, dynamic>?>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
-    usage: identical(usage, sdkOmittedValue) ? this.usage : usage as SdkOptional<String?>,
-    usageUnit: identical(usageUnit, sdkOmittedValue) ? this.usageUnit : usageUnit as SdkOptional<String?>,
-  );
+  ApiV2010AccountUsageUsageRecordUsageRecordDaily _copyWith(
+          {Object? accountSid = sdkOmittedValue,
+          Object? apiVersion = sdkOmittedValue,
+          Object? asOf = sdkOmittedValue,
+          Object? category = sdkOmittedValue,
+          Object? count = sdkOmittedValue,
+          Object? countUnit = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? endDate = sdkOmittedValue,
+          Object? price = sdkOmittedValue,
+          Object? priceUnit = sdkOmittedValue,
+          Object? startDate = sdkOmittedValue,
+          Object? subresourceUris = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? usage = sdkOmittedValue,
+          Object? usageUnit = sdkOmittedValue}) =>
+      ApiV2010AccountUsageUsageRecordUsageRecordDaily(
+        accountSid: identical(accountSid, sdkOmittedValue)
+            ? this.accountSid
+            : accountSid as SdkOptional<String?>,
+        apiVersion: identical(apiVersion, sdkOmittedValue)
+            ? this.apiVersion
+            : apiVersion as SdkOptional<String?>,
+        asOf: identical(asOf, sdkOmittedValue)
+            ? this.asOf
+            : asOf as SdkOptional<String?>,
+        category: identical(category, sdkOmittedValue)
+            ? this.category
+            : category as SdkOptional<String?>,
+        count: identical(count, sdkOmittedValue)
+            ? this.count
+            : count as SdkOptional<String?>,
+        countUnit: identical(countUnit, sdkOmittedValue)
+            ? this.countUnit
+            : countUnit as SdkOptional<String?>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String?>,
+        endDate: identical(endDate, sdkOmittedValue)
+            ? this.endDate
+            : endDate as SdkOptional<String?>,
+        price: identical(price, sdkOmittedValue)
+            ? this.price
+            : price as SdkOptional<double?>,
+        priceUnit: identical(priceUnit, sdkOmittedValue)
+            ? this.priceUnit
+            : priceUnit as SdkOptional<String?>,
+        startDate: identical(startDate, sdkOmittedValue)
+            ? this.startDate
+            : startDate as SdkOptional<String?>,
+        subresourceUris: identical(subresourceUris, sdkOmittedValue)
+            ? this.subresourceUris
+            : subresourceUris as SdkOptional<Map<String, dynamic>?>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String?>,
+        usage: identical(usage, sdkOmittedValue)
+            ? this.usage
+            : usage as SdkOptional<String?>,
+        usageUnit: identical(usageUnit, sdkOmittedValue)
+            ? this.usageUnit
+            : usageUnit as SdkOptional<String?>,
+      );
 
-  factory ApiV2010AccountUsageUsageRecordUsageRecordDaily.fromJson(Map<String, dynamic> json) => ApiV2010AccountUsageUsageRecordUsageRecordDaily(
-    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
-    apiVersion: json.containsKey('api_version') ? SdkPresent(json['api_version'] as String?) : const SdkOmitted(),
-    asOf: json.containsKey('as_of') ? SdkPresent(json['as_of'] as String?) : const SdkOmitted(),
-    category: json.containsKey('category') ? SdkPresent(json['category'] as String?) : const SdkOmitted(),
-    count: json.containsKey('count') ? SdkPresent(json['count'] as String?) : const SdkOmitted(),
-    countUnit: json.containsKey('count_unit') ? SdkPresent(json['count_unit'] as String?) : const SdkOmitted(),
-    description: json.containsKey('description') ? SdkPresent(json['description'] as String?) : const SdkOmitted(),
-    endDate: json.containsKey('end_date') ? SdkPresent(json['end_date'] as String?) : const SdkOmitted(),
-    price: json.containsKey('price') ? SdkPresent((json['price'] as num?)?.toDouble()) : const SdkOmitted(),
-    priceUnit: json.containsKey('price_unit') ? SdkPresent(json['price_unit'] as String?) : const SdkOmitted(),
-    startDate: json.containsKey('start_date') ? SdkPresent(json['start_date'] as String?) : const SdkOmitted(),
-    subresourceUris: json.containsKey('subresource_uris') ? SdkPresent(json['subresource_uris'] == null ? null : json['subresource_uris'] as Map<String, dynamic>) : const SdkOmitted(),
-    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
-    usage: json.containsKey('usage') ? SdkPresent(json['usage'] as String?) : const SdkOmitted(),
-    usageUnit: json.containsKey('usage_unit') ? SdkPresent(json['usage_unit'] as String?) : const SdkOmitted(),
-  );
+  factory ApiV2010AccountUsageUsageRecordUsageRecordDaily.fromJson(
+          Map<String, dynamic> json) =>
+      ApiV2010AccountUsageUsageRecordUsageRecordDaily(
+        accountSid: json.containsKey('account_sid')
+            ? SdkPresent(json['account_sid'] as String?)
+            : const SdkOmitted(),
+        apiVersion: json.containsKey('api_version')
+            ? SdkPresent(json['api_version'] as String?)
+            : const SdkOmitted(),
+        asOf: json.containsKey('as_of')
+            ? SdkPresent(json['as_of'] as String?)
+            : const SdkOmitted(),
+        category: json.containsKey('category')
+            ? SdkPresent(json['category'] as String?)
+            : const SdkOmitted(),
+        count: json.containsKey('count')
+            ? SdkPresent(json['count'] as String?)
+            : const SdkOmitted(),
+        countUnit: json.containsKey('count_unit')
+            ? SdkPresent(json['count_unit'] as String?)
+            : const SdkOmitted(),
+        description: json.containsKey('description')
+            ? SdkPresent(json['description'] as String?)
+            : const SdkOmitted(),
+        endDate: json.containsKey('end_date')
+            ? SdkPresent(json['end_date'] as String?)
+            : const SdkOmitted(),
+        price: json.containsKey('price')
+            ? SdkPresent((json['price'] as num?)?.toDouble())
+            : const SdkOmitted(),
+        priceUnit: json.containsKey('price_unit')
+            ? SdkPresent(json['price_unit'] as String?)
+            : const SdkOmitted(),
+        startDate: json.containsKey('start_date')
+            ? SdkPresent(json['start_date'] as String?)
+            : const SdkOmitted(),
+        subresourceUris: json.containsKey('subresource_uris')
+            ? SdkPresent(json['subresource_uris'] == null
+                ? null
+                : json['subresource_uris'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        uri: json.containsKey('uri')
+            ? SdkPresent(json['uri'] as String?)
+            : const SdkOmitted(),
+        usage: json.containsKey('usage')
+            ? SdkPresent(json['usage'] as String?)
+            : const SdkOmitted(),
+        usageUnit: json.containsKey('usage_unit')
+            ? SdkPresent(json['usage_unit'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (accountSid) {
-      SdkPresent<String?>(value: final value) => {'account_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apiVersion) {
-      SdkPresent<String?>(value: final value) => {'api_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (asOf) {
-      SdkPresent<String?>(value: final value) => {'as_of': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (category) {
-      SdkPresent<String?>(value: final value) => {'category': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (count) {
-      SdkPresent<String?>(value: final value) => {'count': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (countUnit) {
-      SdkPresent<String?>(value: final value) => {'count_unit': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String?>(value: final value) => {'description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (endDate) {
-      SdkPresent<String?>(value: final value) => {'end_date': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (price) {
-      SdkPresent<double?>(value: final value) => {'price': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (priceUnit) {
-      SdkPresent<String?>(value: final value) => {'price_unit': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startDate) {
-      SdkPresent<String?>(value: final value) => {'start_date': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subresourceUris) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'subresource_uris': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String?>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usage) {
-      SdkPresent<String?>(value: final value) => {'usage': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usageUnit) {
-      SdkPresent<String?>(value: final value) => {'usage_unit': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (accountSid) {
+          SdkPresent<String?>(value: final value) => {
+              'account_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apiVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'api_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (asOf) {
+          SdkPresent<String?>(value: final value) => {
+              'as_of': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (category) {
+          SdkPresent<String?>(value: final value) => {
+              'category': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (count) {
+          SdkPresent<String?>(value: final value) => {
+              'count': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (countUnit) {
+          SdkPresent<String?>(value: final value) => {
+              'count_unit': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String?>(value: final value) => {
+              'description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (endDate) {
+          SdkPresent<String?>(value: final value) => {
+              'end_date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (price) {
+          SdkPresent<double?>(value: final value) => {
+              'price': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (priceUnit) {
+          SdkPresent<String?>(value: final value) => {
+              'price_unit': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startDate) {
+          SdkPresent<String?>(value: final value) => {
+              'start_date': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subresourceUris) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'subresource_uris': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String?>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usage) {
+          SdkPresent<String?>(value: final value) => {
+              'usage': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usageUnit) {
+          SdkPresent<String?>(value: final value) => {
+              'usage_unit': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

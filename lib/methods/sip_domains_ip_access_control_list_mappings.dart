@@ -28,16 +28,18 @@ Future<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^AL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>('GET',
+  return (await sdkRequest<
+              ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/IpAccessControlListMappings/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipDomainsIpAccessControlListMappings',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipIpAccessControlListMapping.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountSipSipDomainSipIpAccessControlListMapping.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an IP access control list mapping from a SIP domain. Provide the account, domain, and mapping identifiers to select the mapping to remove. The response has no body.
 ///
@@ -68,7 +70,6 @@ Future<void> deleteSipDomainsIpAccessControlListMappings(ClientConfig config,
       .data;
 }
 
-
 /// Creates a mapping between an IP access control list and a SIP domain. Submit `IpAccessControlListSid` to identify the list to associate with the domain. The response includes the created mapping and its identifiers.
 ///
 /// Create a new IpAccessControlListMapping resource.
@@ -88,21 +89,25 @@ Future<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('DomainSid', domainSid, min: 34, max: 34);
   sdkValidatePattern('DomainSid', domainSid, '^SD[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
-  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid,
+      min: 34, max: 34);
+  sdkValidatePattern(
+      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>('POST',
+  return (await sdkRequest<
+              ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/IpAccessControlListMappings.json',
           config: config,
           body: {'IpAccessControlListSid': ipAccessControlListSid},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipDomainsIpAccessControlListMappings',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipIpAccessControlListMapping.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountSipSipDomainSipIpAccessControlListMapping.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists IP access control list mappings for a SIP domain. Use the pagination parameters to control the page size and track the requested page. The response includes mapping resources and pagination metadata.
 ///
@@ -134,17 +139,23 @@ Future<ListSipDomainsIpAccessControlListMappingsResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<ListSipDomainsIpAccessControlListMappingsResponse>('GET',
+  return (await sdkRequest<ListSipDomainsIpAccessControlListMappingsResponse>(
+          'GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/IpAccessControlListMappings.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipDomainsIpAccessControlListMappings',
-          fromJsonRaw: (value) => ListSipDomainsIpAccessControlListMappingsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListSipDomainsIpAccessControlListMappingsResponse.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

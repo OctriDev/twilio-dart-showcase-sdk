@@ -6,286 +6,390 @@ part of 'inline.dart';
 // Inline operation models (part 6)
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
 final class CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod {
-
   final String value;
 
-  const CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._(this.value);
+  const CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._(
+      this.value);
 
-  factory CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod.fromJson(String value) => CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._(value);
+  factory CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod.fromJson(
+          String value) =>
+      CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._(value);
 
-  static const get_ = CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._('GET');
-  static const post = CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._('POST');
+  static const get_ =
+      CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._('GET');
+  static const post =
+      CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
 final class CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod {
-
   final String value;
 
-  const CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod._(this.value);
+  const CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod._(
+      this.value);
 
-  factory CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod.fromJson(String value) => CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod._(value);
+  factory CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod.fromJson(
+          String value) =>
+      CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod
+          ._(value);
 
-  static const get_ = CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod._('GET');
-  static const post = CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod._('POST');
+  static const get_ =
+      CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod
+          ._('GET');
+  static const post =
+      CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod
+          ._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
 final class CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod {
-
   final String value;
 
-  const CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._(this.value);
+  const CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._(
+      this.value);
 
-  factory CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod.fromJson(String value) => CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._(value);
+  factory CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod.fromJson(
+          String value) =>
+      CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._(
+          value);
 
-  static const get_ = CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._('GET');
-  static const post = CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._('POST');
+  static const get_ =
+      CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._(
+          'GET');
+  static const post =
+      CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod._(
+          'POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use when we call `recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
 final class CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod {
-
   final String value;
 
-  const CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._(this.value);
+  const CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._(
+      this.value);
 
-  factory CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod.fromJson(String value) => CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._(value);
+  factory CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod.fromJson(
+          String value) =>
+      CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._(
+          value);
 
-  static const get_ = CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._('GET');
-  static const post = CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._('POST');
+  static const get_ =
+      CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._(
+          'GET');
+  static const post =
+      CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod._(
+          'POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other
+          is CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `status_callback`. Can be: `GET` and `POST` and defaults to `POST`.
 final class CreateConferencesParticipantsRequestBodyStatusCallbackMethod {
-
   final String value;
 
-  const CreateConferencesParticipantsRequestBodyStatusCallbackMethod._(this.value);
+  const CreateConferencesParticipantsRequestBodyStatusCallbackMethod._(
+      this.value);
 
-  factory CreateConferencesParticipantsRequestBodyStatusCallbackMethod.fromJson(String value) => CreateConferencesParticipantsRequestBodyStatusCallbackMethod._(value);
+  factory CreateConferencesParticipantsRequestBodyStatusCallbackMethod.fromJson(
+          String value) =>
+      CreateConferencesParticipantsRequestBodyStatusCallbackMethod._(value);
 
-  static const get_ = CreateConferencesParticipantsRequestBodyStatusCallbackMethod._('GET');
-  static const post = CreateConferencesParticipantsRequestBodyStatusCallbackMethod._('POST');
+  static const get_ =
+      CreateConferencesParticipantsRequestBodyStatusCallbackMethod._('GET');
+  static const post =
+      CreateConferencesParticipantsRequestBodyStatusCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateConferencesParticipantsRequestBodyStatusCallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateConferencesParticipantsRequestBodyStatusCallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
 final class CreateConferencesParticipantsRequestBodyWaitMethod {
-
   final String value;
 
   const CreateConferencesParticipantsRequestBodyWaitMethod._(this.value);
 
-  factory CreateConferencesParticipantsRequestBodyWaitMethod.fromJson(String value) => CreateConferencesParticipantsRequestBodyWaitMethod._(value);
+  factory CreateConferencesParticipantsRequestBodyWaitMethod.fromJson(
+          String value) =>
+      CreateConferencesParticipantsRequestBodyWaitMethod._(value);
 
-  static const get_ = CreateConferencesParticipantsRequestBodyWaitMethod._('GET');
-  static const post = CreateConferencesParticipantsRequestBodyWaitMethod._('POST');
+  static const get_ =
+      CreateConferencesParticipantsRequestBodyWaitMethod._('GET');
+  static const post =
+      CreateConferencesParticipantsRequestBodyWaitMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateConferencesParticipantsRequestBodyWaitMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateConferencesParticipantsRequestBodyWaitMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.
 final class UpdateConferencesParticipantsRequestBodyAnnounceMethod {
-
   final String value;
 
   const UpdateConferencesParticipantsRequestBodyAnnounceMethod._(this.value);
 
-  factory UpdateConferencesParticipantsRequestBodyAnnounceMethod.fromJson(String value) => UpdateConferencesParticipantsRequestBodyAnnounceMethod._(value);
+  factory UpdateConferencesParticipantsRequestBodyAnnounceMethod.fromJson(
+          String value) =>
+      UpdateConferencesParticipantsRequestBodyAnnounceMethod._(value);
 
-  static const get_ = UpdateConferencesParticipantsRequestBodyAnnounceMethod._('GET');
-  static const post = UpdateConferencesParticipantsRequestBodyAnnounceMethod._('POST');
+  static const get_ =
+      UpdateConferencesParticipantsRequestBodyAnnounceMethod._('GET');
+  static const post =
+      UpdateConferencesParticipantsRequestBodyAnnounceMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateConferencesParticipantsRequestBodyAnnounceMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateConferencesParticipantsRequestBodyAnnounceMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
 final class UpdateConferencesParticipantsRequestBodyHoldMethod {
-
   final String value;
 
   const UpdateConferencesParticipantsRequestBodyHoldMethod._(this.value);
 
-  factory UpdateConferencesParticipantsRequestBodyHoldMethod.fromJson(String value) => UpdateConferencesParticipantsRequestBodyHoldMethod._(value);
+  factory UpdateConferencesParticipantsRequestBodyHoldMethod.fromJson(
+          String value) =>
+      UpdateConferencesParticipantsRequestBodyHoldMethod._(value);
 
-  static const get_ = UpdateConferencesParticipantsRequestBodyHoldMethod._('GET');
-  static const post = UpdateConferencesParticipantsRequestBodyHoldMethod._('POST');
+  static const get_ =
+      UpdateConferencesParticipantsRequestBodyHoldMethod._('GET');
+  static const post =
+      UpdateConferencesParticipantsRequestBodyHoldMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateConferencesParticipantsRequestBodyHoldMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateConferencesParticipantsRequestBodyHoldMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
 final class UpdateConferencesParticipantsRequestBodyWaitMethod {
-
   final String value;
 
   const UpdateConferencesParticipantsRequestBodyWaitMethod._(this.value);
 
-  factory UpdateConferencesParticipantsRequestBodyWaitMethod.fromJson(String value) => UpdateConferencesParticipantsRequestBodyWaitMethod._(value);
+  factory UpdateConferencesParticipantsRequestBodyWaitMethod.fromJson(
+          String value) =>
+      UpdateConferencesParticipantsRequestBodyWaitMethod._(value);
 
-  static const get_ = UpdateConferencesParticipantsRequestBodyWaitMethod._('GET');
-  static const post = UpdateConferencesParticipantsRequestBodyWaitMethod._('POST');
+  static const get_ =
+      UpdateConferencesParticipantsRequestBodyWaitMethod._('GET');
+  static const post =
+      UpdateConferencesParticipantsRequestBodyWaitMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateConferencesParticipantsRequestBodyWaitMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateConferencesParticipantsRequestBodyWaitMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`
 final class UpdateConferencesRequestBodyAnnounceMethod {
-
   final String value;
 
   const UpdateConferencesRequestBodyAnnounceMethod._(this.value);
 
-  factory UpdateConferencesRequestBodyAnnounceMethod.fromJson(String value) => UpdateConferencesRequestBodyAnnounceMethod._(value);
+  factory UpdateConferencesRequestBodyAnnounceMethod.fromJson(String value) =>
+      UpdateConferencesRequestBodyAnnounceMethod._(value);
 
   static const get_ = UpdateConferencesRequestBodyAnnounceMethod._('GET');
   static const post = UpdateConferencesRequestBodyAnnounceMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateConferencesRequestBodyAnnounceMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateConferencesRequestBodyAnnounceMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method to use when calling `deauthorize_callback_url`.
 final class UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod {
-
   final String value;
 
   const UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._(this.value);
 
-  factory UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod.fromJson(String value) => UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._(value);
+  factory UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod.fromJson(
+          String value) =>
+      UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._(value);
 
-  static const get_ = UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._('GET');
-  static const post = UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._('POST');
+  static const get_ =
+      UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._('GET');
+  static const post =
+      UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method that we should use to call `sms_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
 final class CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod {
-
   final String value;
 
   const CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._(this.value);
 
-  factory CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod.fromJson(String value) => CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._(value);
+  factory CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod.fromJson(
+          String value) =>
+      CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._(value);
 
-  static const get_ = CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._('GET');
-  static const post = CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._('POST');
+  static const get_ =
+      CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._('GET');
+  static const post =
+      CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The HTTP method that we should use to call `sms_url`. Can be: `GET` or `POST` and defaults to `POST`.
 final class CreateIncomingPhoneNumbersRequestBodySmsMethod {
-
   final String value;
 
   const CreateIncomingPhoneNumbersRequestBodySmsMethod._(this.value);
 
-  factory CreateIncomingPhoneNumbersRequestBodySmsMethod.fromJson(String value) => CreateIncomingPhoneNumbersRequestBodySmsMethod._(value);
+  factory CreateIncomingPhoneNumbersRequestBodySmsMethod.fromJson(
+          String value) =>
+      CreateIncomingPhoneNumbersRequestBodySmsMethod._(value);
 
   static const get_ = CreateIncomingPhoneNumbersRequestBodySmsMethod._('GET');
   static const post = CreateIncomingPhoneNumbersRequestBodySmsMethod._('POST');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CreateIncomingPhoneNumbersRequestBodySmsMethod && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CreateIncomingPhoneNumbersRequestBodySmsMethod &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
