@@ -36,12 +36,11 @@ Future<ApiV2010AccountRecordingRecordingAddOnResult>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchRecordingsAddOnResults',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountRecordingRecordingAddOnResult.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountRecordingRecordingAddOnResult.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes an AddOnResult associated with a recording and purges all payloads belonging to that result. Identify the resource with its account, recording, and result SIDs before deletion.
 ///
@@ -75,6 +74,7 @@ Future<void> deleteRecordingsAddOnResults(ClientConfig config,
       .data;
 }
 
+
 /// Lists AddOnResults belonging to a recording. Use `PageSize` and `PageToken` to control which results are returned and to navigate the paginated response.
 ///
 /// Retrieve a list of results belonging to the recording
@@ -87,14 +87,14 @@ Future<void> deleteRecordingsAddOnResults(ClientConfig config,
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListRecordingsAddOnResultsResponse> listRecordingsAddOnResults(
-    ClientConfig config,
-    {required String accountSid,
-    required String referenceSid,
-    SdkOptional<int> pageSize = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<String> pageToken = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ListRecordingsAddOnResultsResponse>
+    listRecordingsAddOnResults(ClientConfig config,
+        {required String accountSid,
+        required String referenceSid,
+        SdkOptional<int> pageSize = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<String> pageToken = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ReferenceSid', referenceSid, min: 34, max: 34);
@@ -110,17 +110,13 @@ Future<ListRecordingsAddOnResultsResponse> listRecordingsAddOnResults(
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings/${Uri.encodeComponent(referenceSid.toString())}/AddOnResults.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listRecordingsAddOnResults',
-          fromJsonRaw: (value) => ListRecordingsAddOnResultsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListRecordingsAddOnResultsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

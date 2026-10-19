@@ -6,130 +6,94 @@ part of 'api20100401_incoming_phone_number_toll_free.dart';
 // api20100401_incoming_phone_number_toll_free domain models (part 3)
 /// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 final class IncomingPhoneNumberTollFreeEnumAddressRequirement {
+
   final String value;
 
   const IncomingPhoneNumberTollFreeEnumAddressRequirement._(this.value);
 
-  factory IncomingPhoneNumberTollFreeEnumAddressRequirement.fromJson(
-          String value) =>
-      IncomingPhoneNumberTollFreeEnumAddressRequirement._(value);
+  factory IncomingPhoneNumberTollFreeEnumAddressRequirement.fromJson(String value) => IncomingPhoneNumberTollFreeEnumAddressRequirement._(value);
 
-  static const none =
-      IncomingPhoneNumberTollFreeEnumAddressRequirement._('none');
+  static const none = IncomingPhoneNumberTollFreeEnumAddressRequirement._('none');
   static const any = IncomingPhoneNumberTollFreeEnumAddressRequirement._('any');
-  static const local =
-      IncomingPhoneNumberTollFreeEnumAddressRequirement._('local');
-  static const foreign =
-      IncomingPhoneNumberTollFreeEnumAddressRequirement._('foreign');
+  static const local = IncomingPhoneNumberTollFreeEnumAddressRequirement._('local');
+  static const foreign = IncomingPhoneNumberTollFreeEnumAddressRequirement._('foreign');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberTollFreeEnumAddressRequirement &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberTollFreeEnumAddressRequirement && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The status of address registration with emergency services. A registered emergency address will be used during handling of emergency calls from this number.
 final class IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus {
+
   final String value;
 
   const IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(this.value);
 
-  factory IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus.fromJson(
-          String value) =>
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(value);
+  factory IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus.fromJson(String value) => IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(value);
 
-  static const registered =
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('registered');
-  static const unregistered =
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('unregistered');
-  static const pendingRegistration =
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(
-          'pending-registration');
-  static const registrationFailure =
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(
-          'registration-failure');
-  static const pendingUnregistration =
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(
-          'pending-unregistration');
-  static const unregistrationFailure =
-      IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._(
-          'unregistration-failure');
+  static const registered = IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('registered');
+  static const unregistered = IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('unregistered');
+  static const pendingRegistration = IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('pending-registration');
+  static const registrationFailure = IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('registration-failure');
+  static const pendingUnregistration = IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('pending-unregistration');
+  static const unregistrationFailure = IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus._('unregistration-failure');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberTollFreeEnumEmergencyAddressStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 final class IncomingPhoneNumberTollFreeEnumEmergencyStatus {
+
   final String value;
 
   const IncomingPhoneNumberTollFreeEnumEmergencyStatus._(this.value);
 
-  factory IncomingPhoneNumberTollFreeEnumEmergencyStatus.fromJson(
-          String value) =>
-      IncomingPhoneNumberTollFreeEnumEmergencyStatus._(value);
+  factory IncomingPhoneNumberTollFreeEnumEmergencyStatus.fromJson(String value) => IncomingPhoneNumberTollFreeEnumEmergencyStatus._(value);
 
-  static const active =
-      IncomingPhoneNumberTollFreeEnumEmergencyStatus._('Active');
-  static const inactive =
-      IncomingPhoneNumberTollFreeEnumEmergencyStatus._('Inactive');
+  static const active = IncomingPhoneNumberTollFreeEnumEmergencyStatus._('Active');
+  static const inactive = IncomingPhoneNumberTollFreeEnumEmergencyStatus._('Inactive');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberTollFreeEnumEmergencyStatus &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberTollFreeEnumEmergencyStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `IncomingPhoneNumberTollFreeEnumVoiceReceiveMode` API schema.
 final class IncomingPhoneNumberTollFreeEnumVoiceReceiveMode {
+
   final String value;
 
   const IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(this.value);
 
-  factory IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(
-          String value) =>
-      IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(value);
+  factory IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(String value) => IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(value);
 
-  static const voice =
-      IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._('voice');
+  static const voice = IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._('voice');
   static const fax = IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._('fax');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is IncomingPhoneNumberTollFreeEnumVoiceReceiveMode &&
-      other.value == value;
+  @override bool operator ==(Object other) => other is IncomingPhoneNumberTollFreeEnumVoiceReceiveMode && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

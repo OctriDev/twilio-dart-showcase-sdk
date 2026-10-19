@@ -62,11 +62,11 @@ Future<ApiV2010AccountAddress> createAddresses(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createAddresses',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountAddress.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountAddress.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists address resources associated with a specific account. Filter the results by customer name, friendly name, emergency-calling status, or ISO country code, and use the pagination parameters to navigate the results.
 ///
@@ -105,30 +105,21 @@ Future<ListAddressesResponse> listAddresses(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Addresses.json',
           config: config,
           query: {
-            'CustomerName': SdkQueryValue(SdkUtils.unwrapOptional(customerName),
-                style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'EmergencyEnabled': SdkQueryValue(
-                SdkUtils.unwrapOptional(emergencyEnabled),
-                style: 'form',
-                explode: true),
-            'IsoCountry': SdkQueryValue(SdkUtils.unwrapOptional(isoCountry),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'CustomerName': SdkQueryValue(SdkUtils.unwrapOptional(customerName), style: 'form', explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'EmergencyEnabled': SdkQueryValue(SdkUtils.unwrapOptional(emergencyEnabled), style: 'form', explode: true),
+            'IsoCountry': SdkQueryValue(SdkUtils.unwrapOptional(isoCountry), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAddresses',
-          fromJsonRaw: (value) =>
-              ListAddressesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListAddressesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a specific address resource associated with an account. Supply the account SID and address SID to identify the address to remove.
 ///
@@ -155,6 +146,7 @@ Future<void> deleteAddresses(ClientConfig config,
       .data;
 }
 
+
 /// Retrieves a specific address resource associated with an account. Supply the account SID and address SID to identify the resource.
 ///
 /// [accountSid] The SID of the
@@ -176,11 +168,11 @@ Future<ApiV2010AccountAddress> fetchAddresses(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchAddresses',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountAddress.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountAddress.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates properties of a specific address resource. Submit only the address fields you want to change; `AutoCorrectAddress` defaults to true when omitted.
 ///
@@ -239,8 +231,7 @@ Future<ApiV2010AccountAddress> updateAddresses(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateAddresses',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountAddress.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountAddress.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

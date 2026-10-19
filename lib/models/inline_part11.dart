@@ -7,533 +7,235 @@ part of 'inline.dart';
 class UpdateAddressesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A descriptive string that you create to describe the new address. It can be up to 64 characters long for Regulatory Compliance addresses and 32 characters long for Emergency addresses.
   final SdkOptional<String> friendlyName;
-
   /// The name to associate with the address.
   final SdkOptional<String> customerName;
-
   /// The number and street address of the address.
   final SdkOptional<String> street;
-
   /// The city of the address.
   final SdkOptional<String> city;
-
   /// The state or region of the address.
   final SdkOptional<String> region;
-
   /// The postal code of the address.
   final SdkOptional<String> postalCode;
-
   /// Whether to enable emergency calling on the address. Can be: `true` or `false`.
   final SdkOptional<bool> emergencyEnabled;
-
   /// Whether we should automatically correct the address. Can be: `true` or `false` and the default is `true`. If empty or `true`, we will correct the address you provide if necessary. If `false`, we won't alter the address you provide.
   final SdkOptional<bool> autoCorrectAddress;
-
   /// The additional number and street address of the address.
   final SdkOptional<String> streetSecondary;
 
-  const UpdateAddressesRequestBody(
-      {this.friendlyName = const SdkOmitted(),
-      this.customerName = const SdkOmitted(),
-      this.street = const SdkOmitted(),
-      this.city = const SdkOmitted(),
-      this.region = const SdkOmitted(),
-      this.postalCode = const SdkOmitted(),
-      this.emergencyEnabled = const SdkOmitted(),
-      this.autoCorrectAddress = const SdkOmitted(),
-      this.streetSecondary = const SdkOmitted()});
+  const UpdateAddressesRequestBody({this.friendlyName = const SdkOmitted(), this.customerName = const SdkOmitted(), this.street = const SdkOmitted(), this.city = const SdkOmitted(), this.region = const SdkOmitted(), this.postalCode = const SdkOmitted(), this.emergencyEnabled = const SdkOmitted(), this.autoCorrectAddress = const SdkOmitted(), this.streetSecondary = const SdkOmitted()});
 
-  UpdateAddressesRequestBody Function(
-      {SdkOptional<String> friendlyName,
-      SdkOptional<String> customerName,
-      SdkOptional<String> street,
-      SdkOptional<String> city,
-      SdkOptional<String> region,
-      SdkOptional<String> postalCode,
-      SdkOptional<bool> emergencyEnabled,
-      SdkOptional<bool> autoCorrectAddress,
-      SdkOptional<String> streetSecondary}) get copyWith => _copyWith;
+  UpdateAddressesRequestBody Function({SdkOptional<String> friendlyName, SdkOptional<String> customerName, SdkOptional<String> street, SdkOptional<String> city, SdkOptional<String> region, SdkOptional<String> postalCode, SdkOptional<bool> emergencyEnabled, SdkOptional<bool> autoCorrectAddress, SdkOptional<String> streetSecondary}) get copyWith => _copyWith;
 
-  UpdateAddressesRequestBody _copyWith(
-          {Object? friendlyName = sdkOmittedValue,
-          Object? customerName = sdkOmittedValue,
-          Object? street = sdkOmittedValue,
-          Object? city = sdkOmittedValue,
-          Object? region = sdkOmittedValue,
-          Object? postalCode = sdkOmittedValue,
-          Object? emergencyEnabled = sdkOmittedValue,
-          Object? autoCorrectAddress = sdkOmittedValue,
-          Object? streetSecondary = sdkOmittedValue}) =>
-      UpdateAddressesRequestBody(
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as SdkOptional<String>,
-        customerName: identical(customerName, sdkOmittedValue)
-            ? this.customerName
-            : customerName as SdkOptional<String>,
-        street: identical(street, sdkOmittedValue)
-            ? this.street
-            : street as SdkOptional<String>,
-        city: identical(city, sdkOmittedValue)
-            ? this.city
-            : city as SdkOptional<String>,
-        region: identical(region, sdkOmittedValue)
-            ? this.region
-            : region as SdkOptional<String>,
-        postalCode: identical(postalCode, sdkOmittedValue)
-            ? this.postalCode
-            : postalCode as SdkOptional<String>,
-        emergencyEnabled: identical(emergencyEnabled, sdkOmittedValue)
-            ? this.emergencyEnabled
-            : emergencyEnabled as SdkOptional<bool>,
-        autoCorrectAddress: identical(autoCorrectAddress, sdkOmittedValue)
-            ? this.autoCorrectAddress
-            : autoCorrectAddress as SdkOptional<bool>,
-        streetSecondary: identical(streetSecondary, sdkOmittedValue)
-            ? this.streetSecondary
-            : streetSecondary as SdkOptional<String>,
-      );
+  UpdateAddressesRequestBody _copyWith({Object? friendlyName = sdkOmittedValue, Object? customerName = sdkOmittedValue, Object? street = sdkOmittedValue, Object? city = sdkOmittedValue, Object? region = sdkOmittedValue, Object? postalCode = sdkOmittedValue, Object? emergencyEnabled = sdkOmittedValue, Object? autoCorrectAddress = sdkOmittedValue, Object? streetSecondary = sdkOmittedValue}) => UpdateAddressesRequestBody(
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
+    customerName: identical(customerName, sdkOmittedValue) ? this.customerName : customerName as SdkOptional<String>,
+    street: identical(street, sdkOmittedValue) ? this.street : street as SdkOptional<String>,
+    city: identical(city, sdkOmittedValue) ? this.city : city as SdkOptional<String>,
+    region: identical(region, sdkOmittedValue) ? this.region : region as SdkOptional<String>,
+    postalCode: identical(postalCode, sdkOmittedValue) ? this.postalCode : postalCode as SdkOptional<String>,
+    emergencyEnabled: identical(emergencyEnabled, sdkOmittedValue) ? this.emergencyEnabled : emergencyEnabled as SdkOptional<bool>,
+    autoCorrectAddress: identical(autoCorrectAddress, sdkOmittedValue) ? this.autoCorrectAddress : autoCorrectAddress as SdkOptional<bool>,
+    streetSecondary: identical(streetSecondary, sdkOmittedValue) ? this.streetSecondary : streetSecondary as SdkOptional<String>,
+  );
 
-  factory UpdateAddressesRequestBody.fromJson(Map<String, dynamic> json) =>
-      UpdateAddressesRequestBody(
-        friendlyName: json['FriendlyName'] != null
-            ? SdkPresent((json['FriendlyName'] as String?)!)
-            : const SdkOmitted(),
-        customerName: json['CustomerName'] != null
-            ? SdkPresent((json['CustomerName'] as String?)!)
-            : const SdkOmitted(),
-        street: json['Street'] != null
-            ? SdkPresent((json['Street'] as String?)!)
-            : const SdkOmitted(),
-        city: json['City'] != null
-            ? SdkPresent((json['City'] as String?)!)
-            : const SdkOmitted(),
-        region: json['Region'] != null
-            ? SdkPresent((json['Region'] as String?)!)
-            : const SdkOmitted(),
-        postalCode: json['PostalCode'] != null
-            ? SdkPresent((json['PostalCode'] as String?)!)
-            : const SdkOmitted(),
-        emergencyEnabled: json['EmergencyEnabled'] != null
-            ? SdkPresent((json['EmergencyEnabled'] as bool?)!)
-            : const SdkOmitted(),
-        autoCorrectAddress: json['AutoCorrectAddress'] != null
-            ? SdkPresent((json['AutoCorrectAddress'] as bool?)!)
-            : const SdkOmitted(),
-        streetSecondary: json['StreetSecondary'] != null
-            ? SdkPresent((json['StreetSecondary'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory UpdateAddressesRequestBody.fromJson(Map<String, dynamic> json) => UpdateAddressesRequestBody(
+    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
+    customerName: json['CustomerName'] != null ? SdkPresent((json['CustomerName'] as String?)!) : const SdkOmitted(),
+    street: json['Street'] != null ? SdkPresent((json['Street'] as String?)!) : const SdkOmitted(),
+    city: json['City'] != null ? SdkPresent((json['City'] as String?)!) : const SdkOmitted(),
+    region: json['Region'] != null ? SdkPresent((json['Region'] as String?)!) : const SdkOmitted(),
+    postalCode: json['PostalCode'] != null ? SdkPresent((json['PostalCode'] as String?)!) : const SdkOmitted(),
+    emergencyEnabled: json['EmergencyEnabled'] != null ? SdkPresent((json['EmergencyEnabled'] as bool?)!) : const SdkOmitted(),
+    autoCorrectAddress: json['AutoCorrectAddress'] != null ? SdkPresent((json['AutoCorrectAddress'] as bool?)!) : const SdkOmitted(),
+    streetSecondary: json['StreetSecondary'] != null ? SdkPresent((json['StreetSecondary'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (friendlyName) {
-          SdkPresent<String>(value: final value) => {
-              'FriendlyName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (customerName) {
-          SdkPresent<String>(value: final value) => {
-              'CustomerName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (street) {
-          SdkPresent<String>(value: final value) => {
-              'Street': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (city) {
-          SdkPresent<String>(value: final value) => {
-              'City': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (region) {
-          SdkPresent<String>(value: final value) => {
-              'Region': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (postalCode) {
-          SdkPresent<String>(value: final value) => {
-              'PostalCode': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyEnabled) {
-          SdkPresent<bool>(value: final value) => {
-              'EmergencyEnabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (autoCorrectAddress) {
-          SdkPresent<bool>(value: final value) => {
-              'AutoCorrectAddress': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (streetSecondary) {
-          SdkPresent<String>(value: final value) => {
-              'StreetSecondary': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (friendlyName) {
+      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (customerName) {
+      SdkPresent<String>(value: final value) => {'CustomerName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (street) {
+      SdkPresent<String>(value: final value) => {'Street': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (city) {
+      SdkPresent<String>(value: final value) => {'City': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (region) {
+      SdkPresent<String>(value: final value) => {'Region': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (postalCode) {
+      SdkPresent<String>(value: final value) => {'PostalCode': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyEnabled) {
+      SdkPresent<bool>(value: final value) => {'EmergencyEnabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (autoCorrectAddress) {
+      SdkPresent<bool>(value: final value) => {'AutoCorrectAddress': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (streetSecondary) {
+      SdkPresent<String>(value: final value) => {'StreetSecondary': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CreateApplicationsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The API version to use to start a new TwiML session. Can be: `2010-04-01` or `2008-08-01`. The default value is the account's default API version.
   final SdkOptional<String> apiVersion;
-
   /// The URL we should call when the phone number assigned to this application receives a call.
   final SdkOptional<String> voiceUrl;
-
   /// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
   final SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod;
-
   /// The URL that we should call when an error occurs retrieving or executing the TwiML requested by `url`.
   final SdkOptional<String> voiceFallbackUrl;
-
   /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod>
-      voiceFallbackMethod;
-
+  final SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod;
   /// The URL we should call using the `status_callback_method` to send status information to your application.
   final SdkOptional<String> statusCallback;
-
   /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`.
-  final SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod>
-      statusCallbackMethod;
-
+  final SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod;
   /// Whether we should look up the caller's caller-ID name from the CNAM database (additional charges apply). Can be: `true` or `false`.
   final SdkOptional<bool> voiceCallerIdLookup;
-
   /// The URL we should call when the phone number receives an incoming SMS message.
   final SdkOptional<String> smsUrl;
-
   /// The HTTP method we should use to call `sms_url`. Can be: `GET` or `POST`.
   final SdkOptional<CreateApplicationsRequestBodySmsMethod> smsMethod;
-
   /// The URL that we should call when an error occurs while retrieving or executing the TwiML from `sms_url`.
   final SdkOptional<String> smsFallbackUrl;
-
   /// The HTTP method we should use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod>
-      smsFallbackMethod;
-
+  final SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod;
   /// The URL we should call using a POST method to send status information about SMS messages sent by the application.
   final SdkOptional<String> smsStatusCallback;
-
   /// The URL we should call using a POST method to send message status information to your application.
   final SdkOptional<String> messageStatusCallback;
-
   /// A descriptive string that you create to describe the new application. It can be up to 64 characters long.
   final SdkOptional<String> friendlyName;
-
   /// Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`.
   final SdkOptional<bool> publicApplicationConnectEnabled;
 
-  const CreateApplicationsRequestBody(
-      {this.apiVersion = const SdkOmitted(),
-      this.voiceUrl = const SdkOmitted(),
-      this.voiceMethod = const SdkOmitted(),
-      this.voiceFallbackUrl = const SdkOmitted(),
-      this.voiceFallbackMethod = const SdkOmitted(),
-      this.statusCallback = const SdkOmitted(),
-      this.statusCallbackMethod = const SdkOmitted(),
-      this.voiceCallerIdLookup = const SdkOmitted(),
-      this.smsUrl = const SdkOmitted(),
-      this.smsMethod = const SdkOmitted(),
-      this.smsFallbackUrl = const SdkOmitted(),
-      this.smsFallbackMethod = const SdkOmitted(),
-      this.smsStatusCallback = const SdkOmitted(),
-      this.messageStatusCallback = const SdkOmitted(),
-      this.friendlyName = const SdkOmitted(),
-      this.publicApplicationConnectEnabled = const SdkOmitted()});
+  const CreateApplicationsRequestBody({this.apiVersion = const SdkOmitted(), this.voiceUrl = const SdkOmitted(), this.voiceMethod = const SdkOmitted(), this.voiceFallbackUrl = const SdkOmitted(), this.voiceFallbackMethod = const SdkOmitted(), this.statusCallback = const SdkOmitted(), this.statusCallbackMethod = const SdkOmitted(), this.voiceCallerIdLookup = const SdkOmitted(), this.smsUrl = const SdkOmitted(), this.smsMethod = const SdkOmitted(), this.smsFallbackUrl = const SdkOmitted(), this.smsFallbackMethod = const SdkOmitted(), this.smsStatusCallback = const SdkOmitted(), this.messageStatusCallback = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.publicApplicationConnectEnabled = const SdkOmitted()});
 
-  CreateApplicationsRequestBody Function(
-          {SdkOptional<String> apiVersion,
-          SdkOptional<String> voiceUrl,
-          SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod,
-          SdkOptional<String> voiceFallbackUrl,
-          SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod>
-              voiceFallbackMethod,
-          SdkOptional<String> statusCallback,
-          SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod>
-              statusCallbackMethod,
-          SdkOptional<bool> voiceCallerIdLookup,
-          SdkOptional<String> smsUrl,
-          SdkOptional<CreateApplicationsRequestBodySmsMethod> smsMethod,
-          SdkOptional<String> smsFallbackUrl,
-          SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod>
-              smsFallbackMethod,
-          SdkOptional<String> smsStatusCallback,
-          SdkOptional<String> messageStatusCallback,
-          SdkOptional<String> friendlyName,
-          SdkOptional<bool> publicApplicationConnectEnabled})
-      get copyWith => _copyWith;
+  CreateApplicationsRequestBody Function({SdkOptional<String> apiVersion, SdkOptional<String> voiceUrl, SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod, SdkOptional<String> voiceFallbackUrl, SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod, SdkOptional<String> statusCallback, SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod, SdkOptional<bool> voiceCallerIdLookup, SdkOptional<String> smsUrl, SdkOptional<CreateApplicationsRequestBodySmsMethod> smsMethod, SdkOptional<String> smsFallbackUrl, SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod, SdkOptional<String> smsStatusCallback, SdkOptional<String> messageStatusCallback, SdkOptional<String> friendlyName, SdkOptional<bool> publicApplicationConnectEnabled}) get copyWith => _copyWith;
 
-  CreateApplicationsRequestBody _copyWith(
-          {Object? apiVersion = sdkOmittedValue,
-          Object? voiceUrl = sdkOmittedValue,
-          Object? voiceMethod = sdkOmittedValue,
-          Object? voiceFallbackUrl = sdkOmittedValue,
-          Object? voiceFallbackMethod = sdkOmittedValue,
-          Object? statusCallback = sdkOmittedValue,
-          Object? statusCallbackMethod = sdkOmittedValue,
-          Object? voiceCallerIdLookup = sdkOmittedValue,
-          Object? smsUrl = sdkOmittedValue,
-          Object? smsMethod = sdkOmittedValue,
-          Object? smsFallbackUrl = sdkOmittedValue,
-          Object? smsFallbackMethod = sdkOmittedValue,
-          Object? smsStatusCallback = sdkOmittedValue,
-          Object? messageStatusCallback = sdkOmittedValue,
-          Object? friendlyName = sdkOmittedValue,
-          Object? publicApplicationConnectEnabled = sdkOmittedValue}) =>
-      CreateApplicationsRequestBody(
-        apiVersion: identical(apiVersion, sdkOmittedValue)
-            ? this.apiVersion
-            : apiVersion as SdkOptional<String>,
-        voiceUrl: identical(voiceUrl, sdkOmittedValue)
-            ? this.voiceUrl
-            : voiceUrl as SdkOptional<String>,
-        voiceMethod: identical(voiceMethod, sdkOmittedValue)
-            ? this.voiceMethod
-            : voiceMethod
-                as SdkOptional<CreateApplicationsRequestBodyVoiceMethod>,
-        voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue)
-            ? this.voiceFallbackUrl
-            : voiceFallbackUrl as SdkOptional<String>,
-        voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue)
-            ? this.voiceFallbackMethod
-            : voiceFallbackMethod as SdkOptional<
-                CreateApplicationsRequestBodyVoiceFallbackMethod>,
-        statusCallback: identical(statusCallback, sdkOmittedValue)
-            ? this.statusCallback
-            : statusCallback as SdkOptional<String>,
-        statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue)
-            ? this.statusCallbackMethod
-            : statusCallbackMethod as SdkOptional<
-                CreateApplicationsRequestBodyStatusCallbackMethod>,
-        voiceCallerIdLookup: identical(voiceCallerIdLookup, sdkOmittedValue)
-            ? this.voiceCallerIdLookup
-            : voiceCallerIdLookup as SdkOptional<bool>,
-        smsUrl: identical(smsUrl, sdkOmittedValue)
-            ? this.smsUrl
-            : smsUrl as SdkOptional<String>,
-        smsMethod: identical(smsMethod, sdkOmittedValue)
-            ? this.smsMethod
-            : smsMethod as SdkOptional<CreateApplicationsRequestBodySmsMethod>,
-        smsFallbackUrl: identical(smsFallbackUrl, sdkOmittedValue)
-            ? this.smsFallbackUrl
-            : smsFallbackUrl as SdkOptional<String>,
-        smsFallbackMethod: identical(smsFallbackMethod, sdkOmittedValue)
-            ? this.smsFallbackMethod
-            : smsFallbackMethod
-                as SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod>,
-        smsStatusCallback: identical(smsStatusCallback, sdkOmittedValue)
-            ? this.smsStatusCallback
-            : smsStatusCallback as SdkOptional<String>,
-        messageStatusCallback: identical(messageStatusCallback, sdkOmittedValue)
-            ? this.messageStatusCallback
-            : messageStatusCallback as SdkOptional<String>,
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as SdkOptional<String>,
-        publicApplicationConnectEnabled:
-            identical(publicApplicationConnectEnabled, sdkOmittedValue)
-                ? this.publicApplicationConnectEnabled
-                : publicApplicationConnectEnabled as SdkOptional<bool>,
-      );
+  CreateApplicationsRequestBody _copyWith({Object? apiVersion = sdkOmittedValue, Object? voiceUrl = sdkOmittedValue, Object? voiceMethod = sdkOmittedValue, Object? voiceFallbackUrl = sdkOmittedValue, Object? voiceFallbackMethod = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? statusCallbackMethod = sdkOmittedValue, Object? voiceCallerIdLookup = sdkOmittedValue, Object? smsUrl = sdkOmittedValue, Object? smsMethod = sdkOmittedValue, Object? smsFallbackUrl = sdkOmittedValue, Object? smsFallbackMethod = sdkOmittedValue, Object? smsStatusCallback = sdkOmittedValue, Object? messageStatusCallback = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? publicApplicationConnectEnabled = sdkOmittedValue}) => CreateApplicationsRequestBody(
+    apiVersion: identical(apiVersion, sdkOmittedValue) ? this.apiVersion : apiVersion as SdkOptional<String>,
+    voiceUrl: identical(voiceUrl, sdkOmittedValue) ? this.voiceUrl : voiceUrl as SdkOptional<String>,
+    voiceMethod: identical(voiceMethod, sdkOmittedValue) ? this.voiceMethod : voiceMethod as SdkOptional<CreateApplicationsRequestBodyVoiceMethod>,
+    voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue) ? this.voiceFallbackUrl : voiceFallbackUrl as SdkOptional<String>,
+    voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue) ? this.voiceFallbackMethod : voiceFallbackMethod as SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod>,
+    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as SdkOptional<String>,
+    statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue) ? this.statusCallbackMethod : statusCallbackMethod as SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod>,
+    voiceCallerIdLookup: identical(voiceCallerIdLookup, sdkOmittedValue) ? this.voiceCallerIdLookup : voiceCallerIdLookup as SdkOptional<bool>,
+    smsUrl: identical(smsUrl, sdkOmittedValue) ? this.smsUrl : smsUrl as SdkOptional<String>,
+    smsMethod: identical(smsMethod, sdkOmittedValue) ? this.smsMethod : smsMethod as SdkOptional<CreateApplicationsRequestBodySmsMethod>,
+    smsFallbackUrl: identical(smsFallbackUrl, sdkOmittedValue) ? this.smsFallbackUrl : smsFallbackUrl as SdkOptional<String>,
+    smsFallbackMethod: identical(smsFallbackMethod, sdkOmittedValue) ? this.smsFallbackMethod : smsFallbackMethod as SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod>,
+    smsStatusCallback: identical(smsStatusCallback, sdkOmittedValue) ? this.smsStatusCallback : smsStatusCallback as SdkOptional<String>,
+    messageStatusCallback: identical(messageStatusCallback, sdkOmittedValue) ? this.messageStatusCallback : messageStatusCallback as SdkOptional<String>,
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
+    publicApplicationConnectEnabled: identical(publicApplicationConnectEnabled, sdkOmittedValue) ? this.publicApplicationConnectEnabled : publicApplicationConnectEnabled as SdkOptional<bool>,
+  );
 
-  factory CreateApplicationsRequestBody.fromJson(Map<String, dynamic> json) =>
-      CreateApplicationsRequestBody(
-        apiVersion: json['ApiVersion'] != null
-            ? SdkPresent((json['ApiVersion'] as String?)!)
-            : const SdkOmitted(),
-        voiceUrl: json['VoiceUrl'] != null
-            ? SdkPresent((json['VoiceUrl'] as String?)!)
-            : const SdkOmitted(),
-        voiceMethod: json['VoiceMethod'] != null
-            ? SdkPresent((json['VoiceMethod'] != null
-                ? CreateApplicationsRequestBodyVoiceMethod.fromJson(
-                    json['VoiceMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceFallbackUrl: json['VoiceFallbackUrl'] != null
-            ? SdkPresent((json['VoiceFallbackUrl'] as String?)!)
-            : const SdkOmitted(),
-        voiceFallbackMethod: json['VoiceFallbackMethod'] != null
-            ? SdkPresent((json['VoiceFallbackMethod'] != null
-                ? CreateApplicationsRequestBodyVoiceFallbackMethod.fromJson(
-                    json['VoiceFallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        statusCallback: json['StatusCallback'] != null
-            ? SdkPresent((json['StatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        statusCallbackMethod: json['StatusCallbackMethod'] != null
-            ? SdkPresent((json['StatusCallbackMethod'] != null
-                ? CreateApplicationsRequestBodyStatusCallbackMethod.fromJson(
-                    json['StatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceCallerIdLookup: json['VoiceCallerIdLookup'] != null
-            ? SdkPresent((json['VoiceCallerIdLookup'] as bool?)!)
-            : const SdkOmitted(),
-        smsUrl: json['SmsUrl'] != null
-            ? SdkPresent((json['SmsUrl'] as String?)!)
-            : const SdkOmitted(),
-        smsMethod: json['SmsMethod'] != null
-            ? SdkPresent((json['SmsMethod'] != null
-                ? CreateApplicationsRequestBodySmsMethod.fromJson(
-                    json['SmsMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        smsFallbackUrl: json['SmsFallbackUrl'] != null
-            ? SdkPresent((json['SmsFallbackUrl'] as String?)!)
-            : const SdkOmitted(),
-        smsFallbackMethod: json['SmsFallbackMethod'] != null
-            ? SdkPresent((json['SmsFallbackMethod'] != null
-                ? CreateApplicationsRequestBodySmsFallbackMethod.fromJson(
-                    json['SmsFallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        smsStatusCallback: json['SmsStatusCallback'] != null
-            ? SdkPresent((json['SmsStatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        messageStatusCallback: json['MessageStatusCallback'] != null
-            ? SdkPresent((json['MessageStatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        friendlyName: json['FriendlyName'] != null
-            ? SdkPresent((json['FriendlyName'] as String?)!)
-            : const SdkOmitted(),
-        publicApplicationConnectEnabled:
-            json['PublicApplicationConnectEnabled'] != null
-                ? SdkPresent(
-                    (json['PublicApplicationConnectEnabled'] as bool?)!)
-                : const SdkOmitted(),
-      );
+  factory CreateApplicationsRequestBody.fromJson(Map<String, dynamic> json) => CreateApplicationsRequestBody(
+    apiVersion: json['ApiVersion'] != null ? SdkPresent((json['ApiVersion'] as String?)!) : const SdkOmitted(),
+    voiceUrl: json['VoiceUrl'] != null ? SdkPresent((json['VoiceUrl'] as String?)!) : const SdkOmitted(),
+    voiceMethod: json['VoiceMethod'] != null ? SdkPresent((json['VoiceMethod'] != null ? CreateApplicationsRequestBodyVoiceMethod.fromJson(json['VoiceMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceFallbackUrl: json['VoiceFallbackUrl'] != null ? SdkPresent((json['VoiceFallbackUrl'] as String?)!) : const SdkOmitted(),
+    voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? SdkPresent((json['VoiceFallbackMethod'] != null ? CreateApplicationsRequestBodyVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    statusCallback: json['StatusCallback'] != null ? SdkPresent((json['StatusCallback'] as String?)!) : const SdkOmitted(),
+    statusCallbackMethod: json['StatusCallbackMethod'] != null ? SdkPresent((json['StatusCallbackMethod'] != null ? CreateApplicationsRequestBodyStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceCallerIdLookup: json['VoiceCallerIdLookup'] != null ? SdkPresent((json['VoiceCallerIdLookup'] as bool?)!) : const SdkOmitted(),
+    smsUrl: json['SmsUrl'] != null ? SdkPresent((json['SmsUrl'] as String?)!) : const SdkOmitted(),
+    smsMethod: json['SmsMethod'] != null ? SdkPresent((json['SmsMethod'] != null ? CreateApplicationsRequestBodySmsMethod.fromJson(json['SmsMethod'] as String) : null)!) : const SdkOmitted(),
+    smsFallbackUrl: json['SmsFallbackUrl'] != null ? SdkPresent((json['SmsFallbackUrl'] as String?)!) : const SdkOmitted(),
+    smsFallbackMethod: json['SmsFallbackMethod'] != null ? SdkPresent((json['SmsFallbackMethod'] != null ? CreateApplicationsRequestBodySmsFallbackMethod.fromJson(json['SmsFallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    smsStatusCallback: json['SmsStatusCallback'] != null ? SdkPresent((json['SmsStatusCallback'] as String?)!) : const SdkOmitted(),
+    messageStatusCallback: json['MessageStatusCallback'] != null ? SdkPresent((json['MessageStatusCallback'] as String?)!) : const SdkOmitted(),
+    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
+    publicApplicationConnectEnabled: json['PublicApplicationConnectEnabled'] != null ? SdkPresent((json['PublicApplicationConnectEnabled'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (apiVersion) {
-          SdkPresent<String>(value: final value) => {
-              'ApiVersion': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceMethod) {
-          SdkPresent<CreateApplicationsRequestBodyVoiceMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceFallbackUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceFallbackUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceFallbackMethod) {
-          SdkPresent<CreateApplicationsRequestBodyVoiceFallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceFallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'StatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusCallbackMethod) {
-          SdkPresent<CreateApplicationsRequestBodyStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'StatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceCallerIdLookup) {
-          SdkPresent<bool>(value: final value) => {
-              'VoiceCallerIdLookup': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'SmsUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsMethod) {
-          SdkPresent<CreateApplicationsRequestBodySmsMethod>(
-            value: final value
-          ) =>
-            {
-              'SmsMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsFallbackUrl) {
-          SdkPresent<String>(value: final value) => {
-              'SmsFallbackUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsFallbackMethod) {
-          SdkPresent<CreateApplicationsRequestBodySmsFallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'SmsFallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsStatusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'SmsStatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (messageStatusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'MessageStatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (friendlyName) {
-          SdkPresent<String>(value: final value) => {
-              'FriendlyName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (publicApplicationConnectEnabled) {
-          SdkPresent<bool>(value: final value) => {
-              'PublicApplicationConnectEnabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (apiVersion) {
+      SdkPresent<String>(value: final value) => {'ApiVersion': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceMethod) {
+      SdkPresent<CreateApplicationsRequestBodyVoiceMethod>(value: final value) => {'VoiceMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceFallbackUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceFallbackUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceFallbackMethod) {
+      SdkPresent<CreateApplicationsRequestBodyVoiceFallbackMethod>(value: final value) => {'VoiceFallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (statusCallback) {
+      SdkPresent<String>(value: final value) => {'StatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (statusCallbackMethod) {
+      SdkPresent<CreateApplicationsRequestBodyStatusCallbackMethod>(value: final value) => {'StatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceCallerIdLookup) {
+      SdkPresent<bool>(value: final value) => {'VoiceCallerIdLookup': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsUrl) {
+      SdkPresent<String>(value: final value) => {'SmsUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsMethod) {
+      SdkPresent<CreateApplicationsRequestBodySmsMethod>(value: final value) => {'SmsMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsFallbackUrl) {
+      SdkPresent<String>(value: final value) => {'SmsFallbackUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsFallbackMethod) {
+      SdkPresent<CreateApplicationsRequestBodySmsFallbackMethod>(value: final value) => {'SmsFallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsStatusCallback) {
+      SdkPresent<String>(value: final value) => {'SmsStatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (messageStatusCallback) {
+      SdkPresent<String>(value: final value) => {'MessageStatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (friendlyName) {
+      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (publicApplicationConnectEnabled) {
+      SdkPresent<bool>(value: final value) => {'PublicApplicationConnectEnabled': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

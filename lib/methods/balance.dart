@@ -21,8 +21,7 @@ Future<ApiV2010AccountBalance> fetchBalance(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchBalance',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountBalance.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountBalance.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

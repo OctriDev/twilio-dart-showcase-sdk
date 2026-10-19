@@ -30,11 +30,11 @@ Future<ApiV2010AccountUsageUsageTrigger> fetchUsageTriggers(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchUsageTriggers',
-          fromJsonRaw: (value) => ApiV2010AccountUsageUsageTrigger.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountUsageUsageTrigger.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates an existing usage trigger for an account. Supply the trigger fields you want to change, such as `CallbackUrl`, `CallbackMethod`, or `FriendlyName`; the request body is optional. The callback URL is used when the trigger fires.
 ///
@@ -51,15 +51,14 @@ Future<ApiV2010AccountUsageUsageTrigger> fetchUsageTriggers(ClientConfig config,
 ///   trigger fires.
 /// [friendlyName] A descriptive string that you create to describe the
 ///   resource. It can be up to 64 characters long.
-Future<ApiV2010AccountUsageUsageTrigger> updateUsageTriggers(
-    ClientConfig config,
-    {required String accountSid,
-    required String sid,
-    SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod =
-        const SdkOmitted(),
-    SdkOptional<String> callbackUrl = const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountUsageUsageTrigger>
+    updateUsageTriggers(ClientConfig config,
+        {required String accountSid,
+        required String sid,
+        SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod = const SdkOmitted(),
+        SdkOptional<String> callbackUrl = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -79,11 +78,11 @@ Future<ApiV2010AccountUsageUsageTrigger> updateUsageTriggers(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateUsageTriggers',
-          fromJsonRaw: (value) => ApiV2010AccountUsageUsageTrigger.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountUsageUsageTrigger.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a specific usage trigger from an account. Use the account and trigger SIDs to identify the resource to remove. The deletion response has no content.
 ///
@@ -109,6 +108,7 @@ Future<void> deleteUsageTriggers(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a usage trigger for an account to monitor a usage category and value. Supply `CallbackUrl`, `TriggerValue`, and `UsageCategory`; choose `TriggerBy` and `Recurring` to configure what the trigger monitors and how often it can fire. The callback method defaults to `POST` when omitted.
 ///
@@ -141,18 +141,17 @@ Future<void> deleteUsageTriggers(ClientConfig config,
 ///   in the [UsageRecords
 ///   documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-coun
 ///   t-price).
-Future<ApiV2010AccountUsageUsageTrigger> createUsageTriggers(
-    ClientConfig config,
-    {required String accountSid,
-    required String callbackUrl,
-    required String triggerValue,
-    required String usageCategory,
-    SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod =
-        const SdkOmitted(),
-    SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<UsageTriggerEnumRecurring> recurring = const SdkOmitted(),
-    SdkOptional<UsageTriggerEnumTriggerField> triggerBy = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountUsageUsageTrigger>
+    createUsageTriggers(ClientConfig config,
+        {required String accountSid,
+        required String callbackUrl,
+        required String triggerValue,
+        required String usageCategory,
+        SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod = const SdkOmitted(),
+        SdkOptional<String> friendlyName = const SdkOmitted(),
+        SdkOptional<UsageTriggerEnumRecurring> recurring = const SdkOmitted(),
+        SdkOptional<UsageTriggerEnumTriggerField> triggerBy = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   sdkValidateUri('CallbackUrl', callbackUrl);
@@ -172,11 +171,11 @@ Future<ApiV2010AccountUsageUsageTrigger> createUsageTriggers(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createUsageTriggers',
-          fromJsonRaw: (value) => ApiV2010AccountUsageUsageTrigger.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountUsageUsageTrigger.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists usage triggers belonging to an account. Filter the results by recurrence, trigger field, or usage category, and use the page parameters to navigate the results. The response includes pagination metadata and the matching usage triggers.
 ///
@@ -222,25 +221,16 @@ Future<ListUsageTriggersResponse> listUsageTriggers(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Triggers.json',
           config: config,
           query: {
-            'Recurring': SdkQueryValue(SdkUtils.unwrapOptional(recurring),
-                style: 'form', explode: true),
-            'TriggerBy': SdkQueryValue(SdkUtils.unwrapOptional(triggerBy),
-                style: 'form', explode: true),
-            'UsageCategory': SdkQueryValue(
-                SdkUtils.unwrapOptional(usageCategory),
-                style: 'form',
-                explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'Recurring': SdkQueryValue(SdkUtils.unwrapOptional(recurring), style: 'form', explode: true),
+            'TriggerBy': SdkQueryValue(SdkUtils.unwrapOptional(triggerBy), style: 'form', explode: true),
+            'UsageCategory': SdkQueryValue(SdkUtils.unwrapOptional(usageCategory), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageTriggers',
-          fromJsonRaw: (value) =>
-              ListUsageTriggersResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageTriggersResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

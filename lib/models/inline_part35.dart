@@ -7,263 +7,113 @@ part of 'inline.dart';
 class UpdateConferencesParticipantsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Whether the participant should be muted. Can be `true` or `false`. `true` will mute the participant, and `false` will un-mute them. Anything value other than `true` or `false` is interpreted as `false`.
   final SdkOptional<bool> muted;
-
   /// Whether the participant should be on hold. Can be: `true` or `false`. `true` puts the participant on hold, and `false` lets them rejoin the conference.
   final SdkOptional<bool> hold;
-
   /// The URL we call using the `hold_method` for music that plays when the participant is on hold. The URL may return an MP3 file, a WAV file, or a TwiML document that contains `&lt;Play&gt;`, `&lt;Say&gt;`, `&lt;Pause&gt;`, or `&lt;Redirect&gt;` verbs.
   final SdkOptional<String> holdUrl;
-
   /// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
-  final SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod>
-      holdMethod;
-
+  final SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod> holdMethod;
   /// The URL we call using the `announce_method` for an announcement to the participant. The URL may return an MP3 file, a WAV file, or a TwiML document that contains `&lt;Play&gt;`, `&lt;Say&gt;`, `&lt;Pause&gt;`, or `&lt;Redirect&gt;` verbs.
   final SdkOptional<String> announceUrl;
-
   /// The HTTP method we should use to call `announce_url`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod>
-      announceMethod;
-
+  final SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod> announceMethod;
   /// The URL that Twilio calls using the `wait_method` before the conference has started. The URL may return an MP3 file, a WAV file, or a TwiML document. The default value is the URL of our standard hold music. If you do not want anything to play while waiting for the conference to start, specify an empty string by setting `wait_url` to `''`. For more details on the allowable verbs within the `waitUrl`, see the `waitUrl` attribute in the [&lt;Conference&gt; TwiML instruction](https://www.twilio.com/docs/voice/twiml/conference#attributes-waiturl).
   final SdkOptional<String> waitUrl;
-
   /// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-  final SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod>
-      waitMethod;
-
+  final SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod> waitMethod;
   /// Whether to play a notification beep to the conference when the participant exits. Can be: `true` or `false`.
   final SdkOptional<bool> beepOnExit;
-
   /// Whether to end the conference when the participant leaves. Can be: `true` or `false` and defaults to `false`.
   final SdkOptional<bool> endConferenceOnExit;
-
   /// Whether the participant is coaching another call. Can be: `true` or `false`. If not present, defaults to `false` unless `call_sid_to_coach` is defined. If `true`, `call_sid_to_coach` must be defined.
   final SdkOptional<bool> coaching;
-
   /// The SID of the participant who is being `coached`. The participant being coached is the only participant who can hear the participant who is `coaching`.
   final SdkOptional<String> callSidToCoach;
 
-  const UpdateConferencesParticipantsRequestBody(
-      {this.muted = const SdkOmitted(),
-      this.hold = const SdkOmitted(),
-      this.holdUrl = const SdkOmitted(),
-      this.holdMethod = const SdkOmitted(),
-      this.announceUrl = const SdkOmitted(),
-      this.announceMethod = const SdkOmitted(),
-      this.waitUrl = const SdkOmitted(),
-      this.waitMethod = const SdkOmitted(),
-      this.beepOnExit = const SdkOmitted(),
-      this.endConferenceOnExit = const SdkOmitted(),
-      this.coaching = const SdkOmitted(),
-      this.callSidToCoach = const SdkOmitted()});
+  const UpdateConferencesParticipantsRequestBody({this.muted = const SdkOmitted(), this.hold = const SdkOmitted(), this.holdUrl = const SdkOmitted(), this.holdMethod = const SdkOmitted(), this.announceUrl = const SdkOmitted(), this.announceMethod = const SdkOmitted(), this.waitUrl = const SdkOmitted(), this.waitMethod = const SdkOmitted(), this.beepOnExit = const SdkOmitted(), this.endConferenceOnExit = const SdkOmitted(), this.coaching = const SdkOmitted(), this.callSidToCoach = const SdkOmitted()});
 
-  UpdateConferencesParticipantsRequestBody Function(
-      {SdkOptional<bool> muted,
-      SdkOptional<bool> hold,
-      SdkOptional<String> holdUrl,
-      SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod>
-          holdMethod,
-      SdkOptional<String> announceUrl,
-      SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod>
-          announceMethod,
-      SdkOptional<String> waitUrl,
-      SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod>
-          waitMethod,
-      SdkOptional<bool> beepOnExit,
-      SdkOptional<bool> endConferenceOnExit,
-      SdkOptional<bool> coaching,
-      SdkOptional<String> callSidToCoach}) get copyWith => _copyWith;
+  UpdateConferencesParticipantsRequestBody Function({SdkOptional<bool> muted, SdkOptional<bool> hold, SdkOptional<String> holdUrl, SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod> holdMethod, SdkOptional<String> announceUrl, SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod> announceMethod, SdkOptional<String> waitUrl, SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod> waitMethod, SdkOptional<bool> beepOnExit, SdkOptional<bool> endConferenceOnExit, SdkOptional<bool> coaching, SdkOptional<String> callSidToCoach}) get copyWith => _copyWith;
 
-  UpdateConferencesParticipantsRequestBody _copyWith(
-          {Object? muted = sdkOmittedValue,
-          Object? hold = sdkOmittedValue,
-          Object? holdUrl = sdkOmittedValue,
-          Object? holdMethod = sdkOmittedValue,
-          Object? announceUrl = sdkOmittedValue,
-          Object? announceMethod = sdkOmittedValue,
-          Object? waitUrl = sdkOmittedValue,
-          Object? waitMethod = sdkOmittedValue,
-          Object? beepOnExit = sdkOmittedValue,
-          Object? endConferenceOnExit = sdkOmittedValue,
-          Object? coaching = sdkOmittedValue,
-          Object? callSidToCoach = sdkOmittedValue}) =>
-      UpdateConferencesParticipantsRequestBody(
-        muted: identical(muted, sdkOmittedValue)
-            ? this.muted
-            : muted as SdkOptional<bool>,
-        hold: identical(hold, sdkOmittedValue)
-            ? this.hold
-            : hold as SdkOptional<bool>,
-        holdUrl: identical(holdUrl, sdkOmittedValue)
-            ? this.holdUrl
-            : holdUrl as SdkOptional<String>,
-        holdMethod: identical(holdMethod, sdkOmittedValue)
-            ? this.holdMethod
-            : holdMethod as SdkOptional<
-                UpdateConferencesParticipantsRequestBodyHoldMethod>,
-        announceUrl: identical(announceUrl, sdkOmittedValue)
-            ? this.announceUrl
-            : announceUrl as SdkOptional<String>,
-        announceMethod: identical(announceMethod, sdkOmittedValue)
-            ? this.announceMethod
-            : announceMethod as SdkOptional<
-                UpdateConferencesParticipantsRequestBodyAnnounceMethod>,
-        waitUrl: identical(waitUrl, sdkOmittedValue)
-            ? this.waitUrl
-            : waitUrl as SdkOptional<String>,
-        waitMethod: identical(waitMethod, sdkOmittedValue)
-            ? this.waitMethod
-            : waitMethod as SdkOptional<
-                UpdateConferencesParticipantsRequestBodyWaitMethod>,
-        beepOnExit: identical(beepOnExit, sdkOmittedValue)
-            ? this.beepOnExit
-            : beepOnExit as SdkOptional<bool>,
-        endConferenceOnExit: identical(endConferenceOnExit, sdkOmittedValue)
-            ? this.endConferenceOnExit
-            : endConferenceOnExit as SdkOptional<bool>,
-        coaching: identical(coaching, sdkOmittedValue)
-            ? this.coaching
-            : coaching as SdkOptional<bool>,
-        callSidToCoach: identical(callSidToCoach, sdkOmittedValue)
-            ? this.callSidToCoach
-            : callSidToCoach as SdkOptional<String>,
-      );
+  UpdateConferencesParticipantsRequestBody _copyWith({Object? muted = sdkOmittedValue, Object? hold = sdkOmittedValue, Object? holdUrl = sdkOmittedValue, Object? holdMethod = sdkOmittedValue, Object? announceUrl = sdkOmittedValue, Object? announceMethod = sdkOmittedValue, Object? waitUrl = sdkOmittedValue, Object? waitMethod = sdkOmittedValue, Object? beepOnExit = sdkOmittedValue, Object? endConferenceOnExit = sdkOmittedValue, Object? coaching = sdkOmittedValue, Object? callSidToCoach = sdkOmittedValue}) => UpdateConferencesParticipantsRequestBody(
+    muted: identical(muted, sdkOmittedValue) ? this.muted : muted as SdkOptional<bool>,
+    hold: identical(hold, sdkOmittedValue) ? this.hold : hold as SdkOptional<bool>,
+    holdUrl: identical(holdUrl, sdkOmittedValue) ? this.holdUrl : holdUrl as SdkOptional<String>,
+    holdMethod: identical(holdMethod, sdkOmittedValue) ? this.holdMethod : holdMethod as SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod>,
+    announceUrl: identical(announceUrl, sdkOmittedValue) ? this.announceUrl : announceUrl as SdkOptional<String>,
+    announceMethod: identical(announceMethod, sdkOmittedValue) ? this.announceMethod : announceMethod as SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod>,
+    waitUrl: identical(waitUrl, sdkOmittedValue) ? this.waitUrl : waitUrl as SdkOptional<String>,
+    waitMethod: identical(waitMethod, sdkOmittedValue) ? this.waitMethod : waitMethod as SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod>,
+    beepOnExit: identical(beepOnExit, sdkOmittedValue) ? this.beepOnExit : beepOnExit as SdkOptional<bool>,
+    endConferenceOnExit: identical(endConferenceOnExit, sdkOmittedValue) ? this.endConferenceOnExit : endConferenceOnExit as SdkOptional<bool>,
+    coaching: identical(coaching, sdkOmittedValue) ? this.coaching : coaching as SdkOptional<bool>,
+    callSidToCoach: identical(callSidToCoach, sdkOmittedValue) ? this.callSidToCoach : callSidToCoach as SdkOptional<String>,
+  );
 
-  factory UpdateConferencesParticipantsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      UpdateConferencesParticipantsRequestBody(
-        muted: json['Muted'] != null
-            ? SdkPresent((json['Muted'] as bool?)!)
-            : const SdkOmitted(),
-        hold: json['Hold'] != null
-            ? SdkPresent((json['Hold'] as bool?)!)
-            : const SdkOmitted(),
-        holdUrl: json['HoldUrl'] != null
-            ? SdkPresent((json['HoldUrl'] as String?)!)
-            : const SdkOmitted(),
-        holdMethod: json['HoldMethod'] != null
-            ? SdkPresent((json['HoldMethod'] != null
-                ? UpdateConferencesParticipantsRequestBodyHoldMethod.fromJson(
-                    json['HoldMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        announceUrl: json['AnnounceUrl'] != null
-            ? SdkPresent((json['AnnounceUrl'] as String?)!)
-            : const SdkOmitted(),
-        announceMethod: json['AnnounceMethod'] != null
-            ? SdkPresent((json['AnnounceMethod'] != null
-                ? UpdateConferencesParticipantsRequestBodyAnnounceMethod
-                    .fromJson(json['AnnounceMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        waitUrl: json['WaitUrl'] != null
-            ? SdkPresent((json['WaitUrl'] as String?)!)
-            : const SdkOmitted(),
-        waitMethod: json['WaitMethod'] != null
-            ? SdkPresent((json['WaitMethod'] != null
-                ? UpdateConferencesParticipantsRequestBodyWaitMethod.fromJson(
-                    json['WaitMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        beepOnExit: json['BeepOnExit'] != null
-            ? SdkPresent((json['BeepOnExit'] as bool?)!)
-            : const SdkOmitted(),
-        endConferenceOnExit: json['EndConferenceOnExit'] != null
-            ? SdkPresent((json['EndConferenceOnExit'] as bool?)!)
-            : const SdkOmitted(),
-        coaching: json['Coaching'] != null
-            ? SdkPresent((json['Coaching'] as bool?)!)
-            : const SdkOmitted(),
-        callSidToCoach: json['CallSidToCoach'] != null
-            ? SdkPresent((json['CallSidToCoach'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory UpdateConferencesParticipantsRequestBody.fromJson(Map<String, dynamic> json) => UpdateConferencesParticipantsRequestBody(
+    muted: json['Muted'] != null ? SdkPresent((json['Muted'] as bool?)!) : const SdkOmitted(),
+    hold: json['Hold'] != null ? SdkPresent((json['Hold'] as bool?)!) : const SdkOmitted(),
+    holdUrl: json['HoldUrl'] != null ? SdkPresent((json['HoldUrl'] as String?)!) : const SdkOmitted(),
+    holdMethod: json['HoldMethod'] != null ? SdkPresent((json['HoldMethod'] != null ? UpdateConferencesParticipantsRequestBodyHoldMethod.fromJson(json['HoldMethod'] as String) : null)!) : const SdkOmitted(),
+    announceUrl: json['AnnounceUrl'] != null ? SdkPresent((json['AnnounceUrl'] as String?)!) : const SdkOmitted(),
+    announceMethod: json['AnnounceMethod'] != null ? SdkPresent((json['AnnounceMethod'] != null ? UpdateConferencesParticipantsRequestBodyAnnounceMethod.fromJson(json['AnnounceMethod'] as String) : null)!) : const SdkOmitted(),
+    waitUrl: json['WaitUrl'] != null ? SdkPresent((json['WaitUrl'] as String?)!) : const SdkOmitted(),
+    waitMethod: json['WaitMethod'] != null ? SdkPresent((json['WaitMethod'] != null ? UpdateConferencesParticipantsRequestBodyWaitMethod.fromJson(json['WaitMethod'] as String) : null)!) : const SdkOmitted(),
+    beepOnExit: json['BeepOnExit'] != null ? SdkPresent((json['BeepOnExit'] as bool?)!) : const SdkOmitted(),
+    endConferenceOnExit: json['EndConferenceOnExit'] != null ? SdkPresent((json['EndConferenceOnExit'] as bool?)!) : const SdkOmitted(),
+    coaching: json['Coaching'] != null ? SdkPresent((json['Coaching'] as bool?)!) : const SdkOmitted(),
+    callSidToCoach: json['CallSidToCoach'] != null ? SdkPresent((json['CallSidToCoach'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (muted) {
-          SdkPresent<bool>(value: final value) => {
-              'Muted': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (hold) {
-          SdkPresent<bool>(value: final value) => {
-              'Hold': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (holdUrl) {
-          SdkPresent<String>(value: final value) => {
-              'HoldUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (holdMethod) {
-          SdkPresent<UpdateConferencesParticipantsRequestBodyHoldMethod>(
-            value: final value
-          ) =>
-            {
-              'HoldMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (announceUrl) {
-          SdkPresent<String>(value: final value) => {
-              'AnnounceUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (announceMethod) {
-          SdkPresent<UpdateConferencesParticipantsRequestBodyAnnounceMethod>(
-            value: final value
-          ) =>
-            {
-              'AnnounceMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (waitUrl) {
-          SdkPresent<String>(value: final value) => {
-              'WaitUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (waitMethod) {
-          SdkPresent<UpdateConferencesParticipantsRequestBodyWaitMethod>(
-            value: final value
-          ) =>
-            {
-              'WaitMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (beepOnExit) {
-          SdkPresent<bool>(value: final value) => {
-              'BeepOnExit': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (endConferenceOnExit) {
-          SdkPresent<bool>(value: final value) => {
-              'EndConferenceOnExit': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (coaching) {
-          SdkPresent<bool>(value: final value) => {
-              'Coaching': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callSidToCoach) {
-          SdkPresent<String>(value: final value) => {
-              'CallSidToCoach': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (muted) {
+      SdkPresent<bool>(value: final value) => {'Muted': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (hold) {
+      SdkPresent<bool>(value: final value) => {'Hold': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (holdUrl) {
+      SdkPresent<String>(value: final value) => {'HoldUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (holdMethod) {
+      SdkPresent<UpdateConferencesParticipantsRequestBodyHoldMethod>(value: final value) => {'HoldMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (announceUrl) {
+      SdkPresent<String>(value: final value) => {'AnnounceUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (announceMethod) {
+      SdkPresent<UpdateConferencesParticipantsRequestBodyAnnounceMethod>(value: final value) => {'AnnounceMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (waitUrl) {
+      SdkPresent<String>(value: final value) => {'WaitUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (waitMethod) {
+      SdkPresent<UpdateConferencesParticipantsRequestBodyWaitMethod>(value: final value) => {'WaitMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (beepOnExit) {
+      SdkPresent<bool>(value: final value) => {'BeepOnExit': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (endConferenceOnExit) {
+      SdkPresent<bool>(value: final value) => {'EndConferenceOnExit': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (coaching) {
+      SdkPresent<bool>(value: final value) => {'Coaching': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callSidToCoach) {
+      SdkPresent<String>(value: final value) => {'CallSidToCoach': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

@@ -8,109 +8,57 @@ part of 'api20100401_new_key.dart';
 class ApiV2010AccountNewKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique string that that we created to identify the NewKey resource. You will use this as the basic-auth `user` when authenticating to the API.
   final SdkOptional<String?> sid;
-
   /// The string that you assigned to describe the resource.
   final SdkOptional<String?> friendlyName;
-
   /// The date and time in GMT that the API Key was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCreated;
-
   /// The date and time in GMT that the new API Key was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
-
   /// The secret your application uses to sign Access Tokens and to authenticate to the REST API (you will use this as the basic-auth `password`). **Note that for security reasons, this field is ONLY returned when the API Key is first created.**
   final SdkOptional<String?> secret;
 
-  const ApiV2010AccountNewKey(
-      {this.sid = const SdkOmitted(),
-      this.friendlyName = const SdkOmitted(),
-      this.dateCreated = const SdkOmitted(),
-      this.dateUpdated = const SdkOmitted(),
-      this.secret = const SdkOmitted()});
+  const ApiV2010AccountNewKey({this.sid = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.dateUpdated = const SdkOmitted(), this.secret = const SdkOmitted()});
 
-  ApiV2010AccountNewKey Function(
-      {SdkOptional<String?> sid,
-      SdkOptional<String?> friendlyName,
-      SdkOptional<String?> dateCreated,
-      SdkOptional<String?> dateUpdated,
-      SdkOptional<String?> secret}) get copyWith => _copyWith;
+  ApiV2010AccountNewKey Function({SdkOptional<String?> sid, SdkOptional<String?> friendlyName, SdkOptional<String?> dateCreated, SdkOptional<String?> dateUpdated, SdkOptional<String?> secret}) get copyWith => _copyWith;
 
-  ApiV2010AccountNewKey _copyWith(
-          {Object? sid = sdkOmittedValue,
-          Object? friendlyName = sdkOmittedValue,
-          Object? dateCreated = sdkOmittedValue,
-          Object? dateUpdated = sdkOmittedValue,
-          Object? secret = sdkOmittedValue}) =>
-      ApiV2010AccountNewKey(
-        sid: identical(sid, sdkOmittedValue)
-            ? this.sid
-            : sid as SdkOptional<String?>,
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as SdkOptional<String?>,
-        dateCreated: identical(dateCreated, sdkOmittedValue)
-            ? this.dateCreated
-            : dateCreated as SdkOptional<String?>,
-        dateUpdated: identical(dateUpdated, sdkOmittedValue)
-            ? this.dateUpdated
-            : dateUpdated as SdkOptional<String?>,
-        secret: identical(secret, sdkOmittedValue)
-            ? this.secret
-            : secret as SdkOptional<String?>,
-      );
+  ApiV2010AccountNewKey _copyWith({Object? sid = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue, Object? secret = sdkOmittedValue}) => ApiV2010AccountNewKey(
+    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String?>,
+    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
+    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
+    secret: identical(secret, sdkOmittedValue) ? this.secret : secret as SdkOptional<String?>,
+  );
 
-  factory ApiV2010AccountNewKey.fromJson(Map<String, dynamic> json) =>
-      ApiV2010AccountNewKey(
-        sid: json.containsKey('sid')
-            ? SdkPresent(json['sid'] as String?)
-            : const SdkOmitted(),
-        friendlyName: json.containsKey('friendly_name')
-            ? SdkPresent(json['friendly_name'] as String?)
-            : const SdkOmitted(),
-        dateCreated: json.containsKey('date_created')
-            ? SdkPresent(json['date_created'] as String?)
-            : const SdkOmitted(),
-        dateUpdated: json.containsKey('date_updated')
-            ? SdkPresent(json['date_updated'] as String?)
-            : const SdkOmitted(),
-        secret: json.containsKey('secret')
-            ? SdkPresent(json['secret'] as String?)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountNewKey.fromJson(Map<String, dynamic> json) => ApiV2010AccountNewKey(
+    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
+    friendlyName: json.containsKey('friendly_name') ? SdkPresent(json['friendly_name'] as String?) : const SdkOmitted(),
+    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
+    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
+    secret: json.containsKey('secret') ? SdkPresent(json['secret'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (sid) {
-          SdkPresent<String?>(value: final value) => {
-              'sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (friendlyName) {
-          SdkPresent<String?>(value: final value) => {
-              'friendly_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateCreated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_created': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateUpdated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_updated': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secret) {
-          SdkPresent<String?>(value: final value) => {
-              'secret': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (sid) {
+      SdkPresent<String?>(value: final value) => {'sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (friendlyName) {
+      SdkPresent<String?>(value: final value) => {'friendly_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateCreated) {
+      SdkPresent<String?>(value: final value) => {'date_created': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateUpdated) {
+      SdkPresent<String?>(value: final value) => {'date_updated': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secret) {
+      SdkPresent<String?>(value: final value) => {'secret': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

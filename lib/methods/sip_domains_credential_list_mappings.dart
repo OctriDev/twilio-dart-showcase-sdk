@@ -27,23 +27,20 @@ Future<ApiV2010AccountSipSipDomainSipCredentialListMapping>
   validateLength('DomainSid', domainSid, min: 34, max: 34);
   sdkValidatePattern('DomainSid', domainSid, '^SD[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipDomainSipCredentialListMapping>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountSipSipDomainSipCredentialListMapping>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/CredentialListMappings.json',
           config: config,
           body: {'CredentialListSid': credentialListSid},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipDomainsCredentialListMappings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipDomainSipCredentialListMapping.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipCredentialListMapping.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists credential list mappings for a specified SIP domain and account. Use `PageSize` to control the number of resources on a page and `PageToken` to request a page identified by a token from the API. The response includes page metadata and a `credential_list_mappings` array.
 ///
@@ -81,21 +78,17 @@ Future<ListSipDomainsCredentialListMappingsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/CredentialListMappings.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipDomainsCredentialListMappings',
-          fromJsonRaw: (value) =>
-              ListSipDomainsCredentialListMappingsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipDomainsCredentialListMappingsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a credential list mapping for a SIP domain in an account. Use the account, domain, and mapping identifiers to select the resource; each identifier has a required 34-character format.
 ///
@@ -120,18 +113,16 @@ Future<ApiV2010AccountSipSipDomainSipCredentialListMapping>
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^CL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<ApiV2010AccountSipSipDomainSipCredentialListMapping>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountSipSipDomainSipCredentialListMapping>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/CredentialListMappings/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipDomainsCredentialListMappings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipDomainSipCredentialListMapping.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipCredentialListMapping.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete a CredentialListMapping resource from an account.
 ///

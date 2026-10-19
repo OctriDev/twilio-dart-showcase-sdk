@@ -7,10 +7,8 @@ import 'types.dart';
 import 'methods/accounts.dart' as accounts_methods;
 import 'methods/addresses.dart' as addresses_methods;
 import 'methods/applications.dart' as applications_methods;
-import 'methods/authorized_connect_apps.dart'
-    as authorized_connect_apps_methods;
-import 'methods/available_phone_numbers.dart'
-    as available_phone_numbers_methods;
+import 'methods/authorized_connect_apps.dart' as authorized_connect_apps_methods;
+import 'methods/available_phone_numbers.dart' as available_phone_numbers_methods;
 import 'methods/balance.dart' as balance_methods;
 import 'methods/calls.dart' as calls_methods;
 import 'methods/calls_events.dart' as events_methods;
@@ -19,13 +17,10 @@ import 'methods/calls_recordings.dart' as recordings_methods;
 import 'methods/conferences.dart' as conferences_methods;
 import 'methods/conferences_recordings.dart' as recordings_methods_import;
 import 'methods/connect_apps.dart' as connect_apps_methods;
-import 'methods/addresses_dependent_phone_numbers.dart'
-    as dependent_phone_numbers_methods;
+import 'methods/addresses_dependent_phone_numbers.dart' as dependent_phone_numbers_methods;
 import 'methods/incoming_phone_numbers.dart' as incoming_phone_numbers_methods;
-import 'methods/incoming_phone_numbers_assigned_add_ons.dart'
-    as assigned_add_ons_methods;
-import 'methods/incoming_phone_numbers_assigned_add_ons_extensions.dart'
-    as extensions_methods;
+import 'methods/incoming_phone_numbers_assigned_add_ons.dart' as assigned_add_ons_methods;
+import 'methods/incoming_phone_numbers_assigned_add_ons_extensions.dart' as extensions_methods;
 import 'methods/keys.dart' as keys_methods;
 import 'methods/messages_media.dart' as media_methods;
 import 'methods/queues_members.dart' as members_methods;
@@ -42,47 +37,35 @@ import 'methods/calls_transcriptions.dart' as transcriptions_methods;
 import 'methods/recordings.dart' as recordings_methods_2;
 import 'methods/recordings_add_on_results.dart' as add_on_results_methods;
 import 'methods/recordings_add_on_results_payloads.dart' as payloads_methods;
-import 'methods/recordings_transcriptions.dart'
-    as transcriptions_methods_import;
+import 'methods/recordings_transcriptions.dart' as transcriptions_methods_import;
 import 'methods/short_codes.dart' as short_codes_methods;
-import 'methods/sip_domains_auth_calls_credential_list_mappings.dart'
-    as auth_calls_credential_list_mappings_methods;
-import 'methods/sip_domains_auth_calls_ip_access_control_list_mappings.dart'
-    as auth_calls_ip_access_control_list_mappings_methods;
-import 'methods/sip_domains_auth_registrations_credential_list_mappings.dart'
-    as auth_registrations_credential_list_mappings_methods;
+import 'methods/sip_domains_auth_calls_credential_list_mappings.dart' as auth_calls_credential_list_mappings_methods;
+import 'methods/sip_domains_auth_calls_ip_access_control_list_mappings.dart' as auth_calls_ip_access_control_list_mappings_methods;
+import 'methods/sip_domains_auth_registrations_credential_list_mappings.dart' as auth_registrations_credential_list_mappings_methods;
 import 'methods/sip_credential_lists_credentials.dart' as credentials_methods;
 import 'methods/sip_credential_lists.dart' as credential_lists_methods;
-import 'methods/sip_domains_credential_list_mappings.dart'
-    as credential_list_mappings_methods;
+import 'methods/sip_domains_credential_list_mappings.dart' as credential_list_mappings_methods;
 import 'methods/sip_domains.dart' as domains_methods;
-import 'methods/sip_ip_access_control_lists.dart'
-    as ip_access_control_lists_methods;
-import 'methods/sip_domains_ip_access_control_list_mappings.dart'
-    as ip_access_control_list_mappings_methods;
-import 'methods/sip_ip_access_control_lists_ip_addresses.dart'
-    as ip_addresses_methods;
+import 'methods/sip_ip_access_control_lists.dart' as ip_access_control_lists_methods;
+import 'methods/sip_domains_ip_access_control_list_mappings.dart' as ip_access_control_list_mappings_methods;
+import 'methods/sip_ip_access_control_lists_ip_addresses.dart' as ip_addresses_methods;
 import 'methods/calls_siprec.dart' as siprec_methods;
 import 'methods/calls_streams.dart' as streams_methods;
 import 'methods/tokens.dart' as tokens_methods;
 import 'methods/transcriptions.dart' as transcriptions_methods_2;
 import 'methods/usage_records.dart' as usage_records_methods;
 import 'methods/usage_triggers.dart' as usage_triggers_methods;
-import 'methods/calls_user_defined_messages.dart'
-    as user_defined_messages_methods;
-import 'methods/calls_user_defined_message_subscriptions.dart'
-    as user_defined_message_subscriptions_methods;
+import 'methods/calls_user_defined_messages.dart' as user_defined_messages_methods;
+import 'methods/calls_user_defined_message_subscriptions.dart' as user_defined_message_subscriptions_methods;
 
 class AccountsNamespace {
   final ClientConfig _config;
   AccountsNamespace(ClientConfig config) : _config = config;
-
   /// Create a new Twilio Subaccount from the account making the request
   Future<ApiV2010Account> create(
       {SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return accounts_methods.createAccounts(_config,
-        friendlyName: friendlyName, requestOptions: requestOptions);
+    return accounts_methods.createAccounts(_config, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Lists account resources associated with the account used to make the request. Filter by exact `FriendlyName` or by `Status`, and use `PageSize`, `Page`, and `PageToken` to control pagination.
@@ -95,13 +78,7 @@ class AccountsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return accounts_methods.listAccounts(_config,
-        friendlyName: friendlyName,
-        status: status,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return accounts_methods.listAccounts(_config, friendlyName: friendlyName, status: status, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific account by its Account SID. Supply `Sid` as a 34-character account identifier beginning with `AC` followed by 32 hexadecimal characters.
@@ -109,8 +86,7 @@ class AccountsNamespace {
   /// Fetch the account specified by the provided Account Sid
   Future<ApiV2010Account> fetch(
       {required String sid, RequestOptions? requestOptions}) async {
-    return accounts_methods.fetchAccounts(_config,
-        sid: sid, requestOptions: requestOptions);
+    return accounts_methods.fetchAccounts(_config, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates properties of a specific account. Supply `FriendlyName`, `Status`, or both to change the account; a 409 response indicates that another request modified the account concurrently.
@@ -121,36 +97,26 @@ class AccountsNamespace {
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<AccountEnumStatus> status = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return accounts_methods.updateAccounts(_config,
-        sid: sid,
-        friendlyName: friendlyName,
-        status: status,
-        requestOptions: requestOptions);
+    return accounts_methods.updateAccounts(_config, sid: sid, friendlyName: friendlyName, status: status, requestOptions: requestOptions);
   }
+
 }
 
 class AddressesDependentPhoneNumbersNamespace {
   final ClientConfig _config;
-  AddressesDependentPhoneNumbersNamespace(ClientConfig config)
-      : _config = config;
-
+  AddressesDependentPhoneNumbersNamespace(ClientConfig config) : _config = config;
   /// Lists phone numbers that depend on a specified address in an account. Use the account and address SIDs to scope the results, and use the page parameters to navigate the list.
-  Future<ListAddressesDependentPhoneNumbersResponse> list(
-      {required String accountSid,
-      required String addressSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return dependent_phone_numbers_methods.listAddressesDependentPhoneNumbers(
-        _config,
-        accountSid: accountSid,
-        addressSid: addressSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListAddressesDependentPhoneNumbersResponse>
+      list(
+          {required String accountSid,
+          required String addressSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return dependent_phone_numbers_methods.listAddressesDependentPhoneNumbers(_config, accountSid: accountSid, addressSid: addressSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class AddressesNamespace {
@@ -159,7 +125,6 @@ class AddressesNamespace {
   AddressesNamespace(ClientConfig config) : _config = config {
     dependentPhoneNumbers = AddressesDependentPhoneNumbersNamespace(config);
   }
-
   /// Creates an address resource for a specific account. Provide `CustomerName`, `Street`, `City`, `Region`, `PostalCode`, and `IsoCountry`; `AutoCorrectAddress` defaults to true when omitted. A 201 response returns the created address.
   Future<ApiV2010AccountAddress> create(
       {required String accountSid,
@@ -174,19 +139,7 @@ class AddressesNamespace {
       SdkOptional<bool> autoCorrectAddress = const SdkOmitted(),
       SdkOptional<String> streetSecondary = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return addresses_methods.createAddresses(_config,
-        accountSid: accountSid,
-        customerName: customerName,
-        street: street,
-        city: city,
-        region: region,
-        postalCode: postalCode,
-        isoCountry: isoCountry,
-        friendlyName: friendlyName,
-        emergencyEnabled: emergencyEnabled,
-        autoCorrectAddress: autoCorrectAddress,
-        streetSecondary: streetSecondary,
-        requestOptions: requestOptions);
+    return addresses_methods.createAddresses(_config, accountSid: accountSid, customerName: customerName, street: street, city: city, region: region, postalCode: postalCode, isoCountry: isoCountry, friendlyName: friendlyName, emergencyEnabled: emergencyEnabled, autoCorrectAddress: autoCorrectAddress, streetSecondary: streetSecondary, requestOptions: requestOptions);
   }
 
   /// Lists address resources associated with a specific account. Filter the results by customer name, friendly name, emergency-calling status, or ISO country code, and use the pagination parameters to navigate the results.
@@ -200,16 +153,7 @@ class AddressesNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return addresses_methods.listAddresses(_config,
-        accountSid: accountSid,
-        customerName: customerName,
-        friendlyName: friendlyName,
-        emergencyEnabled: emergencyEnabled,
-        isoCountry: isoCountry,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return addresses_methods.listAddresses(_config, accountSid: accountSid, customerName: customerName, friendlyName: friendlyName, emergencyEnabled: emergencyEnabled, isoCountry: isoCountry, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Deletes a specific address resource associated with an account. Supply the account SID and address SID to identify the address to remove.
@@ -217,8 +161,7 @@ class AddressesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return addresses_methods.deleteAddresses(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return addresses_methods.deleteAddresses(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific address resource associated with an account. Supply the account SID and address SID to identify the resource.
@@ -226,8 +169,7 @@ class AddressesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return addresses_methods.fetchAddresses(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return addresses_methods.fetchAddresses(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates properties of a specific address resource. Submit only the address fields you want to change; `AutoCorrectAddress` defaults to true when omitted.
@@ -244,26 +186,14 @@ class AddressesNamespace {
       SdkOptional<bool> autoCorrectAddress = const SdkOmitted(),
       SdkOptional<String> streetSecondary = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return addresses_methods.updateAddresses(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        customerName: customerName,
-        street: street,
-        city: city,
-        region: region,
-        postalCode: postalCode,
-        emergencyEnabled: emergencyEnabled,
-        autoCorrectAddress: autoCorrectAddress,
-        streetSecondary: streetSecondary,
-        requestOptions: requestOptions);
+    return addresses_methods.updateAddresses(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, customerName: customerName, street: street, city: city, region: region, postalCode: postalCode, emergencyEnabled: emergencyEnabled, autoCorrectAddress: autoCorrectAddress, streetSecondary: streetSecondary, requestOptions: requestOptions);
   }
+
 }
 
 class ApplicationsNamespace {
   final ClientConfig _config;
   ApplicationsNamespace(ClientConfig config) : _config = config;
-
   /// Creates a new application within an account. Configure voice and messaging URLs and callback methods with fields such as `VoiceUrl`, `SmsUrl`, and `StatusCallback`; URL fields must use URI format, and callback methods accept GET or POST. The 201 response returns the created application with its generated SID.
   ///
   /// Create a new application within your account
@@ -271,45 +201,22 @@ class ApplicationsNamespace {
       {required String accountSid,
       SdkOptional<String> apiVersion = const SdkOmitted(),
       SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod =
-          const SdkOmitted(),
+      SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
       SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
       SdkOptional<String> smsUrl = const SdkOmitted(),
-      SdkOptional<CreateApplicationsRequestBodySmsMethod>
-          smsMethod = const SdkOmitted(),
+      SdkOptional<CreateApplicationsRequestBodySmsMethod> smsMethod = const SdkOmitted(),
       SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
       SdkOptional<String> smsStatusCallback = const SdkOmitted(),
       SdkOptional<String> messageStatusCallback = const SdkOmitted(),
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<bool> publicApplicationConnectEnabled = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return applications_methods.createApplications(_config,
-        accountSid: accountSid,
-        apiVersion: apiVersion,
-        voiceUrl: voiceUrl,
-        voiceMethod: voiceMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceFallbackMethod: voiceFallbackMethod,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        smsUrl: smsUrl,
-        smsMethod: smsMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsFallbackMethod: smsFallbackMethod,
-        smsStatusCallback: smsStatusCallback,
-        messageStatusCallback: messageStatusCallback,
-        friendlyName: friendlyName,
-        publicApplicationConnectEnabled: publicApplicationConnectEnabled,
-        requestOptions: requestOptions);
+    return applications_methods.createApplications(_config, accountSid: accountSid, apiVersion: apiVersion, voiceUrl: voiceUrl, voiceMethod: voiceMethod, voiceFallbackUrl: voiceFallbackUrl, voiceFallbackMethod: voiceFallbackMethod, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceCallerIdLookup: voiceCallerIdLookup, smsUrl: smsUrl, smsMethod: smsMethod, smsFallbackUrl: smsFallbackUrl, smsFallbackMethod: smsFallbackMethod, smsStatusCallback: smsStatusCallback, messageStatusCallback: messageStatusCallback, friendlyName: friendlyName, publicApplicationConnectEnabled: publicApplicationConnectEnabled, requestOptions: requestOptions);
   }
 
   /// Lists application resources created by a specific account. Filter the results by `FriendlyName`, and use the pagination parameters to navigate the list.
@@ -322,13 +229,7 @@ class ApplicationsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return applications_methods.listApplications(_config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return applications_methods.listApplications(_config, accountSid: accountSid, friendlyName: friendlyName, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Delete the application by the specified application sid
@@ -336,8 +237,7 @@ class ApplicationsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return applications_methods.deleteApplications(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return applications_methods.deleteApplications(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Retrieves an application from an account by its SID. Supply the account SID and application SID to identify the resource and retrieve its configuration, including voice and messaging settings.
@@ -347,8 +247,7 @@ class ApplicationsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return applications_methods.fetchApplications(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return applications_methods.fetchApplications(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the properties of an existing application. Supply the fields you want to change, such as `FriendlyName`, `VoiceUrl`, or `SmsUrl`; URL fields must use URI format, and HTTP method fields accept GET or POST.
@@ -360,52 +259,28 @@ class ApplicationsNamespace {
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<String> apiVersion = const SdkOmitted(),
       SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod =
-          const SdkOmitted(),
+      SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
       SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
       SdkOptional<String> smsUrl = const SdkOmitted(),
-      SdkOptional<UpdateApplicationsRequestBodySmsMethod>
-          smsMethod = const SdkOmitted(),
+      SdkOptional<UpdateApplicationsRequestBodySmsMethod> smsMethod = const SdkOmitted(),
       SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
       SdkOptional<String> smsStatusCallback = const SdkOmitted(),
       SdkOptional<String> messageStatusCallback = const SdkOmitted(),
       SdkOptional<bool> publicApplicationConnectEnabled = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return applications_methods.updateApplications(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        apiVersion: apiVersion,
-        voiceUrl: voiceUrl,
-        voiceMethod: voiceMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceFallbackMethod: voiceFallbackMethod,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        smsUrl: smsUrl,
-        smsMethod: smsMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsFallbackMethod: smsFallbackMethod,
-        smsStatusCallback: smsStatusCallback,
-        messageStatusCallback: messageStatusCallback,
-        publicApplicationConnectEnabled: publicApplicationConnectEnabled,
-        requestOptions: requestOptions);
+    return applications_methods.updateApplications(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, apiVersion: apiVersion, voiceUrl: voiceUrl, voiceMethod: voiceMethod, voiceFallbackUrl: voiceFallbackUrl, voiceFallbackMethod: voiceFallbackMethod, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceCallerIdLookup: voiceCallerIdLookup, smsUrl: smsUrl, smsMethod: smsMethod, smsFallbackUrl: smsFallbackUrl, smsFallbackMethod: smsFallbackMethod, smsStatusCallback: smsStatusCallback, messageStatusCallback: messageStatusCallback, publicApplicationConnectEnabled: publicApplicationConnectEnabled, requestOptions: requestOptions);
   }
+
 }
 
 class AuthorizedConnectAppsNamespace {
   final ClientConfig _config;
   AuthorizedConnectAppsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves an authorized Connect App for an account. Use the account SID and Connect App SID to identify the authorization and review the app details and permissions granted to it.
   ///
   /// Fetch an instance of an authorized-connect-app
@@ -413,10 +288,7 @@ class AuthorizedConnectAppsNamespace {
       {required String accountSid,
       required String connectAppSid,
       RequestOptions? requestOptions}) async {
-    return authorized_connect_apps_methods.fetchAuthorizedConnectApps(_config,
-        accountSid: accountSid,
-        connectAppSid: connectAppSid,
-        requestOptions: requestOptions);
+    return authorized_connect_apps_methods.fetchAuthorizedConnectApps(_config, accountSid: accountSid, connectAppSid: connectAppSid, requestOptions: requestOptions);
   }
 
   /// Lists the Connect Apps authorized for an account. Use the pagination parameters to browse the account's authorized apps and their granted permissions.
@@ -428,19 +300,14 @@ class AuthorizedConnectAppsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return authorized_connect_apps_methods.listAuthorizedConnectApps(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return authorized_connect_apps_methods.listAuthorizedConnectApps(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class AvailablePhoneNumbersNamespace {
   final ClientConfig _config;
   AvailablePhoneNumbersNamespace(ClientConfig config) : _config = config;
-
   /// Lists the countries for which phone numbers are available to an account. Use the returned country codes to retrieve country details or browse available numbers for a specific country.
   Future<ListAvailablePhoneNumbersResponse> list(
       {required String accountSid,
@@ -448,12 +315,7 @@ class AvailablePhoneNumbersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbers(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return available_phone_numbers_methods.listAvailablePhoneNumbers(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves available phone number information for a specific country. Supply the account SID and an ISO 3166-1 country code to get the country name, beta status, and related available-number resources.
@@ -461,10 +323,7 @@ class AvailablePhoneNumbersNamespace {
       {required String accountSid,
       required String countryCode,
       RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.fetchAvailablePhoneNumbers(_config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        requestOptions: requestOptions);
+    return available_phone_numbers_methods.fetchAvailablePhoneNumbers(_config, accountSid: accountSid, countryCode: countryCode, requestOptions: requestOptions);
   }
 
   /// Lists available local phone numbers in a specified country. Filter results by capabilities, area code, location, or a matching number pattern, and use pagination parameters to browse the results.
@@ -493,32 +352,7 @@ class AvailablePhoneNumbersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbersLocal(
-        _config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        areaCode: areaCode,
-        contains: contains,
-        smsEnabled: smsEnabled,
-        mmsEnabled: mmsEnabled,
-        voiceEnabled: voiceEnabled,
-        excludeAllAddressRequired: excludeAllAddressRequired,
-        excludeLocalAddressRequired: excludeLocalAddressRequired,
-        excludeForeignAddressRequired: excludeForeignAddressRequired,
-        beta: beta,
-        nearNumber: nearNumber,
-        nearLatLong: nearLatLong,
-        distance: distance,
-        inPostalCode: inPostalCode,
-        inRegion: inRegion,
-        inRateCenter: inRateCenter,
-        inLata: inLata,
-        inLocality: inLocality,
-        faxEnabled: faxEnabled,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return available_phone_numbers_methods.listAvailablePhoneNumbersLocal(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists available machine-to-machine phone numbers in a specified country. Filter results by capabilities, area code, location, or a matching number pattern, and use pagination parameters to browse the results.
@@ -548,248 +382,127 @@ class AvailablePhoneNumbersNamespace {
           SdkOptional<int> page = const SdkOmitted(),
           SdkOptional<String> pageToken = const SdkOmitted(),
           RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods
-        .listAvailablePhoneNumbersMachineToMachine(_config,
-            accountSid: accountSid,
-            countryCode: countryCode,
-            areaCode: areaCode,
-            contains: contains,
-            smsEnabled: smsEnabled,
-            mmsEnabled: mmsEnabled,
-            voiceEnabled: voiceEnabled,
-            excludeAllAddressRequired: excludeAllAddressRequired,
-            excludeLocalAddressRequired: excludeLocalAddressRequired,
-            excludeForeignAddressRequired: excludeForeignAddressRequired,
-            beta: beta,
-            nearNumber: nearNumber,
-            nearLatLong: nearLatLong,
-            distance: distance,
-            inPostalCode: inPostalCode,
-            inRegion: inRegion,
-            inRateCenter: inRateCenter,
-            inLata: inLata,
-            inLocality: inLocality,
-            faxEnabled: faxEnabled,
-            pageSize: pageSize,
-            page: page,
-            pageToken: pageToken,
-            requestOptions: requestOptions);
+    return available_phone_numbers_methods.listAvailablePhoneNumbersMachineToMachine(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists available mobile phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
-  Future<ListAvailablePhoneNumbersMobileResponse> listMobile(
-      {required String accountSid,
-      required String countryCode,
-      SdkOptional<int> areaCode = const SdkOmitted(),
-      SdkOptional<String> contains = const SdkOmitted(),
-      SdkOptional<bool> smsEnabled = const SdkOmitted(),
-      SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-      SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-      SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> beta = const SdkOmitted(),
-      SdkOptional<String> nearNumber = const SdkOmitted(),
-      SdkOptional<String> nearLatLong = const SdkOmitted(),
-      SdkOptional<int> distance = const SdkOmitted(),
-      SdkOptional<String> inPostalCode = const SdkOmitted(),
-      SdkOptional<String> inRegion = const SdkOmitted(),
-      SdkOptional<String> inRateCenter = const SdkOmitted(),
-      SdkOptional<String> inLata = const SdkOmitted(),
-      SdkOptional<String> inLocality = const SdkOmitted(),
-      SdkOptional<bool> faxEnabled = const SdkOmitted(),
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbersMobile(
-        _config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        areaCode: areaCode,
-        contains: contains,
-        smsEnabled: smsEnabled,
-        mmsEnabled: mmsEnabled,
-        voiceEnabled: voiceEnabled,
-        excludeAllAddressRequired: excludeAllAddressRequired,
-        excludeLocalAddressRequired: excludeLocalAddressRequired,
-        excludeForeignAddressRequired: excludeForeignAddressRequired,
-        beta: beta,
-        nearNumber: nearNumber,
-        nearLatLong: nearLatLong,
-        distance: distance,
-        inPostalCode: inPostalCode,
-        inRegion: inRegion,
-        inRateCenter: inRateCenter,
-        inLata: inLata,
-        inLocality: inLocality,
-        faxEnabled: faxEnabled,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListAvailablePhoneNumbersMobileResponse>
+      listMobile(
+          {required String accountSid,
+          required String countryCode,
+          SdkOptional<int> areaCode = const SdkOmitted(),
+          SdkOptional<String> contains = const SdkOmitted(),
+          SdkOptional<bool> smsEnabled = const SdkOmitted(),
+          SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+          SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+          SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> beta = const SdkOmitted(),
+          SdkOptional<String> nearNumber = const SdkOmitted(),
+          SdkOptional<String> nearLatLong = const SdkOmitted(),
+          SdkOptional<int> distance = const SdkOmitted(),
+          SdkOptional<String> inPostalCode = const SdkOmitted(),
+          SdkOptional<String> inRegion = const SdkOmitted(),
+          SdkOptional<String> inRateCenter = const SdkOmitted(),
+          SdkOptional<String> inLata = const SdkOmitted(),
+          SdkOptional<String> inLocality = const SdkOmitted(),
+          SdkOptional<bool> faxEnabled = const SdkOmitted(),
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return available_phone_numbers_methods.listAvailablePhoneNumbersMobile(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists available national phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
-  Future<ListAvailablePhoneNumbersNationalResponse> listNational(
-      {required String accountSid,
-      required String countryCode,
-      SdkOptional<int> areaCode = const SdkOmitted(),
-      SdkOptional<String> contains = const SdkOmitted(),
-      SdkOptional<bool> smsEnabled = const SdkOmitted(),
-      SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-      SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-      SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> beta = const SdkOmitted(),
-      SdkOptional<String> nearNumber = const SdkOmitted(),
-      SdkOptional<String> nearLatLong = const SdkOmitted(),
-      SdkOptional<int> distance = const SdkOmitted(),
-      SdkOptional<String> inPostalCode = const SdkOmitted(),
-      SdkOptional<String> inRegion = const SdkOmitted(),
-      SdkOptional<String> inRateCenter = const SdkOmitted(),
-      SdkOptional<String> inLata = const SdkOmitted(),
-      SdkOptional<String> inLocality = const SdkOmitted(),
-      SdkOptional<bool> faxEnabled = const SdkOmitted(),
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbersNational(
-        _config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        areaCode: areaCode,
-        contains: contains,
-        smsEnabled: smsEnabled,
-        mmsEnabled: mmsEnabled,
-        voiceEnabled: voiceEnabled,
-        excludeAllAddressRequired: excludeAllAddressRequired,
-        excludeLocalAddressRequired: excludeLocalAddressRequired,
-        excludeForeignAddressRequired: excludeForeignAddressRequired,
-        beta: beta,
-        nearNumber: nearNumber,
-        nearLatLong: nearLatLong,
-        distance: distance,
-        inPostalCode: inPostalCode,
-        inRegion: inRegion,
-        inRateCenter: inRateCenter,
-        inLata: inLata,
-        inLocality: inLocality,
-        faxEnabled: faxEnabled,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListAvailablePhoneNumbersNationalResponse>
+      listNational(
+          {required String accountSid,
+          required String countryCode,
+          SdkOptional<int> areaCode = const SdkOmitted(),
+          SdkOptional<String> contains = const SdkOmitted(),
+          SdkOptional<bool> smsEnabled = const SdkOmitted(),
+          SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+          SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+          SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> beta = const SdkOmitted(),
+          SdkOptional<String> nearNumber = const SdkOmitted(),
+          SdkOptional<String> nearLatLong = const SdkOmitted(),
+          SdkOptional<int> distance = const SdkOmitted(),
+          SdkOptional<String> inPostalCode = const SdkOmitted(),
+          SdkOptional<String> inRegion = const SdkOmitted(),
+          SdkOptional<String> inRateCenter = const SdkOmitted(),
+          SdkOptional<String> inLata = const SdkOmitted(),
+          SdkOptional<String> inLocality = const SdkOmitted(),
+          SdkOptional<bool> faxEnabled = const SdkOmitted(),
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return available_phone_numbers_methods.listAvailablePhoneNumbersNational(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists available shared-cost phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
-  Future<ListAvailablePhoneNumbersSharedCostResponse> listSharedCost(
-      {required String accountSid,
-      required String countryCode,
-      SdkOptional<int> areaCode = const SdkOmitted(),
-      SdkOptional<String> contains = const SdkOmitted(),
-      SdkOptional<bool> smsEnabled = const SdkOmitted(),
-      SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-      SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-      SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> beta = const SdkOmitted(),
-      SdkOptional<String> nearNumber = const SdkOmitted(),
-      SdkOptional<String> nearLatLong = const SdkOmitted(),
-      SdkOptional<int> distance = const SdkOmitted(),
-      SdkOptional<String> inPostalCode = const SdkOmitted(),
-      SdkOptional<String> inRegion = const SdkOmitted(),
-      SdkOptional<String> inRateCenter = const SdkOmitted(),
-      SdkOptional<String> inLata = const SdkOmitted(),
-      SdkOptional<String> inLocality = const SdkOmitted(),
-      SdkOptional<bool> faxEnabled = const SdkOmitted(),
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbersSharedCost(
-        _config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        areaCode: areaCode,
-        contains: contains,
-        smsEnabled: smsEnabled,
-        mmsEnabled: mmsEnabled,
-        voiceEnabled: voiceEnabled,
-        excludeAllAddressRequired: excludeAllAddressRequired,
-        excludeLocalAddressRequired: excludeLocalAddressRequired,
-        excludeForeignAddressRequired: excludeForeignAddressRequired,
-        beta: beta,
-        nearNumber: nearNumber,
-        nearLatLong: nearLatLong,
-        distance: distance,
-        inPostalCode: inPostalCode,
-        inRegion: inRegion,
-        inRateCenter: inRateCenter,
-        inLata: inLata,
-        inLocality: inLocality,
-        faxEnabled: faxEnabled,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListAvailablePhoneNumbersSharedCostResponse>
+      listSharedCost(
+          {required String accountSid,
+          required String countryCode,
+          SdkOptional<int> areaCode = const SdkOmitted(),
+          SdkOptional<String> contains = const SdkOmitted(),
+          SdkOptional<bool> smsEnabled = const SdkOmitted(),
+          SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+          SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+          SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> beta = const SdkOmitted(),
+          SdkOptional<String> nearNumber = const SdkOmitted(),
+          SdkOptional<String> nearLatLong = const SdkOmitted(),
+          SdkOptional<int> distance = const SdkOmitted(),
+          SdkOptional<String> inPostalCode = const SdkOmitted(),
+          SdkOptional<String> inRegion = const SdkOmitted(),
+          SdkOptional<String> inRateCenter = const SdkOmitted(),
+          SdkOptional<String> inLata = const SdkOmitted(),
+          SdkOptional<String> inLocality = const SdkOmitted(),
+          SdkOptional<bool> faxEnabled = const SdkOmitted(),
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return available_phone_numbers_methods.listAvailablePhoneNumbersSharedCost(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists available toll-free phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
-  Future<ListAvailablePhoneNumbersTollFreeResponse> listTollFree(
-      {required String accountSid,
-      required String countryCode,
-      SdkOptional<int> areaCode = const SdkOmitted(),
-      SdkOptional<String> contains = const SdkOmitted(),
-      SdkOptional<bool> smsEnabled = const SdkOmitted(),
-      SdkOptional<bool> mmsEnabled = const SdkOmitted(),
-      SdkOptional<bool> voiceEnabled = const SdkOmitted(),
-      SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
-      SdkOptional<bool> beta = const SdkOmitted(),
-      SdkOptional<String> nearNumber = const SdkOmitted(),
-      SdkOptional<String> nearLatLong = const SdkOmitted(),
-      SdkOptional<int> distance = const SdkOmitted(),
-      SdkOptional<String> inPostalCode = const SdkOmitted(),
-      SdkOptional<String> inRegion = const SdkOmitted(),
-      SdkOptional<String> inRateCenter = const SdkOmitted(),
-      SdkOptional<String> inLata = const SdkOmitted(),
-      SdkOptional<String> inLocality = const SdkOmitted(),
-      SdkOptional<bool> faxEnabled = const SdkOmitted(),
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbersTollFree(
-        _config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        areaCode: areaCode,
-        contains: contains,
-        smsEnabled: smsEnabled,
-        mmsEnabled: mmsEnabled,
-        voiceEnabled: voiceEnabled,
-        excludeAllAddressRequired: excludeAllAddressRequired,
-        excludeLocalAddressRequired: excludeLocalAddressRequired,
-        excludeForeignAddressRequired: excludeForeignAddressRequired,
-        beta: beta,
-        nearNumber: nearNumber,
-        nearLatLong: nearLatLong,
-        distance: distance,
-        inPostalCode: inPostalCode,
-        inRegion: inRegion,
-        inRateCenter: inRateCenter,
-        inLata: inLata,
-        inLocality: inLocality,
-        faxEnabled: faxEnabled,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListAvailablePhoneNumbersTollFreeResponse>
+      listTollFree(
+          {required String accountSid,
+          required String countryCode,
+          SdkOptional<int> areaCode = const SdkOmitted(),
+          SdkOptional<String> contains = const SdkOmitted(),
+          SdkOptional<bool> smsEnabled = const SdkOmitted(),
+          SdkOptional<bool> mmsEnabled = const SdkOmitted(),
+          SdkOptional<bool> voiceEnabled = const SdkOmitted(),
+          SdkOptional<bool> excludeAllAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeLocalAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> excludeForeignAddressRequired = const SdkOmitted(),
+          SdkOptional<bool> beta = const SdkOmitted(),
+          SdkOptional<String> nearNumber = const SdkOmitted(),
+          SdkOptional<String> nearLatLong = const SdkOmitted(),
+          SdkOptional<int> distance = const SdkOmitted(),
+          SdkOptional<String> inPostalCode = const SdkOmitted(),
+          SdkOptional<String> inRegion = const SdkOmitted(),
+          SdkOptional<String> inRateCenter = const SdkOmitted(),
+          SdkOptional<String> inLata = const SdkOmitted(),
+          SdkOptional<String> inLocality = const SdkOmitted(),
+          SdkOptional<bool> faxEnabled = const SdkOmitted(),
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return available_phone_numbers_methods.listAvailablePhoneNumbersTollFree(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists available VoIP phone numbers in a specified country. Filter results by capabilities, number pattern, or geographic details to find numbers that meet your requirements.
@@ -818,53 +531,27 @@ class AvailablePhoneNumbersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return available_phone_numbers_methods.listAvailablePhoneNumbersVoip(
-        _config,
-        accountSid: accountSid,
-        countryCode: countryCode,
-        areaCode: areaCode,
-        contains: contains,
-        smsEnabled: smsEnabled,
-        mmsEnabled: mmsEnabled,
-        voiceEnabled: voiceEnabled,
-        excludeAllAddressRequired: excludeAllAddressRequired,
-        excludeLocalAddressRequired: excludeLocalAddressRequired,
-        excludeForeignAddressRequired: excludeForeignAddressRequired,
-        beta: beta,
-        nearNumber: nearNumber,
-        nearLatLong: nearLatLong,
-        distance: distance,
-        inPostalCode: inPostalCode,
-        inRegion: inRegion,
-        inRateCenter: inRateCenter,
-        inLata: inLata,
-        inLocality: inLocality,
-        faxEnabled: faxEnabled,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return available_phone_numbers_methods.listAvailablePhoneNumbersVoip(_config, accountSid: accountSid, countryCode: countryCode, areaCode: areaCode, contains: contains, smsEnabled: smsEnabled, mmsEnabled: mmsEnabled, voiceEnabled: voiceEnabled, excludeAllAddressRequired: excludeAllAddressRequired, excludeLocalAddressRequired: excludeLocalAddressRequired, excludeForeignAddressRequired: excludeForeignAddressRequired, beta: beta, nearNumber: nearNumber, nearLatLong: nearLatLong, distance: distance, inPostalCode: inPostalCode, inRegion: inRegion, inRateCenter: inRateCenter, inLata: inLata, inLocality: inLocality, faxEnabled: faxEnabled, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class BalanceNamespace {
   final ClientConfig _config;
   BalanceNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves the balance for a specified account. Use the account SID to identify the account whose balance and currency you need. Balance changes may not appear immediately, and child accounts do not include balance information.
   ///
   /// Fetch the balance for an Account based on Account Sid. Balance changes may not be reflected immediately. Child accounts do not contain balance information
   Future<ApiV2010AccountBalance> fetch(
       {required String accountSid, RequestOptions? requestOptions}) async {
-    return balance_methods.fetchBalance(_config,
-        accountSid: accountSid, requestOptions: requestOptions);
+    return balance_methods.fetchBalance(_config, accountSid: accountSid, requestOptions: requestOptions);
   }
+
 }
 
 class CallsEventsNamespace {
   final ClientConfig _config;
   CallsEventsNamespace(ClientConfig config) : _config = config;
-
   /// Lists the events recorded for a specific call. Use `AccountSid` and `CallSid` to identify the account and call, and use the page parameters to navigate the results.
   ///
   /// Retrieve a list of all events for a call.
@@ -875,31 +562,21 @@ class CallsEventsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return events_methods.listCallsEvents(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return events_methods.listCallsEvents(_config, accountSid: accountSid, callSid: callSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class CallsNotificationsNamespace {
   final ClientConfig _config;
   CallsNotificationsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a notification associated with a specific call. Use the account, call, and notification SIDs to identify the resource and inspect its error details, request, and response information.
   Future<ApiV2010AccountCallCallNotificationInstance> fetch(
       {required String accountSid,
       required String callSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return notifications_methods.fetchCallsNotifications(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return notifications_methods.fetchCallsNotifications(_config, accountSid: accountSid, callSid: callSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists notifications associated with a specific call. Filter by log level or message date, and use the page parameters to navigate the results.
@@ -914,51 +591,29 @@ class CallsNotificationsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return notifications_methods.listCallsNotifications(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        log: log,
-        messageDate: messageDate,
-        messageDate_: messageDate_,
-        messageDate_2: messageDate_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return notifications_methods.listCallsNotifications(_config, accountSid: accountSid, callSid: callSid, log: log, messageDate: messageDate, messageDate_: messageDate_, messageDate_2: messageDate_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class CallsRecordingsNamespace {
   final ClientConfig _config;
   CallsRecordingsNamespace(ClientConfig config) : _config = config;
-
   /// Creates a recording for a specific call. Configure callback events, recording channels, and audio tracks with the form fields; omitted options use their documented defaults. A successful response includes the recording resource and its current status.
   ///
   /// Create a recording for the call
   Future<ApiV2010AccountCallCallRecording> create(
       {required String accountSid,
       required String callSid,
-      SdkOptional<List<String>> recordingStatusCallbackEvent =
-          const SdkOmitted(),
+      SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
       SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
-      SdkOptional<CreateCallsRecordingsRequestBodyRecordingStatusCallbackMethod>
-          recordingStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsRecordingsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> trim = const SdkOmitted(),
       SdkOptional<String> recordingChannels = const SdkOmitted(),
       SdkOptional<String> recordingTrack = const SdkOmitted(),
       SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return recordings_methods.createCallsRecordings(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        recordingStatusCallbackEvent: recordingStatusCallbackEvent,
-        recordingStatusCallback: recordingStatusCallback,
-        recordingStatusCallbackMethod: recordingStatusCallbackMethod,
-        trim: trim,
-        recordingChannels: recordingChannels,
-        recordingTrack: recordingTrack,
-        recordingConfigurationId: recordingConfigurationId,
-        requestOptions: requestOptions);
+    return recordings_methods.createCallsRecordings(_config, accountSid: accountSid, callSid: callSid, recordingStatusCallbackEvent: recordingStatusCallbackEvent, recordingStatusCallback: recordingStatusCallback, recordingStatusCallbackMethod: recordingStatusCallbackMethod, trim: trim, recordingChannels: recordingChannels, recordingTrack: recordingTrack, recordingConfigurationId: recordingConfigurationId, requestOptions: requestOptions);
   }
 
   /// Lists recordings associated with a specific call. Use the date filters to narrow the results to recordings created on or around a given date, and use the page parameters to navigate the list.
@@ -974,16 +629,7 @@ class CallsRecordingsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return recordings_methods.listCallsRecordings(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        dateCreated: dateCreated,
-        dateCreated_: dateCreated_,
-        dateCreated_2: dateCreated_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return recordings_methods.listCallsRecordings(_config, accountSid: accountSid, callSid: callSid, dateCreated: dateCreated, dateCreated_: dateCreated_, dateCreated_2: dateCreated_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Updates the status or pause behavior of a recording associated with a call. Supply the required `Status` field to pause, stop, or resume the recording, and use `Twilio.CURRENT` as the recording identifier to target the current active recording.
@@ -996,13 +642,7 @@ class CallsRecordingsNamespace {
       required CallRecordingEnumStatus status,
       SdkOptional<String> pauseBehavior = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return recordings_methods.updateCallsRecordings(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        status: status,
-        pauseBehavior: pauseBehavior,
-        requestOptions: requestOptions);
+    return recordings_methods.updateCallsRecordings(_config, accountSid: accountSid, callSid: callSid, sid: sid, status: status, pauseBehavior: pauseBehavior, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific recording associated with a call. Use the account, call, and recording SIDs to identify the recording and inspect its status, timing, and recording details.
@@ -1013,11 +653,7 @@ class CallsRecordingsNamespace {
       required String callSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return recordings_methods.fetchCallsRecordings(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return recordings_methods.fetchCallsRecordings(_config, accountSid: accountSid, callSid: callSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Deletes a recording associated with a specific call from the account. Supply the account, call, and recording SIDs to identify the recording to remove.
@@ -1028,26 +664,21 @@ class CallsRecordingsNamespace {
       required String callSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return recordings_methods.deleteCallsRecordings(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return recordings_methods.deleteCallsRecordings(_config, accountSid: accountSid, callSid: callSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class CallsPaymentsNamespace {
   final ClientConfig _config;
   CallsPaymentsNamespace(ClientConfig config) : _config = config;
-
   /// create an instance of payments. This will start a new payments session
   Future<ApiV2010AccountCallPayments> create(
       {required String accountSid,
       required String callSid,
       required String idempotencyKey,
       required String statusCallback,
-      SdkOptional<PaymentsEnumBankAccountType> bankAccountType =
-          const SdkOmitted(),
+      SdkOptional<PaymentsEnumBankAccountType> bankAccountType = const SdkOmitted(),
       SdkOptional<double> chargeAmount = const SdkOmitted(),
       SdkOptional<String> currency = const SdkOmitted(),
       SdkOptional<String> description = const SdkOmitted(),
@@ -1062,31 +693,9 @@ class CallsPaymentsNamespace {
       SdkOptional<PaymentsEnumTokenType> tokenType = const SdkOmitted(),
       SdkOptional<String> validCardTypes = const SdkOmitted(),
       SdkOptional<String> requireMatchingInputs = const SdkOmitted(),
-      SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation =
-          const SdkOmitted(),
+      SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return payments_methods.createCallsPayments(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        idempotencyKey: idempotencyKey,
-        statusCallback: statusCallback,
-        bankAccountType: bankAccountType,
-        chargeAmount: chargeAmount,
-        currency: currency,
-        description: description,
-        input: input,
-        minPostalCodeLength: minPostalCodeLength,
-        parameter: parameter,
-        paymentConnector: paymentConnector,
-        paymentMethod: paymentMethod,
-        postalCode: postalCode,
-        securityCode: securityCode,
-        timeout: timeout,
-        tokenType: tokenType,
-        validCardTypes: validCardTypes,
-        requireMatchingInputs: requireMatchingInputs,
-        confirmation: confirmation,
-        requestOptions: requestOptions);
+    return payments_methods.createCallsPayments(_config, accountSid: accountSid, callSid: callSid, idempotencyKey: idempotencyKey, statusCallback: statusCallback, bankAccountType: bankAccountType, chargeAmount: chargeAmount, currency: currency, description: description, input: input, minPostalCodeLength: minPostalCodeLength, parameter: parameter, paymentConnector: paymentConnector, paymentMethod: paymentMethod, postalCode: postalCode, securityCode: securityCode, timeout: timeout, tokenType: tokenType, validCardTypes: validCardTypes, requireMatchingInputs: requireMatchingInputs, confirmation: confirmation, requestOptions: requestOptions);
   }
 
   /// update an instance of payments with different phases of payment flows.
@@ -1099,22 +708,14 @@ class CallsPaymentsNamespace {
       SdkOptional<PaymentsEnumCapture> capture = const SdkOmitted(),
       SdkOptional<PaymentsEnumStatus> status = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return payments_methods.updateCallsPayments(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        idempotencyKey: idempotencyKey,
-        statusCallback: statusCallback,
-        capture: capture,
-        status: status,
-        requestOptions: requestOptions);
+    return payments_methods.updateCallsPayments(_config, accountSid: accountSid, callSid: callSid, sid: sid, idempotencyKey: idempotencyKey, statusCallback: statusCallback, capture: capture, status: status, requestOptions: requestOptions);
   }
+
 }
 
 class CallsTranscriptionsNamespace {
   final ClientConfig _config;
   CallsTranscriptionsNamespace(ClientConfig config) : _config = config;
-
   /// Creates a realtime transcription for a call. Use `Track` to select which audio tracks to transcribe, and configure callback, language, or transcription options as needed. The response includes the transcription SID, associated call and account SIDs, and status.
   ///
   /// Create a Transcription
@@ -1124,8 +725,7 @@ class CallsTranscriptionsNamespace {
       SdkOptional<String> name = const SdkOmitted(),
       SdkOptional<RealtimeTranscriptionEnumTrack> track = const SdkOmitted(),
       SdkOptional<String> statusCallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateCallsTranscriptionsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsTranscriptionsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> inboundTrackLabel = const SdkOmitted(),
       SdkOptional<String> outboundTrackLabel = const SdkOmitted(),
       SdkOptional<bool> partialResults = const SdkOmitted(),
@@ -1141,28 +741,7 @@ class CallsTranscriptionsNamespace {
       SdkOptional<String> transcriptionConfigurationId = const SdkOmitted(),
       SdkOptional<bool> enableProviderData = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods.createCallsTranscriptions(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        name: name,
-        track: track,
-        statusCallbackUrl: statusCallbackUrl,
-        statusCallbackMethod: statusCallbackMethod,
-        inboundTrackLabel: inboundTrackLabel,
-        outboundTrackLabel: outboundTrackLabel,
-        partialResults: partialResults,
-        languageCode: languageCode,
-        transcriptionEngine: transcriptionEngine,
-        profanityFilter: profanityFilter,
-        speechModel: speechModel,
-        hints: hints,
-        enableAutomaticPunctuation: enableAutomaticPunctuation,
-        intelligenceService: intelligenceService,
-        conversationConfiguration: conversationConfiguration,
-        conversationId: conversationId,
-        transcriptionConfigurationId: transcriptionConfigurationId,
-        enableProviderData: enableProviderData,
-        requestOptions: requestOptions);
+    return transcriptions_methods.createCallsTranscriptions(_config, accountSid: accountSid, callSid: callSid, name: name, track: track, statusCallbackUrl: statusCallbackUrl, statusCallbackMethod: statusCallbackMethod, inboundTrackLabel: inboundTrackLabel, outboundTrackLabel: outboundTrackLabel, partialResults: partialResults, languageCode: languageCode, transcriptionEngine: transcriptionEngine, profanityFilter: profanityFilter, speechModel: speechModel, hints: hints, enableAutomaticPunctuation: enableAutomaticPunctuation, intelligenceService: intelligenceService, conversationConfiguration: conversationConfiguration, conversationId: conversationId, transcriptionConfigurationId: transcriptionConfigurationId, enableProviderData: enableProviderData, requestOptions: requestOptions);
   }
 
   /// Stops a realtime transcription associated with a call. Identify it by its transcription SID or by the `name` supplied when it was created, and set `Status` to `stopped`. The response contains the transcription object with its updated status.
@@ -1174,19 +753,14 @@ class CallsTranscriptionsNamespace {
       required String sid,
       required RealtimeTranscriptionEnumUpdateStatus status,
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods.updateCallsTranscriptions(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        status: status,
-        requestOptions: requestOptions);
+    return transcriptions_methods.updateCallsTranscriptions(_config, accountSid: accountSid, callSid: callSid, sid: sid, status: status, requestOptions: requestOptions);
   }
+
 }
 
 class CallsSiprecNamespace {
   final ClientConfig _config;
   CallsSiprecNamespace(ClientConfig config) : _config = config;
-
   /// Creates a SIPREC resource associated with a call. Use `Track` to choose which audio tracks to record, and optionally provide a connector name and status callback settings.
   ///
   /// Create a Siprec
@@ -1197,8 +771,7 @@ class CallsSiprecNamespace {
       SdkOptional<String> connectorName = const SdkOmitted(),
       SdkOptional<SiprecEnumTrack> track = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<CreateCallsSiprecRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsSiprecRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> parameter1Name = const SdkOmitted(),
       SdkOptional<String> parameter1Value = const SdkOmitted(),
       SdkOptional<String> parameter2Name = const SdkOmitted(),
@@ -1398,213 +971,7 @@ class CallsSiprecNamespace {
       SdkOptional<String> parameter99Name = const SdkOmitted(),
       SdkOptional<String> parameter99Value = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return siprec_methods.createCallsSiprec(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        name: name,
-        connectorName: connectorName,
-        track: track,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        parameter1Name: parameter1Name,
-        parameter1Value: parameter1Value,
-        parameter2Name: parameter2Name,
-        parameter2Value: parameter2Value,
-        parameter3Name: parameter3Name,
-        parameter3Value: parameter3Value,
-        parameter4Name: parameter4Name,
-        parameter4Value: parameter4Value,
-        parameter5Name: parameter5Name,
-        parameter5Value: parameter5Value,
-        parameter6Name: parameter6Name,
-        parameter6Value: parameter6Value,
-        parameter7Name: parameter7Name,
-        parameter7Value: parameter7Value,
-        parameter8Name: parameter8Name,
-        parameter8Value: parameter8Value,
-        parameter9Name: parameter9Name,
-        parameter9Value: parameter9Value,
-        parameter10Name: parameter10Name,
-        parameter10Value: parameter10Value,
-        parameter11Name: parameter11Name,
-        parameter11Value: parameter11Value,
-        parameter12Name: parameter12Name,
-        parameter12Value: parameter12Value,
-        parameter13Name: parameter13Name,
-        parameter13Value: parameter13Value,
-        parameter14Name: parameter14Name,
-        parameter14Value: parameter14Value,
-        parameter15Name: parameter15Name,
-        parameter15Value: parameter15Value,
-        parameter16Name: parameter16Name,
-        parameter16Value: parameter16Value,
-        parameter17Name: parameter17Name,
-        parameter17Value: parameter17Value,
-        parameter18Name: parameter18Name,
-        parameter18Value: parameter18Value,
-        parameter19Name: parameter19Name,
-        parameter19Value: parameter19Value,
-        parameter20Name: parameter20Name,
-        parameter20Value: parameter20Value,
-        parameter21Name: parameter21Name,
-        parameter21Value: parameter21Value,
-        parameter22Name: parameter22Name,
-        parameter22Value: parameter22Value,
-        parameter23Name: parameter23Name,
-        parameter23Value: parameter23Value,
-        parameter24Name: parameter24Name,
-        parameter24Value: parameter24Value,
-        parameter25Name: parameter25Name,
-        parameter25Value: parameter25Value,
-        parameter26Name: parameter26Name,
-        parameter26Value: parameter26Value,
-        parameter27Name: parameter27Name,
-        parameter27Value: parameter27Value,
-        parameter28Name: parameter28Name,
-        parameter28Value: parameter28Value,
-        parameter29Name: parameter29Name,
-        parameter29Value: parameter29Value,
-        parameter30Name: parameter30Name,
-        parameter30Value: parameter30Value,
-        parameter31Name: parameter31Name,
-        parameter31Value: parameter31Value,
-        parameter32Name: parameter32Name,
-        parameter32Value: parameter32Value,
-        parameter33Name: parameter33Name,
-        parameter33Value: parameter33Value,
-        parameter34Name: parameter34Name,
-        parameter34Value: parameter34Value,
-        parameter35Name: parameter35Name,
-        parameter35Value: parameter35Value,
-        parameter36Name: parameter36Name,
-        parameter36Value: parameter36Value,
-        parameter37Name: parameter37Name,
-        parameter37Value: parameter37Value,
-        parameter38Name: parameter38Name,
-        parameter38Value: parameter38Value,
-        parameter39Name: parameter39Name,
-        parameter39Value: parameter39Value,
-        parameter40Name: parameter40Name,
-        parameter40Value: parameter40Value,
-        parameter41Name: parameter41Name,
-        parameter41Value: parameter41Value,
-        parameter42Name: parameter42Name,
-        parameter42Value: parameter42Value,
-        parameter43Name: parameter43Name,
-        parameter43Value: parameter43Value,
-        parameter44Name: parameter44Name,
-        parameter44Value: parameter44Value,
-        parameter45Name: parameter45Name,
-        parameter45Value: parameter45Value,
-        parameter46Name: parameter46Name,
-        parameter46Value: parameter46Value,
-        parameter47Name: parameter47Name,
-        parameter47Value: parameter47Value,
-        parameter48Name: parameter48Name,
-        parameter48Value: parameter48Value,
-        parameter49Name: parameter49Name,
-        parameter49Value: parameter49Value,
-        parameter50Name: parameter50Name,
-        parameter50Value: parameter50Value,
-        parameter51Name: parameter51Name,
-        parameter51Value: parameter51Value,
-        parameter52Name: parameter52Name,
-        parameter52Value: parameter52Value,
-        parameter53Name: parameter53Name,
-        parameter53Value: parameter53Value,
-        parameter54Name: parameter54Name,
-        parameter54Value: parameter54Value,
-        parameter55Name: parameter55Name,
-        parameter55Value: parameter55Value,
-        parameter56Name: parameter56Name,
-        parameter56Value: parameter56Value,
-        parameter57Name: parameter57Name,
-        parameter57Value: parameter57Value,
-        parameter58Name: parameter58Name,
-        parameter58Value: parameter58Value,
-        parameter59Name: parameter59Name,
-        parameter59Value: parameter59Value,
-        parameter60Name: parameter60Name,
-        parameter60Value: parameter60Value,
-        parameter61Name: parameter61Name,
-        parameter61Value: parameter61Value,
-        parameter62Name: parameter62Name,
-        parameter62Value: parameter62Value,
-        parameter63Name: parameter63Name,
-        parameter63Value: parameter63Value,
-        parameter64Name: parameter64Name,
-        parameter64Value: parameter64Value,
-        parameter65Name: parameter65Name,
-        parameter65Value: parameter65Value,
-        parameter66Name: parameter66Name,
-        parameter66Value: parameter66Value,
-        parameter67Name: parameter67Name,
-        parameter67Value: parameter67Value,
-        parameter68Name: parameter68Name,
-        parameter68Value: parameter68Value,
-        parameter69Name: parameter69Name,
-        parameter69Value: parameter69Value,
-        parameter70Name: parameter70Name,
-        parameter70Value: parameter70Value,
-        parameter71Name: parameter71Name,
-        parameter71Value: parameter71Value,
-        parameter72Name: parameter72Name,
-        parameter72Value: parameter72Value,
-        parameter73Name: parameter73Name,
-        parameter73Value: parameter73Value,
-        parameter74Name: parameter74Name,
-        parameter74Value: parameter74Value,
-        parameter75Name: parameter75Name,
-        parameter75Value: parameter75Value,
-        parameter76Name: parameter76Name,
-        parameter76Value: parameter76Value,
-        parameter77Name: parameter77Name,
-        parameter77Value: parameter77Value,
-        parameter78Name: parameter78Name,
-        parameter78Value: parameter78Value,
-        parameter79Name: parameter79Name,
-        parameter79Value: parameter79Value,
-        parameter80Name: parameter80Name,
-        parameter80Value: parameter80Value,
-        parameter81Name: parameter81Name,
-        parameter81Value: parameter81Value,
-        parameter82Name: parameter82Name,
-        parameter82Value: parameter82Value,
-        parameter83Name: parameter83Name,
-        parameter83Value: parameter83Value,
-        parameter84Name: parameter84Name,
-        parameter84Value: parameter84Value,
-        parameter85Name: parameter85Name,
-        parameter85Value: parameter85Value,
-        parameter86Name: parameter86Name,
-        parameter86Value: parameter86Value,
-        parameter87Name: parameter87Name,
-        parameter87Value: parameter87Value,
-        parameter88Name: parameter88Name,
-        parameter88Value: parameter88Value,
-        parameter89Name: parameter89Name,
-        parameter89Value: parameter89Value,
-        parameter90Name: parameter90Name,
-        parameter90Value: parameter90Value,
-        parameter91Name: parameter91Name,
-        parameter91Value: parameter91Value,
-        parameter92Name: parameter92Name,
-        parameter92Value: parameter92Value,
-        parameter93Name: parameter93Name,
-        parameter93Value: parameter93Value,
-        parameter94Name: parameter94Name,
-        parameter94Value: parameter94Value,
-        parameter95Name: parameter95Name,
-        parameter95Value: parameter95Value,
-        parameter96Name: parameter96Name,
-        parameter96Value: parameter96Value,
-        parameter97Name: parameter97Name,
-        parameter97Value: parameter97Value,
-        parameter98Name: parameter98Name,
-        parameter98Value: parameter98Value,
-        parameter99Name: parameter99Name,
-        parameter99Value: parameter99Value,
-        requestOptions: requestOptions);
+    return siprec_methods.createCallsSiprec(_config, accountSid: accountSid, callSid: callSid, name: name, connectorName: connectorName, track: track, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, parameter1Name: parameter1Name, parameter1Value: parameter1Value, parameter2Name: parameter2Name, parameter2Value: parameter2Value, parameter3Name: parameter3Name, parameter3Value: parameter3Value, parameter4Name: parameter4Name, parameter4Value: parameter4Value, parameter5Name: parameter5Name, parameter5Value: parameter5Value, parameter6Name: parameter6Name, parameter6Value: parameter6Value, parameter7Name: parameter7Name, parameter7Value: parameter7Value, parameter8Name: parameter8Name, parameter8Value: parameter8Value, parameter9Name: parameter9Name, parameter9Value: parameter9Value, parameter10Name: parameter10Name, parameter10Value: parameter10Value, parameter11Name: parameter11Name, parameter11Value: parameter11Value, parameter12Name: parameter12Name, parameter12Value: parameter12Value, parameter13Name: parameter13Name, parameter13Value: parameter13Value, parameter14Name: parameter14Name, parameter14Value: parameter14Value, parameter15Name: parameter15Name, parameter15Value: parameter15Value, parameter16Name: parameter16Name, parameter16Value: parameter16Value, parameter17Name: parameter17Name, parameter17Value: parameter17Value, parameter18Name: parameter18Name, parameter18Value: parameter18Value, parameter19Name: parameter19Name, parameter19Value: parameter19Value, parameter20Name: parameter20Name, parameter20Value: parameter20Value, parameter21Name: parameter21Name, parameter21Value: parameter21Value, parameter22Name: parameter22Name, parameter22Value: parameter22Value, parameter23Name: parameter23Name, parameter23Value: parameter23Value, parameter24Name: parameter24Name, parameter24Value: parameter24Value, parameter25Name: parameter25Name, parameter25Value: parameter25Value, parameter26Name: parameter26Name, parameter26Value: parameter26Value, parameter27Name: parameter27Name, parameter27Value: parameter27Value, parameter28Name: parameter28Name, parameter28Value: parameter28Value, parameter29Name: parameter29Name, parameter29Value: parameter29Value, parameter30Name: parameter30Name, parameter30Value: parameter30Value, parameter31Name: parameter31Name, parameter31Value: parameter31Value, parameter32Name: parameter32Name, parameter32Value: parameter32Value, parameter33Name: parameter33Name, parameter33Value: parameter33Value, parameter34Name: parameter34Name, parameter34Value: parameter34Value, parameter35Name: parameter35Name, parameter35Value: parameter35Value, parameter36Name: parameter36Name, parameter36Value: parameter36Value, parameter37Name: parameter37Name, parameter37Value: parameter37Value, parameter38Name: parameter38Name, parameter38Value: parameter38Value, parameter39Name: parameter39Name, parameter39Value: parameter39Value, parameter40Name: parameter40Name, parameter40Value: parameter40Value, parameter41Name: parameter41Name, parameter41Value: parameter41Value, parameter42Name: parameter42Name, parameter42Value: parameter42Value, parameter43Name: parameter43Name, parameter43Value: parameter43Value, parameter44Name: parameter44Name, parameter44Value: parameter44Value, parameter45Name: parameter45Name, parameter45Value: parameter45Value, parameter46Name: parameter46Name, parameter46Value: parameter46Value, parameter47Name: parameter47Name, parameter47Value: parameter47Value, parameter48Name: parameter48Name, parameter48Value: parameter48Value, parameter49Name: parameter49Name, parameter49Value: parameter49Value, parameter50Name: parameter50Name, parameter50Value: parameter50Value, parameter51Name: parameter51Name, parameter51Value: parameter51Value, parameter52Name: parameter52Name, parameter52Value: parameter52Value, parameter53Name: parameter53Name, parameter53Value: parameter53Value, parameter54Name: parameter54Name, parameter54Value: parameter54Value, parameter55Name: parameter55Name, parameter55Value: parameter55Value, parameter56Name: parameter56Name, parameter56Value: parameter56Value, parameter57Name: parameter57Name, parameter57Value: parameter57Value, parameter58Name: parameter58Name, parameter58Value: parameter58Value, parameter59Name: parameter59Name, parameter59Value: parameter59Value, parameter60Name: parameter60Name, parameter60Value: parameter60Value, parameter61Name: parameter61Name, parameter61Value: parameter61Value, parameter62Name: parameter62Name, parameter62Value: parameter62Value, parameter63Name: parameter63Name, parameter63Value: parameter63Value, parameter64Name: parameter64Name, parameter64Value: parameter64Value, parameter65Name: parameter65Name, parameter65Value: parameter65Value, parameter66Name: parameter66Name, parameter66Value: parameter66Value, parameter67Name: parameter67Name, parameter67Value: parameter67Value, parameter68Name: parameter68Name, parameter68Value: parameter68Value, parameter69Name: parameter69Name, parameter69Value: parameter69Value, parameter70Name: parameter70Name, parameter70Value: parameter70Value, parameter71Name: parameter71Name, parameter71Value: parameter71Value, parameter72Name: parameter72Name, parameter72Value: parameter72Value, parameter73Name: parameter73Name, parameter73Value: parameter73Value, parameter74Name: parameter74Name, parameter74Value: parameter74Value, parameter75Name: parameter75Name, parameter75Value: parameter75Value, parameter76Name: parameter76Name, parameter76Value: parameter76Value, parameter77Name: parameter77Name, parameter77Value: parameter77Value, parameter78Name: parameter78Name, parameter78Value: parameter78Value, parameter79Name: parameter79Name, parameter79Value: parameter79Value, parameter80Name: parameter80Name, parameter80Value: parameter80Value, parameter81Name: parameter81Name, parameter81Value: parameter81Value, parameter82Name: parameter82Name, parameter82Value: parameter82Value, parameter83Name: parameter83Name, parameter83Value: parameter83Value, parameter84Name: parameter84Name, parameter84Value: parameter84Value, parameter85Name: parameter85Name, parameter85Value: parameter85Value, parameter86Name: parameter86Name, parameter86Value: parameter86Value, parameter87Name: parameter87Name, parameter87Value: parameter87Value, parameter88Name: parameter88Name, parameter88Value: parameter88Value, parameter89Name: parameter89Name, parameter89Value: parameter89Value, parameter90Name: parameter90Name, parameter90Value: parameter90Value, parameter91Name: parameter91Name, parameter91Value: parameter91Value, parameter92Name: parameter92Name, parameter92Value: parameter92Value, parameter93Name: parameter93Name, parameter93Value: parameter93Value, parameter94Name: parameter94Name, parameter94Value: parameter94Value, parameter95Name: parameter95Name, parameter95Value: parameter95Value, parameter96Name: parameter96Name, parameter96Value: parameter96Value, parameter97Name: parameter97Name, parameter97Value: parameter97Value, parameter98Name: parameter98Name, parameter98Value: parameter98Value, parameter99Name: parameter99Name, parameter99Value: parameter99Value, requestOptions: requestOptions);
   }
 
   /// Stops a SIPREC resource associated with a call. Set `Status` to `stopped`, and identify the resource by its SID or the name used when it was created.
@@ -1616,19 +983,14 @@ class CallsSiprecNamespace {
       required String sid,
       required SiprecEnumUpdateStatus status,
       RequestOptions? requestOptions}) async {
-    return siprec_methods.updateCallsSiprec(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        status: status,
-        requestOptions: requestOptions);
+    return siprec_methods.updateCallsSiprec(_config, accountSid: accountSid, callSid: callSid, sid: sid, status: status, requestOptions: requestOptions);
   }
+
 }
 
 class CallsStreamsNamespace {
   final ClientConfig _config;
   CallsStreamsNamespace(ClientConfig config) : _config = config;
-
   /// Creates a media Stream associated with a call. Provide the required `Url` for the WebSocket connection and optionally configure audio tracks, a status callback, and callback parameters.
   ///
   /// Create a Stream
@@ -1639,8 +1001,7 @@ class CallsStreamsNamespace {
       SdkOptional<String> name = const SdkOmitted(),
       SdkOptional<StreamEnumTrack> track = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<CreateCallsStreamsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsStreamsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> parameter1Name = const SdkOmitted(),
       SdkOptional<String> parameter1Value = const SdkOmitted(),
       SdkOptional<String> parameter2Name = const SdkOmitted(),
@@ -1840,213 +1201,7 @@ class CallsStreamsNamespace {
       SdkOptional<String> parameter99Name = const SdkOmitted(),
       SdkOptional<String> parameter99Value = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return streams_methods.createCallsStreams(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        url: url,
-        name: name,
-        track: track,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        parameter1Name: parameter1Name,
-        parameter1Value: parameter1Value,
-        parameter2Name: parameter2Name,
-        parameter2Value: parameter2Value,
-        parameter3Name: parameter3Name,
-        parameter3Value: parameter3Value,
-        parameter4Name: parameter4Name,
-        parameter4Value: parameter4Value,
-        parameter5Name: parameter5Name,
-        parameter5Value: parameter5Value,
-        parameter6Name: parameter6Name,
-        parameter6Value: parameter6Value,
-        parameter7Name: parameter7Name,
-        parameter7Value: parameter7Value,
-        parameter8Name: parameter8Name,
-        parameter8Value: parameter8Value,
-        parameter9Name: parameter9Name,
-        parameter9Value: parameter9Value,
-        parameter10Name: parameter10Name,
-        parameter10Value: parameter10Value,
-        parameter11Name: parameter11Name,
-        parameter11Value: parameter11Value,
-        parameter12Name: parameter12Name,
-        parameter12Value: parameter12Value,
-        parameter13Name: parameter13Name,
-        parameter13Value: parameter13Value,
-        parameter14Name: parameter14Name,
-        parameter14Value: parameter14Value,
-        parameter15Name: parameter15Name,
-        parameter15Value: parameter15Value,
-        parameter16Name: parameter16Name,
-        parameter16Value: parameter16Value,
-        parameter17Name: parameter17Name,
-        parameter17Value: parameter17Value,
-        parameter18Name: parameter18Name,
-        parameter18Value: parameter18Value,
-        parameter19Name: parameter19Name,
-        parameter19Value: parameter19Value,
-        parameter20Name: parameter20Name,
-        parameter20Value: parameter20Value,
-        parameter21Name: parameter21Name,
-        parameter21Value: parameter21Value,
-        parameter22Name: parameter22Name,
-        parameter22Value: parameter22Value,
-        parameter23Name: parameter23Name,
-        parameter23Value: parameter23Value,
-        parameter24Name: parameter24Name,
-        parameter24Value: parameter24Value,
-        parameter25Name: parameter25Name,
-        parameter25Value: parameter25Value,
-        parameter26Name: parameter26Name,
-        parameter26Value: parameter26Value,
-        parameter27Name: parameter27Name,
-        parameter27Value: parameter27Value,
-        parameter28Name: parameter28Name,
-        parameter28Value: parameter28Value,
-        parameter29Name: parameter29Name,
-        parameter29Value: parameter29Value,
-        parameter30Name: parameter30Name,
-        parameter30Value: parameter30Value,
-        parameter31Name: parameter31Name,
-        parameter31Value: parameter31Value,
-        parameter32Name: parameter32Name,
-        parameter32Value: parameter32Value,
-        parameter33Name: parameter33Name,
-        parameter33Value: parameter33Value,
-        parameter34Name: parameter34Name,
-        parameter34Value: parameter34Value,
-        parameter35Name: parameter35Name,
-        parameter35Value: parameter35Value,
-        parameter36Name: parameter36Name,
-        parameter36Value: parameter36Value,
-        parameter37Name: parameter37Name,
-        parameter37Value: parameter37Value,
-        parameter38Name: parameter38Name,
-        parameter38Value: parameter38Value,
-        parameter39Name: parameter39Name,
-        parameter39Value: parameter39Value,
-        parameter40Name: parameter40Name,
-        parameter40Value: parameter40Value,
-        parameter41Name: parameter41Name,
-        parameter41Value: parameter41Value,
-        parameter42Name: parameter42Name,
-        parameter42Value: parameter42Value,
-        parameter43Name: parameter43Name,
-        parameter43Value: parameter43Value,
-        parameter44Name: parameter44Name,
-        parameter44Value: parameter44Value,
-        parameter45Name: parameter45Name,
-        parameter45Value: parameter45Value,
-        parameter46Name: parameter46Name,
-        parameter46Value: parameter46Value,
-        parameter47Name: parameter47Name,
-        parameter47Value: parameter47Value,
-        parameter48Name: parameter48Name,
-        parameter48Value: parameter48Value,
-        parameter49Name: parameter49Name,
-        parameter49Value: parameter49Value,
-        parameter50Name: parameter50Name,
-        parameter50Value: parameter50Value,
-        parameter51Name: parameter51Name,
-        parameter51Value: parameter51Value,
-        parameter52Name: parameter52Name,
-        parameter52Value: parameter52Value,
-        parameter53Name: parameter53Name,
-        parameter53Value: parameter53Value,
-        parameter54Name: parameter54Name,
-        parameter54Value: parameter54Value,
-        parameter55Name: parameter55Name,
-        parameter55Value: parameter55Value,
-        parameter56Name: parameter56Name,
-        parameter56Value: parameter56Value,
-        parameter57Name: parameter57Name,
-        parameter57Value: parameter57Value,
-        parameter58Name: parameter58Name,
-        parameter58Value: parameter58Value,
-        parameter59Name: parameter59Name,
-        parameter59Value: parameter59Value,
-        parameter60Name: parameter60Name,
-        parameter60Value: parameter60Value,
-        parameter61Name: parameter61Name,
-        parameter61Value: parameter61Value,
-        parameter62Name: parameter62Name,
-        parameter62Value: parameter62Value,
-        parameter63Name: parameter63Name,
-        parameter63Value: parameter63Value,
-        parameter64Name: parameter64Name,
-        parameter64Value: parameter64Value,
-        parameter65Name: parameter65Name,
-        parameter65Value: parameter65Value,
-        parameter66Name: parameter66Name,
-        parameter66Value: parameter66Value,
-        parameter67Name: parameter67Name,
-        parameter67Value: parameter67Value,
-        parameter68Name: parameter68Name,
-        parameter68Value: parameter68Value,
-        parameter69Name: parameter69Name,
-        parameter69Value: parameter69Value,
-        parameter70Name: parameter70Name,
-        parameter70Value: parameter70Value,
-        parameter71Name: parameter71Name,
-        parameter71Value: parameter71Value,
-        parameter72Name: parameter72Name,
-        parameter72Value: parameter72Value,
-        parameter73Name: parameter73Name,
-        parameter73Value: parameter73Value,
-        parameter74Name: parameter74Name,
-        parameter74Value: parameter74Value,
-        parameter75Name: parameter75Name,
-        parameter75Value: parameter75Value,
-        parameter76Name: parameter76Name,
-        parameter76Value: parameter76Value,
-        parameter77Name: parameter77Name,
-        parameter77Value: parameter77Value,
-        parameter78Name: parameter78Name,
-        parameter78Value: parameter78Value,
-        parameter79Name: parameter79Name,
-        parameter79Value: parameter79Value,
-        parameter80Name: parameter80Name,
-        parameter80Value: parameter80Value,
-        parameter81Name: parameter81Name,
-        parameter81Value: parameter81Value,
-        parameter82Name: parameter82Name,
-        parameter82Value: parameter82Value,
-        parameter83Name: parameter83Name,
-        parameter83Value: parameter83Value,
-        parameter84Name: parameter84Name,
-        parameter84Value: parameter84Value,
-        parameter85Name: parameter85Name,
-        parameter85Value: parameter85Value,
-        parameter86Name: parameter86Name,
-        parameter86Value: parameter86Value,
-        parameter87Name: parameter87Name,
-        parameter87Value: parameter87Value,
-        parameter88Name: parameter88Name,
-        parameter88Value: parameter88Value,
-        parameter89Name: parameter89Name,
-        parameter89Value: parameter89Value,
-        parameter90Name: parameter90Name,
-        parameter90Value: parameter90Value,
-        parameter91Name: parameter91Name,
-        parameter91Value: parameter91Value,
-        parameter92Name: parameter92Name,
-        parameter92Value: parameter92Value,
-        parameter93Name: parameter93Name,
-        parameter93Value: parameter93Value,
-        parameter94Name: parameter94Name,
-        parameter94Value: parameter94Value,
-        parameter95Name: parameter95Name,
-        parameter95Value: parameter95Value,
-        parameter96Name: parameter96Name,
-        parameter96Value: parameter96Value,
-        parameter97Name: parameter97Name,
-        parameter97Value: parameter97Value,
-        parameter98Name: parameter98Name,
-        parameter98Value: parameter98Value,
-        parameter99Name: parameter99Name,
-        parameter99Value: parameter99Value,
-        requestOptions: requestOptions);
+    return streams_methods.createCallsStreams(_config, accountSid: accountSid, callSid: callSid, url: url, name: name, track: track, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, parameter1Name: parameter1Name, parameter1Value: parameter1Value, parameter2Name: parameter2Name, parameter2Value: parameter2Value, parameter3Name: parameter3Name, parameter3Value: parameter3Value, parameter4Name: parameter4Name, parameter4Value: parameter4Value, parameter5Name: parameter5Name, parameter5Value: parameter5Value, parameter6Name: parameter6Name, parameter6Value: parameter6Value, parameter7Name: parameter7Name, parameter7Value: parameter7Value, parameter8Name: parameter8Name, parameter8Value: parameter8Value, parameter9Name: parameter9Name, parameter9Value: parameter9Value, parameter10Name: parameter10Name, parameter10Value: parameter10Value, parameter11Name: parameter11Name, parameter11Value: parameter11Value, parameter12Name: parameter12Name, parameter12Value: parameter12Value, parameter13Name: parameter13Name, parameter13Value: parameter13Value, parameter14Name: parameter14Name, parameter14Value: parameter14Value, parameter15Name: parameter15Name, parameter15Value: parameter15Value, parameter16Name: parameter16Name, parameter16Value: parameter16Value, parameter17Name: parameter17Name, parameter17Value: parameter17Value, parameter18Name: parameter18Name, parameter18Value: parameter18Value, parameter19Name: parameter19Name, parameter19Value: parameter19Value, parameter20Name: parameter20Name, parameter20Value: parameter20Value, parameter21Name: parameter21Name, parameter21Value: parameter21Value, parameter22Name: parameter22Name, parameter22Value: parameter22Value, parameter23Name: parameter23Name, parameter23Value: parameter23Value, parameter24Name: parameter24Name, parameter24Value: parameter24Value, parameter25Name: parameter25Name, parameter25Value: parameter25Value, parameter26Name: parameter26Name, parameter26Value: parameter26Value, parameter27Name: parameter27Name, parameter27Value: parameter27Value, parameter28Name: parameter28Name, parameter28Value: parameter28Value, parameter29Name: parameter29Name, parameter29Value: parameter29Value, parameter30Name: parameter30Name, parameter30Value: parameter30Value, parameter31Name: parameter31Name, parameter31Value: parameter31Value, parameter32Name: parameter32Name, parameter32Value: parameter32Value, parameter33Name: parameter33Name, parameter33Value: parameter33Value, parameter34Name: parameter34Name, parameter34Value: parameter34Value, parameter35Name: parameter35Name, parameter35Value: parameter35Value, parameter36Name: parameter36Name, parameter36Value: parameter36Value, parameter37Name: parameter37Name, parameter37Value: parameter37Value, parameter38Name: parameter38Name, parameter38Value: parameter38Value, parameter39Name: parameter39Name, parameter39Value: parameter39Value, parameter40Name: parameter40Name, parameter40Value: parameter40Value, parameter41Name: parameter41Name, parameter41Value: parameter41Value, parameter42Name: parameter42Name, parameter42Value: parameter42Value, parameter43Name: parameter43Name, parameter43Value: parameter43Value, parameter44Name: parameter44Name, parameter44Value: parameter44Value, parameter45Name: parameter45Name, parameter45Value: parameter45Value, parameter46Name: parameter46Name, parameter46Value: parameter46Value, parameter47Name: parameter47Name, parameter47Value: parameter47Value, parameter48Name: parameter48Name, parameter48Value: parameter48Value, parameter49Name: parameter49Name, parameter49Value: parameter49Value, parameter50Name: parameter50Name, parameter50Value: parameter50Value, parameter51Name: parameter51Name, parameter51Value: parameter51Value, parameter52Name: parameter52Name, parameter52Value: parameter52Value, parameter53Name: parameter53Name, parameter53Value: parameter53Value, parameter54Name: parameter54Name, parameter54Value: parameter54Value, parameter55Name: parameter55Name, parameter55Value: parameter55Value, parameter56Name: parameter56Name, parameter56Value: parameter56Value, parameter57Name: parameter57Name, parameter57Value: parameter57Value, parameter58Name: parameter58Name, parameter58Value: parameter58Value, parameter59Name: parameter59Name, parameter59Value: parameter59Value, parameter60Name: parameter60Name, parameter60Value: parameter60Value, parameter61Name: parameter61Name, parameter61Value: parameter61Value, parameter62Name: parameter62Name, parameter62Value: parameter62Value, parameter63Name: parameter63Name, parameter63Value: parameter63Value, parameter64Name: parameter64Name, parameter64Value: parameter64Value, parameter65Name: parameter65Name, parameter65Value: parameter65Value, parameter66Name: parameter66Name, parameter66Value: parameter66Value, parameter67Name: parameter67Name, parameter67Value: parameter67Value, parameter68Name: parameter68Name, parameter68Value: parameter68Value, parameter69Name: parameter69Name, parameter69Value: parameter69Value, parameter70Name: parameter70Name, parameter70Value: parameter70Value, parameter71Name: parameter71Name, parameter71Value: parameter71Value, parameter72Name: parameter72Name, parameter72Value: parameter72Value, parameter73Name: parameter73Name, parameter73Value: parameter73Value, parameter74Name: parameter74Name, parameter74Value: parameter74Value, parameter75Name: parameter75Name, parameter75Value: parameter75Value, parameter76Name: parameter76Name, parameter76Value: parameter76Value, parameter77Name: parameter77Name, parameter77Value: parameter77Value, parameter78Name: parameter78Name, parameter78Value: parameter78Value, parameter79Name: parameter79Name, parameter79Value: parameter79Value, parameter80Name: parameter80Name, parameter80Value: parameter80Value, parameter81Name: parameter81Name, parameter81Value: parameter81Value, parameter82Name: parameter82Name, parameter82Value: parameter82Value, parameter83Name: parameter83Name, parameter83Value: parameter83Value, parameter84Name: parameter84Name, parameter84Value: parameter84Value, parameter85Name: parameter85Name, parameter85Value: parameter85Value, parameter86Name: parameter86Name, parameter86Value: parameter86Value, parameter87Name: parameter87Name, parameter87Value: parameter87Value, parameter88Name: parameter88Name, parameter88Value: parameter88Value, parameter89Name: parameter89Name, parameter89Value: parameter89Value, parameter90Name: parameter90Name, parameter90Value: parameter90Value, parameter91Name: parameter91Name, parameter91Value: parameter91Value, parameter92Name: parameter92Name, parameter92Value: parameter92Value, parameter93Name: parameter93Name, parameter93Value: parameter93Value, parameter94Name: parameter94Name, parameter94Value: parameter94Value, parameter95Name: parameter95Name, parameter95Value: parameter95Value, parameter96Name: parameter96Name, parameter96Value: parameter96Value, parameter97Name: parameter97Name, parameter97Value: parameter97Value, parameter98Name: parameter98Name, parameter98Value: parameter98Value, parameter99Name: parameter99Name, parameter99Value: parameter99Value, requestOptions: requestOptions);
   }
 
   /// Stops a Stream associated with a call. Set `Status` to `stopped`, and identify the Stream by its SID or the name used when it was created.
@@ -2058,19 +1213,14 @@ class CallsStreamsNamespace {
       required String sid,
       required StreamEnumUpdateStatus status,
       RequestOptions? requestOptions}) async {
-    return streams_methods.updateCallsStreams(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        sid: sid,
-        status: status,
-        requestOptions: requestOptions);
+    return streams_methods.updateCallsStreams(_config, accountSid: accountSid, callSid: callSid, sid: sid, status: status, requestOptions: requestOptions);
   }
+
 }
 
 class CallsUserDefinedMessagesNamespace {
   final ClientConfig _config;
   CallsUserDefinedMessagesNamespace(ClientConfig config) : _config = config;
-
   /// Create a new User Defined Message for the given Call SID.
   Future<ApiV2010AccountCallUserDefinedMessage> create(
       {required String accountSid,
@@ -2078,37 +1228,24 @@ class CallsUserDefinedMessagesNamespace {
       required String content,
       SdkOptional<String> idempotencyKey = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return user_defined_messages_methods.createCallsUserDefinedMessages(_config,
-        accountSid: accountSid,
-        callSid: callSid,
-        content: content,
-        idempotencyKey: idempotencyKey,
-        requestOptions: requestOptions);
+    return user_defined_messages_methods.createCallsUserDefinedMessages(_config, accountSid: accountSid, callSid: callSid, content: content, idempotencyKey: idempotencyKey, requestOptions: requestOptions);
   }
+
 }
 
 class CallsUserDefinedMessageSubscriptionsNamespace {
   final ClientConfig _config;
-  CallsUserDefinedMessageSubscriptionsNamespace(ClientConfig config)
-      : _config = config;
-
+  CallsUserDefinedMessageSubscriptionsNamespace(ClientConfig config) : _config = config;
   /// Subscribe to User Defined Messages for a given Call SID.
-  Future<ApiV2010AccountCallUserDefinedMessageSubscription> create(
-      {required String accountSid,
-      required String callSid,
-      required String callback,
-      SdkOptional<String> idempotencyKey = const SdkOmitted(),
-      SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod>
-          method = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return user_defined_message_subscriptions_methods
-        .createCallsUserDefinedMessageSubscriptions(_config,
-            accountSid: accountSid,
-            callSid: callSid,
-            callback: callback,
-            idempotencyKey: idempotencyKey,
-            method: method,
-            requestOptions: requestOptions);
+  Future<ApiV2010AccountCallUserDefinedMessageSubscription>
+      create(
+          {required String accountSid,
+          required String callSid,
+          required String callback,
+          SdkOptional<String> idempotencyKey = const SdkOmitted(),
+          SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod> method = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return user_defined_message_subscriptions_methods.createCallsUserDefinedMessageSubscriptions(_config, accountSid: accountSid, callSid: callSid, callback: callback, idempotencyKey: idempotencyKey, method: method, requestOptions: requestOptions);
   }
 
   /// Delete a specific User Defined Message Subscription.
@@ -2117,13 +1254,9 @@ class CallsUserDefinedMessageSubscriptionsNamespace {
       required String callSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return user_defined_message_subscriptions_methods
-        .deleteCallsUserDefinedMessageSubscriptions(_config,
-            accountSid: accountSid,
-            callSid: callSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return user_defined_message_subscriptions_methods.deleteCallsUserDefinedMessageSubscriptions(_config, accountSid: accountSid, callSid: callSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class CallsNamespace {
@@ -2136,8 +1269,7 @@ class CallsNamespace {
   late final CallsSiprecNamespace siprec;
   late final CallsStreamsNamespace streams;
   late final CallsUserDefinedMessagesNamespace userDefinedMessages;
-  late final CallsUserDefinedMessageSubscriptionsNamespace
-      userDefinedMessageSubscriptions;
+  late final CallsUserDefinedMessageSubscriptionsNamespace userDefinedMessageSubscriptions;
   CallsNamespace(ClientConfig config) : _config = config {
     events = CallsEventsNamespace(config);
     notifications = CallsNotificationsNamespace(config);
@@ -2147,10 +1279,8 @@ class CallsNamespace {
     siprec = CallsSiprecNamespace(config);
     streams = CallsStreamsNamespace(config);
     userDefinedMessages = CallsUserDefinedMessagesNamespace(config);
-    userDefinedMessageSubscriptions =
-        CallsUserDefinedMessageSubscriptionsNamespace(config);
+    userDefinedMessageSubscriptions = CallsUserDefinedMessageSubscriptionsNamespace(config);
   }
-
   /// Create a new outgoing call to phones, SIP-enabled endpoints or Twilio Client connections
   Future<ApiV2010AccountCall> create(
       {required String accountSid,
@@ -2158,26 +1288,22 @@ class CallsNamespace {
       required String from,
       SdkOptional<CreateCallsRequestBodyMethod> method = const SdkOmitted(),
       SdkOptional<String> fallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateCallsRequestBodyFallbackMethod> fallbackMethod =
-          const SdkOmitted(),
+      SdkOptional<CreateCallsRequestBodyFallbackMethod> fallbackMethod = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
       SdkOptional<List<String>> statusCallbackEvent = const SdkOmitted(),
-      SdkOptional<CreateCallsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> sendDigits = const SdkOmitted(),
       SdkOptional<int> timeout = const SdkOmitted(),
       SdkOptional<bool> record = const SdkOmitted(),
       SdkOptional<String> recordingChannels = const SdkOmitted(),
       SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
-      SdkOptional<CreateCallsRequestBodyRecordingStatusCallbackMethod>
-          recordingStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
       SdkOptional<String> sipAuthUsername = const SdkOmitted(),
       SdkOptional<String> sipAuthPassword = const SdkOmitted(),
       SdkOptional<String> machineDetection = const SdkOmitted(),
       SdkOptional<int> machineDetectionTimeout = const SdkOmitted(),
-      SdkOptional<List<String>> recordingStatusCallbackEvent =
-          const SdkOmitted(),
+      SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
       SdkOptional<String> trim = const SdkOmitted(),
       SdkOptional<String> callerId = const SdkOmitted(),
       SdkOptional<int> machineDetectionSpeechThreshold = const SdkOmitted(),
@@ -2185,8 +1311,7 @@ class CallsNamespace {
       SdkOptional<int> machineDetectionSilenceTimeout = const SdkOmitted(),
       SdkOptional<String> asyncAmd = const SdkOmitted(),
       SdkOptional<String> asyncAmdStatusCallback = const SdkOmitted(),
-      SdkOptional<CreateCallsRequestBodyAsyncAmdStatusCallbackMethod>
-          asyncAmdStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateCallsRequestBodyAsyncAmdStatusCallbackMethod> asyncAmdStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> passports = const SdkOmitted(),
       SdkOptional<String> byoc = const SdkOmitted(),
       SdkOptional<String> callReason = const SdkOmitted(),
@@ -2198,47 +1323,7 @@ class CallsNamespace {
       SdkOptional<String> twiml = const SdkOmitted(),
       SdkOptional<String> applicationSid = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return calls_methods.createCalls(_config,
-        accountSid: accountSid,
-        to: to,
-        from: from,
-        method: method,
-        fallbackUrl: fallbackUrl,
-        fallbackMethod: fallbackMethod,
-        statusCallback: statusCallback,
-        statusCallbackEvent: statusCallbackEvent,
-        statusCallbackMethod: statusCallbackMethod,
-        sendDigits: sendDigits,
-        timeout: timeout,
-        record: record,
-        recordingChannels: recordingChannels,
-        recordingStatusCallback: recordingStatusCallback,
-        recordingStatusCallbackMethod: recordingStatusCallbackMethod,
-        recordingConfigurationId: recordingConfigurationId,
-        sipAuthUsername: sipAuthUsername,
-        sipAuthPassword: sipAuthPassword,
-        machineDetection: machineDetection,
-        machineDetectionTimeout: machineDetectionTimeout,
-        recordingStatusCallbackEvent: recordingStatusCallbackEvent,
-        trim: trim,
-        callerId: callerId,
-        machineDetectionSpeechThreshold: machineDetectionSpeechThreshold,
-        machineDetectionSpeechEndThreshold: machineDetectionSpeechEndThreshold,
-        machineDetectionSilenceTimeout: machineDetectionSilenceTimeout,
-        asyncAmd: asyncAmd,
-        asyncAmdStatusCallback: asyncAmdStatusCallback,
-        asyncAmdStatusCallbackMethod: asyncAmdStatusCallbackMethod,
-        passports: passports,
-        byoc: byoc,
-        callReason: callReason,
-        callToken: callToken,
-        recordingTrack: recordingTrack,
-        timeLimit: timeLimit,
-        clientNotificationUrl: clientNotificationUrl,
-        url: url,
-        twiml: twiml,
-        applicationSid: applicationSid,
-        requestOptions: requestOptions);
+    return calls_methods.createCalls(_config, accountSid: accountSid, to: to, from: from, method: method, fallbackUrl: fallbackUrl, fallbackMethod: fallbackMethod, statusCallback: statusCallback, statusCallbackEvent: statusCallbackEvent, statusCallbackMethod: statusCallbackMethod, sendDigits: sendDigits, timeout: timeout, record: record, recordingChannels: recordingChannels, recordingStatusCallback: recordingStatusCallback, recordingStatusCallbackMethod: recordingStatusCallbackMethod, recordingConfigurationId: recordingConfigurationId, sipAuthUsername: sipAuthUsername, sipAuthPassword: sipAuthPassword, machineDetection: machineDetection, machineDetectionTimeout: machineDetectionTimeout, recordingStatusCallbackEvent: recordingStatusCallbackEvent, trim: trim, callerId: callerId, machineDetectionSpeechThreshold: machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: machineDetectionSilenceTimeout, asyncAmd: asyncAmd, asyncAmdStatusCallback: asyncAmdStatusCallback, asyncAmdStatusCallbackMethod: asyncAmdStatusCallbackMethod, passports: passports, byoc: byoc, callReason: callReason, callToken: callToken, recordingTrack: recordingTrack, timeLimit: timeLimit, clientNotificationUrl: clientNotificationUrl, url: url, twiml: twiml, applicationSid: applicationSid, requestOptions: requestOptions);
   }
 
   /// Lists calls made to and from a specified account. Filter the results by caller, recipient, parent call, status, or start and end times. Use the page parameters to navigate through the results.
@@ -2260,22 +1345,7 @@ class CallsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return calls_methods.listCalls(_config,
-        accountSid: accountSid,
-        to: to,
-        from: from,
-        parentCallSid: parentCallSid,
-        status: status,
-        startTime: startTime,
-        startTime_: startTime_,
-        startTime_2: startTime_2,
-        endTime: endTime,
-        endTime_: endTime_,
-        endTime_2: endTime_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return calls_methods.listCalls(_config, accountSid: accountSid, to: to, from: from, parentCallSid: parentCallSid, status: status, startTime: startTime, startTime_: startTime_, startTime_2: startTime_2, endTime: endTime, endTime_: endTime_, endTime_2: endTime_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
@@ -2283,8 +1353,7 @@ class CallsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return calls_methods.deleteCalls(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return calls_methods.deleteCalls(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific call from an account. Provide the account SID and call SID to identify the call whose details you need. The response includes call status and timing information when available.
@@ -2294,8 +1363,7 @@ class CallsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return calls_methods.fetchCalls(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return calls_methods.fetchCalls(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates a call by redirecting it to new TwiML instructions or by terminating it. Provide either a `Url` to retrieve instructions from or `Twiml` instructions directly; these fields are mutually exclusive. Use `Status` to cancel or complete the call, or configure callback and request-method settings for a redirect.
@@ -2308,34 +1376,20 @@ class CallsNamespace {
       SdkOptional<UpdateCallsRequestBodyMethod> method = const SdkOmitted(),
       SdkOptional<CallEnumUpdateStatus> status = const SdkOmitted(),
       SdkOptional<String> fallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateCallsRequestBodyFallbackMethod> fallbackMethod =
-          const SdkOmitted(),
+      SdkOptional<UpdateCallsRequestBodyFallbackMethod> fallbackMethod = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<UpdateCallsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateCallsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> twiml = const SdkOmitted(),
       SdkOptional<int> timeLimit = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return calls_methods.updateCalls(_config,
-        accountSid: accountSid,
-        sid: sid,
-        url: url,
-        method: method,
-        status: status,
-        fallbackUrl: fallbackUrl,
-        fallbackMethod: fallbackMethod,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        twiml: twiml,
-        timeLimit: timeLimit,
-        requestOptions: requestOptions);
+    return calls_methods.updateCalls(_config, accountSid: accountSid, sid: sid, url: url, method: method, status: status, fallbackUrl: fallbackUrl, fallbackMethod: fallbackMethod, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, twiml: twiml, timeLimit: timeLimit, requestOptions: requestOptions);
   }
+
 }
 
 class ConferencesRecordingsNamespace {
   final ClientConfig _config;
   ConferencesRecordingsNamespace(ClientConfig config) : _config = config;
-
   /// Lists recordings associated with a conference. Use the date filter to narrow results and the page parameters to navigate through the conference's recordings.
   ///
   /// Retrieve a list of recordings belonging to the call used to make the request
@@ -2349,50 +1403,33 @@ class ConferencesRecordingsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return recordings_methods_import.listConferencesRecordings(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        dateCreated: dateCreated,
-        dateCreated_: dateCreated_,
-        dateCreated_2: dateCreated_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return recordings_methods_import.listConferencesRecordings(_config, accountSid: accountSid, conferenceSid: conferenceSid, dateCreated: dateCreated, dateCreated_: dateCreated_, dateCreated_2: dateCreated_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Updates the status of a conference recording and, when pausing it, can control how the pause is recorded. Supply `Status` to select the recording state; use `Twilio.CURRENT` as `Sid` to target the active recording.
   ///
   /// Changes the status of the recording to paused, stopped, or in-progress. Note: To use `Twilio.CURRENT`, pass it as recording sid.
-  Future<ApiV2010AccountConferenceConferenceRecording> update(
-      {required String accountSid,
-      required String conferenceSid,
-      required String sid,
-      required ConferenceRecordingEnumStatus status,
-      SdkOptional<String> pauseBehavior = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return recordings_methods_import.updateConferencesRecordings(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        sid: sid,
-        status: status,
-        pauseBehavior: pauseBehavior,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountConferenceConferenceRecording>
+      update(
+          {required String accountSid,
+          required String conferenceSid,
+          required String sid,
+          required ConferenceRecordingEnumStatus status,
+          SdkOptional<String> pauseBehavior = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return recordings_methods_import.updateConferencesRecordings(_config, accountSid: accountSid, conferenceSid: conferenceSid, sid: sid, status: status, pauseBehavior: pauseBehavior, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific recording associated with a conference. Provide the account, conference, and recording identifiers to identify the recording resource.
   ///
   /// Fetch an instance of a recording for a call
-  Future<ApiV2010AccountConferenceConferenceRecording> fetch(
-      {required String accountSid,
-      required String conferenceSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return recordings_methods_import.fetchConferencesRecordings(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        sid: sid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountConferenceConferenceRecording>
+      fetch(
+          {required String accountSid,
+          required String conferenceSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return recordings_methods_import.fetchConferencesRecordings(_config, accountSid: accountSid, conferenceSid: conferenceSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Deletes a recording associated with a conference from the account. Provide the account, conference, and recording identifiers to specify the resource to remove.
@@ -2403,18 +1440,14 @@ class ConferencesRecordingsNamespace {
       required String conferenceSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return recordings_methods_import.deleteConferencesRecordings(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return recordings_methods_import.deleteConferencesRecordings(_config, accountSid: accountSid, conferenceSid: conferenceSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class ConferencesParticipantsNamespace {
   final ClientConfig _config;
   ConferencesParticipantsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a participant in a specific conference. Use `AccountSid`, `ConferenceSid`, and `CallSid` to identify the account, conference, and participant. You can identify the participant by call SID or label; percent-encode characters in a label that are not URL-safe.
   ///
   /// Fetch an instance of a participant
@@ -2423,11 +1456,7 @@ class ConferencesParticipantsNamespace {
       required String conferenceSid,
       required String callSid,
       RequestOptions? requestOptions}) async {
-    return participants_methods.fetchConferencesParticipants(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        callSid: callSid,
-        requestOptions: requestOptions);
+    return participants_methods.fetchConferencesParticipants(_config, accountSid: accountSid, conferenceSid: conferenceSid, callSid: callSid, requestOptions: requestOptions);
   }
 
   /// Updates configurable properties of a participant in a conference. Use `AccountSid`, `ConferenceSid`, and `CallSid` to identify the participant, then supply the form fields for the settings you want to change. If `Coaching` is true, provide `CallSidToCoach`.
@@ -2440,36 +1469,17 @@ class ConferencesParticipantsNamespace {
       SdkOptional<bool> muted = const SdkOmitted(),
       SdkOptional<bool> hold = const SdkOmitted(),
       SdkOptional<String> holdUrl = const SdkOmitted(),
-      SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod>
-          holdMethod = const SdkOmitted(),
+      SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod> holdMethod = const SdkOmitted(),
       SdkOptional<String> announceUrl = const SdkOmitted(),
-      SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod>
-          announceMethod = const SdkOmitted(),
+      SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod> announceMethod = const SdkOmitted(),
       SdkOptional<String> waitUrl = const SdkOmitted(),
-      SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod>
-          waitMethod = const SdkOmitted(),
+      SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod> waitMethod = const SdkOmitted(),
       SdkOptional<bool> beepOnExit = const SdkOmitted(),
       SdkOptional<bool> endConferenceOnExit = const SdkOmitted(),
       SdkOptional<bool> coaching = const SdkOmitted(),
       SdkOptional<String> callSidToCoach = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return participants_methods.updateConferencesParticipants(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        callSid: callSid,
-        muted: muted,
-        hold: hold,
-        holdUrl: holdUrl,
-        holdMethod: holdMethod,
-        announceUrl: announceUrl,
-        announceMethod: announceMethod,
-        waitUrl: waitUrl,
-        waitMethod: waitMethod,
-        beepOnExit: beepOnExit,
-        endConferenceOnExit: endConferenceOnExit,
-        coaching: coaching,
-        callSidToCoach: callSidToCoach,
-        requestOptions: requestOptions);
+    return participants_methods.updateConferencesParticipants(_config, accountSid: accountSid, conferenceSid: conferenceSid, callSid: callSid, muted: muted, hold: hold, holdUrl: holdUrl, holdMethod: holdMethod, announceUrl: announceUrl, announceMethod: announceMethod, waitUrl: waitUrl, waitMethod: waitMethod, beepOnExit: beepOnExit, endConferenceOnExit: endConferenceOnExit, coaching: coaching, callSidToCoach: callSidToCoach, requestOptions: requestOptions);
   }
 
   /// Removes a participant from a conference. Use `AccountSid`, `ConferenceSid`, and `CallSid` to identify the account, conference, and participant. You can identify the participant by call SID or label; percent-encode characters in a label that are not URL-safe.
@@ -2480,11 +1490,7 @@ class ConferencesParticipantsNamespace {
       required String conferenceSid,
       required String callSid,
       RequestOptions? requestOptions}) async {
-    return participants_methods.deleteConferencesParticipants(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        callSid: callSid,
-        requestOptions: requestOptions);
+    return participants_methods.deleteConferencesParticipants(_config, accountSid: accountSid, conferenceSid: conferenceSid, callSid: callSid, requestOptions: requestOptions);
   }
 
   /// Creates a participant in a conference by placing a call from `From` to `To`. Provide both endpoints and optionally configure call behavior, conference settings, and status callbacks. The response includes the participant and associated call identifiers.
@@ -2494,8 +1500,7 @@ class ConferencesParticipantsNamespace {
       required String from,
       required String to,
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<List<String>> statusCallbackEvent = const SdkOmitted(),
       SdkOptional<String> label = const SdkOmitted(),
       SdkOptional<int> timeout = const SdkOmitted(),
@@ -2505,33 +1510,24 @@ class ConferencesParticipantsNamespace {
       SdkOptional<bool> startConferenceOnEnter = const SdkOmitted(),
       SdkOptional<bool> endConferenceOnExit = const SdkOmitted(),
       SdkOptional<String> waitUrl = const SdkOmitted(),
-      SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod> waitMethod =
-          const SdkOmitted(),
+      SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod> waitMethod = const SdkOmitted(),
       SdkOptional<bool> earlyMedia = const SdkOmitted(),
       SdkOptional<int> maxParticipants = const SdkOmitted(),
       SdkOptional<String> conferenceRecord = const SdkOmitted(),
       SdkOptional<String> conferenceTrim = const SdkOmitted(),
       SdkOptional<String> conferenceStatusCallback = const SdkOmitted(),
-      SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>
-          conferenceStatusCallbackMethod = const SdkOmitted(),
-      SdkOptional<List<String>> conferenceStatusCallbackEvent =
-          const SdkOmitted(),
+      SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod> conferenceStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<List<String>> conferenceStatusCallbackEvent = const SdkOmitted(),
       SdkOptional<String> recordingChannels = const SdkOmitted(),
       SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
-      SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>
-          recordingStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> sipAuthUsername = const SdkOmitted(),
       SdkOptional<String> sipAuthPassword = const SdkOmitted(),
       SdkOptional<String> region = const SdkOmitted(),
-      SdkOptional<String> conferenceRecordingStatusCallback =
-          const SdkOmitted(),
-      SdkOptional<
-              CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>
-          conferenceRecordingStatusCallbackMethod = const SdkOmitted(),
-      SdkOptional<List<String>> recordingStatusCallbackEvent =
-          const SdkOmitted(),
-      SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent =
-          const SdkOmitted(),
+      SdkOptional<String> conferenceRecordingStatusCallback = const SdkOmitted(),
+      SdkOptional<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod> conferenceRecordingStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
+      SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent = const SdkOmitted(),
       SdkOptional<bool> coaching = const SdkOmitted(),
       SdkOptional<String> callSidToCoach = const SdkOmitted(),
       SdkOptional<String> jitterBufferSize = const SdkOmitted(),
@@ -2547,8 +1543,7 @@ class ConferencesParticipantsNamespace {
       SdkOptional<int> machineDetectionSpeechEndThreshold = const SdkOmitted(),
       SdkOptional<int> machineDetectionSilenceTimeout = const SdkOmitted(),
       SdkOptional<String> amdStatusCallback = const SdkOmitted(),
-      SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>
-          amdStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod> amdStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> trim = const SdkOmitted(),
       SdkOptional<String> callToken = const SdkOmitted(),
       SdkOptional<String> passports = const SdkOmitted(),
@@ -2563,72 +1558,7 @@ class ConferencesParticipantsNamespace {
       SdkOptional<String> emergencyState = const SdkOmitted(),
       SdkOptional<String> emergencyCountry = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return participants_methods.createConferencesParticipants(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        from: from,
-        to: to,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        statusCallbackEvent: statusCallbackEvent,
-        label: label,
-        timeout: timeout,
-        record: record,
-        muted: muted,
-        beep: beep,
-        startConferenceOnEnter: startConferenceOnEnter,
-        endConferenceOnExit: endConferenceOnExit,
-        waitUrl: waitUrl,
-        waitMethod: waitMethod,
-        earlyMedia: earlyMedia,
-        maxParticipants: maxParticipants,
-        conferenceRecord: conferenceRecord,
-        conferenceTrim: conferenceTrim,
-        conferenceStatusCallback: conferenceStatusCallback,
-        conferenceStatusCallbackMethod: conferenceStatusCallbackMethod,
-        conferenceStatusCallbackEvent: conferenceStatusCallbackEvent,
-        recordingChannels: recordingChannels,
-        recordingStatusCallback: recordingStatusCallback,
-        recordingStatusCallbackMethod: recordingStatusCallbackMethod,
-        sipAuthUsername: sipAuthUsername,
-        sipAuthPassword: sipAuthPassword,
-        region: region,
-        conferenceRecordingStatusCallback: conferenceRecordingStatusCallback,
-        conferenceRecordingStatusCallbackMethod:
-            conferenceRecordingStatusCallbackMethod,
-        recordingStatusCallbackEvent: recordingStatusCallbackEvent,
-        conferenceRecordingStatusCallbackEvent:
-            conferenceRecordingStatusCallbackEvent,
-        coaching: coaching,
-        callSidToCoach: callSidToCoach,
-        jitterBufferSize: jitterBufferSize,
-        byoc: byoc,
-        callerId: callerId,
-        callReason: callReason,
-        recordingTrack: recordingTrack,
-        recordingConfigurationId: recordingConfigurationId,
-        timeLimit: timeLimit,
-        machineDetection: machineDetection,
-        machineDetectionTimeout: machineDetectionTimeout,
-        machineDetectionSpeechThreshold: machineDetectionSpeechThreshold,
-        machineDetectionSpeechEndThreshold: machineDetectionSpeechEndThreshold,
-        machineDetectionSilenceTimeout: machineDetectionSilenceTimeout,
-        amdStatusCallback: amdStatusCallback,
-        amdStatusCallbackMethod: amdStatusCallbackMethod,
-        trim: trim,
-        callToken: callToken,
-        passports: passports,
-        clientNotificationUrl: clientNotificationUrl,
-        callerDisplayName: callerDisplayName,
-        emergencyCallerPosition: emergencyCallerPosition,
-        emergencyCallerLocation: emergencyCallerLocation,
-        emergencyName: emergencyName,
-        emergencyAddress: emergencyAddress,
-        emergencyZipCode: emergencyZipCode,
-        emergencyCity: emergencyCity,
-        emergencyState: emergencyState,
-        emergencyCountry: emergencyCountry,
-        requestOptions: requestOptions);
+    return participants_methods.createConferencesParticipants(_config, accountSid: accountSid, conferenceSid: conferenceSid, from: from, to: to, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, statusCallbackEvent: statusCallbackEvent, label: label, timeout: timeout, record: record, muted: muted, beep: beep, startConferenceOnEnter: startConferenceOnEnter, endConferenceOnExit: endConferenceOnExit, waitUrl: waitUrl, waitMethod: waitMethod, earlyMedia: earlyMedia, maxParticipants: maxParticipants, conferenceRecord: conferenceRecord, conferenceTrim: conferenceTrim, conferenceStatusCallback: conferenceStatusCallback, conferenceStatusCallbackMethod: conferenceStatusCallbackMethod, conferenceStatusCallbackEvent: conferenceStatusCallbackEvent, recordingChannels: recordingChannels, recordingStatusCallback: recordingStatusCallback, recordingStatusCallbackMethod: recordingStatusCallbackMethod, sipAuthUsername: sipAuthUsername, sipAuthPassword: sipAuthPassword, region: region, conferenceRecordingStatusCallback: conferenceRecordingStatusCallback, conferenceRecordingStatusCallbackMethod: conferenceRecordingStatusCallbackMethod, recordingStatusCallbackEvent: recordingStatusCallbackEvent, conferenceRecordingStatusCallbackEvent: conferenceRecordingStatusCallbackEvent, coaching: coaching, callSidToCoach: callSidToCoach, jitterBufferSize: jitterBufferSize, byoc: byoc, callerId: callerId, callReason: callReason, recordingTrack: recordingTrack, recordingConfigurationId: recordingConfigurationId, timeLimit: timeLimit, machineDetection: machineDetection, machineDetectionTimeout: machineDetectionTimeout, machineDetectionSpeechThreshold: machineDetectionSpeechThreshold, machineDetectionSpeechEndThreshold: machineDetectionSpeechEndThreshold, machineDetectionSilenceTimeout: machineDetectionSilenceTimeout, amdStatusCallback: amdStatusCallback, amdStatusCallbackMethod: amdStatusCallbackMethod, trim: trim, callToken: callToken, passports: passports, clientNotificationUrl: clientNotificationUrl, callerDisplayName: callerDisplayName, emergencyCallerPosition: emergencyCallerPosition, emergencyCallerLocation: emergencyCallerLocation, emergencyName: emergencyName, emergencyAddress: emergencyAddress, emergencyZipCode: emergencyZipCode, emergencyCity: emergencyCity, emergencyState: emergencyState, emergencyCountry: emergencyCountry, requestOptions: requestOptions);
   }
 
   /// Lists participants in a specific conference. Use `Muted`, `Hold`, and `Coaching` to filter participants by their current settings. Use `PageSize`, `Page`, and `PageToken` to paginate the results.
@@ -2644,17 +1574,9 @@ class ConferencesParticipantsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return participants_methods.listConferencesParticipants(_config,
-        accountSid: accountSid,
-        conferenceSid: conferenceSid,
-        muted: muted,
-        hold: hold,
-        coaching: coaching,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return participants_methods.listConferencesParticipants(_config, accountSid: accountSid, conferenceSid: conferenceSid, muted: muted, hold: hold, coaching: coaching, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class ConferencesNamespace {
@@ -2665,7 +1587,6 @@ class ConferencesNamespace {
     recordings = ConferencesRecordingsNamespace(config);
     participants = ConferencesParticipantsNamespace(config);
   }
-
   /// Retrieves a specific conference for an account. Use the conference SID to identify it and inspect its status, region, and reason for ending.
   ///
   /// Fetch an instance of a conference
@@ -2673,8 +1594,7 @@ class ConferencesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return conferences_methods.fetchConferences(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return conferences_methods.fetchConferences(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates a conference's status or announcement configuration. Set `Status` to `completed` to end the conference, or provide an announcement URL and its HTTP method. The response contains the updated conference resource.
@@ -2683,16 +1603,9 @@ class ConferencesNamespace {
       required String sid,
       SdkOptional<ConferenceEnumUpdateStatus> status = const SdkOmitted(),
       SdkOptional<String> announceUrl = const SdkOmitted(),
-      SdkOptional<UpdateConferencesRequestBodyAnnounceMethod> announceMethod =
-          const SdkOmitted(),
+      SdkOptional<UpdateConferencesRequestBodyAnnounceMethod> announceMethod = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return conferences_methods.updateConferences(_config,
-        accountSid: accountSid,
-        sid: sid,
-        status: status,
-        announceUrl: announceUrl,
-        announceMethod: announceMethod,
-        requestOptions: requestOptions);
+    return conferences_methods.updateConferences(_config, accountSid: accountSid, sid: sid, status: status, announceUrl: announceUrl, announceMethod: announceMethod, requestOptions: requestOptions);
   }
 
   /// Lists conferences belonging to the specified account. Filter results by creation or update date, friendly name, or status, and use the page parameters to navigate the results.
@@ -2712,27 +1625,14 @@ class ConferencesNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return conferences_methods.listConferences(_config,
-        accountSid: accountSid,
-        dateCreated: dateCreated,
-        dateCreated_: dateCreated_,
-        dateCreated_2: dateCreated_2,
-        dateUpdated: dateUpdated,
-        dateUpdated_: dateUpdated_,
-        dateUpdated_2: dateUpdated_2,
-        friendlyName: friendlyName,
-        status: status,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return conferences_methods.listConferences(_config, accountSid: accountSid, dateCreated: dateCreated, dateCreated_: dateCreated_, dateCreated_2: dateCreated_2, dateUpdated: dateUpdated, dateUpdated_: dateUpdated_, dateUpdated_2: dateUpdated_2, friendlyName: friendlyName, status: status, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class ConnectAppsNamespace {
   final ClientConfig _config;
   ConnectAppsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a specific Connect App belonging to an account. Supply the account and Connect App identifiers to read its configuration and requested permissions.
   ///
   /// Fetch an instance of a connect-app
@@ -2740,8 +1640,7 @@ class ConnectAppsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return connect_apps_methods.fetchConnectApps(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return connect_apps_methods.fetchConnectApps(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the configuration of a Connect App belonging to an account. Provide the fields to change, such as its redirect URLs, descriptive details, or requested permissions.
@@ -2752,27 +1651,14 @@ class ConnectAppsNamespace {
       required String sid,
       SdkOptional<String> authorizeRedirectUrl = const SdkOmitted(),
       SdkOptional<String> companyName = const SdkOmitted(),
-      SdkOptional<UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod>
-          deauthorizeCallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod> deauthorizeCallbackMethod = const SdkOmitted(),
       SdkOptional<String> deauthorizeCallbackUrl = const SdkOmitted(),
       SdkOptional<String> description = const SdkOmitted(),
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<String> homepageUrl = const SdkOmitted(),
-      SdkOptional<List<ConnectAppEnumPermission>> permissions =
-          const SdkOmitted(),
+      SdkOptional<List<ConnectAppEnumPermission>> permissions = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return connect_apps_methods.updateConnectApps(_config,
-        accountSid: accountSid,
-        sid: sid,
-        authorizeRedirectUrl: authorizeRedirectUrl,
-        companyName: companyName,
-        deauthorizeCallbackMethod: deauthorizeCallbackMethod,
-        deauthorizeCallbackUrl: deauthorizeCallbackUrl,
-        description: description,
-        friendlyName: friendlyName,
-        homepageUrl: homepageUrl,
-        permissions: permissions,
-        requestOptions: requestOptions);
+    return connect_apps_methods.updateConnectApps(_config, accountSid: accountSid, sid: sid, authorizeRedirectUrl: authorizeRedirectUrl, companyName: companyName, deauthorizeCallbackMethod: deauthorizeCallbackMethod, deauthorizeCallbackUrl: deauthorizeCallbackUrl, description: description, friendlyName: friendlyName, homepageUrl: homepageUrl, permissions: permissions, requestOptions: requestOptions);
   }
 
   /// Deletes a Connect App belonging to an account. Provide the account and Connect App identifiers to specify the resource to remove.
@@ -2782,8 +1668,7 @@ class ConnectAppsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return connect_apps_methods.deleteConnectApps(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return connect_apps_methods.deleteConnectApps(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists Connect Apps belonging to the specified account. Use the page parameters to navigate through the account's Connect Apps.
@@ -2795,20 +1680,14 @@ class ConnectAppsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return connect_apps_methods.listConnectApps(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return connect_apps_methods.listConnectApps(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class IncomingPhoneNumbersAssignedAddOnsExtensionsNamespace {
   final ClientConfig _config;
-  IncomingPhoneNumbersAssignedAddOnsExtensionsNamespace(ClientConfig config)
-      : _config = config;
-
+  IncomingPhoneNumbersAssignedAddOnsExtensionsNamespace(ClientConfig config) : _config = config;
   /// Retrieves an Extension for an assigned Add-on on an incoming phone number. Use the account, phone number, assigned Add-on, and Extension SIDs to identify the resource.
   ///
   /// Fetch an instance of an Extension for the Assigned Add-on.
@@ -2819,46 +1698,32 @@ class IncomingPhoneNumbersAssignedAddOnsExtensionsNamespace {
           required String assignedAddOnSid,
           required String sid,
           RequestOptions? requestOptions}) async {
-    return extensions_methods.fetchIncomingPhoneNumbersAssignedAddOnsExtensions(
-        _config,
-        accountSid: accountSid,
-        resourceSid: resourceSid,
-        assignedAddOnSid: assignedAddOnSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return extensions_methods.fetchIncomingPhoneNumbersAssignedAddOnsExtensions(_config, accountSid: accountSid, resourceSid: resourceSid, assignedAddOnSid: assignedAddOnSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists Extensions for an assigned Add-on on an incoming phone number. Use the account, phone number, and assigned Add-on SIDs to scope the list, and the paging parameters to select a page of results.
   ///
   /// Retrieve a list of Extensions for the Assigned Add-on.
-  Future<ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse> list(
-      {required String accountSid,
-      required String resourceSid,
-      required String assignedAddOnSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return extensions_methods.listIncomingPhoneNumbersAssignedAddOnsExtensions(
-        _config,
-        accountSid: accountSid,
-        resourceSid: resourceSid,
-        assignedAddOnSid: assignedAddOnSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse>
+      list(
+          {required String accountSid,
+          required String resourceSid,
+          required String assignedAddOnSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return extensions_methods.listIncomingPhoneNumbersAssignedAddOnsExtensions(_config, accountSid: accountSid, resourceSid: resourceSid, assignedAddOnSid: assignedAddOnSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class IncomingPhoneNumbersAssignedAddOnsNamespace {
   final ClientConfig _config;
   late final IncomingPhoneNumbersAssignedAddOnsExtensionsNamespace extensions;
-  IncomingPhoneNumbersAssignedAddOnsNamespace(ClientConfig config)
-      : _config = config {
+  IncomingPhoneNumbersAssignedAddOnsNamespace(ClientConfig config) : _config = config {
     extensions = IncomingPhoneNumbersAssignedAddOnsExtensionsNamespace(config);
   }
-
   /// Retrieves an add-on installation assigned to an incoming phone number. Use the account SID, phone number SID, and add-on installation SID to identify the resource.
   ///
   /// Fetch an instance of an Add-on installation currently assigned to this Number.
@@ -2868,12 +1733,7 @@ class IncomingPhoneNumbersAssignedAddOnsNamespace {
           required String resourceSid,
           required String sid,
           RequestOptions? requestOptions}) async {
-    return assigned_add_ons_methods.fetchIncomingPhoneNumbersAssignedAddOns(
-        _config,
-        accountSid: accountSid,
-        resourceSid: resourceSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return assigned_add_ons_methods.fetchIncomingPhoneNumbersAssignedAddOns(_config, accountSid: accountSid, resourceSid: resourceSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Remove the assignment of an Add-on installation from the Number specified.
@@ -2882,32 +1742,21 @@ class IncomingPhoneNumbersAssignedAddOnsNamespace {
       required String resourceSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return assigned_add_ons_methods.deleteIncomingPhoneNumbersAssignedAddOns(
-        _config,
-        accountSid: accountSid,
-        resourceSid: resourceSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return assigned_add_ons_methods.deleteIncomingPhoneNumbersAssignedAddOns(_config, accountSid: accountSid, resourceSid: resourceSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists add-on installations assigned to an incoming phone number. Use the account SID and phone number SID to scope the results, and use the page parameters to navigate the list.
   ///
   /// Retrieve a list of Add-on installations currently assigned to this Number.
-  Future<ListIncomingPhoneNumbersAssignedAddOnsResponse> list(
-      {required String accountSid,
-      required String resourceSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return assigned_add_ons_methods.listIncomingPhoneNumbersAssignedAddOns(
-        _config,
-        accountSid: accountSid,
-        resourceSid: resourceSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListIncomingPhoneNumbersAssignedAddOnsResponse>
+      list(
+          {required String accountSid,
+          required String resourceSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return assigned_add_ons_methods.listIncomingPhoneNumbersAssignedAddOns(_config, accountSid: accountSid, resourceSid: resourceSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Assign an Add-on installation to the Number specified.
@@ -2917,13 +1766,9 @@ class IncomingPhoneNumbersAssignedAddOnsNamespace {
           required String resourceSid,
           required String installedAddOnSid,
           RequestOptions? requestOptions}) async {
-    return assigned_add_ons_methods.createIncomingPhoneNumbersAssignedAddOns(
-        _config,
-        accountSid: accountSid,
-        resourceSid: resourceSid,
-        installedAddOnSid: installedAddOnSid,
-        requestOptions: requestOptions);
+    return assigned_add_ons_methods.createIncomingPhoneNumbersAssignedAddOns(_config, accountSid: accountSid, resourceSid: resourceSid, installedAddOnSid: installedAddOnSid, requestOptions: requestOptions);
   }
+
 }
 
 class IncomingPhoneNumbersNamespace {
@@ -2932,7 +1777,6 @@ class IncomingPhoneNumbersNamespace {
   IncomingPhoneNumbersNamespace(ClientConfig config) : _config = config {
     assignedAddOns = IncomingPhoneNumbersAssignedAddOnsNamespace(config);
   }
-
   /// Updates the configuration of an incoming phone number. Supply only the settings you want to change, such as the SMS or voice handlers and their callback methods. An application SID takes precedence over the corresponding URL settings.
   ///
   /// Update an incoming-phone-number instance.
@@ -2943,60 +1787,27 @@ class IncomingPhoneNumbersNamespace {
       SdkOptional<String> apiVersion = const SdkOmitted(),
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-      SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
       SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod =
-          const SdkOmitted(),
+      SdkOptional<UpdateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod = const SdkOmitted(),
       SdkOptional<String> smsUrl = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<UpdateIncomingPhoneNumbersRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateIncomingPhoneNumbersRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
       SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-      SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceMethod>
-          voiceMethod = const SdkOmitted(),
+      SdkOptional<UpdateIncomingPhoneNumbersRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
       SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberEnumEmergencyStatus>
-          emergencyStatus = const SdkOmitted(),
+      SdkOptional<IncomingPhoneNumberEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
       SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
       SdkOptional<String> trunkSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode =
-          const SdkOmitted(),
+      SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
       SdkOptional<String> identitySid = const SdkOmitted(),
       SdkOptional<String> addressSid = const SdkOmitted(),
       SdkOptional<String> bundleSid = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.updateIncomingPhoneNumbers(_config,
-        accountSid: accountSid,
-        sid: sid,
-        accountSid_2: accountSid_2,
-        apiVersion: apiVersion,
-        friendlyName: friendlyName,
-        smsApplicationSid: smsApplicationSid,
-        smsFallbackMethod: smsFallbackMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsMethod: smsMethod,
-        smsUrl: smsUrl,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceApplicationSid: voiceApplicationSid,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceMethod: voiceMethod,
-        voiceUrl: voiceUrl,
-        emergencyStatus: emergencyStatus,
-        emergencyAddressSid: emergencyAddressSid,
-        trunkSid: trunkSid,
-        voiceReceiveMode: voiceReceiveMode,
-        identitySid: identitySid,
-        addressSid: addressSid,
-        bundleSid: bundleSid,
-        requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.updateIncomingPhoneNumbers(_config, accountSid: accountSid, sid: sid, accountSid_2: accountSid_2, apiVersion: apiVersion, friendlyName: friendlyName, smsApplicationSid: smsApplicationSid, smsFallbackMethod: smsFallbackMethod, smsFallbackUrl: smsFallbackUrl, smsMethod: smsMethod, smsUrl: smsUrl, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceApplicationSid: voiceApplicationSid, voiceCallerIdLookup: voiceCallerIdLookup, voiceFallbackMethod: voiceFallbackMethod, voiceFallbackUrl: voiceFallbackUrl, voiceMethod: voiceMethod, voiceUrl: voiceUrl, emergencyStatus: emergencyStatus, emergencyAddressSid: emergencyAddressSid, trunkSid: trunkSid, voiceReceiveMode: voiceReceiveMode, identitySid: identitySid, addressSid: addressSid, bundleSid: bundleSid, requestOptions: requestOptions);
   }
 
   /// Retrieves an incoming phone number belonging to an account. Use the account SID and the phone number's SID to identify the resource.
@@ -3006,8 +1817,7 @@ class IncomingPhoneNumbersNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.fetchIncomingPhoneNumbers(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.fetchIncomingPhoneNumbers(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete a phone-numbers belonging to the account used to make the request.
@@ -3015,8 +1825,7 @@ class IncomingPhoneNumbersNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.deleteIncomingPhoneNumbers(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.deleteIncomingPhoneNumbers(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists incoming phone numbers belonging to an account. Filter the results by beta status, friendly name, phone number, or origin, and use the page parameters to navigate the list.
@@ -3032,16 +1841,7 @@ class IncomingPhoneNumbersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.listIncomingPhoneNumbers(_config,
-        accountSid: accountSid,
-        beta: beta,
-        friendlyName: friendlyName,
-        phoneNumber: phoneNumber,
-        origin: origin,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.listIncomingPhoneNumbers(_config, accountSid: accountSid, beta: beta, friendlyName: friendlyName, phoneNumber: phoneNumber, origin: origin, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a new incoming phone number by purchasing it for an account. Configure optional SMS and voice handling settings in the form-encoded body. An application SID takes precedence over the corresponding URL settings.
@@ -3052,62 +1852,29 @@ class IncomingPhoneNumbersNamespace {
       SdkOptional<String> apiVersion = const SdkOmitted(),
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
       SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod =
-          const SdkOmitted(),
+      SdkOptional<CreateIncomingPhoneNumbersRequestBodySmsMethod> smsMethod = const SdkOmitted(),
       SdkOptional<String> smsUrl = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateIncomingPhoneNumbersRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
       SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceMethod>
-          voiceMethod = const SdkOmitted(),
+      SdkOptional<CreateIncomingPhoneNumbersRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
       SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberEnumEmergencyStatus>
-          emergencyStatus = const SdkOmitted(),
+      SdkOptional<IncomingPhoneNumberEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
       SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
       SdkOptional<String> trunkSid = const SdkOmitted(),
       SdkOptional<String> identitySid = const SdkOmitted(),
       SdkOptional<String> addressSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode =
-          const SdkOmitted(),
+      SdkOptional<IncomingPhoneNumberEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
       SdkOptional<String> bundleSid = const SdkOmitted(),
       SdkOptional<String> phoneNumber = const SdkOmitted(),
       SdkOptional<String> areaCode = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.createIncomingPhoneNumbers(_config,
-        accountSid: accountSid,
-        apiVersion: apiVersion,
-        friendlyName: friendlyName,
-        smsApplicationSid: smsApplicationSid,
-        smsFallbackMethod: smsFallbackMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsMethod: smsMethod,
-        smsUrl: smsUrl,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceApplicationSid: voiceApplicationSid,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceMethod: voiceMethod,
-        voiceUrl: voiceUrl,
-        emergencyStatus: emergencyStatus,
-        emergencyAddressSid: emergencyAddressSid,
-        trunkSid: trunkSid,
-        identitySid: identitySid,
-        addressSid: addressSid,
-        voiceReceiveMode: voiceReceiveMode,
-        bundleSid: bundleSid,
-        phoneNumber: phoneNumber,
-        areaCode: areaCode,
-        requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.createIncomingPhoneNumbers(_config, accountSid: accountSid, apiVersion: apiVersion, friendlyName: friendlyName, smsApplicationSid: smsApplicationSid, smsFallbackMethod: smsFallbackMethod, smsFallbackUrl: smsFallbackUrl, smsMethod: smsMethod, smsUrl: smsUrl, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceApplicationSid: voiceApplicationSid, voiceCallerIdLookup: voiceCallerIdLookup, voiceFallbackMethod: voiceFallbackMethod, voiceFallbackUrl: voiceFallbackUrl, voiceMethod: voiceMethod, voiceUrl: voiceUrl, emergencyStatus: emergencyStatus, emergencyAddressSid: emergencyAddressSid, trunkSid: trunkSid, identitySid: identitySid, addressSid: addressSid, voiceReceiveMode: voiceReceiveMode, bundleSid: bundleSid, phoneNumber: phoneNumber, areaCode: areaCode, requestOptions: requestOptions);
   }
 
   /// Lists local incoming phone numbers available to an account. Use the filters to narrow results by name, phone number, or origin, and the paging parameters to select a page of results.
@@ -3121,80 +1888,38 @@ class IncomingPhoneNumbersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.listIncomingPhoneNumbersLocal(_config,
-        accountSid: accountSid,
-        beta: beta,
-        friendlyName: friendlyName,
-        phoneNumber: phoneNumber,
-        origin: origin,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.listIncomingPhoneNumbersLocal(_config, accountSid: accountSid, beta: beta, friendlyName: friendlyName, phoneNumber: phoneNumber, origin: origin, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a local incoming phone number for an account. Supply `PhoneNumber` in E.164 format and configure optional voice, SMS, and callback settings as needed. The response includes the created phone number resource and its SID.
-  Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal> createLocal(
-      {required String accountSid,
-      required String phoneNumber,
-      SdkOptional<String> apiVersion = const SdkOmitted(),
-      SdkOptional<String> friendlyName = const SdkOmitted(),
-      SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
-      SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>
-          smsMethod = const SdkOmitted(),
-      SdkOptional<String> smsUrl = const SdkOmitted(),
-      SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<
-              CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
-      SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
-      SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
-      SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>
-          voiceMethod = const SdkOmitted(),
-      SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<String> identitySid = const SdkOmitted(),
-      SdkOptional<String> addressSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus>
-          emergencyStatus = const SdkOmitted(),
-      SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
-      SdkOptional<String> trunkSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode>
-          voiceReceiveMode = const SdkOmitted(),
-      SdkOptional<String> bundleSid = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.createIncomingPhoneNumbersLocal(
-        _config,
-        accountSid: accountSid,
-        phoneNumber: phoneNumber,
-        apiVersion: apiVersion,
-        friendlyName: friendlyName,
-        smsApplicationSid: smsApplicationSid,
-        smsFallbackMethod: smsFallbackMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsMethod: smsMethod,
-        smsUrl: smsUrl,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceApplicationSid: voiceApplicationSid,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceMethod: voiceMethod,
-        voiceUrl: voiceUrl,
-        identitySid: identitySid,
-        addressSid: addressSid,
-        emergencyStatus: emergencyStatus,
-        emergencyAddressSid: emergencyAddressSid,
-        trunkSid: trunkSid,
-        voiceReceiveMode: voiceReceiveMode,
-        bundleSid: bundleSid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberLocal>
+      createLocal(
+          {required String accountSid,
+          required String phoneNumber,
+          SdkOptional<String> apiVersion = const SdkOmitted(),
+          SdkOptional<String> friendlyName = const SdkOmitted(),
+          SdkOptional<String> smsApplicationSid = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
+          SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod> smsMethod = const SdkOmitted(),
+          SdkOptional<String> smsUrl = const SdkOmitted(),
+          SdkOptional<String> statusCallback = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+          SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
+          SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
+          SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+          SdkOptional<String> voiceUrl = const SdkOmitted(),
+          SdkOptional<String> identitySid = const SdkOmitted(),
+          SdkOptional<String> addressSid = const SdkOmitted(),
+          SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
+          SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
+          SdkOptional<String> trunkSid = const SdkOmitted(),
+          SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
+          SdkOptional<String> bundleSid = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return incoming_phone_numbers_methods.createIncomingPhoneNumbersLocal(_config, accountSid: accountSid, phoneNumber: phoneNumber, apiVersion: apiVersion, friendlyName: friendlyName, smsApplicationSid: smsApplicationSid, smsFallbackMethod: smsFallbackMethod, smsFallbackUrl: smsFallbackUrl, smsMethod: smsMethod, smsUrl: smsUrl, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceApplicationSid: voiceApplicationSid, voiceCallerIdLookup: voiceCallerIdLookup, voiceFallbackMethod: voiceFallbackMethod, voiceFallbackUrl: voiceFallbackUrl, voiceMethod: voiceMethod, voiceUrl: voiceUrl, identitySid: identitySid, addressSid: addressSid, emergencyStatus: emergencyStatus, emergencyAddressSid: emergencyAddressSid, trunkSid: trunkSid, voiceReceiveMode: voiceReceiveMode, bundleSid: bundleSid, requestOptions: requestOptions);
   }
 
   /// Lists mobile incoming phone numbers available to an account. Use the filters to narrow results by name, phone number, or origin, and the paging parameters to select a page of results.
@@ -3208,186 +1933,97 @@ class IncomingPhoneNumbersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.listIncomingPhoneNumbersMobile(
-        _config,
-        accountSid: accountSid,
-        beta: beta,
-        friendlyName: friendlyName,
-        phoneNumber: phoneNumber,
-        origin: origin,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return incoming_phone_numbers_methods.listIncomingPhoneNumbersMobile(_config, accountSid: accountSid, beta: beta, friendlyName: friendlyName, phoneNumber: phoneNumber, origin: origin, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a mobile incoming phone number for an account. Supply `PhoneNumber` in E.164 format and configure optional voice, SMS, and callback settings as needed. The response includes the created phone number resource and its SID.
-  Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile> createMobile(
-      {required String accountSid,
-      required String phoneNumber,
-      SdkOptional<String> apiVersion = const SdkOmitted(),
-      SdkOptional<String> friendlyName = const SdkOmitted(),
-      SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
-      SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsMethod>
-          smsMethod = const SdkOmitted(),
-      SdkOptional<String> smsUrl = const SdkOmitted(),
-      SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<
-              CreateIncomingPhoneNumbersMobileRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
-      SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
-      SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-      SdkOptional<
-              CreateIncomingPhoneNumbersMobileRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
-      SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyVoiceMethod>
-          voiceMethod = const SdkOmitted(),
-      SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<String> identitySid = const SdkOmitted(),
-      SdkOptional<String> addressSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberMobileEnumEmergencyStatus>
-          emergencyStatus = const SdkOmitted(),
-      SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
-      SdkOptional<String> trunkSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberMobileEnumVoiceReceiveMode>
-          voiceReceiveMode = const SdkOmitted(),
-      SdkOptional<String> bundleSid = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.createIncomingPhoneNumbersMobile(
-        _config,
-        accountSid: accountSid,
-        phoneNumber: phoneNumber,
-        apiVersion: apiVersion,
-        friendlyName: friendlyName,
-        smsApplicationSid: smsApplicationSid,
-        smsFallbackMethod: smsFallbackMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsMethod: smsMethod,
-        smsUrl: smsUrl,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceApplicationSid: voiceApplicationSid,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceMethod: voiceMethod,
-        voiceUrl: voiceUrl,
-        identitySid: identitySid,
-        addressSid: addressSid,
-        emergencyStatus: emergencyStatus,
-        emergencyAddressSid: emergencyAddressSid,
-        trunkSid: trunkSid,
-        voiceReceiveMode: voiceReceiveMode,
-        bundleSid: bundleSid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>
+      createMobile(
+          {required String accountSid,
+          required String phoneNumber,
+          SdkOptional<String> apiVersion = const SdkOmitted(),
+          SdkOptional<String> friendlyName = const SdkOmitted(),
+          SdkOptional<String> smsApplicationSid = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
+          SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodySmsMethod> smsMethod = const SdkOmitted(),
+          SdkOptional<String> smsUrl = const SdkOmitted(),
+          SdkOptional<String> statusCallback = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+          SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
+          SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
+          SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersMobileRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+          SdkOptional<String> voiceUrl = const SdkOmitted(),
+          SdkOptional<String> identitySid = const SdkOmitted(),
+          SdkOptional<String> addressSid = const SdkOmitted(),
+          SdkOptional<IncomingPhoneNumberMobileEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
+          SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
+          SdkOptional<String> trunkSid = const SdkOmitted(),
+          SdkOptional<IncomingPhoneNumberMobileEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
+          SdkOptional<String> bundleSid = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return incoming_phone_numbers_methods.createIncomingPhoneNumbersMobile(_config, accountSid: accountSid, phoneNumber: phoneNumber, apiVersion: apiVersion, friendlyName: friendlyName, smsApplicationSid: smsApplicationSid, smsFallbackMethod: smsFallbackMethod, smsFallbackUrl: smsFallbackUrl, smsMethod: smsMethod, smsUrl: smsUrl, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceApplicationSid: voiceApplicationSid, voiceCallerIdLookup: voiceCallerIdLookup, voiceFallbackMethod: voiceFallbackMethod, voiceFallbackUrl: voiceFallbackUrl, voiceMethod: voiceMethod, voiceUrl: voiceUrl, identitySid: identitySid, addressSid: addressSid, emergencyStatus: emergencyStatus, emergencyAddressSid: emergencyAddressSid, trunkSid: trunkSid, voiceReceiveMode: voiceReceiveMode, bundleSid: bundleSid, requestOptions: requestOptions);
   }
 
   /// Lists toll-free incoming phone numbers available to an account. Use the filters to narrow results by name, phone number, or origin, and the paging parameters to select a page of results.
-  Future<ListIncomingPhoneNumbersTollFreeResponse> listTollFree(
-      {required String accountSid,
-      SdkOptional<bool> beta = const SdkOmitted(),
-      SdkOptional<String> friendlyName = const SdkOmitted(),
-      SdkOptional<String> phoneNumber = const SdkOmitted(),
-      SdkOptional<String> origin = const SdkOmitted(),
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.listIncomingPhoneNumbersTollFree(
-        _config,
-        accountSid: accountSid,
-        beta: beta,
-        friendlyName: friendlyName,
-        phoneNumber: phoneNumber,
-        origin: origin,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListIncomingPhoneNumbersTollFreeResponse>
+      listTollFree(
+          {required String accountSid,
+          SdkOptional<bool> beta = const SdkOmitted(),
+          SdkOptional<String> friendlyName = const SdkOmitted(),
+          SdkOptional<String> phoneNumber = const SdkOmitted(),
+          SdkOptional<String> origin = const SdkOmitted(),
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return incoming_phone_numbers_methods.listIncomingPhoneNumbersTollFree(_config, accountSid: accountSid, beta: beta, friendlyName: friendlyName, phoneNumber: phoneNumber, origin: origin, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a toll-free incoming phone number for an account. Supply `PhoneNumber` in E.164 format and configure optional voice, SMS, and callback settings as needed. The response includes the created phone number resource and its SID.
-  Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree> createTollFree(
-      {required String accountSid,
-      required String phoneNumber,
-      SdkOptional<String> apiVersion = const SdkOmitted(),
-      SdkOptional<String> friendlyName = const SdkOmitted(),
-      SdkOptional<String> smsApplicationSid = const SdkOmitted(),
-      SdkOptional<
-              CreateIncomingPhoneNumbersTollFreeRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
-      SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsMethod>
-          smsMethod = const SdkOmitted(),
-      SdkOptional<String> smsUrl = const SdkOmitted(),
-      SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<
-              CreateIncomingPhoneNumbersTollFreeRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
-      SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
-      SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
-      SdkOptional<
-              CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
-      SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceMethod>
-          voiceMethod = const SdkOmitted(),
-      SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<String> identitySid = const SdkOmitted(),
-      SdkOptional<String> addressSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberTollFreeEnumEmergencyStatus>
-          emergencyStatus = const SdkOmitted(),
-      SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
-      SdkOptional<String> trunkSid = const SdkOmitted(),
-      SdkOptional<IncomingPhoneNumberTollFreeEnumVoiceReceiveMode>
-          voiceReceiveMode = const SdkOmitted(),
-      SdkOptional<String> bundleSid = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return incoming_phone_numbers_methods.createIncomingPhoneNumbersTollFree(
-        _config,
-        accountSid: accountSid,
-        phoneNumber: phoneNumber,
-        apiVersion: apiVersion,
-        friendlyName: friendlyName,
-        smsApplicationSid: smsApplicationSid,
-        smsFallbackMethod: smsFallbackMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsMethod: smsMethod,
-        smsUrl: smsUrl,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        voiceApplicationSid: voiceApplicationSid,
-        voiceCallerIdLookup: voiceCallerIdLookup,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceMethod: voiceMethod,
-        voiceUrl: voiceUrl,
-        identitySid: identitySid,
-        addressSid: addressSid,
-        emergencyStatus: emergencyStatus,
-        emergencyAddressSid: emergencyAddressSid,
-        trunkSid: trunkSid,
-        voiceReceiveMode: voiceReceiveMode,
-        bundleSid: bundleSid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFree>
+      createTollFree(
+          {required String accountSid,
+          required String phoneNumber,
+          SdkOptional<String> apiVersion = const SdkOmitted(),
+          SdkOptional<String> friendlyName = const SdkOmitted(),
+          SdkOptional<String> smsApplicationSid = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
+          SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodySmsMethod> smsMethod = const SdkOmitted(),
+          SdkOptional<String> smsUrl = const SdkOmitted(),
+          SdkOptional<String> statusCallback = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+          SdkOptional<String> voiceApplicationSid = const SdkOmitted(),
+          SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
+          SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
+          SdkOptional<CreateIncomingPhoneNumbersTollFreeRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+          SdkOptional<String> voiceUrl = const SdkOmitted(),
+          SdkOptional<String> identitySid = const SdkOmitted(),
+          SdkOptional<String> addressSid = const SdkOmitted(),
+          SdkOptional<IncomingPhoneNumberTollFreeEnumEmergencyStatus> emergencyStatus = const SdkOmitted(),
+          SdkOptional<String> emergencyAddressSid = const SdkOmitted(),
+          SdkOptional<String> trunkSid = const SdkOmitted(),
+          SdkOptional<IncomingPhoneNumberTollFreeEnumVoiceReceiveMode> voiceReceiveMode = const SdkOmitted(),
+          SdkOptional<String> bundleSid = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return incoming_phone_numbers_methods.createIncomingPhoneNumbersTollFree(_config, accountSid: accountSid, phoneNumber: phoneNumber, apiVersion: apiVersion, friendlyName: friendlyName, smsApplicationSid: smsApplicationSid, smsFallbackMethod: smsFallbackMethod, smsFallbackUrl: smsFallbackUrl, smsMethod: smsMethod, smsUrl: smsUrl, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, voiceApplicationSid: voiceApplicationSid, voiceCallerIdLookup: voiceCallerIdLookup, voiceFallbackMethod: voiceFallbackMethod, voiceFallbackUrl: voiceFallbackUrl, voiceMethod: voiceMethod, voiceUrl: voiceUrl, identitySid: identitySid, addressSid: addressSid, emergencyStatus: emergencyStatus, emergencyAddressSid: emergencyAddressSid, trunkSid: trunkSid, voiceReceiveMode: voiceReceiveMode, bundleSid: bundleSid, requestOptions: requestOptions);
   }
+
 }
 
 class KeysNamespace {
   final ClientConfig _config;
   KeysNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a Key resource from an account. Use the account SID and Key SID to identify the resource whose name and timestamps you need.
   Future<ApiV2010AccountKey> fetch(
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return keys_methods.fetchKeys(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return keys_methods.fetchKeys(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the friendly name of a Key resource in an account. Supply `FriendlyName` to change the resource's descriptive name; the request body may be omitted when you have no field to update.
@@ -3396,11 +2032,7 @@ class KeysNamespace {
       required String sid,
       SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return keys_methods.updateKeys(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return keys_methods.updateKeys(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Deletes a specific API Key from an account. Supply the account SID and the SID of the key you want to remove.
@@ -3408,8 +2040,7 @@ class KeysNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return keys_methods.deleteKeys(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return keys_methods.deleteKeys(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists API Keys created by a specific account. Use the page parameters to navigate the results, and set `PageSize` to control how many keys each page contains.
@@ -3419,12 +2050,7 @@ class KeysNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return keys_methods.listKeys(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return keys_methods.listKeys(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a new API Key for an account. Optionally provide `FriendlyName` to label the key; the response includes its secret, which is returned only when the key is first created.
@@ -3432,17 +2058,14 @@ class KeysNamespace {
       {required String accountSid,
       SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return keys_methods.createKeys(_config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return keys_methods.createKeys(_config, accountSid: accountSid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
+
 }
 
 class MessagesMediaNamespace {
   final ClientConfig _config;
   MessagesMediaNamespace(ClientConfig config) : _config = config;
-
   /// Deletes a specific media resource associated with a message. Supply the account SID, message SID, and media SID for the resource you want to remove.
   ///
   /// Delete the Media resource.
@@ -3451,11 +2074,7 @@ class MessagesMediaNamespace {
       required String messageSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return media_methods.deleteMessagesMedia(_config,
-        accountSid: accountSid,
-        messageSid: messageSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return media_methods.deleteMessagesMedia(_config, accountSid: accountSid, messageSid: messageSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific media resource associated with a message. Supply the account SID, message SID, and media SID to identify the resource.
@@ -3466,11 +2085,7 @@ class MessagesMediaNamespace {
       required String messageSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return media_methods.fetchMessagesMedia(_config,
-        accountSid: accountSid,
-        messageSid: messageSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return media_methods.fetchMessagesMedia(_config, accountSid: accountSid, messageSid: messageSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists media resources associated with a specific message. Filter the results by creation date and use the page parameters to navigate the list.
@@ -3486,23 +2101,14 @@ class MessagesMediaNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return media_methods.listMessagesMedia(_config,
-        accountSid: accountSid,
-        messageSid: messageSid,
-        dateCreated: dateCreated,
-        dateCreated_: dateCreated_,
-        dateCreated_2: dateCreated_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return media_methods.listMessagesMedia(_config, accountSid: accountSid, messageSid: messageSid, dateCreated: dateCreated, dateCreated_: dateCreated_, dateCreated_2: dateCreated_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class MessagesFeedbackNamespace {
   final ClientConfig _config;
   MessagesFeedbackNamespace(ClientConfig config) : _config = config;
-
   /// Creates Message Feedback to record whether the recipient performed a tracked action associated with a message. Identify the account and message, then optionally provide the reported `Outcome`. The response contains the created feedback resource.
   ///
   /// Create Message Feedback to confirm a tracked user action was performed by the recipient of the associated Message
@@ -3511,12 +2117,9 @@ class MessagesFeedbackNamespace {
       required String messageSid,
       SdkOptional<MessageFeedbackEnumOutcome> outcome = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return feedback_methods.createMessagesFeedback(_config,
-        accountSid: accountSid,
-        messageSid: messageSid,
-        outcome: outcome,
-        requestOptions: requestOptions);
+    return feedback_methods.createMessagesFeedback(_config, accountSid: accountSid, messageSid: messageSid, outcome: outcome, requestOptions: requestOptions);
   }
+
 }
 
 class MessagesNamespace {
@@ -3527,7 +2130,6 @@ class MessagesNamespace {
     media = MessagesMediaNamespace(config);
     feedback = MessagesFeedbackNamespace(config);
   }
-
   /// Creates and sends a message to a phone number or channel address. Supply `To` in E.164 format or as a channel address, and use the optional fields to configure delivery, privacy, or scheduling. A 201 response returns the created Message resource.
   ///
   /// Send a message
@@ -3541,10 +2143,8 @@ class MessagesNamespace {
       SdkOptional<int> attempt = const SdkOmitted(),
       SdkOptional<int> validityPeriod = const SdkOmitted(),
       SdkOptional<bool> forceDelivery = const SdkOmitted(),
-      SdkOptional<MessageEnumContentRetention> contentRetention =
-          const SdkOmitted(),
-      SdkOptional<MessageEnumAddressRetention> addressRetention =
-          const SdkOmitted(),
+      SdkOptional<MessageEnumContentRetention> contentRetention = const SdkOmitted(),
+      SdkOptional<MessageEnumAddressRetention> addressRetention = const SdkOmitted(),
       SdkOptional<bool> smartEncoded = const SdkOmitted(),
       SdkOptional<List<String>> persistentAction = const SdkOmitted(),
       SdkOptional<MessageEnumTrafficType> trafficType = const SdkOmitted(),
@@ -3562,35 +2162,7 @@ class MessagesNamespace {
       SdkOptional<List<String>> mediaUrl = const SdkOmitted(),
       SdkOptional<String> contentSid = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods.createMessages(_config,
-        accountSid: accountSid,
-        to: to,
-        statusCallback: statusCallback,
-        applicationSid: applicationSid,
-        maxPrice: maxPrice,
-        provideFeedback: provideFeedback,
-        attempt: attempt,
-        validityPeriod: validityPeriod,
-        forceDelivery: forceDelivery,
-        contentRetention: contentRetention,
-        addressRetention: addressRetention,
-        smartEncoded: smartEncoded,
-        persistentAction: persistentAction,
-        trafficType: trafficType,
-        shortenUrls: shortenUrls,
-        scheduleType: scheduleType,
-        sendAt: sendAt,
-        sendAsMms: sendAsMms,
-        contentVariables: contentVariables,
-        messageIntent: messageIntent,
-        riskCheck: riskCheck,
-        from: from,
-        fallbackFrom: fallbackFrom,
-        messagingServiceSid: messagingServiceSid,
-        body: body,
-        mediaUrl: mediaUrl,
-        contentSid: contentSid,
-        requestOptions: requestOptions);
+    return messages_methods.createMessages(_config, accountSid: accountSid, to: to, statusCallback: statusCallback, applicationSid: applicationSid, maxPrice: maxPrice, provideFeedback: provideFeedback, attempt: attempt, validityPeriod: validityPeriod, forceDelivery: forceDelivery, contentRetention: contentRetention, addressRetention: addressRetention, smartEncoded: smartEncoded, persistentAction: persistentAction, trafficType: trafficType, shortenUrls: shortenUrls, scheduleType: scheduleType, sendAt: sendAt, sendAsMms: sendAsMms, contentVariables: contentVariables, messageIntent: messageIntent, riskCheck: riskCheck, from: from, fallbackFrom: fallbackFrom, messagingServiceSid: messagingServiceSid, body: body, mediaUrl: mediaUrl, contentSid: contentSid, requestOptions: requestOptions);
   }
 
   /// Lists message resources associated with an account. Filter the results by recipient, sender, or sent date, and use the page parameters to navigate the list.
@@ -3607,17 +2179,7 @@ class MessagesNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods.listMessages(_config,
-        accountSid: accountSid,
-        to: to,
-        from: from,
-        dateSent: dateSent,
-        dateSent_: dateSent_,
-        dateSent_2: dateSent_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return messages_methods.listMessages(_config, accountSid: accountSid, to: to, from: from, dateSent: dateSent, dateSent_: dateSent_, dateSent_2: dateSent_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Deletes a Message resource from an account. Supply the account SID and Message SID for the resource you want to remove. The operation does not return a response body.
@@ -3627,8 +2189,7 @@ class MessagesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return messages_methods.deleteMessages(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return messages_methods.deleteMessages(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific Message resource belonging to an account. Provide the account SID and Message SID to identify the resource. The response includes the message content, delivery status, and resource metadata.
@@ -3638,8 +2199,7 @@ class MessagesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return messages_methods.fetchMessages(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return messages_methods.fetchMessages(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates a Message resource to change its body or cancel a message that has not yet been sent. Supply `Body` to replace the message text or set it to an empty string to redact the text; use `Status` to cancel the message. The response returns the updated Message resource.
@@ -3651,19 +2211,14 @@ class MessagesNamespace {
       SdkOptional<String> body = const SdkOmitted(),
       SdkOptional<MessageEnumUpdateStatus> status = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return messages_methods.updateMessages(_config,
-        accountSid: accountSid,
-        sid: sid,
-        body: body,
-        status: status,
-        requestOptions: requestOptions);
+    return messages_methods.updateMessages(_config, accountSid: accountSid, sid: sid, body: body, status: status, requestOptions: requestOptions);
   }
+
 }
 
 class QueuesMembersNamespace {
   final ClientConfig _config;
   QueuesMembersNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a specific member of a queue. Supply the account SID, queue SID, and call SID to identify the queue member.
   ///
   /// Fetch a specific member from the queue
@@ -3672,11 +2227,7 @@ class QueuesMembersNamespace {
       required String queueSid,
       required String callSid,
       RequestOptions? requestOptions}) async {
-    return members_methods.fetchQueuesMembers(_config,
-        accountSid: accountSid,
-        queueSid: queueSid,
-        callSid: callSid,
-        requestOptions: requestOptions);
+    return members_methods.fetchQueuesMembers(_config, accountSid: accountSid, queueSid: queueSid, callSid: callSid, requestOptions: requestOptions);
   }
 
   /// Dequeues a specific member and starts the call's execution at the supplied URL. Provide `Url` as the destination, and use `Method` to choose whether request data is sent as form data or query parameters.
@@ -3687,16 +2238,9 @@ class QueuesMembersNamespace {
       required String queueSid,
       required String callSid,
       required String url,
-      SdkOptional<UpdateQueuesMembersRequestBodyMethod> method =
-          const SdkOmitted(),
+      SdkOptional<UpdateQueuesMembersRequestBodyMethod> method = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return members_methods.updateQueuesMembers(_config,
-        accountSid: accountSid,
-        queueSid: queueSid,
-        callSid: callSid,
-        url: url,
-        method: method,
-        requestOptions: requestOptions);
+    return members_methods.updateQueuesMembers(_config, accountSid: accountSid, queueSid: queueSid, callSid: callSid, url: url, method: method, requestOptions: requestOptions);
   }
 
   /// Lists members of a specific queue. Use the page parameters to navigate the results and review each member's call, position, and wait time.
@@ -3709,14 +2253,9 @@ class QueuesMembersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return members_methods.listQueuesMembers(_config,
-        accountSid: accountSid,
-        queueSid: queueSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return members_methods.listQueuesMembers(_config, accountSid: accountSid, queueSid: queueSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class QueuesNamespace {
@@ -3725,7 +2264,6 @@ class QueuesNamespace {
   QueuesNamespace(ClientConfig config) : _config = config {
     members = QueuesMembersNamespace(config);
   }
-
   /// Retrieves a queue identified by its SID. Use `AccountSid` and `Sid` to identify the account and queue to retrieve.
   ///
   /// Fetch an instance of a queue identified by the QueueSid
@@ -3733,8 +2271,7 @@ class QueuesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return queues_methods.fetchQueues(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return queues_methods.fetchQueues(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the name or maximum size of a queue. Use `AccountSid` and `Sid` to identify the queue, and supply `FriendlyName`, `MaxSize`, or both to change its settings. The response contains the updated queue object.
@@ -3746,12 +2283,7 @@ class QueuesNamespace {
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<int> maxSize = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return queues_methods.updateQueues(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        maxSize: maxSize,
-        requestOptions: requestOptions);
+    return queues_methods.updateQueues(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, maxSize: maxSize, requestOptions: requestOptions);
   }
 
   /// Deletes an empty queue from an account. Use `AccountSid` and `Sid` to identify the account and queue; the queue must be empty before you remove it.
@@ -3761,8 +2293,7 @@ class QueuesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return queues_methods.deleteQueues(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return queues_methods.deleteQueues(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists queues belonging to an account. Use `PageSize` to control the number of queues per page and `Page` or `PageToken` to navigate the results.
@@ -3774,12 +2305,7 @@ class QueuesNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return queues_methods.listQueues(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return queues_methods.listQueues(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a queue for an account. Supply `FriendlyName` to describe the queue; `MaxSize` controls the number of calls it can hold and defaults to 1000 when omitted. The response contains the created queue and its generated SID.
@@ -3790,27 +2316,20 @@ class QueuesNamespace {
       required String friendlyName,
       SdkOptional<int> maxSize = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return queues_methods.createQueues(_config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        maxSize: maxSize,
-        requestOptions: requestOptions);
+    return queues_methods.createQueues(_config, accountSid: accountSid, friendlyName: friendlyName, maxSize: maxSize, requestOptions: requestOptions);
   }
+
 }
 
 class SigningKeysNamespace {
   final ClientConfig _config;
   SigningKeysNamespace(ClientConfig config) : _config = config;
-
   /// Create a new Signing Key for the account making the request.
   Future<ApiV2010AccountNewSigningKey> create(
       {required String accountSid,
       SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return signing_keys_methods.createSigningKeys(_config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return signing_keys_methods.createSigningKeys(_config, accountSid: accountSid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Lists signing keys for an account. Use the paging parameters to control which results are returned and to continue through the paginated list. The response includes signing key records and page metadata.
@@ -3820,12 +2339,7 @@ class SigningKeysNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return signing_keys_methods.listSigningKeys(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return signing_keys_methods.listSigningKeys(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific signing key from an account. Use `AccountSid` and `Sid` to identify the account and signing key; both identifiers must match their documented SID formats.
@@ -3833,8 +2347,7 @@ class SigningKeysNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return signing_keys_methods.fetchSigningKeys(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return signing_keys_methods.fetchSigningKeys(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the friendly name of a signing key. Supply `FriendlyName` to change the name; omit it if you do not want to update that field.
@@ -3843,11 +2356,7 @@ class SigningKeysNamespace {
       required String sid,
       SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return signing_keys_methods.updateSigningKeys(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return signing_keys_methods.updateSigningKeys(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Deletes a signing key from an account. Identify the account and signing key with their SIDs, using the documented prefixes and 32-character hexadecimal suffixes.
@@ -3855,15 +2364,14 @@ class SigningKeysNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return signing_keys_methods.deleteSigningKeys(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return signing_keys_methods.deleteSigningKeys(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class NotificationsNamespace {
   final ClientConfig _config;
   NotificationsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a notification belonging to an account. Supply the account SID and notification SID to identify the resource. The response includes notification details such as the message, error information, and originating request data.
   ///
   /// Fetch a notification belonging to the account used to make the request
@@ -3871,8 +2379,7 @@ class NotificationsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return notifications_methods_import.fetchNotifications(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return notifications_methods_import.fetchNotifications(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists notifications belonging to an account. Filter results by log level or message date, and use the paging parameters to navigate the results. The response contains notification records and page metadata.
@@ -3888,23 +2395,14 @@ class NotificationsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return notifications_methods_import.listNotifications(_config,
-        accountSid: accountSid,
-        log: log,
-        messageDate: messageDate,
-        messageDate_: messageDate_,
-        messageDate_2: messageDate_2,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return notifications_methods_import.listNotifications(_config, accountSid: accountSid, log: log, messageDate: messageDate, messageDate_: messageDate_, messageDate_2: messageDate_2, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class OutgoingCallerIdsNamespace {
   final ClientConfig _config;
   OutgoingCallerIdsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves an outgoing caller ID belonging to an account. Supply the account SID and outgoing caller ID SID to identify the resource. The response includes the caller ID's phone number, friendly name, and resource metadata.
   ///
   /// Fetch an outgoing-caller-id belonging to the account used to make the request
@@ -3912,8 +2410,7 @@ class OutgoingCallerIdsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return outgoing_caller_ids_methods.fetchOutgoingCallerIds(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return outgoing_caller_ids_methods.fetchOutgoingCallerIds(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the friendly name of an outgoing caller ID resource. Use `AccountSid` and `Sid` to identify the account and caller ID, and supply `FriendlyName` to change its description. The friendly name can contain up to 64 characters.
@@ -3924,11 +2421,7 @@ class OutgoingCallerIdsNamespace {
       required String sid,
       SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return outgoing_caller_ids_methods.updateOutgoingCallerIds(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return outgoing_caller_ids_methods.updateOutgoingCallerIds(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Deletes an outgoing caller ID resource from an account. Use `AccountSid` and `Sid` to identify the account and the caller ID to remove. The caller ID SID must use the `PN` format.
@@ -3938,8 +2431,7 @@ class OutgoingCallerIdsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return outgoing_caller_ids_methods.deleteOutgoingCallerIds(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return outgoing_caller_ids_methods.deleteOutgoingCallerIds(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists outgoing caller IDs belonging to an account. Filter the results by `PhoneNumber` or `FriendlyName`, and use the page parameters to retrieve results across multiple pages. `PageSize` defaults to 50 and can be set up to 1000.
@@ -3953,21 +2445,14 @@ class OutgoingCallerIdsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return outgoing_caller_ids_methods.listOutgoingCallerIds(_config,
-        accountSid: accountSid,
-        phoneNumber: phoneNumber,
-        friendlyName: friendlyName,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return outgoing_caller_ids_methods.listOutgoingCallerIds(_config, accountSid: accountSid, phoneNumber: phoneNumber, friendlyName: friendlyName, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class ValidationRequestsNamespace {
   final ClientConfig _config;
   ValidationRequestsNamespace(ClientConfig config) : _config = config;
-
   /// Creates a caller ID validation request for an account by initiating a verification call to a phone number. Supply `PhoneNumber` in E.164 format; you can also configure the call delay, extension, friendly name, and status callback. The response includes the validation code that someone must enter when the number is called.
   Future<ApiV2010AccountValidationRequest> create(
       {required String accountSid,
@@ -3976,26 +2461,16 @@ class ValidationRequestsNamespace {
       SdkOptional<int> callDelay = const SdkOmitted(),
       SdkOptional<String> extension_ = const SdkOmitted(),
       SdkOptional<String> statusCallback = const SdkOmitted(),
-      SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod>
-          statusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateValidationRequestsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return validation_requests_methods.createValidationRequests(_config,
-        accountSid: accountSid,
-        phoneNumber: phoneNumber,
-        friendlyName: friendlyName,
-        callDelay: callDelay,
-        extension_: extension_,
-        statusCallback: statusCallback,
-        statusCallbackMethod: statusCallbackMethod,
-        requestOptions: requestOptions);
+    return validation_requests_methods.createValidationRequests(_config, accountSid: accountSid, phoneNumber: phoneNumber, friendlyName: friendlyName, callDelay: callDelay, extension_: extension_, statusCallback: statusCallback, statusCallbackMethod: statusCallbackMethod, requestOptions: requestOptions);
   }
+
 }
 
 class RecordingsAddOnResultsPayloadsNamespace {
   final ClientConfig _config;
-  RecordingsAddOnResultsPayloadsNamespace(ClientConfig config)
-      : _config = config;
-
+  RecordingsAddOnResultsPayloadsNamespace(ClientConfig config) : _config = config;
   /// Retrieves a payload belonging to an AddOnResult for a recording. Use the account, recording, result, and payload SIDs to identify the payload and inspect its label, MIME type, and related resource URIs.
   ///
   /// Fetch an instance of a result payload
@@ -4006,12 +2481,7 @@ class RecordingsAddOnResultsPayloadsNamespace {
           required String addOnResultSid,
           required String sid,
           RequestOptions? requestOptions}) async {
-    return payloads_methods.fetchRecordingsAddOnResultsPayloads(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        addOnResultSid: addOnResultSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return payloads_methods.fetchRecordingsAddOnResultsPayloads(_config, accountSid: accountSid, referenceSid: referenceSid, addOnResultSid: addOnResultSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete a payload from the result along with all associated Data
@@ -4021,33 +2491,22 @@ class RecordingsAddOnResultsPayloadsNamespace {
       required String addOnResultSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return payloads_methods.deleteRecordingsAddOnResultsPayloads(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        addOnResultSid: addOnResultSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return payloads_methods.deleteRecordingsAddOnResultsPayloads(_config, accountSid: accountSid, referenceSid: referenceSid, addOnResultSid: addOnResultSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists payloads belonging to an AddOnResult for a recording. Use `PageSize` and `PageToken` to control which payloads are returned and to navigate the paginated response.
   ///
   /// Retrieve a list of payloads belonging to the AddOnResult
-  Future<ListRecordingsAddOnResultsPayloadsResponse> list(
-      {required String accountSid,
-      required String referenceSid,
-      required String addOnResultSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return payloads_methods.listRecordingsAddOnResultsPayloads(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        addOnResultSid: addOnResultSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListRecordingsAddOnResultsPayloadsResponse>
+      list(
+          {required String accountSid,
+          required String referenceSid,
+          required String addOnResultSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return payloads_methods.listRecordingsAddOnResultsPayloads(_config, accountSid: accountSid, referenceSid: referenceSid, addOnResultSid: addOnResultSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves the stored data for a payload belonging to an AddOnResult for a recording. Use the account, recording, result, and payload SIDs to identify the data resource; the response provides a redirect to the stored payload data.
@@ -4059,13 +2518,9 @@ class RecordingsAddOnResultsPayloadsNamespace {
       required String addOnResultSid,
       required String payloadSid,
       RequestOptions? requestOptions}) async {
-    return payloads_methods.fetchRecordingsAddOnResultsPayloadsData(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        addOnResultSid: addOnResultSid,
-        payloadSid: payloadSid,
-        requestOptions: requestOptions);
+    return payloads_methods.fetchRecordingsAddOnResultsPayloadsData(_config, accountSid: accountSid, referenceSid: referenceSid, addOnResultSid: addOnResultSid, payloadSid: payloadSid, requestOptions: requestOptions);
   }
+
 }
 
 class RecordingsAddOnResultsNamespace {
@@ -4074,20 +2529,16 @@ class RecordingsAddOnResultsNamespace {
   RecordingsAddOnResultsNamespace(ClientConfig config) : _config = config {
     payloads = RecordingsAddOnResultsPayloadsNamespace(config);
   }
-
   /// Retrieves an AddOnResult belonging to a recording. Use the account, recording, and result SIDs to identify the resource and inspect its status, timestamps, and related resource URIs.
   ///
   /// Fetch an instance of an AddOnResult
-  Future<ApiV2010AccountRecordingRecordingAddOnResult> fetch(
-      {required String accountSid,
-      required String referenceSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return add_on_results_methods.fetchRecordingsAddOnResults(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        sid: sid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountRecordingRecordingAddOnResult>
+      fetch(
+          {required String accountSid,
+          required String referenceSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return add_on_results_methods.fetchRecordingsAddOnResults(_config, accountSid: accountSid, referenceSid: referenceSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Deletes an AddOnResult associated with a recording and purges all payloads belonging to that result. Identify the resource with its account, recording, and result SIDs before deletion.
@@ -4098,11 +2549,7 @@ class RecordingsAddOnResultsNamespace {
       required String referenceSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return add_on_results_methods.deleteRecordingsAddOnResults(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return add_on_results_methods.deleteRecordingsAddOnResults(_config, accountSid: accountSid, referenceSid: referenceSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists AddOnResults belonging to a recording. Use `PageSize` and `PageToken` to control which results are returned and to navigate the paginated response.
@@ -4115,31 +2562,22 @@ class RecordingsAddOnResultsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return add_on_results_methods.listRecordingsAddOnResults(_config,
-        accountSid: accountSid,
-        referenceSid: referenceSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return add_on_results_methods.listRecordingsAddOnResults(_config, accountSid: accountSid, referenceSid: referenceSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class RecordingsTranscriptionsNamespace {
   final ClientConfig _config;
   RecordingsTranscriptionsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a transcription created from a recording. Use the account, recording, and transcription SIDs to identify it, then inspect its status and transcription text when available.
-  Future<ApiV2010AccountRecordingRecordingTranscription> fetch(
-      {required String accountSid,
-      required String recordingSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return transcriptions_methods_import.fetchRecordingsTranscriptions(_config,
-        accountSid: accountSid,
-        recordingSid: recordingSid,
-        sid: sid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountRecordingRecordingTranscription>
+      fetch(
+          {required String accountSid,
+          required String recordingSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return transcriptions_methods_import.fetchRecordingsTranscriptions(_config, accountSid: accountSid, recordingSid: recordingSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Deletes a transcription created from a recording. Identify the transcription using the account, recording, and transcription SIDs.
@@ -4148,11 +2586,7 @@ class RecordingsTranscriptionsNamespace {
       required String recordingSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods_import.deleteRecordingsTranscriptions(_config,
-        accountSid: accountSid,
-        recordingSid: recordingSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return transcriptions_methods_import.deleteRecordingsTranscriptions(_config, accountSid: accountSid, recordingSid: recordingSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists transcriptions associated with a specific recording. Use `PageSize`, `Page`, and `PageToken` to control pagination; `PageSize` defaults to 50 when omitted.
@@ -4163,14 +2597,9 @@ class RecordingsTranscriptionsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods_import.listRecordingsTranscriptions(_config,
-        accountSid: accountSid,
-        recordingSid: recordingSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return transcriptions_methods_import.listRecordingsTranscriptions(_config, accountSid: accountSid, recordingSid: recordingSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class RecordingsNamespace {
@@ -4181,7 +2610,6 @@ class RecordingsNamespace {
     addOnResults = RecordingsAddOnResultsNamespace(config);
     transcriptions = RecordingsTranscriptionsNamespace(config);
   }
-
   /// Retrieves a recording by its SID. Set `IncludeSoftDeleted` to include metadata for recordings that have been deleted; that metadata is retained for 40 days.
   ///
   /// Fetch an instance of a recording
@@ -4190,11 +2618,7 @@ class RecordingsNamespace {
       required String sid,
       SdkOptional<bool> includeSoftDeleted = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return recordings_methods_2.fetchRecordings(_config,
-        accountSid: accountSid,
-        sid: sid,
-        includeSoftDeleted: includeSoftDeleted,
-        requestOptions: requestOptions);
+    return recordings_methods_2.fetchRecordings(_config, accountSid: accountSid, sid: sid, includeSoftDeleted: includeSoftDeleted, requestOptions: requestOptions);
   }
 
   /// Deletes a recording from an account. Use `AccountSid` and `Sid` to identify the account and recording to remove.
@@ -4204,8 +2628,7 @@ class RecordingsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return recordings_methods_2.deleteRecordings(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return recordings_methods_2.deleteRecordings(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists recordings belonging to the account identified by `AccountSid`. Filter results by creation date, call, conference, or soft-deletion status, and use `PageSize` and `PageToken` to control pagination.
@@ -4223,25 +2646,14 @@ class RecordingsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return recordings_methods_2.listRecordings(_config,
-        accountSid: accountSid,
-        dateCreated: dateCreated,
-        dateCreated_: dateCreated_,
-        dateCreated_2: dateCreated_2,
-        callSid: callSid,
-        conferenceSid: conferenceSid,
-        includeSoftDeleted: includeSoftDeleted,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return recordings_methods_2.listRecordings(_config, accountSid: accountSid, dateCreated: dateCreated, dateCreated_: dateCreated_, dateCreated_2: dateCreated_2, callSid: callSid, conferenceSid: conferenceSid, includeSoftDeleted: includeSoftDeleted, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class ShortCodesNamespace {
   final ClientConfig _config;
   ShortCodesNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a specific short code from an account. Use `AccountSid` and `Sid` to identify the account and short code; both identifiers must match their documented SID formats.
   ///
   /// Fetch an instance of a short code
@@ -4249,8 +2661,7 @@ class ShortCodesNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return short_codes_methods.fetchShortCodes(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return short_codes_methods.fetchShortCodes(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates a short code's configuration for handling incoming SMS messages. Supply any fields you want to change; `SmsMethod` and `SmsFallbackMethod` accept GET or POST, and `ApiVersion` accepts either of the documented API versions.
@@ -4262,22 +2673,11 @@ class ShortCodesNamespace {
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<String> apiVersion = const SdkOmitted(),
       SdkOptional<String> smsUrl = const SdkOmitted(),
-      SdkOptional<UpdateShortCodesRequestBodySmsMethod> smsMethod =
-          const SdkOmitted(),
+      SdkOptional<UpdateShortCodesRequestBodySmsMethod> smsMethod = const SdkOmitted(),
       SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateShortCodesRequestBodySmsFallbackMethod>
-          smsFallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateShortCodesRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return short_codes_methods.updateShortCodes(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        apiVersion: apiVersion,
-        smsUrl: smsUrl,
-        smsMethod: smsMethod,
-        smsFallbackUrl: smsFallbackUrl,
-        smsFallbackMethod: smsFallbackMethod,
-        requestOptions: requestOptions);
+    return short_codes_methods.updateShortCodes(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, apiVersion: apiVersion, smsUrl: smsUrl, smsMethod: smsMethod, smsFallbackUrl: smsFallbackUrl, smsFallbackMethod: smsFallbackMethod, requestOptions: requestOptions);
   }
 
   /// Lists short codes belonging to an account. Filter the results by `FriendlyName` or match numbers with `ShortCode`, which supports partial numbers and `*` as a wildcard; use the pagination parameters to retrieve additional pages.
@@ -4291,22 +2691,14 @@ class ShortCodesNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return short_codes_methods.listShortCodes(_config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        shortCode: shortCode,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return short_codes_methods.listShortCodes(_config, accountSid: accountSid, friendlyName: friendlyName, shortCode: shortCode, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class SipDomainsAuthCallsCredentialListMappingsNamespace {
   final ClientConfig _config;
-  SipDomainsAuthCallsCredentialListMappingsNamespace(ClientConfig config)
-      : _config = config;
-
+  SipDomainsAuthCallsCredentialListMappingsNamespace(ClientConfig config) : _config = config;
   /// Creates a credential list mapping for calls on a SIP domain. Supply `CredentialListSid` to identify the credential list to map; the account and domain SIDs identify where the mapping is created.
   ///
   /// Create a new credential list mapping resource
@@ -4316,32 +2708,21 @@ class SipDomainsAuthCallsCredentialListMappingsNamespace {
           required String domainSid,
           required String credentialListSid,
           RequestOptions? requestOptions}) async {
-    return auth_calls_credential_list_mappings_methods
-        .createSipDomainsAuthCallsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            credentialListSid: credentialListSid,
-            requestOptions: requestOptions);
+    return auth_calls_credential_list_mappings_methods.createSipDomainsAuthCallsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, credentialListSid: credentialListSid, requestOptions: requestOptions);
   }
 
   /// Lists credential list mappings for calls on a specific SIP domain. Use the account and domain SIDs to select the domain, and use the pagination parameters to retrieve mappings across pages.
   ///
   /// Retrieve a list of credential list mappings belonging to the domain used in the request
-  Future<ListSipDomainsAuthCallsCredentialListMappingsResponse> list(
-      {required String accountSid,
-      required String domainSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return auth_calls_credential_list_mappings_methods
-        .listSipDomainsAuthCallsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            pageSize: pageSize,
-            page: page,
-            pageToken: pageToken,
-            requestOptions: requestOptions);
+  Future<ListSipDomainsAuthCallsCredentialListMappingsResponse>
+      list(
+          {required String accountSid,
+          required String domainSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return auth_calls_credential_list_mappings_methods.listSipDomainsAuthCallsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific credential list mapping for calls on a SIP domain. Use the account, domain, and mapping SIDs to identify the resource; each SID must match its documented format.
@@ -4353,12 +2734,7 @@ class SipDomainsAuthCallsCredentialListMappingsNamespace {
           required String domainSid,
           required String sid,
           RequestOptions? requestOptions}) async {
-    return auth_calls_credential_list_mappings_methods
-        .fetchSipDomainsAuthCallsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return auth_calls_credential_list_mappings_methods.fetchSipDomainsAuthCallsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete a credential list mapping from the requested domain
@@ -4367,20 +2743,14 @@ class SipDomainsAuthCallsCredentialListMappingsNamespace {
       required String domainSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return auth_calls_credential_list_mappings_methods
-        .deleteSipDomainsAuthCallsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return auth_calls_credential_list_mappings_methods.deleteSipDomainsAuthCallsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipDomainsAuthCallsIpAccessControlListMappingsNamespace {
   final ClientConfig _config;
-  SipDomainsAuthCallsIpAccessControlListMappingsNamespace(ClientConfig config)
-      : _config = config;
-
+  SipDomainsAuthCallsIpAccessControlListMappingsNamespace(ClientConfig config) : _config = config;
   /// Creates an IP Access Control List mapping for a SIP domain. Submit the `IpAccessControlListSid` of the IP Access Control List to associate with the domain, using form-encoded request data.
   ///
   /// Create a new IP Access Control List mapping
@@ -4390,32 +2760,21 @@ class SipDomainsAuthCallsIpAccessControlListMappingsNamespace {
           required String domainSid,
           required String ipAccessControlListSid,
           RequestOptions? requestOptions}) async {
-    return auth_calls_ip_access_control_list_mappings_methods
-        .createSipDomainsAuthCallsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            ipAccessControlListSid: ipAccessControlListSid,
-            requestOptions: requestOptions);
+    return auth_calls_ip_access_control_list_mappings_methods.createSipDomainsAuthCallsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, ipAccessControlListSid: ipAccessControlListSid, requestOptions: requestOptions);
   }
 
   /// Lists IP Access Control List mappings associated with a SIP domain. Use `PageSize`, `Page`, and `PageToken` to control pagination through the results.
   ///
   /// Retrieve a list of IP Access Control List mappings belonging to the domain used in the request
-  Future<ListSipDomainsAuthCallsIpAccessControlListMappingsResponse> list(
-      {required String accountSid,
-      required String domainSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return auth_calls_ip_access_control_list_mappings_methods
-        .listSipDomainsAuthCallsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            pageSize: pageSize,
-            page: page,
-            pageToken: pageToken,
-            requestOptions: requestOptions);
+  Future<ListSipDomainsAuthCallsIpAccessControlListMappingsResponse>
+      list(
+          {required String accountSid,
+          required String domainSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return auth_calls_ip_access_control_list_mappings_methods.listSipDomainsAuthCallsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific IP Access Control List mapping from a SIP domain. Provide the account, domain, and mapping SIDs to identify the mapping to fetch.
@@ -4427,12 +2786,7 @@ class SipDomainsAuthCallsIpAccessControlListMappingsNamespace {
           required String domainSid,
           required String sid,
           RequestOptions? requestOptions}) async {
-    return auth_calls_ip_access_control_list_mappings_methods
-        .fetchSipDomainsAuthCallsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return auth_calls_ip_access_control_list_mappings_methods.fetchSipDomainsAuthCallsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete an IP Access Control List mapping from the requested domain
@@ -4441,21 +2795,14 @@ class SipDomainsAuthCallsIpAccessControlListMappingsNamespace {
       required String domainSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return auth_calls_ip_access_control_list_mappings_methods
-        .deleteSipDomainsAuthCallsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return auth_calls_ip_access_control_list_mappings_methods.deleteSipDomainsAuthCallsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipDomainsAuthRegistrationsCredentialListMappingsNamespace {
   final ClientConfig _config;
-  SipDomainsAuthRegistrationsCredentialListMappingsNamespace(
-      ClientConfig config)
-      : _config = config;
-
+  SipDomainsAuthRegistrationsCredentialListMappingsNamespace(ClientConfig config) : _config = config;
   /// Creates a credential list mapping for a SIP domain. Submit the `CredentialListSid` of the credential list to associate with the domain, using form-encoded request data.
   ///
   /// Create a new credential list mapping resource
@@ -4465,32 +2812,21 @@ class SipDomainsAuthRegistrationsCredentialListMappingsNamespace {
           required String domainSid,
           required String credentialListSid,
           RequestOptions? requestOptions}) async {
-    return auth_registrations_credential_list_mappings_methods
-        .createSipDomainsAuthRegistrationsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            credentialListSid: credentialListSid,
-            requestOptions: requestOptions);
+    return auth_registrations_credential_list_mappings_methods.createSipDomainsAuthRegistrationsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, credentialListSid: credentialListSid, requestOptions: requestOptions);
   }
 
   /// Lists credential list mappings associated with a SIP domain. Use `PageSize`, `Page`, and `PageToken` to control pagination through the results.
   ///
   /// Retrieve a list of credential list mappings belonging to the domain used in the request
-  Future<ListSipDomainsAuthRegistrationsCredentialListMappingsResponse> list(
-      {required String accountSid,
-      required String domainSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return auth_registrations_credential_list_mappings_methods
-        .listSipDomainsAuthRegistrationsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            pageSize: pageSize,
-            page: page,
-            pageToken: pageToken,
-            requestOptions: requestOptions);
+  Future<ListSipDomainsAuthRegistrationsCredentialListMappingsResponse>
+      list(
+          {required String accountSid,
+          required String domainSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return auth_registrations_credential_list_mappings_methods.listSipDomainsAuthRegistrationsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific credential list mapping from a SIP domain. Provide the account, domain, and mapping SIDs to identify the mapping to fetch.
@@ -4502,12 +2838,7 @@ class SipDomainsAuthRegistrationsCredentialListMappingsNamespace {
           required String domainSid,
           required String sid,
           RequestOptions? requestOptions}) async {
-    return auth_registrations_credential_list_mappings_methods
-        .fetchSipDomainsAuthRegistrationsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return auth_registrations_credential_list_mappings_methods.fetchSipDomainsAuthRegistrationsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete a credential list mapping from the requested domain
@@ -4516,68 +2847,48 @@ class SipDomainsAuthRegistrationsCredentialListMappingsNamespace {
       required String domainSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return auth_registrations_credential_list_mappings_methods
-        .deleteSipDomainsAuthRegistrationsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return auth_registrations_credential_list_mappings_methods.deleteSipDomainsAuthRegistrationsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipDomainsCredentialListMappingsNamespace {
   final ClientConfig _config;
-  SipDomainsCredentialListMappingsNamespace(ClientConfig config)
-      : _config = config;
-
+  SipDomainsCredentialListMappingsNamespace(ClientConfig config) : _config = config;
   /// Create a CredentialListMapping resource for an account.
-  Future<ApiV2010AccountSipSipDomainSipCredentialListMapping> create(
-      {required String accountSid,
-      required String domainSid,
-      required String credentialListSid,
-      RequestOptions? requestOptions}) async {
-    return credential_list_mappings_methods
-        .createSipDomainsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            credentialListSid: credentialListSid,
-            requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipDomainSipCredentialListMapping>
+      create(
+          {required String accountSid,
+          required String domainSid,
+          required String credentialListSid,
+          RequestOptions? requestOptions}) async {
+    return credential_list_mappings_methods.createSipDomainsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, credentialListSid: credentialListSid, requestOptions: requestOptions);
   }
 
   /// Lists credential list mappings for a specified SIP domain and account. Use `PageSize` to control the number of resources on a page and `PageToken` to request a page identified by a token from the API. The response includes page metadata and a `credential_list_mappings` array.
   ///
   /// Read multiple CredentialListMapping resources from an account.
-  Future<ListSipDomainsCredentialListMappingsResponse> list(
-      {required String accountSid,
-      required String domainSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return credential_list_mappings_methods
-        .listSipDomainsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            pageSize: pageSize,
-            page: page,
-            pageToken: pageToken,
-            requestOptions: requestOptions);
+  Future<ListSipDomainsCredentialListMappingsResponse>
+      list(
+          {required String accountSid,
+          required String domainSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return credential_list_mappings_methods.listSipDomainsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Retrieves a credential list mapping for a SIP domain in an account. Use the account, domain, and mapping identifiers to select the resource; each identifier has a required 34-character format.
   ///
   /// Fetch a single CredentialListMapping resource from an account.
-  Future<ApiV2010AccountSipSipDomainSipCredentialListMapping> fetch(
-      {required String accountSid,
-      required String domainSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return credential_list_mappings_methods
-        .fetchSipDomainsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipDomainSipCredentialListMapping>
+      fetch(
+          {required String accountSid,
+          required String domainSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return credential_list_mappings_methods.fetchSipDomainsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete a CredentialListMapping resource from an account.
@@ -4586,34 +2897,24 @@ class SipDomainsCredentialListMappingsNamespace {
       required String domainSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return credential_list_mappings_methods
-        .deleteSipDomainsCredentialListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return credential_list_mappings_methods.deleteSipDomainsCredentialListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipDomainsIpAccessControlListMappingsNamespace {
   final ClientConfig _config;
-  SipDomainsIpAccessControlListMappingsNamespace(ClientConfig config)
-      : _config = config;
-
+  SipDomainsIpAccessControlListMappingsNamespace(ClientConfig config) : _config = config;
   /// Retrieves an IP access control list mapping for a SIP domain. Use `AccountSid`, `DomainSid`, and `Sid` to identify the account, SIP domain, and mapping. Each identifier must match the 34-character format for its resource.
   ///
   /// Fetch an IpAccessControlListMapping resource.
-  Future<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping> fetch(
-      {required String accountSid,
-      required String domainSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return ip_access_control_list_mappings_methods
-        .fetchSipDomainsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>
+      fetch(
+          {required String accountSid,
+          required String domainSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return ip_access_control_list_mappings_methods.fetchSipDomainsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Deletes an IP access control list mapping from a SIP domain. Provide the account, domain, and mapping identifiers to select the mapping to remove. The response has no body.
@@ -4624,74 +2925,51 @@ class SipDomainsIpAccessControlListMappingsNamespace {
       required String domainSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return ip_access_control_list_mappings_methods
-        .deleteSipDomainsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            sid: sid,
-            requestOptions: requestOptions);
+    return ip_access_control_list_mappings_methods.deleteSipDomainsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Creates a mapping between an IP access control list and a SIP domain. Submit `IpAccessControlListSid` to identify the list to associate with the domain. The response includes the created mapping and its identifiers.
   ///
   /// Create a new IpAccessControlListMapping resource.
-  Future<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping> create(
-      {required String accountSid,
-      required String domainSid,
-      required String ipAccessControlListSid,
-      RequestOptions? requestOptions}) async {
-    return ip_access_control_list_mappings_methods
-        .createSipDomainsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            ipAccessControlListSid: ipAccessControlListSid,
-            requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>
+      create(
+          {required String accountSid,
+          required String domainSid,
+          required String ipAccessControlListSid,
+          RequestOptions? requestOptions}) async {
+    return ip_access_control_list_mappings_methods.createSipDomainsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, ipAccessControlListSid: ipAccessControlListSid, requestOptions: requestOptions);
   }
 
   /// Lists IP access control list mappings for a SIP domain. Use the pagination parameters to control the page size and track the requested page. The response includes mapping resources and pagination metadata.
   ///
   /// Retrieve a list of IpAccessControlListMapping resources.
-  Future<ListSipDomainsIpAccessControlListMappingsResponse> list(
-      {required String accountSid,
-      required String domainSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return ip_access_control_list_mappings_methods
-        .listSipDomainsIpAccessControlListMappings(_config,
-            accountSid: accountSid,
-            domainSid: domainSid,
-            pageSize: pageSize,
-            page: page,
-            pageToken: pageToken,
-            requestOptions: requestOptions);
+  Future<ListSipDomainsIpAccessControlListMappingsResponse>
+      list(
+          {required String accountSid,
+          required String domainSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return ip_access_control_list_mappings_methods.listSipDomainsIpAccessControlListMappings(_config, accountSid: accountSid, domainSid: domainSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class SipDomainsNamespace {
   final ClientConfig _config;
-  late final SipDomainsAuthCallsCredentialListMappingsNamespace
-      authCallsCredentialListMappings;
-  late final SipDomainsAuthCallsIpAccessControlListMappingsNamespace
-      authCallsIpAccessControlListMappings;
-  late final SipDomainsAuthRegistrationsCredentialListMappingsNamespace
-      authRegistrationsCredentialListMappings;
+  late final SipDomainsAuthCallsCredentialListMappingsNamespace authCallsCredentialListMappings;
+  late final SipDomainsAuthCallsIpAccessControlListMappingsNamespace authCallsIpAccessControlListMappings;
+  late final SipDomainsAuthRegistrationsCredentialListMappingsNamespace authRegistrationsCredentialListMappings;
   late final SipDomainsCredentialListMappingsNamespace credentialListMappings;
-  late final SipDomainsIpAccessControlListMappingsNamespace
-      ipAccessControlListMappings;
+  late final SipDomainsIpAccessControlListMappingsNamespace ipAccessControlListMappings;
   SipDomainsNamespace(ClientConfig config) : _config = config {
-    authCallsCredentialListMappings =
-        SipDomainsAuthCallsCredentialListMappingsNamespace(config);
-    authCallsIpAccessControlListMappings =
-        SipDomainsAuthCallsIpAccessControlListMappingsNamespace(config);
-    authRegistrationsCredentialListMappings =
-        SipDomainsAuthRegistrationsCredentialListMappingsNamespace(config);
+    authCallsCredentialListMappings = SipDomainsAuthCallsCredentialListMappingsNamespace(config);
+    authCallsIpAccessControlListMappings = SipDomainsAuthCallsIpAccessControlListMappingsNamespace(config);
+    authRegistrationsCredentialListMappings = SipDomainsAuthRegistrationsCredentialListMappingsNamespace(config);
     credentialListMappings = SipDomainsCredentialListMappingsNamespace(config);
-    ipAccessControlListMappings =
-        SipDomainsIpAccessControlListMappingsNamespace(config);
+    ipAccessControlListMappings = SipDomainsIpAccessControlListMappingsNamespace(config);
   }
-
   /// Lists SIP domains belonging to an account. Use the page parameters to control which results you retrieve and how many domains appear in each page.
   ///
   /// Retrieve a list of domains belonging to the account used to make the request
@@ -4701,12 +2979,7 @@ class SipDomainsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return domains_methods.listSipDomains(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return domains_methods.listSipDomains(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a SIP domain for an account. Supply `DomainName` and optionally configure its voice URLs, SIP registration, security, and emergency calling settings.
@@ -4717,36 +2990,18 @@ class SipDomainsNamespace {
       required String domainName,
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<String> voiceUrl = const SdkOmitted(),
-      SdkOptional<CreateSipDomainsRequestBodyVoiceMethod> voiceMethod =
-          const SdkOmitted(),
+      SdkOptional<CreateSipDomainsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
       SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateSipDomainsRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateSipDomainsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceStatusCallbackUrl = const SdkOmitted(),
-      SdkOptional<CreateSipDomainsRequestBodyVoiceStatusCallbackMethod>
-          voiceStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<CreateSipDomainsRequestBodyVoiceStatusCallbackMethod> voiceStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<bool> sipRegistration = const SdkOmitted(),
       SdkOptional<bool> emergencyCallingEnabled = const SdkOmitted(),
       SdkOptional<bool> secure = const SdkOmitted(),
       SdkOptional<String> byocTrunkSid = const SdkOmitted(),
       SdkOptional<String> emergencyCallerSid = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return domains_methods.createSipDomains(_config,
-        accountSid: accountSid,
-        domainName: domainName,
-        friendlyName: friendlyName,
-        voiceUrl: voiceUrl,
-        voiceMethod: voiceMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceStatusCallbackUrl: voiceStatusCallbackUrl,
-        voiceStatusCallbackMethod: voiceStatusCallbackMethod,
-        sipRegistration: sipRegistration,
-        emergencyCallingEnabled: emergencyCallingEnabled,
-        secure: secure,
-        byocTrunkSid: byocTrunkSid,
-        emergencyCallerSid: emergencyCallerSid,
-        requestOptions: requestOptions);
+    return domains_methods.createSipDomains(_config, accountSid: accountSid, domainName: domainName, friendlyName: friendlyName, voiceUrl: voiceUrl, voiceMethod: voiceMethod, voiceFallbackUrl: voiceFallbackUrl, voiceFallbackMethod: voiceFallbackMethod, voiceStatusCallbackUrl: voiceStatusCallbackUrl, voiceStatusCallbackMethod: voiceStatusCallbackMethod, sipRegistration: sipRegistration, emergencyCallingEnabled: emergencyCallingEnabled, secure: secure, byocTrunkSid: byocTrunkSid, emergencyCallerSid: emergencyCallerSid, requestOptions: requestOptions);
   }
 
   /// Retrieves a SIP domain from an account. Provide the account and domain identifiers to select the domain and view its configuration.
@@ -4756,8 +3011,7 @@ class SipDomainsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return domains_methods.fetchSipDomains(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return domains_methods.fetchSipDomains(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the configuration of a SIP domain. Supply only the attributes you want to change; method fields accept `GET` or `POST`, and URL fields must be valid URIs.
@@ -4767,13 +3021,10 @@ class SipDomainsNamespace {
       {required String accountSid,
       required String sid,
       SdkOptional<String> friendlyName = const SdkOmitted(),
-      SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-      SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod =
-          const SdkOmitted(),
-      SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>
-          voiceStatusCallbackMethod = const SdkOmitted(),
+      SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+      SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod> voiceStatusCallbackMethod = const SdkOmitted(),
       SdkOptional<String> voiceStatusCallbackUrl = const SdkOmitted(),
       SdkOptional<String> voiceUrl = const SdkOmitted(),
       SdkOptional<bool> sipRegistration = const SdkOmitted(),
@@ -4783,23 +3034,7 @@ class SipDomainsNamespace {
       SdkOptional<String> byocTrunkSid = const SdkOmitted(),
       SdkOptional<String> emergencyCallerSid = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return domains_methods.updateSipDomains(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        voiceFallbackMethod: voiceFallbackMethod,
-        voiceFallbackUrl: voiceFallbackUrl,
-        voiceMethod: voiceMethod,
-        voiceStatusCallbackMethod: voiceStatusCallbackMethod,
-        voiceStatusCallbackUrl: voiceStatusCallbackUrl,
-        voiceUrl: voiceUrl,
-        sipRegistration: sipRegistration,
-        domainName: domainName,
-        emergencyCallingEnabled: emergencyCallingEnabled,
-        secure: secure,
-        byocTrunkSid: byocTrunkSid,
-        emergencyCallerSid: emergencyCallerSid,
-        requestOptions: requestOptions);
+    return domains_methods.updateSipDomains(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, voiceFallbackMethod: voiceFallbackMethod, voiceFallbackUrl: voiceFallbackUrl, voiceMethod: voiceMethod, voiceStatusCallbackMethod: voiceStatusCallbackMethod, voiceStatusCallbackUrl: voiceStatusCallbackUrl, voiceUrl: voiceUrl, sipRegistration: sipRegistration, domainName: domainName, emergencyCallingEnabled: emergencyCallingEnabled, secure: secure, byocTrunkSid: byocTrunkSid, emergencyCallerSid: emergencyCallerSid, requestOptions: requestOptions);
   }
 
   /// Deletes a SIP domain from an account. Specify the account and domain identifiers for the resource to remove.
@@ -4809,82 +3044,64 @@ class SipDomainsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return domains_methods.deleteSipDomains(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return domains_methods.deleteSipDomains(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipCredentialListsCredentialsNamespace {
   final ClientConfig _config;
-  SipCredentialListsCredentialsNamespace(ClientConfig config)
-      : _config = config;
-
+  SipCredentialListsCredentialsNamespace(ClientConfig config) : _config = config;
   /// Lists the credentials in a specified SIP credential list. Use `PageSize`, `Page`, and `PageToken` to control pagination through the results.
   ///
   /// Retrieve a list of credentials.
-  Future<ListSipCredentialListsCredentialsResponse> list(
-      {required String accountSid,
-      required String credentialListSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return credentials_methods.listSipCredentialListsCredentials(_config,
-        accountSid: accountSid,
-        credentialListSid: credentialListSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListSipCredentialListsCredentialsResponse>
+      list(
+          {required String accountSid,
+          required String credentialListSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return credentials_methods.listSipCredentialListsCredentials(_config, accountSid: accountSid, credentialListSid: credentialListSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a SIP credential in the specified credential list. Supply `Username` and `Password`; the username can be up to 32 characters, and the password must meet the documented length and complexity requirements. The response includes the credential identifier and username, but not the password.
   ///
   /// Create a new credential resource.
-  Future<ApiV2010AccountSipSipCredentialListSipCredential> create(
-      {required String accountSid,
-      required String credentialListSid,
-      required String username,
-      required String password,
-      RequestOptions? requestOptions}) async {
-    return credentials_methods.createSipCredentialListsCredentials(_config,
-        accountSid: accountSid,
-        credentialListSid: credentialListSid,
-        username: username,
-        password: password,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipCredentialListSipCredential>
+      create(
+          {required String accountSid,
+          required String credentialListSid,
+          required String username,
+          required String password,
+          RequestOptions? requestOptions}) async {
+    return credentials_methods.createSipCredentialListsCredentials(_config, accountSid: accountSid, credentialListSid: credentialListSid, username: username, password: password, requestOptions: requestOptions);
   }
 
   /// Retrieves a SIP credential from a specified credential list. Provide the account, credential list, and credential identifiers to select the resource. The response includes the credential's username and resource metadata.
   ///
   /// Fetch a single credential.
-  Future<ApiV2010AccountSipSipCredentialListSipCredential> fetch(
-      {required String accountSid,
-      required String credentialListSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return credentials_methods.fetchSipCredentialListsCredentials(_config,
-        accountSid: accountSid,
-        credentialListSid: credentialListSid,
-        sid: sid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipCredentialListSipCredential>
+      fetch(
+          {required String accountSid,
+          required String credentialListSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return credentials_methods.fetchSipCredentialListsCredentials(_config, accountSid: accountSid, credentialListSid: credentialListSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the password for a credential in a specified credential list. Provide the account, credential list, and credential identifiers, then send the new password in the request body. The password must be at least 12 characters and contain at least one digit and mixed case.
   ///
   /// Update a credential resource.
-  Future<ApiV2010AccountSipSipCredentialListSipCredential> update(
-      {required String accountSid,
-      required String credentialListSid,
-      required String sid,
-      SdkOptional<String> password = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return credentials_methods.updateSipCredentialListsCredentials(_config,
-        accountSid: accountSid,
-        credentialListSid: credentialListSid,
-        sid: sid,
-        password: password,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipCredentialListSipCredential>
+      update(
+          {required String accountSid,
+          required String credentialListSid,
+          required String sid,
+          SdkOptional<String> password = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return credentials_methods.updateSipCredentialListsCredentials(_config, accountSid: accountSid, credentialListSid: credentialListSid, sid: sid, password: password, requestOptions: requestOptions);
   }
 
   /// Deletes a credential from a specified credential list. Provide the account, credential list, and credential identifiers to select the resource to remove. The response confirms deletion and contains no resource representation.
@@ -4895,12 +3112,9 @@ class SipCredentialListsCredentialsNamespace {
       required String credentialListSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return credentials_methods.deleteSipCredentialListsCredentials(_config,
-        accountSid: accountSid,
-        credentialListSid: credentialListSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return credentials_methods.deleteSipCredentialListsCredentials(_config, accountSid: accountSid, credentialListSid: credentialListSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipCredentialListsNamespace {
@@ -4909,7 +3123,6 @@ class SipCredentialListsNamespace {
   SipCredentialListsNamespace(ClientConfig config) : _config = config {
     credentials = SipCredentialListsCredentialsNamespace(config);
   }
-
   /// Lists SIP credential lists for the specified account. Use `PageSize` to control the number of resources on a page and `PageToken` to request a page identified by a token from the API. The response includes page metadata and a `credential_lists` array.
   ///
   /// Get All Credential Lists
@@ -4919,12 +3132,7 @@ class SipCredentialListsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return credential_lists_methods.listSipCredentialLists(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return credential_lists_methods.listSipCredentialLists(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates a SIP credential list for the specified account. Provide a `FriendlyName` to describe the list; the schema requires this field and the documented description limits it to 64 characters. The response includes the created list's identifier and resource metadata.
@@ -4934,10 +3142,7 @@ class SipCredentialListsNamespace {
       {required String accountSid,
       required String friendlyName,
       RequestOptions? requestOptions}) async {
-    return credential_lists_methods.createSipCredentialLists(_config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return credential_lists_methods.createSipCredentialLists(_config, accountSid: accountSid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Retrieves a SIP credential list for the specified account. Provide the account identifier and credential list identifier to select the resource. The response includes the list's friendly name, subresource URIs, and other resource metadata.
@@ -4947,8 +3152,7 @@ class SipCredentialListsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return credential_lists_methods.fetchSipCredentialLists(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return credential_lists_methods.fetchSipCredentialLists(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the friendly name of a SIP credential list for the specified account. Supply `FriendlyName` in the request body; the schema requires this field and the documented description limits it to 64 characters. The response contains the updated list and its resource metadata.
@@ -4959,11 +3163,7 @@ class SipCredentialListsNamespace {
       required String sid,
       required String friendlyName,
       RequestOptions? requestOptions}) async {
-    return credential_lists_methods.updateSipCredentialLists(_config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return credential_lists_methods.updateSipCredentialLists(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Deletes a SIP credential list for the specified account. Provide the account identifier and credential list identifier to select the resource to remove. The response confirms deletion and contains no resource representation.
@@ -4973,90 +3173,67 @@ class SipCredentialListsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return credential_lists_methods.deleteSipCredentialLists(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return credential_lists_methods.deleteSipCredentialLists(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipIpAccessControlListsIpAddressesNamespace {
   final ClientConfig _config;
-  SipIpAccessControlListsIpAddressesNamespace(ClientConfig config)
-      : _config = config;
-
+  SipIpAccessControlListsIpAddressesNamespace(ClientConfig config) : _config = config;
   /// Lists the IP addresses associated with an IP access control list. Use the account and list identifiers to select the list, and the pagination parameters to navigate its associated addresses. The response includes address resources and pagination metadata.
   ///
   /// Read multiple IpAddress resources.
-  Future<ListSipIpAccessControlListsIpAddressesResponse> list(
-      {required String accountSid,
-      required String ipAccessControlListSid,
-      SdkOptional<int> pageSize = const SdkOmitted(),
-      SdkOptional<int> page = const SdkOmitted(),
-      SdkOptional<String> pageToken = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return ip_addresses_methods.listSipIpAccessControlListsIpAddresses(_config,
-        accountSid: accountSid,
-        ipAccessControlListSid: ipAccessControlListSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+  Future<ListSipIpAccessControlListsIpAddressesResponse>
+      list(
+          {required String accountSid,
+          required String ipAccessControlListSid,
+          SdkOptional<int> pageSize = const SdkOmitted(),
+          SdkOptional<int> page = const SdkOmitted(),
+          SdkOptional<String> pageToken = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return ip_addresses_methods.listSipIpAccessControlListsIpAddresses(_config, accountSid: accountSid, ipAccessControlListSid: ipAccessControlListSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates an IP address resource in an IP access control list. Provide `FriendlyName` and an IPv4 address in `IpAddress`; optionally set `CidrPrefixLength` to specify the address prefix. The prefix defaults to the full address when omitted.
   ///
   /// Create a new IpAddress resource.
-  Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress> create(
-      {required String accountSid,
-      required String ipAccessControlListSid,
-      required String friendlyName,
-      required String ipAddress,
-      SdkOptional<int> cidrPrefixLength = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return ip_addresses_methods.createSipIpAccessControlListsIpAddresses(
-        _config,
-        accountSid: accountSid,
-        ipAccessControlListSid: ipAccessControlListSid,
-        friendlyName: friendlyName,
-        ipAddress: ipAddress,
-        cidrPrefixLength: cidrPrefixLength,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
+      create(
+          {required String accountSid,
+          required String ipAccessControlListSid,
+          required String friendlyName,
+          required String ipAddress,
+          SdkOptional<int> cidrPrefixLength = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return ip_addresses_methods.createSipIpAccessControlListsIpAddresses(_config, accountSid: accountSid, ipAccessControlListSid: ipAccessControlListSid, friendlyName: friendlyName, ipAddress: ipAddress, cidrPrefixLength: cidrPrefixLength, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific IP address resource from an IP access control list. Use `AccountSid`, `IpAccessControlListSid`, and `Sid` to identify the account, list, and address. Each identifier must match its resource-specific 34-character format.
   ///
   /// Read one IpAddress resource.
-  Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress> fetch(
-      {required String accountSid,
-      required String ipAccessControlListSid,
-      required String sid,
-      RequestOptions? requestOptions}) async {
-    return ip_addresses_methods.fetchSipIpAccessControlListsIpAddresses(_config,
-        accountSid: accountSid,
-        ipAccessControlListSid: ipAccessControlListSid,
-        sid: sid,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
+      fetch(
+          {required String accountSid,
+          required String ipAccessControlListSid,
+          required String sid,
+          RequestOptions? requestOptions}) async {
+    return ip_addresses_methods.fetchSipIpAccessControlListsIpAddresses(_config, accountSid: accountSid, ipAccessControlListSid: ipAccessControlListSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates an IPv4 address entry in a SIP IP access control list. Use the body fields to change the address, its descriptive name, or its CIDR prefix length.
   ///
   /// Update an IpAddress resource.
-  Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress> update(
-      {required String accountSid,
-      required String ipAccessControlListSid,
-      required String sid,
-      SdkOptional<String> ipAddress = const SdkOmitted(),
-      SdkOptional<String> friendlyName = const SdkOmitted(),
-      SdkOptional<int> cidrPrefixLength = const SdkOmitted(),
-      RequestOptions? requestOptions}) async {
-    return ip_addresses_methods.updateSipIpAccessControlListsIpAddresses(
-        _config,
-        accountSid: accountSid,
-        ipAccessControlListSid: ipAccessControlListSid,
-        sid: sid,
-        ipAddress: ipAddress,
-        friendlyName: friendlyName,
-        cidrPrefixLength: cidrPrefixLength,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
+      update(
+          {required String accountSid,
+          required String ipAccessControlListSid,
+          required String sid,
+          SdkOptional<String> ipAddress = const SdkOmitted(),
+          SdkOptional<String> friendlyName = const SdkOmitted(),
+          SdkOptional<int> cidrPrefixLength = const SdkOmitted(),
+          RequestOptions? requestOptions}) async {
+    return ip_addresses_methods.updateSipIpAccessControlListsIpAddresses(_config, accountSid: accountSid, ipAccessControlListSid: ipAccessControlListSid, sid: sid, ipAddress: ipAddress, friendlyName: friendlyName, cidrPrefixLength: cidrPrefixLength, requestOptions: requestOptions);
   }
 
   /// Deletes an IP address entry from a SIP IP access control list. Identify the account, list, and address resource using their SIDs.
@@ -5067,13 +3244,9 @@ class SipIpAccessControlListsIpAddressesNamespace {
       required String ipAccessControlListSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return ip_addresses_methods.deleteSipIpAccessControlListsIpAddresses(
-        _config,
-        accountSid: accountSid,
-        ipAccessControlListSid: ipAccessControlListSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return ip_addresses_methods.deleteSipIpAccessControlListsIpAddresses(_config, accountSid: accountSid, ipAccessControlListSid: ipAccessControlListSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipIpAccessControlListsNamespace {
@@ -5082,7 +3255,6 @@ class SipIpAccessControlListsNamespace {
   SipIpAccessControlListsNamespace(ClientConfig config) : _config = config {
     ipAddresses = SipIpAccessControlListsIpAddressesNamespace(config);
   }
-
   /// Lists IP access control lists belonging to an account. Use the page parameters to control which results you retrieve and how many lists appear in each page.
   ///
   /// Retrieve a list of IpAccessControlLists that belong to the account used to make the request
@@ -5092,26 +3264,18 @@ class SipIpAccessControlListsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return ip_access_control_lists_methods.listSipIpAccessControlLists(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return ip_access_control_lists_methods.listSipIpAccessControlLists(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Creates an IP access control list for an account. Provide a `FriendlyName` to identify the list; the response includes its generated SID and resource URI.
   ///
   /// Create a new IpAccessControlList resource
-  Future<ApiV2010AccountSipSipIpAccessControlList> create(
-      {required String accountSid,
-      required String friendlyName,
-      RequestOptions? requestOptions}) async {
-    return ip_access_control_lists_methods.createSipIpAccessControlLists(
-        _config,
-        accountSid: accountSid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipIpAccessControlList>
+      create(
+          {required String accountSid,
+          required String friendlyName,
+          RequestOptions? requestOptions}) async {
+    return ip_access_control_lists_methods.createSipIpAccessControlLists(_config, accountSid: accountSid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Retrieves a specific IP access control list for an account. Use `AccountSid` and `Sid` to identify the account and list; both values must use their resource-specific 34-character identifier format.
@@ -5121,24 +3285,19 @@ class SipIpAccessControlListsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return ip_access_control_lists_methods.fetchSipIpAccessControlLists(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return ip_access_control_lists_methods.fetchSipIpAccessControlLists(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates the name of an IP access control list associated with an account. Submit `FriendlyName` to set the human-readable name, which can be up to 255 characters. Use the account and list identifiers to select the resource to update.
   ///
   /// Rename an IpAccessControlList
-  Future<ApiV2010AccountSipSipIpAccessControlList> update(
-      {required String accountSid,
-      required String sid,
-      required String friendlyName,
-      RequestOptions? requestOptions}) async {
-    return ip_access_control_lists_methods.updateSipIpAccessControlLists(
-        _config,
-        accountSid: accountSid,
-        sid: sid,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+  Future<ApiV2010AccountSipSipIpAccessControlList>
+      update(
+          {required String accountSid,
+          required String sid,
+          required String friendlyName,
+          RequestOptions? requestOptions}) async {
+    return ip_access_control_lists_methods.updateSipIpAccessControlLists(_config, accountSid: accountSid, sid: sid, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Delete an IpAccessControlList from the requested account
@@ -5146,12 +3305,9 @@ class SipIpAccessControlListsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return ip_access_control_lists_methods.deleteSipIpAccessControlLists(
-        _config,
-        accountSid: accountSid,
-        sid: sid,
-        requestOptions: requestOptions);
+    return ip_access_control_lists_methods.deleteSipIpAccessControlLists(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
+
 }
 
 class SipNamespace {
@@ -5168,7 +3324,6 @@ class SipNamespace {
 class TokensNamespace {
   final ClientConfig _config;
   TokensNamespace(ClientConfig config) : _config = config;
-
   /// Creates a token containing temporary credentials and ICE server details for an account. Set `Ttl` to control how long the generated credentials remain valid; it defaults to 86400 seconds when omitted.
   ///
   /// Create a new token for ICE servers
@@ -5176,15 +3331,14 @@ class TokensNamespace {
       {required String accountSid,
       SdkOptional<int> ttl = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return tokens_methods.createTokens(_config,
-        accountSid: accountSid, ttl: ttl, requestOptions: requestOptions);
+    return tokens_methods.createTokens(_config, accountSid: accountSid, ttl: ttl, requestOptions: requestOptions);
   }
+
 }
 
 class TranscriptionsNamespace {
   final ClientConfig _config;
   TranscriptionsNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a transcription resource belonging to an account. Use the account and transcription SIDs to identify the resource and review its status, transcript text, and associated recording.
   ///
   /// Fetch an instance of a Transcription
@@ -5192,8 +3346,7 @@ class TranscriptionsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods_2.fetchTranscriptions(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return transcriptions_methods_2.fetchTranscriptions(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Delete a transcription from the account used to make the request
@@ -5201,8 +3354,7 @@ class TranscriptionsNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods_2.deleteTranscriptions(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return transcriptions_methods_2.deleteTranscriptions(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Lists transcription resources belonging to an account. Use the page parameters to retrieve results in pages, with `PageSize` controlling the number of resources returned per page.
@@ -5214,19 +3366,14 @@ class TranscriptionsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return transcriptions_methods_2.listTranscriptions(_config,
-        accountSid: accountSid,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return transcriptions_methods_2.listTranscriptions(_config, accountSid: accountSid, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class UsageRecordsNamespace {
   final ClientConfig _config;
   UsageRecordsNamespace(ClientConfig config) : _config = config;
-
   /// Lists usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
   ///
   /// Retrieve a list of usage-records belonging to the account used to make the request
@@ -5240,16 +3387,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecords(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecords(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists all-time usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5263,16 +3401,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsAllTime(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsAllTime(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists daily usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5286,16 +3415,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsDaily(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsDaily(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists usage records for the previous month for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5309,16 +3429,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsLastMonth(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsLastMonth(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists monthly usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5332,16 +3443,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsMonthly(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsMonthly(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists usage records for the current month for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5355,16 +3457,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsThisMonth(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsThisMonth(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists usage records for the current day for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5378,16 +3471,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsToday(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsToday(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists yearly usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5401,16 +3485,7 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsYearly(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsYearly(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
 
   /// Lists usage records for the previous day for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
@@ -5424,23 +3499,14 @@ class UsageRecordsNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_records_methods.listUsageRecordsYesterday(_config,
-        accountSid: accountSid,
-        category: category,
-        startDate: startDate,
-        endDate: endDate,
-        includeSubaccounts: includeSubaccounts,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_records_methods.listUsageRecordsYesterday(_config, accountSid: accountSid, category: category, startDate: startDate, endDate: endDate, includeSubaccounts: includeSubaccounts, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class UsageTriggersNamespace {
   final ClientConfig _config;
   UsageTriggersNamespace(ClientConfig config) : _config = config;
-
   /// Retrieves a specific usage trigger for the account identified by `AccountSid`. Use the `Sid` value to select the trigger whose configuration and current state you need to inspect.
   ///
   /// Fetch and instance of a usage-trigger
@@ -5448,8 +3514,7 @@ class UsageTriggersNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return usage_triggers_methods.fetchUsageTriggers(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return usage_triggers_methods.fetchUsageTriggers(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Updates an existing usage trigger for an account. Supply the trigger fields you want to change, such as `CallbackUrl`, `CallbackMethod`, or `FriendlyName`; the request body is optional. The callback URL is used when the trigger fires.
@@ -5458,18 +3523,11 @@ class UsageTriggersNamespace {
   Future<ApiV2010AccountUsageUsageTrigger> update(
       {required String accountSid,
       required String sid,
-      SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod =
-          const SdkOmitted(),
+      SdkOptional<UpdateUsageTriggersRequestBodyCallbackMethod> callbackMethod = const SdkOmitted(),
       SdkOptional<String> callbackUrl = const SdkOmitted(),
       SdkOptional<String> friendlyName = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_triggers_methods.updateUsageTriggers(_config,
-        accountSid: accountSid,
-        sid: sid,
-        callbackMethod: callbackMethod,
-        callbackUrl: callbackUrl,
-        friendlyName: friendlyName,
-        requestOptions: requestOptions);
+    return usage_triggers_methods.updateUsageTriggers(_config, accountSid: accountSid, sid: sid, callbackMethod: callbackMethod, callbackUrl: callbackUrl, friendlyName: friendlyName, requestOptions: requestOptions);
   }
 
   /// Deletes a specific usage trigger from an account. Use the account and trigger SIDs to identify the resource to remove. The deletion response has no content.
@@ -5477,8 +3535,7 @@ class UsageTriggersNamespace {
       {required String accountSid,
       required String sid,
       RequestOptions? requestOptions}) async {
-    return usage_triggers_methods.deleteUsageTriggers(_config,
-        accountSid: accountSid, sid: sid, requestOptions: requestOptions);
+    return usage_triggers_methods.deleteUsageTriggers(_config, accountSid: accountSid, sid: sid, requestOptions: requestOptions);
   }
 
   /// Creates a usage trigger for an account to monitor a usage category and value. Supply `CallbackUrl`, `TriggerValue`, and `UsageCategory`; choose `TriggerBy` and `Recurring` to configure what the trigger monitors and how often it can fire. The callback method defaults to `POST` when omitted.
@@ -5489,22 +3546,12 @@ class UsageTriggersNamespace {
       required String callbackUrl,
       required String triggerValue,
       required String usageCategory,
-      SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod =
-          const SdkOmitted(),
+      SdkOptional<CreateUsageTriggersRequestBodyCallbackMethod> callbackMethod = const SdkOmitted(),
       SdkOptional<String> friendlyName = const SdkOmitted(),
       SdkOptional<UsageTriggerEnumRecurring> recurring = const SdkOmitted(),
       SdkOptional<UsageTriggerEnumTriggerField> triggerBy = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_triggers_methods.createUsageTriggers(_config,
-        accountSid: accountSid,
-        callbackUrl: callbackUrl,
-        triggerValue: triggerValue,
-        usageCategory: usageCategory,
-        callbackMethod: callbackMethod,
-        friendlyName: friendlyName,
-        recurring: recurring,
-        triggerBy: triggerBy,
-        requestOptions: requestOptions);
+    return usage_triggers_methods.createUsageTriggers(_config, accountSid: accountSid, callbackUrl: callbackUrl, triggerValue: triggerValue, usageCategory: usageCategory, callbackMethod: callbackMethod, friendlyName: friendlyName, recurring: recurring, triggerBy: triggerBy, requestOptions: requestOptions);
   }
 
   /// Lists usage triggers belonging to an account. Filter the results by recurrence, trigger field, or usage category, and use the page parameters to navigate the results. The response includes pagination metadata and the matching usage triggers.
@@ -5519,16 +3566,9 @@ class UsageTriggersNamespace {
       SdkOptional<int> page = const SdkOmitted(),
       SdkOptional<String> pageToken = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
-    return usage_triggers_methods.listUsageTriggers(_config,
-        accountSid: accountSid,
-        recurring: recurring,
-        triggerBy: triggerBy,
-        usageCategory: usageCategory,
-        pageSize: pageSize,
-        page: page,
-        pageToken: pageToken,
-        requestOptions: requestOptions);
+    return usage_triggers_methods.listUsageTriggers(_config, accountSid: accountSid, recurring: recurring, triggerBy: triggerBy, usageCategory: usageCategory, pageSize: pageSize, page: page, pageToken: pageToken, requestOptions: requestOptions);
   }
+
 }
 
 class Twilio {
@@ -5610,4 +3650,5 @@ class Twilio {
     logging.enabled = enabled ?? true;
     return logging;
   }
+
 }

@@ -11,62 +11,45 @@ class UpdateCallsStreamsRequestBody {
 
   const UpdateCallsStreamsRequestBody({required this.status});
 
-  UpdateCallsStreamsRequestBody Function({StreamEnumUpdateStatus status})
-      get copyWith => _copyWith;
+  UpdateCallsStreamsRequestBody Function({StreamEnumUpdateStatus status}) get copyWith => _copyWith;
 
-  UpdateCallsStreamsRequestBody _copyWith({Object? status = sdkOmittedValue}) =>
-      UpdateCallsStreamsRequestBody(
-        status: identical(status, sdkOmittedValue)
-            ? this.status
-            : status as StreamEnumUpdateStatus,
-      );
+  UpdateCallsStreamsRequestBody _copyWith({Object? status = sdkOmittedValue}) => UpdateCallsStreamsRequestBody(
+    status: identical(status, sdkOmittedValue) ? this.status : status as StreamEnumUpdateStatus,
+  );
 
-  factory UpdateCallsStreamsRequestBody.fromJson(Map<String, dynamic> json) =>
-      UpdateCallsStreamsRequestBody(
-        status: (json['Status'] != null
-            ? StreamEnumUpdateStatus.fromJson(json['Status'] as String)
-            : null)!,
-      );
+  factory UpdateCallsStreamsRequestBody.fromJson(Map<String, dynamic> json) => UpdateCallsStreamsRequestBody(
+    status: (json['Status'] != null ? StreamEnumUpdateStatus.fromJson(json['Status'] as String) : null)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'Status': status.toJson(),
-      };
+    'Status': status.toJson(),
+  };
 }
 
 class CreateTokensRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The duration in seconds for which the generated credentials are valid. The default value is 86400 (24 hours).
   final SdkOptional<int> ttl;
 
   const CreateTokensRequestBody({this.ttl = const SdkOmitted()});
 
-  CreateTokensRequestBody Function({SdkOptional<int> ttl}) get copyWith =>
-      _copyWith;
+  CreateTokensRequestBody Function({SdkOptional<int> ttl}) get copyWith => _copyWith;
 
-  CreateTokensRequestBody _copyWith({Object? ttl = sdkOmittedValue}) =>
-      CreateTokensRequestBody(
-        ttl: identical(ttl, sdkOmittedValue)
-            ? this.ttl
-            : ttl as SdkOptional<int>,
-      );
+  CreateTokensRequestBody _copyWith({Object? ttl = sdkOmittedValue}) => CreateTokensRequestBody(
+    ttl: identical(ttl, sdkOmittedValue) ? this.ttl : ttl as SdkOptional<int>,
+  );
 
-  factory CreateTokensRequestBody.fromJson(Map<String, dynamic> json) =>
-      CreateTokensRequestBody(
-        ttl: json['Ttl'] != null
-            ? SdkPresent(((json['Ttl'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-      );
+  factory CreateTokensRequestBody.fromJson(Map<String, dynamic> json) => CreateTokensRequestBody(
+    ttl: json['Ttl'] != null ? SdkPresent(((json['Ttl'] as num?)?.toInt())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (ttl) {
-          SdkPresent<int>(value: final value) => {
-              'Ttl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (ttl) {
+      SdkPresent<int>(value: final value) => {'Ttl': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ListTranscriptionsResponse {
@@ -82,160 +65,72 @@ class ListTranscriptionsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountTranscription>> transcriptions;
 
-  const ListTranscriptionsResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.transcriptions = const SdkOmitted()});
+  const ListTranscriptionsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.transcriptions = const SdkOmitted()});
 
-  ListTranscriptionsResponse Function(
-          {SdkOptional<int> end,
-          SdkOptional<String> firstPageUri,
-          SdkOptional<String?> nextPageUri,
-          SdkOptional<int> page,
-          SdkOptional<int> pageSize,
-          SdkOptional<String?> previousPageUri,
-          SdkOptional<int> start,
-          SdkOptional<String> uri,
-          SdkOptional<List<ApiV2010AccountTranscription>> transcriptions})
-      get copyWith => _copyWith;
+  ListTranscriptionsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountTranscription>> transcriptions}) get copyWith => _copyWith;
 
-  ListTranscriptionsResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? transcriptions = sdkOmittedValue}) =>
-      ListTranscriptionsResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        transcriptions: identical(transcriptions, sdkOmittedValue)
-            ? this.transcriptions
-            : transcriptions as SdkOptional<List<ApiV2010AccountTranscription>>,
-      );
+  ListTranscriptionsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? transcriptions = sdkOmittedValue}) => ListTranscriptionsResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    transcriptions: identical(transcriptions, sdkOmittedValue) ? this.transcriptions : transcriptions as SdkOptional<List<ApiV2010AccountTranscription>>,
+  );
 
-  factory ListTranscriptionsResponse.fromJson(Map<String, dynamic> json) =>
-      ListTranscriptionsResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        transcriptions: json['transcriptions'] != null
-            ? SdkPresent(((json['transcriptions'] as List?)
-                ?.map((e) => ApiV2010AccountTranscription.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListTranscriptionsResponse.fromJson(Map<String, dynamic> json) => ListTranscriptionsResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    transcriptions: json['transcriptions'] != null ? SdkPresent(((json['transcriptions'] as List?)?.map((e) => ApiV2010AccountTranscription.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (transcriptions) {
-          SdkPresent<List<ApiV2010AccountTranscription>>(value: final value) =>
-            {
-              'transcriptions': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (transcriptions) {
+      SdkPresent<List<ApiV2010AccountTranscription>>(value: final value) => {'transcriptions': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ListUsageRecordsResponse {
@@ -251,163 +146,72 @@ class ListUsageRecordsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountUsageUsageRecord>> usageRecords;
 
-  const ListUsageRecordsResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.usageRecords = const SdkOmitted()});
+  const ListUsageRecordsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.usageRecords = const SdkOmitted()});
 
-  ListUsageRecordsResponse Function(
-          {SdkOptional<int> end,
-          SdkOptional<String> firstPageUri,
-          SdkOptional<String?> nextPageUri,
-          SdkOptional<int> page,
-          SdkOptional<int> pageSize,
-          SdkOptional<String?> previousPageUri,
-          SdkOptional<int> start,
-          SdkOptional<String> uri,
-          SdkOptional<List<ApiV2010AccountUsageUsageRecord>> usageRecords})
-      get copyWith => _copyWith;
+  ListUsageRecordsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountUsageUsageRecord>> usageRecords}) get copyWith => _copyWith;
 
-  ListUsageRecordsResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? usageRecords = sdkOmittedValue}) =>
-      ListUsageRecordsResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        usageRecords: identical(usageRecords, sdkOmittedValue)
-            ? this.usageRecords
-            : usageRecords
-                as SdkOptional<List<ApiV2010AccountUsageUsageRecord>>,
-      );
+  ListUsageRecordsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? usageRecords = sdkOmittedValue}) => ListUsageRecordsResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    usageRecords: identical(usageRecords, sdkOmittedValue) ? this.usageRecords : usageRecords as SdkOptional<List<ApiV2010AccountUsageUsageRecord>>,
+  );
 
-  factory ListUsageRecordsResponse.fromJson(Map<String, dynamic> json) =>
-      ListUsageRecordsResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        usageRecords: json['usage_records'] != null
-            ? SdkPresent(((json['usage_records'] as List?)
-                ?.map((e) => ApiV2010AccountUsageUsageRecord.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListUsageRecordsResponse.fromJson(Map<String, dynamic> json) => ListUsageRecordsResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    usageRecords: json['usage_records'] != null ? SdkPresent(((json['usage_records'] as List?)?.map((e) => ApiV2010AccountUsageUsageRecord.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (usageRecords) {
-          SdkPresent<List<ApiV2010AccountUsageUsageRecord>>(
-            value: final value
-          ) =>
-            {
-              'usage_records': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (usageRecords) {
+      SdkPresent<List<ApiV2010AccountUsageUsageRecord>>(value: final value) => {'usage_records': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ListUsageRecordsAllTimeResponse {
@@ -421,165 +225,72 @@ class ListUsageRecordsAllTimeResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>>
-      usageRecords;
+  final SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>> usageRecords;
 
-  const ListUsageRecordsAllTimeResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.usageRecords = const SdkOmitted()});
+  const ListUsageRecordsAllTimeResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.usageRecords = const SdkOmitted()});
 
-  ListUsageRecordsAllTimeResponse Function(
-      {SdkOptional<int> end,
-      SdkOptional<String> firstPageUri,
-      SdkOptional<String?> nextPageUri,
-      SdkOptional<int> page,
-      SdkOptional<int> pageSize,
-      SdkOptional<String?> previousPageUri,
-      SdkOptional<int> start,
-      SdkOptional<String> uri,
-      SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>>
-          usageRecords}) get copyWith => _copyWith;
+  ListUsageRecordsAllTimeResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>> usageRecords}) get copyWith => _copyWith;
 
-  ListUsageRecordsAllTimeResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? usageRecords = sdkOmittedValue}) =>
-      ListUsageRecordsAllTimeResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        usageRecords: identical(usageRecords, sdkOmittedValue)
-            ? this.usageRecords
-            : usageRecords as SdkOptional<
-                List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>>,
-      );
+  ListUsageRecordsAllTimeResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? usageRecords = sdkOmittedValue}) => ListUsageRecordsAllTimeResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    usageRecords: identical(usageRecords, sdkOmittedValue) ? this.usageRecords : usageRecords as SdkOptional<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>>,
+  );
 
-  factory ListUsageRecordsAllTimeResponse.fromJson(Map<String, dynamic> json) =>
-      ListUsageRecordsAllTimeResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        usageRecords: json['usage_records'] != null
-            ? SdkPresent(((json['usage_records'] as List?)
-                ?.map((e) =>
-                    ApiV2010AccountUsageUsageRecordUsageRecordAllTime.fromJson(
-                        e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListUsageRecordsAllTimeResponse.fromJson(Map<String, dynamic> json) => ListUsageRecordsAllTimeResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    usageRecords: json['usage_records'] != null ? SdkPresent(((json['usage_records'] as List?)?.map((e) => ApiV2010AccountUsageUsageRecordUsageRecordAllTime.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (usageRecords) {
-          SdkPresent<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>>(
-            value: final value
-          ) =>
-            {
-              'usage_records': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (usageRecords) {
+      SdkPresent<List<ApiV2010AccountUsageUsageRecordUsageRecordAllTime>>(value: final value) => {'usage_records': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

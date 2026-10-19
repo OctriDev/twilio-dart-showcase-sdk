@@ -15,208 +15,97 @@ class ListSipDomainsAuthCallsCredentialListMappingsResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<
-          List<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>>
-      contents;
+  final SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>> contents;
 
-  const ListSipDomainsAuthCallsCredentialListMappingsResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.contents = const SdkOmitted()});
+  const ListSipDomainsAuthCallsCredentialListMappingsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.contents = const SdkOmitted()});
 
-  ListSipDomainsAuthCallsCredentialListMappingsResponse Function(
-      {SdkOptional<int> end,
-      SdkOptional<String> firstPageUri,
-      SdkOptional<String?> nextPageUri,
-      SdkOptional<int> page,
-      SdkOptional<int> pageSize,
-      SdkOptional<String?> previousPageUri,
-      SdkOptional<int> start,
-      SdkOptional<String> uri,
-      SdkOptional<
-              List<
-                  ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>>
-          contents}) get copyWith => _copyWith;
+  ListSipDomainsAuthCallsCredentialListMappingsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>> contents}) get copyWith => _copyWith;
 
-  ListSipDomainsAuthCallsCredentialListMappingsResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? contents = sdkOmittedValue}) =>
-      ListSipDomainsAuthCallsCredentialListMappingsResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        contents: identical(contents, sdkOmittedValue)
-            ? this.contents
-            : contents as SdkOptional<
-                List<
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>>,
-      );
+  ListSipDomainsAuthCallsCredentialListMappingsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? contents = sdkOmittedValue}) => ListSipDomainsAuthCallsCredentialListMappingsResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    contents: identical(contents, sdkOmittedValue) ? this.contents : contents as SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>>,
+  );
 
-  factory ListSipDomainsAuthCallsCredentialListMappingsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ListSipDomainsAuthCallsCredentialListMappingsResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        contents: json['contents'] != null
-            ? SdkPresent(((json['contents'] as List?)
-                ?.map((e) =>
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListSipDomainsAuthCallsCredentialListMappingsResponse.fromJson(Map<String, dynamic> json) => ListSipDomainsAuthCallsCredentialListMappingsResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    contents: json['contents'] != null ? SdkPresent(((json['contents'] as List?)?.map((e) => ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contents) {
-          SdkPresent<
-                List<
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>>(
-            value: final value
-          ) =>
-            {
-              'contents': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contents) {
+      SdkPresent<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>>(value: final value) => {'contents': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The SID of the IpAccessControlList resource to map to the SIP domain.
   final String ipAccessControlListSid;
 
-  const CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody(
-      {required this.ipAccessControlListSid});
+  const CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody({required this.ipAccessControlListSid});
 
-  CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody Function(
-      {String ipAccessControlListSid}) get copyWith => _copyWith;
+  CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody Function({String ipAccessControlListSid}) get copyWith => _copyWith;
 
-  CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody _copyWith(
-          {Object? ipAccessControlListSid = sdkOmittedValue}) =>
-      CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody(
-        ipAccessControlListSid:
-            identical(ipAccessControlListSid, sdkOmittedValue)
-                ? this.ipAccessControlListSid
-                : ipAccessControlListSid as String,
-      );
+  CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody _copyWith({Object? ipAccessControlListSid = sdkOmittedValue}) => CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody(
+    ipAccessControlListSid: identical(ipAccessControlListSid, sdkOmittedValue) ? this.ipAccessControlListSid : ipAccessControlListSid as String,
+  );
 
-  factory CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody(
-        ipAccessControlListSid: (json['IpAccessControlListSid'] as String?)!,
-      );
+  factory CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody.fromJson(Map<String, dynamic> json) => CreateSipDomainsAuthCallsIpAccessControlListMappingsRequestBody(
+    ipAccessControlListSid: (json['IpAccessControlListSid'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'IpAccessControlListSid': ipAccessControlListSid,
-      };
+    'IpAccessControlListSid': ipAccessControlListSid,
+  };
 }
 
 class ListSipDomainsAuthCallsIpAccessControlListMappingsResponse {
@@ -230,207 +119,97 @@ class ListSipDomainsAuthCallsIpAccessControlListMappingsResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<
-          List<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>>
-      contents;
+  final SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>> contents;
 
-  const ListSipDomainsAuthCallsIpAccessControlListMappingsResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.contents = const SdkOmitted()});
+  const ListSipDomainsAuthCallsIpAccessControlListMappingsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.contents = const SdkOmitted()});
 
-  ListSipDomainsAuthCallsIpAccessControlListMappingsResponse Function(
-      {SdkOptional<int> end,
-      SdkOptional<String> firstPageUri,
-      SdkOptional<String?> nextPageUri,
-      SdkOptional<int> page,
-      SdkOptional<int> pageSize,
-      SdkOptional<String?> previousPageUri,
-      SdkOptional<int> start,
-      SdkOptional<String> uri,
-      SdkOptional<
-              List<
-                  ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>>
-          contents}) get copyWith => _copyWith;
+  ListSipDomainsAuthCallsIpAccessControlListMappingsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>> contents}) get copyWith => _copyWith;
 
-  ListSipDomainsAuthCallsIpAccessControlListMappingsResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? contents = sdkOmittedValue}) =>
-      ListSipDomainsAuthCallsIpAccessControlListMappingsResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        contents: identical(contents, sdkOmittedValue)
-            ? this.contents
-            : contents as SdkOptional<
-                List<
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>>,
-      );
+  ListSipDomainsAuthCallsIpAccessControlListMappingsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? contents = sdkOmittedValue}) => ListSipDomainsAuthCallsIpAccessControlListMappingsResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    contents: identical(contents, sdkOmittedValue) ? this.contents : contents as SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>>,
+  );
 
-  factory ListSipDomainsAuthCallsIpAccessControlListMappingsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ListSipDomainsAuthCallsIpAccessControlListMappingsResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        contents: json['contents'] != null
-            ? SdkPresent(((json['contents'] as List?)
-                ?.map((e) =>
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListSipDomainsAuthCallsIpAccessControlListMappingsResponse.fromJson(Map<String, dynamic> json) => ListSipDomainsAuthCallsIpAccessControlListMappingsResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    contents: json['contents'] != null ? SdkPresent(((json['contents'] as List?)?.map((e) => ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contents) {
-          SdkPresent<
-                List<
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>>(
-            value: final value
-          ) =>
-            {
-              'contents': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contents) {
+      SdkPresent<List<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping>>(value: final value) => {'contents': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The SID of the CredentialList resource to map to the SIP domain.
   final String credentialListSid;
 
-  const CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody(
-      {required this.credentialListSid});
+  const CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody({required this.credentialListSid});
 
-  CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody Function(
-      {String credentialListSid}) get copyWith => _copyWith;
+  CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody Function({String credentialListSid}) get copyWith => _copyWith;
 
-  CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody _copyWith(
-          {Object? credentialListSid = sdkOmittedValue}) =>
-      CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody(
-        credentialListSid: identical(credentialListSid, sdkOmittedValue)
-            ? this.credentialListSid
-            : credentialListSid as String,
-      );
+  CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody _copyWith({Object? credentialListSid = sdkOmittedValue}) => CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody(
+    credentialListSid: identical(credentialListSid, sdkOmittedValue) ? this.credentialListSid : credentialListSid as String,
+  );
 
-  factory CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody(
-        credentialListSid: (json['CredentialListSid'] as String?)!,
-      );
+  factory CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody.fromJson(Map<String, dynamic> json) => CreateSipDomainsAuthRegistrationsCredentialListMappingsRequestBody(
+    credentialListSid: (json['CredentialListSid'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'CredentialListSid': credentialListSid,
-      };
+    'CredentialListSid': credentialListSid,
+  };
 }
 
 class ListSipDomainsAuthRegistrationsCredentialListMappingsResponse {
@@ -444,173 +223,72 @@ class ListSipDomainsAuthRegistrationsCredentialListMappingsResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<
-          List<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>>
-      contents;
+  final SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>> contents;
 
-  const ListSipDomainsAuthRegistrationsCredentialListMappingsResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.contents = const SdkOmitted()});
+  const ListSipDomainsAuthRegistrationsCredentialListMappingsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.contents = const SdkOmitted()});
 
-  ListSipDomainsAuthRegistrationsCredentialListMappingsResponse Function(
-      {SdkOptional<int> end,
-      SdkOptional<String> firstPageUri,
-      SdkOptional<String?> nextPageUri,
-      SdkOptional<int> page,
-      SdkOptional<int> pageSize,
-      SdkOptional<String?> previousPageUri,
-      SdkOptional<int> start,
-      SdkOptional<String> uri,
-      SdkOptional<
-              List<
-                  ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>>
-          contents}) get copyWith => _copyWith;
+  ListSipDomainsAuthRegistrationsCredentialListMappingsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>> contents}) get copyWith => _copyWith;
 
-  ListSipDomainsAuthRegistrationsCredentialListMappingsResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? contents = sdkOmittedValue}) =>
-      ListSipDomainsAuthRegistrationsCredentialListMappingsResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        contents: identical(contents, sdkOmittedValue)
-            ? this.contents
-            : contents as SdkOptional<
-                List<
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>>,
-      );
+  ListSipDomainsAuthRegistrationsCredentialListMappingsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? contents = sdkOmittedValue}) => ListSipDomainsAuthRegistrationsCredentialListMappingsResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    contents: identical(contents, sdkOmittedValue) ? this.contents : contents as SdkOptional<List<ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>>,
+  );
 
-  factory ListSipDomainsAuthRegistrationsCredentialListMappingsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ListSipDomainsAuthRegistrationsCredentialListMappingsResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        contents: json['contents'] != null
-            ? SdkPresent(((json['contents'] as List?)
-                ?.map((e) =>
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListSipDomainsAuthRegistrationsCredentialListMappingsResponse.fromJson(Map<String, dynamic> json) => ListSipDomainsAuthRegistrationsCredentialListMappingsResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    contents: json['contents'] != null ? SdkPresent(((json['contents'] as List?)?.map((e) => ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (contents) {
-          SdkPresent<
-                List<
-                    ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>>(
-            value: final value
-          ) =>
-            {
-              'contents': value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (contents) {
+      SdkPresent<List<ApiV2010AccountSipSipDomainSipAuthSipAuthRegistrationsSipAuthRegistrationsCredentialListMapping>>(value: final value) => {'contents': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

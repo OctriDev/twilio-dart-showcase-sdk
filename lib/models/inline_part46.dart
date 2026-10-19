@@ -7,283 +7,123 @@ part of 'inline.dart';
 class UpdateSipDomainsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A descriptive string that you created to describe the resource. It can be up to 64 characters long.
   final SdkOptional<String> friendlyName;
-
   /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod>
-      voiceFallbackMethod;
-
+  final SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod> voiceFallbackMethod;
   /// The URL that we should call when an error occurs while retrieving or executing the TwiML requested by `voice_url`.
   final SdkOptional<String> voiceFallbackUrl;
-
   /// The HTTP method we should use to call `voice_url`
   final SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod;
-
   /// The HTTP method we should use to call `voice_status_callback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>
-      voiceStatusCallbackMethod;
-
+  final SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod> voiceStatusCallbackMethod;
   /// The URL that we should call to pass status parameters (such as call ended) to your application.
   final SdkOptional<String> voiceStatusCallbackUrl;
-
   /// The URL we should call when the domain receives a call.
   final SdkOptional<String> voiceUrl;
-
   /// Whether to allow SIP Endpoints to register with the domain to receive calls. Can be `true` or `false`. `true` allows SIP Endpoints to register with the domain to receive calls, `false` does not.
   final SdkOptional<bool> sipRegistration;
-
   /// The unique address you reserve on Twilio to which you route your SIP traffic. Domain names can contain letters, digits, and "-" and must end with `sip.twilio.com`.
   final SdkOptional<String> domainName;
-
   /// Whether emergency calling is enabled for the domain. If enabled, allows emergency calls on the domain from phone numbers with validated addresses.
   final SdkOptional<bool> emergencyCallingEnabled;
-
   /// Whether secure SIP is enabled for the domain. If enabled, TLS will be enforced and SRTP will be negotiated on all incoming calls to this sip domain.
   final SdkOptional<bool> secure;
-
   /// The SID of the BYOC Trunk(Bring Your Own Carrier) resource that the Sip Domain will be associated with.
   final SdkOptional<String> byocTrunkSid;
-
   /// Whether an emergency caller sid is configured for the domain. If present, this phone number will be used as the callback for the emergency call.
   final SdkOptional<String> emergencyCallerSid;
 
-  const UpdateSipDomainsRequestBody(
-      {this.friendlyName = const SdkOmitted(),
-      this.voiceFallbackMethod = const SdkOmitted(),
-      this.voiceFallbackUrl = const SdkOmitted(),
-      this.voiceMethod = const SdkOmitted(),
-      this.voiceStatusCallbackMethod = const SdkOmitted(),
-      this.voiceStatusCallbackUrl = const SdkOmitted(),
-      this.voiceUrl = const SdkOmitted(),
-      this.sipRegistration = const SdkOmitted(),
-      this.domainName = const SdkOmitted(),
-      this.emergencyCallingEnabled = const SdkOmitted(),
-      this.secure = const SdkOmitted(),
-      this.byocTrunkSid = const SdkOmitted(),
-      this.emergencyCallerSid = const SdkOmitted()});
+  const UpdateSipDomainsRequestBody({this.friendlyName = const SdkOmitted(), this.voiceFallbackMethod = const SdkOmitted(), this.voiceFallbackUrl = const SdkOmitted(), this.voiceMethod = const SdkOmitted(), this.voiceStatusCallbackMethod = const SdkOmitted(), this.voiceStatusCallbackUrl = const SdkOmitted(), this.voiceUrl = const SdkOmitted(), this.sipRegistration = const SdkOmitted(), this.domainName = const SdkOmitted(), this.emergencyCallingEnabled = const SdkOmitted(), this.secure = const SdkOmitted(), this.byocTrunkSid = const SdkOmitted(), this.emergencyCallerSid = const SdkOmitted()});
 
-  UpdateSipDomainsRequestBody Function(
-      {SdkOptional<String> friendlyName,
-      SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod,
-      SdkOptional<String> voiceFallbackUrl,
-      SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod,
-      SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>
-          voiceStatusCallbackMethod,
-      SdkOptional<String> voiceStatusCallbackUrl,
-      SdkOptional<String> voiceUrl,
-      SdkOptional<bool> sipRegistration,
-      SdkOptional<String> domainName,
-      SdkOptional<bool> emergencyCallingEnabled,
-      SdkOptional<bool> secure,
-      SdkOptional<String> byocTrunkSid,
-      SdkOptional<String> emergencyCallerSid}) get copyWith => _copyWith;
+  UpdateSipDomainsRequestBody Function({SdkOptional<String> friendlyName, SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod> voiceFallbackMethod, SdkOptional<String> voiceFallbackUrl, SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod, SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod> voiceStatusCallbackMethod, SdkOptional<String> voiceStatusCallbackUrl, SdkOptional<String> voiceUrl, SdkOptional<bool> sipRegistration, SdkOptional<String> domainName, SdkOptional<bool> emergencyCallingEnabled, SdkOptional<bool> secure, SdkOptional<String> byocTrunkSid, SdkOptional<String> emergencyCallerSid}) get copyWith => _copyWith;
 
-  UpdateSipDomainsRequestBody _copyWith(
-          {Object? friendlyName = sdkOmittedValue,
-          Object? voiceFallbackMethod = sdkOmittedValue,
-          Object? voiceFallbackUrl = sdkOmittedValue,
-          Object? voiceMethod = sdkOmittedValue,
-          Object? voiceStatusCallbackMethod = sdkOmittedValue,
-          Object? voiceStatusCallbackUrl = sdkOmittedValue,
-          Object? voiceUrl = sdkOmittedValue,
-          Object? sipRegistration = sdkOmittedValue,
-          Object? domainName = sdkOmittedValue,
-          Object? emergencyCallingEnabled = sdkOmittedValue,
-          Object? secure = sdkOmittedValue,
-          Object? byocTrunkSid = sdkOmittedValue,
-          Object? emergencyCallerSid = sdkOmittedValue}) =>
-      UpdateSipDomainsRequestBody(
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as SdkOptional<String>,
-        voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue)
-            ? this.voiceFallbackMethod
-            : voiceFallbackMethod
-                as SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod>,
-        voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue)
-            ? this.voiceFallbackUrl
-            : voiceFallbackUrl as SdkOptional<String>,
-        voiceMethod: identical(voiceMethod, sdkOmittedValue)
-            ? this.voiceMethod
-            : voiceMethod
-                as SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod>,
-        voiceStatusCallbackMethod:
-            identical(voiceStatusCallbackMethod, sdkOmittedValue)
-                ? this.voiceStatusCallbackMethod
-                : voiceStatusCallbackMethod as SdkOptional<
-                    UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>,
-        voiceStatusCallbackUrl:
-            identical(voiceStatusCallbackUrl, sdkOmittedValue)
-                ? this.voiceStatusCallbackUrl
-                : voiceStatusCallbackUrl as SdkOptional<String>,
-        voiceUrl: identical(voiceUrl, sdkOmittedValue)
-            ? this.voiceUrl
-            : voiceUrl as SdkOptional<String>,
-        sipRegistration: identical(sipRegistration, sdkOmittedValue)
-            ? this.sipRegistration
-            : sipRegistration as SdkOptional<bool>,
-        domainName: identical(domainName, sdkOmittedValue)
-            ? this.domainName
-            : domainName as SdkOptional<String>,
-        emergencyCallingEnabled:
-            identical(emergencyCallingEnabled, sdkOmittedValue)
-                ? this.emergencyCallingEnabled
-                : emergencyCallingEnabled as SdkOptional<bool>,
-        secure: identical(secure, sdkOmittedValue)
-            ? this.secure
-            : secure as SdkOptional<bool>,
-        byocTrunkSid: identical(byocTrunkSid, sdkOmittedValue)
-            ? this.byocTrunkSid
-            : byocTrunkSid as SdkOptional<String>,
-        emergencyCallerSid: identical(emergencyCallerSid, sdkOmittedValue)
-            ? this.emergencyCallerSid
-            : emergencyCallerSid as SdkOptional<String>,
-      );
+  UpdateSipDomainsRequestBody _copyWith({Object? friendlyName = sdkOmittedValue, Object? voiceFallbackMethod = sdkOmittedValue, Object? voiceFallbackUrl = sdkOmittedValue, Object? voiceMethod = sdkOmittedValue, Object? voiceStatusCallbackMethod = sdkOmittedValue, Object? voiceStatusCallbackUrl = sdkOmittedValue, Object? voiceUrl = sdkOmittedValue, Object? sipRegistration = sdkOmittedValue, Object? domainName = sdkOmittedValue, Object? emergencyCallingEnabled = sdkOmittedValue, Object? secure = sdkOmittedValue, Object? byocTrunkSid = sdkOmittedValue, Object? emergencyCallerSid = sdkOmittedValue}) => UpdateSipDomainsRequestBody(
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
+    voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue) ? this.voiceFallbackMethod : voiceFallbackMethod as SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod>,
+    voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue) ? this.voiceFallbackUrl : voiceFallbackUrl as SdkOptional<String>,
+    voiceMethod: identical(voiceMethod, sdkOmittedValue) ? this.voiceMethod : voiceMethod as SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod>,
+    voiceStatusCallbackMethod: identical(voiceStatusCallbackMethod, sdkOmittedValue) ? this.voiceStatusCallbackMethod : voiceStatusCallbackMethod as SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>,
+    voiceStatusCallbackUrl: identical(voiceStatusCallbackUrl, sdkOmittedValue) ? this.voiceStatusCallbackUrl : voiceStatusCallbackUrl as SdkOptional<String>,
+    voiceUrl: identical(voiceUrl, sdkOmittedValue) ? this.voiceUrl : voiceUrl as SdkOptional<String>,
+    sipRegistration: identical(sipRegistration, sdkOmittedValue) ? this.sipRegistration : sipRegistration as SdkOptional<bool>,
+    domainName: identical(domainName, sdkOmittedValue) ? this.domainName : domainName as SdkOptional<String>,
+    emergencyCallingEnabled: identical(emergencyCallingEnabled, sdkOmittedValue) ? this.emergencyCallingEnabled : emergencyCallingEnabled as SdkOptional<bool>,
+    secure: identical(secure, sdkOmittedValue) ? this.secure : secure as SdkOptional<bool>,
+    byocTrunkSid: identical(byocTrunkSid, sdkOmittedValue) ? this.byocTrunkSid : byocTrunkSid as SdkOptional<String>,
+    emergencyCallerSid: identical(emergencyCallerSid, sdkOmittedValue) ? this.emergencyCallerSid : emergencyCallerSid as SdkOptional<String>,
+  );
 
-  factory UpdateSipDomainsRequestBody.fromJson(Map<String, dynamic> json) =>
-      UpdateSipDomainsRequestBody(
-        friendlyName: json['FriendlyName'] != null
-            ? SdkPresent((json['FriendlyName'] as String?)!)
-            : const SdkOmitted(),
-        voiceFallbackMethod: json['VoiceFallbackMethod'] != null
-            ? SdkPresent((json['VoiceFallbackMethod'] != null
-                ? UpdateSipDomainsRequestBodyVoiceFallbackMethod.fromJson(
-                    json['VoiceFallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceFallbackUrl: json['VoiceFallbackUrl'] != null
-            ? SdkPresent((json['VoiceFallbackUrl'] as String?)!)
-            : const SdkOmitted(),
-        voiceMethod: json['VoiceMethod'] != null
-            ? SdkPresent((json['VoiceMethod'] != null
-                ? UpdateSipDomainsRequestBodyVoiceMethod.fromJson(
-                    json['VoiceMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceStatusCallbackMethod: json['VoiceStatusCallbackMethod'] != null
-            ? SdkPresent((json['VoiceStatusCallbackMethod'] != null
-                ? UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod.fromJson(
-                    json['VoiceStatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceStatusCallbackUrl: json['VoiceStatusCallbackUrl'] != null
-            ? SdkPresent((json['VoiceStatusCallbackUrl'] as String?)!)
-            : const SdkOmitted(),
-        voiceUrl: json['VoiceUrl'] != null
-            ? SdkPresent((json['VoiceUrl'] as String?)!)
-            : const SdkOmitted(),
-        sipRegistration: json['SipRegistration'] != null
-            ? SdkPresent((json['SipRegistration'] as bool?)!)
-            : const SdkOmitted(),
-        domainName: json['DomainName'] != null
-            ? SdkPresent((json['DomainName'] as String?)!)
-            : const SdkOmitted(),
-        emergencyCallingEnabled: json['EmergencyCallingEnabled'] != null
-            ? SdkPresent((json['EmergencyCallingEnabled'] as bool?)!)
-            : const SdkOmitted(),
-        secure: json['Secure'] != null
-            ? SdkPresent((json['Secure'] as bool?)!)
-            : const SdkOmitted(),
-        byocTrunkSid: json['ByocTrunkSid'] != null
-            ? SdkPresent((json['ByocTrunkSid'] as String?)!)
-            : const SdkOmitted(),
-        emergencyCallerSid: json['EmergencyCallerSid'] != null
-            ? SdkPresent((json['EmergencyCallerSid'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory UpdateSipDomainsRequestBody.fromJson(Map<String, dynamic> json) => UpdateSipDomainsRequestBody(
+    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
+    voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? SdkPresent((json['VoiceFallbackMethod'] != null ? UpdateSipDomainsRequestBodyVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceFallbackUrl: json['VoiceFallbackUrl'] != null ? SdkPresent((json['VoiceFallbackUrl'] as String?)!) : const SdkOmitted(),
+    voiceMethod: json['VoiceMethod'] != null ? SdkPresent((json['VoiceMethod'] != null ? UpdateSipDomainsRequestBodyVoiceMethod.fromJson(json['VoiceMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceStatusCallbackMethod: json['VoiceStatusCallbackMethod'] != null ? SdkPresent((json['VoiceStatusCallbackMethod'] != null ? UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod.fromJson(json['VoiceStatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceStatusCallbackUrl: json['VoiceStatusCallbackUrl'] != null ? SdkPresent((json['VoiceStatusCallbackUrl'] as String?)!) : const SdkOmitted(),
+    voiceUrl: json['VoiceUrl'] != null ? SdkPresent((json['VoiceUrl'] as String?)!) : const SdkOmitted(),
+    sipRegistration: json['SipRegistration'] != null ? SdkPresent((json['SipRegistration'] as bool?)!) : const SdkOmitted(),
+    domainName: json['DomainName'] != null ? SdkPresent((json['DomainName'] as String?)!) : const SdkOmitted(),
+    emergencyCallingEnabled: json['EmergencyCallingEnabled'] != null ? SdkPresent((json['EmergencyCallingEnabled'] as bool?)!) : const SdkOmitted(),
+    secure: json['Secure'] != null ? SdkPresent((json['Secure'] as bool?)!) : const SdkOmitted(),
+    byocTrunkSid: json['ByocTrunkSid'] != null ? SdkPresent((json['ByocTrunkSid'] as String?)!) : const SdkOmitted(),
+    emergencyCallerSid: json['EmergencyCallerSid'] != null ? SdkPresent((json['EmergencyCallerSid'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (friendlyName) {
-          SdkPresent<String>(value: final value) => {
-              'FriendlyName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceFallbackMethod) {
-          SdkPresent<UpdateSipDomainsRequestBodyVoiceFallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceFallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceFallbackUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceFallbackUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceMethod) {
-          SdkPresent<UpdateSipDomainsRequestBodyVoiceMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceStatusCallbackMethod) {
-          SdkPresent<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceStatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceStatusCallbackUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceStatusCallbackUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sipRegistration) {
-          SdkPresent<bool>(value: final value) => {
-              'SipRegistration': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (domainName) {
-          SdkPresent<String>(value: final value) => {
-              'DomainName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyCallingEnabled) {
-          SdkPresent<bool>(value: final value) => {
-              'EmergencyCallingEnabled': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (secure) {
-          SdkPresent<bool>(value: final value) => {
-              'Secure': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (byocTrunkSid) {
-          SdkPresent<String>(value: final value) => {
-              'ByocTrunkSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyCallerSid) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyCallerSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (friendlyName) {
+      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceFallbackMethod) {
+      SdkPresent<UpdateSipDomainsRequestBodyVoiceFallbackMethod>(value: final value) => {'VoiceFallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceFallbackUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceFallbackUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceMethod) {
+      SdkPresent<UpdateSipDomainsRequestBodyVoiceMethod>(value: final value) => {'VoiceMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceStatusCallbackMethod) {
+      SdkPresent<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>(value: final value) => {'VoiceStatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceStatusCallbackUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceStatusCallbackUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sipRegistration) {
+      SdkPresent<bool>(value: final value) => {'SipRegistration': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (domainName) {
+      SdkPresent<String>(value: final value) => {'DomainName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyCallingEnabled) {
+      SdkPresent<bool>(value: final value) => {'EmergencyCallingEnabled': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (secure) {
+      SdkPresent<bool>(value: final value) => {'Secure': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (byocTrunkSid) {
+      SdkPresent<String>(value: final value) => {'ByocTrunkSid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyCallerSid) {
+      SdkPresent<String>(value: final value) => {'EmergencyCallerSid': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ListSipIpAccessControlListsResponse {
@@ -297,261 +137,141 @@ class ListSipIpAccessControlListsResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountSipSipIpAccessControlList>>
-      ipAccessControlLists;
+  final SdkOptional<List<ApiV2010AccountSipSipIpAccessControlList>> ipAccessControlLists;
 
-  const ListSipIpAccessControlListsResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.ipAccessControlLists = const SdkOmitted()});
+  const ListSipIpAccessControlListsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.ipAccessControlLists = const SdkOmitted()});
 
-  ListSipIpAccessControlListsResponse Function(
-      {SdkOptional<int> end,
-      SdkOptional<String> firstPageUri,
-      SdkOptional<String?> nextPageUri,
-      SdkOptional<int> page,
-      SdkOptional<int> pageSize,
-      SdkOptional<String?> previousPageUri,
-      SdkOptional<int> start,
-      SdkOptional<String> uri,
-      SdkOptional<List<ApiV2010AccountSipSipIpAccessControlList>>
-          ipAccessControlLists}) get copyWith => _copyWith;
+  ListSipIpAccessControlListsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountSipSipIpAccessControlList>> ipAccessControlLists}) get copyWith => _copyWith;
 
-  ListSipIpAccessControlListsResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? ipAccessControlLists = sdkOmittedValue}) =>
-      ListSipIpAccessControlListsResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        ipAccessControlLists: identical(ipAccessControlLists, sdkOmittedValue)
-            ? this.ipAccessControlLists
-            : ipAccessControlLists
-                as SdkOptional<List<ApiV2010AccountSipSipIpAccessControlList>>,
-      );
+  ListSipIpAccessControlListsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? ipAccessControlLists = sdkOmittedValue}) => ListSipIpAccessControlListsResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    ipAccessControlLists: identical(ipAccessControlLists, sdkOmittedValue) ? this.ipAccessControlLists : ipAccessControlLists as SdkOptional<List<ApiV2010AccountSipSipIpAccessControlList>>,
+  );
 
-  factory ListSipIpAccessControlListsResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ListSipIpAccessControlListsResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        ipAccessControlLists: json['ip_access_control_lists'] != null
-            ? SdkPresent(((json['ip_access_control_lists'] as List?)
-                ?.map((e) => ApiV2010AccountSipSipIpAccessControlList.fromJson(
-                    e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListSipIpAccessControlListsResponse.fromJson(Map<String, dynamic> json) => ListSipIpAccessControlListsResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    ipAccessControlLists: json['ip_access_control_lists'] != null ? SdkPresent(((json['ip_access_control_lists'] as List?)?.map((e) => ApiV2010AccountSipSipIpAccessControlList.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (ipAccessControlLists) {
-          SdkPresent<List<ApiV2010AccountSipSipIpAccessControlList>>(
-            value: final value
-          ) =>
-            {
-              'ip_access_control_lists':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (ipAccessControlLists) {
+      SdkPresent<List<ApiV2010AccountSipSipIpAccessControlList>>(value: final value) => {'ip_access_control_lists': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class CreateSipIpAccessControlListsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A human readable descriptive text that describes the IpAccessControlList, up to 255 characters long.
   final String friendlyName;
 
   const CreateSipIpAccessControlListsRequestBody({required this.friendlyName});
 
-  CreateSipIpAccessControlListsRequestBody Function({String friendlyName})
-      get copyWith => _copyWith;
+  CreateSipIpAccessControlListsRequestBody Function({String friendlyName}) get copyWith => _copyWith;
 
-  CreateSipIpAccessControlListsRequestBody _copyWith(
-          {Object? friendlyName = sdkOmittedValue}) =>
-      CreateSipIpAccessControlListsRequestBody(
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as String,
-      );
+  CreateSipIpAccessControlListsRequestBody _copyWith({Object? friendlyName = sdkOmittedValue}) => CreateSipIpAccessControlListsRequestBody(
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as String,
+  );
 
-  factory CreateSipIpAccessControlListsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CreateSipIpAccessControlListsRequestBody(
-        friendlyName: (json['FriendlyName'] as String?)!,
-      );
+  factory CreateSipIpAccessControlListsRequestBody.fromJson(Map<String, dynamic> json) => CreateSipIpAccessControlListsRequestBody(
+    friendlyName: (json['FriendlyName'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'FriendlyName': friendlyName,
-      };
+    'FriendlyName': friendlyName,
+  };
 }
 
 class UpdateSipIpAccessControlListsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// A human readable descriptive text, up to 255 characters long.
   final String friendlyName;
 
   const UpdateSipIpAccessControlListsRequestBody({required this.friendlyName});
 
-  UpdateSipIpAccessControlListsRequestBody Function({String friendlyName})
-      get copyWith => _copyWith;
+  UpdateSipIpAccessControlListsRequestBody Function({String friendlyName}) get copyWith => _copyWith;
 
-  UpdateSipIpAccessControlListsRequestBody _copyWith(
-          {Object? friendlyName = sdkOmittedValue}) =>
-      UpdateSipIpAccessControlListsRequestBody(
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as String,
-      );
+  UpdateSipIpAccessControlListsRequestBody _copyWith({Object? friendlyName = sdkOmittedValue}) => UpdateSipIpAccessControlListsRequestBody(
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as String,
+  );
 
-  factory UpdateSipIpAccessControlListsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      UpdateSipIpAccessControlListsRequestBody(
-        friendlyName: (json['FriendlyName'] as String?)!,
-      );
+  factory UpdateSipIpAccessControlListsRequestBody.fromJson(Map<String, dynamic> json) => UpdateSipIpAccessControlListsRequestBody(
+    friendlyName: (json['FriendlyName'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'FriendlyName': friendlyName,
-      };
+    'FriendlyName': friendlyName,
+  };
 }
 
 class CreateSipDomainsIpAccessControlListMappingsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The unique id of the IP access control list to map to the SIP domain.
   final String ipAccessControlListSid;
 
-  const CreateSipDomainsIpAccessControlListMappingsRequestBody(
-      {required this.ipAccessControlListSid});
+  const CreateSipDomainsIpAccessControlListMappingsRequestBody({required this.ipAccessControlListSid});
 
-  CreateSipDomainsIpAccessControlListMappingsRequestBody Function(
-      {String ipAccessControlListSid}) get copyWith => _copyWith;
+  CreateSipDomainsIpAccessControlListMappingsRequestBody Function({String ipAccessControlListSid}) get copyWith => _copyWith;
 
-  CreateSipDomainsIpAccessControlListMappingsRequestBody _copyWith(
-          {Object? ipAccessControlListSid = sdkOmittedValue}) =>
-      CreateSipDomainsIpAccessControlListMappingsRequestBody(
-        ipAccessControlListSid:
-            identical(ipAccessControlListSid, sdkOmittedValue)
-                ? this.ipAccessControlListSid
-                : ipAccessControlListSid as String,
-      );
+  CreateSipDomainsIpAccessControlListMappingsRequestBody _copyWith({Object? ipAccessControlListSid = sdkOmittedValue}) => CreateSipDomainsIpAccessControlListMappingsRequestBody(
+    ipAccessControlListSid: identical(ipAccessControlListSid, sdkOmittedValue) ? this.ipAccessControlListSid : ipAccessControlListSid as String,
+  );
 
-  factory CreateSipDomainsIpAccessControlListMappingsRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CreateSipDomainsIpAccessControlListMappingsRequestBody(
-        ipAccessControlListSid: (json['IpAccessControlListSid'] as String?)!,
-      );
+  factory CreateSipDomainsIpAccessControlListMappingsRequestBody.fromJson(Map<String, dynamic> json) => CreateSipDomainsIpAccessControlListMappingsRequestBody(
+    ipAccessControlListSid: (json['IpAccessControlListSid'] as String?)!,
+  );
 
   Map<String, dynamic> toJson() => {
-        'IpAccessControlListSid': ipAccessControlListSid,
-      };
+    'IpAccessControlListSid': ipAccessControlListSid,
+  };
 }
