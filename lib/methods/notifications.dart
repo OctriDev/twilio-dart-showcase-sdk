@@ -16,11 +16,11 @@ import '../types.dart';
 ///   Notification resource to fetch.
 /// [sid] The Twilio-provided string that uniquely identifies the Notification
 ///   resource to fetch.
-Future<ApiV2010AccountNotificationInstance>
-    fetchNotifications(ClientConfig config,
-        {required String accountSid,
-        required String sid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountNotificationInstance> fetchNotifications(
+    ClientConfig config,
+    {required String accountSid,
+    required String sid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -31,11 +31,11 @@ Future<ApiV2010AccountNotificationInstance>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchNotifications',
-          fromJsonRaw: (value) => ApiV2010AccountNotificationInstance.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountNotificationInstance.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists notifications belonging to an account. Filter results by log level or message date, and use the paging parameters to navigate the results. The response contains notification records and page metadata.
 ///
@@ -96,17 +96,27 @@ Future<ListNotificationsResponse> listNotifications(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Notifications.json',
           config: config,
           query: {
-            'Log': SdkQueryValue(SdkUtils.unwrapOptional(log), style: 'form', explode: true),
-            'MessageDate': SdkQueryValue(SdkUtils.unwrapOptional(messageDate), style: 'form', explode: true),
-            'MessageDate<': SdkQueryValue(SdkUtils.unwrapOptional(messageDate_), style: 'form', explode: true),
-            'MessageDate>': SdkQueryValue(SdkUtils.unwrapOptional(messageDate_2), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Log': SdkQueryValue(SdkUtils.unwrapOptional(log),
+                style: 'form', explode: true),
+            'MessageDate': SdkQueryValue(SdkUtils.unwrapOptional(messageDate),
+                style: 'form', explode: true),
+            'MessageDate<': SdkQueryValue(SdkUtils.unwrapOptional(messageDate_),
+                style: 'form', explode: true),
+            'MessageDate>': SdkQueryValue(
+                SdkUtils.unwrapOptional(messageDate_2),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listNotifications',
-          fromJsonRaw: (value) => ListNotificationsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListNotificationsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

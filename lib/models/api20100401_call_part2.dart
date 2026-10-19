@@ -6,7 +6,6 @@ part of 'api20100401_call.dart';
 // api20100401_call domain models (part 2)
 /// The status of this call. Can be: `queued`, `ringing`, `in-progress`, `canceled`, `completed`, `failed`, `busy` or `no-answer`. See [Call Status Values](https://www.twilio.com/docs/voice/api/call-resource#call-status-values) below for more information.
 final class CallEnumStatus {
-
   final String value;
 
   const CallEnumStatus._(this.value);
@@ -24,32 +23,38 @@ final class CallEnumStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CallEnumStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CallEnumStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Typed representation of the `CallEnumUpdateStatus` API schema.
 final class CallEnumUpdateStatus {
-
   final String value;
 
   const CallEnumUpdateStatus._(this.value);
 
-  factory CallEnumUpdateStatus.fromJson(String value) => CallEnumUpdateStatus._(value);
+  factory CallEnumUpdateStatus.fromJson(String value) =>
+      CallEnumUpdateStatus._(value);
 
   static const canceled = CallEnumUpdateStatus._('canceled');
   static const completed = CallEnumUpdateStatus._('completed');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is CallEnumUpdateStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is CallEnumUpdateStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

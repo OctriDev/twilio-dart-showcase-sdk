@@ -15,11 +15,11 @@ import '../types.dart';
 ///   [Account](https://www.twilio.com/docs/iam/api/account) that created the
 ///   AuthorizedConnectApp resource to fetch.
 /// [connectAppSid] The SID of the Connect App to fetch.
-Future<ApiV2010AccountAuthorizedConnectApp>
-    fetchAuthorizedConnectApps(ClientConfig config,
-        {required String accountSid,
-        required String connectAppSid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountAuthorizedConnectApp> fetchAuthorizedConnectApps(
+    ClientConfig config,
+    {required String accountSid,
+    required String connectAppSid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ConnectAppSid', connectAppSid, min: 34, max: 34);
@@ -30,11 +30,11 @@ Future<ApiV2010AccountAuthorizedConnectApp>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchAuthorizedConnectApps',
-          fromJsonRaw: (value) => ApiV2010AccountAuthorizedConnectApp.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountAuthorizedConnectApp.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists the Connect Apps authorized for an account. Use the pagination parameters to browse the account's authorized apps and their granted permissions.
 ///
@@ -47,13 +47,13 @@ Future<ApiV2010AccountAuthorizedConnectApp>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListAuthorizedConnectAppsResponse>
-    listAuthorizedConnectApps(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListAuthorizedConnectAppsResponse> listAuthorizedConnectApps(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -67,13 +67,17 @@ Future<ListAuthorizedConnectAppsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/AuthorizedConnectApps.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAuthorizedConnectApps',
-          fromJsonRaw: (value) => ListAuthorizedConnectAppsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListAuthorizedConnectAppsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
