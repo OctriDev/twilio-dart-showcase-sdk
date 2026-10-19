@@ -15,74 +15,174 @@ class ListSipDomainsIpAccessControlListMappingsResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>> ipAccessControlListMappings;
+  final SdkOptional<
+          List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>>
+      ipAccessControlListMappings;
 
-  const ListSipDomainsIpAccessControlListMappingsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.ipAccessControlListMappings = const SdkOmitted()});
+  const ListSipDomainsIpAccessControlListMappingsResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.ipAccessControlListMappings = const SdkOmitted()});
 
-  ListSipDomainsIpAccessControlListMappingsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>> ipAccessControlListMappings}) get copyWith => _copyWith;
+  ListSipDomainsIpAccessControlListMappingsResponse Function(
+      {SdkOptional<int> end,
+      SdkOptional<String> firstPageUri,
+      SdkOptional<String?> nextPageUri,
+      SdkOptional<int> page,
+      SdkOptional<int> pageSize,
+      SdkOptional<String?> previousPageUri,
+      SdkOptional<int> start,
+      SdkOptional<String> uri,
+      SdkOptional<
+              List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>>
+          ipAccessControlListMappings}) get copyWith => _copyWith;
 
-  ListSipDomainsIpAccessControlListMappingsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? ipAccessControlListMappings = sdkOmittedValue}) => ListSipDomainsIpAccessControlListMappingsResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    ipAccessControlListMappings: identical(ipAccessControlListMappings, sdkOmittedValue) ? this.ipAccessControlListMappings : ipAccessControlListMappings as SdkOptional<List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>>,
-  );
+  ListSipDomainsIpAccessControlListMappingsResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? ipAccessControlListMappings = sdkOmittedValue}) =>
+      ListSipDomainsIpAccessControlListMappingsResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        ipAccessControlListMappings: identical(
+                ipAccessControlListMappings, sdkOmittedValue)
+            ? this.ipAccessControlListMappings
+            : ipAccessControlListMappings as SdkOptional<
+                List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>>,
+      );
 
-  factory ListSipDomainsIpAccessControlListMappingsResponse.fromJson(Map<String, dynamic> json) => ListSipDomainsIpAccessControlListMappingsResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    ipAccessControlListMappings: json['ip_access_control_list_mappings'] != null ? SdkPresent(((json['ip_access_control_list_mappings'] as List?)?.map((e) => ApiV2010AccountSipSipDomainSipIpAccessControlListMapping.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListSipDomainsIpAccessControlListMappingsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListSipDomainsIpAccessControlListMappingsResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        ipAccessControlListMappings:
+            json['ip_access_control_list_mappings'] != null
+                ? SdkPresent(((json['ip_access_control_list_mappings'] as List?)
+                    ?.map((e) =>
+                        ApiV2010AccountSipSipDomainSipIpAccessControlListMapping
+                            .fromJson(e as Map<String, dynamic>))
+                    .toList())!)
+                : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ipAccessControlListMappings) {
-      SdkPresent<List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>>(value: final value) => {'ip_access_control_list_mappings': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ipAccessControlListMappings) {
+          SdkPresent<
+                List<ApiV2010AccountSipSipDomainSipIpAccessControlListMapping>>(
+            value: final value
+          ) =>
+            {
+              'ip_access_control_list_mappings':
+                  value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class ListSipIpAccessControlListsIpAddressesResponse {
@@ -96,150 +196,303 @@ class ListSipIpAccessControlListsIpAddressesResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>> ipAddresses;
+  final SdkOptional<List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>>
+      ipAddresses;
 
-  const ListSipIpAccessControlListsIpAddressesResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.ipAddresses = const SdkOmitted()});
+  const ListSipIpAccessControlListsIpAddressesResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.ipAddresses = const SdkOmitted()});
 
-  ListSipIpAccessControlListsIpAddressesResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>> ipAddresses}) get copyWith => _copyWith;
+  ListSipIpAccessControlListsIpAddressesResponse Function(
+      {SdkOptional<int> end,
+      SdkOptional<String> firstPageUri,
+      SdkOptional<String?> nextPageUri,
+      SdkOptional<int> page,
+      SdkOptional<int> pageSize,
+      SdkOptional<String?> previousPageUri,
+      SdkOptional<int> start,
+      SdkOptional<String> uri,
+      SdkOptional<List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>>
+          ipAddresses}) get copyWith => _copyWith;
 
-  ListSipIpAccessControlListsIpAddressesResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? ipAddresses = sdkOmittedValue}) => ListSipIpAccessControlListsIpAddressesResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    ipAddresses: identical(ipAddresses, sdkOmittedValue) ? this.ipAddresses : ipAddresses as SdkOptional<List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>>,
-  );
+  ListSipIpAccessControlListsIpAddressesResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? ipAddresses = sdkOmittedValue}) =>
+      ListSipIpAccessControlListsIpAddressesResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        ipAddresses: identical(ipAddresses, sdkOmittedValue)
+            ? this.ipAddresses
+            : ipAddresses as SdkOptional<
+                List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>>,
+      );
 
-  factory ListSipIpAccessControlListsIpAddressesResponse.fromJson(Map<String, dynamic> json) => ListSipIpAccessControlListsIpAddressesResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    ipAddresses: json['ip_addresses'] != null ? SdkPresent(((json['ip_addresses'] as List?)?.map((e) => ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListSipIpAccessControlListsIpAddressesResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListSipIpAccessControlListsIpAddressesResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        ipAddresses: json['ip_addresses'] != null
+            ? SdkPresent(((json['ip_addresses'] as List?)
+                ?.map((e) =>
+                    ApiV2010AccountSipSipIpAccessControlListSipIpAddress
+                        .fromJson(e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (ipAddresses) {
-      SdkPresent<List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>>(value: final value) => {'ip_addresses': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (ipAddresses) {
+          SdkPresent<
+                List<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>>(
+            value: final value
+          ) =>
+            {
+              'ip_addresses': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CreateSipIpAccessControlListsIpAddressesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A human readable descriptive text for this resource, up to 255 characters long.
   final String friendlyName;
+
   /// An IP address in dotted decimal notation from which you want to accept traffic. Any SIP requests from this IP address will be allowed by Twilio. IPv4 only supported today.
   final String ipAddress;
+
   /// An integer representing the length of the CIDR prefix to use with this IP address when accepting traffic. By default the entire IP address is used.
   final SdkOptional<int> cidrPrefixLength;
 
-  const CreateSipIpAccessControlListsIpAddressesRequestBody({required this.friendlyName, required this.ipAddress, this.cidrPrefixLength = const SdkOmitted()});
+  const CreateSipIpAccessControlListsIpAddressesRequestBody(
+      {required this.friendlyName,
+      required this.ipAddress,
+      this.cidrPrefixLength = const SdkOmitted()});
 
-  CreateSipIpAccessControlListsIpAddressesRequestBody Function({String friendlyName, String ipAddress, SdkOptional<int> cidrPrefixLength}) get copyWith => _copyWith;
+  CreateSipIpAccessControlListsIpAddressesRequestBody Function(
+      {String friendlyName,
+      String ipAddress,
+      SdkOptional<int> cidrPrefixLength}) get copyWith => _copyWith;
 
-  CreateSipIpAccessControlListsIpAddressesRequestBody _copyWith({Object? friendlyName = sdkOmittedValue, Object? ipAddress = sdkOmittedValue, Object? cidrPrefixLength = sdkOmittedValue}) => CreateSipIpAccessControlListsIpAddressesRequestBody(
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as String,
-    ipAddress: identical(ipAddress, sdkOmittedValue) ? this.ipAddress : ipAddress as String,
-    cidrPrefixLength: identical(cidrPrefixLength, sdkOmittedValue) ? this.cidrPrefixLength : cidrPrefixLength as SdkOptional<int>,
-  );
+  CreateSipIpAccessControlListsIpAddressesRequestBody _copyWith(
+          {Object? friendlyName = sdkOmittedValue,
+          Object? ipAddress = sdkOmittedValue,
+          Object? cidrPrefixLength = sdkOmittedValue}) =>
+      CreateSipIpAccessControlListsIpAddressesRequestBody(
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as String,
+        ipAddress: identical(ipAddress, sdkOmittedValue)
+            ? this.ipAddress
+            : ipAddress as String,
+        cidrPrefixLength: identical(cidrPrefixLength, sdkOmittedValue)
+            ? this.cidrPrefixLength
+            : cidrPrefixLength as SdkOptional<int>,
+      );
 
-  factory CreateSipIpAccessControlListsIpAddressesRequestBody.fromJson(Map<String, dynamic> json) => CreateSipIpAccessControlListsIpAddressesRequestBody(
-    friendlyName: (json['FriendlyName'] as String?)!,
-    ipAddress: (json['IpAddress'] as String?)!,
-    cidrPrefixLength: json['CidrPrefixLength'] != null ? SdkPresent(((json['CidrPrefixLength'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory CreateSipIpAccessControlListsIpAddressesRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      CreateSipIpAccessControlListsIpAddressesRequestBody(
+        friendlyName: (json['FriendlyName'] as String?)!,
+        ipAddress: (json['IpAddress'] as String?)!,
+        cidrPrefixLength: json['CidrPrefixLength'] != null
+            ? SdkPresent(((json['CidrPrefixLength'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'FriendlyName': friendlyName,
-    'IpAddress': ipAddress,
-    ...switch (cidrPrefixLength) {
-      SdkPresent<int>(value: final value) => {'CidrPrefixLength': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'FriendlyName': friendlyName,
+        'IpAddress': ipAddress,
+        ...switch (cidrPrefixLength) {
+          SdkPresent<int>(value: final value) => {
+              'CidrPrefixLength': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UpdateSipIpAccessControlListsIpAddressesRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// An IP address in dotted decimal notation from which you want to accept traffic. Any SIP requests from this IP address will be allowed by Twilio. IPv4 only supported today.
   final SdkOptional<String> ipAddress;
+
   /// A human readable descriptive text for this resource, up to 255 characters long.
   final SdkOptional<String> friendlyName;
+
   /// An integer representing the length of the CIDR prefix to use with this IP address when accepting traffic. By default the entire IP address is used.
   final SdkOptional<int> cidrPrefixLength;
 
-  const UpdateSipIpAccessControlListsIpAddressesRequestBody({this.ipAddress = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.cidrPrefixLength = const SdkOmitted()});
+  const UpdateSipIpAccessControlListsIpAddressesRequestBody(
+      {this.ipAddress = const SdkOmitted(),
+      this.friendlyName = const SdkOmitted(),
+      this.cidrPrefixLength = const SdkOmitted()});
 
-  UpdateSipIpAccessControlListsIpAddressesRequestBody Function({SdkOptional<String> ipAddress, SdkOptional<String> friendlyName, SdkOptional<int> cidrPrefixLength}) get copyWith => _copyWith;
+  UpdateSipIpAccessControlListsIpAddressesRequestBody Function(
+      {SdkOptional<String> ipAddress,
+      SdkOptional<String> friendlyName,
+      SdkOptional<int> cidrPrefixLength}) get copyWith => _copyWith;
 
-  UpdateSipIpAccessControlListsIpAddressesRequestBody _copyWith({Object? ipAddress = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? cidrPrefixLength = sdkOmittedValue}) => UpdateSipIpAccessControlListsIpAddressesRequestBody(
-    ipAddress: identical(ipAddress, sdkOmittedValue) ? this.ipAddress : ipAddress as SdkOptional<String>,
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
-    cidrPrefixLength: identical(cidrPrefixLength, sdkOmittedValue) ? this.cidrPrefixLength : cidrPrefixLength as SdkOptional<int>,
-  );
+  UpdateSipIpAccessControlListsIpAddressesRequestBody _copyWith(
+          {Object? ipAddress = sdkOmittedValue,
+          Object? friendlyName = sdkOmittedValue,
+          Object? cidrPrefixLength = sdkOmittedValue}) =>
+      UpdateSipIpAccessControlListsIpAddressesRequestBody(
+        ipAddress: identical(ipAddress, sdkOmittedValue)
+            ? this.ipAddress
+            : ipAddress as SdkOptional<String>,
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String>,
+        cidrPrefixLength: identical(cidrPrefixLength, sdkOmittedValue)
+            ? this.cidrPrefixLength
+            : cidrPrefixLength as SdkOptional<int>,
+      );
 
-  factory UpdateSipIpAccessControlListsIpAddressesRequestBody.fromJson(Map<String, dynamic> json) => UpdateSipIpAccessControlListsIpAddressesRequestBody(
-    ipAddress: json['IpAddress'] != null ? SdkPresent((json['IpAddress'] as String?)!) : const SdkOmitted(),
-    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
-    cidrPrefixLength: json['CidrPrefixLength'] != null ? SdkPresent(((json['CidrPrefixLength'] as num?)?.toInt())!) : const SdkOmitted(),
-  );
+  factory UpdateSipIpAccessControlListsIpAddressesRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      UpdateSipIpAccessControlListsIpAddressesRequestBody(
+        ipAddress: json['IpAddress'] != null
+            ? SdkPresent((json['IpAddress'] as String?)!)
+            : const SdkOmitted(),
+        friendlyName: json['FriendlyName'] != null
+            ? SdkPresent((json['FriendlyName'] as String?)!)
+            : const SdkOmitted(),
+        cidrPrefixLength: json['CidrPrefixLength'] != null
+            ? SdkPresent(((json['CidrPrefixLength'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (ipAddress) {
-      SdkPresent<String>(value: final value) => {'IpAddress': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (friendlyName) {
-      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (cidrPrefixLength) {
-      SdkPresent<int>(value: final value) => {'CidrPrefixLength': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (ipAddress) {
+          SdkPresent<String>(value: final value) => {
+              'IpAddress': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (friendlyName) {
+          SdkPresent<String>(value: final value) => {
+              'FriendlyName': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (cidrPrefixLength) {
+          SdkPresent<int>(value: final value) => {
+              'CidrPrefixLength': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

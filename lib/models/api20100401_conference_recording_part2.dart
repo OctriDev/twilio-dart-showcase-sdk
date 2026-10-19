@@ -6,39 +6,44 @@ part of 'api20100401_conference_recording.dart';
 // api20100401_conference_recording domain models (part 2)
 /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, `StartConferenceRecordingAPI`.
 final class ConferenceRecordingEnumSource {
-
   final String value;
 
   const ConferenceRecordingEnumSource._(this.value);
 
-  factory ConferenceRecordingEnumSource.fromJson(String value) => ConferenceRecordingEnumSource._(value);
+  factory ConferenceRecordingEnumSource.fromJson(String value) =>
+      ConferenceRecordingEnumSource._(value);
 
   static const dialverb = ConferenceRecordingEnumSource._('DialVerb');
   static const conference = ConferenceRecordingEnumSource._('Conference');
   static const outboundapi = ConferenceRecordingEnumSource._('OutboundAPI');
   static const trunking = ConferenceRecordingEnumSource._('Trunking');
   static const recordverb = ConferenceRecordingEnumSource._('RecordVerb');
-  static const startcallrecordingapi = ConferenceRecordingEnumSource._('StartCallRecordingAPI');
-  static const startconferencerecordingapi = ConferenceRecordingEnumSource._('StartConferenceRecordingAPI');
+  static const startcallrecordingapi =
+      ConferenceRecordingEnumSource._('StartCallRecordingAPI');
+  static const startconferencerecordingapi =
+      ConferenceRecordingEnumSource._('StartConferenceRecordingAPI');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ConferenceRecordingEnumSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ConferenceRecordingEnumSource && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The status of the recording. Can be: `processing`, `completed` and `absent`. For more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
 final class ConferenceRecordingEnumStatus {
-
   final String value;
 
   const ConferenceRecordingEnumStatus._(this.value);
 
-  factory ConferenceRecordingEnumStatus.fromJson(String value) => ConferenceRecordingEnumStatus._(value);
+  factory ConferenceRecordingEnumStatus.fromJson(String value) =>
+      ConferenceRecordingEnumStatus._(value);
 
   static const inProgress = ConferenceRecordingEnumStatus._('in-progress');
   static const paused = ConferenceRecordingEnumStatus._('paused');
@@ -49,10 +54,13 @@ final class ConferenceRecordingEnumStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is ConferenceRecordingEnumStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is ConferenceRecordingEnumStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

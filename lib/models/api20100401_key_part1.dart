@@ -8,49 +8,91 @@ part of 'api20100401_key.dart';
 class ApiV2010AccountKey {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The unique string that that we created to identify the Key resource.
   final SdkOptional<String?> sid;
+
   /// The string that you assigned to describe the resource.
   final SdkOptional<String?> friendlyName;
+
   /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCreated;
+
   /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
 
-  const ApiV2010AccountKey({this.sid = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.dateUpdated = const SdkOmitted()});
+  const ApiV2010AccountKey(
+      {this.sid = const SdkOmitted(),
+      this.friendlyName = const SdkOmitted(),
+      this.dateCreated = const SdkOmitted(),
+      this.dateUpdated = const SdkOmitted()});
 
-  ApiV2010AccountKey Function({SdkOptional<String?> sid, SdkOptional<String?> friendlyName, SdkOptional<String?> dateCreated, SdkOptional<String?> dateUpdated}) get copyWith => _copyWith;
+  ApiV2010AccountKey Function(
+      {SdkOptional<String?> sid,
+      SdkOptional<String?> friendlyName,
+      SdkOptional<String?> dateCreated,
+      SdkOptional<String?> dateUpdated}) get copyWith => _copyWith;
 
-  ApiV2010AccountKey _copyWith({Object? sid = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue}) => ApiV2010AccountKey(
-    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String?>,
-    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
-    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
-  );
+  ApiV2010AccountKey _copyWith(
+          {Object? sid = sdkOmittedValue,
+          Object? friendlyName = sdkOmittedValue,
+          Object? dateCreated = sdkOmittedValue,
+          Object? dateUpdated = sdkOmittedValue}) =>
+      ApiV2010AccountKey(
+        sid: identical(sid, sdkOmittedValue)
+            ? this.sid
+            : sid as SdkOptional<String?>,
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String?>,
+        dateCreated: identical(dateCreated, sdkOmittedValue)
+            ? this.dateCreated
+            : dateCreated as SdkOptional<String?>,
+        dateUpdated: identical(dateUpdated, sdkOmittedValue)
+            ? this.dateUpdated
+            : dateUpdated as SdkOptional<String?>,
+      );
 
-  factory ApiV2010AccountKey.fromJson(Map<String, dynamic> json) => ApiV2010AccountKey(
-    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
-    friendlyName: json.containsKey('friendly_name') ? SdkPresent(json['friendly_name'] as String?) : const SdkOmitted(),
-    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
-    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
-  );
+  factory ApiV2010AccountKey.fromJson(Map<String, dynamic> json) =>
+      ApiV2010AccountKey(
+        sid: json.containsKey('sid')
+            ? SdkPresent(json['sid'] as String?)
+            : const SdkOmitted(),
+        friendlyName: json.containsKey('friendly_name')
+            ? SdkPresent(json['friendly_name'] as String?)
+            : const SdkOmitted(),
+        dateCreated: json.containsKey('date_created')
+            ? SdkPresent(json['date_created'] as String?)
+            : const SdkOmitted(),
+        dateUpdated: json.containsKey('date_updated')
+            ? SdkPresent(json['date_updated'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (sid) {
-      SdkPresent<String?>(value: final value) => {'sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (friendlyName) {
-      SdkPresent<String?>(value: final value) => {'friendly_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateCreated) {
-      SdkPresent<String?>(value: final value) => {'date_created': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateUpdated) {
-      SdkPresent<String?>(value: final value) => {'date_updated': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (sid) {
+          SdkPresent<String?>(value: final value) => {
+              'sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (friendlyName) {
+          SdkPresent<String?>(value: final value) => {
+              'friendly_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateCreated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_created': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateUpdated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_updated': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
