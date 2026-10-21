@@ -36,19 +36,16 @@ Future<ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload>
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^XH[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings/${Uri.encodeComponent(referenceSid.toString())}/AddOnResults/${Uri.encodeComponent(addOnResultSid.toString())}/Payloads/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchRecordingsAddOnResultsPayloads',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayload.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete a payload from the result along with all associated Data
 ///
@@ -84,6 +81,7 @@ Future<void> deleteRecordingsAddOnResultsPayloads(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists payloads belonging to an AddOnResult for a recording. Use `PageSize` and `PageToken` to control which payloads are returned and to navigate the paginated response.
 ///
@@ -126,21 +124,17 @@ Future<ListRecordingsAddOnResultsPayloadsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Recordings/${Uri.encodeComponent(referenceSid.toString())}/AddOnResults/${Uri.encodeComponent(addOnResultSid.toString())}/Payloads.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listRecordingsAddOnResultsPayloads',
-          fromJsonRaw: (value) =>
-              ListRecordingsAddOnResultsPayloadsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListRecordingsAddOnResultsPayloadsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves the stored data for a payload belonging to an AddOnResult for a recording. Use the account, recording, result, and payload SIDs to identify the data resource; the response provides a redirect to the stored payload data.
 ///
@@ -176,10 +170,6 @@ Future<void> fetchRecordingsAddOnResultsPayloadsData(ClientConfig config,
           decoder: SdkResponseDecoder.empty,
           operationId: 'fetchRecordingsAddOnResultsPayloadsData',
           options: requestOptions,
-          errors: {
-        '307': (value) =>
-            ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData
-                .fromJson(value as Map<String, dynamic>)
-      }))
+          errors: {'307': (value) => ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData.fromJson(value as Map<String, dynamic>)}))
       .data;
 }

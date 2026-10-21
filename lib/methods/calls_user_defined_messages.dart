@@ -18,13 +18,13 @@ import '../types.dart';
 /// [content] The User Defined Message in the form of URL-encoded JSON string.
 /// [idempotencyKey] A unique string value to identify API call. This should be
 ///   a unique string value per API call and can be a randomly generated.
-Future<ApiV2010AccountCallUserDefinedMessage> createCallsUserDefinedMessages(
-    ClientConfig config,
-    {required String accountSid,
-    required String callSid,
-    required String content,
-    SdkOptional<String> idempotencyKey = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallUserDefinedMessage>
+    createCallsUserDefinedMessages(ClientConfig config,
+        {required String accountSid,
+        required String callSid,
+        required String content,
+        SdkOptional<String> idempotencyKey = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -40,9 +40,7 @@ Future<ApiV2010AccountCallUserDefinedMessage> createCallsUserDefinedMessages(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsUserDefinedMessages',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountCallUserDefinedMessage.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallUserDefinedMessage.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

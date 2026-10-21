@@ -8,93 +8,49 @@ part of 'api20100401_incoming_phone_number_toll_free.dart';
 class ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// Optional `boolean` value serialized in the `mms` wire field.
   final SdkOptional<bool> mms;
-
   /// Optional `boolean` value serialized in the `sms` wire field.
   final SdkOptional<bool> sms;
-
   /// Optional `boolean` value serialized in the `voice` wire field.
   final SdkOptional<bool> voice;
-
   /// Optional `boolean` value serialized in the `fax` wire field.
   final SdkOptional<bool> fax;
 
-  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities(
-      {this.mms = const SdkOmitted(),
-      this.sms = const SdkOmitted(),
-      this.voice = const SdkOmitted(),
-      this.fax = const SdkOmitted()});
+  const ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities({this.mms = const SdkOmitted(), this.sms = const SdkOmitted(), this.voice = const SdkOmitted(), this.fax = const SdkOmitted()});
 
-  ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities Function(
-      {SdkOptional<bool> mms,
-      SdkOptional<bool> sms,
-      SdkOptional<bool> voice,
-      SdkOptional<bool> fax}) get copyWith => _copyWith;
+  ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities Function({SdkOptional<bool> mms, SdkOptional<bool> sms, SdkOptional<bool> voice, SdkOptional<bool> fax}) get copyWith => _copyWith;
 
-  ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities
-      _copyWith(
-              {Object? mms = sdkOmittedValue,
-              Object? sms = sdkOmittedValue,
-              Object? voice = sdkOmittedValue,
-              Object? fax = sdkOmittedValue}) =>
-          ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities(
-            mms: identical(mms, sdkOmittedValue)
-                ? this.mms
-                : mms as SdkOptional<bool>,
-            sms: identical(sms, sdkOmittedValue)
-                ? this.sms
-                : sms as SdkOptional<bool>,
-            voice: identical(voice, sdkOmittedValue)
-                ? this.voice
-                : voice as SdkOptional<bool>,
-            fax: identical(fax, sdkOmittedValue)
-                ? this.fax
-                : fax as SdkOptional<bool>,
-          );
+  ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities _copyWith({Object? mms = sdkOmittedValue, Object? sms = sdkOmittedValue, Object? voice = sdkOmittedValue, Object? fax = sdkOmittedValue}) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities(
+    mms: identical(mms, sdkOmittedValue) ? this.mms : mms as SdkOptional<bool>,
+    sms: identical(sms, sdkOmittedValue) ? this.sms : sms as SdkOptional<bool>,
+    voice: identical(voice, sdkOmittedValue) ? this.voice : voice as SdkOptional<bool>,
+    fax: identical(fax, sdkOmittedValue) ? this.fax : fax as SdkOptional<bool>,
+  );
 
-  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities.fromJson(
-          Map<String, dynamic> json) =>
-      ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities(
-        mms: json['mms'] != null
-            ? SdkPresent((json['mms'] as bool?)!)
-            : const SdkOmitted(),
-        sms: json['sms'] != null
-            ? SdkPresent((json['sms'] as bool?)!)
-            : const SdkOmitted(),
-        voice: json['voice'] != null
-            ? SdkPresent((json['voice'] as bool?)!)
-            : const SdkOmitted(),
-        fax: json['fax'] != null
-            ? SdkPresent((json['fax'] as bool?)!)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities.fromJson(Map<String, dynamic> json) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberTollFreeCapabilities(
+    mms: json['mms'] != null ? SdkPresent((json['mms'] as bool?)!) : const SdkOmitted(),
+    sms: json['sms'] != null ? SdkPresent((json['sms'] as bool?)!) : const SdkOmitted(),
+    voice: json['voice'] != null ? SdkPresent((json['voice'] as bool?)!) : const SdkOmitted(),
+    fax: json['fax'] != null ? SdkPresent((json['fax'] as bool?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (mms) {
-          SdkPresent<bool>(value: final value) => {
-              'mms': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sms) {
-          SdkPresent<bool>(value: final value) => {
-              'sms': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voice) {
-          SdkPresent<bool>(value: final value) => {
-              'voice': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (fax) {
-          SdkPresent<bool>(value: final value) => {
-              'fax': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (mms) {
+      SdkPresent<bool>(value: final value) => {'mms': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sms) {
+      SdkPresent<bool>(value: final value) => {'sms': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voice) {
+      SdkPresent<bool>(value: final value) => {'voice': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (fax) {
+      SdkPresent<bool>(value: final value) => {'fax': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

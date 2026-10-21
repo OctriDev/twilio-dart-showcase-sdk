@@ -31,24 +31,20 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomin
   validateLength('ResourceSid', resourceSid, min: 34, max: 34);
   sdkValidatePattern('ResourceSid', resourceSid, '^PN[0-9a-fA-F]{32}\$');
   validateLength('AssignedAddOnSid', assignedAddOnSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'AssignedAddOnSid', assignedAddOnSid, '^XE[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('AssignedAddOnSid', assignedAddOnSid, '^XE[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^XF[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid.toString())}/AssignedAddOns/${Uri.encodeComponent(assignedAddOnSid.toString())}/Extensions/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchIncomingPhoneNumbersAssignedAddOnsExtensions',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOnIncomingPhoneNumberAssignedAddOnExtension.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists Extensions for an assigned Add-on on an incoming phone number. Use the account, phone number, and assigned Add-on SIDs to scope the list, and the paging parameters to select a page of results.
 ///
@@ -78,8 +74,7 @@ Future<ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse>
   validateLength('ResourceSid', resourceSid, min: 34, max: 34);
   sdkValidatePattern('ResourceSid', resourceSid, '^PN[0-9a-fA-F]{32}\$');
   validateLength('AssignedAddOnSid', assignedAddOnSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'AssignedAddOnSid', assignedAddOnSid, '^XE[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('AssignedAddOnSid', assignedAddOnSid, '^XE[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
     validateRange('PageSize', pageSize.value, min: 1, max: 1000);
   }
@@ -87,23 +82,17 @@ Future<ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<
-              ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse>('GET',
+  return (await sdkRequest<ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid.toString())}/AssignedAddOns/${Uri.encodeComponent(assignedAddOnSid.toString())}/Extensions.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listIncomingPhoneNumbersAssignedAddOnsExtensions',
-          fromJsonRaw: (value) =>
-              ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListIncomingPhoneNumbersAssignedAddOnsExtensionsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

@@ -6,12 +6,12 @@ part of 'sms_message_enum.dart';
 // sms_message_enum domain models
 /// Typed representation of the `SmsMessageEnumDirection` API schema.
 final class SmsMessageEnumDirection {
+
   final String value;
 
   const SmsMessageEnumDirection._(this.value);
 
-  factory SmsMessageEnumDirection.fromJson(String value) =>
-      SmsMessageEnumDirection._(value);
+  factory SmsMessageEnumDirection.fromJson(String value) => SmsMessageEnumDirection._(value);
 
   static const inbound = SmsMessageEnumDirection._('inbound');
   static const outboundApi = SmsMessageEnumDirection._('outbound-api');
@@ -20,25 +20,22 @@ final class SmsMessageEnumDirection {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SmsMessageEnumDirection && other.value == value;
+  @override bool operator ==(Object other) => other is SmsMessageEnumDirection && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `SmsMessageEnumStatus` API schema.
 final class SmsMessageEnumStatus {
+
   final String value;
 
   const SmsMessageEnumStatus._(this.value);
 
-  factory SmsMessageEnumStatus.fromJson(String value) =>
-      SmsMessageEnumStatus._(value);
+  factory SmsMessageEnumStatus.fromJson(String value) => SmsMessageEnumStatus._(value);
 
   static const queued = SmsMessageEnumStatus._('queued');
   static const sending = SmsMessageEnumStatus._('sending');
@@ -51,43 +48,36 @@ final class SmsMessageEnumStatus {
   static const accepted = SmsMessageEnumStatus._('accepted');
   static const scheduled = SmsMessageEnumStatus._('scheduled');
   static const read = SmsMessageEnumStatus._('read');
-  static const partiallyDelivered =
-      SmsMessageEnumStatus._('partially_delivered');
+  static const partiallyDelivered = SmsMessageEnumStatus._('partially_delivered');
   static const canceled = SmsMessageEnumStatus._('canceled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SmsMessageEnumStatus && other.value == value;
+  @override bool operator ==(Object other) => other is SmsMessageEnumStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }
 
 /// Typed representation of the `SmsMessageEnumUpdateStatus` API schema.
 final class SmsMessageEnumUpdateStatus {
+
   final String value;
 
   const SmsMessageEnumUpdateStatus._(this.value);
 
-  factory SmsMessageEnumUpdateStatus.fromJson(String value) =>
-      SmsMessageEnumUpdateStatus._(value);
+  factory SmsMessageEnumUpdateStatus.fromJson(String value) => SmsMessageEnumUpdateStatus._(value);
 
   static const canceled = SmsMessageEnumUpdateStatus._('canceled');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is SmsMessageEnumUpdateStatus && other.value == value;
+  @override bool operator ==(Object other) => other is SmsMessageEnumUpdateStatus && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

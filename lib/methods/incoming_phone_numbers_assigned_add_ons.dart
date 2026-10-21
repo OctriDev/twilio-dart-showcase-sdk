@@ -30,19 +30,16 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^XE[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid.toString())}/AssignedAddOns/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchIncomingPhoneNumbersAssignedAddOns',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Remove the assignment of an Add-on installation from the Number specified.
 ///
@@ -72,6 +69,7 @@ Future<void> deleteIncomingPhoneNumbersAssignedAddOns(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists add-on installations assigned to an incoming phone number. Use the account SID and phone number SID to scope the results, and use the page parameters to navigate the list.
 ///
@@ -104,26 +102,21 @@ Future<ListIncomingPhoneNumbersAssignedAddOnsResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<ListIncomingPhoneNumbersAssignedAddOnsResponse>(
-          'GET',
+  return (await sdkRequest<ListIncomingPhoneNumbersAssignedAddOnsResponse>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid.toString())}/AssignedAddOns.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listIncomingPhoneNumbersAssignedAddOns',
-          fromJsonRaw: (value) =>
-              ListIncomingPhoneNumbersAssignedAddOnsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListIncomingPhoneNumbersAssignedAddOnsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Assign an Add-on installation to the Number specified.
 ///
@@ -143,21 +136,16 @@ Future<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>
   validateLength('ResourceSid', resourceSid, min: 34, max: 34);
   sdkValidatePattern('ResourceSid', resourceSid, '^PN[0-9a-fA-F]{32}\$');
   validateLength('InstalledAddOnSid', installedAddOnSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'InstalledAddOnSid', installedAddOnSid, '^XE[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('InstalledAddOnSid', installedAddOnSid, '^XE[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/IncomingPhoneNumbers/${Uri.encodeComponent(resourceSid.toString())}/AssignedAddOns.json',
           config: config,
           body: {'InstalledAddOnSid': installedAddOnSid},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createIncomingPhoneNumbersAssignedAddOns',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

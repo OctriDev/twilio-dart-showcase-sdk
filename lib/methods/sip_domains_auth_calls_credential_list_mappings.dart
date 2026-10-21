@@ -28,24 +28,20 @@ Future<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListM
   validateLength('DomainSid', domainSid, min: 34, max: 34);
   sdkValidatePattern('DomainSid', domainSid, '^SD[0-9a-fA-F]{32}\$');
   validateLength('CredentialListSid', credentialListSid, min: 34, max: 34);
-  sdkValidatePattern(
-      'CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
+  sdkValidatePattern('CredentialListSid', credentialListSid, '^CL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>(
-          'POST',
+  return (await sdkRequest<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/Auth/Calls/CredentialListMappings.json',
           config: config,
           body: {'CredentialListSid': credentialListSid},
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipDomainsAuthCallsCredentialListMappings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists credential list mappings for calls on a specific SIP domain. Use the account and domain SIDs to select the domain, and use the pagination parameters to retrieve mappings across pages.
 ///
@@ -78,26 +74,21 @@ Future<ListSipDomainsAuthCallsCredentialListMappingsResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<
-              ListSipDomainsAuthCallsCredentialListMappingsResponse>('GET',
+  return (await sdkRequest<ListSipDomainsAuthCallsCredentialListMappingsResponse>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/Auth/Calls/CredentialListMappings.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipDomainsAuthCallsCredentialListMappings',
-          fromJsonRaw: (value) =>
-              ListSipDomainsAuthCallsCredentialListMappingsResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipDomainsAuthCallsCredentialListMappingsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a specific credential list mapping for calls on a SIP domain. Use the account, domain, and mapping SIDs to identify the resource; each SID must match its documented format.
 ///
@@ -122,19 +113,16 @@ Future<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListM
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^CL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>(
-          'GET',
+  return (await sdkRequest<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains/${Uri.encodeComponent(domainSid.toString())}/Auth/Calls/CredentialListMappings/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipDomainsAuthCallsCredentialListMappings',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping
-                  .fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListMapping.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete a credential list mapping from the requested domain
 ///
@@ -144,12 +132,12 @@ Future<ApiV2010AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsCredentialListM
 /// [domainSid] The SID of the SIP domain that contains the resource to delete.
 /// [sid] The Twilio-provided string that uniquely identifies the
 ///   CredentialListMapping resource to delete.
-Future<void> deleteSipDomainsAuthCallsCredentialListMappings(
-    ClientConfig config,
-    {required String accountSid,
-    required String domainSid,
-    required String sid,
-    RequestOptions? requestOptions}) async {
+Future<void>
+    deleteSipDomainsAuthCallsCredentialListMappings(ClientConfig config,
+        {required String accountSid,
+        required String domainSid,
+        required String sid,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('DomainSid', domainSid, min: 34, max: 34);

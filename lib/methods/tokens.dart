@@ -30,8 +30,7 @@ Future<ApiV2010AccountToken> createTokens(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createTokens',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountToken.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountToken.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

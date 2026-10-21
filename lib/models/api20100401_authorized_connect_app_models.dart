@@ -8,197 +8,103 @@ part of 'api20100401_authorized_connect_app.dart';
 class ApiV2010AccountAuthorizedConnectApp {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the AuthorizedConnectApp resource.
   final SdkOptional<String?> accountSid;
-
   /// The company name set for the Connect App.
   final SdkOptional<String?> connectAppCompanyName;
-
   /// A detailed description of the Connect App.
   final SdkOptional<String?> connectAppDescription;
-
   /// The name of the Connect App.
   final SdkOptional<String?> connectAppFriendlyName;
-
   /// The public URL for the Connect App.
   final SdkOptional<String?> connectAppHomepageUrl;
-
   /// The SID that we assigned to the Connect App.
   final SdkOptional<String?> connectAppSid;
-
   /// The set of permissions that you authorized for the Connect App. Can be: `get-all` or `post-all`.
   final SdkOptional<List<AuthorizedConnectAppEnumPermission>?> permissions;
-
   /// The URI of the resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
 
-  const ApiV2010AccountAuthorizedConnectApp(
-      {this.accountSid = const SdkOmitted(),
-      this.connectAppCompanyName = const SdkOmitted(),
-      this.connectAppDescription = const SdkOmitted(),
-      this.connectAppFriendlyName = const SdkOmitted(),
-      this.connectAppHomepageUrl = const SdkOmitted(),
-      this.connectAppSid = const SdkOmitted(),
-      this.permissions = const SdkOmitted(),
-      this.uri = const SdkOmitted()});
+  const ApiV2010AccountAuthorizedConnectApp({this.accountSid = const SdkOmitted(), this.connectAppCompanyName = const SdkOmitted(), this.connectAppDescription = const SdkOmitted(), this.connectAppFriendlyName = const SdkOmitted(), this.connectAppHomepageUrl = const SdkOmitted(), this.connectAppSid = const SdkOmitted(), this.permissions = const SdkOmitted(), this.uri = const SdkOmitted()});
 
-  ApiV2010AccountAuthorizedConnectApp Function(
-      {SdkOptional<String?> accountSid,
-      SdkOptional<String?> connectAppCompanyName,
-      SdkOptional<String?> connectAppDescription,
-      SdkOptional<String?> connectAppFriendlyName,
-      SdkOptional<String?> connectAppHomepageUrl,
-      SdkOptional<String?> connectAppSid,
-      SdkOptional<List<AuthorizedConnectAppEnumPermission>?> permissions,
-      SdkOptional<String?> uri}) get copyWith => _copyWith;
+  ApiV2010AccountAuthorizedConnectApp Function({SdkOptional<String?> accountSid, SdkOptional<String?> connectAppCompanyName, SdkOptional<String?> connectAppDescription, SdkOptional<String?> connectAppFriendlyName, SdkOptional<String?> connectAppHomepageUrl, SdkOptional<String?> connectAppSid, SdkOptional<List<AuthorizedConnectAppEnumPermission>?> permissions, SdkOptional<String?> uri}) get copyWith => _copyWith;
 
-  ApiV2010AccountAuthorizedConnectApp _copyWith(
-          {Object? accountSid = sdkOmittedValue,
-          Object? connectAppCompanyName = sdkOmittedValue,
-          Object? connectAppDescription = sdkOmittedValue,
-          Object? connectAppFriendlyName = sdkOmittedValue,
-          Object? connectAppHomepageUrl = sdkOmittedValue,
-          Object? connectAppSid = sdkOmittedValue,
-          Object? permissions = sdkOmittedValue,
-          Object? uri = sdkOmittedValue}) =>
-      ApiV2010AccountAuthorizedConnectApp(
-        accountSid: identical(accountSid, sdkOmittedValue)
-            ? this.accountSid
-            : accountSid as SdkOptional<String?>,
-        connectAppCompanyName: identical(connectAppCompanyName, sdkOmittedValue)
-            ? this.connectAppCompanyName
-            : connectAppCompanyName as SdkOptional<String?>,
-        connectAppDescription: identical(connectAppDescription, sdkOmittedValue)
-            ? this.connectAppDescription
-            : connectAppDescription as SdkOptional<String?>,
-        connectAppFriendlyName:
-            identical(connectAppFriendlyName, sdkOmittedValue)
-                ? this.connectAppFriendlyName
-                : connectAppFriendlyName as SdkOptional<String?>,
-        connectAppHomepageUrl: identical(connectAppHomepageUrl, sdkOmittedValue)
-            ? this.connectAppHomepageUrl
-            : connectAppHomepageUrl as SdkOptional<String?>,
-        connectAppSid: identical(connectAppSid, sdkOmittedValue)
-            ? this.connectAppSid
-            : connectAppSid as SdkOptional<String?>,
-        permissions: identical(permissions, sdkOmittedValue)
-            ? this.permissions
-            : permissions
-                as SdkOptional<List<AuthorizedConnectAppEnumPermission>?>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String?>,
-      );
+  ApiV2010AccountAuthorizedConnectApp _copyWith({Object? accountSid = sdkOmittedValue, Object? connectAppCompanyName = sdkOmittedValue, Object? connectAppDescription = sdkOmittedValue, Object? connectAppFriendlyName = sdkOmittedValue, Object? connectAppHomepageUrl = sdkOmittedValue, Object? connectAppSid = sdkOmittedValue, Object? permissions = sdkOmittedValue, Object? uri = sdkOmittedValue}) => ApiV2010AccountAuthorizedConnectApp(
+    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
+    connectAppCompanyName: identical(connectAppCompanyName, sdkOmittedValue) ? this.connectAppCompanyName : connectAppCompanyName as SdkOptional<String?>,
+    connectAppDescription: identical(connectAppDescription, sdkOmittedValue) ? this.connectAppDescription : connectAppDescription as SdkOptional<String?>,
+    connectAppFriendlyName: identical(connectAppFriendlyName, sdkOmittedValue) ? this.connectAppFriendlyName : connectAppFriendlyName as SdkOptional<String?>,
+    connectAppHomepageUrl: identical(connectAppHomepageUrl, sdkOmittedValue) ? this.connectAppHomepageUrl : connectAppHomepageUrl as SdkOptional<String?>,
+    connectAppSid: identical(connectAppSid, sdkOmittedValue) ? this.connectAppSid : connectAppSid as SdkOptional<String?>,
+    permissions: identical(permissions, sdkOmittedValue) ? this.permissions : permissions as SdkOptional<List<AuthorizedConnectAppEnumPermission>?>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
+  );
 
-  factory ApiV2010AccountAuthorizedConnectApp.fromJson(
-          Map<String, dynamic> json) =>
-      ApiV2010AccountAuthorizedConnectApp(
-        accountSid: json.containsKey('account_sid')
-            ? SdkPresent(json['account_sid'] as String?)
-            : const SdkOmitted(),
-        connectAppCompanyName: json.containsKey('connect_app_company_name')
-            ? SdkPresent(json['connect_app_company_name'] as String?)
-            : const SdkOmitted(),
-        connectAppDescription: json.containsKey('connect_app_description')
-            ? SdkPresent(json['connect_app_description'] as String?)
-            : const SdkOmitted(),
-        connectAppFriendlyName: json.containsKey('connect_app_friendly_name')
-            ? SdkPresent(json['connect_app_friendly_name'] as String?)
-            : const SdkOmitted(),
-        connectAppHomepageUrl: json.containsKey('connect_app_homepage_url')
-            ? SdkPresent(json['connect_app_homepage_url'] as String?)
-            : const SdkOmitted(),
-        connectAppSid: json.containsKey('connect_app_sid')
-            ? SdkPresent(json['connect_app_sid'] as String?)
-            : const SdkOmitted(),
-        permissions: json.containsKey('permissions')
-            ? SdkPresent((json['permissions'] as List?)
-                ?.map((e) =>
-                    AuthorizedConnectAppEnumPermission.fromJson(e as String))
-                .toList())
-            : const SdkOmitted(),
-        uri: json.containsKey('uri')
-            ? SdkPresent(json['uri'] as String?)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountAuthorizedConnectApp.fromJson(Map<String, dynamic> json) => ApiV2010AccountAuthorizedConnectApp(
+    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
+    connectAppCompanyName: json.containsKey('connect_app_company_name') ? SdkPresent(json['connect_app_company_name'] as String?) : const SdkOmitted(),
+    connectAppDescription: json.containsKey('connect_app_description') ? SdkPresent(json['connect_app_description'] as String?) : const SdkOmitted(),
+    connectAppFriendlyName: json.containsKey('connect_app_friendly_name') ? SdkPresent(json['connect_app_friendly_name'] as String?) : const SdkOmitted(),
+    connectAppHomepageUrl: json.containsKey('connect_app_homepage_url') ? SdkPresent(json['connect_app_homepage_url'] as String?) : const SdkOmitted(),
+    connectAppSid: json.containsKey('connect_app_sid') ? SdkPresent(json['connect_app_sid'] as String?) : const SdkOmitted(),
+    permissions: json.containsKey('permissions') ? SdkPresent((json['permissions'] as List?)?.map((e) => AuthorizedConnectAppEnumPermission.fromJson(e as String)).toList()) : const SdkOmitted(),
+    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (accountSid) {
-          SdkPresent<String?>(value: final value) => {
-              'account_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (connectAppCompanyName) {
-          SdkPresent<String?>(value: final value) => {
-              'connect_app_company_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (connectAppDescription) {
-          SdkPresent<String?>(value: final value) => {
-              'connect_app_description': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (connectAppFriendlyName) {
-          SdkPresent<String?>(value: final value) => {
-              'connect_app_friendly_name': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (connectAppHomepageUrl) {
-          SdkPresent<String?>(value: final value) => {
-              'connect_app_homepage_url': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (connectAppSid) {
-          SdkPresent<String?>(value: final value) => {
-              'connect_app_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (permissions) {
-          SdkPresent<List<AuthorizedConnectAppEnumPermission>?>(
-            value: final value
-          ) =>
-            {
-              'permissions': value?.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String?>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (accountSid) {
+      SdkPresent<String?>(value: final value) => {'account_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (connectAppCompanyName) {
+      SdkPresent<String?>(value: final value) => {'connect_app_company_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (connectAppDescription) {
+      SdkPresent<String?>(value: final value) => {'connect_app_description': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (connectAppFriendlyName) {
+      SdkPresent<String?>(value: final value) => {'connect_app_friendly_name': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (connectAppHomepageUrl) {
+      SdkPresent<String?>(value: final value) => {'connect_app_homepage_url': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (connectAppSid) {
+      SdkPresent<String?>(value: final value) => {'connect_app_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (permissions) {
+      SdkPresent<List<AuthorizedConnectAppEnumPermission>?>(value: final value) => {'permissions': value?.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String?>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 /// The set of permissions that you authorized for the Connect App. Can be: `get-all` or `post-all`.
 final class AuthorizedConnectAppEnumPermission {
+
   final String value;
 
   const AuthorizedConnectAppEnumPermission._(this.value);
 
-  factory AuthorizedConnectAppEnumPermission.fromJson(String value) =>
-      AuthorizedConnectAppEnumPermission._(value);
+  factory AuthorizedConnectAppEnumPermission.fromJson(String value) => AuthorizedConnectAppEnumPermission._(value);
 
   static const getAll = AuthorizedConnectAppEnumPermission._('get-all');
   static const postAll = AuthorizedConnectAppEnumPermission._('post-all');
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is AuthorizedConnectAppEnumPermission && other.value == value;
+  @override bool operator ==(Object other) => other is AuthorizedConnectAppEnumPermission && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

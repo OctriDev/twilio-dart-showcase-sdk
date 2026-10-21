@@ -7,495 +7,199 @@ part of 'inline.dart';
 class CreateIncomingPhoneNumbersLocalRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The phone number to purchase specified in [E.164](https://www.twilio.com/docs/glossary/what-e164) format. E.164 phone numbers consist of a + followed by the country code and subscriber number without punctuation characters. For example, +14155551234.
   final String phoneNumber;
-
   /// The API version to use for incoming calls made to the new phone number. The default is `2010-04-01`.
   final SdkOptional<String> apiVersion;
-
   /// A descriptive string that you created to describe the new phone number. It can be up to 64 characters long. By default, this is a formatted version of the phone number.
   final SdkOptional<String> friendlyName;
-
   /// The SID of the application that should handle SMS messages sent to the new phone number. If an `sms_application_sid` is present, we ignore all of the `sms_*_url` urls and use those set on the application.
   final SdkOptional<String> smsApplicationSid;
-
   /// The HTTP method that we should use to call `sms_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>
-      smsFallbackMethod;
-
+  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod> smsFallbackMethod;
   /// The URL that we should call when an error occurs while requesting or executing the TwiML defined by `sms_url`.
   final SdkOptional<String> smsFallbackUrl;
-
   /// The HTTP method that we should use to call `sms_url`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>
-      smsMethod;
-
+  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod> smsMethod;
   /// The URL we should call when the new phone number receives an incoming SMS message.
   final SdkOptional<String> smsUrl;
-
   /// The URL we should call using the `status_callback_method` to send status information to your application.
   final SdkOptional<String> statusCallback;
-
   /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<
-          CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>
-      statusCallbackMethod;
-
+  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod> statusCallbackMethod;
   /// The SID of the application we should use to handle calls to the new phone number. If a `voice_application_sid` is present, we ignore all of the voice urls and use only those set on the application. Setting a `voice_application_sid` will automatically delete your `trunk_sid` and vice versa.
   final SdkOptional<String> voiceApplicationSid;
-
   /// Whether to lookup the caller's name from the CNAM database and post it to your app. Can be: `true` or `false` and defaults to `false`.
   final SdkOptional<bool> voiceCallerIdLookup;
-
   /// The HTTP method that we should use to call `voice_fallback_url`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<
-          CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>
-      voiceFallbackMethod;
-
+  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod> voiceFallbackMethod;
   /// The URL that we should call when an error occurs retrieving or executing the TwiML requested by `url`.
   final SdkOptional<String> voiceFallbackUrl;
-
   /// The HTTP method that we should use to call `voice_url`. Can be: `GET` or `POST` and defaults to `POST`.
-  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>
-      voiceMethod;
-
+  final SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod> voiceMethod;
   /// The URL that we should call to answer a call to the new phone number. The `voice_url` will not be called if a `voice_application_sid` or a `trunk_sid` is set.
   final SdkOptional<String> voiceUrl;
-
   /// The SID of the Identity resource that we should associate with the new phone number. Some regions require an identity to meet local regulations.
   final SdkOptional<String> identitySid;
-
   /// The SID of the Address resource we should associate with the new phone number. Some regions require addresses to meet local regulations.
   final SdkOptional<String> addressSid;
-
   /// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
-  final SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus>
-      emergencyStatus;
-
+  final SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus> emergencyStatus;
   /// The SID of the emergency address configuration to use for emergency calling from the new phone number.
   final SdkOptional<String> emergencyAddressSid;
-
   /// The SID of the Trunk we should use to handle calls to the new phone number. If a `trunk_sid` is present, we ignore all of the voice urls and voice applications and use only those set on the Trunk. Setting a `trunk_sid` will automatically delete your `voice_application_sid` and vice versa.
   final SdkOptional<String> trunkSid;
-  final SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode>
-      voiceReceiveMode;
-
+  final SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode> voiceReceiveMode;
   /// The SID of the Bundle resource that you associate with the phone number. Some regions require a Bundle to meet local Regulations.
   final SdkOptional<String> bundleSid;
 
-  const CreateIncomingPhoneNumbersLocalRequestBody(
-      {required this.phoneNumber,
-      this.apiVersion = const SdkOmitted(),
-      this.friendlyName = const SdkOmitted(),
-      this.smsApplicationSid = const SdkOmitted(),
-      this.smsFallbackMethod = const SdkOmitted(),
-      this.smsFallbackUrl = const SdkOmitted(),
-      this.smsMethod = const SdkOmitted(),
-      this.smsUrl = const SdkOmitted(),
-      this.statusCallback = const SdkOmitted(),
-      this.statusCallbackMethod = const SdkOmitted(),
-      this.voiceApplicationSid = const SdkOmitted(),
-      this.voiceCallerIdLookup = const SdkOmitted(),
-      this.voiceFallbackMethod = const SdkOmitted(),
-      this.voiceFallbackUrl = const SdkOmitted(),
-      this.voiceMethod = const SdkOmitted(),
-      this.voiceUrl = const SdkOmitted(),
-      this.identitySid = const SdkOmitted(),
-      this.addressSid = const SdkOmitted(),
-      this.emergencyStatus = const SdkOmitted(),
-      this.emergencyAddressSid = const SdkOmitted(),
-      this.trunkSid = const SdkOmitted(),
-      this.voiceReceiveMode = const SdkOmitted(),
-      this.bundleSid = const SdkOmitted()});
+  const CreateIncomingPhoneNumbersLocalRequestBody({required this.phoneNumber, this.apiVersion = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.smsApplicationSid = const SdkOmitted(), this.smsFallbackMethod = const SdkOmitted(), this.smsFallbackUrl = const SdkOmitted(), this.smsMethod = const SdkOmitted(), this.smsUrl = const SdkOmitted(), this.statusCallback = const SdkOmitted(), this.statusCallbackMethod = const SdkOmitted(), this.voiceApplicationSid = const SdkOmitted(), this.voiceCallerIdLookup = const SdkOmitted(), this.voiceFallbackMethod = const SdkOmitted(), this.voiceFallbackUrl = const SdkOmitted(), this.voiceMethod = const SdkOmitted(), this.voiceUrl = const SdkOmitted(), this.identitySid = const SdkOmitted(), this.addressSid = const SdkOmitted(), this.emergencyStatus = const SdkOmitted(), this.emergencyAddressSid = const SdkOmitted(), this.trunkSid = const SdkOmitted(), this.voiceReceiveMode = const SdkOmitted(), this.bundleSid = const SdkOmitted()});
 
-  CreateIncomingPhoneNumbersLocalRequestBody Function(
-      {String phoneNumber,
-      SdkOptional<String> apiVersion,
-      SdkOptional<String> friendlyName,
-      SdkOptional<String> smsApplicationSid,
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>
-          smsFallbackMethod,
-      SdkOptional<String> smsFallbackUrl,
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>
-          smsMethod,
-      SdkOptional<String> smsUrl,
-      SdkOptional<String> statusCallback,
-      SdkOptional<
-              CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>
-          statusCallbackMethod,
-      SdkOptional<String> voiceApplicationSid,
-      SdkOptional<bool> voiceCallerIdLookup,
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>
-          voiceFallbackMethod,
-      SdkOptional<String> voiceFallbackUrl,
-      SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>
-          voiceMethod,
-      SdkOptional<String> voiceUrl,
-      SdkOptional<String> identitySid,
-      SdkOptional<String> addressSid,
-      SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus> emergencyStatus,
-      SdkOptional<String> emergencyAddressSid,
-      SdkOptional<String> trunkSid,
-      SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode>
-          voiceReceiveMode,
-      SdkOptional<String> bundleSid}) get copyWith => _copyWith;
+  CreateIncomingPhoneNumbersLocalRequestBody Function({String phoneNumber, SdkOptional<String> apiVersion, SdkOptional<String> friendlyName, SdkOptional<String> smsApplicationSid, SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod> smsFallbackMethod, SdkOptional<String> smsFallbackUrl, SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod> smsMethod, SdkOptional<String> smsUrl, SdkOptional<String> statusCallback, SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod> statusCallbackMethod, SdkOptional<String> voiceApplicationSid, SdkOptional<bool> voiceCallerIdLookup, SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod> voiceFallbackMethod, SdkOptional<String> voiceFallbackUrl, SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod> voiceMethod, SdkOptional<String> voiceUrl, SdkOptional<String> identitySid, SdkOptional<String> addressSid, SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus> emergencyStatus, SdkOptional<String> emergencyAddressSid, SdkOptional<String> trunkSid, SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode> voiceReceiveMode, SdkOptional<String> bundleSid}) get copyWith => _copyWith;
 
-  CreateIncomingPhoneNumbersLocalRequestBody _copyWith(
-          {Object? phoneNumber = sdkOmittedValue,
-          Object? apiVersion = sdkOmittedValue,
-          Object? friendlyName = sdkOmittedValue,
-          Object? smsApplicationSid = sdkOmittedValue,
-          Object? smsFallbackMethod = sdkOmittedValue,
-          Object? smsFallbackUrl = sdkOmittedValue,
-          Object? smsMethod = sdkOmittedValue,
-          Object? smsUrl = sdkOmittedValue,
-          Object? statusCallback = sdkOmittedValue,
-          Object? statusCallbackMethod = sdkOmittedValue,
-          Object? voiceApplicationSid = sdkOmittedValue,
-          Object? voiceCallerIdLookup = sdkOmittedValue,
-          Object? voiceFallbackMethod = sdkOmittedValue,
-          Object? voiceFallbackUrl = sdkOmittedValue,
-          Object? voiceMethod = sdkOmittedValue,
-          Object? voiceUrl = sdkOmittedValue,
-          Object? identitySid = sdkOmittedValue,
-          Object? addressSid = sdkOmittedValue,
-          Object? emergencyStatus = sdkOmittedValue,
-          Object? emergencyAddressSid = sdkOmittedValue,
-          Object? trunkSid = sdkOmittedValue,
-          Object? voiceReceiveMode = sdkOmittedValue,
-          Object? bundleSid = sdkOmittedValue}) =>
-      CreateIncomingPhoneNumbersLocalRequestBody(
-        phoneNumber: identical(phoneNumber, sdkOmittedValue)
-            ? this.phoneNumber
-            : phoneNumber as String,
-        apiVersion: identical(apiVersion, sdkOmittedValue)
-            ? this.apiVersion
-            : apiVersion as SdkOptional<String>,
-        friendlyName: identical(friendlyName, sdkOmittedValue)
-            ? this.friendlyName
-            : friendlyName as SdkOptional<String>,
-        smsApplicationSid: identical(smsApplicationSid, sdkOmittedValue)
-            ? this.smsApplicationSid
-            : smsApplicationSid as SdkOptional<String>,
-        smsFallbackMethod: identical(smsFallbackMethod, sdkOmittedValue)
-            ? this.smsFallbackMethod
-            : smsFallbackMethod as SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>,
-        smsFallbackUrl: identical(smsFallbackUrl, sdkOmittedValue)
-            ? this.smsFallbackUrl
-            : smsFallbackUrl as SdkOptional<String>,
-        smsMethod: identical(smsMethod, sdkOmittedValue)
-            ? this.smsMethod
-            : smsMethod as SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>,
-        smsUrl: identical(smsUrl, sdkOmittedValue)
-            ? this.smsUrl
-            : smsUrl as SdkOptional<String>,
-        statusCallback: identical(statusCallback, sdkOmittedValue)
-            ? this.statusCallback
-            : statusCallback as SdkOptional<String>,
-        statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue)
-            ? this.statusCallbackMethod
-            : statusCallbackMethod as SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>,
-        voiceApplicationSid: identical(voiceApplicationSid, sdkOmittedValue)
-            ? this.voiceApplicationSid
-            : voiceApplicationSid as SdkOptional<String>,
-        voiceCallerIdLookup: identical(voiceCallerIdLookup, sdkOmittedValue)
-            ? this.voiceCallerIdLookup
-            : voiceCallerIdLookup as SdkOptional<bool>,
-        voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue)
-            ? this.voiceFallbackMethod
-            : voiceFallbackMethod as SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>,
-        voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue)
-            ? this.voiceFallbackUrl
-            : voiceFallbackUrl as SdkOptional<String>,
-        voiceMethod: identical(voiceMethod, sdkOmittedValue)
-            ? this.voiceMethod
-            : voiceMethod as SdkOptional<
-                CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>,
-        voiceUrl: identical(voiceUrl, sdkOmittedValue)
-            ? this.voiceUrl
-            : voiceUrl as SdkOptional<String>,
-        identitySid: identical(identitySid, sdkOmittedValue)
-            ? this.identitySid
-            : identitySid as SdkOptional<String>,
-        addressSid: identical(addressSid, sdkOmittedValue)
-            ? this.addressSid
-            : addressSid as SdkOptional<String>,
-        emergencyStatus: identical(emergencyStatus, sdkOmittedValue)
-            ? this.emergencyStatus
-            : emergencyStatus
-                as SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus>,
-        emergencyAddressSid: identical(emergencyAddressSid, sdkOmittedValue)
-            ? this.emergencyAddressSid
-            : emergencyAddressSid as SdkOptional<String>,
-        trunkSid: identical(trunkSid, sdkOmittedValue)
-            ? this.trunkSid
-            : trunkSid as SdkOptional<String>,
-        voiceReceiveMode: identical(voiceReceiveMode, sdkOmittedValue)
-            ? this.voiceReceiveMode
-            : voiceReceiveMode
-                as SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode>,
-        bundleSid: identical(bundleSid, sdkOmittedValue)
-            ? this.bundleSid
-            : bundleSid as SdkOptional<String>,
-      );
+  CreateIncomingPhoneNumbersLocalRequestBody _copyWith({Object? phoneNumber = sdkOmittedValue, Object? apiVersion = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? smsApplicationSid = sdkOmittedValue, Object? smsFallbackMethod = sdkOmittedValue, Object? smsFallbackUrl = sdkOmittedValue, Object? smsMethod = sdkOmittedValue, Object? smsUrl = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? statusCallbackMethod = sdkOmittedValue, Object? voiceApplicationSid = sdkOmittedValue, Object? voiceCallerIdLookup = sdkOmittedValue, Object? voiceFallbackMethod = sdkOmittedValue, Object? voiceFallbackUrl = sdkOmittedValue, Object? voiceMethod = sdkOmittedValue, Object? voiceUrl = sdkOmittedValue, Object? identitySid = sdkOmittedValue, Object? addressSid = sdkOmittedValue, Object? emergencyStatus = sdkOmittedValue, Object? emergencyAddressSid = sdkOmittedValue, Object? trunkSid = sdkOmittedValue, Object? voiceReceiveMode = sdkOmittedValue, Object? bundleSid = sdkOmittedValue}) => CreateIncomingPhoneNumbersLocalRequestBody(
+    phoneNumber: identical(phoneNumber, sdkOmittedValue) ? this.phoneNumber : phoneNumber as String,
+    apiVersion: identical(apiVersion, sdkOmittedValue) ? this.apiVersion : apiVersion as SdkOptional<String>,
+    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
+    smsApplicationSid: identical(smsApplicationSid, sdkOmittedValue) ? this.smsApplicationSid : smsApplicationSid as SdkOptional<String>,
+    smsFallbackMethod: identical(smsFallbackMethod, sdkOmittedValue) ? this.smsFallbackMethod : smsFallbackMethod as SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>,
+    smsFallbackUrl: identical(smsFallbackUrl, sdkOmittedValue) ? this.smsFallbackUrl : smsFallbackUrl as SdkOptional<String>,
+    smsMethod: identical(smsMethod, sdkOmittedValue) ? this.smsMethod : smsMethod as SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>,
+    smsUrl: identical(smsUrl, sdkOmittedValue) ? this.smsUrl : smsUrl as SdkOptional<String>,
+    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as SdkOptional<String>,
+    statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue) ? this.statusCallbackMethod : statusCallbackMethod as SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>,
+    voiceApplicationSid: identical(voiceApplicationSid, sdkOmittedValue) ? this.voiceApplicationSid : voiceApplicationSid as SdkOptional<String>,
+    voiceCallerIdLookup: identical(voiceCallerIdLookup, sdkOmittedValue) ? this.voiceCallerIdLookup : voiceCallerIdLookup as SdkOptional<bool>,
+    voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue) ? this.voiceFallbackMethod : voiceFallbackMethod as SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>,
+    voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue) ? this.voiceFallbackUrl : voiceFallbackUrl as SdkOptional<String>,
+    voiceMethod: identical(voiceMethod, sdkOmittedValue) ? this.voiceMethod : voiceMethod as SdkOptional<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>,
+    voiceUrl: identical(voiceUrl, sdkOmittedValue) ? this.voiceUrl : voiceUrl as SdkOptional<String>,
+    identitySid: identical(identitySid, sdkOmittedValue) ? this.identitySid : identitySid as SdkOptional<String>,
+    addressSid: identical(addressSid, sdkOmittedValue) ? this.addressSid : addressSid as SdkOptional<String>,
+    emergencyStatus: identical(emergencyStatus, sdkOmittedValue) ? this.emergencyStatus : emergencyStatus as SdkOptional<IncomingPhoneNumberLocalEnumEmergencyStatus>,
+    emergencyAddressSid: identical(emergencyAddressSid, sdkOmittedValue) ? this.emergencyAddressSid : emergencyAddressSid as SdkOptional<String>,
+    trunkSid: identical(trunkSid, sdkOmittedValue) ? this.trunkSid : trunkSid as SdkOptional<String>,
+    voiceReceiveMode: identical(voiceReceiveMode, sdkOmittedValue) ? this.voiceReceiveMode : voiceReceiveMode as SdkOptional<IncomingPhoneNumberLocalEnumVoiceReceiveMode>,
+    bundleSid: identical(bundleSid, sdkOmittedValue) ? this.bundleSid : bundleSid as SdkOptional<String>,
+  );
 
-  factory CreateIncomingPhoneNumbersLocalRequestBody.fromJson(
-          Map<String, dynamic> json) =>
-      CreateIncomingPhoneNumbersLocalRequestBody(
-        phoneNumber: (json['PhoneNumber'] as String?)!,
-        apiVersion: json['ApiVersion'] != null
-            ? SdkPresent((json['ApiVersion'] as String?)!)
-            : const SdkOmitted(),
-        friendlyName: json['FriendlyName'] != null
-            ? SdkPresent((json['FriendlyName'] as String?)!)
-            : const SdkOmitted(),
-        smsApplicationSid: json['SmsApplicationSid'] != null
-            ? SdkPresent((json['SmsApplicationSid'] as String?)!)
-            : const SdkOmitted(),
-        smsFallbackMethod: json['SmsFallbackMethod'] != null
-            ? SdkPresent((json['SmsFallbackMethod'] != null
-                ? CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod
-                    .fromJson(json['SmsFallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        smsFallbackUrl: json['SmsFallbackUrl'] != null
-            ? SdkPresent((json['SmsFallbackUrl'] as String?)!)
-            : const SdkOmitted(),
-        smsMethod: json['SmsMethod'] != null
-            ? SdkPresent((json['SmsMethod'] != null
-                ? CreateIncomingPhoneNumbersLocalRequestBodySmsMethod.fromJson(
-                    json['SmsMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        smsUrl: json['SmsUrl'] != null
-            ? SdkPresent((json['SmsUrl'] as String?)!)
-            : const SdkOmitted(),
-        statusCallback: json['StatusCallback'] != null
-            ? SdkPresent((json['StatusCallback'] as String?)!)
-            : const SdkOmitted(),
-        statusCallbackMethod: json['StatusCallbackMethod'] != null
-            ? SdkPresent((json['StatusCallbackMethod'] != null
-                ? CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod
-                    .fromJson(json['StatusCallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceApplicationSid: json['VoiceApplicationSid'] != null
-            ? SdkPresent((json['VoiceApplicationSid'] as String?)!)
-            : const SdkOmitted(),
-        voiceCallerIdLookup: json['VoiceCallerIdLookup'] != null
-            ? SdkPresent((json['VoiceCallerIdLookup'] as bool?)!)
-            : const SdkOmitted(),
-        voiceFallbackMethod: json['VoiceFallbackMethod'] != null
-            ? SdkPresent((json['VoiceFallbackMethod'] != null
-                ? CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod
-                    .fromJson(json['VoiceFallbackMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceFallbackUrl: json['VoiceFallbackUrl'] != null
-            ? SdkPresent((json['VoiceFallbackUrl'] as String?)!)
-            : const SdkOmitted(),
-        voiceMethod: json['VoiceMethod'] != null
-            ? SdkPresent((json['VoiceMethod'] != null
-                ? CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod
-                    .fromJson(json['VoiceMethod'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        voiceUrl: json['VoiceUrl'] != null
-            ? SdkPresent((json['VoiceUrl'] as String?)!)
-            : const SdkOmitted(),
-        identitySid: json['IdentitySid'] != null
-            ? SdkPresent((json['IdentitySid'] as String?)!)
-            : const SdkOmitted(),
-        addressSid: json['AddressSid'] != null
-            ? SdkPresent((json['AddressSid'] as String?)!)
-            : const SdkOmitted(),
-        emergencyStatus: json['EmergencyStatus'] != null
-            ? SdkPresent((json['EmergencyStatus'] != null
-                ? IncomingPhoneNumberLocalEnumEmergencyStatus.fromJson(
-                    json['EmergencyStatus'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        emergencyAddressSid: json['EmergencyAddressSid'] != null
-            ? SdkPresent((json['EmergencyAddressSid'] as String?)!)
-            : const SdkOmitted(),
-        trunkSid: json['TrunkSid'] != null
-            ? SdkPresent((json['TrunkSid'] as String?)!)
-            : const SdkOmitted(),
-        voiceReceiveMode: json['VoiceReceiveMode'] != null
-            ? SdkPresent((json['VoiceReceiveMode'] != null
-                ? IncomingPhoneNumberLocalEnumVoiceReceiveMode.fromJson(
-                    json['VoiceReceiveMode'] as String)
-                : null)!)
-            : const SdkOmitted(),
-        bundleSid: json['BundleSid'] != null
-            ? SdkPresent((json['BundleSid'] as String?)!)
-            : const SdkOmitted(),
-      );
+  factory CreateIncomingPhoneNumbersLocalRequestBody.fromJson(Map<String, dynamic> json) => CreateIncomingPhoneNumbersLocalRequestBody(
+    phoneNumber: (json['PhoneNumber'] as String?)!,
+    apiVersion: json['ApiVersion'] != null ? SdkPresent((json['ApiVersion'] as String?)!) : const SdkOmitted(),
+    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
+    smsApplicationSid: json['SmsApplicationSid'] != null ? SdkPresent((json['SmsApplicationSid'] as String?)!) : const SdkOmitted(),
+    smsFallbackMethod: json['SmsFallbackMethod'] != null ? SdkPresent((json['SmsFallbackMethod'] != null ? CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod.fromJson(json['SmsFallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    smsFallbackUrl: json['SmsFallbackUrl'] != null ? SdkPresent((json['SmsFallbackUrl'] as String?)!) : const SdkOmitted(),
+    smsMethod: json['SmsMethod'] != null ? SdkPresent((json['SmsMethod'] != null ? CreateIncomingPhoneNumbersLocalRequestBodySmsMethod.fromJson(json['SmsMethod'] as String) : null)!) : const SdkOmitted(),
+    smsUrl: json['SmsUrl'] != null ? SdkPresent((json['SmsUrl'] as String?)!) : const SdkOmitted(),
+    statusCallback: json['StatusCallback'] != null ? SdkPresent((json['StatusCallback'] as String?)!) : const SdkOmitted(),
+    statusCallbackMethod: json['StatusCallbackMethod'] != null ? SdkPresent((json['StatusCallbackMethod'] != null ? CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceApplicationSid: json['VoiceApplicationSid'] != null ? SdkPresent((json['VoiceApplicationSid'] as String?)!) : const SdkOmitted(),
+    voiceCallerIdLookup: json['VoiceCallerIdLookup'] != null ? SdkPresent((json['VoiceCallerIdLookup'] as bool?)!) : const SdkOmitted(),
+    voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? SdkPresent((json['VoiceFallbackMethod'] != null ? CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceFallbackUrl: json['VoiceFallbackUrl'] != null ? SdkPresent((json['VoiceFallbackUrl'] as String?)!) : const SdkOmitted(),
+    voiceMethod: json['VoiceMethod'] != null ? SdkPresent((json['VoiceMethod'] != null ? CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod.fromJson(json['VoiceMethod'] as String) : null)!) : const SdkOmitted(),
+    voiceUrl: json['VoiceUrl'] != null ? SdkPresent((json['VoiceUrl'] as String?)!) : const SdkOmitted(),
+    identitySid: json['IdentitySid'] != null ? SdkPresent((json['IdentitySid'] as String?)!) : const SdkOmitted(),
+    addressSid: json['AddressSid'] != null ? SdkPresent((json['AddressSid'] as String?)!) : const SdkOmitted(),
+    emergencyStatus: json['EmergencyStatus'] != null ? SdkPresent((json['EmergencyStatus'] != null ? IncomingPhoneNumberLocalEnumEmergencyStatus.fromJson(json['EmergencyStatus'] as String) : null)!) : const SdkOmitted(),
+    emergencyAddressSid: json['EmergencyAddressSid'] != null ? SdkPresent((json['EmergencyAddressSid'] as String?)!) : const SdkOmitted(),
+    trunkSid: json['TrunkSid'] != null ? SdkPresent((json['TrunkSid'] as String?)!) : const SdkOmitted(),
+    voiceReceiveMode: json['VoiceReceiveMode'] != null ? SdkPresent((json['VoiceReceiveMode'] != null ? IncomingPhoneNumberLocalEnumVoiceReceiveMode.fromJson(json['VoiceReceiveMode'] as String) : null)!) : const SdkOmitted(),
+    bundleSid: json['BundleSid'] != null ? SdkPresent((json['BundleSid'] as String?)!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        'PhoneNumber': phoneNumber,
-        ...switch (apiVersion) {
-          SdkPresent<String>(value: final value) => {
-              'ApiVersion': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (friendlyName) {
-          SdkPresent<String>(value: final value) => {
-              'FriendlyName': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsApplicationSid) {
-          SdkPresent<String>(value: final value) => {
-              'SmsApplicationSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsFallbackMethod) {
-          SdkPresent<
-                CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'SmsFallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsFallbackUrl) {
-          SdkPresent<String>(value: final value) => {
-              'SmsFallbackUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsMethod) {
-          SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>(
-            value: final value
-          ) =>
-            {
-              'SmsMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (smsUrl) {
-          SdkPresent<String>(value: final value) => {
-              'SmsUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusCallback) {
-          SdkPresent<String>(value: final value) => {
-              'StatusCallback': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (statusCallbackMethod) {
-          SdkPresent<
-                CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'StatusCallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceApplicationSid) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceApplicationSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceCallerIdLookup) {
-          SdkPresent<bool>(value: final value) => {
-              'VoiceCallerIdLookup': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceFallbackMethod) {
-          SdkPresent<
-                CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceFallbackMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceFallbackUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceFallbackUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceMethod) {
-          SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>(
-            value: final value
-          ) =>
-            {
-              'VoiceMethod': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceUrl) {
-          SdkPresent<String>(value: final value) => {
-              'VoiceUrl': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (identitySid) {
-          SdkPresent<String>(value: final value) => {
-              'IdentitySid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (addressSid) {
-          SdkPresent<String>(value: final value) => {
-              'AddressSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyStatus) {
-          SdkPresent<IncomingPhoneNumberLocalEnumEmergencyStatus>(
-            value: final value
-          ) =>
-            {
-              'EmergencyStatus': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (emergencyAddressSid) {
-          SdkPresent<String>(value: final value) => {
-              'EmergencyAddressSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (trunkSid) {
-          SdkPresent<String>(value: final value) => {
-              'TrunkSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (voiceReceiveMode) {
-          SdkPresent<IncomingPhoneNumberLocalEnumVoiceReceiveMode>(
-            value: final value
-          ) =>
-            {
-              'VoiceReceiveMode': value.toJson(),
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (bundleSid) {
-          SdkPresent<String>(value: final value) => {
-              'BundleSid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    'PhoneNumber': phoneNumber,
+    ...switch (apiVersion) {
+      SdkPresent<String>(value: final value) => {'ApiVersion': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (friendlyName) {
+      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsApplicationSid) {
+      SdkPresent<String>(value: final value) => {'SmsApplicationSid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsFallbackMethod) {
+      SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodySmsFallbackMethod>(value: final value) => {'SmsFallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsFallbackUrl) {
+      SdkPresent<String>(value: final value) => {'SmsFallbackUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsMethod) {
+      SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodySmsMethod>(value: final value) => {'SmsMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (smsUrl) {
+      SdkPresent<String>(value: final value) => {'SmsUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (statusCallback) {
+      SdkPresent<String>(value: final value) => {'StatusCallback': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (statusCallbackMethod) {
+      SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodyStatusCallbackMethod>(value: final value) => {'StatusCallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceApplicationSid) {
+      SdkPresent<String>(value: final value) => {'VoiceApplicationSid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceCallerIdLookup) {
+      SdkPresent<bool>(value: final value) => {'VoiceCallerIdLookup': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceFallbackMethod) {
+      SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodyVoiceFallbackMethod>(value: final value) => {'VoiceFallbackMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceFallbackUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceFallbackUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceMethod) {
+      SdkPresent<CreateIncomingPhoneNumbersLocalRequestBodyVoiceMethod>(value: final value) => {'VoiceMethod': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceUrl) {
+      SdkPresent<String>(value: final value) => {'VoiceUrl': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (identitySid) {
+      SdkPresent<String>(value: final value) => {'IdentitySid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (addressSid) {
+      SdkPresent<String>(value: final value) => {'AddressSid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyStatus) {
+      SdkPresent<IncomingPhoneNumberLocalEnumEmergencyStatus>(value: final value) => {'EmergencyStatus': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (emergencyAddressSid) {
+      SdkPresent<String>(value: final value) => {'EmergencyAddressSid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (trunkSid) {
+      SdkPresent<String>(value: final value) => {'TrunkSid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (voiceReceiveMode) {
+      SdkPresent<IncomingPhoneNumberLocalEnumVoiceReceiveMode>(value: final value) => {'VoiceReceiveMode': value.toJson(),},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (bundleSid) {
+      SdkPresent<String>(value: final value) => {'BundleSid': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }
 
 class ListIncomingPhoneNumbersMobileResponse {
@@ -509,172 +213,72 @@ class ListIncomingPhoneNumbersMobileResponse {
   final SdkOptional<String?> previousPageUri;
   final SdkOptional<int> start;
   final SdkOptional<String> uri;
-  final SdkOptional<
-          List<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>>
-      incomingPhoneNumbers;
+  final SdkOptional<List<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>> incomingPhoneNumbers;
 
-  const ListIncomingPhoneNumbersMobileResponse(
-      {this.end = const SdkOmitted(),
-      this.firstPageUri = const SdkOmitted(),
-      this.nextPageUri = const SdkOmitted(),
-      this.page = const SdkOmitted(),
-      this.pageSize = const SdkOmitted(),
-      this.previousPageUri = const SdkOmitted(),
-      this.start = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.incomingPhoneNumbers = const SdkOmitted()});
+  const ListIncomingPhoneNumbersMobileResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.incomingPhoneNumbers = const SdkOmitted()});
 
-  ListIncomingPhoneNumbersMobileResponse Function(
-      {SdkOptional<int> end,
-      SdkOptional<String> firstPageUri,
-      SdkOptional<String?> nextPageUri,
-      SdkOptional<int> page,
-      SdkOptional<int> pageSize,
-      SdkOptional<String?> previousPageUri,
-      SdkOptional<int> start,
-      SdkOptional<String> uri,
-      SdkOptional<
-              List<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>>
-          incomingPhoneNumbers}) get copyWith => _copyWith;
+  ListIncomingPhoneNumbersMobileResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>> incomingPhoneNumbers}) get copyWith => _copyWith;
 
-  ListIncomingPhoneNumbersMobileResponse _copyWith(
-          {Object? end = sdkOmittedValue,
-          Object? firstPageUri = sdkOmittedValue,
-          Object? nextPageUri = sdkOmittedValue,
-          Object? page = sdkOmittedValue,
-          Object? pageSize = sdkOmittedValue,
-          Object? previousPageUri = sdkOmittedValue,
-          Object? start = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? incomingPhoneNumbers = sdkOmittedValue}) =>
-      ListIncomingPhoneNumbersMobileResponse(
-        end: identical(end, sdkOmittedValue)
-            ? this.end
-            : end as SdkOptional<int>,
-        firstPageUri: identical(firstPageUri, sdkOmittedValue)
-            ? this.firstPageUri
-            : firstPageUri as SdkOptional<String>,
-        nextPageUri: identical(nextPageUri, sdkOmittedValue)
-            ? this.nextPageUri
-            : nextPageUri as SdkOptional<String?>,
-        page: identical(page, sdkOmittedValue)
-            ? this.page
-            : page as SdkOptional<int>,
-        pageSize: identical(pageSize, sdkOmittedValue)
-            ? this.pageSize
-            : pageSize as SdkOptional<int>,
-        previousPageUri: identical(previousPageUri, sdkOmittedValue)
-            ? this.previousPageUri
-            : previousPageUri as SdkOptional<String?>,
-        start: identical(start, sdkOmittedValue)
-            ? this.start
-            : start as SdkOptional<int>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String>,
-        incomingPhoneNumbers: identical(incomingPhoneNumbers, sdkOmittedValue)
-            ? this.incomingPhoneNumbers
-            : incomingPhoneNumbers as SdkOptional<
-                List<
-                    ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>>,
-      );
+  ListIncomingPhoneNumbersMobileResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? incomingPhoneNumbers = sdkOmittedValue}) => ListIncomingPhoneNumbersMobileResponse(
+    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
+    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
+    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
+    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
+    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
+    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
+    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
+    incomingPhoneNumbers: identical(incomingPhoneNumbers, sdkOmittedValue) ? this.incomingPhoneNumbers : incomingPhoneNumbers as SdkOptional<List<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>>,
+  );
 
-  factory ListIncomingPhoneNumbersMobileResponse.fromJson(
-          Map<String, dynamic> json) =>
-      ListIncomingPhoneNumbersMobileResponse(
-        end: json['end'] != null
-            ? SdkPresent(((json['end'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        firstPageUri: json['first_page_uri'] != null
-            ? SdkPresent((json['first_page_uri'] as String?)!)
-            : const SdkOmitted(),
-        nextPageUri: json.containsKey('next_page_uri')
-            ? SdkPresent(json['next_page_uri'] as String?)
-            : const SdkOmitted(),
-        page: json['page'] != null
-            ? SdkPresent(((json['page'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        pageSize: json['page_size'] != null
-            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        previousPageUri: json.containsKey('previous_page_uri')
-            ? SdkPresent(json['previous_page_uri'] as String?)
-            : const SdkOmitted(),
-        start: json['start'] != null
-            ? SdkPresent(((json['start'] as num?)?.toInt())!)
-            : const SdkOmitted(),
-        uri: json['uri'] != null
-            ? SdkPresent((json['uri'] as String?)!)
-            : const SdkOmitted(),
-        incomingPhoneNumbers: json['incoming_phone_numbers'] != null
-            ? SdkPresent(((json['incoming_phone_numbers'] as List?)
-                ?.map((e) =>
-                    ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile
-                        .fromJson(e as Map<String, dynamic>))
-                .toList())!)
-            : const SdkOmitted(),
-      );
+  factory ListIncomingPhoneNumbersMobileResponse.fromJson(Map<String, dynamic> json) => ListIncomingPhoneNumbersMobileResponse(
+    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
+    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
+    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
+    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
+    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
+    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
+    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
+    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
+    incomingPhoneNumbers: json['incoming_phone_numbers'] != null ? SdkPresent(((json['incoming_phone_numbers'] as List?)?.map((e) => ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (end) {
-          SdkPresent<int>(value: final value) => {
-              'end': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (firstPageUri) {
-          SdkPresent<String>(value: final value) => {
-              'first_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (nextPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'next_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (page) {
-          SdkPresent<int>(value: final value) => {
-              'page': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (pageSize) {
-          SdkPresent<int>(value: final value) => {
-              'page_size': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (previousPageUri) {
-          SdkPresent<String?>(value: final value) => {
-              'previous_page_uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (start) {
-          SdkPresent<int>(value: final value) => {
-              'start': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (incomingPhoneNumbers) {
-          SdkPresent<
-                List<
-                    ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>>(
-            value: final value
-          ) =>
-            {
-              'incoming_phone_numbers':
-                  value.map((item) => item.toJson()).toList(),
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (end) {
+      SdkPresent<int>(value: final value) => {'end': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (firstPageUri) {
+      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (nextPageUri) {
+      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (page) {
+      SdkPresent<int>(value: final value) => {'page': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (pageSize) {
+      SdkPresent<int>(value: final value) => {'page_size': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (previousPageUri) {
+      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (start) {
+      SdkPresent<int>(value: final value) => {'start': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (incomingPhoneNumbers) {
+      SdkPresent<List<ApiV2010AccountIncomingPhoneNumberIncomingPhoneNumberMobile>>(value: final value) => {'incoming_phone_numbers': value.map((item) => item.toJson()).toList(),},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

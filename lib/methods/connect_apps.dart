@@ -30,11 +30,11 @@ Future<ApiV2010AccountConnectApp> fetchConnectApps(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchConnectApps',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountConnectApp.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountConnectApp.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the configuration of a Connect App belonging to an account. Provide the fields to change, such as its redirect URLs, descriptive details, or requested permissions.
 ///
@@ -64,14 +64,12 @@ Future<ApiV2010AccountConnectApp> updateConnectApps(ClientConfig config,
     required String sid,
     SdkOptional<String> authorizeRedirectUrl = const SdkOmitted(),
     SdkOptional<String> companyName = const SdkOmitted(),
-    SdkOptional<UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod>
-        deauthorizeCallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateConnectAppsRequestBodyDeauthorizeCallbackMethod> deauthorizeCallbackMethod = const SdkOmitted(),
     SdkOptional<String> deauthorizeCallbackUrl = const SdkOmitted(),
     SdkOptional<String> description = const SdkOmitted(),
     SdkOptional<String> friendlyName = const SdkOmitted(),
     SdkOptional<String> homepageUrl = const SdkOmitted(),
-    SdkOptional<List<ConnectAppEnumPermission>> permissions =
-        const SdkOmitted(),
+    SdkOptional<List<ConnectAppEnumPermission>> permissions = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -91,13 +89,10 @@ Future<ApiV2010AccountConnectApp> updateConnectApps(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/ConnectApps/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           body: {
-            'AuthorizeRedirectUrl':
-                SdkUtils.unwrapOptional(authorizeRedirectUrl),
+            'AuthorizeRedirectUrl': SdkUtils.unwrapOptional(authorizeRedirectUrl),
             'CompanyName': SdkUtils.unwrapOptional(companyName),
-            'DeauthorizeCallbackMethod':
-                SdkUtils.unwrapOptional(deauthorizeCallbackMethod),
-            'DeauthorizeCallbackUrl':
-                SdkUtils.unwrapOptional(deauthorizeCallbackUrl),
+            'DeauthorizeCallbackMethod': SdkUtils.unwrapOptional(deauthorizeCallbackMethod),
+            'DeauthorizeCallbackUrl': SdkUtils.unwrapOptional(deauthorizeCallbackUrl),
             'Description': SdkUtils.unwrapOptional(description),
             'FriendlyName': SdkUtils.unwrapOptional(friendlyName),
             'HomepageUrl': SdkUtils.unwrapOptional(homepageUrl),
@@ -106,11 +101,11 @@ Future<ApiV2010AccountConnectApp> updateConnectApps(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateConnectApps',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountConnectApp.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountConnectApp.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a Connect App belonging to an account. Provide the account and Connect App identifiers to specify the resource to remove.
 ///
@@ -138,6 +133,7 @@ Future<void> deleteConnectApps(ClientConfig config,
           options: requestOptions))
       .data;
 }
+
 
 /// Lists Connect Apps belonging to the specified account. Use the page parameters to navigate through the account's Connect Apps.
 ///
@@ -169,17 +165,13 @@ Future<ListConnectAppsResponse> listConnectApps(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/ConnectApps.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listConnectApps',
-          fromJsonRaw: (value) =>
-              ListConnectAppsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListConnectAppsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

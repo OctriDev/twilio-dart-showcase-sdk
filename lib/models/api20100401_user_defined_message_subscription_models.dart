@@ -8,110 +8,57 @@ part of 'api20100401_user_defined_message_subscription.dart';
 class ApiV2010AccountCallUserDefinedMessageSubscription {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that subscribed to the User Defined Messages.
   final SdkOptional<String?> accountSid;
-
   /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the User Defined Message Subscription is associated with. This refers to the Call SID that is producing the User Defined Messages.
   final SdkOptional<String?> callSid;
-
   /// The SID that uniquely identifies this User Defined Message Subscription.
   final SdkOptional<String?> sid;
-
   /// The date that this User Defined Message Subscription was created, given in RFC 2822 format.
   final SdkOptional<String?> dateCreated;
-
   /// The URI of the User Defined Message Subscription Resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
 
-  const ApiV2010AccountCallUserDefinedMessageSubscription(
-      {this.accountSid = const SdkOmitted(),
-      this.callSid = const SdkOmitted(),
-      this.sid = const SdkOmitted(),
-      this.dateCreated = const SdkOmitted(),
-      this.uri = const SdkOmitted()});
+  const ApiV2010AccountCallUserDefinedMessageSubscription({this.accountSid = const SdkOmitted(), this.callSid = const SdkOmitted(), this.sid = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.uri = const SdkOmitted()});
 
-  ApiV2010AccountCallUserDefinedMessageSubscription Function(
-      {SdkOptional<String?> accountSid,
-      SdkOptional<String?> callSid,
-      SdkOptional<String?> sid,
-      SdkOptional<String?> dateCreated,
-      SdkOptional<String?> uri}) get copyWith => _copyWith;
+  ApiV2010AccountCallUserDefinedMessageSubscription Function({SdkOptional<String?> accountSid, SdkOptional<String?> callSid, SdkOptional<String?> sid, SdkOptional<String?> dateCreated, SdkOptional<String?> uri}) get copyWith => _copyWith;
 
-  ApiV2010AccountCallUserDefinedMessageSubscription _copyWith(
-          {Object? accountSid = sdkOmittedValue,
-          Object? callSid = sdkOmittedValue,
-          Object? sid = sdkOmittedValue,
-          Object? dateCreated = sdkOmittedValue,
-          Object? uri = sdkOmittedValue}) =>
-      ApiV2010AccountCallUserDefinedMessageSubscription(
-        accountSid: identical(accountSid, sdkOmittedValue)
-            ? this.accountSid
-            : accountSid as SdkOptional<String?>,
-        callSid: identical(callSid, sdkOmittedValue)
-            ? this.callSid
-            : callSid as SdkOptional<String?>,
-        sid: identical(sid, sdkOmittedValue)
-            ? this.sid
-            : sid as SdkOptional<String?>,
-        dateCreated: identical(dateCreated, sdkOmittedValue)
-            ? this.dateCreated
-            : dateCreated as SdkOptional<String?>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String?>,
-      );
+  ApiV2010AccountCallUserDefinedMessageSubscription _copyWith({Object? accountSid = sdkOmittedValue, Object? callSid = sdkOmittedValue, Object? sid = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? uri = sdkOmittedValue}) => ApiV2010AccountCallUserDefinedMessageSubscription(
+    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
+    callSid: identical(callSid, sdkOmittedValue) ? this.callSid : callSid as SdkOptional<String?>,
+    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
+    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
+  );
 
-  factory ApiV2010AccountCallUserDefinedMessageSubscription.fromJson(
-          Map<String, dynamic> json) =>
-      ApiV2010AccountCallUserDefinedMessageSubscription(
-        accountSid: json.containsKey('account_sid')
-            ? SdkPresent(json['account_sid'] as String?)
-            : const SdkOmitted(),
-        callSid: json.containsKey('call_sid')
-            ? SdkPresent(json['call_sid'] as String?)
-            : const SdkOmitted(),
-        sid: json.containsKey('sid')
-            ? SdkPresent(json['sid'] as String?)
-            : const SdkOmitted(),
-        dateCreated: json.containsKey('date_created')
-            ? SdkPresent(json['date_created'] as String?)
-            : const SdkOmitted(),
-        uri: json.containsKey('uri')
-            ? SdkPresent(json['uri'] as String?)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountCallUserDefinedMessageSubscription.fromJson(Map<String, dynamic> json) => ApiV2010AccountCallUserDefinedMessageSubscription(
+    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
+    callSid: json.containsKey('call_sid') ? SdkPresent(json['call_sid'] as String?) : const SdkOmitted(),
+    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
+    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
+    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (accountSid) {
-          SdkPresent<String?>(value: final value) => {
-              'account_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (callSid) {
-          SdkPresent<String?>(value: final value) => {
-              'call_sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (sid) {
-          SdkPresent<String?>(value: final value) => {
-              'sid': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (dateCreated) {
-          SdkPresent<String?>(value: final value) => {
-              'date_created': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String?>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (accountSid) {
+      SdkPresent<String?>(value: final value) => {'account_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (callSid) {
+      SdkPresent<String?>(value: final value) => {'call_sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (sid) {
+      SdkPresent<String?>(value: final value) => {'sid': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (dateCreated) {
+      SdkPresent<String?>(value: final value) => {'date_created': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String?>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

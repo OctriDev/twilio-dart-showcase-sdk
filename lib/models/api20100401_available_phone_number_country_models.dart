@@ -8,113 +8,57 @@ part of 'api20100401_available_phone_number_country.dart';
 class ApiV2010AccountAvailablePhoneNumberCountry {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
-
   /// The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country.
   final SdkOptional<String?> countryCode;
-
   /// The name of the country.
   final SdkOptional<String?> country;
-
   /// The URI of the Country resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
-
   /// Whether all phone numbers available in the country are new to the Twilio platform. `true` if they are and `false` if all numbers are not in the Twilio Phone Number Beta program.
   final SdkOptional<bool?> beta;
-
   /// A list of related AvailablePhoneNumber resources identified by their URIs relative to `https://api.twilio.com`.
   final SdkOptional<Map<String, dynamic>?> subresourceUris;
 
-  const ApiV2010AccountAvailablePhoneNumberCountry(
-      {this.countryCode = const SdkOmitted(),
-      this.country = const SdkOmitted(),
-      this.uri = const SdkOmitted(),
-      this.beta = const SdkOmitted(),
-      this.subresourceUris = const SdkOmitted()});
+  const ApiV2010AccountAvailablePhoneNumberCountry({this.countryCode = const SdkOmitted(), this.country = const SdkOmitted(), this.uri = const SdkOmitted(), this.beta = const SdkOmitted(), this.subresourceUris = const SdkOmitted()});
 
-  ApiV2010AccountAvailablePhoneNumberCountry Function(
-          {SdkOptional<String?> countryCode,
-          SdkOptional<String?> country,
-          SdkOptional<String?> uri,
-          SdkOptional<bool?> beta,
-          SdkOptional<Map<String, dynamic>?> subresourceUris})
-      get copyWith => _copyWith;
+  ApiV2010AccountAvailablePhoneNumberCountry Function({SdkOptional<String?> countryCode, SdkOptional<String?> country, SdkOptional<String?> uri, SdkOptional<bool?> beta, SdkOptional<Map<String, dynamic>?> subresourceUris}) get copyWith => _copyWith;
 
-  ApiV2010AccountAvailablePhoneNumberCountry _copyWith(
-          {Object? countryCode = sdkOmittedValue,
-          Object? country = sdkOmittedValue,
-          Object? uri = sdkOmittedValue,
-          Object? beta = sdkOmittedValue,
-          Object? subresourceUris = sdkOmittedValue}) =>
-      ApiV2010AccountAvailablePhoneNumberCountry(
-        countryCode: identical(countryCode, sdkOmittedValue)
-            ? this.countryCode
-            : countryCode as SdkOptional<String?>,
-        country: identical(country, sdkOmittedValue)
-            ? this.country
-            : country as SdkOptional<String?>,
-        uri: identical(uri, sdkOmittedValue)
-            ? this.uri
-            : uri as SdkOptional<String?>,
-        beta: identical(beta, sdkOmittedValue)
-            ? this.beta
-            : beta as SdkOptional<bool?>,
-        subresourceUris: identical(subresourceUris, sdkOmittedValue)
-            ? this.subresourceUris
-            : subresourceUris as SdkOptional<Map<String, dynamic>?>,
-      );
+  ApiV2010AccountAvailablePhoneNumberCountry _copyWith({Object? countryCode = sdkOmittedValue, Object? country = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? beta = sdkOmittedValue, Object? subresourceUris = sdkOmittedValue}) => ApiV2010AccountAvailablePhoneNumberCountry(
+    countryCode: identical(countryCode, sdkOmittedValue) ? this.countryCode : countryCode as SdkOptional<String?>,
+    country: identical(country, sdkOmittedValue) ? this.country : country as SdkOptional<String?>,
+    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
+    beta: identical(beta, sdkOmittedValue) ? this.beta : beta as SdkOptional<bool?>,
+    subresourceUris: identical(subresourceUris, sdkOmittedValue) ? this.subresourceUris : subresourceUris as SdkOptional<Map<String, dynamic>?>,
+  );
 
-  factory ApiV2010AccountAvailablePhoneNumberCountry.fromJson(
-          Map<String, dynamic> json) =>
-      ApiV2010AccountAvailablePhoneNumberCountry(
-        countryCode: json.containsKey('country_code')
-            ? SdkPresent(json['country_code'] as String?)
-            : const SdkOmitted(),
-        country: json.containsKey('country')
-            ? SdkPresent(json['country'] as String?)
-            : const SdkOmitted(),
-        uri: json.containsKey('uri')
-            ? SdkPresent(json['uri'] as String?)
-            : const SdkOmitted(),
-        beta: json.containsKey('beta')
-            ? SdkPresent(json['beta'] as bool?)
-            : const SdkOmitted(),
-        subresourceUris: json.containsKey('subresource_uris')
-            ? SdkPresent(json['subresource_uris'] == null
-                ? null
-                : json['subresource_uris'] as Map<String, dynamic>)
-            : const SdkOmitted(),
-      );
+  factory ApiV2010AccountAvailablePhoneNumberCountry.fromJson(Map<String, dynamic> json) => ApiV2010AccountAvailablePhoneNumberCountry(
+    countryCode: json.containsKey('country_code') ? SdkPresent(json['country_code'] as String?) : const SdkOmitted(),
+    country: json.containsKey('country') ? SdkPresent(json['country'] as String?) : const SdkOmitted(),
+    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
+    beta: json.containsKey('beta') ? SdkPresent(json['beta'] as bool?) : const SdkOmitted(),
+    subresourceUris: json.containsKey('subresource_uris') ? SdkPresent(json['subresource_uris'] == null ? null : json['subresource_uris'] as Map<String, dynamic>) : const SdkOmitted(),
+  );
 
   Map<String, dynamic> toJson() => {
-        ...switch (countryCode) {
-          SdkPresent<String?>(value: final value) => {
-              'country_code': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (country) {
-          SdkPresent<String?>(value: final value) => {
-              'country': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (uri) {
-          SdkPresent<String?>(value: final value) => {
-              'uri': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (beta) {
-          SdkPresent<bool?>(value: final value) => {
-              'beta': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-        ...switch (subresourceUris) {
-          SdkPresent<Map<String, dynamic>?>(value: final value) => {
-              'subresource_uris': value,
-            },
-          _ => const <String, dynamic>{},
-        },
-      };
+    ...switch (countryCode) {
+      SdkPresent<String?>(value: final value) => {'country_code': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (country) {
+      SdkPresent<String?>(value: final value) => {'country': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (uri) {
+      SdkPresent<String?>(value: final value) => {'uri': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (beta) {
+      SdkPresent<bool?>(value: final value) => {'beta': value,},
+      _ => const <String, dynamic>{},
+    },
+    ...switch (subresourceUris) {
+      SdkPresent<Map<String, dynamic>?>(value: final value) => {'subresource_uris': value,},
+      _ => const <String, dynamic>{},
+    },
+  };
 }

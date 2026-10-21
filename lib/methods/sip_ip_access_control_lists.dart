@@ -18,13 +18,13 @@ import '../types.dart';
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListSipIpAccessControlListsResponse> listSipIpAccessControlLists(
-    ClientConfig config,
-    {required String accountSid,
-    SdkOptional<int> pageSize = const SdkOmitted(),
-    SdkOptional<int> page = const SdkOmitted(),
-    SdkOptional<String> pageToken = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ListSipIpAccessControlListsResponse>
+    listSipIpAccessControlLists(ClientConfig config,
+        {required String accountSid,
+        SdkOptional<int> pageSize = const SdkOmitted(),
+        SdkOptional<int> page = const SdkOmitted(),
+        SdkOptional<String> pageToken = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
@@ -38,20 +38,17 @@ Future<ListSipIpAccessControlListsResponse> listSipIpAccessControlLists(
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/IpAccessControlLists.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipIpAccessControlLists',
-          fromJsonRaw: (value) => ListSipIpAccessControlListsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipIpAccessControlListsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates an IP access control list for an account. Provide a `FriendlyName` to identify the list; the response includes its generated SID and resource URI.
 ///
@@ -62,11 +59,11 @@ Future<ListSipIpAccessControlListsResponse> listSipIpAccessControlLists(
 ///   resource.
 /// [friendlyName] A human readable descriptive text that describes the
 ///   IpAccessControlList, up to 255 characters long.
-Future<ApiV2010AccountSipSipIpAccessControlList> createSipIpAccessControlLists(
-    ClientConfig config,
-    {required String accountSid,
-    required String friendlyName,
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountSipSipIpAccessControlList>
+    createSipIpAccessControlLists(ClientConfig config,
+        {required String accountSid,
+        required String friendlyName,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
 
@@ -77,12 +74,11 @@ Future<ApiV2010AccountSipSipIpAccessControlList> createSipIpAccessControlLists(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipIpAccessControlLists',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipIpAccessControlList.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipIpAccessControlList.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a specific IP access control list for an account. Use `AccountSid` and `Sid` to identify the account and list; both values must use their resource-specific 34-character identifier format.
 ///
@@ -92,11 +88,11 @@ Future<ApiV2010AccountSipSipIpAccessControlList> createSipIpAccessControlLists(
 ///   [Account](https://www.twilio.com/docs/iam/api/account) responsible for this
 ///   resource.
 /// [sid] A 34 character string that uniquely identifies the resource to fetch.
-Future<ApiV2010AccountSipSipIpAccessControlList> fetchSipIpAccessControlLists(
-    ClientConfig config,
-    {required String accountSid,
-    required String sid,
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountSipSipIpAccessControlList>
+    fetchSipIpAccessControlLists(ClientConfig config,
+        {required String accountSid,
+        required String sid,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -107,12 +103,11 @@ Future<ApiV2010AccountSipSipIpAccessControlList> fetchSipIpAccessControlLists(
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipIpAccessControlLists',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipIpAccessControlList.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipIpAccessControlList.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the name of an IP access control list associated with an account. Submit `FriendlyName` to set the human-readable name, which can be up to 255 characters. Use the account and list identifiers to select the resource to update.
 ///
@@ -123,12 +118,12 @@ Future<ApiV2010AccountSipSipIpAccessControlList> fetchSipIpAccessControlLists(
 ///   resource.
 /// [sid] A 34 character string that uniquely identifies the resource to udpate.
 /// [friendlyName] A human readable descriptive text, up to 255 characters long.
-Future<ApiV2010AccountSipSipIpAccessControlList> updateSipIpAccessControlLists(
-    ClientConfig config,
-    {required String accountSid,
-    required String sid,
-    required String friendlyName,
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountSipSipIpAccessControlList>
+    updateSipIpAccessControlLists(ClientConfig config,
+        {required String accountSid,
+        required String sid,
+        required String friendlyName,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -141,12 +136,11 @@ Future<ApiV2010AccountSipSipIpAccessControlList> updateSipIpAccessControlLists(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateSipIpAccessControlLists',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipIpAccessControlList.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipIpAccessControlList.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete an IpAccessControlList from the requested account
 ///

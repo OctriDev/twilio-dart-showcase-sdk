@@ -6,6 +6,7 @@ part of 'misc.dart';
 // misc domain models
 /// Typed representation of the `CallEnumEvent` API schema.
 final class CallEnumEvent {
+
   final String value;
 
   const CallEnumEvent._(this.value);
@@ -19,13 +20,10 @@ final class CallEnumEvent {
 
   String toJson() => value;
 
-  @override
-  String toString() => value.toString();
+  @override String toString() => value.toString();
 
-  @override
-  bool operator ==(Object other) =>
-      other is CallEnumEvent && other.value == value;
+  @override bool operator ==(Object other) => other is CallEnumEvent && other.value == value;
 
-  @override
-  int get hashCode => value.hashCode;
+  @override int get hashCode => value.hashCode;
+
 }

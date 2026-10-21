@@ -30,10 +30,8 @@ Future<ListSipIpAccessControlListsIpAddressesResponse>
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid,
-      min: 34, max: 34);
-  sdkValidatePattern(
-      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
+  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
   if (pageSize is SdkPresent<int>) {
     validateRange('PageSize', pageSize.value, min: 1, max: 1000);
   }
@@ -41,26 +39,21 @@ Future<ListSipIpAccessControlListsIpAddressesResponse>
     validateRange('Page', page.value, min: 0);
   }
 
-  return (await sdkRequest<ListSipIpAccessControlListsIpAddressesResponse>(
-          'GET',
+  return (await sdkRequest<ListSipIpAccessControlListsIpAddressesResponse>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid.toString())}/IpAddresses.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipIpAccessControlListsIpAddresses',
-          fromJsonRaw: (value) =>
-              ListSipIpAccessControlListsIpAddressesResponse.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipIpAccessControlListsIpAddressesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates an IP address resource in an IP access control list. Provide `FriendlyName` and an IPv4 address in `IpAddress`; optionally set `CidrPrefixLength` to specify the address prefix. The prefix defaults to the full address when omitted.
 ///
@@ -89,13 +82,10 @@ Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid,
-      min: 34, max: 34);
-  sdkValidatePattern(
-      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
+  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipIpAccessControlListSipIpAddress>('POST',
+  return (await sdkRequest<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid.toString())}/IpAddresses.json',
           config: config,
           body: {
@@ -106,12 +96,11 @@ Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipIpAccessControlListsIpAddresses',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a specific IP address resource from an IP access control list. Use `AccountSid`, `IpAccessControlListSid`, and `Sid` to identify the account, list, and address. Each identifier must match its resource-specific 34-character format.
 ///
@@ -132,25 +121,21 @@ Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid,
-      min: 34, max: 34);
-  sdkValidatePattern(
-      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
+  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^IP[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipIpAccessControlListSipIpAddress>('GET',
+  return (await sdkRequest<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>('GET',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid.toString())}/IpAddresses/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipIpAccessControlListsIpAddresses',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates an IPv4 address entry in a SIP IP access control list. Use the body fields to change the address, its descriptive name, or its CIDR prefix length.
 ///
@@ -182,15 +167,12 @@ Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid,
-      min: 34, max: 34);
-  sdkValidatePattern(
-      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
+  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^IP[0-9a-fA-F]{32}\$');
 
-  return (await sdkRequest<
-              ApiV2010AccountSipSipIpAccessControlListSipIpAddress>('POST',
+  return (await sdkRequest<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>('POST',
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/IpAccessControlLists/${Uri.encodeComponent(ipAccessControlListSid.toString())}/IpAddresses/${Uri.encodeComponent(sid.toString())}.json',
           config: config,
           body: {
@@ -201,12 +183,11 @@ Future<ApiV2010AccountSipSipIpAccessControlListSipIpAddress>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateSipIpAccessControlListsIpAddresses',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(
-                  value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipIpAccessControlListSipIpAddress.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes an IP address entry from a SIP IP access control list. Identify the account, list, and address resource using their SIDs.
 ///
@@ -225,10 +206,8 @@ Future<void> deleteSipIpAccessControlListsIpAddresses(ClientConfig config,
     RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
-  validateLength('IpAccessControlListSid', ipAccessControlListSid,
-      min: 34, max: 34);
-  sdkValidatePattern(
-      'IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
+  validateLength('IpAccessControlListSid', ipAccessControlListSid, min: 34, max: 34);
+  sdkValidatePattern('IpAccessControlListSid', ipAccessControlListSid, '^AL[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
   sdkValidatePattern('Sid', sid, '^IP[0-9a-fA-F]{32}\$');
 

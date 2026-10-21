@@ -45,19 +45,18 @@ import '../types.dart';
 ///   Twilio.
 /// [recordingConfigurationId] The identifier of the configuration to be used
 ///   when creating and processing the recording
-Future<ApiV2010AccountCallCallRecording> createCallsRecordings(
-    ClientConfig config,
-    {required String accountSid,
-    required String callSid,
-    SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
-    SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
-    SdkOptional<CreateCallsRecordingsRequestBodyRecordingStatusCallbackMethod>
-        recordingStatusCallbackMethod = const SdkOmitted(),
-    SdkOptional<String> trim = const SdkOmitted(),
-    SdkOptional<String> recordingChannels = const SdkOmitted(),
-    SdkOptional<String> recordingTrack = const SdkOmitted(),
-    SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallCallRecording>
+    createCallsRecordings(ClientConfig config,
+        {required String accountSid,
+        required String callSid,
+        SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
+        SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
+        SdkOptional<CreateCallsRecordingsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod = const SdkOmitted(),
+        SdkOptional<String> trim = const SdkOmitted(),
+        SdkOptional<String> recordingChannels = const SdkOmitted(),
+        SdkOptional<String> recordingTrack = const SdkOmitted(),
+        SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -70,26 +69,22 @@ Future<ApiV2010AccountCallCallRecording> createCallsRecordings(
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Calls/${Uri.encodeComponent(callSid.toString())}/Recordings.json',
           config: config,
           body: {
-            'RecordingStatusCallbackEvent':
-                SdkUtils.unwrapOptional(recordingStatusCallbackEvent),
-            'RecordingStatusCallback':
-                SdkUtils.unwrapOptional(recordingStatusCallback),
-            'RecordingStatusCallbackMethod':
-                SdkUtils.unwrapOptional(recordingStatusCallbackMethod),
+            'RecordingStatusCallbackEvent': SdkUtils.unwrapOptional(recordingStatusCallbackEvent),
+            'RecordingStatusCallback': SdkUtils.unwrapOptional(recordingStatusCallback),
+            'RecordingStatusCallbackMethod': SdkUtils.unwrapOptional(recordingStatusCallbackMethod),
             'Trim': SdkUtils.unwrapOptional(trim),
             'RecordingChannels': SdkUtils.unwrapOptional(recordingChannels),
             'RecordingTrack': SdkUtils.unwrapOptional(recordingTrack),
-            'RecordingConfigurationId':
-                SdkUtils.unwrapOptional(recordingConfigurationId)
+            'RecordingConfigurationId': SdkUtils.unwrapOptional(recordingConfigurationId)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsRecordings',
-          fromJsonRaw: (value) => ApiV2010AccountCallCallRecording.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallCallRecording.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists recordings associated with a specific call. Use the date filters to narrow the results to recordings created on or around a given date, and use the page parameters to navigate the list.
 ///
@@ -154,28 +149,20 @@ Future<ListCallsRecordingsResponse> listCallsRecordings(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Calls/${Uri.encodeComponent(callSid.toString())}/Recordings.json',
           config: config,
           query: {
-            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated),
-                style: 'form', explode: true),
-            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_),
-                style: 'form', explode: true),
-            'DateCreated>': SdkQueryValue(
-                SdkUtils.unwrapOptional(dateCreated_2),
-                style: 'form',
-                explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated), style: 'form', explode: true),
+            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_), style: 'form', explode: true),
+            'DateCreated>': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_2), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listCallsRecordings',
-          fromJsonRaw: (value) => ListCallsRecordingsResponse.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListCallsRecordingsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the status or pause behavior of a recording associated with a call. Supply the required `Status` field to pause, stop, or resume the recording, and use `Twilio.CURRENT` as the recording identifier to target the current active recording.
 ///
@@ -198,14 +185,14 @@ Future<ListCallsRecordingsResponse> listCallsRecordings(ClientConfig config,
 ///   pause period, while `silence` will replace the actual audio of the call with
 ///   silence during the pause period. This parameter only applies when setting
 ///   `status` is set to `paused`.
-Future<ApiV2010AccountCallCallRecording> updateCallsRecordings(
-    ClientConfig config,
-    {required String accountSid,
-    required String callSid,
-    required String sid,
-    required CallRecordingEnumStatus status,
-    SdkOptional<String> pauseBehavior = const SdkOmitted(),
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallCallRecording>
+    updateCallsRecordings(ClientConfig config,
+        {required String accountSid,
+        required String callSid,
+        required String sid,
+        required CallRecordingEnumStatus status,
+        SdkOptional<String> pauseBehavior = const SdkOmitted(),
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -221,11 +208,11 @@ Future<ApiV2010AccountCallCallRecording> updateCallsRecordings(
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateCallsRecordings',
-          fromJsonRaw: (value) => ApiV2010AccountCallCallRecording.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallCallRecording.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a specific recording associated with a call. Use the account, call, and recording SIDs to identify the recording and inspect its status, timing, and recording details.
 ///
@@ -238,12 +225,12 @@ Future<ApiV2010AccountCallCallRecording> updateCallsRecordings(
 ///   SID of the resource to fetch.
 /// [sid] The Twilio-provided string that uniquely identifies the Recording
 ///   resource to fetch.
-Future<ApiV2010AccountCallCallRecording> fetchCallsRecordings(
-    ClientConfig config,
-    {required String accountSid,
-    required String callSid,
-    required String sid,
-    RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallCallRecording>
+    fetchCallsRecordings(ClientConfig config,
+        {required String accountSid,
+        required String callSid,
+        required String sid,
+        RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -256,11 +243,11 @@ Future<ApiV2010AccountCallCallRecording> fetchCallsRecordings(
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchCallsRecordings',
-          fromJsonRaw: (value) => ApiV2010AccountCallCallRecording.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCallCallRecording.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a recording associated with a specific call from the account. Supply the account, call, and recording SIDs to identify the recording to remove.
 ///

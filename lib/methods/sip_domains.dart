@@ -37,20 +37,17 @@ Future<ListSipDomainsResponse> listSipDomains(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SIP/Domains.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSipDomains',
-          fromJsonRaw: (value) =>
-              ListSipDomainsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListSipDomainsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Creates a SIP domain for an account. Supply `DomainName` and optionally configure its voice URLs, SIP registration, security, and emergency calling settings.
 ///
@@ -94,14 +91,11 @@ Future<ApiV2010AccountSipSipDomain> createSipDomains(ClientConfig config,
     required String domainName,
     SdkOptional<String> friendlyName = const SdkOmitted(),
     SdkOptional<String> voiceUrl = const SdkOmitted(),
-    SdkOptional<CreateSipDomainsRequestBodyVoiceMethod> voiceMethod =
-        const SdkOmitted(),
+    SdkOptional<CreateSipDomainsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
     SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateSipDomainsRequestBodyVoiceFallbackMethod>
-        voiceFallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateSipDomainsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
     SdkOptional<String> voiceStatusCallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateSipDomainsRequestBodyVoiceStatusCallbackMethod>
-        voiceStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateSipDomainsRequestBodyVoiceStatusCallbackMethod> voiceStatusCallbackMethod = const SdkOmitted(),
     SdkOptional<bool> sipRegistration = const SdkOmitted(),
     SdkOptional<bool> emergencyCallingEnabled = const SdkOmitted(),
     SdkOptional<bool> secure = const SdkOmitted(),
@@ -121,14 +115,11 @@ Future<ApiV2010AccountSipSipDomain> createSipDomains(ClientConfig config,
   }
   if (byocTrunkSid is SdkPresent<String>) {
     validateLength('ByocTrunkSid', byocTrunkSid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'ByocTrunkSid', byocTrunkSid.value, '^BY[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('ByocTrunkSid', byocTrunkSid.value, '^BY[0-9a-fA-F]{32}\$');
   }
   if (emergencyCallerSid is SdkPresent<String>) {
-    validateLength('EmergencyCallerSid', emergencyCallerSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'EmergencyCallerSid', emergencyCallerSid.value, '^PN[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyCallerSid', emergencyCallerSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyCallerSid', emergencyCallerSid.value, '^PN[0-9a-fA-F]{32}\$');
   }
 
   return (await sdkRequest<ApiV2010AccountSipSipDomain>('POST',
@@ -141,13 +132,10 @@ Future<ApiV2010AccountSipSipDomain> createSipDomains(ClientConfig config,
             'VoiceMethod': SdkUtils.unwrapOptional(voiceMethod),
             'VoiceFallbackUrl': SdkUtils.unwrapOptional(voiceFallbackUrl),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
-            'VoiceStatusCallbackUrl':
-                SdkUtils.unwrapOptional(voiceStatusCallbackUrl),
-            'VoiceStatusCallbackMethod':
-                SdkUtils.unwrapOptional(voiceStatusCallbackMethod),
+            'VoiceStatusCallbackUrl': SdkUtils.unwrapOptional(voiceStatusCallbackUrl),
+            'VoiceStatusCallbackMethod': SdkUtils.unwrapOptional(voiceStatusCallbackMethod),
             'SipRegistration': SdkUtils.unwrapOptional(sipRegistration),
-            'EmergencyCallingEnabled':
-                SdkUtils.unwrapOptional(emergencyCallingEnabled),
+            'EmergencyCallingEnabled': SdkUtils.unwrapOptional(emergencyCallingEnabled),
             'Secure': SdkUtils.unwrapOptional(secure),
             'ByocTrunkSid': SdkUtils.unwrapOptional(byocTrunkSid),
             'EmergencyCallerSid': SdkUtils.unwrapOptional(emergencyCallerSid)
@@ -155,11 +143,11 @@ Future<ApiV2010AccountSipSipDomain> createSipDomains(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSipDomains',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipDomain.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomain.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Retrieves a SIP domain from an account. Provide the account and domain identifiers to select the domain and view its configuration.
 ///
@@ -184,11 +172,11 @@ Future<ApiV2010AccountSipSipDomain> fetchSipDomains(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSipDomains',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipDomain.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomain.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the configuration of a SIP domain. Supply only the attributes you want to change; method fields accept `GET` or `POST`, and URL fields must be valid URIs.
 ///
@@ -232,13 +220,10 @@ Future<ApiV2010AccountSipSipDomain> updateSipDomains(ClientConfig config,
     {required String accountSid,
     required String sid,
     SdkOptional<String> friendlyName = const SdkOmitted(),
-    SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod>
-        voiceFallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateSipDomainsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
     SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod =
-        const SdkOmitted(),
-    SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod>
-        voiceStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateSipDomainsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
+    SdkOptional<UpdateSipDomainsRequestBodyVoiceStatusCallbackMethod> voiceStatusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> voiceStatusCallbackUrl = const SdkOmitted(),
     SdkOptional<String> voiceUrl = const SdkOmitted(),
     SdkOptional<bool> sipRegistration = const SdkOmitted(),
@@ -263,14 +248,11 @@ Future<ApiV2010AccountSipSipDomain> updateSipDomains(ClientConfig config,
   }
   if (byocTrunkSid is SdkPresent<String>) {
     validateLength('ByocTrunkSid', byocTrunkSid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'ByocTrunkSid', byocTrunkSid.value, '^BY[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('ByocTrunkSid', byocTrunkSid.value, '^BY[0-9a-fA-F]{32}\$');
   }
   if (emergencyCallerSid is SdkPresent<String>) {
-    validateLength('EmergencyCallerSid', emergencyCallerSid.value,
-        min: 34, max: 34);
-    sdkValidatePattern(
-        'EmergencyCallerSid', emergencyCallerSid.value, '^PN[0-9a-fA-F]{32}\$');
+    validateLength('EmergencyCallerSid', emergencyCallerSid.value, min: 34, max: 34);
+    sdkValidatePattern('EmergencyCallerSid', emergencyCallerSid.value, '^PN[0-9a-fA-F]{32}\$');
   }
 
   return (await sdkRequest<ApiV2010AccountSipSipDomain>('POST',
@@ -281,15 +263,12 @@ Future<ApiV2010AccountSipSipDomain> updateSipDomains(ClientConfig config,
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
             'VoiceFallbackUrl': SdkUtils.unwrapOptional(voiceFallbackUrl),
             'VoiceMethod': SdkUtils.unwrapOptional(voiceMethod),
-            'VoiceStatusCallbackMethod':
-                SdkUtils.unwrapOptional(voiceStatusCallbackMethod),
-            'VoiceStatusCallbackUrl':
-                SdkUtils.unwrapOptional(voiceStatusCallbackUrl),
+            'VoiceStatusCallbackMethod': SdkUtils.unwrapOptional(voiceStatusCallbackMethod),
+            'VoiceStatusCallbackUrl': SdkUtils.unwrapOptional(voiceStatusCallbackUrl),
             'VoiceUrl': SdkUtils.unwrapOptional(voiceUrl),
             'SipRegistration': SdkUtils.unwrapOptional(sipRegistration),
             'DomainName': SdkUtils.unwrapOptional(domainName),
-            'EmergencyCallingEnabled':
-                SdkUtils.unwrapOptional(emergencyCallingEnabled),
+            'EmergencyCallingEnabled': SdkUtils.unwrapOptional(emergencyCallingEnabled),
             'Secure': SdkUtils.unwrapOptional(secure),
             'ByocTrunkSid': SdkUtils.unwrapOptional(byocTrunkSid),
             'EmergencyCallerSid': SdkUtils.unwrapOptional(emergencyCallerSid)
@@ -297,11 +276,11 @@ Future<ApiV2010AccountSipSipDomain> updateSipDomains(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateSipDomains',
-          fromJsonRaw: (value) => ApiV2010AccountSipSipDomain.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountSipSipDomain.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Deletes a SIP domain from an account. Specify the account and domain identifiers for the resource to remove.
 ///

@@ -158,19 +158,16 @@ Future<ApiV2010AccountCall> createCalls(ClientConfig config,
     required String from,
     SdkOptional<CreateCallsRequestBodyMethod> method = const SdkOmitted(),
     SdkOptional<String> fallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateCallsRequestBodyFallbackMethod> fallbackMethod =
-        const SdkOmitted(),
+    SdkOptional<CreateCallsRequestBodyFallbackMethod> fallbackMethod = const SdkOmitted(),
     SdkOptional<String> statusCallback = const SdkOmitted(),
     SdkOptional<List<String>> statusCallbackEvent = const SdkOmitted(),
-    SdkOptional<CreateCallsRequestBodyStatusCallbackMethod>
-        statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateCallsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> sendDigits = const SdkOmitted(),
     SdkOptional<int> timeout = const SdkOmitted(),
     SdkOptional<bool> record = const SdkOmitted(),
     SdkOptional<String> recordingChannels = const SdkOmitted(),
     SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
-    SdkOptional<CreateCallsRequestBodyRecordingStatusCallbackMethod>
-        recordingStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateCallsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
     SdkOptional<String> sipAuthUsername = const SdkOmitted(),
     SdkOptional<String> sipAuthPassword = const SdkOmitted(),
@@ -184,8 +181,7 @@ Future<ApiV2010AccountCall> createCalls(ClientConfig config,
     SdkOptional<int> machineDetectionSilenceTimeout = const SdkOmitted(),
     SdkOptional<String> asyncAmd = const SdkOmitted(),
     SdkOptional<String> asyncAmdStatusCallback = const SdkOmitted(),
-    SdkOptional<CreateCallsRequestBodyAsyncAmdStatusCallbackMethod>
-        asyncAmdStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateCallsRequestBodyAsyncAmdStatusCallbackMethod> asyncAmdStatusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> passports = const SdkOmitted(),
     SdkOptional<String> byoc = const SdkOmitted(),
     SdkOptional<String> callReason = const SdkOmitted(),
@@ -220,8 +216,7 @@ Future<ApiV2010AccountCall> createCalls(ClientConfig config,
   }
   if (applicationSid is SdkPresent<String>) {
     validateLength('ApplicationSid', applicationSid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'ApplicationSid', applicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('ApplicationSid', applicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
 
   return (await sdkRequest<ApiV2010AccountCall>('POST',
@@ -235,46 +230,34 @@ Future<ApiV2010AccountCall> createCalls(ClientConfig config,
             'FallbackMethod': SdkUtils.unwrapOptional(fallbackMethod),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
             'StatusCallbackEvent': SdkUtils.unwrapOptional(statusCallbackEvent),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'SendDigits': SdkUtils.unwrapOptional(sendDigits),
             'Timeout': SdkUtils.unwrapOptional(timeout),
             'Record': SdkUtils.unwrapOptional(record),
             'RecordingChannels': SdkUtils.unwrapOptional(recordingChannels),
-            'RecordingStatusCallback':
-                SdkUtils.unwrapOptional(recordingStatusCallback),
-            'RecordingStatusCallbackMethod':
-                SdkUtils.unwrapOptional(recordingStatusCallbackMethod),
-            'RecordingConfigurationId':
-                SdkUtils.unwrapOptional(recordingConfigurationId),
+            'RecordingStatusCallback': SdkUtils.unwrapOptional(recordingStatusCallback),
+            'RecordingStatusCallbackMethod': SdkUtils.unwrapOptional(recordingStatusCallbackMethod),
+            'RecordingConfigurationId': SdkUtils.unwrapOptional(recordingConfigurationId),
             'SipAuthUsername': SdkUtils.unwrapOptional(sipAuthUsername),
             'SipAuthPassword': SdkUtils.unwrapOptional(sipAuthPassword),
             'MachineDetection': SdkUtils.unwrapOptional(machineDetection),
-            'MachineDetectionTimeout':
-                SdkUtils.unwrapOptional(machineDetectionTimeout),
-            'RecordingStatusCallbackEvent':
-                SdkUtils.unwrapOptional(recordingStatusCallbackEvent),
+            'MachineDetectionTimeout': SdkUtils.unwrapOptional(machineDetectionTimeout),
+            'RecordingStatusCallbackEvent': SdkUtils.unwrapOptional(recordingStatusCallbackEvent),
             'Trim': SdkUtils.unwrapOptional(trim),
             'CallerId': SdkUtils.unwrapOptional(callerId),
-            'MachineDetectionSpeechThreshold':
-                SdkUtils.unwrapOptional(machineDetectionSpeechThreshold),
-            'MachineDetectionSpeechEndThreshold':
-                SdkUtils.unwrapOptional(machineDetectionSpeechEndThreshold),
-            'MachineDetectionSilenceTimeout':
-                SdkUtils.unwrapOptional(machineDetectionSilenceTimeout),
+            'MachineDetectionSpeechThreshold': SdkUtils.unwrapOptional(machineDetectionSpeechThreshold),
+            'MachineDetectionSpeechEndThreshold': SdkUtils.unwrapOptional(machineDetectionSpeechEndThreshold),
+            'MachineDetectionSilenceTimeout': SdkUtils.unwrapOptional(machineDetectionSilenceTimeout),
             'AsyncAmd': SdkUtils.unwrapOptional(asyncAmd),
-            'AsyncAmdStatusCallback':
-                SdkUtils.unwrapOptional(asyncAmdStatusCallback),
-            'AsyncAmdStatusCallbackMethod':
-                SdkUtils.unwrapOptional(asyncAmdStatusCallbackMethod),
+            'AsyncAmdStatusCallback': SdkUtils.unwrapOptional(asyncAmdStatusCallback),
+            'AsyncAmdStatusCallbackMethod': SdkUtils.unwrapOptional(asyncAmdStatusCallbackMethod),
             'Passports': SdkUtils.unwrapOptional(passports),
             'Byoc': SdkUtils.unwrapOptional(byoc),
             'CallReason': SdkUtils.unwrapOptional(callReason),
             'CallToken': SdkUtils.unwrapOptional(callToken),
             'RecordingTrack': SdkUtils.unwrapOptional(recordingTrack),
             'TimeLimit': SdkUtils.unwrapOptional(timeLimit),
-            'ClientNotificationUrl':
-                SdkUtils.unwrapOptional(clientNotificationUrl),
+            'ClientNotificationUrl': SdkUtils.unwrapOptional(clientNotificationUrl),
             'Url': SdkUtils.unwrapOptional(url),
             'Twiml': SdkUtils.unwrapOptional(twiml),
             'ApplicationSid': SdkUtils.unwrapOptional(applicationSid)
@@ -282,11 +265,11 @@ Future<ApiV2010AccountCall> createCalls(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCalls',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountCall.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCall.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists calls made to and from a specified account. Filter the results by caller, recipient, parent call, status, or start and end times. Use the page parameters to navigate through the results.
 ///
@@ -344,8 +327,7 @@ Future<ListCallsResponse> listCalls(ClientConfig config,
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (parentCallSid is SdkPresent<String>) {
     validateLength('ParentCallSid', parentCallSid.value, min: 34, max: 34);
-    sdkValidatePattern(
-        'ParentCallSid', parentCallSid.value, '^CA[0-9a-fA-F]{32}\$');
+    sdkValidatePattern('ParentCallSid', parentCallSid.value, '^CA[0-9a-fA-F]{32}\$');
   }
   if (startTime is SdkPresent<String>) {
     sdkValidateDateTime('StartTime', startTime.value);
@@ -378,42 +360,27 @@ Future<ListCallsResponse> listCalls(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Calls.json',
           config: config,
           query: {
-            'To': SdkQueryValue(SdkUtils.unwrapOptional(to),
-                style: 'form', explode: true),
-            'From': SdkQueryValue(SdkUtils.unwrapOptional(from),
-                style: 'form', explode: true),
-            'ParentCallSid': SdkQueryValue(
-                SdkUtils.unwrapOptional(parentCallSid),
-                style: 'form',
-                explode: true),
-            'Status': SdkQueryValue(SdkUtils.unwrapOptional(status),
-                style: 'form', explode: true),
-            'StartTime': SdkQueryValue(SdkUtils.unwrapOptional(startTime),
-                style: 'form', explode: true),
-            'StartTime<': SdkQueryValue(SdkUtils.unwrapOptional(startTime_),
-                style: 'form', explode: true),
-            'StartTime>': SdkQueryValue(SdkUtils.unwrapOptional(startTime_2),
-                style: 'form', explode: true),
-            'EndTime': SdkQueryValue(SdkUtils.unwrapOptional(endTime),
-                style: 'form', explode: true),
-            'EndTime<': SdkQueryValue(SdkUtils.unwrapOptional(endTime_),
-                style: 'form', explode: true),
-            'EndTime>': SdkQueryValue(SdkUtils.unwrapOptional(endTime_2),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'To': SdkQueryValue(SdkUtils.unwrapOptional(to), style: 'form', explode: true),
+            'From': SdkQueryValue(SdkUtils.unwrapOptional(from), style: 'form', explode: true),
+            'ParentCallSid': SdkQueryValue(SdkUtils.unwrapOptional(parentCallSid), style: 'form', explode: true),
+            'Status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
+            'StartTime': SdkQueryValue(SdkUtils.unwrapOptional(startTime), style: 'form', explode: true),
+            'StartTime<': SdkQueryValue(SdkUtils.unwrapOptional(startTime_), style: 'form', explode: true),
+            'StartTime>': SdkQueryValue(SdkUtils.unwrapOptional(startTime_2), style: 'form', explode: true),
+            'EndTime': SdkQueryValue(SdkUtils.unwrapOptional(endTime), style: 'form', explode: true),
+            'EndTime<': SdkQueryValue(SdkUtils.unwrapOptional(endTime_), style: 'form', explode: true),
+            'EndTime>': SdkQueryValue(SdkUtils.unwrapOptional(endTime_2), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listCalls',
-          fromJsonRaw: (value) =>
-              ListCallsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListCallsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
 ///
@@ -440,6 +407,7 @@ Future<void> deleteCalls(ClientConfig config,
       .data;
 }
 
+
 /// Retrieves a specific call from an account. Provide the account SID and call SID to identify the call whose details you need. The response includes call status and timing information when available.
 ///
 /// Fetch the call specified by the provided Call SID
@@ -462,11 +430,11 @@ Future<ApiV2010AccountCall> fetchCalls(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchCalls',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountCall.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCall.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates a call by redirecting it to new TwiML instructions or by terminating it. Provide either a `Url` to retrieve instructions from or `Twiml` instructions directly; these fields are mutually exclusive. Use `Status` to cancel or complete the call, or configure callback and request-method settings for a redirect.
 ///
@@ -511,11 +479,9 @@ Future<ApiV2010AccountCall> updateCalls(ClientConfig config,
     SdkOptional<UpdateCallsRequestBodyMethod> method = const SdkOmitted(),
     SdkOptional<CallEnumUpdateStatus> status = const SdkOmitted(),
     SdkOptional<String> fallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateCallsRequestBodyFallbackMethod> fallbackMethod =
-        const SdkOmitted(),
+    SdkOptional<UpdateCallsRequestBodyFallbackMethod> fallbackMethod = const SdkOmitted(),
     SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<UpdateCallsRequestBodyStatusCallbackMethod>
-        statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateCallsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> twiml = const SdkOmitted(),
     SdkOptional<int> timeLimit = const SdkOmitted(),
     RequestOptions? requestOptions}) async {
@@ -543,16 +509,14 @@ Future<ApiV2010AccountCall> updateCalls(ClientConfig config,
             'FallbackUrl': SdkUtils.unwrapOptional(fallbackUrl),
             'FallbackMethod': SdkUtils.unwrapOptional(fallbackMethod),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'Twiml': SdkUtils.unwrapOptional(twiml),
             'TimeLimit': SdkUtils.unwrapOptional(timeLimit)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateCalls',
-          fromJsonRaw: (value) =>
-              ApiV2010AccountCall.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountCall.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

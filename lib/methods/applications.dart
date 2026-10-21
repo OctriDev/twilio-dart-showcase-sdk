@@ -52,21 +52,16 @@ Future<ApiV2010AccountApplication> createApplications(ClientConfig config,
     {required String accountSid,
     SdkOptional<String> apiVersion = const SdkOmitted(),
     SdkOptional<String> voiceUrl = const SdkOmitted(),
-    SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod =
-        const SdkOmitted(),
+    SdkOptional<CreateApplicationsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
     SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod>
-        voiceFallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
     SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod>
-        statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
     SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
     SdkOptional<String> smsUrl = const SdkOmitted(),
-    SdkOptional<CreateApplicationsRequestBodySmsMethod> smsMethod =
-        const SdkOmitted(),
+    SdkOptional<CreateApplicationsRequestBodySmsMethod> smsMethod = const SdkOmitted(),
     SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-    SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod>
-        smsFallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
     SdkOptional<String> smsStatusCallback = const SdkOmitted(),
     SdkOptional<String> messageStatusCallback = const SdkOmitted(),
     SdkOptional<String> friendlyName = const SdkOmitted(),
@@ -106,28 +101,25 @@ Future<ApiV2010AccountApplication> createApplications(ClientConfig config,
             'VoiceFallbackUrl': SdkUtils.unwrapOptional(voiceFallbackUrl),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsFallbackUrl': SdkUtils.unwrapOptional(smsFallbackUrl),
             'SmsFallbackMethod': SdkUtils.unwrapOptional(smsFallbackMethod),
             'SmsStatusCallback': SdkUtils.unwrapOptional(smsStatusCallback),
-            'MessageStatusCallback':
-                SdkUtils.unwrapOptional(messageStatusCallback),
+            'MessageStatusCallback': SdkUtils.unwrapOptional(messageStatusCallback),
             'FriendlyName': SdkUtils.unwrapOptional(friendlyName),
-            'PublicApplicationConnectEnabled':
-                SdkUtils.unwrapOptional(publicApplicationConnectEnabled)
+            'PublicApplicationConnectEnabled': SdkUtils.unwrapOptional(publicApplicationConnectEnabled)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createApplications',
-          fromJsonRaw: (value) => ApiV2010AccountApplication.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountApplication.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Lists application resources created by a specific account. Filter the results by `FriendlyName`, and use the pagination parameters to navigate the list.
 ///
@@ -161,22 +153,18 @@ Future<ListApplicationsResponse> listApplications(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Applications.json',
           config: config,
           query: {
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
-                style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
-                style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
-                style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
-                style: 'form', explode: true)
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listApplications',
-          fromJsonRaw: (value) =>
-              ListApplicationsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListApplicationsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Delete the application by the specified application sid
 ///
@@ -203,6 +191,7 @@ Future<void> deleteApplications(ClientConfig config,
       .data;
 }
 
+
 /// Retrieves an application from an account by its SID. Supply the account SID and application SID to identify the resource and retrieve its configuration, including voice and messaging settings.
 ///
 /// Fetch the application specified by the provided sid
@@ -226,11 +215,11 @@ Future<ApiV2010AccountApplication> fetchApplications(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchApplications',
-          fromJsonRaw: (value) => ApiV2010AccountApplication.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountApplication.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
+
 
 /// Updates the properties of an existing application. Supply the fields you want to change, such as `FriendlyName`, `VoiceUrl`, or `SmsUrl`; URL fields must use URI format, and HTTP method fields accept GET or POST.
 ///
@@ -282,21 +271,16 @@ Future<ApiV2010AccountApplication> updateApplications(ClientConfig config,
     SdkOptional<String> friendlyName = const SdkOmitted(),
     SdkOptional<String> apiVersion = const SdkOmitted(),
     SdkOptional<String> voiceUrl = const SdkOmitted(),
-    SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod =
-        const SdkOmitted(),
+    SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod = const SdkOmitted(),
     SdkOptional<String> voiceFallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod>
-        voiceFallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod = const SdkOmitted(),
     SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod>
-        statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
     SdkOptional<bool> voiceCallerIdLookup = const SdkOmitted(),
     SdkOptional<String> smsUrl = const SdkOmitted(),
-    SdkOptional<UpdateApplicationsRequestBodySmsMethod> smsMethod =
-        const SdkOmitted(),
+    SdkOptional<UpdateApplicationsRequestBodySmsMethod> smsMethod = const SdkOmitted(),
     SdkOptional<String> smsFallbackUrl = const SdkOmitted(),
-    SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod>
-        smsFallbackMethod = const SdkOmitted(),
+    SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod = const SdkOmitted(),
     SdkOptional<String> smsStatusCallback = const SdkOmitted(),
     SdkOptional<String> messageStatusCallback = const SdkOmitted(),
     SdkOptional<bool> publicApplicationConnectEnabled = const SdkOmitted(),
@@ -338,24 +322,20 @@ Future<ApiV2010AccountApplication> updateApplications(ClientConfig config,
             'VoiceFallbackUrl': SdkUtils.unwrapOptional(voiceFallbackUrl),
             'VoiceFallbackMethod': SdkUtils.unwrapOptional(voiceFallbackMethod),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod':
-                SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
             'VoiceCallerIdLookup': SdkUtils.unwrapOptional(voiceCallerIdLookup),
             'SmsUrl': SdkUtils.unwrapOptional(smsUrl),
             'SmsMethod': SdkUtils.unwrapOptional(smsMethod),
             'SmsFallbackUrl': SdkUtils.unwrapOptional(smsFallbackUrl),
             'SmsFallbackMethod': SdkUtils.unwrapOptional(smsFallbackMethod),
             'SmsStatusCallback': SdkUtils.unwrapOptional(smsStatusCallback),
-            'MessageStatusCallback':
-                SdkUtils.unwrapOptional(messageStatusCallback),
-            'PublicApplicationConnectEnabled':
-                SdkUtils.unwrapOptional(publicApplicationConnectEnabled)
+            'MessageStatusCallback': SdkUtils.unwrapOptional(messageStatusCallback),
+            'PublicApplicationConnectEnabled': SdkUtils.unwrapOptional(publicApplicationConnectEnabled)
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateApplications',
-          fromJsonRaw: (value) => ApiV2010AccountApplication.fromJson(
-              value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountApplication.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
