@@ -17,216 +17,509 @@ class ListApplicationsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountApplication>> applications;
 
-  const ListApplicationsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.applications = const SdkOmitted()});
+  const ListApplicationsResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.applications = const SdkOmitted()});
 
-  ListApplicationsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountApplication>> applications}) get copyWith => _copyWith;
+  ListApplicationsResponse Function(
+          {SdkOptional<int> end,
+          SdkOptional<String> firstPageUri,
+          SdkOptional<String?> nextPageUri,
+          SdkOptional<int> page,
+          SdkOptional<int> pageSize,
+          SdkOptional<String?> previousPageUri,
+          SdkOptional<int> start,
+          SdkOptional<String> uri,
+          SdkOptional<List<ApiV2010AccountApplication>> applications})
+      get copyWith => _copyWith;
 
-  ListApplicationsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? applications = sdkOmittedValue}) => ListApplicationsResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    applications: identical(applications, sdkOmittedValue) ? this.applications : applications as SdkOptional<List<ApiV2010AccountApplication>>,
-  );
+  ListApplicationsResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? applications = sdkOmittedValue}) =>
+      ListApplicationsResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        applications: identical(applications, sdkOmittedValue)
+            ? this.applications
+            : applications as SdkOptional<List<ApiV2010AccountApplication>>,
+      );
 
-  factory ListApplicationsResponse.fromJson(Map<String, dynamic> json) => ListApplicationsResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    applications: json['applications'] != null ? SdkPresent(((json['applications'] as List?)?.map((e) => ApiV2010AccountApplication.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListApplicationsResponse.fromJson(Map<String, dynamic> json) =>
+      ListApplicationsResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        applications: json['applications'] != null
+            ? SdkPresent(((json['applications'] as List?)
+                ?.map((e) => ApiV2010AccountApplication.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (applications) {
-      SdkPresent<List<ApiV2010AccountApplication>>(value: final value) => {'applications': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (applications) {
+          SdkPresent<List<ApiV2010AccountApplication>>(value: final value) => {
+              'applications': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UpdateApplicationsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A descriptive string that you create to describe the resource. It can be up to 64 characters long.
   final SdkOptional<String> friendlyName;
+
   /// The API version to use to start a new TwiML session. Can be: `2010-04-01` or `2008-08-01`. The default value is your account's default API version.
   final SdkOptional<String> apiVersion;
+
   /// The URL we should call when the phone number assigned to this application receives a call.
   final SdkOptional<String> voiceUrl;
+
   /// The HTTP method we should use to call `voice_url`. Can be: `GET` or `POST`.
   final SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod;
+
   /// The URL that we should call when an error occurs retrieving or executing the TwiML requested by `url`.
   final SdkOptional<String> voiceFallbackUrl;
+
   /// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod;
+  final SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod>
+      voiceFallbackMethod;
+
   /// The URL we should call using the `status_callback_method` to send status information to your application.
   final SdkOptional<String> statusCallback;
+
   /// The HTTP method we should use to call `status_callback`. Can be: `GET` or `POST`.
-  final SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod;
+  final SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod>
+      statusCallbackMethod;
+
   /// Whether we should look up the caller's caller-ID name from the CNAM database (additional charges apply). Can be: `true` or `false`.
   final SdkOptional<bool> voiceCallerIdLookup;
+
   /// The URL we should call when the phone number receives an incoming SMS message.
   final SdkOptional<String> smsUrl;
+
   /// The HTTP method we should use to call `sms_url`. Can be: `GET` or `POST`.
   final SdkOptional<UpdateApplicationsRequestBodySmsMethod> smsMethod;
+
   /// The URL that we should call when an error occurs while retrieving or executing the TwiML from `sms_url`.
   final SdkOptional<String> smsFallbackUrl;
+
   /// The HTTP method we should use to call `sms_fallback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod;
+  final SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod>
+      smsFallbackMethod;
+
   /// Same as message_status_callback: The URL we should call using a POST method to send status information about SMS messages sent by the application. Deprecated, included for backwards compatibility.
   final SdkOptional<String> smsStatusCallback;
+
   /// The URL we should call using a POST method to send message status information to your application.
   final SdkOptional<String> messageStatusCallback;
+
   /// Whether to allow other Twilio accounts to dial this applicaton using Dial verb. Can be: `true` or `false`.
   final SdkOptional<bool> publicApplicationConnectEnabled;
 
-  const UpdateApplicationsRequestBody({this.friendlyName = const SdkOmitted(), this.apiVersion = const SdkOmitted(), this.voiceUrl = const SdkOmitted(), this.voiceMethod = const SdkOmitted(), this.voiceFallbackUrl = const SdkOmitted(), this.voiceFallbackMethod = const SdkOmitted(), this.statusCallback = const SdkOmitted(), this.statusCallbackMethod = const SdkOmitted(), this.voiceCallerIdLookup = const SdkOmitted(), this.smsUrl = const SdkOmitted(), this.smsMethod = const SdkOmitted(), this.smsFallbackUrl = const SdkOmitted(), this.smsFallbackMethod = const SdkOmitted(), this.smsStatusCallback = const SdkOmitted(), this.messageStatusCallback = const SdkOmitted(), this.publicApplicationConnectEnabled = const SdkOmitted()});
+  const UpdateApplicationsRequestBody(
+      {this.friendlyName = const SdkOmitted(),
+      this.apiVersion = const SdkOmitted(),
+      this.voiceUrl = const SdkOmitted(),
+      this.voiceMethod = const SdkOmitted(),
+      this.voiceFallbackUrl = const SdkOmitted(),
+      this.voiceFallbackMethod = const SdkOmitted(),
+      this.statusCallback = const SdkOmitted(),
+      this.statusCallbackMethod = const SdkOmitted(),
+      this.voiceCallerIdLookup = const SdkOmitted(),
+      this.smsUrl = const SdkOmitted(),
+      this.smsMethod = const SdkOmitted(),
+      this.smsFallbackUrl = const SdkOmitted(),
+      this.smsFallbackMethod = const SdkOmitted(),
+      this.smsStatusCallback = const SdkOmitted(),
+      this.messageStatusCallback = const SdkOmitted(),
+      this.publicApplicationConnectEnabled = const SdkOmitted()});
 
-  UpdateApplicationsRequestBody Function({SdkOptional<String> friendlyName, SdkOptional<String> apiVersion, SdkOptional<String> voiceUrl, SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod, SdkOptional<String> voiceFallbackUrl, SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod> voiceFallbackMethod, SdkOptional<String> statusCallback, SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod> statusCallbackMethod, SdkOptional<bool> voiceCallerIdLookup, SdkOptional<String> smsUrl, SdkOptional<UpdateApplicationsRequestBodySmsMethod> smsMethod, SdkOptional<String> smsFallbackUrl, SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod> smsFallbackMethod, SdkOptional<String> smsStatusCallback, SdkOptional<String> messageStatusCallback, SdkOptional<bool> publicApplicationConnectEnabled}) get copyWith => _copyWith;
+  UpdateApplicationsRequestBody Function(
+          {SdkOptional<String> friendlyName,
+          SdkOptional<String> apiVersion,
+          SdkOptional<String> voiceUrl,
+          SdkOptional<UpdateApplicationsRequestBodyVoiceMethod> voiceMethod,
+          SdkOptional<String> voiceFallbackUrl,
+          SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod>
+              voiceFallbackMethod,
+          SdkOptional<String> statusCallback,
+          SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod>
+              statusCallbackMethod,
+          SdkOptional<bool> voiceCallerIdLookup,
+          SdkOptional<String> smsUrl,
+          SdkOptional<UpdateApplicationsRequestBodySmsMethod> smsMethod,
+          SdkOptional<String> smsFallbackUrl,
+          SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod>
+              smsFallbackMethod,
+          SdkOptional<String> smsStatusCallback,
+          SdkOptional<String> messageStatusCallback,
+          SdkOptional<bool> publicApplicationConnectEnabled})
+      get copyWith => _copyWith;
 
-  UpdateApplicationsRequestBody _copyWith({Object? friendlyName = sdkOmittedValue, Object? apiVersion = sdkOmittedValue, Object? voiceUrl = sdkOmittedValue, Object? voiceMethod = sdkOmittedValue, Object? voiceFallbackUrl = sdkOmittedValue, Object? voiceFallbackMethod = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? statusCallbackMethod = sdkOmittedValue, Object? voiceCallerIdLookup = sdkOmittedValue, Object? smsUrl = sdkOmittedValue, Object? smsMethod = sdkOmittedValue, Object? smsFallbackUrl = sdkOmittedValue, Object? smsFallbackMethod = sdkOmittedValue, Object? smsStatusCallback = sdkOmittedValue, Object? messageStatusCallback = sdkOmittedValue, Object? publicApplicationConnectEnabled = sdkOmittedValue}) => UpdateApplicationsRequestBody(
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String>,
-    apiVersion: identical(apiVersion, sdkOmittedValue) ? this.apiVersion : apiVersion as SdkOptional<String>,
-    voiceUrl: identical(voiceUrl, sdkOmittedValue) ? this.voiceUrl : voiceUrl as SdkOptional<String>,
-    voiceMethod: identical(voiceMethod, sdkOmittedValue) ? this.voiceMethod : voiceMethod as SdkOptional<UpdateApplicationsRequestBodyVoiceMethod>,
-    voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue) ? this.voiceFallbackUrl : voiceFallbackUrl as SdkOptional<String>,
-    voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue) ? this.voiceFallbackMethod : voiceFallbackMethod as SdkOptional<UpdateApplicationsRequestBodyVoiceFallbackMethod>,
-    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as SdkOptional<String>,
-    statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue) ? this.statusCallbackMethod : statusCallbackMethod as SdkOptional<UpdateApplicationsRequestBodyStatusCallbackMethod>,
-    voiceCallerIdLookup: identical(voiceCallerIdLookup, sdkOmittedValue) ? this.voiceCallerIdLookup : voiceCallerIdLookup as SdkOptional<bool>,
-    smsUrl: identical(smsUrl, sdkOmittedValue) ? this.smsUrl : smsUrl as SdkOptional<String>,
-    smsMethod: identical(smsMethod, sdkOmittedValue) ? this.smsMethod : smsMethod as SdkOptional<UpdateApplicationsRequestBodySmsMethod>,
-    smsFallbackUrl: identical(smsFallbackUrl, sdkOmittedValue) ? this.smsFallbackUrl : smsFallbackUrl as SdkOptional<String>,
-    smsFallbackMethod: identical(smsFallbackMethod, sdkOmittedValue) ? this.smsFallbackMethod : smsFallbackMethod as SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod>,
-    smsStatusCallback: identical(smsStatusCallback, sdkOmittedValue) ? this.smsStatusCallback : smsStatusCallback as SdkOptional<String>,
-    messageStatusCallback: identical(messageStatusCallback, sdkOmittedValue) ? this.messageStatusCallback : messageStatusCallback as SdkOptional<String>,
-    publicApplicationConnectEnabled: identical(publicApplicationConnectEnabled, sdkOmittedValue) ? this.publicApplicationConnectEnabled : publicApplicationConnectEnabled as SdkOptional<bool>,
-  );
+  UpdateApplicationsRequestBody _copyWith(
+          {Object? friendlyName = sdkOmittedValue,
+          Object? apiVersion = sdkOmittedValue,
+          Object? voiceUrl = sdkOmittedValue,
+          Object? voiceMethod = sdkOmittedValue,
+          Object? voiceFallbackUrl = sdkOmittedValue,
+          Object? voiceFallbackMethod = sdkOmittedValue,
+          Object? statusCallback = sdkOmittedValue,
+          Object? statusCallbackMethod = sdkOmittedValue,
+          Object? voiceCallerIdLookup = sdkOmittedValue,
+          Object? smsUrl = sdkOmittedValue,
+          Object? smsMethod = sdkOmittedValue,
+          Object? smsFallbackUrl = sdkOmittedValue,
+          Object? smsFallbackMethod = sdkOmittedValue,
+          Object? smsStatusCallback = sdkOmittedValue,
+          Object? messageStatusCallback = sdkOmittedValue,
+          Object? publicApplicationConnectEnabled = sdkOmittedValue}) =>
+      UpdateApplicationsRequestBody(
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String>,
+        apiVersion: identical(apiVersion, sdkOmittedValue)
+            ? this.apiVersion
+            : apiVersion as SdkOptional<String>,
+        voiceUrl: identical(voiceUrl, sdkOmittedValue)
+            ? this.voiceUrl
+            : voiceUrl as SdkOptional<String>,
+        voiceMethod: identical(voiceMethod, sdkOmittedValue)
+            ? this.voiceMethod
+            : voiceMethod
+                as SdkOptional<UpdateApplicationsRequestBodyVoiceMethod>,
+        voiceFallbackUrl: identical(voiceFallbackUrl, sdkOmittedValue)
+            ? this.voiceFallbackUrl
+            : voiceFallbackUrl as SdkOptional<String>,
+        voiceFallbackMethod: identical(voiceFallbackMethod, sdkOmittedValue)
+            ? this.voiceFallbackMethod
+            : voiceFallbackMethod as SdkOptional<
+                UpdateApplicationsRequestBodyVoiceFallbackMethod>,
+        statusCallback: identical(statusCallback, sdkOmittedValue)
+            ? this.statusCallback
+            : statusCallback as SdkOptional<String>,
+        statusCallbackMethod: identical(statusCallbackMethod, sdkOmittedValue)
+            ? this.statusCallbackMethod
+            : statusCallbackMethod as SdkOptional<
+                UpdateApplicationsRequestBodyStatusCallbackMethod>,
+        voiceCallerIdLookup: identical(voiceCallerIdLookup, sdkOmittedValue)
+            ? this.voiceCallerIdLookup
+            : voiceCallerIdLookup as SdkOptional<bool>,
+        smsUrl: identical(smsUrl, sdkOmittedValue)
+            ? this.smsUrl
+            : smsUrl as SdkOptional<String>,
+        smsMethod: identical(smsMethod, sdkOmittedValue)
+            ? this.smsMethod
+            : smsMethod as SdkOptional<UpdateApplicationsRequestBodySmsMethod>,
+        smsFallbackUrl: identical(smsFallbackUrl, sdkOmittedValue)
+            ? this.smsFallbackUrl
+            : smsFallbackUrl as SdkOptional<String>,
+        smsFallbackMethod: identical(smsFallbackMethod, sdkOmittedValue)
+            ? this.smsFallbackMethod
+            : smsFallbackMethod
+                as SdkOptional<UpdateApplicationsRequestBodySmsFallbackMethod>,
+        smsStatusCallback: identical(smsStatusCallback, sdkOmittedValue)
+            ? this.smsStatusCallback
+            : smsStatusCallback as SdkOptional<String>,
+        messageStatusCallback: identical(messageStatusCallback, sdkOmittedValue)
+            ? this.messageStatusCallback
+            : messageStatusCallback as SdkOptional<String>,
+        publicApplicationConnectEnabled:
+            identical(publicApplicationConnectEnabled, sdkOmittedValue)
+                ? this.publicApplicationConnectEnabled
+                : publicApplicationConnectEnabled as SdkOptional<bool>,
+      );
 
-  factory UpdateApplicationsRequestBody.fromJson(Map<String, dynamic> json) => UpdateApplicationsRequestBody(
-    friendlyName: json['FriendlyName'] != null ? SdkPresent((json['FriendlyName'] as String?)!) : const SdkOmitted(),
-    apiVersion: json['ApiVersion'] != null ? SdkPresent((json['ApiVersion'] as String?)!) : const SdkOmitted(),
-    voiceUrl: json['VoiceUrl'] != null ? SdkPresent((json['VoiceUrl'] as String?)!) : const SdkOmitted(),
-    voiceMethod: json['VoiceMethod'] != null ? SdkPresent((json['VoiceMethod'] != null ? UpdateApplicationsRequestBodyVoiceMethod.fromJson(json['VoiceMethod'] as String) : null)!) : const SdkOmitted(),
-    voiceFallbackUrl: json['VoiceFallbackUrl'] != null ? SdkPresent((json['VoiceFallbackUrl'] as String?)!) : const SdkOmitted(),
-    voiceFallbackMethod: json['VoiceFallbackMethod'] != null ? SdkPresent((json['VoiceFallbackMethod'] != null ? UpdateApplicationsRequestBodyVoiceFallbackMethod.fromJson(json['VoiceFallbackMethod'] as String) : null)!) : const SdkOmitted(),
-    statusCallback: json['StatusCallback'] != null ? SdkPresent((json['StatusCallback'] as String?)!) : const SdkOmitted(),
-    statusCallbackMethod: json['StatusCallbackMethod'] != null ? SdkPresent((json['StatusCallbackMethod'] != null ? UpdateApplicationsRequestBodyStatusCallbackMethod.fromJson(json['StatusCallbackMethod'] as String) : null)!) : const SdkOmitted(),
-    voiceCallerIdLookup: json['VoiceCallerIdLookup'] != null ? SdkPresent((json['VoiceCallerIdLookup'] as bool?)!) : const SdkOmitted(),
-    smsUrl: json['SmsUrl'] != null ? SdkPresent((json['SmsUrl'] as String?)!) : const SdkOmitted(),
-    smsMethod: json['SmsMethod'] != null ? SdkPresent((json['SmsMethod'] != null ? UpdateApplicationsRequestBodySmsMethod.fromJson(json['SmsMethod'] as String) : null)!) : const SdkOmitted(),
-    smsFallbackUrl: json['SmsFallbackUrl'] != null ? SdkPresent((json['SmsFallbackUrl'] as String?)!) : const SdkOmitted(),
-    smsFallbackMethod: json['SmsFallbackMethod'] != null ? SdkPresent((json['SmsFallbackMethod'] != null ? UpdateApplicationsRequestBodySmsFallbackMethod.fromJson(json['SmsFallbackMethod'] as String) : null)!) : const SdkOmitted(),
-    smsStatusCallback: json['SmsStatusCallback'] != null ? SdkPresent((json['SmsStatusCallback'] as String?)!) : const SdkOmitted(),
-    messageStatusCallback: json['MessageStatusCallback'] != null ? SdkPresent((json['MessageStatusCallback'] as String?)!) : const SdkOmitted(),
-    publicApplicationConnectEnabled: json['PublicApplicationConnectEnabled'] != null ? SdkPresent((json['PublicApplicationConnectEnabled'] as bool?)!) : const SdkOmitted(),
-  );
+  factory UpdateApplicationsRequestBody.fromJson(Map<String, dynamic> json) =>
+      UpdateApplicationsRequestBody(
+        friendlyName: json['FriendlyName'] != null
+            ? SdkPresent((json['FriendlyName'] as String?)!)
+            : const SdkOmitted(),
+        apiVersion: json['ApiVersion'] != null
+            ? SdkPresent((json['ApiVersion'] as String?)!)
+            : const SdkOmitted(),
+        voiceUrl: json['VoiceUrl'] != null
+            ? SdkPresent((json['VoiceUrl'] as String?)!)
+            : const SdkOmitted(),
+        voiceMethod: json['VoiceMethod'] != null
+            ? SdkPresent((json['VoiceMethod'] != null
+                ? UpdateApplicationsRequestBodyVoiceMethod.fromJson(
+                    json['VoiceMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        voiceFallbackUrl: json['VoiceFallbackUrl'] != null
+            ? SdkPresent((json['VoiceFallbackUrl'] as String?)!)
+            : const SdkOmitted(),
+        voiceFallbackMethod: json['VoiceFallbackMethod'] != null
+            ? SdkPresent((json['VoiceFallbackMethod'] != null
+                ? UpdateApplicationsRequestBodyVoiceFallbackMethod.fromJson(
+                    json['VoiceFallbackMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        statusCallback: json['StatusCallback'] != null
+            ? SdkPresent((json['StatusCallback'] as String?)!)
+            : const SdkOmitted(),
+        statusCallbackMethod: json['StatusCallbackMethod'] != null
+            ? SdkPresent((json['StatusCallbackMethod'] != null
+                ? UpdateApplicationsRequestBodyStatusCallbackMethod.fromJson(
+                    json['StatusCallbackMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        voiceCallerIdLookup: json['VoiceCallerIdLookup'] != null
+            ? SdkPresent((json['VoiceCallerIdLookup'] as bool?)!)
+            : const SdkOmitted(),
+        smsUrl: json['SmsUrl'] != null
+            ? SdkPresent((json['SmsUrl'] as String?)!)
+            : const SdkOmitted(),
+        smsMethod: json['SmsMethod'] != null
+            ? SdkPresent((json['SmsMethod'] != null
+                ? UpdateApplicationsRequestBodySmsMethod.fromJson(
+                    json['SmsMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        smsFallbackUrl: json['SmsFallbackUrl'] != null
+            ? SdkPresent((json['SmsFallbackUrl'] as String?)!)
+            : const SdkOmitted(),
+        smsFallbackMethod: json['SmsFallbackMethod'] != null
+            ? SdkPresent((json['SmsFallbackMethod'] != null
+                ? UpdateApplicationsRequestBodySmsFallbackMethod.fromJson(
+                    json['SmsFallbackMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        smsStatusCallback: json['SmsStatusCallback'] != null
+            ? SdkPresent((json['SmsStatusCallback'] as String?)!)
+            : const SdkOmitted(),
+        messageStatusCallback: json['MessageStatusCallback'] != null
+            ? SdkPresent((json['MessageStatusCallback'] as String?)!)
+            : const SdkOmitted(),
+        publicApplicationConnectEnabled:
+            json['PublicApplicationConnectEnabled'] != null
+                ? SdkPresent(
+                    (json['PublicApplicationConnectEnabled'] as bool?)!)
+                : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (friendlyName) {
-      SdkPresent<String>(value: final value) => {'FriendlyName': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apiVersion) {
-      SdkPresent<String>(value: final value) => {'ApiVersion': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (voiceUrl) {
-      SdkPresent<String>(value: final value) => {'VoiceUrl': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (voiceMethod) {
-      SdkPresent<UpdateApplicationsRequestBodyVoiceMethod>(value: final value) => {'VoiceMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (voiceFallbackUrl) {
-      SdkPresent<String>(value: final value) => {'VoiceFallbackUrl': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (voiceFallbackMethod) {
-      SdkPresent<UpdateApplicationsRequestBodyVoiceFallbackMethod>(value: final value) => {'VoiceFallbackMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statusCallback) {
-      SdkPresent<String>(value: final value) => {'StatusCallback': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (statusCallbackMethod) {
-      SdkPresent<UpdateApplicationsRequestBodyStatusCallbackMethod>(value: final value) => {'StatusCallbackMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (voiceCallerIdLookup) {
-      SdkPresent<bool>(value: final value) => {'VoiceCallerIdLookup': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (smsUrl) {
-      SdkPresent<String>(value: final value) => {'SmsUrl': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (smsMethod) {
-      SdkPresent<UpdateApplicationsRequestBodySmsMethod>(value: final value) => {'SmsMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (smsFallbackUrl) {
-      SdkPresent<String>(value: final value) => {'SmsFallbackUrl': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (smsFallbackMethod) {
-      SdkPresent<UpdateApplicationsRequestBodySmsFallbackMethod>(value: final value) => {'SmsFallbackMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (smsStatusCallback) {
-      SdkPresent<String>(value: final value) => {'SmsStatusCallback': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (messageStatusCallback) {
-      SdkPresent<String>(value: final value) => {'MessageStatusCallback': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (publicApplicationConnectEnabled) {
-      SdkPresent<bool>(value: final value) => {'PublicApplicationConnectEnabled': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (friendlyName) {
+          SdkPresent<String>(value: final value) => {
+              'FriendlyName': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apiVersion) {
+          SdkPresent<String>(value: final value) => {
+              'ApiVersion': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (voiceUrl) {
+          SdkPresent<String>(value: final value) => {
+              'VoiceUrl': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (voiceMethod) {
+          SdkPresent<UpdateApplicationsRequestBodyVoiceMethod>(
+            value: final value
+          ) =>
+            {
+              'VoiceMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (voiceFallbackUrl) {
+          SdkPresent<String>(value: final value) => {
+              'VoiceFallbackUrl': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (voiceFallbackMethod) {
+          SdkPresent<UpdateApplicationsRequestBodyVoiceFallbackMethod>(
+            value: final value
+          ) =>
+            {
+              'VoiceFallbackMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (statusCallback) {
+          SdkPresent<String>(value: final value) => {
+              'StatusCallback': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (statusCallbackMethod) {
+          SdkPresent<UpdateApplicationsRequestBodyStatusCallbackMethod>(
+            value: final value
+          ) =>
+            {
+              'StatusCallbackMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (voiceCallerIdLookup) {
+          SdkPresent<bool>(value: final value) => {
+              'VoiceCallerIdLookup': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (smsUrl) {
+          SdkPresent<String>(value: final value) => {
+              'SmsUrl': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (smsMethod) {
+          SdkPresent<UpdateApplicationsRequestBodySmsMethod>(
+            value: final value
+          ) =>
+            {
+              'SmsMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (smsFallbackUrl) {
+          SdkPresent<String>(value: final value) => {
+              'SmsFallbackUrl': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (smsFallbackMethod) {
+          SdkPresent<UpdateApplicationsRequestBodySmsFallbackMethod>(
+            value: final value
+          ) =>
+            {
+              'SmsFallbackMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (smsStatusCallback) {
+          SdkPresent<String>(value: final value) => {
+              'SmsStatusCallback': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (messageStatusCallback) {
+          SdkPresent<String>(value: final value) => {
+              'MessageStatusCallback': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (publicApplicationConnectEnabled) {
+          SdkPresent<bool>(value: final value) => {
+              'PublicApplicationConnectEnabled': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

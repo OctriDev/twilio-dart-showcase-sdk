@@ -8,208 +8,411 @@ part of 'api20100401_recording.dart';
 class ApiV2010AccountRecording {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Recording resource.
   final SdkOptional<String?> accountSid;
+
   /// The API version used during the recording.
   final SdkOptional<String?> apiVersion;
+
   /// The SID of the [Call](https://www.twilio.com/docs/voice/api/call-resource) the Recording resource is associated with. This will always refer to the parent leg of a two-leg call.
   final SdkOptional<String?> callSid;
+
   /// The Conference SID that identifies the conference associated with the recording, if a conference recording.
   final SdkOptional<String?> conferenceSid;
+
   /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCreated;
+
   /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
+
   /// The start time of the recording in GMT and in [RFC 2822](https://www.php.net/manual/en/class.datetime.php#datetime.constants.rfc2822) format.
   final SdkOptional<String?> startTime;
+
   /// The length of the recording in seconds.
   final SdkOptional<String?> duration;
+
   /// The unique string that that we created to identify the Recording resource.
   final SdkOptional<String?> sid;
+
   /// The one-time cost of creating the recording in the `price_unit` currency.
   final SdkOptional<String?> price;
+
   /// The currency used in the `price` property. Example: `USD`.
   final SdkOptional<String?> priceUnit;
+
   /// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
   final SdkOptional<RecordingEnumStatus> status;
+
   /// The number of channels in the recording resource. For information on specifying the number of channels in the downloaded recording file, check out [Fetch a Recording’s media file](https://www.twilio.com/docs/voice/api/recording#download-dual-channel-media-file).
   final SdkOptional<int?> channels;
+
   /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
   final SdkOptional<RecordingEnumSource> source;
+
   /// The error code that describes why the recording is `absent`. The error code is described in our [Error Dictionary](https://www.twilio.com/docs/api/errors). This value is null if the recording `status` is not `absent`.
   final SdkOptional<int?> errorCode;
+
   /// The URI of the resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
+
   /// How to decrypt the recording if it was encrypted using [Call Recording Encryption](https://www.twilio.com/docs/voice/tutorials/voice-recording-encryption) feature.
   final SdkOptional<dynamic> encryptionDetails;
+
   /// A list of related resources identified by their relative URIs.
   final SdkOptional<Map<String, dynamic>?> subresourceUris;
+
   /// The URL of the media file associated with this recording resource. When stored externally, this is the full URL location of the media file.
   final SdkOptional<String?> mediaUrl;
 
-  const ApiV2010AccountRecording({this.accountSid = const SdkOmitted(), this.apiVersion = const SdkOmitted(), this.callSid = const SdkOmitted(), this.conferenceSid = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.dateUpdated = const SdkOmitted(), this.startTime = const SdkOmitted(), this.duration = const SdkOmitted(), this.sid = const SdkOmitted(), this.price = const SdkOmitted(), this.priceUnit = const SdkOmitted(), this.status = const SdkOmitted(), this.channels = const SdkOmitted(), this.source = const SdkOmitted(), this.errorCode = const SdkOmitted(), this.uri = const SdkOmitted(), this.encryptionDetails = const SdkOmitted(), this.subresourceUris = const SdkOmitted(), this.mediaUrl = const SdkOmitted()});
+  const ApiV2010AccountRecording(
+      {this.accountSid = const SdkOmitted(),
+      this.apiVersion = const SdkOmitted(),
+      this.callSid = const SdkOmitted(),
+      this.conferenceSid = const SdkOmitted(),
+      this.dateCreated = const SdkOmitted(),
+      this.dateUpdated = const SdkOmitted(),
+      this.startTime = const SdkOmitted(),
+      this.duration = const SdkOmitted(),
+      this.sid = const SdkOmitted(),
+      this.price = const SdkOmitted(),
+      this.priceUnit = const SdkOmitted(),
+      this.status = const SdkOmitted(),
+      this.channels = const SdkOmitted(),
+      this.source = const SdkOmitted(),
+      this.errorCode = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.encryptionDetails = const SdkOmitted(),
+      this.subresourceUris = const SdkOmitted(),
+      this.mediaUrl = const SdkOmitted()});
 
-  ApiV2010AccountRecording Function({SdkOptional<String?> accountSid, SdkOptional<String?> apiVersion, SdkOptional<String?> callSid, SdkOptional<String?> conferenceSid, SdkOptional<String?> dateCreated, SdkOptional<String?> dateUpdated, SdkOptional<String?> startTime, SdkOptional<String?> duration, SdkOptional<String?> sid, SdkOptional<String?> price, SdkOptional<String?> priceUnit, SdkOptional<RecordingEnumStatus> status, SdkOptional<int?> channels, SdkOptional<RecordingEnumSource> source, SdkOptional<int?> errorCode, SdkOptional<String?> uri, SdkOptional<dynamic> encryptionDetails, SdkOptional<Map<String, dynamic>?> subresourceUris, SdkOptional<String?> mediaUrl}) get copyWith => _copyWith;
+  ApiV2010AccountRecording Function(
+      {SdkOptional<String?> accountSid,
+      SdkOptional<String?> apiVersion,
+      SdkOptional<String?> callSid,
+      SdkOptional<String?> conferenceSid,
+      SdkOptional<String?> dateCreated,
+      SdkOptional<String?> dateUpdated,
+      SdkOptional<String?> startTime,
+      SdkOptional<String?> duration,
+      SdkOptional<String?> sid,
+      SdkOptional<String?> price,
+      SdkOptional<String?> priceUnit,
+      SdkOptional<RecordingEnumStatus> status,
+      SdkOptional<int?> channels,
+      SdkOptional<RecordingEnumSource> source,
+      SdkOptional<int?> errorCode,
+      SdkOptional<String?> uri,
+      SdkOptional<dynamic> encryptionDetails,
+      SdkOptional<Map<String, dynamic>?> subresourceUris,
+      SdkOptional<String?> mediaUrl}) get copyWith => _copyWith;
 
-  ApiV2010AccountRecording _copyWith({Object? accountSid = sdkOmittedValue, Object? apiVersion = sdkOmittedValue, Object? callSid = sdkOmittedValue, Object? conferenceSid = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue, Object? startTime = sdkOmittedValue, Object? duration = sdkOmittedValue, Object? sid = sdkOmittedValue, Object? price = sdkOmittedValue, Object? priceUnit = sdkOmittedValue, Object? status = sdkOmittedValue, Object? channels = sdkOmittedValue, Object? source = sdkOmittedValue, Object? errorCode = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? encryptionDetails = sdkOmittedValue, Object? subresourceUris = sdkOmittedValue, Object? mediaUrl = sdkOmittedValue}) => ApiV2010AccountRecording(
-    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
-    apiVersion: identical(apiVersion, sdkOmittedValue) ? this.apiVersion : apiVersion as SdkOptional<String?>,
-    callSid: identical(callSid, sdkOmittedValue) ? this.callSid : callSid as SdkOptional<String?>,
-    conferenceSid: identical(conferenceSid, sdkOmittedValue) ? this.conferenceSid : conferenceSid as SdkOptional<String?>,
-    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
-    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
-    startTime: identical(startTime, sdkOmittedValue) ? this.startTime : startTime as SdkOptional<String?>,
-    duration: identical(duration, sdkOmittedValue) ? this.duration : duration as SdkOptional<String?>,
-    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
-    price: identical(price, sdkOmittedValue) ? this.price : price as SdkOptional<String?>,
-    priceUnit: identical(priceUnit, sdkOmittedValue) ? this.priceUnit : priceUnit as SdkOptional<String?>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<RecordingEnumStatus>,
-    channels: identical(channels, sdkOmittedValue) ? this.channels : channels as SdkOptional<int?>,
-    source: identical(source, sdkOmittedValue) ? this.source : source as SdkOptional<RecordingEnumSource>,
-    errorCode: identical(errorCode, sdkOmittedValue) ? this.errorCode : errorCode as SdkOptional<int?>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
-    encryptionDetails: identical(encryptionDetails, sdkOmittedValue) ? this.encryptionDetails : encryptionDetails as SdkOptional<dynamic>,
-    subresourceUris: identical(subresourceUris, sdkOmittedValue) ? this.subresourceUris : subresourceUris as SdkOptional<Map<String, dynamic>?>,
-    mediaUrl: identical(mediaUrl, sdkOmittedValue) ? this.mediaUrl : mediaUrl as SdkOptional<String?>,
-  );
+  ApiV2010AccountRecording _copyWith(
+          {Object? accountSid = sdkOmittedValue,
+          Object? apiVersion = sdkOmittedValue,
+          Object? callSid = sdkOmittedValue,
+          Object? conferenceSid = sdkOmittedValue,
+          Object? dateCreated = sdkOmittedValue,
+          Object? dateUpdated = sdkOmittedValue,
+          Object? startTime = sdkOmittedValue,
+          Object? duration = sdkOmittedValue,
+          Object? sid = sdkOmittedValue,
+          Object? price = sdkOmittedValue,
+          Object? priceUnit = sdkOmittedValue,
+          Object? status = sdkOmittedValue,
+          Object? channels = sdkOmittedValue,
+          Object? source = sdkOmittedValue,
+          Object? errorCode = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? encryptionDetails = sdkOmittedValue,
+          Object? subresourceUris = sdkOmittedValue,
+          Object? mediaUrl = sdkOmittedValue}) =>
+      ApiV2010AccountRecording(
+        accountSid: identical(accountSid, sdkOmittedValue)
+            ? this.accountSid
+            : accountSid as SdkOptional<String?>,
+        apiVersion: identical(apiVersion, sdkOmittedValue)
+            ? this.apiVersion
+            : apiVersion as SdkOptional<String?>,
+        callSid: identical(callSid, sdkOmittedValue)
+            ? this.callSid
+            : callSid as SdkOptional<String?>,
+        conferenceSid: identical(conferenceSid, sdkOmittedValue)
+            ? this.conferenceSid
+            : conferenceSid as SdkOptional<String?>,
+        dateCreated: identical(dateCreated, sdkOmittedValue)
+            ? this.dateCreated
+            : dateCreated as SdkOptional<String?>,
+        dateUpdated: identical(dateUpdated, sdkOmittedValue)
+            ? this.dateUpdated
+            : dateUpdated as SdkOptional<String?>,
+        startTime: identical(startTime, sdkOmittedValue)
+            ? this.startTime
+            : startTime as SdkOptional<String?>,
+        duration: identical(duration, sdkOmittedValue)
+            ? this.duration
+            : duration as SdkOptional<String?>,
+        sid: identical(sid, sdkOmittedValue)
+            ? this.sid
+            : sid as SdkOptional<String?>,
+        price: identical(price, sdkOmittedValue)
+            ? this.price
+            : price as SdkOptional<String?>,
+        priceUnit: identical(priceUnit, sdkOmittedValue)
+            ? this.priceUnit
+            : priceUnit as SdkOptional<String?>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<RecordingEnumStatus>,
+        channels: identical(channels, sdkOmittedValue)
+            ? this.channels
+            : channels as SdkOptional<int?>,
+        source: identical(source, sdkOmittedValue)
+            ? this.source
+            : source as SdkOptional<RecordingEnumSource>,
+        errorCode: identical(errorCode, sdkOmittedValue)
+            ? this.errorCode
+            : errorCode as SdkOptional<int?>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String?>,
+        encryptionDetails: identical(encryptionDetails, sdkOmittedValue)
+            ? this.encryptionDetails
+            : encryptionDetails as SdkOptional<dynamic>,
+        subresourceUris: identical(subresourceUris, sdkOmittedValue)
+            ? this.subresourceUris
+            : subresourceUris as SdkOptional<Map<String, dynamic>?>,
+        mediaUrl: identical(mediaUrl, sdkOmittedValue)
+            ? this.mediaUrl
+            : mediaUrl as SdkOptional<String?>,
+      );
 
-  factory ApiV2010AccountRecording.fromJson(Map<String, dynamic> json) => ApiV2010AccountRecording(
-    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
-    apiVersion: json.containsKey('api_version') ? SdkPresent(json['api_version'] as String?) : const SdkOmitted(),
-    callSid: json.containsKey('call_sid') ? SdkPresent(json['call_sid'] as String?) : const SdkOmitted(),
-    conferenceSid: json.containsKey('conference_sid') ? SdkPresent(json['conference_sid'] as String?) : const SdkOmitted(),
-    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
-    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
-    startTime: json.containsKey('start_time') ? SdkPresent(json['start_time'] as String?) : const SdkOmitted(),
-    duration: json.containsKey('duration') ? SdkPresent(json['duration'] as String?) : const SdkOmitted(),
-    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
-    price: json.containsKey('price') ? SdkPresent(json['price'] as String?) : const SdkOmitted(),
-    priceUnit: json.containsKey('price_unit') ? SdkPresent(json['price_unit'] as String?) : const SdkOmitted(),
-    status: json['status'] != null ? SdkPresent((json['status'] != null ? RecordingEnumStatus.fromJson(json['status'] as String) : null)!) : const SdkOmitted(),
-    channels: json.containsKey('channels') ? SdkPresent((json['channels'] as num?)?.toInt()) : const SdkOmitted(),
-    source: json['source'] != null ? SdkPresent((json['source'] != null ? RecordingEnumSource.fromJson(json['source'] as String) : null)!) : const SdkOmitted(),
-    errorCode: json.containsKey('error_code') ? SdkPresent((json['error_code'] as num?)?.toInt()) : const SdkOmitted(),
-    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
-    encryptionDetails: json.containsKey('encryption_details') ? SdkPresent(json['encryption_details']) : const SdkOmitted(),
-    subresourceUris: json.containsKey('subresource_uris') ? SdkPresent(json['subresource_uris'] == null ? null : json['subresource_uris'] as Map<String, dynamic>) : const SdkOmitted(),
-    mediaUrl: json.containsKey('media_url') ? SdkPresent(json['media_url'] as String?) : const SdkOmitted(),
-  );
+  factory ApiV2010AccountRecording.fromJson(Map<String, dynamic> json) =>
+      ApiV2010AccountRecording(
+        accountSid: json.containsKey('account_sid')
+            ? SdkPresent(json['account_sid'] as String?)
+            : const SdkOmitted(),
+        apiVersion: json.containsKey('api_version')
+            ? SdkPresent(json['api_version'] as String?)
+            : const SdkOmitted(),
+        callSid: json.containsKey('call_sid')
+            ? SdkPresent(json['call_sid'] as String?)
+            : const SdkOmitted(),
+        conferenceSid: json.containsKey('conference_sid')
+            ? SdkPresent(json['conference_sid'] as String?)
+            : const SdkOmitted(),
+        dateCreated: json.containsKey('date_created')
+            ? SdkPresent(json['date_created'] as String?)
+            : const SdkOmitted(),
+        dateUpdated: json.containsKey('date_updated')
+            ? SdkPresent(json['date_updated'] as String?)
+            : const SdkOmitted(),
+        startTime: json.containsKey('start_time')
+            ? SdkPresent(json['start_time'] as String?)
+            : const SdkOmitted(),
+        duration: json.containsKey('duration')
+            ? SdkPresent(json['duration'] as String?)
+            : const SdkOmitted(),
+        sid: json.containsKey('sid')
+            ? SdkPresent(json['sid'] as String?)
+            : const SdkOmitted(),
+        price: json.containsKey('price')
+            ? SdkPresent(json['price'] as String?)
+            : const SdkOmitted(),
+        priceUnit: json.containsKey('price_unit')
+            ? SdkPresent(json['price_unit'] as String?)
+            : const SdkOmitted(),
+        status: json['status'] != null
+            ? SdkPresent((json['status'] != null
+                ? RecordingEnumStatus.fromJson(json['status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        channels: json.containsKey('channels')
+            ? SdkPresent((json['channels'] as num?)?.toInt())
+            : const SdkOmitted(),
+        source: json['source'] != null
+            ? SdkPresent((json['source'] != null
+                ? RecordingEnumSource.fromJson(json['source'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        errorCode: json.containsKey('error_code')
+            ? SdkPresent((json['error_code'] as num?)?.toInt())
+            : const SdkOmitted(),
+        uri: json.containsKey('uri')
+            ? SdkPresent(json['uri'] as String?)
+            : const SdkOmitted(),
+        encryptionDetails: json.containsKey('encryption_details')
+            ? SdkPresent(json['encryption_details'])
+            : const SdkOmitted(),
+        subresourceUris: json.containsKey('subresource_uris')
+            ? SdkPresent(json['subresource_uris'] == null
+                ? null
+                : json['subresource_uris'] as Map<String, dynamic>)
+            : const SdkOmitted(),
+        mediaUrl: json.containsKey('media_url')
+            ? SdkPresent(json['media_url'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (accountSid) {
-      SdkPresent<String?>(value: final value) => {'account_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apiVersion) {
-      SdkPresent<String?>(value: final value) => {'api_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (callSid) {
-      SdkPresent<String?>(value: final value) => {'call_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (conferenceSid) {
-      SdkPresent<String?>(value: final value) => {'conference_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateCreated) {
-      SdkPresent<String?>(value: final value) => {'date_created': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateUpdated) {
-      SdkPresent<String?>(value: final value) => {'date_updated': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (startTime) {
-      SdkPresent<String?>(value: final value) => {'start_time': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (duration) {
-      SdkPresent<String?>(value: final value) => {'duration': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sid) {
-      SdkPresent<String?>(value: final value) => {'sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (price) {
-      SdkPresent<String?>(value: final value) => {'price': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (priceUnit) {
-      SdkPresent<String?>(value: final value) => {'price_unit': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (status) {
-      SdkPresent<RecordingEnumStatus>(value: final value) => {'status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (channels) {
-      SdkPresent<int?>(value: final value) => {'channels': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (source) {
-      SdkPresent<RecordingEnumSource>(value: final value) => {'source': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (errorCode) {
-      SdkPresent<int?>(value: final value) => {'error_code': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String?>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (encryptionDetails) {
-      SdkPresent<dynamic>(value: final value) => {'encryption_details': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (subresourceUris) {
-      SdkPresent<Map<String, dynamic>?>(value: final value) => {'subresource_uris': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (mediaUrl) {
-      SdkPresent<String?>(value: final value) => {'media_url': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (accountSid) {
+          SdkPresent<String?>(value: final value) => {
+              'account_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apiVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'api_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (callSid) {
+          SdkPresent<String?>(value: final value) => {
+              'call_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (conferenceSid) {
+          SdkPresent<String?>(value: final value) => {
+              'conference_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateCreated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_created': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateUpdated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_updated': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (startTime) {
+          SdkPresent<String?>(value: final value) => {
+              'start_time': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (duration) {
+          SdkPresent<String?>(value: final value) => {
+              'duration': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sid) {
+          SdkPresent<String?>(value: final value) => {
+              'sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (price) {
+          SdkPresent<String?>(value: final value) => {
+              'price': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (priceUnit) {
+          SdkPresent<String?>(value: final value) => {
+              'price_unit': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<RecordingEnumStatus>(value: final value) => {
+              'status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (channels) {
+          SdkPresent<int?>(value: final value) => {
+              'channels': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (source) {
+          SdkPresent<RecordingEnumSource>(value: final value) => {
+              'source': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (errorCode) {
+          SdkPresent<int?>(value: final value) => {
+              'error_code': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String?>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (encryptionDetails) {
+          SdkPresent<dynamic>(value: final value) => {
+              'encryption_details': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (subresourceUris) {
+          SdkPresent<Map<String, dynamic>?>(value: final value) => {
+              'subresource_uris': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (mediaUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'media_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
 final class RecordingEnumSource {
-
   final String value;
 
   const RecordingEnumSource._(this.value);
 
-  factory RecordingEnumSource.fromJson(String value) => RecordingEnumSource._(value);
+  factory RecordingEnumSource.fromJson(String value) =>
+      RecordingEnumSource._(value);
 
   static const dialverb = RecordingEnumSource._('DialVerb');
   static const conference = RecordingEnumSource._('Conference');
   static const outboundapi = RecordingEnumSource._('OutboundAPI');
   static const trunking = RecordingEnumSource._('Trunking');
   static const recordverb = RecordingEnumSource._('RecordVerb');
-  static const startcallrecordingapi = RecordingEnumSource._('StartCallRecordingAPI');
-  static const startconferencerecordingapi = RecordingEnumSource._('StartConferenceRecordingAPI');
+  static const startcallrecordingapi =
+      RecordingEnumSource._('StartCallRecordingAPI');
+  static const startconferencerecordingapi =
+      RecordingEnumSource._('StartConferenceRecordingAPI');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RecordingEnumSource && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RecordingEnumSource && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
 final class RecordingEnumStatus {
-
   final String value;
 
   const RecordingEnumStatus._(this.value);
 
-  factory RecordingEnumStatus.fromJson(String value) => RecordingEnumStatus._(value);
+  factory RecordingEnumStatus.fromJson(String value) =>
+      RecordingEnumStatus._(value);
 
   static const inProgress = RecordingEnumStatus._('in-progress');
   static const paused = RecordingEnumStatus._('paused');
@@ -221,10 +424,13 @@ final class RecordingEnumStatus {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is RecordingEnumStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is RecordingEnumStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

@@ -6,46 +6,54 @@ part of 'api20100401_dependent_phone_number.dart';
 // api20100401_dependent_phone_number domain models (part 2)
 /// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 final class DependentPhoneNumberEnumAddressRequirement {
-
   final String value;
 
   const DependentPhoneNumberEnumAddressRequirement._(this.value);
 
-  factory DependentPhoneNumberEnumAddressRequirement.fromJson(String value) => DependentPhoneNumberEnumAddressRequirement._(value);
+  factory DependentPhoneNumberEnumAddressRequirement.fromJson(String value) =>
+      DependentPhoneNumberEnumAddressRequirement._(value);
 
   static const none = DependentPhoneNumberEnumAddressRequirement._('none');
   static const any = DependentPhoneNumberEnumAddressRequirement._('any');
   static const local = DependentPhoneNumberEnumAddressRequirement._('local');
-  static const foreign = DependentPhoneNumberEnumAddressRequirement._('foreign');
+  static const foreign =
+      DependentPhoneNumberEnumAddressRequirement._('foreign');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependentPhoneNumberEnumAddressRequirement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependentPhoneNumberEnumAddressRequirement &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// Whether the phone number is enabled for emergency calling.
 final class DependentPhoneNumberEnumEmergencyStatus {
-
   final String value;
 
   const DependentPhoneNumberEnumEmergencyStatus._(this.value);
 
-  factory DependentPhoneNumberEnumEmergencyStatus.fromJson(String value) => DependentPhoneNumberEnumEmergencyStatus._(value);
+  factory DependentPhoneNumberEnumEmergencyStatus.fromJson(String value) =>
+      DependentPhoneNumberEnumEmergencyStatus._(value);
 
   static const active = DependentPhoneNumberEnumEmergencyStatus._('Active');
   static const inactive = DependentPhoneNumberEnumEmergencyStatus._('Inactive');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is DependentPhoneNumberEnumEmergencyStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is DependentPhoneNumberEnumEmergencyStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

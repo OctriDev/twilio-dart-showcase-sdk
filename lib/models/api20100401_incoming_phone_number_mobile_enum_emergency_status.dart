@@ -6,22 +6,28 @@ part of 'api20100401_incoming_phone_number_mobile.dart';
 // api20100401_incoming_phone_number_mobile domain models
 /// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
 final class IncomingPhoneNumberMobileEnumEmergencyStatus {
-
   final String value;
 
   const IncomingPhoneNumberMobileEnumEmergencyStatus._(this.value);
 
-  factory IncomingPhoneNumberMobileEnumEmergencyStatus.fromJson(String value) => IncomingPhoneNumberMobileEnumEmergencyStatus._(value);
+  factory IncomingPhoneNumberMobileEnumEmergencyStatus.fromJson(String value) =>
+      IncomingPhoneNumberMobileEnumEmergencyStatus._(value);
 
-  static const active = IncomingPhoneNumberMobileEnumEmergencyStatus._('Active');
-  static const inactive = IncomingPhoneNumberMobileEnumEmergencyStatus._('Inactive');
+  static const active =
+      IncomingPhoneNumberMobileEnumEmergencyStatus._('Active');
+  static const inactive =
+      IncomingPhoneNumberMobileEnumEmergencyStatus._('Inactive');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IncomingPhoneNumberMobileEnumEmergencyStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IncomingPhoneNumberMobileEnumEmergencyStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
