@@ -4,4 +4,4 @@
 // api20100401_auth_registrations_credential_list_mapping domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_auth_registrations_credential_list_mapping_part1.dart';
+part 'api20100401_auth_registrations_credential_list_mapping_models.dart';

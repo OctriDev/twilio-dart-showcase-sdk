@@ -5,5 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'api20100401_notification_part1.dart';
-part 'api20100401_notification_part2.dart';
+part 'api20100401_notification_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_today domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_today_part1.dart';
+part 'api20100401_today_models.dart';

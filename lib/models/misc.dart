@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // misc domain model library.
-part 'misc_part1.dart';
+part 'misc_models.dart';

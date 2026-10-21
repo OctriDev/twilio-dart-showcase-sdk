@@ -4,4 +4,4 @@
 // api20100401_balance domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_balance_part1.dart';
+part 'api20100401_balance_models.dart';

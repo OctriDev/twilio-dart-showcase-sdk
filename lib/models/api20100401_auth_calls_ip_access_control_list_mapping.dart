@@ -4,4 +4,4 @@
 // api20100401_auth_calls_ip_access_control_list_mapping domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_auth_calls_ip_access_control_list_mapping_part1.dart';
+part 'api20100401_auth_calls_ip_access_control_list_mapping_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_feedback domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_feedback_part1.dart';
+part 'api20100401_feedback_models.dart';

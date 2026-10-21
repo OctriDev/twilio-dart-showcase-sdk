@@ -4,4 +4,4 @@
 // api20100401_participant domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_participant_part1.dart';
+part 'api20100401_participant_models.dart';

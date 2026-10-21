@@ -4,4 +4,4 @@
 // api20100401_last_month domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_last_month_part1.dart';
+part 'api20100401_last_month_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_credential domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_credential_part1.dart';
+part 'api20100401_credential_models.dart';

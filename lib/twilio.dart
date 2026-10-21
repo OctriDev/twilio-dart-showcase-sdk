@@ -2098,11 +2098,11 @@ class CallsUserDefinedMessageSubscriptionsNamespace {
       required String callSid,
       required String callback,
       SdkOptional<String> idempotencyKey = const SdkOmitted(),
-      SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod>
+      SdkOptional<CreateCallUserDefinedMessageSubscriptionRequestBodyMethod>
           method = const SdkOmitted(),
       RequestOptions? requestOptions}) async {
     return user_defined_message_subscriptions_methods
-        .createCallsUserDefinedMessageSubscriptions(_config,
+        .createCallUserDefinedMessageSubscription(_config,
             accountSid: accountSid,
             callSid: callSid,
             callback: callback,

@@ -5,6 +5,9 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'api20100401_incoming_phone_number_local_part1.dart';
-part 'api20100401_incoming_phone_number_local_part2.dart';
-part 'api20100401_incoming_phone_number_local_part3.dart';
+part 'api20100401_incoming_phone_number_local_api_v2010_account_incoming_phone_number_incoming_phone_n.dart';
+part 'api20100401_incoming_phone_number_local_api_v2010_account_incoming_phone_number_incoming_phone_n2.dart';
+part 'api20100401_incoming_phone_number_local_enum_address_requirement.dart';
+part 'api20100401_incoming_phone_number_local_enum_emergency_address_status.dart';
+part 'api20100401_incoming_phone_number_local_enum_emergency_status.dart';
+part 'api20100401_incoming_phone_number_local_enum_voice_receive_mode.dart';

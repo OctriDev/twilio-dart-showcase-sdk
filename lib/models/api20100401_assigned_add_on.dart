@@ -4,4 +4,4 @@
 // api20100401_assigned_add_on domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_assigned_add_on_part1.dart';
+part 'api20100401_assigned_add_on_models.dart';

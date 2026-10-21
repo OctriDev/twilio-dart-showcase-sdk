@@ -4,4 +4,4 @@
 // api20100401_available_phone_number_country domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_available_phone_number_country_part1.dart';
+part 'api20100401_available_phone_number_country_models.dart';

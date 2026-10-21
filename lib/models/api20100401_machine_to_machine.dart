@@ -4,4 +4,4 @@
 // api20100401_machine_to_machine domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_machine_to_machine_part1.dart';
+part 'api20100401_machine_to_machine_models.dart';

@@ -4,4 +4,4 @@
 // api_v2010_account domain model library.
 import '../sdk_utils.dart';
 
-part 'api_v2010_account_part1.dart';
+part 'api_v2010_account_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_yearly domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_yearly_part1.dart';
+part 'api20100401_yearly_models.dart';

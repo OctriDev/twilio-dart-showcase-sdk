@@ -4,4 +4,4 @@
 // api20100401_shared_cost domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_shared_cost_part1.dart';
+part 'api20100401_shared_cost_models.dart';

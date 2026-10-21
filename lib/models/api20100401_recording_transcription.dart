@@ -4,4 +4,4 @@
 // api20100401_recording_transcription domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_recording_transcription_part1.dart';
+part 'api20100401_recording_transcription_models.dart';
