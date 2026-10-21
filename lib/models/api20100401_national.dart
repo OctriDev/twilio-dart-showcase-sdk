@@ -4,4 +4,4 @@
 // api20100401_national domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_national_part1.dart';
+part 'api20100401_national_models.dart';

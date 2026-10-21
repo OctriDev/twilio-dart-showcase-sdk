@@ -4,4 +4,4 @@
 // api20100401_queue domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_queue_part1.dart';
+part 'api20100401_queue_models.dart';

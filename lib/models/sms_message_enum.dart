@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // sms_message_enum domain model library.
-part 'sms_message_enum_part1.dart';
+part 'sms_message_enum_models.dart';

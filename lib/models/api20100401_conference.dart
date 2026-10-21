@@ -4,4 +4,4 @@
 // api20100401_conference domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_conference_part1.dart';
+part 'api20100401_conference_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_user_defined_message_subscription domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_user_defined_message_subscription_part1.dart';
+part 'api20100401_user_defined_message_subscription_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_token domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_token_part1.dart';
+part 'api20100401_token_models.dart';

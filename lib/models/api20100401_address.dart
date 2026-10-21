@@ -4,4 +4,4 @@
 // api20100401_address domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_address_part1.dart';
+part 'api20100401_address_models.dart';

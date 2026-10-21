@@ -2,4 +2,4 @@
 // This file is machine-generated from your OpenAPI spec.
 
 // sms domain model library.
-part 'sms_part1.dart';
+part 'sms_models.dart';

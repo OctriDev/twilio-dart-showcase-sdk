@@ -4,4 +4,4 @@
 // api20100401_stream domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_stream_part1.dart';
+part 'api20100401_stream_models.dart';

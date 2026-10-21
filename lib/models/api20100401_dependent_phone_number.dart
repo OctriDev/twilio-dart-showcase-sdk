@@ -5,5 +5,4 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'api20100401_dependent_phone_number_part1.dart';
-part 'api20100401_dependent_phone_number_part2.dart';
+part 'api20100401_dependent_phone_number_models.dart';

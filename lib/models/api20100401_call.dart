@@ -4,5 +4,4 @@
 // api20100401_call domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_call_part1.dart';
-part 'api20100401_call_part2.dart';
+part 'api20100401_call_models.dart';

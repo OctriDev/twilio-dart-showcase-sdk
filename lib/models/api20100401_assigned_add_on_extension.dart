@@ -4,4 +4,4 @@
 // api20100401_assigned_add_on_extension domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_assigned_add_on_extension_part1.dart';
+part 'api20100401_assigned_add_on_extension_models.dart';

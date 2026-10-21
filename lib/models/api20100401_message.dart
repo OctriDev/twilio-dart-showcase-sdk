@@ -4,5 +4,6 @@
 // api20100401_message domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_message_part1.dart';
-part 'api20100401_message_part2.dart';
+part 'api20100401_message_shared.dart';
+part 'api20100401_message_create_messages.dart';
+part 'api20100401_message_update_messages.dart';

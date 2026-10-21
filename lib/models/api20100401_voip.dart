@@ -4,4 +4,4 @@
 // api20100401_voip domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_voip_part1.dart';
+part 'api20100401_voip_models.dart';

@@ -4,4 +4,4 @@
 // api20100401_record domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_record_part1.dart';
+part 'api20100401_record_models.dart';

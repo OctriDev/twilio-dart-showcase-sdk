@@ -4,5 +4,4 @@
 // api20100401_conference_recording domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_conference_recording_part1.dart';
-part 'api20100401_conference_recording_part2.dart';
+part 'api20100401_conference_recording_models.dart';

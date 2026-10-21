@@ -4,4 +4,4 @@
 // api20100401_new_key domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_new_key_part1.dart';
+part 'api20100401_new_key_models.dart';

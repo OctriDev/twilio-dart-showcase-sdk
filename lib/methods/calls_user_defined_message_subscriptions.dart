@@ -24,12 +24,12 @@ import '../types.dart';
 /// [method] The HTTP method Twilio will use when requesting the above `Url`.
 ///   Either `GET` or `POST`. Default is `POST`.
 Future<ApiV2010AccountCallUserDefinedMessageSubscription>
-    createCallsUserDefinedMessageSubscriptions(ClientConfig config,
+    createCallUserDefinedMessageSubscription(ClientConfig config,
         {required String accountSid,
         required String callSid,
         required String callback,
         SdkOptional<String> idempotencyKey = const SdkOmitted(),
-        SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod> method = const SdkOmitted(),
+        SdkOptional<CreateCallUserDefinedMessageSubscriptionRequestBodyMethod> method = const SdkOmitted(),
         RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -47,7 +47,7 @@ Future<ApiV2010AccountCallUserDefinedMessageSubscription>
           },
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
-          operationId: 'createCallsUserDefinedMessageSubscriptions',
+          operationId: 'createCallUserDefinedMessageSubscription',
           fromJsonRaw: (value) => ApiV2010AccountCallUserDefinedMessageSubscription.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;

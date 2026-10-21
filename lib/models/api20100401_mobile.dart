@@ -4,4 +4,4 @@
 // api20100401_mobile domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_mobile_part1.dart';
+part 'api20100401_mobile_models.dart';

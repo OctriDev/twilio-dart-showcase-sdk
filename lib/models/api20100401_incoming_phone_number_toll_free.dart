@@ -5,6 +5,9 @@
 import '../sdk_utils.dart';
 import 'inline.dart';
 
-part 'api20100401_incoming_phone_number_toll_free_part1.dart';
-part 'api20100401_incoming_phone_number_toll_free_part2.dart';
-part 'api20100401_incoming_phone_number_toll_free_part3.dart';
+part 'api20100401_incoming_phone_number_toll_free_api_v2010_account_incoming_phone_number_incoming_pho.dart';
+part 'api20100401_incoming_phone_number_toll_free_api_v2010_account_incoming_phone_number_incoming_pho2.dart';
+part 'api20100401_incoming_phone_number_toll_free_enum_address_requirement.dart';
+part 'api20100401_incoming_phone_number_toll_free_enum_emergency_address_status.dart';
+part 'api20100401_incoming_phone_number_toll_free_enum_emergency_status.dart';
+part 'api20100401_incoming_phone_number_toll_free_enum_voice_receive_mode.dart';

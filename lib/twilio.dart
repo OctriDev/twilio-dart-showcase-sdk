@@ -1243,9 +1243,9 @@ class CallsUserDefinedMessageSubscriptionsNamespace {
           required String callSid,
           required String callback,
           SdkOptional<String> idempotencyKey = const SdkOmitted(),
-          SdkOptional<CreateCallsUserDefinedMessageSubscriptionsRequestBodyMethod> method = const SdkOmitted(),
+          SdkOptional<CreateCallUserDefinedMessageSubscriptionRequestBodyMethod> method = const SdkOmitted(),
           RequestOptions? requestOptions}) async {
-    return user_defined_message_subscriptions_methods.createCallsUserDefinedMessageSubscriptions(_config, accountSid: accountSid, callSid: callSid, callback: callback, idempotencyKey: idempotencyKey, method: method, requestOptions: requestOptions);
+    return user_defined_message_subscriptions_methods.createCallUserDefinedMessageSubscription(_config, accountSid: accountSid, callSid: callSid, callback: callback, idempotencyKey: idempotencyKey, method: method, requestOptions: requestOptions);
   }
 
   /// Delete a specific User Defined Message Subscription.

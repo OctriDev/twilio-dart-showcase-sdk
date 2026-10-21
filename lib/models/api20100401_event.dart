@@ -4,4 +4,4 @@
 // api20100401_event domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_event_part1.dart';
+part 'api20100401_event_models.dart';

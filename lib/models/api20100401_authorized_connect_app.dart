@@ -4,4 +4,4 @@
 // api20100401_authorized_connect_app domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_authorized_connect_app_part1.dart';
+part 'api20100401_authorized_connect_app_models.dart';

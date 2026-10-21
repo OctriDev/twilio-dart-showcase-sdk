@@ -4,4 +4,4 @@
 // api20100401_outgoing_caller_id domain model library.
 import '../sdk_utils.dart';
 
-part 'api20100401_outgoing_caller_id_part1.dart';
+part 'api20100401_outgoing_caller_id_models.dart';
