@@ -38,7 +38,6 @@ Future<void> deleteMessagesMedia(ClientConfig config,
       .data;
 }
 
-
 /// Retrieves a specific media resource associated with a message. Supply the account SID, message SID, and media SID to identify the resource.
 ///
 /// Fetch a single Media resource associated with a specific Message resource
@@ -67,11 +66,11 @@ Future<ApiV2010AccountMessageMedia> fetchMessagesMedia(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchMessagesMedia',
-          fromJsonRaw: (value) => ApiV2010AccountMessageMedia.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountMessageMedia.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists media resources associated with a specific message. Filter the results by creation date and use the page parameters to navigate the list.
 ///
@@ -139,16 +138,25 @@ Future<ListMessagesMediaResponse> listMessagesMedia(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Messages/${Uri.encodeComponent(messageSid.toString())}/Media.json',
           config: config,
           query: {
-            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated), style: 'form', explode: true),
-            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_), style: 'form', explode: true),
-            'DateCreated>': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_2), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated),
+                style: 'form', explode: true),
+            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_),
+                style: 'form', explode: true),
+            'DateCreated>': SdkQueryValue(
+                SdkUtils.unwrapOptional(dateCreated_2),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listMessagesMedia',
-          fromJsonRaw: (value) => ListMessagesMediaResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListMessagesMediaResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

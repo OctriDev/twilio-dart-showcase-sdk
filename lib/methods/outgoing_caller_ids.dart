@@ -16,11 +16,11 @@ import '../types.dart';
 ///   OutgoingCallerId resource to fetch.
 /// [sid] The Twilio-provided string that uniquely identifies the
 ///   OutgoingCallerId resource to fetch.
-Future<ApiV2010AccountOutgoingCallerId>
-    fetchOutgoingCallerIds(ClientConfig config,
-        {required String accountSid,
-        required String sid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountOutgoingCallerId> fetchOutgoingCallerIds(
+    ClientConfig config,
+    {required String accountSid,
+    required String sid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -31,11 +31,11 @@ Future<ApiV2010AccountOutgoingCallerId>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchOutgoingCallerIds',
-          fromJsonRaw: (value) => ApiV2010AccountOutgoingCallerId.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountOutgoingCallerId.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the friendly name of an outgoing caller ID resource. Use `AccountSid` and `Sid` to identify the account and caller ID, and supply `FriendlyName` to change its description. The friendly name can contain up to 64 characters.
 ///
@@ -48,12 +48,12 @@ Future<ApiV2010AccountOutgoingCallerId>
 ///   OutgoingCallerId resource to update.
 /// [friendlyName] A descriptive string that you create to describe the
 ///   resource. It can be up to 64 characters long.
-Future<ApiV2010AccountOutgoingCallerId>
-    updateOutgoingCallerIds(ClientConfig config,
-        {required String accountSid,
-        required String sid,
-        SdkOptional<String> friendlyName = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountOutgoingCallerId> updateOutgoingCallerIds(
+    ClientConfig config,
+    {required String accountSid,
+    required String sid,
+    SdkOptional<String> friendlyName = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('Sid', sid, min: 34, max: 34);
@@ -66,11 +66,11 @@ Future<ApiV2010AccountOutgoingCallerId>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateOutgoingCallerIds',
-          fromJsonRaw: (value) => ApiV2010AccountOutgoingCallerId.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountOutgoingCallerId.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes an outgoing caller ID resource from an account. Use `AccountSid` and `Sid` to identify the account and the caller ID to remove. The caller ID SID must use the `PN` format.
 ///
@@ -98,7 +98,6 @@ Future<void> deleteOutgoingCallerIds(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists outgoing caller IDs belonging to an account. Filter the results by `PhoneNumber` or `FriendlyName`, and use the page parameters to retrieve results across multiple pages. `PageSize` defaults to 50 and can be set up to 1000.
 ///
@@ -135,15 +134,21 @@ Future<ListOutgoingCallerIdsResponse> listOutgoingCallerIds(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/OutgoingCallerIds.json',
           config: config,
           query: {
-            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber), style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PhoneNumber': SdkQueryValue(SdkUtils.unwrapOptional(phoneNumber),
+                style: 'form', explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listOutgoingCallerIds',
-          fromJsonRaw: (value) => ListOutgoingCallerIdsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListOutgoingCallerIdsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

@@ -6,22 +6,28 @@ part of 'api20100401_incoming_phone_number_toll_free.dart';
 // api20100401_incoming_phone_number_toll_free domain models
 /// Typed representation of the `IncomingPhoneNumberTollFreeEnumVoiceReceiveMode` API schema.
 final class IncomingPhoneNumberTollFreeEnumVoiceReceiveMode {
-
   final String value;
 
   const IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(this.value);
 
-  factory IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(String value) => IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(value);
+  factory IncomingPhoneNumberTollFreeEnumVoiceReceiveMode.fromJson(
+          String value) =>
+      IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._(value);
 
-  static const voice = IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._('voice');
+  static const voice =
+      IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._('voice');
   static const fax = IncomingPhoneNumberTollFreeEnumVoiceReceiveMode._('fax');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IncomingPhoneNumberTollFreeEnumVoiceReceiveMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IncomingPhoneNumberTollFreeEnumVoiceReceiveMode &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

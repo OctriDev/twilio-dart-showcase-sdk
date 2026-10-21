@@ -8,25 +8,38 @@ part of 'api20100401_data.dart';
 class ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The URL to redirect to to get the data returned by the AddOn that was previously stored.
   final SdkOptional<String?> redirectTo;
 
-  const ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData({this.redirectTo = const SdkOmitted()});
+  const ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
+      {this.redirectTo = const SdkOmitted()});
 
-  ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData Function({SdkOptional<String?> redirectTo}) get copyWith => _copyWith;
+  ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData
+      Function({SdkOptional<String?> redirectTo}) get copyWith => _copyWith;
 
-  ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData _copyWith({Object? redirectTo = sdkOmittedValue}) => ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
-    redirectTo: identical(redirectTo, sdkOmittedValue) ? this.redirectTo : redirectTo as SdkOptional<String?>,
-  );
+  ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData
+      _copyWith({Object? redirectTo = sdkOmittedValue}) =>
+          ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
+            redirectTo: identical(redirectTo, sdkOmittedValue)
+                ? this.redirectTo
+                : redirectTo as SdkOptional<String?>,
+          );
 
-  factory ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData.fromJson(Map<String, dynamic> json) => ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
-    redirectTo: json.containsKey('redirect_to') ? SdkPresent(json['redirect_to'] as String?) : const SdkOmitted(),
-  );
+  factory ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData.fromJson(
+          Map<String, dynamic> json) =>
+      ApiV2010AccountRecordingRecordingAddOnResultRecordingAddOnResultPayloadRecordingAddOnResultPayloadData(
+        redirectTo: json.containsKey('redirect_to')
+            ? SdkPresent(json['redirect_to'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (redirectTo) {
-      SdkPresent<String?>(value: final value) => {'redirect_to': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (redirectTo) {
+          SdkPresent<String?>(value: final value) => {
+              'redirect_to': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

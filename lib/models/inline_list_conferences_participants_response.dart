@@ -17,270 +17,590 @@ class ListConferencesParticipantsResponse {
   final SdkOptional<String> uri;
   final SdkOptional<List<ApiV2010AccountConferenceParticipant>> participants;
 
-  const ListConferencesParticipantsResponse({this.end = const SdkOmitted(), this.firstPageUri = const SdkOmitted(), this.nextPageUri = const SdkOmitted(), this.page = const SdkOmitted(), this.pageSize = const SdkOmitted(), this.previousPageUri = const SdkOmitted(), this.start = const SdkOmitted(), this.uri = const SdkOmitted(), this.participants = const SdkOmitted()});
+  const ListConferencesParticipantsResponse(
+      {this.end = const SdkOmitted(),
+      this.firstPageUri = const SdkOmitted(),
+      this.nextPageUri = const SdkOmitted(),
+      this.page = const SdkOmitted(),
+      this.pageSize = const SdkOmitted(),
+      this.previousPageUri = const SdkOmitted(),
+      this.start = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.participants = const SdkOmitted()});
 
-  ListConferencesParticipantsResponse Function({SdkOptional<int> end, SdkOptional<String> firstPageUri, SdkOptional<String?> nextPageUri, SdkOptional<int> page, SdkOptional<int> pageSize, SdkOptional<String?> previousPageUri, SdkOptional<int> start, SdkOptional<String> uri, SdkOptional<List<ApiV2010AccountConferenceParticipant>> participants}) get copyWith => _copyWith;
+  ListConferencesParticipantsResponse Function(
+          {SdkOptional<int> end,
+          SdkOptional<String> firstPageUri,
+          SdkOptional<String?> nextPageUri,
+          SdkOptional<int> page,
+          SdkOptional<int> pageSize,
+          SdkOptional<String?> previousPageUri,
+          SdkOptional<int> start,
+          SdkOptional<String> uri,
+          SdkOptional<List<ApiV2010AccountConferenceParticipant>> participants})
+      get copyWith => _copyWith;
 
-  ListConferencesParticipantsResponse _copyWith({Object? end = sdkOmittedValue, Object? firstPageUri = sdkOmittedValue, Object? nextPageUri = sdkOmittedValue, Object? page = sdkOmittedValue, Object? pageSize = sdkOmittedValue, Object? previousPageUri = sdkOmittedValue, Object? start = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? participants = sdkOmittedValue}) => ListConferencesParticipantsResponse(
-    end: identical(end, sdkOmittedValue) ? this.end : end as SdkOptional<int>,
-    firstPageUri: identical(firstPageUri, sdkOmittedValue) ? this.firstPageUri : firstPageUri as SdkOptional<String>,
-    nextPageUri: identical(nextPageUri, sdkOmittedValue) ? this.nextPageUri : nextPageUri as SdkOptional<String?>,
-    page: identical(page, sdkOmittedValue) ? this.page : page as SdkOptional<int>,
-    pageSize: identical(pageSize, sdkOmittedValue) ? this.pageSize : pageSize as SdkOptional<int>,
-    previousPageUri: identical(previousPageUri, sdkOmittedValue) ? this.previousPageUri : previousPageUri as SdkOptional<String?>,
-    start: identical(start, sdkOmittedValue) ? this.start : start as SdkOptional<int>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String>,
-    participants: identical(participants, sdkOmittedValue) ? this.participants : participants as SdkOptional<List<ApiV2010AccountConferenceParticipant>>,
-  );
+  ListConferencesParticipantsResponse _copyWith(
+          {Object? end = sdkOmittedValue,
+          Object? firstPageUri = sdkOmittedValue,
+          Object? nextPageUri = sdkOmittedValue,
+          Object? page = sdkOmittedValue,
+          Object? pageSize = sdkOmittedValue,
+          Object? previousPageUri = sdkOmittedValue,
+          Object? start = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? participants = sdkOmittedValue}) =>
+      ListConferencesParticipantsResponse(
+        end: identical(end, sdkOmittedValue)
+            ? this.end
+            : end as SdkOptional<int>,
+        firstPageUri: identical(firstPageUri, sdkOmittedValue)
+            ? this.firstPageUri
+            : firstPageUri as SdkOptional<String>,
+        nextPageUri: identical(nextPageUri, sdkOmittedValue)
+            ? this.nextPageUri
+            : nextPageUri as SdkOptional<String?>,
+        page: identical(page, sdkOmittedValue)
+            ? this.page
+            : page as SdkOptional<int>,
+        pageSize: identical(pageSize, sdkOmittedValue)
+            ? this.pageSize
+            : pageSize as SdkOptional<int>,
+        previousPageUri: identical(previousPageUri, sdkOmittedValue)
+            ? this.previousPageUri
+            : previousPageUri as SdkOptional<String?>,
+        start: identical(start, sdkOmittedValue)
+            ? this.start
+            : start as SdkOptional<int>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String>,
+        participants: identical(participants, sdkOmittedValue)
+            ? this.participants
+            : participants
+                as SdkOptional<List<ApiV2010AccountConferenceParticipant>>,
+      );
 
-  factory ListConferencesParticipantsResponse.fromJson(Map<String, dynamic> json) => ListConferencesParticipantsResponse(
-    end: json['end'] != null ? SdkPresent(((json['end'] as num?)?.toInt())!) : const SdkOmitted(),
-    firstPageUri: json['first_page_uri'] != null ? SdkPresent((json['first_page_uri'] as String?)!) : const SdkOmitted(),
-    nextPageUri: json.containsKey('next_page_uri') ? SdkPresent(json['next_page_uri'] as String?) : const SdkOmitted(),
-    page: json['page'] != null ? SdkPresent(((json['page'] as num?)?.toInt())!) : const SdkOmitted(),
-    pageSize: json['page_size'] != null ? SdkPresent(((json['page_size'] as num?)?.toInt())!) : const SdkOmitted(),
-    previousPageUri: json.containsKey('previous_page_uri') ? SdkPresent(json['previous_page_uri'] as String?) : const SdkOmitted(),
-    start: json['start'] != null ? SdkPresent(((json['start'] as num?)?.toInt())!) : const SdkOmitted(),
-    uri: json['uri'] != null ? SdkPresent((json['uri'] as String?)!) : const SdkOmitted(),
-    participants: json['participants'] != null ? SdkPresent(((json['participants'] as List?)?.map((e) => ApiV2010AccountConferenceParticipant.fromJson(e as Map<String, dynamic>)).toList())!) : const SdkOmitted(),
-  );
+  factory ListConferencesParticipantsResponse.fromJson(
+          Map<String, dynamic> json) =>
+      ListConferencesParticipantsResponse(
+        end: json['end'] != null
+            ? SdkPresent(((json['end'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        firstPageUri: json['first_page_uri'] != null
+            ? SdkPresent((json['first_page_uri'] as String?)!)
+            : const SdkOmitted(),
+        nextPageUri: json.containsKey('next_page_uri')
+            ? SdkPresent(json['next_page_uri'] as String?)
+            : const SdkOmitted(),
+        page: json['page'] != null
+            ? SdkPresent(((json['page'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        pageSize: json['page_size'] != null
+            ? SdkPresent(((json['page_size'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        previousPageUri: json.containsKey('previous_page_uri')
+            ? SdkPresent(json['previous_page_uri'] as String?)
+            : const SdkOmitted(),
+        start: json['start'] != null
+            ? SdkPresent(((json['start'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        uri: json['uri'] != null
+            ? SdkPresent((json['uri'] as String?)!)
+            : const SdkOmitted(),
+        participants: json['participants'] != null
+            ? SdkPresent(((json['participants'] as List?)
+                ?.map((e) => ApiV2010AccountConferenceParticipant.fromJson(
+                    e as Map<String, dynamic>))
+                .toList())!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (end) {
-      SdkPresent<int>(value: final value) => {'end': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (firstPageUri) {
-      SdkPresent<String>(value: final value) => {'first_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (nextPageUri) {
-      SdkPresent<String?>(value: final value) => {'next_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (page) {
-      SdkPresent<int>(value: final value) => {'page': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (pageSize) {
-      SdkPresent<int>(value: final value) => {'page_size': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (previousPageUri) {
-      SdkPresent<String?>(value: final value) => {'previous_page_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (start) {
-      SdkPresent<int>(value: final value) => {'start': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (participants) {
-      SdkPresent<List<ApiV2010AccountConferenceParticipant>>(value: final value) => {'participants': value.map((item) => item.toJson()).toList(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (end) {
+          SdkPresent<int>(value: final value) => {
+              'end': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (firstPageUri) {
+          SdkPresent<String>(value: final value) => {
+              'first_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (nextPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'next_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (page) {
+          SdkPresent<int>(value: final value) => {
+              'page': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (pageSize) {
+          SdkPresent<int>(value: final value) => {
+              'page_size': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (previousPageUri) {
+          SdkPresent<String?>(value: final value) => {
+              'previous_page_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (start) {
+          SdkPresent<int>(value: final value) => {
+              'start': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (participants) {
+          SdkPresent<List<ApiV2010AccountConferenceParticipant>>(
+            value: final value
+          ) =>
+            {
+              'participants': value.map((item) => item.toJson()).toList(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class CreateCallsPaymentsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A unique token that will be used to ensure that multiple API calls with the same information do not result in multiple transactions. This should be a unique string value per API call and can be a randomly generated.
   final String idempotencyKey;
+
   /// Provide an absolute or relative URL to receive status updates regarding your Pay session. Read more about the [expected StatusCallback values](https://www.twilio.com/docs/voice/api/payment-resource#statuscallback)
   final String statusCallback;
+
   /// Type of bank account if payment source is ACH. One of `consumer-checking`, `consumer-savings`, or `commercial-checking`. The default value is `consumer-checking`.
   final SdkOptional<PaymentsEnumBankAccountType> bankAccountType;
+
   /// A positive decimal value less than 1,000,000 to charge against the credit card or bank account. Default currency can be overwritten with `currency` field. Leave blank or set to 0 to tokenize.
   final SdkOptional<double> chargeAmount;
+
   /// The currency of the `charge_amount`, formatted as [ISO 4127](http://www.iso.org/iso/home/standards/currency_codes.htm) format. The default value is `USD` and all values allowed from the Pay Connector are accepted.
   final SdkOptional<String> currency;
+
   /// The description can be used to provide more details regarding the transaction. This information is submitted along with the payment details to the Payment Connector which are then posted on the transactions.
   final SdkOptional<String> description;
+
   /// A list of inputs that should be accepted. Currently only `dtmf` is supported. All digits captured during a pay session are redacted from the logs.
   final SdkOptional<String> input;
+
   /// A positive integer that is used to validate the length of the `PostalCode` inputted by the user. User must enter this many digits.
   final SdkOptional<int> minPostalCodeLength;
+
   /// A single-level JSON object used to pass custom parameters to payment processors. (Required for ACH payments). The information that has to be included here depends on the &lt;Pay&gt; Connector. [Read more](https://www.twilio.com/console/voice/pay-connectors).
   final SdkOptional<dynamic> parameter;
+
   /// This is the unique name corresponding to the Pay Connector installed in the Twilio Add-ons. Learn more about [&lt;Pay&gt; Connectors](https://www.twilio.com/console/voice/pay-connectors). The default value is `Default`.
   final SdkOptional<String> paymentConnector;
+
   /// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
   final SdkOptional<PaymentsEnumPaymentMethod> paymentMethod;
+
   /// Indicates whether the credit card postal code (zip code) is a required piece of payment information that must be provided by the caller. The default is `true`.
   final SdkOptional<bool> postalCode;
+
   /// Indicates whether the credit card security code is a required piece of payment information that must be provided by the caller. The default is `true`.
   final SdkOptional<bool> securityCode;
+
   /// The number of seconds that &lt;Pay&gt; should wait for the caller to press a digit between each subsequent digit, after the first one, before moving on to validate the digits captured. The default is `5`, maximum is `600`.
   final SdkOptional<int> timeout;
+
   /// Indicates whether the payment method should be tokenized as a `one-time`, `reusable`, or `payment-method` token. The default value is `reusable`. Do not enter a charge amount when tokenizing. If a charge amount is entered, the payment method will be charged and not tokenized.
   final SdkOptional<PaymentsEnumTokenType> tokenType;
+
   /// Credit card types separated by space that Pay should accept. The default value is `visa mastercard amex`
   final SdkOptional<String> validCardTypes;
+
   /// A comma-separated list of payment information fields that require the caller to enter the same value twice for confirmation. Supported values are `payment-card-number`, `expiration-date`, `security-code`, and `postal-code`.
   final SdkOptional<String> requireMatchingInputs;
+
   /// Whether to prompt the caller to confirm their payment information before submitting to the payment gateway. If `true`, the caller will hear the last 4 digits of their card or account number and must press 1 to confirm or 2 to cancel. Default is `false`.
   final SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation;
 
-  const CreateCallsPaymentsRequestBody({required this.idempotencyKey, required this.statusCallback, this.bankAccountType = const SdkOmitted(), this.chargeAmount = const SdkOmitted(), this.currency = const SdkOmitted(), this.description = const SdkOmitted(), this.input = const SdkOmitted(), this.minPostalCodeLength = const SdkOmitted(), this.parameter = const SdkOmitted(), this.paymentConnector = const SdkOmitted(), this.paymentMethod = const SdkOmitted(), this.postalCode = const SdkOmitted(), this.securityCode = const SdkOmitted(), this.timeout = const SdkOmitted(), this.tokenType = const SdkOmitted(), this.validCardTypes = const SdkOmitted(), this.requireMatchingInputs = const SdkOmitted(), this.confirmation = const SdkOmitted()});
+  const CreateCallsPaymentsRequestBody(
+      {required this.idempotencyKey,
+      required this.statusCallback,
+      this.bankAccountType = const SdkOmitted(),
+      this.chargeAmount = const SdkOmitted(),
+      this.currency = const SdkOmitted(),
+      this.description = const SdkOmitted(),
+      this.input = const SdkOmitted(),
+      this.minPostalCodeLength = const SdkOmitted(),
+      this.parameter = const SdkOmitted(),
+      this.paymentConnector = const SdkOmitted(),
+      this.paymentMethod = const SdkOmitted(),
+      this.postalCode = const SdkOmitted(),
+      this.securityCode = const SdkOmitted(),
+      this.timeout = const SdkOmitted(),
+      this.tokenType = const SdkOmitted(),
+      this.validCardTypes = const SdkOmitted(),
+      this.requireMatchingInputs = const SdkOmitted(),
+      this.confirmation = const SdkOmitted()});
 
-  CreateCallsPaymentsRequestBody Function({String idempotencyKey, String statusCallback, SdkOptional<PaymentsEnumBankAccountType> bankAccountType, SdkOptional<double> chargeAmount, SdkOptional<String> currency, SdkOptional<String> description, SdkOptional<String> input, SdkOptional<int> minPostalCodeLength, SdkOptional<dynamic> parameter, SdkOptional<String> paymentConnector, SdkOptional<PaymentsEnumPaymentMethod> paymentMethod, SdkOptional<bool> postalCode, SdkOptional<bool> securityCode, SdkOptional<int> timeout, SdkOptional<PaymentsEnumTokenType> tokenType, SdkOptional<String> validCardTypes, SdkOptional<String> requireMatchingInputs, SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation}) get copyWith => _copyWith;
+  CreateCallsPaymentsRequestBody Function(
+          {String idempotencyKey,
+          String statusCallback,
+          SdkOptional<PaymentsEnumBankAccountType> bankAccountType,
+          SdkOptional<double> chargeAmount,
+          SdkOptional<String> currency,
+          SdkOptional<String> description,
+          SdkOptional<String> input,
+          SdkOptional<int> minPostalCodeLength,
+          SdkOptional<dynamic> parameter,
+          SdkOptional<String> paymentConnector,
+          SdkOptional<PaymentsEnumPaymentMethod> paymentMethod,
+          SdkOptional<bool> postalCode,
+          SdkOptional<bool> securityCode,
+          SdkOptional<int> timeout,
+          SdkOptional<PaymentsEnumTokenType> tokenType,
+          SdkOptional<String> validCardTypes,
+          SdkOptional<String> requireMatchingInputs,
+          SdkOptional<CreateCallsPaymentsRequestBodyConfirmation> confirmation})
+      get copyWith => _copyWith;
 
-  CreateCallsPaymentsRequestBody _copyWith({Object? idempotencyKey = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? bankAccountType = sdkOmittedValue, Object? chargeAmount = sdkOmittedValue, Object? currency = sdkOmittedValue, Object? description = sdkOmittedValue, Object? input = sdkOmittedValue, Object? minPostalCodeLength = sdkOmittedValue, Object? parameter = sdkOmittedValue, Object? paymentConnector = sdkOmittedValue, Object? paymentMethod = sdkOmittedValue, Object? postalCode = sdkOmittedValue, Object? securityCode = sdkOmittedValue, Object? timeout = sdkOmittedValue, Object? tokenType = sdkOmittedValue, Object? validCardTypes = sdkOmittedValue, Object? requireMatchingInputs = sdkOmittedValue, Object? confirmation = sdkOmittedValue}) => CreateCallsPaymentsRequestBody(
-    idempotencyKey: identical(idempotencyKey, sdkOmittedValue) ? this.idempotencyKey : idempotencyKey as String,
-    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as String,
-    bankAccountType: identical(bankAccountType, sdkOmittedValue) ? this.bankAccountType : bankAccountType as SdkOptional<PaymentsEnumBankAccountType>,
-    chargeAmount: identical(chargeAmount, sdkOmittedValue) ? this.chargeAmount : chargeAmount as SdkOptional<double>,
-    currency: identical(currency, sdkOmittedValue) ? this.currency : currency as SdkOptional<String>,
-    description: identical(description, sdkOmittedValue) ? this.description : description as SdkOptional<String>,
-    input: identical(input, sdkOmittedValue) ? this.input : input as SdkOptional<String>,
-    minPostalCodeLength: identical(minPostalCodeLength, sdkOmittedValue) ? this.minPostalCodeLength : minPostalCodeLength as SdkOptional<int>,
-    parameter: identical(parameter, sdkOmittedValue) ? this.parameter : parameter as SdkOptional<dynamic>,
-    paymentConnector: identical(paymentConnector, sdkOmittedValue) ? this.paymentConnector : paymentConnector as SdkOptional<String>,
-    paymentMethod: identical(paymentMethod, sdkOmittedValue) ? this.paymentMethod : paymentMethod as SdkOptional<PaymentsEnumPaymentMethod>,
-    postalCode: identical(postalCode, sdkOmittedValue) ? this.postalCode : postalCode as SdkOptional<bool>,
-    securityCode: identical(securityCode, sdkOmittedValue) ? this.securityCode : securityCode as SdkOptional<bool>,
-    timeout: identical(timeout, sdkOmittedValue) ? this.timeout : timeout as SdkOptional<int>,
-    tokenType: identical(tokenType, sdkOmittedValue) ? this.tokenType : tokenType as SdkOptional<PaymentsEnumTokenType>,
-    validCardTypes: identical(validCardTypes, sdkOmittedValue) ? this.validCardTypes : validCardTypes as SdkOptional<String>,
-    requireMatchingInputs: identical(requireMatchingInputs, sdkOmittedValue) ? this.requireMatchingInputs : requireMatchingInputs as SdkOptional<String>,
-    confirmation: identical(confirmation, sdkOmittedValue) ? this.confirmation : confirmation as SdkOptional<CreateCallsPaymentsRequestBodyConfirmation>,
-  );
+  CreateCallsPaymentsRequestBody _copyWith(
+          {Object? idempotencyKey = sdkOmittedValue,
+          Object? statusCallback = sdkOmittedValue,
+          Object? bankAccountType = sdkOmittedValue,
+          Object? chargeAmount = sdkOmittedValue,
+          Object? currency = sdkOmittedValue,
+          Object? description = sdkOmittedValue,
+          Object? input = sdkOmittedValue,
+          Object? minPostalCodeLength = sdkOmittedValue,
+          Object? parameter = sdkOmittedValue,
+          Object? paymentConnector = sdkOmittedValue,
+          Object? paymentMethod = sdkOmittedValue,
+          Object? postalCode = sdkOmittedValue,
+          Object? securityCode = sdkOmittedValue,
+          Object? timeout = sdkOmittedValue,
+          Object? tokenType = sdkOmittedValue,
+          Object? validCardTypes = sdkOmittedValue,
+          Object? requireMatchingInputs = sdkOmittedValue,
+          Object? confirmation = sdkOmittedValue}) =>
+      CreateCallsPaymentsRequestBody(
+        idempotencyKey: identical(idempotencyKey, sdkOmittedValue)
+            ? this.idempotencyKey
+            : idempotencyKey as String,
+        statusCallback: identical(statusCallback, sdkOmittedValue)
+            ? this.statusCallback
+            : statusCallback as String,
+        bankAccountType: identical(bankAccountType, sdkOmittedValue)
+            ? this.bankAccountType
+            : bankAccountType as SdkOptional<PaymentsEnumBankAccountType>,
+        chargeAmount: identical(chargeAmount, sdkOmittedValue)
+            ? this.chargeAmount
+            : chargeAmount as SdkOptional<double>,
+        currency: identical(currency, sdkOmittedValue)
+            ? this.currency
+            : currency as SdkOptional<String>,
+        description: identical(description, sdkOmittedValue)
+            ? this.description
+            : description as SdkOptional<String>,
+        input: identical(input, sdkOmittedValue)
+            ? this.input
+            : input as SdkOptional<String>,
+        minPostalCodeLength: identical(minPostalCodeLength, sdkOmittedValue)
+            ? this.minPostalCodeLength
+            : minPostalCodeLength as SdkOptional<int>,
+        parameter: identical(parameter, sdkOmittedValue)
+            ? this.parameter
+            : parameter as SdkOptional<dynamic>,
+        paymentConnector: identical(paymentConnector, sdkOmittedValue)
+            ? this.paymentConnector
+            : paymentConnector as SdkOptional<String>,
+        paymentMethod: identical(paymentMethod, sdkOmittedValue)
+            ? this.paymentMethod
+            : paymentMethod as SdkOptional<PaymentsEnumPaymentMethod>,
+        postalCode: identical(postalCode, sdkOmittedValue)
+            ? this.postalCode
+            : postalCode as SdkOptional<bool>,
+        securityCode: identical(securityCode, sdkOmittedValue)
+            ? this.securityCode
+            : securityCode as SdkOptional<bool>,
+        timeout: identical(timeout, sdkOmittedValue)
+            ? this.timeout
+            : timeout as SdkOptional<int>,
+        tokenType: identical(tokenType, sdkOmittedValue)
+            ? this.tokenType
+            : tokenType as SdkOptional<PaymentsEnumTokenType>,
+        validCardTypes: identical(validCardTypes, sdkOmittedValue)
+            ? this.validCardTypes
+            : validCardTypes as SdkOptional<String>,
+        requireMatchingInputs: identical(requireMatchingInputs, sdkOmittedValue)
+            ? this.requireMatchingInputs
+            : requireMatchingInputs as SdkOptional<String>,
+        confirmation: identical(confirmation, sdkOmittedValue)
+            ? this.confirmation
+            : confirmation
+                as SdkOptional<CreateCallsPaymentsRequestBodyConfirmation>,
+      );
 
-  factory CreateCallsPaymentsRequestBody.fromJson(Map<String, dynamic> json) => CreateCallsPaymentsRequestBody(
-    idempotencyKey: (json['IdempotencyKey'] as String?)!,
-    statusCallback: (json['StatusCallback'] as String?)!,
-    bankAccountType: json['BankAccountType'] != null ? SdkPresent((json['BankAccountType'] != null ? PaymentsEnumBankAccountType.fromJson(json['BankAccountType'] as String) : null)!) : const SdkOmitted(),
-    chargeAmount: json['ChargeAmount'] != null ? SdkPresent(((json['ChargeAmount'] as num?)?.toDouble())!) : const SdkOmitted(),
-    currency: json['Currency'] != null ? SdkPresent((json['Currency'] as String?)!) : const SdkOmitted(),
-    description: json['Description'] != null ? SdkPresent((json['Description'] as String?)!) : const SdkOmitted(),
-    input: json['Input'] != null ? SdkPresent((json['Input'] as String?)!) : const SdkOmitted(),
-    minPostalCodeLength: json['MinPostalCodeLength'] != null ? SdkPresent(((json['MinPostalCodeLength'] as num?)?.toInt())!) : const SdkOmitted(),
-    parameter: json['Parameter'] != null ? SdkPresent((json['Parameter'])!) : const SdkOmitted(),
-    paymentConnector: json['PaymentConnector'] != null ? SdkPresent((json['PaymentConnector'] as String?)!) : const SdkOmitted(),
-    paymentMethod: json['PaymentMethod'] != null ? SdkPresent((json['PaymentMethod'] != null ? PaymentsEnumPaymentMethod.fromJson(json['PaymentMethod'] as String) : null)!) : const SdkOmitted(),
-    postalCode: json['PostalCode'] != null ? SdkPresent((json['PostalCode'] as bool?)!) : const SdkOmitted(),
-    securityCode: json['SecurityCode'] != null ? SdkPresent((json['SecurityCode'] as bool?)!) : const SdkOmitted(),
-    timeout: json['Timeout'] != null ? SdkPresent(((json['Timeout'] as num?)?.toInt())!) : const SdkOmitted(),
-    tokenType: json['TokenType'] != null ? SdkPresent((json['TokenType'] != null ? PaymentsEnumTokenType.fromJson(json['TokenType'] as String) : null)!) : const SdkOmitted(),
-    validCardTypes: json['ValidCardTypes'] != null ? SdkPresent((json['ValidCardTypes'] as String?)!) : const SdkOmitted(),
-    requireMatchingInputs: json['RequireMatchingInputs'] != null ? SdkPresent((json['RequireMatchingInputs'] as String?)!) : const SdkOmitted(),
-    confirmation: json['Confirmation'] != null ? SdkPresent((json['Confirmation'] != null ? CreateCallsPaymentsRequestBodyConfirmation.fromJson(json['Confirmation'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory CreateCallsPaymentsRequestBody.fromJson(Map<String, dynamic> json) =>
+      CreateCallsPaymentsRequestBody(
+        idempotencyKey: (json['IdempotencyKey'] as String?)!,
+        statusCallback: (json['StatusCallback'] as String?)!,
+        bankAccountType: json['BankAccountType'] != null
+            ? SdkPresent((json['BankAccountType'] != null
+                ? PaymentsEnumBankAccountType.fromJson(
+                    json['BankAccountType'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        chargeAmount: json['ChargeAmount'] != null
+            ? SdkPresent(((json['ChargeAmount'] as num?)?.toDouble())!)
+            : const SdkOmitted(),
+        currency: json['Currency'] != null
+            ? SdkPresent((json['Currency'] as String?)!)
+            : const SdkOmitted(),
+        description: json['Description'] != null
+            ? SdkPresent((json['Description'] as String?)!)
+            : const SdkOmitted(),
+        input: json['Input'] != null
+            ? SdkPresent((json['Input'] as String?)!)
+            : const SdkOmitted(),
+        minPostalCodeLength: json['MinPostalCodeLength'] != null
+            ? SdkPresent(((json['MinPostalCodeLength'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        parameter: json['Parameter'] != null
+            ? SdkPresent((json['Parameter'])!)
+            : const SdkOmitted(),
+        paymentConnector: json['PaymentConnector'] != null
+            ? SdkPresent((json['PaymentConnector'] as String?)!)
+            : const SdkOmitted(),
+        paymentMethod: json['PaymentMethod'] != null
+            ? SdkPresent((json['PaymentMethod'] != null
+                ? PaymentsEnumPaymentMethod.fromJson(
+                    json['PaymentMethod'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        postalCode: json['PostalCode'] != null
+            ? SdkPresent((json['PostalCode'] as bool?)!)
+            : const SdkOmitted(),
+        securityCode: json['SecurityCode'] != null
+            ? SdkPresent((json['SecurityCode'] as bool?)!)
+            : const SdkOmitted(),
+        timeout: json['Timeout'] != null
+            ? SdkPresent(((json['Timeout'] as num?)?.toInt())!)
+            : const SdkOmitted(),
+        tokenType: json['TokenType'] != null
+            ? SdkPresent((json['TokenType'] != null
+                ? PaymentsEnumTokenType.fromJson(json['TokenType'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        validCardTypes: json['ValidCardTypes'] != null
+            ? SdkPresent((json['ValidCardTypes'] as String?)!)
+            : const SdkOmitted(),
+        requireMatchingInputs: json['RequireMatchingInputs'] != null
+            ? SdkPresent((json['RequireMatchingInputs'] as String?)!)
+            : const SdkOmitted(),
+        confirmation: json['Confirmation'] != null
+            ? SdkPresent((json['Confirmation'] != null
+                ? CreateCallsPaymentsRequestBodyConfirmation.fromJson(
+                    json['Confirmation'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'IdempotencyKey': idempotencyKey,
-    'StatusCallback': statusCallback,
-    ...switch (bankAccountType) {
-      SdkPresent<PaymentsEnumBankAccountType>(value: final value) => {'BankAccountType': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (chargeAmount) {
-      SdkPresent<double>(value: final value) => {'ChargeAmount': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (currency) {
-      SdkPresent<String>(value: final value) => {'Currency': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (description) {
-      SdkPresent<String>(value: final value) => {'Description': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (input) {
-      SdkPresent<String>(value: final value) => {'Input': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (minPostalCodeLength) {
-      SdkPresent<int>(value: final value) => {'MinPostalCodeLength': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (parameter) {
-      SdkPresent<dynamic>(value: final value) => {'Parameter': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (paymentConnector) {
-      SdkPresent<String>(value: final value) => {'PaymentConnector': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (paymentMethod) {
-      SdkPresent<PaymentsEnumPaymentMethod>(value: final value) => {'PaymentMethod': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (postalCode) {
-      SdkPresent<bool>(value: final value) => {'PostalCode': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (securityCode) {
-      SdkPresent<bool>(value: final value) => {'SecurityCode': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (timeout) {
-      SdkPresent<int>(value: final value) => {'Timeout': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (tokenType) {
-      SdkPresent<PaymentsEnumTokenType>(value: final value) => {'TokenType': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (validCardTypes) {
-      SdkPresent<String>(value: final value) => {'ValidCardTypes': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (requireMatchingInputs) {
-      SdkPresent<String>(value: final value) => {'RequireMatchingInputs': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (confirmation) {
-      SdkPresent<CreateCallsPaymentsRequestBodyConfirmation>(value: final value) => {'Confirmation': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'IdempotencyKey': idempotencyKey,
+        'StatusCallback': statusCallback,
+        ...switch (bankAccountType) {
+          SdkPresent<PaymentsEnumBankAccountType>(value: final value) => {
+              'BankAccountType': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (chargeAmount) {
+          SdkPresent<double>(value: final value) => {
+              'ChargeAmount': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (currency) {
+          SdkPresent<String>(value: final value) => {
+              'Currency': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (description) {
+          SdkPresent<String>(value: final value) => {
+              'Description': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (input) {
+          SdkPresent<String>(value: final value) => {
+              'Input': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (minPostalCodeLength) {
+          SdkPresent<int>(value: final value) => {
+              'MinPostalCodeLength': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (parameter) {
+          SdkPresent<dynamic>(value: final value) => {
+              'Parameter': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (paymentConnector) {
+          SdkPresent<String>(value: final value) => {
+              'PaymentConnector': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (paymentMethod) {
+          SdkPresent<PaymentsEnumPaymentMethod>(value: final value) => {
+              'PaymentMethod': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (postalCode) {
+          SdkPresent<bool>(value: final value) => {
+              'PostalCode': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (securityCode) {
+          SdkPresent<bool>(value: final value) => {
+              'SecurityCode': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (timeout) {
+          SdkPresent<int>(value: final value) => {
+              'Timeout': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (tokenType) {
+          SdkPresent<PaymentsEnumTokenType>(value: final value) => {
+              'TokenType': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (validCardTypes) {
+          SdkPresent<String>(value: final value) => {
+              'ValidCardTypes': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (requireMatchingInputs) {
+          SdkPresent<String>(value: final value) => {
+              'RequireMatchingInputs': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (confirmation) {
+          SdkPresent<CreateCallsPaymentsRequestBodyConfirmation>(
+            value: final value
+          ) =>
+            {
+              'Confirmation': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 class UpdateCallsPaymentsRequestBody {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// A unique token that will be used to ensure that multiple API calls with the same information do not result in multiple transactions. This should be a unique string value per API call and can be a randomly generated.
   final String idempotencyKey;
+
   /// Provide an absolute or relative URL to receive status updates regarding your Pay session. Read more about the [Update](https://www.twilio.com/docs/voice/api/payment-resource#statuscallback-update) and [Complete/Cancel](https://www.twilio.com/docs/voice/api/payment-resource#statuscallback-cancelcomplete) POST requests.
   final String statusCallback;
+
   /// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, `bank-account-number`, or their `-matcher` variants for input confirmation when `RequireMatchingInputs` is enabled.
   final SdkOptional<PaymentsEnumCapture> capture;
+
   /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
   final SdkOptional<PaymentsEnumStatus> status;
 
-  const UpdateCallsPaymentsRequestBody({required this.idempotencyKey, required this.statusCallback, this.capture = const SdkOmitted(), this.status = const SdkOmitted()});
+  const UpdateCallsPaymentsRequestBody(
+      {required this.idempotencyKey,
+      required this.statusCallback,
+      this.capture = const SdkOmitted(),
+      this.status = const SdkOmitted()});
 
-  UpdateCallsPaymentsRequestBody Function({String idempotencyKey, String statusCallback, SdkOptional<PaymentsEnumCapture> capture, SdkOptional<PaymentsEnumStatus> status}) get copyWith => _copyWith;
+  UpdateCallsPaymentsRequestBody Function(
+      {String idempotencyKey,
+      String statusCallback,
+      SdkOptional<PaymentsEnumCapture> capture,
+      SdkOptional<PaymentsEnumStatus> status}) get copyWith => _copyWith;
 
-  UpdateCallsPaymentsRequestBody _copyWith({Object? idempotencyKey = sdkOmittedValue, Object? statusCallback = sdkOmittedValue, Object? capture = sdkOmittedValue, Object? status = sdkOmittedValue}) => UpdateCallsPaymentsRequestBody(
-    idempotencyKey: identical(idempotencyKey, sdkOmittedValue) ? this.idempotencyKey : idempotencyKey as String,
-    statusCallback: identical(statusCallback, sdkOmittedValue) ? this.statusCallback : statusCallback as String,
-    capture: identical(capture, sdkOmittedValue) ? this.capture : capture as SdkOptional<PaymentsEnumCapture>,
-    status: identical(status, sdkOmittedValue) ? this.status : status as SdkOptional<PaymentsEnumStatus>,
-  );
+  UpdateCallsPaymentsRequestBody _copyWith(
+          {Object? idempotencyKey = sdkOmittedValue,
+          Object? statusCallback = sdkOmittedValue,
+          Object? capture = sdkOmittedValue,
+          Object? status = sdkOmittedValue}) =>
+      UpdateCallsPaymentsRequestBody(
+        idempotencyKey: identical(idempotencyKey, sdkOmittedValue)
+            ? this.idempotencyKey
+            : idempotencyKey as String,
+        statusCallback: identical(statusCallback, sdkOmittedValue)
+            ? this.statusCallback
+            : statusCallback as String,
+        capture: identical(capture, sdkOmittedValue)
+            ? this.capture
+            : capture as SdkOptional<PaymentsEnumCapture>,
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SdkOptional<PaymentsEnumStatus>,
+      );
 
-  factory UpdateCallsPaymentsRequestBody.fromJson(Map<String, dynamic> json) => UpdateCallsPaymentsRequestBody(
-    idempotencyKey: (json['IdempotencyKey'] as String?)!,
-    statusCallback: (json['StatusCallback'] as String?)!,
-    capture: json['Capture'] != null ? SdkPresent((json['Capture'] != null ? PaymentsEnumCapture.fromJson(json['Capture'] as String) : null)!) : const SdkOmitted(),
-    status: json['Status'] != null ? SdkPresent((json['Status'] != null ? PaymentsEnumStatus.fromJson(json['Status'] as String) : null)!) : const SdkOmitted(),
-  );
+  factory UpdateCallsPaymentsRequestBody.fromJson(Map<String, dynamic> json) =>
+      UpdateCallsPaymentsRequestBody(
+        idempotencyKey: (json['IdempotencyKey'] as String?)!,
+        statusCallback: (json['StatusCallback'] as String?)!,
+        capture: json['Capture'] != null
+            ? SdkPresent((json['Capture'] != null
+                ? PaymentsEnumCapture.fromJson(json['Capture'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        status: json['Status'] != null
+            ? SdkPresent((json['Status'] != null
+                ? PaymentsEnumStatus.fromJson(json['Status'] as String)
+                : null)!)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    'IdempotencyKey': idempotencyKey,
-    'StatusCallback': statusCallback,
-    ...switch (capture) {
-      SdkPresent<PaymentsEnumCapture>(value: final value) => {'Capture': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (status) {
-      SdkPresent<PaymentsEnumStatus>(value: final value) => {'Status': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-  };
+        'IdempotencyKey': idempotencyKey,
+        'StatusCallback': statusCallback,
+        ...switch (capture) {
+          SdkPresent<PaymentsEnumCapture>(value: final value) => {
+              'Capture': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (status) {
+          SdkPresent<PaymentsEnumStatus>(value: final value) => {
+              'Status': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }

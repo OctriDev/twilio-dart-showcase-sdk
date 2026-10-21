@@ -6,24 +6,32 @@ part of 'api20100401_incoming_phone_number_toll_free.dart';
 // api20100401_incoming_phone_number_toll_free domain models
 /// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 final class IncomingPhoneNumberTollFreeEnumAddressRequirement {
-
   final String value;
 
   const IncomingPhoneNumberTollFreeEnumAddressRequirement._(this.value);
 
-  factory IncomingPhoneNumberTollFreeEnumAddressRequirement.fromJson(String value) => IncomingPhoneNumberTollFreeEnumAddressRequirement._(value);
+  factory IncomingPhoneNumberTollFreeEnumAddressRequirement.fromJson(
+          String value) =>
+      IncomingPhoneNumberTollFreeEnumAddressRequirement._(value);
 
-  static const none = IncomingPhoneNumberTollFreeEnumAddressRequirement._('none');
+  static const none =
+      IncomingPhoneNumberTollFreeEnumAddressRequirement._('none');
   static const any = IncomingPhoneNumberTollFreeEnumAddressRequirement._('any');
-  static const local = IncomingPhoneNumberTollFreeEnumAddressRequirement._('local');
-  static const foreign = IncomingPhoneNumberTollFreeEnumAddressRequirement._('foreign');
+  static const local =
+      IncomingPhoneNumberTollFreeEnumAddressRequirement._('local');
+  static const foreign =
+      IncomingPhoneNumberTollFreeEnumAddressRequirement._('foreign');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IncomingPhoneNumberTollFreeEnumAddressRequirement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IncomingPhoneNumberTollFreeEnumAddressRequirement &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

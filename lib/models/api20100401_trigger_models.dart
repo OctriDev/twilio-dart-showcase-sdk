@@ -8,157 +8,335 @@ part of 'api20100401_trigger.dart';
 class ApiV2010AccountUsageUsageTrigger {
   /// This model is constructed from named fields in one call.
   static const String constructionSurface = 'named';
+
   /// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that the trigger monitors.
   final SdkOptional<String?> accountSid;
+
   /// The API version used to create the resource.
   final SdkOptional<String?> apiVersion;
+
   /// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
-  final SdkOptional<ApiV2010AccountUsageUsageTriggerCallbackMethod?> callbackMethod;
+  final SdkOptional<ApiV2010AccountUsageUsageTriggerCallbackMethod?>
+      callbackMethod;
+
   /// The URL we call using the `callback_method` when the trigger fires.
   final SdkOptional<String?> callbackUrl;
+
   /// The current value of the field the trigger is watching.
   final SdkOptional<String?> currentValue;
+
   /// The date and time in GMT that the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateCreated;
+
   /// The date and time in GMT that the trigger was last fired specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateFired;
+
   /// The date and time in GMT that the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format.
   final SdkOptional<String?> dateUpdated;
+
   /// The string that you assigned to describe the trigger.
   final SdkOptional<String?> friendlyName;
+
   /// The frequency of a recurring UsageTrigger. Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
   final SdkOptional<UsageTriggerEnumRecurring> recurring;
+
   /// The unique string that that we created to identify the UsageTrigger resource.
   final SdkOptional<String?> sid;
+
   /// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger. Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
   final SdkOptional<UsageTriggerEnumTriggerField> triggerBy;
+
   /// The value at which the trigger will fire. Must be a positive, numeric value.
   final SdkOptional<String?> triggerValue;
+
   /// The URI of the resource, relative to `https://api.twilio.com`.
   final SdkOptional<String?> uri;
+
   /// The usage category the trigger watches. Must be one of the supported [usage categories](https://www.twilio.com/docs/usage/api/usage-record#usage-categories).
   final SdkOptional<String?> usageCategory;
+
   /// The URI of the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource this trigger watches, relative to `https://api.twilio.com`.
   final SdkOptional<String?> usageRecordUri;
 
-  const ApiV2010AccountUsageUsageTrigger({this.accountSid = const SdkOmitted(), this.apiVersion = const SdkOmitted(), this.callbackMethod = const SdkOmitted(), this.callbackUrl = const SdkOmitted(), this.currentValue = const SdkOmitted(), this.dateCreated = const SdkOmitted(), this.dateFired = const SdkOmitted(), this.dateUpdated = const SdkOmitted(), this.friendlyName = const SdkOmitted(), this.recurring = const SdkOmitted(), this.sid = const SdkOmitted(), this.triggerBy = const SdkOmitted(), this.triggerValue = const SdkOmitted(), this.uri = const SdkOmitted(), this.usageCategory = const SdkOmitted(), this.usageRecordUri = const SdkOmitted()});
+  const ApiV2010AccountUsageUsageTrigger(
+      {this.accountSid = const SdkOmitted(),
+      this.apiVersion = const SdkOmitted(),
+      this.callbackMethod = const SdkOmitted(),
+      this.callbackUrl = const SdkOmitted(),
+      this.currentValue = const SdkOmitted(),
+      this.dateCreated = const SdkOmitted(),
+      this.dateFired = const SdkOmitted(),
+      this.dateUpdated = const SdkOmitted(),
+      this.friendlyName = const SdkOmitted(),
+      this.recurring = const SdkOmitted(),
+      this.sid = const SdkOmitted(),
+      this.triggerBy = const SdkOmitted(),
+      this.triggerValue = const SdkOmitted(),
+      this.uri = const SdkOmitted(),
+      this.usageCategory = const SdkOmitted(),
+      this.usageRecordUri = const SdkOmitted()});
 
-  ApiV2010AccountUsageUsageTrigger Function({SdkOptional<String?> accountSid, SdkOptional<String?> apiVersion, SdkOptional<ApiV2010AccountUsageUsageTriggerCallbackMethod?> callbackMethod, SdkOptional<String?> callbackUrl, SdkOptional<String?> currentValue, SdkOptional<String?> dateCreated, SdkOptional<String?> dateFired, SdkOptional<String?> dateUpdated, SdkOptional<String?> friendlyName, SdkOptional<UsageTriggerEnumRecurring> recurring, SdkOptional<String?> sid, SdkOptional<UsageTriggerEnumTriggerField> triggerBy, SdkOptional<String?> triggerValue, SdkOptional<String?> uri, SdkOptional<String?> usageCategory, SdkOptional<String?> usageRecordUri}) get copyWith => _copyWith;
+  ApiV2010AccountUsageUsageTrigger Function(
+      {SdkOptional<String?> accountSid,
+      SdkOptional<String?> apiVersion,
+      SdkOptional<ApiV2010AccountUsageUsageTriggerCallbackMethod?>
+          callbackMethod,
+      SdkOptional<String?> callbackUrl,
+      SdkOptional<String?> currentValue,
+      SdkOptional<String?> dateCreated,
+      SdkOptional<String?> dateFired,
+      SdkOptional<String?> dateUpdated,
+      SdkOptional<String?> friendlyName,
+      SdkOptional<UsageTriggerEnumRecurring> recurring,
+      SdkOptional<String?> sid,
+      SdkOptional<UsageTriggerEnumTriggerField> triggerBy,
+      SdkOptional<String?> triggerValue,
+      SdkOptional<String?> uri,
+      SdkOptional<String?> usageCategory,
+      SdkOptional<String?> usageRecordUri}) get copyWith => _copyWith;
 
-  ApiV2010AccountUsageUsageTrigger _copyWith({Object? accountSid = sdkOmittedValue, Object? apiVersion = sdkOmittedValue, Object? callbackMethod = sdkOmittedValue, Object? callbackUrl = sdkOmittedValue, Object? currentValue = sdkOmittedValue, Object? dateCreated = sdkOmittedValue, Object? dateFired = sdkOmittedValue, Object? dateUpdated = sdkOmittedValue, Object? friendlyName = sdkOmittedValue, Object? recurring = sdkOmittedValue, Object? sid = sdkOmittedValue, Object? triggerBy = sdkOmittedValue, Object? triggerValue = sdkOmittedValue, Object? uri = sdkOmittedValue, Object? usageCategory = sdkOmittedValue, Object? usageRecordUri = sdkOmittedValue}) => ApiV2010AccountUsageUsageTrigger(
-    accountSid: identical(accountSid, sdkOmittedValue) ? this.accountSid : accountSid as SdkOptional<String?>,
-    apiVersion: identical(apiVersion, sdkOmittedValue) ? this.apiVersion : apiVersion as SdkOptional<String?>,
-    callbackMethod: identical(callbackMethod, sdkOmittedValue) ? this.callbackMethod : callbackMethod as SdkOptional<ApiV2010AccountUsageUsageTriggerCallbackMethod?>,
-    callbackUrl: identical(callbackUrl, sdkOmittedValue) ? this.callbackUrl : callbackUrl as SdkOptional<String?>,
-    currentValue: identical(currentValue, sdkOmittedValue) ? this.currentValue : currentValue as SdkOptional<String?>,
-    dateCreated: identical(dateCreated, sdkOmittedValue) ? this.dateCreated : dateCreated as SdkOptional<String?>,
-    dateFired: identical(dateFired, sdkOmittedValue) ? this.dateFired : dateFired as SdkOptional<String?>,
-    dateUpdated: identical(dateUpdated, sdkOmittedValue) ? this.dateUpdated : dateUpdated as SdkOptional<String?>,
-    friendlyName: identical(friendlyName, sdkOmittedValue) ? this.friendlyName : friendlyName as SdkOptional<String?>,
-    recurring: identical(recurring, sdkOmittedValue) ? this.recurring : recurring as SdkOptional<UsageTriggerEnumRecurring>,
-    sid: identical(sid, sdkOmittedValue) ? this.sid : sid as SdkOptional<String?>,
-    triggerBy: identical(triggerBy, sdkOmittedValue) ? this.triggerBy : triggerBy as SdkOptional<UsageTriggerEnumTriggerField>,
-    triggerValue: identical(triggerValue, sdkOmittedValue) ? this.triggerValue : triggerValue as SdkOptional<String?>,
-    uri: identical(uri, sdkOmittedValue) ? this.uri : uri as SdkOptional<String?>,
-    usageCategory: identical(usageCategory, sdkOmittedValue) ? this.usageCategory : usageCategory as SdkOptional<String?>,
-    usageRecordUri: identical(usageRecordUri, sdkOmittedValue) ? this.usageRecordUri : usageRecordUri as SdkOptional<String?>,
-  );
+  ApiV2010AccountUsageUsageTrigger _copyWith(
+          {Object? accountSid = sdkOmittedValue,
+          Object? apiVersion = sdkOmittedValue,
+          Object? callbackMethod = sdkOmittedValue,
+          Object? callbackUrl = sdkOmittedValue,
+          Object? currentValue = sdkOmittedValue,
+          Object? dateCreated = sdkOmittedValue,
+          Object? dateFired = sdkOmittedValue,
+          Object? dateUpdated = sdkOmittedValue,
+          Object? friendlyName = sdkOmittedValue,
+          Object? recurring = sdkOmittedValue,
+          Object? sid = sdkOmittedValue,
+          Object? triggerBy = sdkOmittedValue,
+          Object? triggerValue = sdkOmittedValue,
+          Object? uri = sdkOmittedValue,
+          Object? usageCategory = sdkOmittedValue,
+          Object? usageRecordUri = sdkOmittedValue}) =>
+      ApiV2010AccountUsageUsageTrigger(
+        accountSid: identical(accountSid, sdkOmittedValue)
+            ? this.accountSid
+            : accountSid as SdkOptional<String?>,
+        apiVersion: identical(apiVersion, sdkOmittedValue)
+            ? this.apiVersion
+            : apiVersion as SdkOptional<String?>,
+        callbackMethod: identical(callbackMethod, sdkOmittedValue)
+            ? this.callbackMethod
+            : callbackMethod
+                as SdkOptional<ApiV2010AccountUsageUsageTriggerCallbackMethod?>,
+        callbackUrl: identical(callbackUrl, sdkOmittedValue)
+            ? this.callbackUrl
+            : callbackUrl as SdkOptional<String?>,
+        currentValue: identical(currentValue, sdkOmittedValue)
+            ? this.currentValue
+            : currentValue as SdkOptional<String?>,
+        dateCreated: identical(dateCreated, sdkOmittedValue)
+            ? this.dateCreated
+            : dateCreated as SdkOptional<String?>,
+        dateFired: identical(dateFired, sdkOmittedValue)
+            ? this.dateFired
+            : dateFired as SdkOptional<String?>,
+        dateUpdated: identical(dateUpdated, sdkOmittedValue)
+            ? this.dateUpdated
+            : dateUpdated as SdkOptional<String?>,
+        friendlyName: identical(friendlyName, sdkOmittedValue)
+            ? this.friendlyName
+            : friendlyName as SdkOptional<String?>,
+        recurring: identical(recurring, sdkOmittedValue)
+            ? this.recurring
+            : recurring as SdkOptional<UsageTriggerEnumRecurring>,
+        sid: identical(sid, sdkOmittedValue)
+            ? this.sid
+            : sid as SdkOptional<String?>,
+        triggerBy: identical(triggerBy, sdkOmittedValue)
+            ? this.triggerBy
+            : triggerBy as SdkOptional<UsageTriggerEnumTriggerField>,
+        triggerValue: identical(triggerValue, sdkOmittedValue)
+            ? this.triggerValue
+            : triggerValue as SdkOptional<String?>,
+        uri: identical(uri, sdkOmittedValue)
+            ? this.uri
+            : uri as SdkOptional<String?>,
+        usageCategory: identical(usageCategory, sdkOmittedValue)
+            ? this.usageCategory
+            : usageCategory as SdkOptional<String?>,
+        usageRecordUri: identical(usageRecordUri, sdkOmittedValue)
+            ? this.usageRecordUri
+            : usageRecordUri as SdkOptional<String?>,
+      );
 
-  factory ApiV2010AccountUsageUsageTrigger.fromJson(Map<String, dynamic> json) => ApiV2010AccountUsageUsageTrigger(
-    accountSid: json.containsKey('account_sid') ? SdkPresent(json['account_sid'] as String?) : const SdkOmitted(),
-    apiVersion: json.containsKey('api_version') ? SdkPresent(json['api_version'] as String?) : const SdkOmitted(),
-    callbackMethod: json.containsKey('callback_method') ? SdkPresent(json['callback_method'] != null ? ApiV2010AccountUsageUsageTriggerCallbackMethod.fromJson(json['callback_method'] as String) : null) : const SdkOmitted(),
-    callbackUrl: json.containsKey('callback_url') ? SdkPresent(json['callback_url'] as String?) : const SdkOmitted(),
-    currentValue: json.containsKey('current_value') ? SdkPresent(json['current_value'] as String?) : const SdkOmitted(),
-    dateCreated: json.containsKey('date_created') ? SdkPresent(json['date_created'] as String?) : const SdkOmitted(),
-    dateFired: json.containsKey('date_fired') ? SdkPresent(json['date_fired'] as String?) : const SdkOmitted(),
-    dateUpdated: json.containsKey('date_updated') ? SdkPresent(json['date_updated'] as String?) : const SdkOmitted(),
-    friendlyName: json.containsKey('friendly_name') ? SdkPresent(json['friendly_name'] as String?) : const SdkOmitted(),
-    recurring: json['recurring'] != null ? SdkPresent((json['recurring'] != null ? UsageTriggerEnumRecurring.fromJson(json['recurring'] as String) : null)!) : const SdkOmitted(),
-    sid: json.containsKey('sid') ? SdkPresent(json['sid'] as String?) : const SdkOmitted(),
-    triggerBy: json['trigger_by'] != null ? SdkPresent((json['trigger_by'] != null ? UsageTriggerEnumTriggerField.fromJson(json['trigger_by'] as String) : null)!) : const SdkOmitted(),
-    triggerValue: json.containsKey('trigger_value') ? SdkPresent(json['trigger_value'] as String?) : const SdkOmitted(),
-    uri: json.containsKey('uri') ? SdkPresent(json['uri'] as String?) : const SdkOmitted(),
-    usageCategory: json.containsKey('usage_category') ? SdkPresent(json['usage_category'] as String?) : const SdkOmitted(),
-    usageRecordUri: json.containsKey('usage_record_uri') ? SdkPresent(json['usage_record_uri'] as String?) : const SdkOmitted(),
-  );
+  factory ApiV2010AccountUsageUsageTrigger.fromJson(
+          Map<String, dynamic> json) =>
+      ApiV2010AccountUsageUsageTrigger(
+        accountSid: json.containsKey('account_sid')
+            ? SdkPresent(json['account_sid'] as String?)
+            : const SdkOmitted(),
+        apiVersion: json.containsKey('api_version')
+            ? SdkPresent(json['api_version'] as String?)
+            : const SdkOmitted(),
+        callbackMethod: json.containsKey('callback_method')
+            ? SdkPresent(json['callback_method'] != null
+                ? ApiV2010AccountUsageUsageTriggerCallbackMethod.fromJson(
+                    json['callback_method'] as String)
+                : null)
+            : const SdkOmitted(),
+        callbackUrl: json.containsKey('callback_url')
+            ? SdkPresent(json['callback_url'] as String?)
+            : const SdkOmitted(),
+        currentValue: json.containsKey('current_value')
+            ? SdkPresent(json['current_value'] as String?)
+            : const SdkOmitted(),
+        dateCreated: json.containsKey('date_created')
+            ? SdkPresent(json['date_created'] as String?)
+            : const SdkOmitted(),
+        dateFired: json.containsKey('date_fired')
+            ? SdkPresent(json['date_fired'] as String?)
+            : const SdkOmitted(),
+        dateUpdated: json.containsKey('date_updated')
+            ? SdkPresent(json['date_updated'] as String?)
+            : const SdkOmitted(),
+        friendlyName: json.containsKey('friendly_name')
+            ? SdkPresent(json['friendly_name'] as String?)
+            : const SdkOmitted(),
+        recurring: json['recurring'] != null
+            ? SdkPresent((json['recurring'] != null
+                ? UsageTriggerEnumRecurring.fromJson(
+                    json['recurring'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        sid: json.containsKey('sid')
+            ? SdkPresent(json['sid'] as String?)
+            : const SdkOmitted(),
+        triggerBy: json['trigger_by'] != null
+            ? SdkPresent((json['trigger_by'] != null
+                ? UsageTriggerEnumTriggerField.fromJson(
+                    json['trigger_by'] as String)
+                : null)!)
+            : const SdkOmitted(),
+        triggerValue: json.containsKey('trigger_value')
+            ? SdkPresent(json['trigger_value'] as String?)
+            : const SdkOmitted(),
+        uri: json.containsKey('uri')
+            ? SdkPresent(json['uri'] as String?)
+            : const SdkOmitted(),
+        usageCategory: json.containsKey('usage_category')
+            ? SdkPresent(json['usage_category'] as String?)
+            : const SdkOmitted(),
+        usageRecordUri: json.containsKey('usage_record_uri')
+            ? SdkPresent(json['usage_record_uri'] as String?)
+            : const SdkOmitted(),
+      );
 
   Map<String, dynamic> toJson() => {
-    ...switch (accountSid) {
-      SdkPresent<String?>(value: final value) => {'account_sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (apiVersion) {
-      SdkPresent<String?>(value: final value) => {'api_version': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (callbackMethod) {
-      SdkPresent<ApiV2010AccountUsageUsageTriggerCallbackMethod?>(value: final value) => {'callback_method': value?.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (callbackUrl) {
-      SdkPresent<String?>(value: final value) => {'callback_url': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (currentValue) {
-      SdkPresent<String?>(value: final value) => {'current_value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateCreated) {
-      SdkPresent<String?>(value: final value) => {'date_created': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateFired) {
-      SdkPresent<String?>(value: final value) => {'date_fired': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (dateUpdated) {
-      SdkPresent<String?>(value: final value) => {'date_updated': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (friendlyName) {
-      SdkPresent<String?>(value: final value) => {'friendly_name': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (recurring) {
-      SdkPresent<UsageTriggerEnumRecurring>(value: final value) => {'recurring': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (sid) {
-      SdkPresent<String?>(value: final value) => {'sid': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (triggerBy) {
-      SdkPresent<UsageTriggerEnumTriggerField>(value: final value) => {'trigger_by': value.toJson(),},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (triggerValue) {
-      SdkPresent<String?>(value: final value) => {'trigger_value': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (uri) {
-      SdkPresent<String?>(value: final value) => {'uri': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usageCategory) {
-      SdkPresent<String?>(value: final value) => {'usage_category': value,},
-      _ => const <String, dynamic>{},
-    },
-    ...switch (usageRecordUri) {
-      SdkPresent<String?>(value: final value) => {'usage_record_uri': value,},
-      _ => const <String, dynamic>{},
-    },
-  };
+        ...switch (accountSid) {
+          SdkPresent<String?>(value: final value) => {
+              'account_sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (apiVersion) {
+          SdkPresent<String?>(value: final value) => {
+              'api_version': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (callbackMethod) {
+          SdkPresent<ApiV2010AccountUsageUsageTriggerCallbackMethod?>(
+            value: final value
+          ) =>
+            {
+              'callback_method': value?.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (callbackUrl) {
+          SdkPresent<String?>(value: final value) => {
+              'callback_url': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (currentValue) {
+          SdkPresent<String?>(value: final value) => {
+              'current_value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateCreated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_created': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateFired) {
+          SdkPresent<String?>(value: final value) => {
+              'date_fired': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (dateUpdated) {
+          SdkPresent<String?>(value: final value) => {
+              'date_updated': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (friendlyName) {
+          SdkPresent<String?>(value: final value) => {
+              'friendly_name': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (recurring) {
+          SdkPresent<UsageTriggerEnumRecurring>(value: final value) => {
+              'recurring': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (sid) {
+          SdkPresent<String?>(value: final value) => {
+              'sid': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (triggerBy) {
+          SdkPresent<UsageTriggerEnumTriggerField>(value: final value) => {
+              'trigger_by': value.toJson(),
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (triggerValue) {
+          SdkPresent<String?>(value: final value) => {
+              'trigger_value': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (uri) {
+          SdkPresent<String?>(value: final value) => {
+              'uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usageCategory) {
+          SdkPresent<String?>(value: final value) => {
+              'usage_category': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+        ...switch (usageRecordUri) {
+          SdkPresent<String?>(value: final value) => {
+              'usage_record_uri': value,
+            },
+          _ => const <String, dynamic>{},
+        },
+      };
 }
 
 /// The frequency of a recurring UsageTrigger. Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
 final class UsageTriggerEnumRecurring {
-
   final String value;
 
   const UsageTriggerEnumRecurring._(this.value);
 
-  factory UsageTriggerEnumRecurring.fromJson(String value) => UsageTriggerEnumRecurring._(value);
+  factory UsageTriggerEnumRecurring.fromJson(String value) =>
+      UsageTriggerEnumRecurring._(value);
 
   static const daily = UsageTriggerEnumRecurring._('daily');
   static const monthly = UsageTriggerEnumRecurring._('monthly');
@@ -167,22 +345,25 @@ final class UsageTriggerEnumRecurring {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UsageTriggerEnumRecurring && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UsageTriggerEnumRecurring && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
 
 /// The field in the [UsageRecord](https://www.twilio.com/docs/usage/api/usage-record) resource that fires the trigger. Can be: `count`, `usage`, or `price`, as described in the [UsageRecords documentation](https://www.twilio.com/docs/usage/api/usage-record#usage-count-price).
 final class UsageTriggerEnumTriggerField {
-
   final String value;
 
   const UsageTriggerEnumTriggerField._(this.value);
 
-  factory UsageTriggerEnumTriggerField.fromJson(String value) => UsageTriggerEnumTriggerField._(value);
+  factory UsageTriggerEnumTriggerField.fromJson(String value) =>
+      UsageTriggerEnumTriggerField._(value);
 
   static const count = UsageTriggerEnumTriggerField._('count');
   static const usage = UsageTriggerEnumTriggerField._('usage');
@@ -190,10 +371,13 @@ final class UsageTriggerEnumTriggerField {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is UsageTriggerEnumTriggerField && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is UsageTriggerEnumTriggerField && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

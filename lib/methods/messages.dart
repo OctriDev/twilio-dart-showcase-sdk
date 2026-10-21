@@ -160,8 +160,10 @@ Future<ApiV2010AccountMessage> createMessages(ClientConfig config,
     SdkOptional<int> attempt = const SdkOmitted(),
     SdkOptional<int> validityPeriod = const SdkOmitted(),
     SdkOptional<bool> forceDelivery = const SdkOmitted(),
-    SdkOptional<MessageEnumContentRetention> contentRetention = const SdkOmitted(),
-    SdkOptional<MessageEnumAddressRetention> addressRetention = const SdkOmitted(),
+    SdkOptional<MessageEnumContentRetention> contentRetention =
+        const SdkOmitted(),
+    SdkOptional<MessageEnumAddressRetention> addressRetention =
+        const SdkOmitted(),
     SdkOptional<bool> smartEncoded = const SdkOmitted(),
     SdkOptional<List<String>> persistentAction = const SdkOmitted(),
     SdkOptional<MessageEnumTrafficType> trafficType = const SdkOmitted(),
@@ -186,14 +188,17 @@ Future<ApiV2010AccountMessage> createMessages(ClientConfig config,
   }
   if (applicationSid is SdkPresent<String>) {
     validateLength('ApplicationSid', applicationSid.value, min: 34, max: 34);
-    sdkValidatePattern('ApplicationSid', applicationSid.value, '^AP[0-9a-fA-F]{32}\$');
+    sdkValidatePattern(
+        'ApplicationSid', applicationSid.value, '^AP[0-9a-fA-F]{32}\$');
   }
   if (sendAt is SdkPresent<String>) {
     sdkValidateDateTime('SendAt', sendAt.value);
   }
   if (messagingServiceSid is SdkPresent<String>) {
-    validateLength('MessagingServiceSid', messagingServiceSid.value, min: 34, max: 34);
-    sdkValidatePattern('MessagingServiceSid', messagingServiceSid.value, '^MG[0-9a-fA-F]{32}\$');
+    validateLength('MessagingServiceSid', messagingServiceSid.value,
+        min: 34, max: 34);
+    sdkValidatePattern('MessagingServiceSid', messagingServiceSid.value,
+        '^MG[0-9a-fA-F]{32}\$');
   }
   if (contentSid is SdkPresent<String>) {
     validateLength('ContentSid', contentSid.value, min: 34, max: 34);
@@ -234,11 +239,11 @@ Future<ApiV2010AccountMessage> createMessages(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createMessages',
-          fromJsonRaw: (value) => ApiV2010AccountMessage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountMessage.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists message resources associated with an account. Filter the results by recipient, sender, or sent date, and use the page parameters to navigate the list.
 ///
@@ -304,22 +309,30 @@ Future<ListMessagesResponse> listMessages(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Messages.json',
           config: config,
           query: {
-            'To': SdkQueryValue(SdkUtils.unwrapOptional(to), style: 'form', explode: true),
-            'From': SdkQueryValue(SdkUtils.unwrapOptional(from), style: 'form', explode: true),
-            'DateSent': SdkQueryValue(SdkUtils.unwrapOptional(dateSent), style: 'form', explode: true),
-            'DateSent<': SdkQueryValue(SdkUtils.unwrapOptional(dateSent_), style: 'form', explode: true),
-            'DateSent>': SdkQueryValue(SdkUtils.unwrapOptional(dateSent_2), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'To': SdkQueryValue(SdkUtils.unwrapOptional(to),
+                style: 'form', explode: true),
+            'From': SdkQueryValue(SdkUtils.unwrapOptional(from),
+                style: 'form', explode: true),
+            'DateSent': SdkQueryValue(SdkUtils.unwrapOptional(dateSent),
+                style: 'form', explode: true),
+            'DateSent<': SdkQueryValue(SdkUtils.unwrapOptional(dateSent_),
+                style: 'form', explode: true),
+            'DateSent>': SdkQueryValue(SdkUtils.unwrapOptional(dateSent_2),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listMessages',
-          fromJsonRaw: (value) => ListMessagesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListMessagesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a Message resource from an account. Supply the account SID and Message SID for the resource you want to remove. The operation does not return a response body.
 ///
@@ -347,7 +360,6 @@ Future<void> deleteMessages(ClientConfig config,
       .data;
 }
 
-
 /// Retrieves a specific Message resource belonging to an account. Provide the account SID and Message SID to identify the resource. The response includes the message content, delivery status, and resource metadata.
 ///
 /// Fetch a specific Message
@@ -370,11 +382,11 @@ Future<ApiV2010AccountMessage> fetchMessages(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchMessages',
-          fromJsonRaw: (value) => ApiV2010AccountMessage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountMessage.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates a Message resource to change its body or cancel a message that has not yet been sent. Supply `Body` to replace the message text or set it to an empty string to redact the text; use `Status` to cancel the message. The response returns the updated Message resource.
 ///
@@ -407,7 +419,8 @@ Future<ApiV2010AccountMessage> updateMessages(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateMessages',
-          fromJsonRaw: (value) => ApiV2010AccountMessage.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountMessage.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
