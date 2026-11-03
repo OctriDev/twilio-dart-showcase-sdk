@@ -11,18 +11,27 @@ class UpdateCallsSiprecRequestBody implements SdkJsonModel {
 
   const UpdateCallsSiprecRequestBody({required this.status});
 
-  UpdateCallsSiprecRequestBody Function({SiprecEnumUpdateStatus status}) get copyWith => _copyWith;
+  UpdateCallsSiprecRequestBody Function({SiprecEnumUpdateStatus status})
+      get copyWith => _copyWith;
 
-  UpdateCallsSiprecRequestBody _copyWith({Object? status = sdkOmittedValue}) => UpdateCallsSiprecRequestBody(
-    status: identical(status, sdkOmittedValue) ? this.status : status as SiprecEnumUpdateStatus,
-  );
+  UpdateCallsSiprecRequestBody _copyWith({Object? status = sdkOmittedValue}) =>
+      UpdateCallsSiprecRequestBody(
+        status: identical(status, sdkOmittedValue)
+            ? this.status
+            : status as SiprecEnumUpdateStatus,
+      );
 
-  factory UpdateCallsSiprecRequestBody.fromJson(Map<String, dynamic> json) => sdkKeepRawJson(UpdateCallsSiprecRequestBody(
-    status: (json['Status'] != null ? SiprecEnumUpdateStatus.fromJson(json['Status'] as String) : null)!,
-  ), json);
+  factory UpdateCallsSiprecRequestBody.fromJson(Map<String, dynamic> json) =>
+      sdkKeepRawJson(
+          UpdateCallsSiprecRequestBody(
+            status: (json['Status'] != null
+                ? SiprecEnumUpdateStatus.fromJson(json['Status'] as String)
+                : null)!,
+          ),
+          json);
 
   @override
   Map<String, dynamic> toJson() => {
-    'Status': status.toJson(),
-  };
+        'Status': status.toJson(),
+      };
 }

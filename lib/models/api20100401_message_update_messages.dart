@@ -6,21 +6,24 @@ part of 'api20100401_message.dart';
 // api20100401_message domain models
 /// Typed representation of the `MessageEnumUpdateStatus` API schema.
 final class MessageEnumUpdateStatus {
-
   final String value;
 
   const MessageEnumUpdateStatus._(this.value);
 
-  factory MessageEnumUpdateStatus.fromJson(String value) => MessageEnumUpdateStatus._(value);
+  factory MessageEnumUpdateStatus.fromJson(String value) =>
+      MessageEnumUpdateStatus._(value);
 
   static const canceled = MessageEnumUpdateStatus._('canceled');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is MessageEnumUpdateStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is MessageEnumUpdateStatus && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

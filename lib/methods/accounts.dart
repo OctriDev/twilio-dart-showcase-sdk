@@ -20,11 +20,11 @@ Future<ApiV2010Account> createAccounts(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createAccounts',
-          fromJsonRaw: (value) => ApiV2010Account.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010Account.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists account resources associated with the account used to make the request. Filter by exact `FriendlyName` or by `Status`, and use `PageSize`, `Page`, and `PageToken` to control pagination.
 ///
@@ -56,19 +56,24 @@ Future<ListAccountsResponse> listAccounts(ClientConfig config,
           'GET', '/2010-04-01/Accounts.json',
           config: config,
           query: {
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
-            'Status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
+                style: 'form', explode: true),
+            'Status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listAccounts',
-          fromJsonRaw: (value) => ListAccountsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListAccountsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Retrieves a specific account by its Account SID. Supply `Sid` as a 34-character account identifier beginning with `AC` followed by 32 hexadecimal characters.
 ///
@@ -85,11 +90,11 @@ Future<ApiV2010Account> fetchAccounts(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchAccounts',
-          fromJsonRaw: (value) => ApiV2010Account.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010Account.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates properties of a specific account. Supply `FriendlyName`, `Status`, or both to change the account; a 409 response indicates that another request modified the account concurrently.
 ///
@@ -117,7 +122,8 @@ Future<ApiV2010Account> updateAccounts(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateAccounts',
-          fromJsonRaw: (value) => ApiV2010Account.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010Account.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

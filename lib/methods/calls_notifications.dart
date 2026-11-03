@@ -16,12 +16,12 @@ import '../types.dart';
 ///   SID of the Call Notification resource to fetch.
 /// [sid] The Twilio-provided string that uniquely identifies the Call
 ///   Notification resource to fetch.
-Future<ApiV2010AccountCallCallNotificationInstance>
-    fetchCallsNotifications(ClientConfig config,
-        {required String accountSid,
-        required String callSid,
-        required String sid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountCallCallNotificationInstance> fetchCallsNotifications(
+    ClientConfig config,
+    {required String accountSid,
+    required String callSid,
+    required String sid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -34,11 +34,12 @@ Future<ApiV2010AccountCallCallNotificationInstance>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchCallsNotifications',
-          fromJsonRaw: (value) => ApiV2010AccountCallCallNotificationInstance.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallCallNotificationInstance.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists notifications associated with a specific call. Filter by log level or message date, and use the page parameters to navigate the results.
 ///
@@ -66,18 +67,18 @@ Future<ApiV2010AccountCallCallNotificationInstance>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListCallsNotificationsResponse>
-    listCallsNotifications(ClientConfig config,
-        {required String accountSid,
-        required String callSid,
-        SdkOptional<int> log = const SdkOmitted(),
-        SdkOptional<String> messageDate = const SdkOmitted(),
-        SdkOptional<String> messageDate_ = const SdkOmitted(),
-        SdkOptional<String> messageDate_2 = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListCallsNotificationsResponse> listCallsNotifications(
+    ClientConfig config,
+    {required String accountSid,
+    required String callSid,
+    SdkOptional<int> log = const SdkOmitted(),
+    SdkOptional<String> messageDate = const SdkOmitted(),
+    SdkOptional<String> messageDate_ = const SdkOmitted(),
+    SdkOptional<String> messageDate_2 = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('CallSid', callSid, min: 34, max: 34);
@@ -103,17 +104,27 @@ Future<ListCallsNotificationsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Calls/${Uri.encodeComponent(callSid.toString())}/Notifications.json',
           config: config,
           query: {
-            'Log': SdkQueryValue(SdkUtils.unwrapOptional(log), style: 'form', explode: true),
-            'MessageDate': SdkQueryValue(SdkUtils.unwrapOptional(messageDate), style: 'form', explode: true),
-            'MessageDate<': SdkQueryValue(SdkUtils.unwrapOptional(messageDate_), style: 'form', explode: true),
-            'MessageDate>': SdkQueryValue(SdkUtils.unwrapOptional(messageDate_2), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Log': SdkQueryValue(SdkUtils.unwrapOptional(log),
+                style: 'form', explode: true),
+            'MessageDate': SdkQueryValue(SdkUtils.unwrapOptional(messageDate),
+                style: 'form', explode: true),
+            'MessageDate<': SdkQueryValue(SdkUtils.unwrapOptional(messageDate_),
+                style: 'form', explode: true),
+            'MessageDate>': SdkQueryValue(
+                SdkUtils.unwrapOptional(messageDate_2),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listCallsNotifications',
-          fromJsonRaw: (value) => ListCallsNotificationsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListCallsNotificationsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

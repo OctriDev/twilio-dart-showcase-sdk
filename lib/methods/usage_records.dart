@@ -63,21 +63,30 @@ Future<ListUsageRecordsResponse> listUsageRecords(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecords',
-          fromJsonRaw: (value) => ListUsageRecordsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListUsageRecordsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists all-time usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -104,17 +113,17 @@ Future<ListUsageRecordsResponse> listUsageRecords(ClientConfig config,
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListUsageRecordsAllTimeResponse>
-    listUsageRecordsAllTime(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<String> category = const SdkOmitted(),
-        SdkOptional<String> startDate = const SdkOmitted(),
-        SdkOptional<String> endDate = const SdkOmitted(),
-        SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListUsageRecordsAllTimeResponse> listUsageRecordsAllTime(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<String> category = const SdkOmitted(),
+    SdkOptional<String> startDate = const SdkOmitted(),
+    SdkOptional<String> endDate = const SdkOmitted(),
+    SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (startDate is SdkPresent<String>) {
@@ -134,21 +143,30 @@ Future<ListUsageRecordsAllTimeResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/AllTime.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsAllTime',
-          fromJsonRaw: (value) => ListUsageRecordsAllTimeResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsAllTimeResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists daily usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -204,21 +222,30 @@ Future<ListUsageRecordsDailyResponse> listUsageRecordsDaily(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/Daily.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsDaily',
-          fromJsonRaw: (value) => ListUsageRecordsDailyResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsDailyResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists usage records for the previous month for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -245,17 +272,17 @@ Future<ListUsageRecordsDailyResponse> listUsageRecordsDaily(ClientConfig config,
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListUsageRecordsLastMonthResponse>
-    listUsageRecordsLastMonth(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<String> category = const SdkOmitted(),
-        SdkOptional<String> startDate = const SdkOmitted(),
-        SdkOptional<String> endDate = const SdkOmitted(),
-        SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListUsageRecordsLastMonthResponse> listUsageRecordsLastMonth(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<String> category = const SdkOmitted(),
+    SdkOptional<String> startDate = const SdkOmitted(),
+    SdkOptional<String> endDate = const SdkOmitted(),
+    SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (startDate is SdkPresent<String>) {
@@ -275,21 +302,30 @@ Future<ListUsageRecordsLastMonthResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/LastMonth.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsLastMonth',
-          fromJsonRaw: (value) => ListUsageRecordsLastMonthResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsLastMonthResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists monthly usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -316,17 +352,17 @@ Future<ListUsageRecordsLastMonthResponse>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListUsageRecordsMonthlyResponse>
-    listUsageRecordsMonthly(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<String> category = const SdkOmitted(),
-        SdkOptional<String> startDate = const SdkOmitted(),
-        SdkOptional<String> endDate = const SdkOmitted(),
-        SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListUsageRecordsMonthlyResponse> listUsageRecordsMonthly(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<String> category = const SdkOmitted(),
+    SdkOptional<String> startDate = const SdkOmitted(),
+    SdkOptional<String> endDate = const SdkOmitted(),
+    SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (startDate is SdkPresent<String>) {
@@ -346,21 +382,30 @@ Future<ListUsageRecordsMonthlyResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/Monthly.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsMonthly',
-          fromJsonRaw: (value) => ListUsageRecordsMonthlyResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsMonthlyResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists usage records for the current month for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -387,17 +432,17 @@ Future<ListUsageRecordsMonthlyResponse>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListUsageRecordsThisMonthResponse>
-    listUsageRecordsThisMonth(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<String> category = const SdkOmitted(),
-        SdkOptional<String> startDate = const SdkOmitted(),
-        SdkOptional<String> endDate = const SdkOmitted(),
-        SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListUsageRecordsThisMonthResponse> listUsageRecordsThisMonth(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<String> category = const SdkOmitted(),
+    SdkOptional<String> startDate = const SdkOmitted(),
+    SdkOptional<String> endDate = const SdkOmitted(),
+    SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (startDate is SdkPresent<String>) {
@@ -417,21 +462,30 @@ Future<ListUsageRecordsThisMonthResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/ThisMonth.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsThisMonth',
-          fromJsonRaw: (value) => ListUsageRecordsThisMonthResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsThisMonthResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists usage records for the current day for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -487,21 +541,30 @@ Future<ListUsageRecordsTodayResponse> listUsageRecordsToday(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/Today.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsToday',
-          fromJsonRaw: (value) => ListUsageRecordsTodayResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsTodayResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists yearly usage records for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -528,17 +591,17 @@ Future<ListUsageRecordsTodayResponse> listUsageRecordsToday(ClientConfig config,
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListUsageRecordsYearlyResponse>
-    listUsageRecordsYearly(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<String> category = const SdkOmitted(),
-        SdkOptional<String> startDate = const SdkOmitted(),
-        SdkOptional<String> endDate = const SdkOmitted(),
-        SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListUsageRecordsYearlyResponse> listUsageRecordsYearly(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<String> category = const SdkOmitted(),
+    SdkOptional<String> startDate = const SdkOmitted(),
+    SdkOptional<String> endDate = const SdkOmitted(),
+    SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (startDate is SdkPresent<String>) {
@@ -558,21 +621,30 @@ Future<ListUsageRecordsYearlyResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/Yearly.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsYearly',
-          fromJsonRaw: (value) => ListUsageRecordsYearlyResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsYearlyResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists usage records for the previous day for the account identified by `AccountSid`. Use `Category`, `StartDate`, and `EndDate` to filter the records, and `IncludeSubaccounts` to control whether usage from subaccounts is included.
 ///
@@ -599,17 +671,17 @@ Future<ListUsageRecordsYearlyResponse>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListUsageRecordsYesterdayResponse>
-    listUsageRecordsYesterday(ClientConfig config,
-        {required String accountSid,
-        SdkOptional<String> category = const SdkOmitted(),
-        SdkOptional<String> startDate = const SdkOmitted(),
-        SdkOptional<String> endDate = const SdkOmitted(),
-        SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListUsageRecordsYesterdayResponse> listUsageRecordsYesterday(
+    ClientConfig config,
+    {required String accountSid,
+    SdkOptional<String> category = const SdkOmitted(),
+    SdkOptional<String> startDate = const SdkOmitted(),
+    SdkOptional<String> endDate = const SdkOmitted(),
+    SdkOptional<bool> includeSubaccounts = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (startDate is SdkPresent<String>) {
@@ -629,17 +701,27 @@ Future<ListUsageRecordsYesterdayResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Usage/Records/Yesterday.json',
           config: config,
           query: {
-            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category), style: 'form', explode: true),
-            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate), style: 'form', explode: true),
-            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate), style: 'form', explode: true),
-            'IncludeSubaccounts': SdkQueryValue(SdkUtils.unwrapOptional(includeSubaccounts), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Category': SdkQueryValue(SdkUtils.unwrapOptional(category),
+                style: 'form', explode: true),
+            'StartDate': SdkQueryValue(SdkUtils.unwrapOptional(startDate),
+                style: 'form', explode: true),
+            'EndDate': SdkQueryValue(SdkUtils.unwrapOptional(endDate),
+                style: 'form', explode: true),
+            'IncludeSubaccounts': SdkQueryValue(
+                SdkUtils.unwrapOptional(includeSubaccounts),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listUsageRecordsYesterday',
-          fromJsonRaw: (value) => ListUsageRecordsYesterdayResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListUsageRecordsYesterdayResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

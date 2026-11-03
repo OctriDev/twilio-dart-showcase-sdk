@@ -35,17 +35,17 @@ import '../types.dart';
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListConferencesRecordingsResponse>
-    listConferencesRecordings(ClientConfig config,
-        {required String accountSid,
-        required String conferenceSid,
-        SdkOptional<String> dateCreated = const SdkOmitted(),
-        SdkOptional<String> dateCreated_ = const SdkOmitted(),
-        SdkOptional<String> dateCreated_2 = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListConferencesRecordingsResponse> listConferencesRecordings(
+    ClientConfig config,
+    {required String accountSid,
+    required String conferenceSid,
+    SdkOptional<String> dateCreated = const SdkOmitted(),
+    SdkOptional<String> dateCreated_ = const SdkOmitted(),
+    SdkOptional<String> dateCreated_2 = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ConferenceSid', conferenceSid, min: 34, max: 34);
@@ -71,20 +71,28 @@ Future<ListConferencesRecordingsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Conferences/${Uri.encodeComponent(conferenceSid.toString())}/Recordings.json',
           config: config,
           query: {
-            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated), style: 'form', explode: true),
-            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_), style: 'form', explode: true),
-            'DateCreated>': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_2), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated),
+                style: 'form', explode: true),
+            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_),
+                style: 'form', explode: true),
+            'DateCreated>': SdkQueryValue(
+                SdkUtils.unwrapOptional(dateCreated_2),
+                style: 'form',
+                explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listConferencesRecordings',
-          fromJsonRaw: (value) => ListConferencesRecordingsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListConferencesRecordingsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the status of a conference recording and, when pausing it, can control how the pause is recorded. Supply `Status` to select the recording state; use `Twilio.CURRENT` as `Sid` to target the active recording.
 ///
@@ -131,11 +139,12 @@ Future<ApiV2010AccountConferenceConferenceRecording>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateConferencesRecordings',
-          fromJsonRaw: (value) => ApiV2010AccountConferenceConferenceRecording.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountConferenceConferenceRecording.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Retrieves a specific recording associated with a conference. Provide the account, conference, and recording identifiers to identify the recording resource.
 ///
@@ -148,12 +157,12 @@ Future<ApiV2010AccountConferenceConferenceRecording>
 ///   with the recording to fetch.
 /// [sid] The Twilio-provided string that uniquely identifies the Conference
 ///   Recording resource to fetch.
-Future<ApiV2010AccountConferenceConferenceRecording>
-    fetchConferencesRecordings(ClientConfig config,
-        {required String accountSid,
-        required String conferenceSid,
-        required String sid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountConferenceConferenceRecording> fetchConferencesRecordings(
+    ClientConfig config,
+    {required String accountSid,
+    required String conferenceSid,
+    required String sid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ConferenceSid', conferenceSid, min: 34, max: 34);
@@ -166,11 +175,12 @@ Future<ApiV2010AccountConferenceConferenceRecording>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchConferencesRecordings',
-          fromJsonRaw: (value) => ApiV2010AccountConferenceConferenceRecording.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountConferenceConferenceRecording.fromJson(
+                  value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a recording associated with a conference from the account. Provide the account, conference, and recording identifiers to specify the resource to remove.
 ///

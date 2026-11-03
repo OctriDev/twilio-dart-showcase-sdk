@@ -30,11 +30,11 @@ Future<ApiV2010AccountConference> fetchConferences(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchConferences',
-          fromJsonRaw: (value) => ApiV2010AccountConference.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountConference.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates a conference's status or announcement configuration. Set `Status` to `completed` to end the conference, or provide an announcement URL and its HTTP method. The response contains the updated conference resource.
 ///
@@ -54,7 +54,8 @@ Future<ApiV2010AccountConference> updateConferences(ClientConfig config,
     required String sid,
     SdkOptional<ConferenceEnumUpdateStatus> status = const SdkOmitted(),
     SdkOptional<String> announceUrl = const SdkOmitted(),
-    SdkOptional<UpdateConferencesRequestBodyAnnounceMethod> announceMethod = const SdkOmitted(),
+    SdkOptional<UpdateConferencesRequestBodyAnnounceMethod> announceMethod =
+        const SdkOmitted(),
     RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
@@ -73,11 +74,11 @@ Future<ApiV2010AccountConference> updateConferences(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateConferences',
-          fromJsonRaw: (value) => ApiV2010AccountConference.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountConference.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists conferences belonging to the specified account. Filter results by creation or update date, friendly name, or status, and use the page parameters to navigate the results.
 ///
@@ -183,21 +184,37 @@ Future<ListConferencesResponse> listConferences(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Conferences.json',
           config: config,
           query: {
-            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated), style: 'form', explode: true),
-            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_), style: 'form', explode: true),
-            'DateCreated>': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_2), style: 'form', explode: true),
-            'DateUpdated': SdkQueryValue(SdkUtils.unwrapOptional(dateUpdated), style: 'form', explode: true),
-            'DateUpdated<': SdkQueryValue(SdkUtils.unwrapOptional(dateUpdated_), style: 'form', explode: true),
-            'DateUpdated>': SdkQueryValue(SdkUtils.unwrapOptional(dateUpdated_2), style: 'form', explode: true),
-            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName), style: 'form', explode: true),
-            'Status': SdkQueryValue(SdkUtils.unwrapOptional(status), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'DateCreated': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated),
+                style: 'form', explode: true),
+            'DateCreated<': SdkQueryValue(SdkUtils.unwrapOptional(dateCreated_),
+                style: 'form', explode: true),
+            'DateCreated>': SdkQueryValue(
+                SdkUtils.unwrapOptional(dateCreated_2),
+                style: 'form',
+                explode: true),
+            'DateUpdated': SdkQueryValue(SdkUtils.unwrapOptional(dateUpdated),
+                style: 'form', explode: true),
+            'DateUpdated<': SdkQueryValue(SdkUtils.unwrapOptional(dateUpdated_),
+                style: 'form', explode: true),
+            'DateUpdated>': SdkQueryValue(
+                SdkUtils.unwrapOptional(dateUpdated_2),
+                style: 'form',
+                explode: true),
+            'FriendlyName': SdkQueryValue(SdkUtils.unwrapOptional(friendlyName),
+                style: 'form', explode: true),
+            'Status': SdkQueryValue(SdkUtils.unwrapOptional(status),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listConferences',
-          fromJsonRaw: (value) => ListConferencesResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListConferencesResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

@@ -19,12 +19,12 @@ import '../types.dart';
 ///   SID or label of the participant to fetch. Non URL safe characters in a label
 ///   must be percent encoded, for example, a space character is represented as
 ///   %20.
-Future<ApiV2010AccountConferenceParticipant>
-    fetchConferencesParticipants(ClientConfig config,
-        {required String accountSid,
-        required String conferenceSid,
-        required String callSid,
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountConferenceParticipant> fetchConferencesParticipants(
+    ClientConfig config,
+    {required String accountSid,
+    required String conferenceSid,
+    required String callSid,
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ConferenceSid', conferenceSid, min: 34, max: 34);
@@ -35,11 +35,11 @@ Future<ApiV2010AccountConferenceParticipant>
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchConferencesParticipants',
-          fromJsonRaw: (value) => ApiV2010AccountConferenceParticipant.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountConferenceParticipant.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates configurable properties of a participant in a conference. Use `AccountSid`, `ConferenceSid`, and `CallSid` to identify the participant, then supply the form fields for the settings you want to change. If `Coaching` is true, provide `CallSidToCoach`.
 ///
@@ -93,24 +93,27 @@ Future<ApiV2010AccountConferenceParticipant>
 /// [callSidToCoach] The SID of the participant who is being `coached`. The
 ///   participant being coached is the only participant who can hear the
 ///   participant who is `coaching`.
-Future<ApiV2010AccountConferenceParticipant>
-    updateConferencesParticipants(ClientConfig config,
-        {required String accountSid,
-        required String conferenceSid,
-        required String callSid,
-        SdkOptional<bool> muted = const SdkOmitted(),
-        SdkOptional<bool> hold = const SdkOmitted(),
-        SdkOptional<String> holdUrl = const SdkOmitted(),
-        SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod> holdMethod = const SdkOmitted(),
-        SdkOptional<String> announceUrl = const SdkOmitted(),
-        SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod> announceMethod = const SdkOmitted(),
-        SdkOptional<String> waitUrl = const SdkOmitted(),
-        SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod> waitMethod = const SdkOmitted(),
-        SdkOptional<bool> beepOnExit = const SdkOmitted(),
-        SdkOptional<bool> endConferenceOnExit = const SdkOmitted(),
-        SdkOptional<bool> coaching = const SdkOmitted(),
-        SdkOptional<String> callSidToCoach = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountConferenceParticipant> updateConferencesParticipants(
+    ClientConfig config,
+    {required String accountSid,
+    required String conferenceSid,
+    required String callSid,
+    SdkOptional<bool> muted = const SdkOmitted(),
+    SdkOptional<bool> hold = const SdkOmitted(),
+    SdkOptional<String> holdUrl = const SdkOmitted(),
+    SdkOptional<UpdateConferencesParticipantsRequestBodyHoldMethod> holdMethod =
+        const SdkOmitted(),
+    SdkOptional<String> announceUrl = const SdkOmitted(),
+    SdkOptional<UpdateConferencesParticipantsRequestBodyAnnounceMethod>
+        announceMethod = const SdkOmitted(),
+    SdkOptional<String> waitUrl = const SdkOmitted(),
+    SdkOptional<UpdateConferencesParticipantsRequestBodyWaitMethod> waitMethod =
+        const SdkOmitted(),
+    SdkOptional<bool> beepOnExit = const SdkOmitted(),
+    SdkOptional<bool> endConferenceOnExit = const SdkOmitted(),
+    SdkOptional<bool> coaching = const SdkOmitted(),
+    SdkOptional<String> callSidToCoach = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ConferenceSid', conferenceSid, min: 34, max: 34);
@@ -126,7 +129,8 @@ Future<ApiV2010AccountConferenceParticipant>
   }
   if (callSidToCoach is SdkPresent<String>) {
     validateLength('CallSidToCoach', callSidToCoach.value, min: 34, max: 34);
-    sdkValidatePattern('CallSidToCoach', callSidToCoach.value, '^CA[0-9a-fA-F]{32}\$');
+    sdkValidatePattern(
+        'CallSidToCoach', callSidToCoach.value, '^CA[0-9a-fA-F]{32}\$');
   }
 
   return (await sdkRequest<ApiV2010AccountConferenceParticipant>('POST',
@@ -149,11 +153,11 @@ Future<ApiV2010AccountConferenceParticipant>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateConferencesParticipants',
-          fromJsonRaw: (value) => ApiV2010AccountConferenceParticipant.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountConferenceParticipant.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Removes a participant from a conference. Use `AccountSid`, `ConferenceSid`, and `CallSid` to identify the account, conference, and participant. You can identify the participant by call SID or label; percent-encode characters in a label that are not URL-safe.
 ///
@@ -185,7 +189,6 @@ Future<void> deleteConferencesParticipants(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Creates a participant in a conference by placing a call from `From` to `To`. Provide both endpoints and optionally configure call behavior, conference settings, and status callbacks. The response includes the participant and associated call identifiers.
 ///
@@ -405,71 +408,80 @@ Future<void> deleteConferencesParticipants(ClientConfig config,
 /// [emergencyCountry] The emergency caller's country. Currently supported US
 ///   and CA only. Note: If the value exceeds 20 characters, only the first 20
 ///   characters will be used.
-Future<ApiV2010AccountConferenceParticipant>
-    createConferencesParticipants(ClientConfig config,
-        {required String accountSid,
-        required String conferenceSid,
-        required String from,
-        required String to,
-        SdkOptional<String> statusCallback = const SdkOmitted(),
-        SdkOptional<CreateConferencesParticipantsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
-        SdkOptional<List<String>> statusCallbackEvent = const SdkOmitted(),
-        SdkOptional<String> label = const SdkOmitted(),
-        SdkOptional<int> timeout = const SdkOmitted(),
-        SdkOptional<bool> record = const SdkOmitted(),
-        SdkOptional<bool> muted = const SdkOmitted(),
-        SdkOptional<String> beep = const SdkOmitted(),
-        SdkOptional<bool> startConferenceOnEnter = const SdkOmitted(),
-        SdkOptional<bool> endConferenceOnExit = const SdkOmitted(),
-        SdkOptional<String> waitUrl = const SdkOmitted(),
-        SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod> waitMethod = const SdkOmitted(),
-        SdkOptional<bool> earlyMedia = const SdkOmitted(),
-        SdkOptional<int> maxParticipants = const SdkOmitted(),
-        SdkOptional<String> conferenceRecord = const SdkOmitted(),
-        SdkOptional<String> conferenceTrim = const SdkOmitted(),
-        SdkOptional<String> conferenceStatusCallback = const SdkOmitted(),
-        SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod> conferenceStatusCallbackMethod = const SdkOmitted(),
-        SdkOptional<List<String>> conferenceStatusCallbackEvent = const SdkOmitted(),
-        SdkOptional<String> recordingChannels = const SdkOmitted(),
-        SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
-        SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod> recordingStatusCallbackMethod = const SdkOmitted(),
-        SdkOptional<String> sipAuthUsername = const SdkOmitted(),
-        SdkOptional<String> sipAuthPassword = const SdkOmitted(),
-        SdkOptional<String> region = const SdkOmitted(),
-        SdkOptional<String> conferenceRecordingStatusCallback = const SdkOmitted(),
-        SdkOptional<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod> conferenceRecordingStatusCallbackMethod = const SdkOmitted(),
-        SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
-        SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent = const SdkOmitted(),
-        SdkOptional<bool> coaching = const SdkOmitted(),
-        SdkOptional<String> callSidToCoach = const SdkOmitted(),
-        SdkOptional<String> jitterBufferSize = const SdkOmitted(),
-        SdkOptional<String> byoc = const SdkOmitted(),
-        SdkOptional<String> callerId = const SdkOmitted(),
-        SdkOptional<String> callReason = const SdkOmitted(),
-        SdkOptional<String> recordingTrack = const SdkOmitted(),
-        SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
-        SdkOptional<int> timeLimit = const SdkOmitted(),
-        SdkOptional<String> machineDetection = const SdkOmitted(),
-        SdkOptional<int> machineDetectionTimeout = const SdkOmitted(),
-        SdkOptional<int> machineDetectionSpeechThreshold = const SdkOmitted(),
-        SdkOptional<int> machineDetectionSpeechEndThreshold = const SdkOmitted(),
-        SdkOptional<int> machineDetectionSilenceTimeout = const SdkOmitted(),
-        SdkOptional<String> amdStatusCallback = const SdkOmitted(),
-        SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod> amdStatusCallbackMethod = const SdkOmitted(),
-        SdkOptional<String> trim = const SdkOmitted(),
-        SdkOptional<String> callToken = const SdkOmitted(),
-        SdkOptional<String> passports = const SdkOmitted(),
-        SdkOptional<String> clientNotificationUrl = const SdkOmitted(),
-        SdkOptional<String> callerDisplayName = const SdkOmitted(),
-        SdkOptional<String> emergencyCallerPosition = const SdkOmitted(),
-        SdkOptional<String> emergencyCallerLocation = const SdkOmitted(),
-        SdkOptional<String> emergencyName = const SdkOmitted(),
-        SdkOptional<String> emergencyAddress = const SdkOmitted(),
-        SdkOptional<String> emergencyZipCode = const SdkOmitted(),
-        SdkOptional<String> emergencyCity = const SdkOmitted(),
-        SdkOptional<String> emergencyState = const SdkOmitted(),
-        SdkOptional<String> emergencyCountry = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ApiV2010AccountConferenceParticipant> createConferencesParticipants(
+    ClientConfig config,
+    {required String accountSid,
+    required String conferenceSid,
+    required String from,
+    required String to,
+    SdkOptional<String> statusCallback = const SdkOmitted(),
+    SdkOptional<
+            CreateConferencesParticipantsRequestBodyStatusCallbackMethod>
+        statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<List<String>> statusCallbackEvent = const SdkOmitted(),
+    SdkOptional<String> label = const SdkOmitted(),
+    SdkOptional<int> timeout = const SdkOmitted(),
+    SdkOptional<bool> record = const SdkOmitted(),
+    SdkOptional<bool> muted = const SdkOmitted(),
+    SdkOptional<String> beep = const SdkOmitted(),
+    SdkOptional<bool> startConferenceOnEnter = const SdkOmitted(),
+    SdkOptional<bool> endConferenceOnExit = const SdkOmitted(),
+    SdkOptional<String> waitUrl = const SdkOmitted(),
+    SdkOptional<CreateConferencesParticipantsRequestBodyWaitMethod> waitMethod =
+        const SdkOmitted(),
+    SdkOptional<bool> earlyMedia = const SdkOmitted(),
+    SdkOptional<int> maxParticipants = const SdkOmitted(),
+    SdkOptional<String> conferenceRecord = const SdkOmitted(),
+    SdkOptional<String> conferenceTrim = const SdkOmitted(),
+    SdkOptional<String> conferenceStatusCallback = const SdkOmitted(),
+    SdkOptional<CreateConferencesParticipantsRequestBodyConferenceStatusCallbackMethod>
+        conferenceStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<List<String>> conferenceStatusCallbackEvent =
+        const SdkOmitted(),
+    SdkOptional<String> recordingChannels = const SdkOmitted(),
+    SdkOptional<String> recordingStatusCallback = const SdkOmitted(),
+    SdkOptional<CreateConferencesParticipantsRequestBodyRecordingStatusCallbackMethod>
+        recordingStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<String> sipAuthUsername = const SdkOmitted(),
+    SdkOptional<String> sipAuthPassword = const SdkOmitted(),
+    SdkOptional<String> region = const SdkOmitted(),
+    SdkOptional<String> conferenceRecordingStatusCallback = const SdkOmitted(),
+    SdkOptional<CreateConferencesParticipantsRequestBodyConferenceRecordingStatusCallbackMethod>
+        conferenceRecordingStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<List<String>> recordingStatusCallbackEvent = const SdkOmitted(),
+    SdkOptional<List<String>> conferenceRecordingStatusCallbackEvent =
+        const SdkOmitted(),
+    SdkOptional<bool> coaching = const SdkOmitted(),
+    SdkOptional<String> callSidToCoach = const SdkOmitted(),
+    SdkOptional<String> jitterBufferSize = const SdkOmitted(),
+    SdkOptional<String> byoc = const SdkOmitted(),
+    SdkOptional<String> callerId = const SdkOmitted(),
+    SdkOptional<String> callReason = const SdkOmitted(),
+    SdkOptional<String> recordingTrack = const SdkOmitted(),
+    SdkOptional<String> recordingConfigurationId = const SdkOmitted(),
+    SdkOptional<int> timeLimit = const SdkOmitted(),
+    SdkOptional<String> machineDetection = const SdkOmitted(),
+    SdkOptional<int> machineDetectionTimeout = const SdkOmitted(),
+    SdkOptional<int> machineDetectionSpeechThreshold = const SdkOmitted(),
+    SdkOptional<int> machineDetectionSpeechEndThreshold = const SdkOmitted(),
+    SdkOptional<int> machineDetectionSilenceTimeout = const SdkOmitted(),
+    SdkOptional<String> amdStatusCallback = const SdkOmitted(),
+    SdkOptional<CreateConferencesParticipantsRequestBodyAmdStatusCallbackMethod>
+        amdStatusCallbackMethod = const SdkOmitted(),
+    SdkOptional<String> trim = const SdkOmitted(),
+    SdkOptional<String> callToken = const SdkOmitted(),
+    SdkOptional<String> passports = const SdkOmitted(),
+    SdkOptional<String> clientNotificationUrl = const SdkOmitted(),
+    SdkOptional<String> callerDisplayName = const SdkOmitted(),
+    SdkOptional<String> emergencyCallerPosition = const SdkOmitted(),
+    SdkOptional<String> emergencyCallerLocation = const SdkOmitted(),
+    SdkOptional<String> emergencyName = const SdkOmitted(),
+    SdkOptional<String> emergencyAddress = const SdkOmitted(),
+    SdkOptional<String> emergencyZipCode = const SdkOmitted(),
+    SdkOptional<String> emergencyCity = const SdkOmitted(),
+    SdkOptional<String> emergencyState = const SdkOmitted(),
+    SdkOptional<String> emergencyCountry = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   if (statusCallback is SdkPresent<String>) {
@@ -485,11 +497,13 @@ Future<ApiV2010AccountConferenceParticipant>
     sdkValidateUri('RecordingStatusCallback', recordingStatusCallback.value);
   }
   if (conferenceRecordingStatusCallback is SdkPresent<String>) {
-    sdkValidateUri('ConferenceRecordingStatusCallback', conferenceRecordingStatusCallback.value);
+    sdkValidateUri('ConferenceRecordingStatusCallback',
+        conferenceRecordingStatusCallback.value);
   }
   if (callSidToCoach is SdkPresent<String>) {
     validateLength('CallSidToCoach', callSidToCoach.value, min: 34, max: 34);
-    sdkValidatePattern('CallSidToCoach', callSidToCoach.value, '^CA[0-9a-fA-F]{32}\$');
+    sdkValidatePattern(
+        'CallSidToCoach', callSidToCoach.value, '^CA[0-9a-fA-F]{32}\$');
   }
   if (byoc is SdkPresent<String>) {
     validateLength('Byoc', byoc.value, min: 34, max: 34);
@@ -509,14 +523,16 @@ Future<ApiV2010AccountConferenceParticipant>
             'From': from,
             'To': to,
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod':
+                SdkUtils.unwrapOptional(statusCallbackMethod),
             'StatusCallbackEvent': SdkUtils.unwrapOptional(statusCallbackEvent),
             'Label': SdkUtils.unwrapOptional(label),
             'Timeout': SdkUtils.unwrapOptional(timeout),
             'Record': SdkUtils.unwrapOptional(record),
             'Muted': SdkUtils.unwrapOptional(muted),
             'Beep': SdkUtils.unwrapOptional(beep),
-            'StartConferenceOnEnter': SdkUtils.unwrapOptional(startConferenceOnEnter),
+            'StartConferenceOnEnter':
+                SdkUtils.unwrapOptional(startConferenceOnEnter),
             'EndConferenceOnExit': SdkUtils.unwrapOptional(endConferenceOnExit),
             'WaitUrl': SdkUtils.unwrapOptional(waitUrl),
             'WaitMethod': SdkUtils.unwrapOptional(waitMethod),
@@ -524,19 +540,28 @@ Future<ApiV2010AccountConferenceParticipant>
             'MaxParticipants': SdkUtils.unwrapOptional(maxParticipants),
             'ConferenceRecord': SdkUtils.unwrapOptional(conferenceRecord),
             'ConferenceTrim': SdkUtils.unwrapOptional(conferenceTrim),
-            'ConferenceStatusCallback': SdkUtils.unwrapOptional(conferenceStatusCallback),
-            'ConferenceStatusCallbackMethod': SdkUtils.unwrapOptional(conferenceStatusCallbackMethod),
-            'ConferenceStatusCallbackEvent': SdkUtils.unwrapOptional(conferenceStatusCallbackEvent),
+            'ConferenceStatusCallback':
+                SdkUtils.unwrapOptional(conferenceStatusCallback),
+            'ConferenceStatusCallbackMethod':
+                SdkUtils.unwrapOptional(conferenceStatusCallbackMethod),
+            'ConferenceStatusCallbackEvent':
+                SdkUtils.unwrapOptional(conferenceStatusCallbackEvent),
             'RecordingChannels': SdkUtils.unwrapOptional(recordingChannels),
-            'RecordingStatusCallback': SdkUtils.unwrapOptional(recordingStatusCallback),
-            'RecordingStatusCallbackMethod': SdkUtils.unwrapOptional(recordingStatusCallbackMethod),
+            'RecordingStatusCallback':
+                SdkUtils.unwrapOptional(recordingStatusCallback),
+            'RecordingStatusCallbackMethod':
+                SdkUtils.unwrapOptional(recordingStatusCallbackMethod),
             'SipAuthUsername': SdkUtils.unwrapOptional(sipAuthUsername),
             'SipAuthPassword': SdkUtils.unwrapOptional(sipAuthPassword),
             'Region': SdkUtils.unwrapOptional(region),
-            'ConferenceRecordingStatusCallback': SdkUtils.unwrapOptional(conferenceRecordingStatusCallback),
-            'ConferenceRecordingStatusCallbackMethod': SdkUtils.unwrapOptional(conferenceRecordingStatusCallbackMethod),
-            'RecordingStatusCallbackEvent': SdkUtils.unwrapOptional(recordingStatusCallbackEvent),
-            'ConferenceRecordingStatusCallbackEvent': SdkUtils.unwrapOptional(conferenceRecordingStatusCallbackEvent),
+            'ConferenceRecordingStatusCallback':
+                SdkUtils.unwrapOptional(conferenceRecordingStatusCallback),
+            'ConferenceRecordingStatusCallbackMethod': SdkUtils.unwrapOptional(
+                conferenceRecordingStatusCallbackMethod),
+            'RecordingStatusCallbackEvent':
+                SdkUtils.unwrapOptional(recordingStatusCallbackEvent),
+            'ConferenceRecordingStatusCallbackEvent':
+                SdkUtils.unwrapOptional(conferenceRecordingStatusCallbackEvent),
             'Coaching': SdkUtils.unwrapOptional(coaching),
             'CallSidToCoach': SdkUtils.unwrapOptional(callSidToCoach),
             'JitterBufferSize': SdkUtils.unwrapOptional(jitterBufferSize),
@@ -544,22 +569,31 @@ Future<ApiV2010AccountConferenceParticipant>
             'CallerId': SdkUtils.unwrapOptional(callerId),
             'CallReason': SdkUtils.unwrapOptional(callReason),
             'RecordingTrack': SdkUtils.unwrapOptional(recordingTrack),
-            'RecordingConfigurationId': SdkUtils.unwrapOptional(recordingConfigurationId),
+            'RecordingConfigurationId':
+                SdkUtils.unwrapOptional(recordingConfigurationId),
             'TimeLimit': SdkUtils.unwrapOptional(timeLimit),
             'MachineDetection': SdkUtils.unwrapOptional(machineDetection),
-            'MachineDetectionTimeout': SdkUtils.unwrapOptional(machineDetectionTimeout),
-            'MachineDetectionSpeechThreshold': SdkUtils.unwrapOptional(machineDetectionSpeechThreshold),
-            'MachineDetectionSpeechEndThreshold': SdkUtils.unwrapOptional(machineDetectionSpeechEndThreshold),
-            'MachineDetectionSilenceTimeout': SdkUtils.unwrapOptional(machineDetectionSilenceTimeout),
+            'MachineDetectionTimeout':
+                SdkUtils.unwrapOptional(machineDetectionTimeout),
+            'MachineDetectionSpeechThreshold':
+                SdkUtils.unwrapOptional(machineDetectionSpeechThreshold),
+            'MachineDetectionSpeechEndThreshold':
+                SdkUtils.unwrapOptional(machineDetectionSpeechEndThreshold),
+            'MachineDetectionSilenceTimeout':
+                SdkUtils.unwrapOptional(machineDetectionSilenceTimeout),
             'AmdStatusCallback': SdkUtils.unwrapOptional(amdStatusCallback),
-            'AmdStatusCallbackMethod': SdkUtils.unwrapOptional(amdStatusCallbackMethod),
+            'AmdStatusCallbackMethod':
+                SdkUtils.unwrapOptional(amdStatusCallbackMethod),
             'Trim': SdkUtils.unwrapOptional(trim),
             'CallToken': SdkUtils.unwrapOptional(callToken),
             'Passports': SdkUtils.unwrapOptional(passports),
-            'ClientNotificationUrl': SdkUtils.unwrapOptional(clientNotificationUrl),
+            'ClientNotificationUrl':
+                SdkUtils.unwrapOptional(clientNotificationUrl),
             'CallerDisplayName': SdkUtils.unwrapOptional(callerDisplayName),
-            'EmergencyCallerPosition': SdkUtils.unwrapOptional(emergencyCallerPosition),
-            'EmergencyCallerLocation': SdkUtils.unwrapOptional(emergencyCallerLocation),
+            'EmergencyCallerPosition':
+                SdkUtils.unwrapOptional(emergencyCallerPosition),
+            'EmergencyCallerLocation':
+                SdkUtils.unwrapOptional(emergencyCallerLocation),
             'EmergencyName': SdkUtils.unwrapOptional(emergencyName),
             'EmergencyAddress': SdkUtils.unwrapOptional(emergencyAddress),
             'EmergencyZipCode': SdkUtils.unwrapOptional(emergencyZipCode),
@@ -570,11 +604,11 @@ Future<ApiV2010AccountConferenceParticipant>
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createConferencesParticipants',
-          fromJsonRaw: (value) => ApiV2010AccountConferenceParticipant.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountConferenceParticipant.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists participants in a specific conference. Use `Muted`, `Hold`, and `Coaching` to filter participants by their current settings. Use `PageSize`, `Page`, and `PageToken` to paginate the results.
 ///
@@ -594,17 +628,17 @@ Future<ApiV2010AccountConferenceParticipant>
 ///   50, and the maximum is 1000.
 /// [page] The page index. This value is simply for client state.
 /// [pageToken] The page token. This is provided by the API.
-Future<ListConferencesParticipantsResponse>
-    listConferencesParticipants(ClientConfig config,
-        {required String accountSid,
-        required String conferenceSid,
-        SdkOptional<bool> muted = const SdkOmitted(),
-        SdkOptional<bool> hold = const SdkOmitted(),
-        SdkOptional<bool> coaching = const SdkOmitted(),
-        SdkOptional<int> pageSize = const SdkOmitted(),
-        SdkOptional<int> page = const SdkOmitted(),
-        SdkOptional<String> pageToken = const SdkOmitted(),
-        RequestOptions? requestOptions}) async {
+Future<ListConferencesParticipantsResponse> listConferencesParticipants(
+    ClientConfig config,
+    {required String accountSid,
+    required String conferenceSid,
+    SdkOptional<bool> muted = const SdkOmitted(),
+    SdkOptional<bool> hold = const SdkOmitted(),
+    SdkOptional<bool> coaching = const SdkOmitted(),
+    SdkOptional<int> pageSize = const SdkOmitted(),
+    SdkOptional<int> page = const SdkOmitted(),
+    SdkOptional<String> pageToken = const SdkOmitted(),
+    RequestOptions? requestOptions}) async {
   validateLength('AccountSid', accountSid, min: 34, max: 34);
   sdkValidatePattern('AccountSid', accountSid, '^AC[0-9a-fA-F]{32}\$');
   validateLength('ConferenceSid', conferenceSid, min: 34, max: 34);
@@ -620,16 +654,23 @@ Future<ListConferencesParticipantsResponse>
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Conferences/${Uri.encodeComponent(conferenceSid.toString())}/Participants.json',
           config: config,
           query: {
-            'Muted': SdkQueryValue(SdkUtils.unwrapOptional(muted), style: 'form', explode: true),
-            'Hold': SdkQueryValue(SdkUtils.unwrapOptional(hold), style: 'form', explode: true),
-            'Coaching': SdkQueryValue(SdkUtils.unwrapOptional(coaching), style: 'form', explode: true),
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'Muted': SdkQueryValue(SdkUtils.unwrapOptional(muted),
+                style: 'form', explode: true),
+            'Hold': SdkQueryValue(SdkUtils.unwrapOptional(hold),
+                style: 'form', explode: true),
+            'Coaching': SdkQueryValue(SdkUtils.unwrapOptional(coaching),
+                style: 'form', explode: true),
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listConferencesParticipants',
-          fromJsonRaw: (value) => ListConferencesParticipantsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListConferencesParticipantsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

@@ -234,7 +234,8 @@ Future<ApiV2010AccountCallStream> createCallsStreams(ClientConfig config,
     SdkOptional<String> name = const SdkOmitted(),
     SdkOptional<StreamEnumTrack> track = const SdkOmitted(),
     SdkOptional<String> statusCallback = const SdkOmitted(),
-    SdkOptional<CreateCallsStreamsRequestBodyStatusCallbackMethod> statusCallbackMethod = const SdkOmitted(),
+    SdkOptional<CreateCallsStreamsRequestBodyStatusCallbackMethod>
+        statusCallbackMethod = const SdkOmitted(),
     SdkOptional<String> parameter1Name = const SdkOmitted(),
     SdkOptional<String> parameter1Value = const SdkOmitted(),
     SdkOptional<String> parameter2Name = const SdkOmitted(),
@@ -451,7 +452,8 @@ Future<ApiV2010AccountCallStream> createCallsStreams(ClientConfig config,
             'Name': SdkUtils.unwrapOptional(name),
             'Track': SdkUtils.unwrapOptional(track),
             'StatusCallback': SdkUtils.unwrapOptional(statusCallback),
-            'StatusCallbackMethod': SdkUtils.unwrapOptional(statusCallbackMethod),
+            'StatusCallbackMethod':
+                SdkUtils.unwrapOptional(statusCallbackMethod),
             'Parameter1.Name': SdkUtils.unwrapOptional(parameter1Name),
             'Parameter1.Value': SdkUtils.unwrapOptional(parameter1Value),
             'Parameter2.Name': SdkUtils.unwrapOptional(parameter2Name),
@@ -654,11 +656,11 @@ Future<ApiV2010AccountCallStream> createCallsStreams(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createCallsStreams',
-          fromJsonRaw: (value) => ApiV2010AccountCallStream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallStream.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Stops a Stream associated with a call. Set `Status` to `stopped`, and identify the Stream by its SID or the name used when it was created.
 ///
@@ -689,7 +691,8 @@ Future<ApiV2010AccountCallStream> updateCallsStreams(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateCallsStreams',
-          fromJsonRaw: (value) => ApiV2010AccountCallStream.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountCallStream.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

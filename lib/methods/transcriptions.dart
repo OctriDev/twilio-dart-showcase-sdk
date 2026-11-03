@@ -30,11 +30,11 @@ Future<ApiV2010AccountTranscription> fetchTranscriptions(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchTranscriptions',
-          fromJsonRaw: (value) => ApiV2010AccountTranscription.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountTranscription.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Delete a transcription from the account used to make the request
 ///
@@ -60,7 +60,6 @@ Future<void> deleteTranscriptions(ClientConfig config,
           options: requestOptions))
       .data;
 }
-
 
 /// Lists transcription resources belonging to an account. Use the page parameters to retrieve results in pages, with `PageSize` controlling the number of resources returned per page.
 ///
@@ -92,13 +91,17 @@ Future<ListTranscriptionsResponse> listTranscriptions(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Transcriptions.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listTranscriptions',
-          fromJsonRaw: (value) => ListTranscriptionsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ListTranscriptionsResponse.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

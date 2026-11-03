@@ -6,22 +6,25 @@ part of 'api20100401_incoming_phone_number.dart';
 // api20100401_incoming_phone_number domain models
 /// Typed representation of the `IncomingPhoneNumberEnumVoiceReceiveMode` API schema.
 final class IncomingPhoneNumberEnumVoiceReceiveMode {
-
   final String value;
 
   const IncomingPhoneNumberEnumVoiceReceiveMode._(this.value);
 
-  factory IncomingPhoneNumberEnumVoiceReceiveMode.fromJson(String value) => IncomingPhoneNumberEnumVoiceReceiveMode._(value);
+  factory IncomingPhoneNumberEnumVoiceReceiveMode.fromJson(String value) =>
+      IncomingPhoneNumberEnumVoiceReceiveMode._(value);
 
   static const voice = IncomingPhoneNumberEnumVoiceReceiveMode._('voice');
   static const fax = IncomingPhoneNumberEnumVoiceReceiveMode._('fax');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IncomingPhoneNumberEnumVoiceReceiveMode && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IncomingPhoneNumberEnumVoiceReceiveMode && other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

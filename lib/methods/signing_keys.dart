@@ -28,11 +28,11 @@ Future<ApiV2010AccountNewSigningKey> createSigningKeys(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'createSigningKeys',
-          fromJsonRaw: (value) => ApiV2010AccountNewSigningKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) => ApiV2010AccountNewSigningKey.fromJson(
+              value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Lists signing keys for an account. Use the paging parameters to control which results are returned and to continue through the paginated list. The response includes signing key records and page metadata.
 ///
@@ -59,17 +59,20 @@ Future<ListSigningKeysResponse> listSigningKeys(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/SigningKeys.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listSigningKeys',
-          fromJsonRaw: (value) => ListSigningKeysResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListSigningKeysResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Retrieves a specific signing key from an account. Use `AccountSid` and `Sid` to identify the account and signing key; both identifiers must match their documented SID formats.
 Future<ApiV2010AccountSigningKey> fetchSigningKeys(ClientConfig config,
@@ -86,11 +89,11 @@ Future<ApiV2010AccountSigningKey> fetchSigningKeys(ClientConfig config,
           config: config,
           decoder: SdkResponseDecoder.json,
           operationId: 'fetchSigningKeys',
-          fromJsonRaw: (value) => ApiV2010AccountSigningKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountSigningKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Updates the friendly name of a signing key. Supply `FriendlyName` to change the name; omit it if you do not want to update that field.
 Future<ApiV2010AccountSigningKey> updateSigningKeys(ClientConfig config,
@@ -110,11 +113,11 @@ Future<ApiV2010AccountSigningKey> updateSigningKeys(ClientConfig config,
           contentType: 'application/x-www-form-urlencoded',
           decoder: SdkResponseDecoder.json,
           operationId: 'updateSigningKeys',
-          fromJsonRaw: (value) => ApiV2010AccountSigningKey.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ApiV2010AccountSigningKey.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }
-
 
 /// Deletes a signing key from an account. Identify the account and signing key with their SIDs, using the documented prefixes and 32-character hexadecimal suffixes.
 Future<void> deleteSigningKeys(ClientConfig config,

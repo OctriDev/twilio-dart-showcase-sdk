@@ -39,13 +39,17 @@ Future<ListCallsEventsResponse> listCallsEvents(ClientConfig config,
           '/2010-04-01/Accounts/${Uri.encodeComponent(accountSid.toString())}/Calls/${Uri.encodeComponent(callSid.toString())}/Events.json',
           config: config,
           query: {
-            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize), style: 'form', explode: true),
-            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page), style: 'form', explode: true),
-            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken), style: 'form', explode: true)
+            'PageSize': SdkQueryValue(SdkUtils.unwrapOptional(pageSize),
+                style: 'form', explode: true),
+            'Page': SdkQueryValue(SdkUtils.unwrapOptional(page),
+                style: 'form', explode: true),
+            'PageToken': SdkQueryValue(SdkUtils.unwrapOptional(pageToken),
+                style: 'form', explode: true)
           },
           decoder: SdkResponseDecoder.json,
           operationId: 'listCallsEvents',
-          fromJsonRaw: (value) => ListCallsEventsResponse.fromJson(value as Map<String, dynamic>),
+          fromJsonRaw: (value) =>
+              ListCallsEventsResponse.fromJson(value as Map<String, dynamic>),
           options: requestOptions))
       .data;
 }

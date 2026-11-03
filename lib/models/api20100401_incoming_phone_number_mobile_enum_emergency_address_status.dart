@@ -6,26 +6,41 @@ part of 'api20100401_incoming_phone_number_mobile.dart';
 // api20100401_incoming_phone_number_mobile domain models
 /// The status of address registration with emergency services. A registered emergency address will be used during handling of emergency calls from this number.
 final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus {
-
   final String value;
 
   const IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(this.value);
 
-  factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(String value) => IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(value);
+  factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(
+          String value) =>
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(value);
 
-  static const registered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('registered');
-  static const unregistered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('unregistered');
-  static const pendingRegistration = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('pending-registration');
-  static const registrationFailure = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('registration-failure');
-  static const pendingUnregistration = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('pending-unregistration');
-  static const unregistrationFailure = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('unregistration-failure');
+  static const registered =
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('registered');
+  static const unregistered =
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('unregistered');
+  static const pendingRegistration =
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(
+          'pending-registration');
+  static const registrationFailure =
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(
+          'registration-failure');
+  static const pendingUnregistration =
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(
+          'pending-unregistration');
+  static const unregistrationFailure =
+      IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(
+          'unregistration-failure');
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }

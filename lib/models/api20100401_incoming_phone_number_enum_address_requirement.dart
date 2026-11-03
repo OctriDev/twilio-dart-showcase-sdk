@@ -6,12 +6,12 @@ part of 'api20100401_incoming_phone_number.dart';
 // api20100401_incoming_phone_number domain models
 /// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
 final class IncomingPhoneNumberEnumAddressRequirement {
-
   final String value;
 
   const IncomingPhoneNumberEnumAddressRequirement._(this.value);
 
-  factory IncomingPhoneNumberEnumAddressRequirement.fromJson(String value) => IncomingPhoneNumberEnumAddressRequirement._(value);
+  factory IncomingPhoneNumberEnumAddressRequirement.fromJson(String value) =>
+      IncomingPhoneNumberEnumAddressRequirement._(value);
 
   static const none = IncomingPhoneNumberEnumAddressRequirement._('none');
   static const any = IncomingPhoneNumberEnumAddressRequirement._('any');
@@ -20,10 +20,14 @@ final class IncomingPhoneNumberEnumAddressRequirement {
 
   String toJson() => value;
 
-  @override String toString() => value.toString();
+  @override
+  String toString() => value.toString();
 
-  @override bool operator ==(Object other) => other is IncomingPhoneNumberEnumAddressRequirement && other.value == value;
+  @override
+  bool operator ==(Object other) =>
+      other is IncomingPhoneNumberEnumAddressRequirement &&
+      other.value == value;
 
-  @override int get hashCode => value.hashCode;
-
+  @override
+  int get hashCode => value.hashCode;
 }
